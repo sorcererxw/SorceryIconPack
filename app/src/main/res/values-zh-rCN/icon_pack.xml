@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="icon_pack">
+        <item>网易云音乐</item>
+        <item>微信</item>
+        <item>微博</item>
+    </string-array>
+</resources>

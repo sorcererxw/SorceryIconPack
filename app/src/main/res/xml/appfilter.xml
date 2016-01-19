@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource>
+    <item
+        component="ComponentInfo{com.tencent.mm/com.tencent.mm.ui.LauncherUI}"
+        drawable="tencent_wechat"/>
+    <item
+        component="ComponentInfo{com.sina.weibo/com.sina.weibo.SplashActivity}"
+        drawable="sina_weibo"/>
+    <item
+        component="ComponentInfo{com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity}"
+        drawable="netease_cloudmusic"/>
+</resource>

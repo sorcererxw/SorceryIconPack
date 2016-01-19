@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="icon_pack">
+        <item>cloud music</item>
+        <item>wechat</item>
+        <item>weibo</item>
+    </string-array>
+</resources>
