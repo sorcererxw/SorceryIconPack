@@ -5,4 +5,5 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="icon_grid_item_size">78dp</dimen>
+    <dimen name="dialog_icon_size">96dp</dimen>
 </resources>

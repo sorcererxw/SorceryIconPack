@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 
 import java.util.ArrayList;
@@ -75,11 +76,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
                 ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
                         .setImageResource(mItems.get(position));
-                ((TextView) iconDialog.findViewById(R.id.textView_dialog_icon_label))
-                        .setText(mIconNames[position].toLowerCase(Locale.getDefault()));
-                Dialog dialog = new Dialog(mContext);
-                dialog.setContentView(iconDialog);
-                dialog.show();
+                new MaterialDialog.Builder(mContext)
+                        .customView(iconDialog, false)
+                        .title(mIconNames[position].toLowerCase(Locale.getDefault()))
+                        .show();
             }
         });
     }
