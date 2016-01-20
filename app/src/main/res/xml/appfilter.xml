@@ -1360,7 +1360,7 @@
         drawable="wikipedia"/>
     <item
         component="ComponentInfo{org.wikipedia.beta/org.wikipedia.page.PageActivity}"
-        drawable="wikipedia"/>
+        drawable="wikipedia_beta"/>
     <item
         component="ComponentInfo{com.tencent.mm/com.tencent.mm.ui.LauncherUI}"
         drawable="wechat"/>
@@ -1378,16 +1378,16 @@
         drawable="weibo"/>
     <item
         component="ComponentInfo{com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.RootExplorer}"
-        drawable="rootexplorer"/>
+        drawable="root_explorer"/>
     <item
         component="ComponentInfo{com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.ApplanetActivity}"
-        drawable="rootexplorer"/>
+        drawable="root_explorer"/>
     <item
         component="ComponentInfo{com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.DefaultActivity}"
-        drawable="rootexplorer"/>
+        drawable="root_explorer"/>
     <item
         component="ComponentInfo{com.speedsoftware.explorer/com.speedsoftware.explorer.Explorer}"
-        drawable="rootexplorer"/>
+        drawable="root_explorer"/>
     <item
         component="ComponentInfo{com.google.android.apps.paidtasks/com.google.android.apps.paidtasks.LaunchActivity}"
         drawable="opinionrewards"/>
@@ -1567,7 +1567,7 @@
         drawable="clashofclans"/>
     <item
         component="ComponentInfo{com.google.android.apps.finance/com.google.android.apps.finance.HomeActivity}"
-        drawable="googlefinance"/>
+        drawable="google_finance"/>
     <item
         component="ComponentInfo{org.videolan.vlc.betav7neon/org.videolan.vlc.betav7neon.gui.MainActivity}"
         drawable="vlc"/>
@@ -1639,7 +1639,7 @@
         drawable="amazon"/>
     <item
         component="ComponentInfo{com.amazon.kindle/com.amazon.kindle.UpgradePage}"
-        drawable="amazonkindle"/>
+        drawable="kindle"/>
     <item
         component="ComponentInfo{com.cnn.mobile.android.phone/com.cnn.mobile.android.phone.ui.SplashActivity}"
         drawable="cnn"/>
@@ -1693,22 +1693,22 @@
         drawable="quickboot"/>
     <item
         component="ComponentInfo{com.UCMobile.intl/com.UCMobile.main.UCMobile}"
-        drawable="ucbrowser"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.UCMobile/com.UCMobile.main.UCMobile}"
-        drawable="ucbrowser"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.uc.browser/com.uc.browser.ActivityUpdate}"
-        drawable="ucbrowser"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.uc.browser.hd/com.ucweb.activity.MainActivity}"
-        drawable="ucbrowser"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.uc.browser.en/com.UCMobile.main.UCMobile}"
-        drawable="ucbrowser"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.uc.browser.en/com.uc.browser.ActivityBrowser}"
-        drawable="ucbrowser"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{cn.wps.moffice/cn.wps.moffice.documentmanager.PreStartActivity}"
         drawable="wps"/>
@@ -1909,10 +1909,10 @@
         drawable="weatherbug"/>
     <item
         component="ComponentInfo{com.estrongs.android.pop/com.estrongs.android.pop.resmanager.view.FileExplorerActivity}"
-        drawable="esexplorer"/>
+        drawable="es_explorer"/>
     <item
         component="ComponentInfo{com.estrongs.android.pop/com.estrongs.android.pop.view.FileExplorerActivity}"
-        drawable="esexplorer"/>
+        drawable="es_explorer"/>
     <item
         component="ComponentInfo{com.google.android.maps.mytracks/com.google.android.apps.mytracks.TrackListActivity}"
         drawable="mytracks"/>
@@ -1936,7 +1936,7 @@
         drawable="bittorrent"/>
     <item
         component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.WelcomeActivity}"
-        drawable="camscanner"/>
+        drawable="cam_scanner"/>
     <item
         component="ComponentInfo{com.handcent.nextsms/com.handcent.sms.ui.ConversationExList}"
         drawable="handcent"/>
@@ -2253,16 +2253,16 @@
         <!--drawable="aldikobookreader"/>-->
     <item
         component="ComponentInfo{com.baidu.BaiduMap/com.baidu.BaiduMap.BaiduMap}"
-        drawable="baidumap"/>
+        drawable="baidu_map"/>
     <item
         component="ComponentInfo{com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen}"
-        drawable="baidumap"/>
+        drawable="baidu_map"/>
     <item
         component="ComponentInfo{com.baidu.BaiduMap.pad/com.baidu.BaiduMap.pad.BaiduMap}"
-        drawable="baidumap"/>
+        drawable="baidu_map"/>
     <item
         component="ComponentInfo{com.baidu.BaiduMap/com.baidu.baidumaps.nearby.NearbyEntranceActivity}"
-        drawable="baidumap"/>
+        drawable="baidu_map"/>
     <item
         component="ComponentInfo{com.baidu.BaiduMap/com.baidu.map.components.radar.RadarEntranceActivity}"
         drawable="baidu_map"/>
@@ -2850,10 +2850,10 @@
         drawable="buka"/>
     <item
         component="ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.HomeActivity}"
-        drawable="googletranslate"/>
+        drawable="google_translate"/>
     <item
         component="ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity}"
-        drawable="googletranslate"/>
+        drawable="google_translate"/>
     <item
         component="ComponentInfo{com.queader.ice/ice.AndroidActivity}"
         drawable="ice"/>
@@ -2916,22 +2916,22 @@
         drawable="mightytext"/>
     <item
         component="ComponentInfo{com.motorola.bodyguard/com.motorola.bodyguard.app.DashboardActivity}"
-        drawable="motorolaalert"/>
+        drawable="motorola_alert"/>
     <item
         component="ComponentInfo{com.motorola.contextual.smartrules2/com.motorola.contextaware.ui.GalleryActivity}"
-        drawable="motorolaassist"/>
+        drawable="motorola_assist"/>
     <item
         component="ComponentInfo{com.motorola.targetnotif/com.motorola.loop.ui.signin.LauncherActivity}"
-        drawable="motorolaconnect"/>
+        drawable="motorola_connect"/>
     <item
         component="ComponentInfo{com.motorola.genie/com.motorola.genie.app.DashboardActivity}"
-        drawable="motorolahelp"/>
+        drawable="motorola_help"/>
     <item
         component="ComponentInfo{com.motorola.migrate/com.motorola.frictionless.writer.MigrateLaunchActivity}"
-        drawable="motorolamigrate"/>
+        drawable="motorola_migrate"/>
     <item
         component="ComponentInfo{com.motorola.fmplayer/com.motorola.fmplayer.FMPlayer}"
-        drawable="motorolaradio"/>
+        drawable="motorola_radio"/>
     <item
         component="ComponentInfo{com.fastemulator.gbafree/com.fastemulator.gba.MainActivity}"
         drawable="myboygameboy"/>
@@ -3039,22 +3039,22 @@
         drawable="psiphon"/>
     <item
         component="ComponentInfo{com.qihoo360.mobilesafe.QmVaccine.OldbootKiller/com.qihoo360.mobilesafe.QmVaccine.OldbootKiller.MainActivity}"
-        drawable="qihumobilesafe"/>
+        drawable="qihu_mobilesafe"/>
     <item
         component="ComponentInfo{com.qihoo360.mobilesafe_mobilepad/com.qihoo360.mobilesafe.AppEnterActivity}"
-        drawable="qihumobilesafe"/>
+        drawable="qihu_mobilesafe"/>
     <item
         component="ComponentInfo{com.qihoo360.mobilesafe_mtk6573/com.qihoo360.mobilesafe.ui.index.AppEnterActivity}"
-        drawable="qihumobilesafe"/>
+        drawable="qihu_mobilesafe"/>
     <item
         component="ComponentInfo{com.qihoo360.mobilesafe.opti.powerctl/com.qihoo360.mobilesafe.opti.powerctl.ui.activity.MainAvtivity}"
-        drawable="qihumobilesafe"/>
+        drawable="qihu_mobilesafe"/>
     <item
         component="ComponentInfo{com.qihoo360.mobilesafe.opti/com.qihoo360.mobilesafe.opti.ui.main.AppEnterActivity}"
-        drawable="qihumobilesafe"/>
+        drawable="qihu_mobilesafe"/>
     <item
         component="ComponentInfo{com.qihoo360.mobilesafe/com.qihoo360.mobilesafe.ui.index.AppEnterActivity}"
-        drawable="qihumobilesafe"/>
+        drawable="qihu_mobilesafe"/>
     <item
         component="ComponentInfo{com.tencent.qqpinyin/com.tencent.qqpinyin.activity.GuideDialogActivity}"
         drawable="qqinput"/>
@@ -3120,19 +3120,19 @@
         drawable="romtoolbox"/>
     <item
         component="ComponentInfo{com.jrummy.root.browserfree/com.jrummy.file.manager.lite.RootBrowserLite}"
-        drawable="rootbrowser"/>
+        drawable="root_browser"/>
     <item
         component="ComponentInfo{com.jrummy.root.browser/com.jrummy.root.browser.RootBrowserPro}"
-        drawable="rootbrowser"/>
+        drawable="root_browser"/>
     <item
         component="ComponentInfo{com.jrummy.root.browser/com.jrummy.root.browser.FileBrowser}"
-        drawable="rootbrowser"/>
+        drawable="root_browser"/>
     <item
         component="ComponentInfo{com.jrummy.root.browserfree/com.jrummy.apps.root.browser.activities.RootBrowserActivity}"
-        drawable="rootbrowser"/>
+        drawable="root_browser"/>
     <item
         component="ComponentInfo{com.joeykrim.rootcheck/com.joeykrim.rootcheck.RootCheck}"
-        drawable="rootchecker"/>
+        drawable="root_checker"/>
     <item
         component="ComponentInfo{se.maginteractive.rumble.free/se.maginteractive.rumble.activities.SplashActivity}"
         drawable="ruzzle"/>
