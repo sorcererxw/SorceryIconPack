@@ -5,50 +5,27 @@
         <item>alipay</item>
         <item>amazon</item>
         <item>app_drawer</item>
+        <item>b612</item>
         <item>baidu_input</item>
         <item>baidu_pan</item>
         <item>barcode_scanner</item>
         <item>bilibili</item>
+        <item>cleanmaster</item>
         <item>cloudmusic</item>
         <item>coolapk</item>
         <item>crossyroad</item>
+        <item>ctrip</item>
+        <item>dianping</item>
         <item>dumb_ways_to_die</item>
         <item>dumb_ways_to_die_2</item>
+        <item>duokan</item>
         <item>eleme</item>
         <item>es_explorer</item>
         <item>evernote</item>
+        <item>facebook</item>
+        <item>feedly</item>
+        <item>fotor</item>
         <item>google_calendar</item>
-        <item>google_calendar_1</item>
-        <item>google_calendar_2</item>
-        <item>google_calendar_3</item>
-        <item>google_calendar_4</item>
-        <item>google_calendar_5</item>
-        <item>google_calendar_6</item>
-        <item>google_calendar_7</item>
-        <item>google_calendar_8</item>
-        <item>google_calendar_9</item>
-        <item>google_calendar_10</item>
-        <item>google_calendar_11</item>
-        <item>google_calendar_12</item>
-        <item>google_calendar_13</item>
-        <item>google_calendar_14</item>
-        <item>google_calendar_15</item>
-        <item>google_calendar_16</item>
-        <item>google_calendar_17</item>
-        <item>google_calendar_18</item>
-        <item>google_calendar_19</item>
-        <item>google_calendar_20</item>
-        <item>google_calendar_21</item>
-        <item>google_calendar_22</item>
-        <item>google_calendar_23</item>
-        <item>google_calendar_24</item>
-        <item>google_calendar_25</item>
-        <item>google_calendar_26</item>
-        <item>google_calendar_27</item>
-        <item>google_calendar_28</item>
-        <item>google_calendar_29</item>
-        <item>google_calendar_30</item>
-        <item>google_calendar_31</item>
         <item>google_keep</item>
         <item>google_messenger</item>
         <item>google_play_games</item>
@@ -106,7 +83,10 @@
         <item>lg_voice_mate</item>
         <item>lg_voice_recorder</item>
         <item>lg_weather</item>
+        <item>line_deco</item>
+        <item>lucky_patcher</item>
         <item>meituan</item>
+        <item>meituan_waimai</item>
         <item>momo</item>
         <item>monument_valley</item>
         <item>motorola_alert</item>
@@ -117,6 +97,7 @@
         <item>motorola_help</item>
         <item>motorola_migrate</item>
         <item>onedrive</item>
+        <item>oneplus_community</item>
         <item>pixolor</item>
         <item>pocket</item>
         <item>qq</item>
@@ -162,10 +143,13 @@
         <item>sony_themes</item>
         <item>sony_video</item>
         <item>sony_whatsnew</item>
+        <item>steam</item>
+        <item>sunrise</item>
         <item>taobao</item>
         <item>tieba</item>
         <item>tasker</item>
         <item>touchpal</item>
+        <item>uber</item>
         <item>wandoujia</item>
         <item>weather_timeline</item>
         <item>wechat</item>
@@ -177,6 +161,8 @@
         <item>xianyu</item>
         <item>xinstaller</item>
         <item>xposed</item>
+        <item>youdaodict</item>
         <item>zhihu</item>
+        <item>zhihu_ribao</item>
     </string-array>
 </resources>

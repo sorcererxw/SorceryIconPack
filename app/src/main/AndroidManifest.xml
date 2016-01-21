@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,124 +20,143 @@
 
             <!-- ADW -->
             <intent-filter>
-                <action android:name="org.adw.launcher.THEMES" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="org.adw.launcher.THEMES"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- Apex -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.anddoes.launcher.THEME" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.anddoes.launcher.THEME"/>
             </intent-filter>
             <!-- Atom -->
             <intent-filter>
-                <action android:name="com.dlto.atom.launcher.THEME" />
+                <action android:name="com.dlto.atom.launcher.THEME"/>
             </intent-filter>
             <!-- Nova -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.teslacoilsw.launcher.THEME" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.teslacoilsw.launcher.THEME"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.novalauncher.THEME" />
-                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />
+                <action android:name="com.novalauncher.THEME"/>
+
+                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER"/>
             </intent-filter>
             <!-- LauncherPro / Holo -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.fede.launcher.THEME_ICONPACK" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.fede.launcher.THEME_ICONPACK"/>
             </intent-filter>
             <!-- Next Launcher -->
             <intent-filter>
-                <action android:name="com.gtp.nextlauncher.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.gtp.nextlauncher.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.gtp.nextlauncher.trial.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.gtp.nextlauncher.trial.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- TSF Shell -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.tsf.shell.themes" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.tsf.shell.themes"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- Turbo Launcher -->
             <intent-filter>
-                <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- Smart Launcher -->
             <intent-filter>
-                <action android:name="ginlemon.smartlauncher.THEMES" />
-                <action android:name="ginlemon.smartlauncher.BUBBLESTYLE" />
-                <action android:name="ginlemon.smartlauncher.BUBBLEICONS" />
-                <action android:name="ginlemon.smartlauncher.CLOCKS" />
-                <action android:name="ginlemon.smartlauncher.CLOCKFONTS" />
+                <action android:name="ginlemon.smartlauncher.THEMES"/>
+                <action android:name="ginlemon.smartlauncher.BUBBLESTYLE"/>
+                <action android:name="ginlemon.smartlauncher.BUBBLEICONS"/>
+                <action android:name="ginlemon.smartlauncher.CLOCKS"/>
+                <action android:name="ginlemon.smartlauncher.CLOCKFONTS"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- Nine Launcher -->
             <intent-filter>
-                <action android:name="com.gridappsinc.launcher.theme.apk_action" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.gridappsinc.launcher.theme.apk_action"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- Random launchers -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="org.adw.launcher.THEMES" />
-                <action android:name="mobi.bbase.ahome.THEME" />
-                <action android:name="com.rogro.GDE.THEME.1" />
-                <action android:name="com.android.dxtop.launcher.THEME" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="org.adw.launcher.THEMES"/>
+                <action android:name="mobi.bbase.ahome.THEME"/>
+                <action android:name="com.rogro.GDE.THEME.1"/>
+                <action android:name="com.android.dxtop.launcher.THEME"/>
 
-                <category android:name="com.fede.launcher.THEME_ICONPACK" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.fede.launcher.THEME_ICONPACK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
-                <action android:name="mobi.bbase.ahome.THEME" />
-                <action android:name="com.rogro.GDE.THEME.1" />
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
+                <action android:name="mobi.bbase.ahome.THEME"/>
+                <action android:name="com.rogro.GDE.THEME.1"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="cdproductions.crazyicons.TWO" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="cdproductions.crazyicons.TWO"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- THEME MANAGER -->
             <intent-filter>
-                <action android:name="com.daeva112.manager.MAIN" />
-                <category android:name="com.daeva112.manager.THEME" />
+                <action android:name="com.daeva112.manager.MAIN"/>
+
+                <category android:name="com.daeva112.manager.THEME"/>
             </intent-filter>
             <!-- GO LAUNCHER -->
             <intent-filter>
-                <action android:name="com.gau.go.launcherex.theme" />
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.gau.go.launcherex.theme"/>
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.THEME_SCENE" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.THEME_SCENE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
-                <category android:name="android.intent.category.INFO" />
+                <category android:name="android.intent.category.INFO"/>
             </intent-filter>
             <!-- Solo Launcher -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="home.solo.launcher.free.THEMES" />
-                <action android:name="home.solo.launcher.free.ACTION_ICON" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="home.solo.launcher.free.THEMES"/>
+                <action android:name="home.solo.launcher.free.ACTION_ICON"/>
             </intent-filter>
             <!-- LG Home -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.lge.launcher2.THEME" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.lge.launcher2.THEME"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:label="@string/action_feedback"
+            android:name=".ui.activities.FeedbackActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>
