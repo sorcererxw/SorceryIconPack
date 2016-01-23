@@ -21,7 +21,7 @@ import java.util.List;
 
 public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Toolbar mFeedbackToolbar;
+    private Toolbar mToolbar;
     private Button mRequestButton;
     private Button mSuggestButton;
 
@@ -30,8 +30,8 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
-        mFeedbackToolbar = (Toolbar) findViewById(R.id.toolbar_feedback);
-        setSupportActionBar(mFeedbackToolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_feedback);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
 

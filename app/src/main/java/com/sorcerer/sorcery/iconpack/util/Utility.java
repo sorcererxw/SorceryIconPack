@@ -9,7 +9,9 @@ import android.content.pm.ResolveInfo;
 import android.os.Debug;
 import android.util.Log;
 
+import com.sorcerer.sorcery.iconpack.launchers.NovaLauncher;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,6 +21,7 @@ import java.util.List;
  * Created by Sorcerer on 2016/1/21 0021.
  */
 public class Utility {
+
     public static List<AppInfo> getComponentInfo(Context context) {
         List<AppInfo> appInfoList = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
@@ -35,5 +38,17 @@ public class Utility {
             appInfoList.add(tempAppInfo);
         }
         return appInfoList;
+    }
+
+    public static List<LauncherInfo> generateLauncherInfo(Context context){
+        return null;
+    }
+
+    public static void applyLauncher(String label, Context context){
+        switch (label){
+            case "Nova":
+                new NovaLauncher(context);
+                break;
+        }
     }
 }

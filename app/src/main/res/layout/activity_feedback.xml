@@ -7,12 +7,9 @@
     tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
 
 
-    <android.support.v7.widget.Toolbar
+    <include
         android:id="@+id/toolbar_feedback"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        layout="@layout/toolbar_universal"/>
 
     <LinearLayout
         android:layout_width="match_parent"

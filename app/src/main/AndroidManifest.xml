@@ -150,13 +150,15 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
         <activity
-            android:label="@string/action_feedback"
             android:name=".ui.activities.FeedbackActivity"
+            android:label="@string/action_feedback"
             android:theme="@style/AppTheme">
         </activity>
-
+        <activity android:name=".ui.activities.ApplyActivity"
+                  android:label="@string/action_apply"
+                  android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

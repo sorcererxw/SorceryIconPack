@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
             this.startActivity(intent);
         } else if (id == R.id.action_welcome) {
             showWelcomeDialog();
+        }else if(id==R.id.action_apply){
+            Intent intent = new Intent(this, ApplyActivity.class);
+            this.startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

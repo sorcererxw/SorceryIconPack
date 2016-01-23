@@ -3,6 +3,7 @@
 
     <string name="action_feedback">Feedback</string>
     <string name="action_welcome">Welcome</string>
+    <string name="action_apply">Apply</string>
 
     <string name="request">Request icon</string>
     <string name="suggest">Suggest</string>
