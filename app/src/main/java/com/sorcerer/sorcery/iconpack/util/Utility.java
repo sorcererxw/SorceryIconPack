@@ -1,15 +1,11 @@
 package com.sorcerer.sorcery.iconpack.util;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.os.Debug;
-import android.util.Log;
 
-import com.sorcerer.sorcery.iconpack.launchers.NovaLauncher;
+import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
@@ -40,15 +36,23 @@ public class Utility {
         return appInfoList;
     }
 
-    public static List<LauncherInfo> generateLauncherInfo(Context context){
-        return null;
+    public static List<LauncherInfo> generateLauncherInfo(Context context) {
+        List<LauncherInfo> list = new ArrayList<>();
+        String[] launchers = context.getResources().getStringArray(R.array.launchers_list);
+        for (String launcher : launchers) {
+            String[] tmp = launcher.split("\\|");
+            list.add(new LauncherInfo(context, tmp[1], tmp[0]));
+        }
+        return list;
     }
 
-    public static void applyLauncher(String label, Context context){
-        switch (label){
-            case "Nova":
-                new NovaLauncher(context);
-                break;
+    public static boolean isLauncherInstalled(Context context, String packageName) {
+        final PackageManager pm = context.getPackageManager();
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
         }
     }
 }

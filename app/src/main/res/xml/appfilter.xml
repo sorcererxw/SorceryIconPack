@@ -1833,17 +1833,17 @@
         component="ComponentInfo{com.dianping.v1/com.dianping.main.guide.SplashScreenActivity}"
         drawable="dianping"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.douban.frodo/com.douban.frodo.activity.SplashActivity}"
+        drawable="douban"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sdu.didi.psnger/com.didi.sdk.splash.SplashActivity}"
+        drawable="didi"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.vsco.cam/com.vsco.cam.gallery.ImageGridActivity}"
+        drawable="vsco"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.instapaper.android/com.instapaper.android.MainActivity}"
+        drawable="instapaper"/>
     <item
         component="ComponentInfo{}"
         drawable=""/>

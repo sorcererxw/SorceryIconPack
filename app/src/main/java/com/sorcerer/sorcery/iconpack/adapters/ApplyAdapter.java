@@ -5,12 +5,18 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -18,13 +24,19 @@ import java.util.List;
  */
 public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherViewHolder> {
 
-    private List<String> mLauncherList;
+    private List<LauncherInfo> mLauncherList;
     private Context mContext;
     private OnItemClickListener mListener;
 
-    public ApplyAdapter(Context context, List launcherList) {
+    public ApplyAdapter(Context context, List<LauncherInfo> launcherList) {
         mContext = context;
         mLauncherList = launcherList;
+        Collections.sort(mLauncherList, new Comparator<LauncherInfo>() {
+            @Override
+            public int compare(LauncherInfo lhs, LauncherInfo rhs) {
+                return lhs.compareTo(rhs);
+            }
+        });
     }
 
     public interface OnItemClickListener {
@@ -36,18 +48,23 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     }
 
     public final class LauncherViewHolder extends RecyclerView.ViewHolder implements
-            View.OnClickListener {
+            View.OnClickListener, View.OnTouchListener {
 
         TextView label;
+        TextView isInstalled;
         View main;
+        ImageView icon;
 
         public LauncherViewHolder(View itemView) {
             super(itemView);
 
             label = (TextView) itemView.findViewById(R.id.textView_item_apply_label);
+            isInstalled = (TextView) itemView.findViewById(R.id.textView_is_installed);
             main = itemView;
+            icon = (ImageView) itemView.findViewById(R.id.imageView_item_apply_icon);
 
             main.setOnClickListener(this);
+            main.setOnTouchListener(this);
         }
 
         @Override
@@ -55,6 +72,20 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
             if (mListener != null) {
                 mListener.onClick(main, getAdapterPosition());
             }
+        }
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    v.animate().translationZ(5).start();
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                case MotionEvent.ACTION_UP:
+                    v.animate().translationZ(0).start();
+                    break;
+            }
+            return false;
         }
     }
 
@@ -66,7 +97,15 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
 
     @Override
     public void onBindViewHolder(LauncherViewHolder holder, int position) {
-        holder.label.setText(mLauncherList.get(position));
+        holder.label.setText(mLauncherList.get(position).getLabel());
+        if (mLauncherList.get(position).isInstalled()) {
+            holder.isInstalled.setText(mContext.getString(R.string.installed));
+            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.green_500));
+        } else {
+            holder.isInstalled.setText(mContext.getString(R.string.not_installed));
+            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.red_500));
+        }
+        holder.icon.setImageResource(mLauncherList.get(position).getIcon());
     }
 
     @Override
@@ -74,7 +113,7 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
         return mLauncherList.size();
     }
 
-    public String getLabel(int position) {
+    public LauncherInfo getItem(int position) {
         return mLauncherList.get(position);
     }
 }

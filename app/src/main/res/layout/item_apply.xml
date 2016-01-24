@@ -4,20 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    android:elevation="1dp"
-    android:translationZ="1dp">
+    android:elevation="1dp">
 
     <RelativeLayout
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:minHeight="50dp"
-        android:minWidth="50dp">
+        android:minHeight="78dp"
+        android:minWidth="78dp">
+
+        <ImageView
+            android:src="@drawable/didi"
+            android:id="@+id/imageView_item_apply_icon"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
+            android:gravity="center"
+            android:text="1"
             android:id="@+id/textView_item_apply_label"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:layout_below="@+id/imageView_item_apply_icon"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:gravity="bottom|center"
+            android:text="111"
+            android:id="@+id/textView_is_installed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/textView_item_apply_label"
+            android:layout_below="@+id/textView_item_apply_label"/>
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack">
+        <item>action_launcher</item>
+        <item>adw_launcher</item>
+        <item>adwex_launcher</item>
         <item>airbnb</item>
+        <item>airdroid</item>
         <item>alipay</item>
         <item>amazon</item>
+        <item>apex_launcher</item>
         <item>app_drawer</item>
+        <item>atom_launcher</item>
+        <item>aviate_launcher</item>
         <item>b612</item>
         <item>baidu_input</item>
         <item>baidu_pan</item>
         <item>barcode_scanner</item>
         <item>bilibili</item>
+        <item>boxer_calendar</item>
         <item>cleanmaster</item>
         <item>cloudmusic</item>
+        <item>cm_theme_engine</item>
         <item>coolapk</item>
         <item>crossyroad</item>
         <item>ctrip</item>
         <item>dianping</item>
+        <item>didi</item>
+        <item>douban</item>
         <item>dumb_ways_to_die</item>
         <item>dumb_ways_to_die_2</item>
         <item>duokan</item>
@@ -25,9 +36,11 @@
         <item>facebook</item>
         <item>feedly</item>
         <item>fotor</item>
+        <item>go_launcher</item>
         <item>google_calendar</item>
         <item>google_keep</item>
         <item>google_messenger</item>
+        <item>google_now_launcher</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
         <item>google_play_music</item>
@@ -35,6 +48,7 @@
         <item>google_play_store</item>
         <item>google_youtube</item>
         <item>gravity_box</item>
+        <item>holo_launcher</item>
         <item>htc_backup</item>
         <item>htc_browser</item>
         <item>htc_calculator</item>
@@ -53,10 +67,14 @@
         <item>htc_radio</item>
         <item>htc_settings</item>
         <item>htc_weather</item>
+        <item>inspire_launcher</item>
         <item>instagram</item>
+        <item>instapaper</item>
         <item>iqiyi</item>
         <item>keep_health</item>
         <item>kindle</item>
+        <item>kk_launcher</item>
+        <item>lenovo_calendar</item>
         <item>lg_browser</item>
         <item>lg_calculator</item>
         <item>lg_calendar</item>
@@ -84,6 +102,7 @@
         <item>lg_voice_recorder</item>
         <item>lg_weather</item>
         <item>line_deco</item>
+        <item>lucid_launcher</item>
         <item>lucky_patcher</item>
         <item>meituan</item>
         <item>meituan_waimai</item>
@@ -96,6 +115,9 @@
         <item>motorola_gallery</item>
         <item>motorola_help</item>
         <item>motorola_migrate</item>
+        <item>next_launcher</item>
+        <item>nine_launcher</item>
+        <item>nova_launcher</item>
         <item>onedrive</item>
         <item>oneplus_community</item>
         <item>pixolor</item>
@@ -122,7 +144,9 @@
         <item>samsung_voice</item>
         <item>shadowsocks</item>
         <item>skype</item>
+        <item>smart_launcher</item>
         <item>solid_explorer</item>
+        <item>solo_launcher</item>
         <item>sony_album</item>
         <item>sony_backup</item>
         <item>sony_browser</item>
@@ -145,11 +169,14 @@
         <item>sony_whatsnew</item>
         <item>steam</item>
         <item>sunrise</item>
+        <item>supersu</item>
         <item>taobao</item>
         <item>tieba</item>
         <item>tasker</item>
         <item>touchpal</item>
+        <item>tsf_launcher</item>
         <item>uber</item>
+        <item>vsco</item>
         <item>wandoujia</item>
         <item>weather_timeline</item>
         <item>wechat</item>
