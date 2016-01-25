@@ -11,7 +11,7 @@
     <string name="choose_mail_app">请选择邮箱</string>
 
     <string name="welcome_title">感谢使用</string>
-    <string name="welcome_body">感谢使用这款图标包, 由于刚刚制作完成, 图标覆盖上及其不做, 如果没有适合你的图标, 可以在右上角的反馈中告诉我</string>
+    <string name="welcome_body">感谢使用这款图标包, 由于刚刚制作完成, 图标覆盖上不够全面, 如果没有适合你的图标, 可以在右上角的反馈中告诉我</string>
     <string name="welcome_close">好的</string>
     <string name="installed">已安装</string>
     <string name="not_installed">未安装</string>

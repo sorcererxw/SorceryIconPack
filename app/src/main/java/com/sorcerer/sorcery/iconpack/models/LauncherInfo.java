@@ -6,7 +6,6 @@ import android.support.annotation.DrawableRes;
 import android.util.Log;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.launchers.LucidLauncher;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 /**

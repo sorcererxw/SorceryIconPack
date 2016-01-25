@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack">
+        <item>a115</item>
         <item>action_launcher</item>
         <item>adw_launcher</item>
         <item>adwex_launcher</item>
@@ -35,6 +36,7 @@
         <item>evernote</item>
         <item>facebook</item>
         <item>feedly</item>
+        <item>fenghuang_fm</item>
         <item>fotor</item>
         <item>go_launcher</item>
         <item>google_calendar</item>
@@ -71,9 +73,13 @@
         <item>instagram</item>
         <item>instapaper</item>
         <item>iqiyi</item>
+        <item>jd</item>
+        <item>juejin</item>
         <item>keep_health</item>
         <item>kindle</item>
+        <item>kfc</item>
         <item>kk_launcher</item>
+        <item>koubei_waimai</item>
         <item>lenovo_calendar</item>
         <item>lg_browser</item>
         <item>lg_calculator</item>
@@ -104,8 +110,10 @@
         <item>line_deco</item>
         <item>lucid_launcher</item>
         <item>lucky_patcher</item>
+        <item>maoyan</item>
         <item>meituan</item>
         <item>meituan_waimai</item>
+        <item>miaojie</item>
         <item>momo</item>
         <item>monument_valley</item>
         <item>motorola_alert</item>
@@ -123,6 +131,7 @@
         <item>pixolor</item>
         <item>pocket</item>
         <item>qq</item>
+        <item>reaper</item>
         <item>root_explorer</item>
         <item>samsung_apps</item>
         <item>samsung_browser</item>
@@ -188,6 +197,7 @@
         <item>xianyu</item>
         <item>xinstaller</item>
         <item>xposed</item>
+        <item>yangqi</item>
         <item>youdaodict</item>
         <item>zhihu</item>
         <item>zhihu_ribao</item>

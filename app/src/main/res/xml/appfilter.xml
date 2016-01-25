@@ -1845,41 +1845,41 @@
         component="ComponentInfo{com.instapaper.android/com.instapaper.android.MainActivity}"
         drawable="instapaper"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.yongtai.o2bra/com.yongtai.o2bra.main.WecomeActivity}"
+        drawable="yangqi"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{net.hexage.reaper/net.hexage.reaper.MainActivity}"
+        drawable="reaper"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.taobao.shoppingstreets/com.taobao.shoppingstreets.activity.InitActivity}"
+        drawable="miaojie"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sankuai.movie/com.sankuai.movie.welcome.Welcome}"
+        drawable="maoyan"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.taobao.mobile.dipei/com.taobao.ecoupon.activity.SplashActivity}"
+        drawable="koubei_waimai"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.yek.android.kfc.activitys/com.yum.brandkfc.SplashAct}"
+        drawable="kfc"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.daimajia.gold/com.daimajia.gold.LogoActivity}"
+        drawable="juejin"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.jingdong.app.mall/com.jingdong.app.mall.MainActivity}"
+        drawable="jd"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{cn.com.open.mooc/com.mooc.imooc.ui.loading.MCLoadingActivity}"
+        drawable="imooc"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.ifeng.fhdt/com.ifeng.fhdt.activity.StartActivity}"
+        drawable="fenghuang_fm"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.ylmf.androidclient/com.ylmf.androidclient.UI.LogActivity}"
+        drawable="a115"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.estrongs.android.pop/com.estrongs.android.pop.app.adgad.GdtSplashActivity}"
+        drawable="es_explorer"/>
     <item
         component="ComponentInfo{}"
         drawable=""/>
