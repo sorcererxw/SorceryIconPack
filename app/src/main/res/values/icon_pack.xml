@@ -2,6 +2,7 @@
 <resources>
     <string-array name="icon_pack">
         <item>a115</item>
+        <item>a12306</item>
         <item>action_launcher</item>
         <item>adw_launcher</item>
         <item>adwex_launcher</item>
@@ -14,11 +15,13 @@
         <item>atom_launcher</item>
         <item>aviate_launcher</item>
         <item>b612</item>
+        <item>backdrops</item>
         <item>baidu_input</item>
         <item>baidu_pan</item>
         <item>barcode_scanner</item>
         <item>bilibili</item>
         <item>boxer_calendar</item>
+        <item>changba</item>
         <item>cleanmaster</item>
         <item>cloudmusic</item>
         <item>cm_theme_engine</item>
@@ -36,8 +39,11 @@
         <item>evernote</item>
         <item>facebook</item>
         <item>feedly</item>
+        <item>fenghuang</item>
         <item>fenghuang_fm</item>
+        <item>fit_time</item>
         <item>fotor</item>
+        <item>gaode</item>
         <item>go_launcher</item>
         <item>google_calendar</item>
         <item>google_keep</item>
@@ -50,6 +56,7 @@
         <item>google_play_store</item>
         <item>google_youtube</item>
         <item>gravity_box</item>
+        <item>hai360</item>
         <item>holo_launcher</item>
         <item>htc_backup</item>
         <item>htc_browser</item>
@@ -74,9 +81,12 @@
         <item>instapaper</item>
         <item>iqiyi</item>
         <item>jd</item>
+        <item>jike</item>
+        <item>jotter_pad</item>
         <item>juejin</item>
         <item>keep_health</item>
         <item>kindle</item>
+        <item>kingroot</item>
         <item>kfc</item>
         <item>kk_launcher</item>
         <item>koubei_waimai</item>
@@ -131,6 +141,8 @@
         <item>pixolor</item>
         <item>pocket</item>
         <item>qq</item>
+        <item>qq_music</item>
+        <item>qzone</item>
         <item>reaper</item>
         <item>root_explorer</item>
         <item>samsung_apps</item>
@@ -152,8 +164,10 @@
         <item>samsung_video</item>
         <item>samsung_voice</item>
         <item>shadowsocks</item>
+        <item>shanbay</item>
         <item>skype</item>
         <item>smart_launcher</item>
+        <item>smzdm</item>
         <item>solid_explorer</item>
         <item>solo_launcher</item>
         <item>sony_album</item>
@@ -180,13 +194,19 @@
         <item>sunrise</item>
         <item>supersu</item>
         <item>taobao</item>
-        <item>tieba</item>
+        <item>taobao_dianying</item>
         <item>tasker</item>
+        <item>tencent_video</item>
+        <item>tieba</item>
         <item>touchpal</item>
         <item>tsf_launcher</item>
         <item>uber</item>
+        <item>uc</item>
         <item>vsco</item>
         <item>wandoujia</item>
+        <item>wandoujia_yilan</item>
+        <item>wangxin</item>
+        <item>wangyi_news</item>
         <item>weather_timeline</item>
         <item>wechat</item>
         <item>weibo</item>
@@ -194,11 +214,13 @@
         <item>wikipedia_beta</item>
         <item>wps</item>
         <item>wunderlist</item>
+        <item>xiami</item>
         <item>xianyu</item>
         <item>xinstaller</item>
         <item>xposed</item>
         <item>yangqi</item>
         <item>youdaodict</item>
+        <item>zealer</item>
         <item>zhihu</item>
         <item>zhihu_ribao</item>
     </string-array>

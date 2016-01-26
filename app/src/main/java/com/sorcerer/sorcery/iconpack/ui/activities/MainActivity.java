@@ -10,10 +10,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -21,6 +23,10 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
+import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
+
+import im.fir.sdk.FIR;
+import im.fir.sdk.VersionCheckCallback;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -85,9 +91,12 @@ public class MainActivity extends AppCompatActivity {
             this.startActivity(intent);
         } else if (id == R.id.action_welcome) {
             showWelcomeDialog();
-        }else if(id==R.id.action_apply){
+        } else if (id == R.id.action_apply) {
             Intent intent = new Intent(this, ApplyActivity.class);
             this.startActivity(intent);
+        } else if (id == R.id.action_update) {
+            UpdateHelper updateHelper = new UpdateHelper(this);
+            updateHelper.update();
         }
         return super.onOptionsItemSelected(item);
     }

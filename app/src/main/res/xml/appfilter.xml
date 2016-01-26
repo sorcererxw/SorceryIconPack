@@ -1881,14 +1881,14 @@
         component="ComponentInfo{com.estrongs.android.pop/com.estrongs.android.pop.app.adgad.GdtSplashActivity}"
         drawable="es_explorer"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.zhihu.android/com.zhihu.android.app.ui.activity.MainActivity}"
+        drawable="zhihu"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.taohai.hai360/com.taohai.hai360.SplashActivity}"
+        drawable="hai360"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.zealer.app/com.zealer.app.activity.SplashActivity}"
+        drawable="zealer"/>
     <item
         component="ComponentInfo{}"
         drawable=""/>

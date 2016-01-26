@@ -19,6 +19,11 @@
         android:id="@+id/action_apply"
         android:orderInCategory="100"
         android:title="@string/action_apply"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_update"
+        android:orderInCategory="100"
+        android:title="update"
+        app:showAsAction="never"/>
 </menu>

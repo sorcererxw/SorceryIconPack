@@ -4,11 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -53,6 +60,39 @@ public class Utility {
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
+        }
+    }
+
+    public static void downloadFile(Context context, String urlString, String filepath) {
+        try {
+            URL url = new URL(urlString);
+
+            //打开到url的连接
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            //以下为java IO部分，大体来说就是先检查文件夹是否存在，不存在则创建,然后的文件名重复问题，没有考虑
+            InputStream istream = connection.getInputStream();
+            String filename = urlString.substring(urlString.lastIndexOf("/") + 1);
+
+            File dir = new File(filepath);
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+            File file = new File(filepath + filename);
+            file.createNewFile();
+
+            OutputStream output = new FileOutputStream(file);
+            byte[] buffer = new byte[1024 * 4];
+            while (istream.read(buffer) != -1) {
+                output.write(buffer);
+
+            }
+            output.flush();
+            output.close();
+            istream.close();
+            //最后toast出文件名，因为这个程序是单线程的，所以要下载完文件以后才会执行这一句，中间的时间类似于死机，不过多线程还没有学到
+            Toast.makeText(context, filename, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

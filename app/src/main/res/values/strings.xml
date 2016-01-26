@@ -17,7 +17,8 @@
 
     <string name="installed">installed</string>
     <string name="not_installed">not installed</string>
-    
+
+
     <string-array name="launchers">
         <item>Action</item>
         <item>Adwex</item>
