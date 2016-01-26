@@ -10,6 +10,7 @@
         <item>airdroid</item>
         <item>alipay</item>
         <item>amazon</item>
+        <item>anime_taste</item>
         <item>apex_launcher</item>
         <item>app_drawer</item>
         <item>atom_launcher</item>
@@ -21,6 +22,7 @@
         <item>barcode_scanner</item>
         <item>bilibili</item>
         <item>boxer_calendar</item>
+        <item>buzz_launcher</item>
         <item>changba</item>
         <item>cleanmaster</item>
         <item>cloudmusic</item>
@@ -37,6 +39,7 @@
         <item>eleme</item>
         <item>es_explorer</item>
         <item>evernote</item>
+        <item>eyepetizer</item>
         <item>facebook</item>
         <item>feedly</item>
         <item>fenghuang</item>
@@ -49,6 +52,7 @@
         <item>google_keep</item>
         <item>google_messenger</item>
         <item>google_now_launcher</item>
+        <item>google_opinion_rewards</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
         <item>google_play_music</item>
@@ -90,6 +94,8 @@
         <item>kfc</item>
         <item>kk_launcher</item>
         <item>koubei_waimai</item>
+        <item>kuaiya</item>
+        <item>lanrenzhoumo</item>
         <item>lenovo_calendar</item>
         <item>lg_browser</item>
         <item>lg_calculator</item>
@@ -118,6 +124,7 @@
         <item>lg_voice_recorder</item>
         <item>lg_weather</item>
         <item>line_deco</item>
+        <item>lizhi_fm</item>
         <item>lucid_launcher</item>
         <item>lucky_patcher</item>
         <item>maoyan</item>

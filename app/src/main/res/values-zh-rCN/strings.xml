@@ -7,7 +7,6 @@
     <string name="request">申请图标</string>
     <string name="suggest">建议</string>
 
-    <string name="feedback_mailbox">feedback@sorcererxw.com</string>
     <string name="choose_mail_app">请选择邮箱</string>
 
     <string name="welcome_title">感谢使用</string>
@@ -15,4 +14,9 @@
     <string name="welcome_close">好的</string>
     <string name="installed">已安装</string>
     <string name="not_installed">未安装</string>
+    <string name="update_fail">获取失败, 请检查网络</string>
+    <string name="find_new_version">发现新版</string>
+    <string name="download">下载</string>
+    <string name="cancel">取消</string>
+    <string name="action_apply">应用</string>
 </resources>

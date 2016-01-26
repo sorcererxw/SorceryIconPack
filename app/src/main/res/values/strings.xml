@@ -8,7 +8,6 @@
     <string name="request">Request icon</string>
     <string name="suggest">Suggest</string>
 
-    <string name="feedback_mailbox" translatable="false">feedback@sorcererxw.com</string>
     <string name="choose_mail_app">please choose a mail app</string>
 
     <string name="welcome_title">Welcome</string>
@@ -18,6 +17,11 @@
     <string name="installed">installed</string>
     <string name="not_installed">not installed</string>
 
+    <string name="find_new_version">found a new version</string>
+    <string name="download">download</string>
+    <string name="cancel">cancel</string>
+
+    <string name="update_fail">update failed, please check network</string>
 
     <string-array name="launchers">
         <item>Action</item>

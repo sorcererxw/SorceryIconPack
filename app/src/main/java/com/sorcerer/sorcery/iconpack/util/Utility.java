@@ -1,14 +1,22 @@
 package com.sorcerer.sorcery.iconpack.util;
 
+import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -63,36 +71,32 @@ public class Utility {
         }
     }
 
-    public static void downloadFile(Context context, String urlString, String filepath) {
-        try {
-            URL url = new URL(urlString);
+    public static void downloadFile(Context context, String urlString) {
+        String serviceString = Context.DOWNLOAD_SERVICE;
+        DownloadManager downloadManager;
+        downloadManager = (DownloadManager) context.getSystemService(serviceString);
 
-            //打开到url的连接
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            //以下为java IO部分，大体来说就是先检查文件夹是否存在，不存在则创建,然后的文件名重复问题，没有考虑
-            InputStream istream = connection.getInputStream();
-            String filename = urlString.substring(urlString.lastIndexOf("/") + 1);
+        Uri uri = Uri.parse(urlString);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setNotificationVisibility(DownloadManager.Request
+                .VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        long id = downloadManager.enqueue(request);
+    }
 
-            File dir = new File(filepath);
-            if (!dir.exists()) {
-                dir.mkdir();
+
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm != null) {
+            NetworkInfo[] info = cm.getAllNetworkInfo();
+            if (info != null) {
+                for (int i = 0; i < info.length; i++) {
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+                }
             }
-            File file = new File(filepath + filename);
-            file.createNewFile();
-
-            OutputStream output = new FileOutputStream(file);
-            byte[] buffer = new byte[1024 * 4];
-            while (istream.read(buffer) != -1) {
-                output.write(buffer);
-
-            }
-            output.flush();
-            output.close();
-            istream.close();
-            //最后toast出文件名，因为这个程序是单线程的，所以要下载完文件以后才会执行这一句，中间的时间类似于死机，不过多线程还没有学到
-            Toast.makeText(context, filename, Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+        return false;
     }
 }
