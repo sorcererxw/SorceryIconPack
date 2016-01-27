@@ -9,11 +9,11 @@ android {
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 6
-        versionName "alpha 0.4"
+        versionName "alpha 0.6"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

@@ -113,7 +113,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                 mailInfo.setPassword(getString(R.string.feedback_mail_password));
                 mailInfo.setFromAddress(getString(R.string.feedback_mailbox));
                 mailInfo.setToAddress("pqyljn@hotmail.com");
-                mailInfo.setSubject("Feedback-SmartSmsHelper");
+                mailInfo.setSubject("icon request");
                 mailInfo.setContent(s);
                 SendMailAsyncTask myAsyncTask = new SendMailAsyncTask();
                 myAsyncTask.execute(mailInfo);

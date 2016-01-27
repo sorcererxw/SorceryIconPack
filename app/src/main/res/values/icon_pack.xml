@@ -8,16 +8,20 @@
         <item>adwex_launcher</item>
         <item>airbnb</item>
         <item>airdroid</item>
+        <item>ali_qua</item>
         <item>alipay</item>
         <item>amazon</item>
         <item>anime_taste</item>
         <item>apex_launcher</item>
         <item>app_drawer</item>
+        <item>apple_music</item>
         <item>atom_launcher</item>
         <item>aviate_launcher</item>
         <item>b612</item>
         <item>backdrops</item>
+        <item>baicizhan</item>
         <item>baidu_input</item>
+        <item>baidu_maps</item>
         <item>baidu_pan</item>
         <item>barcode_scanner</item>
         <item>bilibili</item>
@@ -30,6 +34,7 @@
         <item>coolapk</item>
         <item>crossyroad</item>
         <item>ctrip</item>
+        <item>dayima</item>
         <item>dianping</item>
         <item>didi</item>
         <item>douban</item>
@@ -41,6 +46,7 @@
         <item>evernote</item>
         <item>eyepetizer</item>
         <item>facebook</item>
+        <item>fanliwang</item>
         <item>feedly</item>
         <item>fenghuang</item>
         <item>fenghuang_fm</item>
@@ -60,6 +66,7 @@
         <item>google_play_store</item>
         <item>google_youtube</item>
         <item>gravity_box</item>
+        <item>gudong</item>
         <item>hai360</item>
         <item>holo_launcher</item>
         <item>htc_backup</item>
@@ -80,12 +87,15 @@
         <item>htc_radio</item>
         <item>htc_settings</item>
         <item>htc_weather</item>
+        <item>icourse163</item>
+        <item>imooc</item>
         <item>inspire_launcher</item>
         <item>instagram</item>
         <item>instapaper</item>
         <item>iqiyi</item>
         <item>jd</item>
         <item>jike</item>
+        <item>jinsanciba</item>
         <item>jotter_pad</item>
         <item>juejin</item>
         <item>keep_health</item>
@@ -121,15 +131,18 @@
         <item>lg_update_center</item>
         <item>lg_video_editor</item>
         <item>lg_voice_mate</item>
-        <item>lg_voice_recorder</item>
+        <item>l1g_voice_recorder</item>
         <item>lg_weather</item>
         <item>line_deco</item>
+        <item>lingshengduoduo</item>
         <item>lizhi_fm</item>
         <item>lucid_launcher</item>
         <item>lucky_patcher</item>
         <item>maoyan</item>
         <item>meituan</item>
         <item>meituan_waimai</item>
+        <item>meituxiuxiu</item>
+        <item>meiyanxiangji</item>
         <item>miaojie</item>
         <item>momo</item>
         <item>monument_valley</item>
@@ -141,14 +154,19 @@
         <item>motorola_help</item>
         <item>motorola_migrate</item>
         <item>next_launcher</item>
+        <item>nice</item>
         <item>nine_launcher</item>
         <item>nova_launcher</item>
         <item>onedrive</item>
         <item>oneplus_community</item>
+        <item>pinglide</item>
         <item>pixolor</item>
         <item>pocket</item>
+        <item>qingting_fm</item>
         <item>qq</item>
+        <item>qq_keyboard</item>
         <item>qq_music</item>
+        <item>qq_read</item>
         <item>qzone</item>
         <item>reaper</item>
         <item>root_explorer</item>
@@ -197,12 +215,16 @@
         <item>sony_themes</item>
         <item>sony_video</item>
         <item>sony_whatsnew</item>
+        <item>sougou_keyboard</item>
         <item>steam</item>
+        <item>suning</item>
         <item>sunrise</item>
         <item>supersu</item>
         <item>taobao</item>
         <item>taobao_dianying</item>
         <item>tasker</item>
+        <item>ted</item>
+        <item>tencent_news</item>
         <item>tencent_video</item>
         <item>tieba</item>
         <item>touchpal</item>
@@ -221,14 +243,30 @@
         <item>wikipedia_beta</item>
         <item>wps</item>
         <item>wunderlist</item>
+        <item>xiachufang</item>
         <item>xiami</item>
         <item>xianyu</item>
+        <item>xiaoenai</item>
+        <item>xiaohongshu</item>
+        <item>xiaokaxiu</item>
+        <item>ximalayating</item>
         <item>xinstaller</item>
         <item>xposed</item>
+        <item>xuebajun</item>
+        <item>xunfei_keyboard</item>
         <item>yangqi</item>
+        <item>yidianzixun</item>
+        <item>yihaodian</item>
         <item>youdaodict</item>
+        <item>zaker</item>
         <item>zealer</item>
+        <item>zhangyu_keyboard</item>
+        <item>zhengdian_naozhong</item>
+        <item>zhengdian_rili</item>
         <item>zhihu</item>
         <item>zhihu_ribao</item>
+        <item>zuimeishiguang</item>
+        <item>zuimeiyingyong</item>
+        <item>zuimeizipai</item>
     </string-array>
 </resources>
