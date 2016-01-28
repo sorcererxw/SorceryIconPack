@@ -29,6 +29,8 @@ public class MailSenderInfo
     public Properties getProperties()
     {
         Properties p = new Properties();
+//        p.put("mail.smtp.starttls.enable", "true"); // added this line
+//        p.put("mail.smtp.starttls.required", "true"); // added this line
         p.put("mail.smtp.host", this.mailServerHost);
         p.put("mail.smtp.port", this.mailServerPort);
         p.put("mail.smtp.auth", validate ? "true" : "false");

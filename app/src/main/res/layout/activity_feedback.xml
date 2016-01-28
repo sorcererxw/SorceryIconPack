@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/relativeLayout_feedback_root"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,10 +15,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/textView_feedback_explain"
         android:layout_below="@+id/toolbar_feedback"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:layout_above="@+id/textView_feedback_explain">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/button_request"
@@ -40,11 +41,11 @@
     </LinearLayout>
 
     <TextView
-        android:text="If you are unable to send mail by phone\n it's my email address \n feedback@sorcererxw.com \n (press to copy)"
-        android:gravity="center"
+        android:id="@+id/textView_feedback_explain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/textView_feedback_explain"/>
+        android:gravity="center"
+        android:text="If you are unable to send mail by phone\n it's my email address \n feedback@sorcererxw.com \n (press to copy)"/>
 </RelativeLayout>

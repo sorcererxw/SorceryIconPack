@@ -10,12 +10,6 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_welcome"
-        android:orderInCategory="100"
-        android:title="@string/action_welcome"
-        app:showAsAction="never"/>
-
-    <item
         android:id="@+id/action_apply"
         android:orderInCategory="100"
         android:title="@string/action_apply"
@@ -24,6 +18,12 @@
     <item
         android:id="@+id/action_update"
         android:orderInCategory="100"
-        android:title="update"
+        android:title="@string/action_update"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_welcome"
+        android:orderInCategory="100"
+        android:title="@string/action_welcome"
         app:showAsAction="never"/>
 </menu>

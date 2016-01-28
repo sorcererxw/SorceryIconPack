@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -78,43 +79,22 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if(!Utility.isNetworkAvailable(this)){
+        if (!Utility.isNetworkAvailable(this)) {
             Toast.makeText(mContext, "network error", Toast.LENGTH_SHORT).show();
             return;
         }
         if (id == R.id.button_request) {
-            String s = "";
-            List list = Utility.getComponentInfo(this);
-            for (int i = 0; i < list.size(); i++) {
-                s += list.get(i).toString();
-                s += "------------------------------\n";
-            }
-//            Intent i = new Intent(Intent.ACTION_SEND);
-//            i.setType("message/rfc822");
-//            i.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.feedback_mailbox)});
-//            i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: icon request");
-//            i.putExtra(Intent.EXTRA_TEXT, s);
-//            try {
-//                startActivity(Intent.createChooser(i, getString(R.string.choose_mail_app)));
-//            } catch (android.content.ActivityNotFoundException ex) {
-//                Toast.makeText(this,
-//                        "There are no email clients installed.",
-//                        Toast.LENGTH_SHORT).show();
-//            }
             try {
                 MailSenderInfo mailInfo = new MailSenderInfo();
-                mailInfo.setMailServerHost("smtp.qq.com");
+                mailInfo.setMailServerHost("smtp.163.com");
                 mailInfo.setMailServerPort("25");
+
                 mailInfo.setValidate(true);
-                //                mailInfo.setUserName("feedback-sorcerer@qq.com");
-                //                mailInfo.setPassword("feedback");
-                //                mailInfo.setFromAddress("feedback-sorcerer@qq.com");
                 mailInfo.setUserName(getString(R.string.feedback_mailbox));
                 mailInfo.setPassword(getString(R.string.feedback_mail_password));
                 mailInfo.setFromAddress(getString(R.string.feedback_mailbox));
-                mailInfo.setToAddress("pqyljn@hotmail.com");
+                mailInfo.setToAddress(getString(R.string.feedback_receive_mailbox));
                 mailInfo.setSubject("icon request");
-                mailInfo.setContent(s);
                 SendMailAsyncTask myAsyncTask = new SendMailAsyncTask();
                 myAsyncTask.execute(mailInfo);
             } catch (Exception e) {
@@ -124,7 +104,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
             i.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.feedback_mailbox)});
-            i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: icon request");
+            i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: suggest");
             i.putExtra(Intent.EXTRA_TEXT, "write down your suggestion:\n");
             try {
                 startActivity(Intent.createChooser(i, getString(R.string.choose_mail_app)));
@@ -146,7 +126,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
 
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressDialog.setMessage("Progress start");
+            mProgressDialog.setMessage(getString(R.string.icon_request_sending));
             mProgressDialog.show();
         }
 
@@ -157,15 +137,26 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                 mProgressDialog.dismiss();
             }
             if (success) {
-                Toast.makeText(mContext, "send success", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(R.id.relativeLayout_feedback_root), getString(R.string
+                                .icon_request_send_success),
+                        Snackbar.LENGTH_LONG).show();
             } else {
-                Toast.makeText(mContext, "send fail", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(R.id.relativeLayout_feedback_root), getString(R.string
+                                .icon_request_send_fail),
+                        Snackbar.LENGTH_LONG).show();
             }
         }
 
         @Override
         protected Boolean doInBackground(MailSenderInfo... params) {
+            String s = "";
+            List list = Utility.getComponentInfo(getApplicationContext());
+            for (int i = 0; i < list.size(); i++) {
+                s += list.get(i).toString();
+                s += "------------------------------\n";
+            }
             try {
+                params[0].setContent(s);
                 SimpleMailSender sms = new SimpleMailSender();
                 sms.sendTextMail(params[0]);
                 return true;
@@ -173,27 +164,5 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                 return false;
             }
         }
-    }
-
-    private String organizeMail() {
-        String msg = "";
-        msg += "\n----------------------------------------\n";
-        msg += "\nProduct: " + android.os.Build.PRODUCT;
-        msg += "\nCPU_ABI: " + android.os.Build.CPU_ABI;
-        msg += "\nTAGS: " + android.os.Build.TAGS;
-        msg += "\nVERSION_CODES.BASE: " + android.os.Build.VERSION_CODES.BASE;
-        msg += "\nMODEL: " + android.os.Build.MODEL;
-        msg += "\nSDK: " + android.os.Build.VERSION.SDK;
-        msg += "\nVERSION.RELEASE: " + android.os.Build.VERSION.RELEASE;
-        msg += "\nDEVICE: " + android.os.Build.DEVICE;
-        msg += "\nDISPLAY: " + android.os.Build.DISPLAY;
-        msg += "\nBRAND: " + android.os.Build.BRAND;
-        msg += "\nBOARD: " + android.os.Build.BOARD;
-        msg += "\nFINGERPRINT: " + android.os.Build.FINGERPRINT;
-        msg += "\nID: " + android.os.Build.ID;
-        msg += "\nMANUFACTURER: " + android.os.Build.MANUFACTURER;
-        msg += "\nUSER: " + android.os.Build.USER;
-
-        return msg;
     }
 }

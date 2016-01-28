@@ -57,10 +57,22 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
                 MODE_PRIVATE);
-        if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
+        int launchTimes = sharedPreferences.getInt("launch times", 0);
+        Log.d("sip", "launch time " + launchTimes);
+        if (launchTimes == 0) {
             showWelcomeDialog();
-            sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
+        } else {
+            if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
+//                showWelcomeDialog();
+                sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
+            }
         }
+        if (launchTimes % 5 == 0) {
+            UpdateHelper updateHelper =
+                    new UpdateHelper(this);
+            updateHelper.update();
+        }
+        sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
     }
 
     private void showWelcomeDialog() {
@@ -72,8 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private IconFragment getIconFragment() {
-        IconFragment iconFragment = new IconFragment();
-        return iconFragment;
+        return new IconFragment();
     }
 
     @Override
@@ -95,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ApplyActivity.class);
             this.startActivity(intent);
         } else if (id == R.id.action_update) {
-            UpdateHelper updateHelper = new UpdateHelper(this);
+            UpdateHelper updateHelper =
+                    new UpdateHelper(this, findViewById(R.id.coordinatorLayout_main));
             updateHelper.update();
         }
         return super.onOptionsItemSelected(item);

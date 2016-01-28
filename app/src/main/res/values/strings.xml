@@ -4,6 +4,7 @@
     <string name="action_feedback">Feedback</string>
     <string name="action_welcome">Welcome</string>
     <string name="action_apply">Apply</string>
+    <string name="action_update">Update</string>
 
     <string name="request">Request icon</string>
     <string name="suggest">Suggest</string>
@@ -21,7 +22,13 @@
     <string name="download">download</string>
     <string name="cancel">cancel</string>
 
+    <string name="update_start">finding new version</string>
     <string name="update_fail">update failed, please check network</string>
+    <string name="is_last_version">It is the last version :)</string>
+
+    <string name="icon_request_sending">icon request sending</string>
+    <string name="icon_request_send_success">send success</string>
+    <string name="icon_request_send_fail">send fail</string>
 
     <string-array name="launchers">
         <item>Action</item>
