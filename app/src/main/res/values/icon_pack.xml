@@ -28,6 +28,7 @@
         <item>boxer_calendar</item>
         <item>buzz_launcher</item>
         <item>changba</item>
+        <item>chaojikechengbiao</item>
         <item>cleanmaster</item>
         <item>cloudmusic</item>
         <item>cm_theme_engine</item>
@@ -37,6 +38,8 @@
         <item>dayima</item>
         <item>dianping</item>
         <item>didi</item>
+        <item>dingding</item>
+        <item>dongdong</item>
         <item>douban</item>
         <item>dumb_ways_to_die</item>
         <item>dumb_ways_to_die_2</item>
@@ -95,15 +98,18 @@
         <item>iqiyi</item>
         <item>jd</item>
         <item>jike</item>
+        <item>jinritoutiao</item>
         <item>jinsanciba</item>
         <item>jotter_pad</item>
         <item>juejin</item>
+        <item>kechenggezi</item>
         <item>keep_health</item>
         <item>kindle</item>
         <item>kingroot</item>
         <item>kfc</item>
         <item>kk_launcher</item>
         <item>koubei_waimai</item>
+        <item>kuaikuaicha_xinhuazidian</item>
         <item>kuaiya</item>
         <item>lanrenzhoumo</item>
         <item>lenovo_calendar</item>
@@ -131,7 +137,7 @@
         <item>lg_update_center</item>
         <item>lg_video_editor</item>
         <item>lg_voice_mate</item>
-        <item>l1g_voice_recorder</item>
+        <item>lg_voice_recorder</item>
         <item>lg_weather</item>
         <item>line_deco</item>
         <item>lingshengduoduo</item>
@@ -227,6 +233,7 @@
         <item>tencent_news</item>
         <item>tencent_video</item>
         <item>tieba</item>
+        <item>timi</item>
         <item>touchpal</item>
         <item>tsf_launcher</item>
         <item>uber</item>
@@ -241,6 +248,7 @@
         <item>weibo</item>
         <item>wikipedia</item>
         <item>wikipedia_beta</item>
+        <item>wiz_note</item>
         <item>wps</item>
         <item>wunderlist</item>
         <item>xiachufang</item>
@@ -257,6 +265,7 @@
         <item>yangqi</item>
         <item>yidianzixun</item>
         <item>yihaodian</item>
+        <item>youdao_note</item>
         <item>youdaodict</item>
         <item>zaker</item>
         <item>zealer</item>
@@ -265,6 +274,7 @@
         <item>zhengdian_rili</item>
         <item>zhihu</item>
         <item>zhihu_ribao</item>
+        <item>zitiguanjia</item>
         <item>zuimeishiguang</item>
         <item>zuimeiyingyong</item>
         <item>zuimeizipai</item>
