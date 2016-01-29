@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,6 +16,8 @@ import com.sorcerer.sorcery.iconpack.models.FirVersion;
 import com.sorcerer.sorcery.iconpack.ui.activities.ApplyActivity;
 
 import org.json.JSONException;
+
+import java.io.IOException;
 
 import im.fir.sdk.FIR;
 import im.fir.sdk.VersionCheckCallback;
@@ -40,6 +43,7 @@ public class UpdateHelper {
         FIR.checkForUpdateInFIR(mContext.getString(R.string.fir_token), new VersionCheckCallback() {
             @Override
             public void onSuccess(String versionJson) {
+                Log.d("sip", versionJson);
                 try {
                     final FirVersion firVersion = new FirVersion(versionJson);
                     PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext
@@ -47,7 +51,7 @@ public class UpdateHelper {
                     if (Integer.parseInt(firVersion.getBuild()) > packageInfo.versionCode) {
                         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
                         builder.title(mContext.getString(R.string.find_new_version))
-                                .content(firVersion.getVersion() + "\n" + firVersion.getChangelog())
+                                .content(firVersion.getVersionShort() + "\n" + firVersion.getChangelog())
                                 .onAny(new MaterialDialog.SingleButtonCallback() {
                                     @Override
                                     public void onClick(@NonNull MaterialDialog dialog,
@@ -60,6 +64,7 @@ public class UpdateHelper {
                                         } else if (which == DialogAction.NEGATIVE) {
 
                                         }
+                                        dialog.dismiss();
                                     }
 
                                 })

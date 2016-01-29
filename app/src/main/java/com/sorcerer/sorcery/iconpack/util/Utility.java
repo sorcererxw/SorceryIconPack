@@ -20,9 +20,11 @@ import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -72,15 +74,32 @@ public class Utility {
     }
 
     public static void downloadFile(Context context, String urlString) {
-        String serviceString = Context.DOWNLOAD_SERVICE;
-        DownloadManager downloadManager;
-        downloadManager = (DownloadManager) context.getSystemService(serviceString);
+//        String serviceString = Context.DOWNLOAD_SERVICE;
+//        DownloadManager downloadManager;
+//        downloadManager = (DownloadManager) context.getSystemService(serviceString);
+//
+//        Uri uri = Uri.parse(urlString);
+//        DownloadManager.Request request = new DownloadManager.Request(uri);
+//        request.setNotificationVisibility(DownloadManager.Request
+//                .VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//        long id = downloadManager.enqueue(request);
 
-        Uri uri = Uri.parse(urlString);
-        DownloadManager.Request request = new DownloadManager.Request(uri);
-        request.setNotificationVisibility(DownloadManager.Request
-                .VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        long id = downloadManager.enqueue(request);
+
+//        URL url = new URL(urlString.toString());
+//        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//        conn.setConnectTimeout(20000);
+//        conn.setRequestMethod("GET");
+//
+//        if (conn.getResponseCode() == 200) {
+//            success= true;
+//        }
+//        if(conn!=null)
+//            conn.disconnect();
+//        return success;
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent .setData(Uri.parse(urlString));
+        context.startActivity(intent);
     }
 
 
