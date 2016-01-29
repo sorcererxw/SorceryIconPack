@@ -2,6 +2,8 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Icon;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -39,12 +41,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
 
         ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(getNewFragment(), "New");
         adapter.addFragment(getIconFragment(), "All");
         mViewPager.setAdapter(adapter);
 
@@ -84,7 +89,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private IconFragment getIconFragment() {
-        return new IconFragment();
+        Bundle args = new Bundle();
+        args.putInt("flag", IconFragment.FLAG_ALL);
+        IconFragment fragment = new IconFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    private IconFragment getNewFragment() {
+        Bundle args = new Bundle();
+        args.putInt("flag", IconFragment.FLAG_NEW);
+        IconFragment fragment = new IconFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override

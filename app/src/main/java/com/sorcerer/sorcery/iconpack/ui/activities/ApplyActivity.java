@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -32,7 +33,9 @@ public class ApplyActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar_apply);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
 
         mApplyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
 

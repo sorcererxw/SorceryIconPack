@@ -48,19 +48,27 @@ public class UpdateHelper {
                     final FirVersion firVersion = new FirVersion(versionJson);
                     PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext
                             .getPackageName(), 0);
-                    if (Integer.parseInt(firVersion.getBuild()) > packageInfo.versionCode) {
+                    if (Integer.parseInt(firVersion.getBuild()) > packageInfo.versionCode ) {
                         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
                         builder.title(mContext.getString(R.string.find_new_version))
-                                .content(firVersion.getVersionShort() + "\n" + firVersion.getChangelog())
+                                .content(mContext.getString(R.string.version_name) + ": " +
+                                        firVersion
+                                                .getVersionShort
+                                                        () +
+                                        "\n" +
+                                        firVersion
+                                                .getChangelog())
                                 .onAny(new MaterialDialog.SingleButtonCallback() {
                                     @Override
                                     public void onClick(@NonNull MaterialDialog dialog,
                                                         @NonNull DialogAction which) {
                                         if (which == DialogAction.POSITIVE) {
                                             Utility.downloadFile(mContext,
-                                                    firVersion.getInstallUrl());
+                                                    "http://7xqlpg.com1.z0.glb.clouddn" +
+                                                            ".com/sorcery%20icon%20pack.apk",
+                                                    firVersion.getName()+firVersion.getBuild()+"" +
+                                                            ".apk");
                                         } else if (which == DialogAction.NEUTRAL) {
-
                                         } else if (which == DialogAction.NEGATIVE) {
 
                                         }

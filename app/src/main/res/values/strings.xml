@@ -22,6 +22,7 @@
     <string name="download">download</string>
     <string name="cancel">cancel</string>
 
+    <string name="version_name">version name</string>
     <string name="update_start">finding new version</string>
     <string name="update_fail">update failed, please check network</string>
     <string name="is_last_version">It is the last version :)</string>

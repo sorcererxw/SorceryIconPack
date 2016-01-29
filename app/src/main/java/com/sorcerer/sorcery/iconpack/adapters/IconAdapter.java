@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,19 +39,25 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }
     }
 
-    public IconAdapter(Context context) {
+    public IconAdapter(Context context, int flag) {
         mContext = context;
-        loadIcons();
+        loadIcons(flag);
     }
 
-    private void loadIcons() {
+    private void loadIcons(int flag) {
         mItems = new ArrayList<>();
         final String packageName = mContext.getPackageName();
-        addIcons(mContext.getResources(), packageName);
+        addIcons(mContext.getResources(), packageName, flag);
     }
 
-    private void addIcons(Resources resources, String packageName) {
-        mIconNames = resources.getStringArray(R.array.icon_pack);
+    private void addIcons(Resources resources, String packageName, int flag) {
+        switch (flag) {
+            case IconFragment.FLAG_NEW:
+                mIconNames = resources.getStringArray(R.array.icon_pack_new);
+                break;
+            default:
+                mIconNames = resources.getStringArray(R.array.icon_pack);
+        }
         for (String name : mIconNames) {
             int res = resources.getIdentifier(name, "drawable", packageName);
             if (res != 0) {

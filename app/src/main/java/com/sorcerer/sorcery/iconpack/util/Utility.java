@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.widget.Toast;
 
@@ -27,6 +28,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -50,6 +53,12 @@ public class Utility {
                     resolveInfo.loadLabel(pm).toString());
             appInfoList.add(tempAppInfo);
         }
+        Collections.sort(appInfoList, new Comparator<AppInfo>() {
+            @Override
+            public int compare(AppInfo lhs, AppInfo rhs) {
+                return lhs.getName().compareTo(rhs.getName());
+            }
+        });
         return appInfoList;
     }
 
@@ -73,16 +82,18 @@ public class Utility {
         }
     }
 
-    public static void downloadFile(Context context, String urlString) {
-//        String serviceString = Context.DOWNLOAD_SERVICE;
-//        DownloadManager downloadManager;
-//        downloadManager = (DownloadManager) context.getSystemService(serviceString);
-//
-//        Uri uri = Uri.parse(urlString);
-//        DownloadManager.Request request = new DownloadManager.Request(uri);
-//        request.setNotificationVisibility(DownloadManager.Request
-//                .VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-//        long id = downloadManager.enqueue(request);
+    public static void downloadFile(Context context, String urlString, String filename) {
+        String serviceString = Context.DOWNLOAD_SERVICE;
+        DownloadManager downloadManager;
+        downloadManager = (DownloadManager) context.getSystemService(serviceString);
+
+        Uri uri = Uri.parse(urlString);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setMimeType("application/vnd.android.package-archive");
+        request.setNotificationVisibility(DownloadManager.Request
+                .VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+        long id = downloadManager.enqueue(request);
 
 
 //        URL url = new URL(urlString.toString());
@@ -97,9 +108,9 @@ public class Utility {
 //            conn.disconnect();
 //        return success;
 
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent .setData(Uri.parse(urlString));
-        context.startActivity(intent);
+//        Intent intent = new Intent(Intent.ACTION_VIEW);
+//        intent .setData(Uri.parse(urlString));
+//        context.startActivity(intent);
     }
 
 

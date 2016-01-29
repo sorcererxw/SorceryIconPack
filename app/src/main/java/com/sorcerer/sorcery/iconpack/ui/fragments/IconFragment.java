@@ -15,7 +15,12 @@ import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
 
 public class IconFragment extends Fragment {
 
+    private int mFlag;
+    public static final int FLAG_ALL = 0;
+    public static final int FLAG_NEW = 1;
+
     public IconFragment() {
+
     }
 
     @Override
@@ -28,7 +33,7 @@ public class IconFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         gridView.setLayoutManager(layoutManager);
         gridView.setHasFixedSize(true);
-        gridView.setAdapter(new IconAdapter(view.getContext()));
+        gridView.setAdapter(new IconAdapter(view.getContext(), getArguments().getInt("flag", 0)));
         return view;
     }
 
