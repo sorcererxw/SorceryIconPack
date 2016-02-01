@@ -16,8 +16,23 @@ import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
 public class IconFragment extends Fragment {
 
     private int mFlag;
-    public static final int FLAG_ALL = 0;
     public static final int FLAG_NEW = 1;
+    public static final int FLAG_ALL = 0;
+    public static final int FLAG_ALI = 9;
+    public static final int FLAG_CYANOGENMOD = 14;
+    public static final int FLAG_BAIDU = 8;
+    public static final int FLAG_GOOGLE = 10;
+    public static final int FLAG_HTC = 2;
+    public static final int FLAG_LENOVO = 3;
+    public static final int FLAG_LG = 13;
+    public static final int FLAG_MOTO = 12;
+    public static final int FLAG_MICROSOFT = 11;
+    public static final int FLAG_SAMSUNG = 5;
+    public static final int FLAG_SONY = 6;
+    public static final int FLAG_TENCENT = 7;
+    public static final int FLAG_XIAOMI = 4;
+
+    private RecyclerView mGridView;
 
     public IconFragment() {
 
@@ -27,13 +42,13 @@ public class IconFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
-        RecyclerView gridView = (RecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
+        mGridView = (RecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
         GridLayoutManager layoutManager = new GridLayoutManager(view.getContext(), calcNumOfRows());
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
-        gridView.setLayoutManager(layoutManager);
-        gridView.setHasFixedSize(true);
-        gridView.setAdapter(new IconAdapter(view.getContext(), getArguments().getInt("flag", 0)));
+        mGridView.setLayoutManager(layoutManager);
+        mGridView.setHasFixedSize(true);
+        mGridView.setAdapter(new IconAdapter(view.getContext(), getArguments().getInt("flag", 0)));
         return view;
     }
 
@@ -41,6 +56,12 @@ public class IconFragment extends Fragment {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        return (int) (size.x / getResources().getDimension(R.dimen.icon_grid_item_size));
+        float s = getResources().getDimension(R.dimen.icon_grid_item_size) + getResources()
+                .getDimension(R.dimen.icon_grid_item_margin);
+        return (int) (size.x / s);
+    }
+
+    public RecyclerView getRecyclerView(){
+        return mGridView;
     }
 }

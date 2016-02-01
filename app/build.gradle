@@ -8,8 +8,8 @@ android {
         applicationId "com.sorcerer.sorcery.iconpack"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 13
-        versionName "1.0"
+        versionCode  15
+        versionName "2.0"
     }
     buildTypes {
         release {
@@ -37,4 +37,5 @@ dependencies {
     compile files('libs/mail.jar')
     compile files('libs/activation.jar')
     compile files('libs/additionnal.jar')
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 }

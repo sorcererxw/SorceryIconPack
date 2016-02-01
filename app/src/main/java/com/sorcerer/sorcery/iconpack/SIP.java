@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
+import android.content.pm.ApplicationInfo;
 
 import im.fir.sdk.FIR;
 
@@ -12,5 +13,6 @@ public class SIP extends Application{
     public void onCreate() {
         super.onCreate();
         FIR.init(this);
+        Application a;
     }
 }

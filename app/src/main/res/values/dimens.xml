@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="icon_grid_item_size">64dp</dimen>
+    <dimen name="icon_grid_item_size">68dp</dimen>
+    <dimen name="icon_grid_item_margin">8dp</dimen>
     <dimen name="dialog_icon_size">96dp</dimen>
 </resources>

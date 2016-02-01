@@ -2,38 +2,39 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Icon;
-import android.os.Build;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuInflater;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
+import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
-import im.fir.sdk.FIR;
-import im.fir.sdk.VersionCheckCallback;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
 
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
+    private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +42,51 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+//        }
+        setToolbarDoubleTap(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
+        mNavigationView = (NavigationView) findViewById(R.id.navigation_main);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
+                R.string.nav_open, R.string.nav_close) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+                syncState();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                invalidateOptionsMenu();
+                syncState();
+            }
+        };
+        mDrawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+        mNavigationView.setNavigationItemSelectedListener(this);
+        View headView = mNavigationView.getHeaderView(0);
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tapet_wall);
+//        ((ImageView) headView.findViewById(R.id.imageView_nav_head)).setImageBitmap(bitmap);
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
 
         ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(getNewFragment(), "New");
-        adapter.addFragment(getIconFragment(), "All");
+        generateFragments(adapter);
         mViewPager.setAdapter(adapter);
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
+
+        UpdateHelper updateHelper =
+                new UpdateHelper(this);
+        updateHelper.update();
     }
 
     @Override
@@ -73,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (launchTimes % 5 == 0) {
-            UpdateHelper updateHelper =
-                    new UpdateHelper(this);
-            updateHelper.update();
+//            UpdateHelper updateHelper =
+//                    new UpdateHelper(this);
+//            updateHelper.update();
         }
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
     }
@@ -88,45 +120,111 @@ public class MainActivity extends AppCompatActivity {
                 .build().show();
     }
 
-    private IconFragment getIconFragment() {
+    private void setToolbarDoubleTap(Toolbar toolbar) {
+        final GestureDetector detector = new GestureDetector(this,
+                new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
+                    @Override
+                    public void onDoubleTap() {
+                        int index = mViewPager.getCurrentItem();
+                        ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
+                        IconFragment fragment = (IconFragment) adapter.getItem(index);
+                        fragment.getRecyclerView().smoothScrollToPosition(0);
+                    }
+                }));
+        toolbar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                detector.onTouchEvent(event);
+                return true;
+            }
+        });
+    }
+
+    private IconFragment getIconFragment(int flag) {
         Bundle args = new Bundle();
-        args.putInt("flag", IconFragment.FLAG_ALL);
+        args.putInt("flag", flag);
         IconFragment fragment = new IconFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
-    private IconFragment getNewFragment() {
-        Bundle args = new Bundle();
-        args.putInt("flag", IconFragment.FLAG_NEW);
-        IconFragment fragment = new IconFragment();
-        fragment.setArguments(args);
-        return fragment;
+    /*
+    <string-array name="tab_name">
+        <item>new</item>
+        <item>all</item>
+        <item>ALi</item>
+        <item>Baidu</item>
+        <item>Cyanogenmod</item>
+        <item>Google</item>
+        <item>HTC</item>
+        <item>Lenovo</item>
+        <item>LG</item>
+        <item>Moto</item>
+        <item>Microsoft</item>
+        <item>Samsung</item>
+        <item>SONY</item>
+        <item>Tencent</item>
+        <item>Xiaomi</item>
+    </string-array>
+     */
+
+    private void generateFragments(ViewPageAdapter adapter) {
+        String[] name = getResources().getStringArray(R.array.tab_name);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_NEW), name[0]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_ALL), name[1]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_ALI), name[2]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_BAIDU), name[3]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_CYANOGENMOD), name[4]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_GOOGLE), name[5]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_HTC), name[6]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_LENOVO), name[7]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_LG), name[8]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_MOTO), name[9]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_MICROSOFT), name[10]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_SAMSUNG), name[11]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_SONY), name[12]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_TENCENT), name[13]);
+        adapter.addFragment(getIconFragment(IconFragment.FLAG_XIAOMI), name[14]);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if (id == R.id.action_welcome) {
+//
+//
+//        } else if (id == R.id.action_update) {
+//
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_feedback) {
-            Intent intent = new Intent(this, FeedbackActivity.class);
-            this.startActivity(intent);
-        } else if (id == R.id.action_welcome) {
-            showWelcomeDialog();
-        } else if (id == R.id.action_apply) {
+        if (id == R.id.nav_item_icon) {
+
+        } else if (id == R.id.nav_item_apply) {
             Intent intent = new Intent(this, ApplyActivity.class);
             this.startActivity(intent);
-        } else if (id == R.id.action_update) {
+        } else if (id == R.id.nav_item_feedback) {
+            Intent intent = new Intent(this, FeedbackActivity.class);
+            this.startActivity(intent);
+        } else if (id == R.id.nav_item_welcome) {
+            showWelcomeDialog();
+        } else if (id == R.id.nav_item_update) {
             UpdateHelper updateHelper =
                     new UpdateHelper(this, findViewById(R.id.coordinatorLayout_main));
             updateHelper.update();
         }
-        return super.onOptionsItemSelected(item);
+        mDrawerLayout.closeDrawers();
+        return true;
     }
 }

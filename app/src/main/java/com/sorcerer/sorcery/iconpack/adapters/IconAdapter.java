@@ -52,11 +52,53 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     private void addIcons(Resources resources, String packageName, int flag) {
         switch (flag) {
+            case IconFragment.FLAG_ALL:
+                mIconNames = resources.getStringArray(R.array.icon_pack);
+                break;
             case IconFragment.FLAG_NEW:
                 mIconNames = resources.getStringArray(R.array.icon_pack_new);
                 break;
+            case IconFragment.FLAG_ALI:
+                mIconNames = resources.getStringArray(R.array.icon_pack_ali);
+                break;
+            case IconFragment.FLAG_BAIDU:
+                mIconNames = resources.getStringArray(R.array.icon_pack_baidu);
+                break;
+            case IconFragment.FLAG_CYANOGENMOD:
+                mIconNames = resources.getStringArray(R.array.icon_pack_cyanogenmod);
+                break;
+            case IconFragment.FLAG_GOOGLE:
+                mIconNames = resources.getStringArray(R.array.icon_pack_google);
+                break;
+            case IconFragment.FLAG_HTC:
+                mIconNames = resources.getStringArray(R.array.icon_pack_htc);
+                break;
+            case IconFragment.FLAG_LENOVO:
+                mIconNames = resources.getStringArray(R.array.icon_pack_lenovo);
+                break;
+            case IconFragment.FLAG_LG:
+                mIconNames = resources.getStringArray(R.array.icon_pack_lg);
+                break;
+            case IconFragment.FLAG_MICROSOFT:
+                mIconNames = resources.getStringArray(R.array.icon_pack_microsoft);
+                break;
+            case IconFragment.FLAG_MOTO:
+                mIconNames = resources.getStringArray(R.array.icon_pack_moto);
+                break;
+            case IconFragment.FLAG_SAMSUNG:
+                mIconNames = resources.getStringArray(R.array.icon_pack_samsung);
+                break;
+            case IconFragment.FLAG_SONY:
+                mIconNames = resources.getStringArray(R.array.icon_pack_sony);
+                break;
+            case IconFragment.FLAG_TENCENT:
+                mIconNames = resources.getStringArray(R.array.icon_pack_tencent);
+                break;
+            case IconFragment.FLAG_XIAOMI:
+                mIconNames = resources.getStringArray(R.array.icon_pack_xiaomi);
+                break;
             default:
-                mIconNames = resources.getStringArray(R.array.icon_pack);
+                mIconNames = new String[]{""};
         }
         for (String name : mIconNames) {
             int res = resources.getIdentifier(name, "drawable", packageName);

@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
+        <item>a500px</item>
+        <item>aillis</item>
+        <item>anyview</item>
+        <item>app_settings</item>
+        <item>arrow_launcher</item>
+        <item>baidu_nuomi</item>
+        <item>cabinet</item>
+        <item>calculator</item>
+        <item>cortana</item>
+        <item>documents</item>
+        <item>douguomeishi</item>
+        <item>fenqile</item>
+        <item>flappy_bird</item>
+        <item>flynx</item>
+        <item>google_inbox</item>
+        <item>hupo_weather</item>
+        <item>jd_wallet</item>
+        <item>lastpass</item>
+        <item>lbe</item>
+        <item>lbe_pingxingkongjian</item>
+        <item>lightalk</item>
+        <item>mi_fit</item>
+        <item>microsoft_account</item>
+        <item>microsoft_excel</item>
+        <item>microsoft_office_mobile</item>
+        <item>microsoft_onenote</item>
+        <item>microsoft_outlook</item>
+        <item>microsoft_powerpoint</item>
+        <item>microsoft_word</item>
+        <item>moto_alert</item>
+        <item>moto_assist</item>
+        <item>moto_body</item>
+        <item>moto_camera</item>
+        <item>moto_connect</item>
+        <item>moto_gallery</item>
+        <item>moto_help</item>
+        <item>moto_migrate</item>
+        <item>moto_moto</item>
+        <item>moto_radio</item>
+        <item>moto_updater</item>
+        <item>olo</item>
+        <item>peel_smart_remote</item>
+        <item>psiphon</item>
+        <item>rar</item>
+        <item>same</item>
+        <item>samsung_gear_manager</item>
+        <item>sanguliupo</item>
+        <item>spendee</item>
+        <item>stack_exchange</item>
+        <item>subway_surfers</item>
+        <item>suishouji</item>
+        <item>tapet</item>
+        <item>terminal</item>
+        <item>terminal_emulator</item>
+        <item>texpand</item>
+        <item>versus</item>
+        <item>viper4android</item>
+        <item>wandoujia_qingzhuomian</item>
+        <item>wangyi_youqian</item>
+        <item>weizhong_bank</item>
+        <item>wifi_key</item>
+        <item>zhuanxin              </item>
         <item>a360_cloud</item>
         <item>acfun</item>
         <item>adaway</item>
@@ -87,15 +149,235 @@
         <item>zarchiver</item>
     </string-array>
 
+    <string-array name="icon_pack_samsung">
+        <item>samsung_apps</item>
+        <item>samsung_browser</item>
+        <item>samsung_calculator</item>
+        <item>samsung_calendar</item>
+        <item>samsung_camera</item>
+        <item>samsung_clock</item>
+        <item>samsung_contacts</item>
+        <item>samsung_drawer</item>
+        <item>samsung_email</item>
+        <item>samsung_files</item>
+        <item>samsung_gallery</item>
+        <item>samsung_gear_manager</item>
+        <item>samsung_music</item>
+        <item>samsung_pay</item>
+        <item>samsung_phone</item>
+        <item>samsung_settings</item>
+        <item>samsung_smart_manager</item>
+        <item>samsung_smemo</item>
+        <item>samsung_sms</item>
+        <item>samsung_theme</item>
+        <item>samsung_video</item>
+        <item>samsung_voice</item>
+    </string-array>
+
+    <string-array name="icon_pack_htc">
+        <item>htc_backup</item>
+        <item>htc_browser</item>
+        <item>htc_calculator</item>
+        <item>htc_calendar</item>
+        <item>htc_camera</item>
+        <item>htc_clock</item>
+        <item>htc_contacts</item>
+        <item>htc_dot_view</item>
+        <item>htc_drawer</item>
+        <item>htc_email</item>
+        <item>htc_files</item>
+        <item>htc_gallery</item>
+        <item>htc_guide</item>
+        <item>htc_messages</item>
+        <item>htc_music</item>
+        <item>htc_phone</item>
+        <item>htc_radio</item>
+        <item>htc_settings</item>
+        <item>htc_tasks</item>
+        <item>htc_weather</item>
+    </string-array>
+
+    <string-array name="icon_pack_sony">
+        <item>sony_album</item>
+        <item>sony_backup</item>
+        <item>sony_browser</item>
+        <item>sony_calculator</item>
+        <item>sony_calendar</item>
+        <item>sony_camera</item>
+        <item>sony_clock</item>
+        <item>sony_contacts</item>
+        <item>sony_dialer</item>
+        <item>sony_email</item>
+        <item>sony_movie_creator</item>
+        <item>sony_music</item>
+        <item>sony_radio</item>
+        <item>sony_select</item>
+        <item>sony_settings</item>
+        <item>sony_sketch</item>
+        <item>sony_sms</item>
+        <item>sony_themes</item>
+        <item>sony_video</item>
+        <item>sony_whatsnew</item>
+    </string-array>
+
+    <string-array name="icon_pack_lenovo">
+        <item>lenovo_calculator</item>
+        <item>lenovo_calendar</item>
+        <item>lenovo_file_browser</item>
+        <item>lenovo_music</item>
+        <item>lenovo_radio</item>
+        <item>lenovo_security</item>
+        <item>lenovo_shareit</item>
+        <item>lenovo_syncit</item>
+    </string-array>
+
+    <string-array name="icon_pack_xiaomi">
+        <item>mi_fit</item>
+        <item>miui_account</item>
+        <item>miui_authenticator</item>
+        <item>miui_bug_report</item>
+        <item>miui_compass</item>
+        <item>miui_controller</item>
+        <item>miui_fm_radio</item>
+        <item>miui_forum</item>
+        <item>miui_gallery</item>
+        <item>miui_music</item>
+        <item>miui_notes</item>
+        <item>miui_scanner</item>
+        <item>miui_security</item>
+        <item>miui_transfer</item>
+        <item>miui_video</item>
+        <item>miui_weather</item>
+    </string-array>
+
+    <string-array name="icon_pack_google">
+        <item>google_calendar</item>
+        <item>google_hangout</item>
+        <item>google_inbox</item>
+        <item>google_keep</item>
+        <item>google_maps</item>
+        <item>google_messenger</item>
+        <item>google_now_launcher</item>
+        <item>google_opinion_rewards</item>
+        <item>google_play_books</item>
+        <item>google_play_games</item>
+        <item>google_play_movies</item>
+        <item>google_play_music</item>
+        <item>google_play_newsstand</item>
+        <item>google_play_store</item>
+        <item>google_translate</item>
+        <item>google_youtube</item>
+    </string-array>
+
+    <string-array name="icon_pack_baidu">
+        <item>baidu_input</item>
+        <item>baidu_maps</item>
+        <item>baidu_pan</item>
+        <item>baidu_nuomi</item>
+        <item>tieba</item>
+    </string-array>
+
+    <string-array name="icon_pack_lg">
+        <item>lg_browser</item>
+        <item>lg_calculator</item>
+        <item>lg_calendar</item>
+        <item>lg_camera</item>
+        <item>lg_clock</item>
+        <item>lg_contacts</item>
+        <item>lg_downloads</item>
+        <item>lg_email</item>
+        <item>lg_files</item>
+        <item>lg_gallery</item>
+        <item>lg_health</item>
+        <item>lg_messages</item>
+        <item>lg_music</item>
+        <item>lg_notebook</item>
+        <item>lg_phone</item>
+        <item>lg_quick_remote</item>
+        <item>lg_quickmemo</item>
+        <item>lg_radio</item>
+        <item>lg_remote_call_service</item>
+        <item>lg_settings</item>
+        <item>lg_smartworld</item>
+        <item>lg_task_manager</item>
+        <item>lg_tasks</item>
+        <item>lg_update_center</item>
+        <item>lg_video_editor</item>
+        <item>lg_voice_mate</item>
+        <item>lg_voice_recorder</item>
+        <item>lg_weather</item>
+    </string-array>
+
+    <string-array name="icon_pack_tencent">
+        <item>lightalk</item>
+        <item>qq</item>
+        <item>qq_browser</item>
+        <item>qq_keyboard</item>
+        <item>qq_music</item>
+        <item>qq_read</item>
+        <item>qq_secure</item>
+        <item>qzone</item>
+        <item>tencent_map</item>
+        <item>tencent_news</item>
+        <item>tencent_video</item>
+        <item>wechat</item>
+    </string-array>
+
+    <string-array name="icon_pack_moto">
+        <item>moto_alert</item>
+        <item>moto_assist</item>
+        <item>moto_body</item>
+        <item>moto_camera</item>
+        <item>moto_connect</item>
+        <item>moto_gallery</item>
+        <item>moto_help</item>
+        <item>moto_migrate</item>
+        <item>moto_moto</item>
+        <item>moto_radio</item>
+        <item>moto_updater</item>
+    </string-array>
+
+    <string-array name="icon_pack_ali">
+        <item>alipay</item>
+        <item>dingding</item>
+        <item>koubei_waimai</item>
+        <item>miaojie</item>
+        <item>taobao</item>
+        <item>taobao_dianying</item>
+        <item>taobao_nongcun</item>
+    </string-array>
+
+    <string-array name="icon_pack_microsoft">
+        <item>arrow_launcher</item>
+        <item>cortana</item>
+        <item>microsoft_account</item>
+        <item>microsoft_excel</item>
+        <item>microsoft_office_mobile</item>
+        <item>microsoft_onenote</item>
+        <item>microsoft_outlook</item>
+        <item>microsoft_powerpoint</item>
+        <item>microsoft_word</item>
+        <item>minecraft</item>
+        <item>onedrive</item>
+    </string-array>
+
+    <string-array name="icon_pack_cyanogenmod">
+        <item>audiofx</item>
+        <item>cm_theme_engine</item>
+        <item>cyanogenmod_explorer</item>
+    </string-array>
+
     <string-array name="icon_pack">
         <item>a115</item>
         <item>a360_cloud</item>
         <item>a12306</item>
+        <item>a500px</item>
         <item>acfun</item>
         <item>action_launcher</item>
         <item>adaway</item>
         <item>advanced_download_manager</item>
         <item>adw_launcher</item>
+        <item>aillis</item>
         <item>adwex_launcher</item>
         <item>airbnb</item>
         <item>airdroid</item>
@@ -104,9 +386,12 @@
         <item>amazon</item>
         <item>android_pay</item>
         <item>anime_taste</item>
+        <item>anyview</item>
         <item>apex_launcher</item>
         <item>app_drawer</item>
+        <item>app_settings</item>
         <item>apple_music</item>
+        <item>arrow_launcher</item>
         <item>atom_launcher</item>
         <item>audiofx</item>
         <item>autodesk_pixlr</item>
@@ -117,6 +402,7 @@
         <item>baicizhan</item>
         <item>baidu_input</item>
         <item>baidu_maps</item>
+        <item>baidu_nuomi</item>
         <item>baidu_pan</item>
         <item>barcode_scanner</item>
         <item>bbc_news</item>
@@ -125,6 +411,8 @@
         <item>browser</item>
         <item>busybox</item>
         <item>buzz_launcher</item>
+        <item>cabinet</item>
+        <item>calculator</item>
         <item>camera</item>
         <item>camera360</item>
         <item>camscanner</item>
@@ -135,6 +423,7 @@
         <item>cloudmusic</item>
         <item>cm_theme_engine</item>
         <item>coolapk</item>
+        <item>cortana</item>
         <item>crossyroad</item>
         <item>ctrip</item>
         <item>cyanogenmod_explorer</item>
@@ -143,9 +432,11 @@
         <item>didaqingdan</item>
         <item>didi</item>
         <item>dingding</item>
+        <item>documents</item>
         <item>dolphin_browser</item>
         <item>dongdong</item>
         <item>douban</item>
+        <item>douguomeishi</item>
         <item>douyu</item>
         <item>download</item>
         <item>duduribao</item>
@@ -163,8 +454,11 @@
         <item>feedly</item>
         <item>fenghuang</item>
         <item>fenghuang_fm</item>
+        <item>fenqile</item>
         <item>fit_time</item>
+        <item>flappy_bird</item>
         <item>flipboard</item>
+        <item>flynx</item>
         <item>fmradio</item>
         <item>fotor</item>
         <item>gallery</item>
@@ -172,6 +466,7 @@
         <item>go_launcher</item>
         <item>google_calendar</item>
         <item>google_hangout</item>
+        <item>google_inbox</item>
         <item>google_keep</item>
         <item>google_messenger</item>
         <item>google_now_launcher</item>
@@ -208,6 +503,7 @@
         <item>htc_settings</item>
         <item>htc_tasks</item>
         <item>htc_weather</item>
+        <item>hupo_weather</item>
         <item>icourse163</item>
         <item>imooc</item>
         <item>ingress</item>
@@ -217,6 +513,7 @@
         <item>iqiyi</item>
         <item>it_home</item>
         <item>jd</item>
+        <item>jd_wallet</item>
         <item>jianshu</item>
         <item>jike</item>
         <item>jinritoutiao</item>
@@ -234,6 +531,9 @@
         <item>kuaikuaicha_xinhuazidian</item>
         <item>kuaiya</item>
         <item>lanrenzhoumo</item>
+        <item>lastpass</item>
+        <item>lbe</item>
+        <item>lbe_pingxingkongjian</item>
         <item>ledongli</item>
         <item>lenovo_calculator</item>
         <item>lenovo_calendar</item>
@@ -270,8 +570,10 @@
         <item>lg_voice_mate</item>
         <item>lg_voice_recorder</item>
         <item>lg_weather</item>
+        <item>lightalk</item>
         <item>line_deco</item>
         <item>lingshengduoduo</item>
+        <item>link_bubble</item>
         <item>lizhi_fm</item>
         <item>lucid_launcher</item>
         <item>lucky_patcher</item>
@@ -282,7 +584,15 @@
         <item>meituxiuxiu</item>
         <item>meiyanxiangji</item>
         <item>messaging</item>
+        <item>mi_fit</item>
         <item>miaojie</item>
+        <item>microsoft_account</item>
+        <item>microsoft_excel</item>
+        <item>microsoft_office_mobile</item>
+        <item>microsoft_onenote</item>
+        <item>microsoft_outlook</item>
+        <item>microsoft_powerpoint</item>
+        <item>microsoft_word</item>
         <item>minecraft</item>
         <item>miui_account</item>
         <item>miui_authenticator</item>
@@ -301,24 +611,31 @@
         <item>miui_weather</item>
         <item>momo</item>
         <item>monument_valley</item>
-        <item>motorola_alert</item>
-        <item>motorola_assist</item>
-        <item>motorola_camera</item>
-        <item>motorola_connect</item>
-        <item>motorola_gallery</item>
-        <item>motorola_help</item>
-        <item>motorola_migrate</item>
+        <item>moto_alert</item>
+        <item>moto_assist</item>
+        <item>moto_body</item>
+        <item>moto_camera</item>
+        <item>moto_connect</item>
+        <item>moto_gallery</item>
+        <item>moto_help</item>
+        <item>moto_migrate</item>
+        <item>moto_moto</item>
+        <item>moto_radio</item>
+        <item>moto_updater</item>
         <item>music</item>
         <item>next_launcher</item>
         <item>nice</item>
         <item>nine_launcher</item>
         <item>nova_launcher</item>
+        <item>olo</item>
         <item>onedrive</item>
         <item>oneplus_community</item>
+        <item>peel_smart_remote</item>
         <item>pinglide</item>
         <item>pixolor</item>
         <item>pocket</item>
         <item>poweramp</item>
+        <item>psiphon</item>
         <item>qingting_fm</item>
         <item>qq</item>
         <item>qq_browser</item>
@@ -327,8 +644,10 @@
         <item>qq_read</item>
         <item>qq_secure</item>
         <item>qzone</item>
+        <item>rar</item>
         <item>reaper</item>
         <item>root_explorer</item>
+        <item>same</item>
         <item>samsung_apps</item>
         <item>samsung_browser</item>
         <item>samsung_calculator</item>
@@ -340,6 +659,7 @@
         <item>samsung_email</item>
         <item>samsung_files</item>
         <item>samsung_gallery</item>
+        <item>samsung_gear_manager</item>
         <item>samsung_music</item>
         <item>samsung_pay</item>
         <item>samsung_phone</item>
@@ -350,6 +670,7 @@
         <item>samsung_theme</item>
         <item>samsung_video</item>
         <item>samsung_voice</item>
+        <item>sanguliupo</item>
         <item>sd_maid</item>
         <item>shadowsocks</item>
         <item>shanbay</item>
@@ -383,8 +704,12 @@
         <item>sony_whatsnew</item>
         <item>sougou_keyboard</item>
         <item>sound_recorder</item>
+        <item>spendee</item>
+        <item>stack_exchange</item>
         <item>steam</item>
+        <item>subway_surfers</item>
         <item>suibiji</item>
+        <item>suishouji</item>
         <item>suning</item>
         <item>sunrise</item>
         <item>supersu</item>
@@ -392,12 +717,16 @@
         <item>taobao</item>
         <item>taobao_dianying</item>
         <item>taobao_nongcun</item>
+        <item>tapet</item>
         <item>tasker</item>
         <item>ted</item>
         <item>telegram</item>
         <item>tencent_map</item>
         <item>tencent_news</item>
         <item>tencent_video</item>
+        <item>terminal</item>
+        <item>terminal_emulator</item>
+        <item>texpand</item>
         <item>tieba</item>
         <item>timi</item>
         <item>titanium_backup</item>
@@ -407,15 +736,21 @@
         <item>twitter</item>
         <item>uber</item>
         <item>uc</item>
+        <item>versus</item>
+        <item>viper4android</item>
         <item>vsco</item>
         <item>vst</item>
         <item>wandoujia</item>
+        <item>wandoujia_qingzhuomian</item>
         <item>wandoujia_yilan</item>
         <item>wangxin</item>
         <item>wangyi_news</item>
+        <item>wangyi_youqian</item>
         <item>weather_timeline</item>
         <item>wechat</item>
         <item>weibo</item>
+        <item>weizhong_bank</item>
+        <item>wifi_key</item>
         <item>wikipedia</item>
         <item>wikipedia_beta</item>
         <item>wiz_note</item>
@@ -448,6 +783,7 @@
         <item>zhengdian_naozhong</item>
         <item>zhengdian_rili</item>
         <item>zhihu</item>
+        <item>zhuanxin</item>
         <item>zhihu_ribao</item>
         <item>zitiguanjia</item>
         <item>zuimeishiguang</item>

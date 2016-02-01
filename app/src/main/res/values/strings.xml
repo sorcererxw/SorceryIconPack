@@ -31,6 +31,33 @@
     <string name="icon_request_send_success">send success</string>
     <string name="icon_request_send_fail">send fail</string>
 
+    <string name="nav_open" translatable="false">open</string>
+    <string name="nav_close" translatable="false">close</string>
+
+    <string name="nav_item_icon">icons</string>
+    <string name="nav_item_apply">apply</string>
+    <string name="nav_item_feedback">feedback</string>
+    <string name="nav_item_update">update</string>
+    <string name="nav_item_welcome">welcome</string>
+
+    <string-array name="tab_name">
+        <item>new</item>
+        <item>all</item>
+        <item>ALi</item>
+        <item>Baidu</item>
+        <item>Cyanogenmod</item>
+        <item>Google</item>
+        <item>HTC</item>
+        <item>Lenovo</item>
+        <item>LG</item>
+        <item>Moto</item>
+        <item>Microsoft</item>
+        <item>Samsung</item>
+        <item>SONY</item>
+        <item>Tencent</item>
+        <item>Xiaomi</item>
+    </string-array>
+
     <string-array name="launchers">
         <item>Action</item>
         <item>Adwex</item>
@@ -86,7 +113,10 @@
         <!--<item>S Launcher|com.s.launcher</item>-->
         <item>Smart Launcher|ginlemon.flowerfree</item>
         <!--<item>Smart Launcher Pro|ginlemon.flowerpro</item>-->
-        <item>Solo Launcher|home.solo.launcher.free</item>
+        <!--<item>Solo Launcher|home.solo.launcher.free</item>-->
         <item>TSF Launcher|com.tsf.shell</item>
     </string-array>
+
+    <bool name="config_iconpack">true</bool>
+
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_item_icon"
+            android:title="@string/nav_item_icon"/>
+
+        <item
+            android:id="@+id/nav_item_apply"
+            android:title="@string/nav_item_apply"/>
+
+        <item
+            android:id="@+id/nav_item_feedback"
+            android:title="@string/nav_item_feedback"/>
+    </group>
+
+
+    <item
+        android:id="@+id/nav_item_welcome"
+        android:title="@string/nav_item_welcome"/>
+
+    <item
+        android:id="@+id/nav_item_update"
+        android:title="@string/nav_item_update"/>
+
+
+</menu>
