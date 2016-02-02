@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- NOVA LAUNCHER STUFF -->
+    <item
+        component=":LAUNCHER_ACTION_APP_DRAWER"
+        drawable="app_drawer" />
+    <!--<item-->
+        <!--component=":BROWSER"-->
+        <!--drawable="google_browser_icon" />-->
+    <!--<item-->
+        <!--component=":SMS"-->
+        <!--drawable="generic_sms_amber" />-->
+    <!--<item-->
+        <!--component=":CALCULATOR"-->
+        <!--drawable="google_calculator" />-->
+    <!--<item-->
+        <!--component=":CALENDAR"-->
+        <!--drawable="google_calendar" />-->
+    <!--<item-->
+        <!--component=":CAMERA"-->
+        <!--drawable="google_camera_kit_kat" />-->
+    <!--<item-->
+        <!--component=":CLOCK"-->
+        <!--drawable="android_clock" />-->
+    <!--<item-->
+        <!--component=":CONTACTS"-->
+        <!--drawable="contacts_magnify_variant" />-->
+    <!--<item-->
+        <!--component=":EMAIL"-->
+        <!--drawable="generic_email" />-->
+
+    <!--<item-->
+        <!--component=":GALLERY"-->
+        <!--drawable="generic_gallery" />-->
+
+    <!--<item-->
+        <!--component=":PHONE"-->
+        <!--drawable="phone_sygnal_variant" />-->
+
     <calendar
         component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}"
         prefix="google_calendar_"/>
@@ -2542,7 +2579,7 @@
         drawable="microsoft_onenote"/>
     <item
         component="ComponentInfo{jp.naver.linecamera.android/jp.naver.linecamera.android.activity.ProxyActivity}"
-        drawable="aillis"/>
+        drawable="line_camera"/>
     <item
         component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}"
         drawable="calculator"/>
@@ -2622,116 +2659,116 @@
         component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}"
         drawable="email"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.psiphon3/com.psiphon3.StatusActivity}"
+        drawable="psiphon"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.douban.book.reader/com.douban.book.reader.activity.WelcomeActivity_}"
+        drawable="douban_read"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.ustwo.monumentvalley.underground/com.ustwo.deviceutil.MainActivity}"
+        drawable="monument_valley"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.starbucks.cn/com.fs.starbucks.activity.StartActivity}"
+        drawable="starbucks"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.dongqiudi.news/com.dongqiudi.news.BaseSplashActivity}"
+        drawable="dongqiudi"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.qeeniao.mobile.kdjz/com.qeeniao.mobile.kdjz.BlankActivity}"
+        drawable="koudaijizhang"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity-hjmodi}"
+        drawable="xposed"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.amazon.kindlefs/com.amazon.kindle.UpgradePage}"
+        drawable="kindle"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.suning.mobile.subook/com.suning.mobile.subook.activity.start.StartActivity}"
+        drawable="suning_read"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{de.stocard.stocard/de.stocard.ui.main.InitActivity}"
+        drawable="stocard"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.miui.miuibbs/com.miui.miuibbs.activity.BbsActivity}"
+        drawable="miui_forum"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.miui.fm/com.miui.fmradio.FmActivity}"
+        drawable="miui_fm_radio"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.plexnor.gravityscreenofffree/com.plexnor.gravityscreenofffree.ActivityMain}"
+        drawable="gravity_screen"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.amazon.kindlefc/com.amazon.kindle.KfcUpgradePage}"
+        drawable="kindle"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.microsoft.office.officelens/com.microsoft.office.apphost.LaunchActivity}"
+        drawable="microsoft_office_lens"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.adobe.photoshopmix/com.adobe.photoshopmix.activity.SplashScreenActivity}"
+        drawable="abobe_photoshop_mix"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.shanbay.words/com.shanbay.words.activity.SplashActivity}"
+        drawable="shanbay"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonymobile.moviecreator.rmm/com.sonymobile.moviecreator.rmm.LaunchActivity}"
+        drawable="sony_movie_creator"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonyericsson.android.camera/com.sonyericsson.android.camera.CameraActivity}"
+        drawable="sony_camera"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonyericsson.video/com.sonyericsson.video.browser.BrowserActivity}"
+        drawable="sony_video"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonyericsson.fmradio/com.sonyericsson.fmradio.ui.FmRadioActivity}"
+        drawable="sony_radio"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonyericsson.music/com.sonyericsson.music.MusicActivity}"
+        drawable="sony_music"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonymobile.sketch/com.sonymobile.sketch.dashboard.DashboardActivity}"
+        drawable="sony_sketch"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonymobile.androidapp.audiorecorder/com.sonymobile.androidapp.audiorecorder.activity.MainActivity}"
+        drawable="sony_audio_recorder"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonymobile.notes/com.sonymobile.notes.dashboard.DashboardActivity}"
+        drawable="sony_notes"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.qihoo.freewifi/com.qihoo.freewifi.activity.WelcomeActivity}"
+        drawable="a360_free_wifi"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonyericsson.trackid/com.sonyericsson.trackid.activity.WidgetHandlerActivity}"
+        drawable="sony_trackid"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.jiemian.news/com.jiemian.news.activity.SplashActivity}"
+        drawable="jiemian_news"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.mobisystems.fileman/com.mobisystems.files.FileBrowser}"
+        drawable="file_commander"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.mobisystems.office/com.mobisystems.office.splashScreen.SplashScreenActivity}"
+        drawable="officesuite"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.qqpim/com.tencent.qqpim.ui.QQPimAndroid}"
+        drawable="qq_sunc"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonyericsson.extras.liveware/com.sonyericsson.extras.liveware.ui.LaunchActivity}"
+        drawable="sony_smart_connect"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonymobile.entrance/com.sonymobile.entrance.EntranceActivity}"
+        drawable="sony_whatsnew"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.jd.jrapp/com.jd.jrapp.ver2.main.welcome.WelcomeActivity}"
+        drawable="jd_jinrong"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.sonymobile.backgrounddefocus/com.sonymobile.backgrounddefocus.ViewFinderActivity}"
+        drawable="sony_background_defocus"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.asus.calculator/com.asus.calculator.Calculator}"
+        drawable="asus_calculator"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{cn.etouch.ecalendar/cn.etouch.ecalendar.ECalendar}"
+        drawable="zhonghuawannianli"/>
     <item
         component="ComponentInfo{}"
         drawable=""/>
