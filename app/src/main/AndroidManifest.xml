@@ -194,11 +194,7 @@
             android:name=".ui.activities.SettingsActivity"
             android:label="@string/nav_item_settings"
             android:theme="@style/PreferenceTheme">
-        </activity>
-        <activity
-            android:name=".ui.demos.SettingsDemoActivity"
-            android:label="@string/title_activity_settings_demo">
-        </activity>
+        </activity>        
     </application>
 
 </manifest>

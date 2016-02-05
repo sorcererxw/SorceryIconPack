@@ -1,0 +1,1932 @@
+1Password
+com.agilebits.onepassword/com.agilebits.onepassword.activity.LoginActivity
+------------------------------
+1Sec Note
+com.editoy.memo.onesecond/com.editoy.memo.onesecond.NoteEdit
+------------------------------
+2048++
+com.alexjlockwood.twentyfortyeight/com.alexjlockwood.twentyfortyeight.MainActivity
+------------------------------
+3C Toolbox Pro
+ccc71.at/ccc71.at.at_main_popup
+------------------------------
+500px
+com.fivehundredpx.viewer/com.fivehundredpx.viewer.main.RootActivity
+------------------------------
+94%
+com.scimob.ninetyfour.percent/com.scimob.ninetyfour.percent.MainActivity
+------------------------------
+ADM Pro
+com.dv.adm.pay/com.dv.adm.pay.Main
+------------------------------
+AccuWeather
+com.accuweather.paid.android/com.accuweather.app.SplashScreen
+------------------------------
+Action 3
+com.actionlauncher.playstore/com.actionlauncher.ActionLauncherActivity
+------------------------------
+Adobe Acrobat
+com.adobe.reader/com.adobe.reader.AdobeReader
+------------------------------
+Adobe Create
+com.adobe.dpspubs.inspire/com.adobe.dpspubs.inspire.collectionview.CollectionActivity
+------------------------------
+Aggregator
+com.tughi.aggregator/com.tughi.aggregator.ui.MainActivity
+------------------------------
+Air Quality
+com.freshideas.airindex/com.freshideas.airindex.AIMainActivity
+------------------------------
+Air Quality China
+com.cas.airquality/com.cas.airquality.AirQuality
+------------------------------
+AirDroid
+com.sand.airdroid/com.sand.airdroid.ui.splash.SplashActivity_
+------------------------------
+Airbnb
+com.airbnb.android/com.airbnb.android.activities.MainActivity
+------------------------------
+AlarmDroid
+com.splunchy.android.alarmclock/com.splunchy.android.alarmclock.AlarmsActivity
+------------------------------
+Alipay
+com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin
+------------------------------
+AllCast
+com.koushikdutta.cast/com.koushikdutta.cast.SearchActivity
+------------------------------
+Amap
+com.autonavi.minimap/com.autonavi.map.activity.SplashActivity
+------------------------------
+Amazon Kindle
+com.amazon.kindle/com.amazon.kindle.UpgradePage
+------------------------------
+Amazon Shopping
+com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity
+------------------------------
+Amplify
+com.ryansteckler.nlpunbounce/com.ryansteckler.nlpunbounce.Settings-Alias
+------------------------------
+Android Auto
+com.google.android.projection.gearhead/com.google.android.projection.gearhead.companion.SplashScreenActivity
+------------------------------
+Android Pay
+com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity
+------------------------------
+Androidify
+com.google.android.apps.androidify/com.google.android.apps.androidify.Androidify
+------------------------------
+AnkiDroid
+com.ichi2.anki/com.ichi2.anki.IntentHandler
+------------------------------
+AntennaPod
+de.danoeh.antennapod/de.danoeh.antennapod.activity.MainActivity
+------------------------------
+Anticipate
+com.pluscubed.anticipate/com.pluscubed.anticipate.MainActivity
+------------------------------
+Any.do
+com.anydo/com.anydo.mainlist.MainListActivity
+------------------------------
+AnyConnect
+com.cisco.anyconnect.vpn.android.avf/com.cisco.anyconnect.ui.PrimaryActivity
+------------------------------
+ApkRenamer Pro
+com.bongoman.apkrenamerholo/com.bongoman.apkrenamerholo.ApkRenamerActivity2
+------------------------------
+App Settings
+de.robv.android.xposed.mods.appsettings/de.robv.android.xposed.mods.appsettings.XposedModActivity
+------------------------------
+AppMonster Pro
+com.think_android.appmanagerproclassicikira/com.think_android.appmanagerproclassicikira.AppManagerPro
+------------------------------
+AppMonster v5 Pro
+com.think_android.apps.appmonster.cloud/com.think_android.apps.appmonster.base.AppMonsterBase
+------------------------------
+AppSales
+net.tsapps.appsales/net.tsapps.appsales.MainActivity
+------------------------------
+Apple Music
+com.apple.android.music/com.apple.android.music.onboarding.activities.SplashActivity
+------------------------------
+Area63
+tv.acfun.a63/tv.acfun.a63.MainActivity
+------------------------------
+Asphalt 8
+com.gameloft.android.ANMP.GloftA8HM/com.gameloft.android.ANMP.GloftA8HM.MainActivity
+------------------------------
+AudioFX
+org.cyanogenmod.audiofx/org.cyanogenmod.audiofx.ActivityMusic
+------------------------------
+Authenticator
+com.google.android.apps.authenticator2/com.google.android.apps.authenticator.AuthenticatorActivity
+------------------------------
+Authy
+com.authy.authy/com.authy.authy.activities.InitializationActivity
+------------------------------
+AutoVoice
+com.joaomgcd.autovoice/com.joaomgcd.autoapps.ActivityLaunchApp
+------------------------------
+Autodesk SketchBook
+com.adsk.sketchbook/com.adsk.sketchbook.SketchBook
+------------------------------
+Automate
+com.llamalab.automate/com.llamalab.automate.FlowListActivity
+------------------------------
+Aviary
+com.aviary.android.feather/com.aviary.android.feather.MainActivity
+------------------------------
+Backdrops
+com.backdrops.wallpapers/com.backdrops.wallpapers.WelcomeActivity
+------------------------------
+Backgrounds
+com.ogqcorp.bgh/com.ogqcorp.bgh.activity.MainActivity
+------------------------------
+Barcode Scanner
+com.google.zxing.client.android/com.google.zxing.client.android.CaptureActivity
+------------------------------
+Battery Widget Reborn
+net.hubalek.android.apps.reborn.pro/net.hubalek.android.apps.reborn.amazon.material.pro.activities.MainActivityBeta
+------------------------------
+Behance
+com.behance.behance/com.behance.network.ui.activities.MainActivity
+------------------------------
+Bejeweled
+com.ea.gp.bej3/com.ea.gp.bej3.Main
+------------------------------
+BeyondPod
+mobi.beyondpod/mobi.beyondpod.ui.views.Splash
+------------------------------
+Bhoot
+uk.co.bhoot/uk.co.bhoot.activities.SplashActivity
+------------------------------
+Bilibili
+tv.danmaku.bili/tv.danmaku.bili.ui.splash.SplashActivity
+------------------------------
+Bing Rewards
+com.microsoft.bingrewards/com.microsoft.bingrewards.MainActivity
+------------------------------
+Biscuit
+com.croquis.biscuit/com.croquis.biscuit.ui.StartActivity_
+------------------------------
+BlackLight
+us.shandian.blacklight/info.papdt.blacklight.ui.entry.EntryActivity
+------------------------------
+Blogger
+com.google.android.apps.blogger/com.google.android.apps.blogger.SignInActivity
+------------------------------
+Bloglovin'
+se.yo.android.bloglovin/se.yo.android.bloglovincore.activity.StartActivity
+------------------------------
+Blum
+com.andreapivetta.blu/com.andreapivetta.blu.activities.HomeActivity
+------------------------------
+Blur Wallpaper
+dk.appdictive.blurwallpaper/dk.appdictive.blurwallpaper.MainActivity
+------------------------------
+Blurone
+com.nexdev.blurone/com.nexdev.blurone.MainActivity
+------------------------------
+Boom Beach
+com.supercell.boombeach/com.supercell.boombeach.GameApp
+------------------------------
+BrainWars
+jp.co.translimit.brainwars/jp.co.translimit.brainwars.AppActivity
+------------------------------
+Browser
+com.mmbox.browser/com.mmbox.xbrowser.BrowserActivity
+------------------------------
+CM Browser
+com.ksmobile.cb/com.ijinshan.browser.screen.BrowserActivity
+------------------------------
+CMB
+cmb.pb/cmb.pb.ui.PBInitActivity
+------------------------------
+Cake Pop Icons
+com.rem.cakepopicons/com.rem.cakepopicons.HomeActivity
+------------------------------
+Cal
+com.anydo.cal/com.anydo.cal.activities.OnBoardActivity
+------------------------------
+Calculator
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+Calendar
+com.android.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+Calendar
+com.google.android.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+CamScanner
+com.intsig.camscanner/com.intsig.camscanner.WelcomeActivity
+------------------------------
+CamScanner Full Version
+com.intsig.lic.camscanner/com.intsig.lic.camscanner.CamScannerLicense
+------------------------------
+Camera
+com.android.camera2/com.android.camera.CameraLauncher
+------------------------------
+Camera
+com.google.android.GoogleCamera/com.android.camera.CameraLauncher
+------------------------------
+Camera FV-5
+com.flavionet.android.camera.pro/com.flavionet.android.camera.pro.Main
+------------------------------
+CandyCons
+com.zavukodlak.candycons/com.zavukodlak.candycons.HomeActivity
+------------------------------
+Carbon
+com.dotsandlines.carbon/com.dotsandlines.carbon.activities.SplashActivity
+------------------------------
+Carton
+com.francescopennella.carton/com.francescopennella.carton.MainActivity
+------------------------------
+Change Lock Screen CM12
+com.miniprepumen.cm12.changelockscreencm12/com.miniprepumen.cm12.changelockscreencm12.MainActivity
+------------------------------
+Chrome
+com.android.chrome/com.google.android.apps.chrome.Main
+------------------------------
+Chrome Beta
+com.chrome.beta/com.google.android.apps.chrome.Main
+------------------------------
+ChromePie
+com.jt5.xposed.chromepie/com.jt5.xposed.chromepie.settings.PieSettings_Alias
+------------------------------
+Chromer
+arun.com.chromer/arun.com.chromer.MainActivity
+------------------------------
+Chronus
+com.dvtonder.chronus/com.dvtonder.chronus.preference.PreferencesMain
+------------------------------
+Cinnamon
+com.imdevgary.cinnamon/com.imdevgary.cinnamon.activity.ListPagerActivity
+------------------------------
+Clash of Clans
+com.supercell.clashofclans/com.supercell.clashofclans.GameApp
+------------------------------
+ClearFocus
+personal.andreabasso.clearfocus/personal.andreabasso.clearfocus.main_activity.MainActivity
+------------------------------
+Clip Stack
+com.catchingnow.tinyclipboardmanager/com.catchingnow.tinyclipboardmanager.activity.ActivityMain
+------------------------------
+Clock
+com.android.deskclock/com.android.deskclock.DeskClock
+------------------------------
+CloudMagic
+com.cloudmagic.mail/com.cloudmagic.android.HomeScreenActivity
+------------------------------
+Coffee Icon Pack
+com.samymarboy.theme.material.iconpack.paid/com.samymarboy.theme.material.iconpack.paid.ThemeActivity
+------------------------------
+ColorShamu
+com.shiunghanching.colorshamu/com.shiunghanching.colorshamu.MainActivity
+------------------------------
+Colorfy
+com.fungamesforfree.colorfy/com.fungamesforfree.colorfy.SplashScreenActivity
+------------------------------
+Commute
+com.mediocre.commute/com.mediocre.commute.Main
+------------------------------
+Compass
+net.marlove.compass/net.marlove.compass.app.MainActivity
+------------------------------
+Compass
+com.roshan.compass/com.roshan.compass.MainActivity
+------------------------------
+Contacts
+com.android.contacts/com.android.contacts.activities.PeopleActivity
+------------------------------
+Cookbook
+com.samruston.cookbook/com.samruston.cookbook.MainActivity
+------------------------------
+Cookpad
+com.mufumbo.android.recipe.search/com.mufumbo.android.recipe.search.activities.TopActivity
+------------------------------
+Cool Market
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+Cool Search
+com.coolapk.searchbox/com.coolapk.searchbox.ui.MainActivity
+------------------------------
+Copas
+mark.compass/mark.compass.CompassActivity
+------------------------------
+Copy - Text on screen pro
+com.copy.paste.ocr.screen.text.copypastetrial.pro/com.copy.paste.ocr.screen.text.copypastetrial.pro.MainActivity
+------------------------------
+Corgi
+com.swipe.android/com.swipe.android.activities.MainActivity
+------------------------------
+Cornie Icons
+pl.patrykgoworowski.cornieicons/pl.patrykgoworowski.cornieicons.HomeActivity
+------------------------------
+Cortana
+com.microsoft.cortana/com.microsoft.bing.dss.SplashActivity
+------------------------------
+Crispy Icons
+com.crispy.icons.flatedge.iconpack/com.crispy.icons.flatedge.iconpack.HomeActivity
+------------------------------
+Crossy Road
+com.yodo1.crossyroad/com.yodo1.sdkManager.yodo1Activity
+------------------------------
+DGT GTD
+com.dg.gtd.android.lite/com.dg.gtd.android.lite.Welcome
+------------------------------
+Darker
+com.mlhg.screenfilter/com.mlhg.screenfilter.MainActivity
+------------------------------
+Darker
+com.mlhg.screenfilterpro/com.mlhg.screenfilterpro.MainActivity
+------------------------------
+Dashlane
+com.dashlane/com.dashlane.ui.activities.SplashScreen
+------------------------------
+Dashlane Browser
+com.dashlane/com.dashlane.ui.activities.BrowserLaucherDispatcher
+------------------------------
+Day by Day
+com.leoncvlt.daybyday/com.leoncvlt.daybyday.activities.MainActivity
+------------------------------
+Deemo
+com.rayark.pluto/com.prime31.UnityPlayerNativeActivity
+------------------------------
+Define
+in.workarounds.define/in.workarounds.define.ui.activity.SplashActivity
+------------------------------
+DeviantArt
+com.deviantart.android.damobile/com.deviantart.android.damobile.activity.HomeActivity
+------------------------------
+Device Manager
+com.google.android.apps.adm/com.google.android.apps.adm.MainActivity
+------------------------------
+DiskUsage
+com.google.android.diskusage/com.google.android.diskusage.SelectActivity
+------------------------------
+DkReader
+com.duokan.reader/com.duokan.reader.DkReaderActivity
+------------------------------
+Do.it
+com.do.it/com.example.avjindersinghsekhon.toodle.MainActivity
+------------------------------
+Docs
+com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.NewMainProxyActivity
+------------------------------
+DoggCatcher
+com.snoggdoggler.android.applications.doggcatcher.v1_0/com.snoggdoggler.android.activity.podcast.ChannelListActivity
+------------------------------
+Dots
+com.nerdyoctopus.gamedots/com.prime31.UnityPlayerNativeActivity
+------------------------------
+Douban Movie
+com.douban.movie/com.douban.movie.app.HomeActivity
+------------------------------
+Downloads
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadList
+------------------------------
+Drippler
+com.drippler.android.updates/com.drippler.android.updates.SplashActivity
+------------------------------
+Drive
+com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity
+------------------------------
+Droidddle
+org.goodev.droidddle/org.goodev.droidddle.MainActivity
+------------------------------
+Dropbox
+com.dropbox.android/com.dropbox.android.activity.DropboxBrowser
+------------------------------
+Dropsync
+com.ttxapps.dropsync/com.ttxapps.syncapp.MainActivity
+------------------------------
+Dropsync Pro Key
+com.ttxapps.dropsync.pro/com.ttxapps.dropsync.pro.MainActivity
+------------------------------
+Duolingo
+com.duolingo/com.duolingo.app.LoginActivity
+------------------------------
+ENJOY
+com.ricebook.highgarden/com.ricebook.highgarden.ui.LandingActivity
+------------------------------
+ES File Explorer
+com.estrongs.android.pop/com.estrongs.android.pop.view.FileExplorerActivity
+------------------------------
+ES File Explorer Pro
+com.estrongs.android.pop.pro/com.estrongs.android.pop.view.FileExplorerActivity
+------------------------------
+Earth
+com.google.earth/com.google.earth.EarthActivity
+------------------------------
+EarthViewer
+com.pddstudio.earthviewer/com.pddstudio.earthviewer.DemoActivity
+------------------------------
+Elephant Magazine
+org.idaxiang.android/org.idaxiang.android.ui.MainActivity_
+------------------------------
+Email
+com.android.email/com.android.email.activity.Welcome
+------------------------------
+Email
+com.boxer.email/com.boxer.email.activity.Welcome
+------------------------------
+Endomondo
+com.endomondo.android/com.endomondo.android.EndoSplash
+------------------------------
+Episode I
+com.pixonic.whoisthekiller/com.pixonic.whoisthekiller.RunnerActivity
+------------------------------
+Episode II
+com.pixonic.whoisthekiller2/com.pixonic.whoisthekiller2.RunnerActivity
+------------------------------
+Episode III
+com.pixonic.whoisthekiller3/com.pixonic.whoisthekiller3.RunnerActivity
+------------------------------
+Episode IV
+com.glaznev.whoisthekiller4/com.glaznev.whoisthekiller4.RunnerActivity
+------------------------------
+Equalizer +
+com.djit.equalizerplusforandroidfree/com.djit.equalizerplus.activities.HomeActivity
+------------------------------
+Event Flow Widget
+com.syncedsynapse.eventflowwidget/com.syncedsynapse.eventflowwidget.agenda.config.AgendaConfigurationLauncherActivity
+------------------------------
+Evernote
+com.evernote/com.evernote.ui.HomeActivity
+------------------------------
+Evolve Wallpapers
+com.daviidh.android.wallpaper/com.daviidh.android.retrome.MainActivity
+------------------------------
+EvolveSMS
+com.klinker.android.evolve_sms/com.klinker.android.evolve_sms.ui.MainActivity
+------------------------------
+ExLink
+com.xloger.exlink.app/com.xloger.exlink.app.activity.MainActivity
+------------------------------
+Excel
+com.microsoft.office.excel/com.microsoft.office.apphost.LaunchActivity
+------------------------------
+Expedia
+com.expedia.bookings/com.expedia.bookings.activity.SearchActivity
+------------------------------
+Expense Manager
+at.markushi.expensemanager/at.markushi.expensemanager.activities.HomeActivity
+------------------------------
+EyeEm
+com.baseapp.eyeem/com.baseapp.eyeem.Start
+------------------------------
+FBReader
+com.fbreader/com.fbreader.android.fbreader.FBReader
+------------------------------
+FBReader
+org.geometerplus.zlibrary.ui.android/org.geometerplus.android.fbreader.FBReader
+------------------------------
+FKUpdater
+com.franco.kernel/com.franco.kernel.activities.MainActivity
+------------------------------
+Facebook
+com.facebook.katana/com.facebook.katana.LoginActivity
+------------------------------
+Facets
+net.trippedout.android.facets/net.trippedout.android.facets.activity.SplashActivity
+------------------------------
+Fake Location
+com.fakegps.mock/com.fakegps.mock.activities.MainActivity
+------------------------------
+Fancy
+com.thefancy.app/com.thefancy.app.common.Main
+------------------------------
+FastFileTransfer
+com.floriandraschbacher.fastfiletransfer/com.floriandraschbacher.fastfiletransfer.activities.MainActivity-Icon2
+------------------------------
+FeedMe
+com.seazon.feedme/com.seazon.feedme.view.activity.ListActivity
+------------------------------
+FeedTech
+com.allenxuan.android.feedtech/com.allenxuan.android.feedtech.Activities.LaunchActivity
+------------------------------
+FeedlyReader
+com.huwenqi.feedlyreader.app/com.huwenqi.feedlyreader.app.ui.AccountActivity
+------------------------------
+File Manager
+com.cyanogenmod.filemanager/com.cyanogenmod.filemanager.activities.NavigationActivity
+------------------------------
+Filmstrip
+com.kd.filmstrip/com.kd.filmstrip.MainActivity
+------------------------------
+Financius
+com.code44.finance/com.code44.finance.ui.common.activities.SplashActivity
+------------------------------
+Fit
+com.google.android.apps.fitness/com.google.android.apps.fitness.welcome.WelcomeActivity
+------------------------------
+Flat Style Bar Indicators
+com.bocharov.xposed.fsbi/com.bocharov.xposed.fsbi.settings.Main
+------------------------------
+Flat Style Colored Bars
+com.bocharov.xposed.fscb/com.bocharov.xposed.fscb.settings.ModuleSettings
+------------------------------
+Flava
+net.greenmon.flava/net.greenmon.flava.app.activity.FlavaLauncher
+------------------------------
+Fleksy
+com.syntellia.fleksy.keyboard/com.syntellia.fleksy.settings.activities.MainActivity
+------------------------------
+Flickr
+com.yahoo.mobile.client.android.flickr/com.yahoo.mobile.client.android.flickr.ui.misc.LoginActivity
+------------------------------
+Flipboard
+flipboard.app/flipboard.activities.LaunchActivityAlias
+------------------------------
+Flynx
+com.flynx/com.flynx.MainActivity
+------------------------------
+Focus
+com.franco.focus/com.franco.focus.activities.MainActivity
+------------------------------
+FolderSync
+dk.tacit.android.foldersync.full/dk.tacit.android.foldersync.SplashActivity
+------------------------------
+Folio
+com.creativetrends.folio.app/com.creativtrendz.folio.activities.MainActivity
+------------------------------
+Forest
+cc.forestapp/cc.forestapp.activities.PlantView.PlantViewController
+------------------------------
+Fotospot
+com.ahmedmagdy.fotospot/com.ahmedmagdy.fotospot.activities.MainActivity
+------------------------------
+Foursquare
+com.joelapenna.foursquared/com.joelapenna.foursquared.MainActivity
+------------------------------
+Fragment
+com.pixite.fragment/com.pixite.fragment.activities.DashboardActivity
+------------------------------
+Fresh
+stealthychief.custom.theme.fresh/stealthychief.custom.theme.fresh.LicenseActivity
+------------------------------
+Fyuse
+com.fyusion.fyuse/com.fyusion.fyuse.SplashScreen
+------------------------------
+GTasks
+org.dayup.gtask/org.dayup.gtask.activity.TaskActivity
+------------------------------
+Gallery
+com.android.gallery3d/com.android.gallery3d.app.GalleryActivity
+------------------------------
+Gallery HR
+cache.wind.wallpaper/cache.wind.wallpaper.MainActivity
+------------------------------
+Glim
+com.icons.glim/com.icons.glim.activities.StartActivity
+------------------------------
+Gmail
+com.google.android.gm/com.google.android.gm.ConversationListActivityGmail
+------------------------------
+Gojūon
+com.gracecode.android.gojuon/com.gracecode.android.gojuon.ui.activity.MainActivity
+------------------------------
+Goodreads
+com.goodreads/com.goodreads.android.activity.MainActivity
+------------------------------
+Google
+com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity
+------------------------------
+Google Now Launcher
+com.google.android.launcher/com.google.android.launcher.StubApp
+------------------------------
+Google Pinyin Input
+com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity
+------------------------------
+Google Settings
+com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsActivity
+------------------------------
+Google+
+com.google.android.apps.plus/com.google.android.apps.plus.phone.HomeActivity
+------------------------------
+Grab
+com.grandsoft.instagrab/com.grandsoft.instagrab.presentation.view.activity.SplashActivity
+------------------------------
+GravityBox [LP]
+com.ceco.lollipop.gravitybox/com.ceco.lollipop.gravitybox.GravityBoxSettingsAlias
+------------------------------
+Greenify
+com.oasisfeng.greenify/com.oasisfeng.greenify.GreenifyActivity
+------------------------------
+Guides
+com.lonelyplanet.guides/com.lonelyplanet.guides.ui.activity.OnboardingActivity
+------------------------------
+Hangouts
+com.google.android.talk/com.google.android.talk.SigningInActivity
+------------------------------
+Hardest Game Ever 2
+org.orangenose.games/org.orangenose.games.Angriness2
+------------------------------
+Heart Rate PRO
+com.runtastic.android.heartrate.pro/com.runtastic.android.heartrate.activities.HrLoginActivity
+------------------------------
+Hex FRVR
+com.frvr.hex/com.frvr.hex.MainActivity
+------------------------------
+Hitman GO
+com.squareenixmontreal.hitmango/com.squareenixmontreal.hitmango.Prime31UnityPlayerNativeActivityFullscreen
+------------------------------
+Hound
+com.hound.android.app/com.hound.android.appcommon.activity.ActivityLauncher
+------------------------------
+IF
+com.ifttt.ifttt/com.ifttt.ifttt.HomeActivity
+------------------------------
+IGN
+com.mobile.ign/com.mobile.ign.MainActivity
+------------------------------
+IMDb
+com.imdb.mobile/com.imdb.mobile.HomeActivity
+------------------------------
+IP Tools
+com.ddm.iptools/com.ddm.iptools.ui.MainActivity
+------------------------------
+Ice Box
+com.catchingnow.icebox/com.catchingnow.icebox.activity.MainActivity
+------------------------------
+Imagine
+com.imagine/com.imagine.MainActivity
+------------------------------
+Imagine Free
+com.imagine.free/com.imagine.MainActivity
+------------------------------
+Inbox
+com.google.android.apps.inbox/com.google.android.apps.bigtop.activities.InitActivity
+------------------------------
+Ingress
+com.nianticproject.ingress/com.nianticproject.ingress.NemesisActivity
+------------------------------
+Inoreader
+com.innologica.inoreader/com.innologica.inoreader.BootstrapActivity
+------------------------------
+Inoreader for palabre
+com.levelup.palabre.inoreaderforpalabre/com.levelup.palabre.inoreaderforpalabre.ui.activity.MainActivity
+------------------------------
+Inputting+
+com.catchingnow.undo/com.catchingnow.undo.activity.SplashScreenActivity
+------------------------------
+Instagram
+com.instagram.android/com.instagram.android.activity.MainTabActivity
+------------------------------
+Instapaper
+com.instapaper.android/com.instapaper.android.MainActivity
+------------------------------
+Interlocked
+com.wecreatestuff.interlocked/com.wecreatestuff.interlocked.Interlocked
+------------------------------
+Iride UI
+com.Fraom.IrideUI/com.Fraom.IrideUI.LicenseActivity
+------------------------------
+JD.COM
+com.jingdong.app.mall/com.jingdong.app.mall.MainActivity
+------------------------------
+Jandan
+com.danielstudio.app.wowtu/com.danielstudio.app.wowtu.ui.activity.MainActivity
+------------------------------
+Jetpack Joyride
+com.halfbrick.jetpackjoyride/com.halfbrick.mortar.MortarGameActivity
+------------------------------
+Jiffy
+com.nordicusability.jiffy/com.nordicusability.jiffy.DashboardActivity
+------------------------------
+Jockey
+com.marverenic.music/com.marverenic.music.activity.LibraryActivity
+------------------------------
+Jorte
+jp.co.johospace.jorte/jp.co.johospace.jorte.MainActivity
+------------------------------
+JotterPad
+com.jotterpad.x/com.jotterpad.x.MainActivity
+------------------------------
+Journey
+com.journey.app/com.journey.app.MainActivity
+------------------------------
+JuiceSSH
+com.sonelli.juicessh/com.sonelli.juicessh.activities.MainActivity
+------------------------------
+K-9 Mail
+com.fsck.k9/com.fsck.k9.activity.Accounts
+------------------------------
+KAIP Prime
+com.ttop.kaip_prime/com.ttop.kaip_prime.ui.MainActivity
+------------------------------
+KAMI
+air.com.stateofplaygames.kamifree/air.com.stateofplaygames.kamifree.AppEntry
+------------------------------
+KLWP
+org.kustom.wallpaper/org.kustom.lib.editor.WpAdvancedEditorActivity
+------------------------------
+KMZ
+com.kmzdsgns.kmz/com.kmzdsgns.kmz.HomeActivity
+------------------------------
+KeePassMob Password Manager
+com.lukaszgajos.keepassmob/com.lukaszgajos.keepassmob.LoginActivity
+------------------------------
+Keep
+com.google.android.keep/com.google.android.keep.activities.BrowseActivity
+------------------------------
+Keeper
+com.callpod.android_apps.keeper/com.callpod.android_apps.keeper.ResultsActivity
+------------------------------
+Kernel Adiutor
+com.grarak.kerneladiutor/com.grarak.kerneladiutor.MainActivity
+------------------------------
+Kitchen Stories
+com.ajnsnewmedia.kitchenstories/com.ajnsnewmedia.kitchenstories.ui.SplashActivity
+------------------------------
+LINE
+jp.naver.line.android/jp.naver.line.android.activity.SplashActivity
+------------------------------
+LINE Lite
+com.linecorp.linelite/com.linecorp.linelite.ui.android.main.IntroActivity
+------------------------------
+LOFTCam
+com.netease.loftercam.activity/com.netease.loftercam.activity.SplashActivity
+------------------------------
+LOFTER
+com.lofter.android/com.lofter.android.activity.SplashActivity
+------------------------------
+Lantern
+org.getlantern.lantern/org.getlantern.lantern.activity.LanternMainActivity
+------------------------------
+Layout
+com.instagram.layout/com.instagram.layout.LayoutActivity
+------------------------------
+Leo's Fortune
+com.leosfortune/com.leosfortune.LeosFortuneActivity
+------------------------------
+Lifeline
+com.threeminutegames.lifeline.google/com.bigfishgames.lifeline.SplashActivity
+------------------------------
+Lightroom
+com.adobe.lrmobile/com.adobe.lrmobile.StorageCheckActivity
+------------------------------
+Line
+com.nmssoftware.line.android/com.nmssoftware.line.android.AndroidLauncher
+------------------------------
+Link Bubble
+com.linkbubble.playstore/com.linkbubble.ui.EntryActivity
+------------------------------
+Linux Command Library
+com.inspiredandroid.linuxcommandbibliotheca/com.inspiredandroid.linuxcommandbibliotheca.CommandBibliothecaActivity
+------------------------------
+LocalCast
+de.stefanpledl.localcast/de.stefanpledl.localcast.refplayer.MainActivity
+------------------------------
+LockScreen changer CM13
+com.alicantedevelopers.lockscreenchangercm13/com.alicantedevelopers.lockscreenchangercm13.Splash_screen
+------------------------------
+Lucky Patcher
+com.android.vending.billing.InAppBillingService.LACK/com.android.vending.billing.InAppBillingService.LACK.MainActivity-Original
+------------------------------
+LuckyMoney
+com.wuxianlin.luckymoney/com.wuxianlin.luckymoney.SettingsActivity
+------------------------------
+Luoo
+net.luoo.LuooFM/net.luoo.LuooFM.ui.SplashActivity
+------------------------------
+MCW - Introduction
+com.josegd.monthcalwidget/com.josegd.monthcalwidget.MCWInstructions
+------------------------------
+MDict
+cn.mdict/cn.mdict.MainForm
+------------------------------
+MLO 2
+net.mylifeorganized.mlo/net.mylifeorganized.android.activities.StartActivity
+------------------------------
+MONO
+com.mmmono.mono/com.mmmono.mono.ui.spalsh.SplashScreenActivity
+------------------------------
+MT管理器
+bin.mt/bin.mt.Main
+------------------------------
+MX Player Pro
+com.mxtech.videoplayer.pro/com.mxtech.videoplayer.pro.ActivityMediaList
+------------------------------
+Macaroons
+com.shahid.macaroons/com.shahid.macaroons.HomeActivity
+------------------------------
+Mailbox
+com.mailboxapp/com.mailboxapp.ui.activity.inbox.InboxActivity
+------------------------------
+Maps
+com.google.android.apps.maps/com.google.android.maps.MapsActivity
+------------------------------
+Market
+com.smartisan.appstore/com.smartisan.appstore.ui.AppStoreActivity
+------------------------------
+Marshmallow Icon Pack
+com.samymarboy.theme.material.iconpack/com.samymarboy.theme.material.iconpack.ThemeActivity
+------------------------------
+MaterialOS
+org.materialos.icons/org.materialos.icons.HomeActivity
+------------------------------
+MaterialUp
+org.goodev.material/org.goodev.material.MainActivity
+------------------------------
+Materialistik
+com.sikebo.materialistik.material.icons/com.sikebo.materialistik.icons.activities.StartActivity
+------------------------------
+Materialize
+ooo.oxo.apps.materialize/ooo.oxo.apps.materialize.MainActivity
+------------------------------
+Medium
+com.medium.reader/com.medium.android.donkey.start.SignInActivity
+------------------------------
+Memos
+com.meizu.notepaper/com.meizu.flyme.notepaper.app.NotePaperActivity
+------------------------------
+Memrise
+com.memrise.android.memrisecompanion/com.memrise.android.memrisecompanion.ui.activity.LauncherActivity
+------------------------------
+Messaging
+com.android.mms/com.android.mms.ui.ConversationList
+------------------------------
+Messenger
+com.facebook.orca/com.facebook.orca.auth.StartScreenActivity
+------------------------------
+Metal
+com.nam.fbwrapper/com.danvelazco.fbwrapper.SplashActivity
+------------------------------
+Microsoft account
+com.microsoft.msa.authenticator/com.microsoft.onlineid.authenticator.LauncherActivity
+------------------------------
+Money Lover
+com.bookmark.money/com.zoostudio.moneylover.ui.ActivitySplashScreen
+------------------------------
+Month
+com.candl.chronos/com.candl.chronos.MainActivity
+------------------------------
+Monument Valley
+com.ustwo.monumentvalley/com.ustwo.deviceutil.MainActivity
+------------------------------
+Moon+ Reader Pro
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+Moonshine
+nexbit.icons.moonshine/nexbit.icons.moonshine.MainActivity
+------------------------------
+Morse Code
+com.pacioanudavid.morse/com.pacioanudavid.morse.Main
+------------------------------
+Muffin
+com.onyxdev.iconpack.theme.codenamem/com.onyxdev.iconpack.theme.codenamem.LicenseActivity
+------------------------------
+Music
+com.cyanogenmod.eleven/com.cyanogenmod.eleven.ui.activities.HomeActivity
+------------------------------
+Musixmatch
+com.musixmatch.android.lyrify/com.designfuture.music.ui.phone.DashBoardActivity
+------------------------------
+Muzei
+net.nurik.roman.muzei/com.google.android.apps.muzei.MuzeiActivity
+------------------------------
+MyAndroidTools Pro
+cn.wq.myandroidtoolspro/cn.wq.myandroidtoolspro.MainActivity
+------------------------------
+MyDoubanBooks
+cn.wq.mydoubanbooks/cn.wq.mydoubanbooks.MainActivity
+------------------------------
+MyDoubanBooks
+cn.wq.mydoubooks/cn.wq.mydoubooks.MainActivity
+------------------------------
+NAXOS TAZ
+com.romowtheme.naxostaz/com.romowtheme.naxostaz.LicenseActivity
+------------------------------
+NetEase Music
+com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity
+------------------------------
+Netease Mail
+com.netease.mobimail/com.netease.mobimail.activity.LaunchActivity
+------------------------------
+Netflix
+com.netflix.mediaclient/com.netflix.mediaclient.ui.launch.UIWebViewActivity
+------------------------------
+News & Weather
+com.google.android.apps.genie.geniewidget/com.google.android.apps.genie.geniewidget.activities.NewsActivity
+------------------------------
+Ninja
+io.github.mthli.Ninja/io.github.mthli.Ninja.Activity.BrowserActivity
+------------------------------
+No WakeLock
+com.linangran.nowakelock/com.linangran.nowakelock.MainActivity
+------------------------------
+Nova Launcher
+com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaShortcutHandler
+------------------------------
+Now for Reddit
+com.phyora.apps.reddit_now/com.phyora.apps.reddit_now.activities.ActivityRedditNow
+------------------------------
+Nucleo UI
+com.Fraom.NucleoUI/com.Fraom.NucleoUI.LicenseActivity
+------------------------------
+Office Lens
+com.microsoft.office.officelens/com.microsoft.office.apphost.LaunchActivity
+------------------------------
+OfficeSuite
+com.mobisystems.office/com.mobisystems.office.splashScreen.SplashScreenActivity
+------------------------------
+One More Dash
+com.smgstudio.omd/com.prime31.UnityPlayerActivity
+------------------------------
+OneDrive
+com.microsoft.skydrive/com.microsoft.skydrive.MainActivity
+------------------------------
+OneMoreLine
+com.smgstudio.onemoreline/com.prime31.UnityPlayerActivity
+------------------------------
+OneNote
+com.microsoft.office.onenote/com.microsoft.office.onenote.ui.ONMSplashActivity
+------------------------------
+OpenConnect
+app.openconnect/app.openconnect.MainActivity
+------------------------------
+Outlook
+com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity
+------------------------------
+PHIX
+com.smophix.phix/com.smophix.phix.LicenseActivity
+------------------------------
+PLASTEXO
+com.mowmo.plastexo/com.mowmo.plastexo.LicenseActivity
+------------------------------
+PPIICC
+bos.consoar.imagestitch/bos.consoar.imagestitch.ui.MainActivity
+------------------------------
+PPSSPP
+org.ppsspp.ppsspp/org.ppsspp.ppsspp.PpssppActivity
+------------------------------
+Palabre
+com.levelup.palabre/com.levelup.palabre.ui.activity.MainActivity
+------------------------------
+Pandora
+com.pandora.android/com.pandora.android.Main
+------------------------------
+Panoramic Screenshot
+info.papdt.pano/info.papdt.pano.ui.activities.MainActivity
+------------------------------
+Paperboy
+com.dottedcircle.paperboy/com.dottedcircle.paperboy.activities.SplashActivity
+------------------------------
+Papers.co
+com.ninanino.papers/com.ninanino.papers.MainActivity
+------------------------------
+Path
+com.path/com.path.activities.EntryPointActivity
+------------------------------
+PayPal
+com.paypal.android.p2pmobile/com.paypal.android.p2pmobile.activity.IntroActivity
+------------------------------
+Peak
+com.brainbow.peak.app/com.brainbow.peak.app.ui.general.SplashActivity
+------------------------------
+Perfect Viewer
+com.rookiestudio.perfectviewer/com.rookiestudio.perfectviewer.TStartup
+------------------------------
+PerfectColorBar
+com.flarejune.perfectcolorbar/com.flarejune.perfectcolorbar.ui.actMain
+------------------------------
+Phone
+com.android.dialer/com.android.dialer.DialtactsActivity
+------------------------------
+Phonograph
+com.kabouzeid.gramophone/com.kabouzeid.gramophone.ui.activities.MainActivity
+------------------------------
+Photos
+com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity
+------------------------------
+Photoshop Express
+com.adobe.psmobile/com.adobe.psmobile.SplashScreen
+------------------------------
+PicSay Pro
+com.shinycore.picsaypro/com.shinycore.picsaypro.main
+------------------------------
+PicsArt
+com.picsart.studio/com.socialin.android.photo.picsinphoto.MainPagerActivity
+------------------------------
+Pinterest
+com.pinterest/com.pinterest.activity.PinterestActivity
+------------------------------
+Pipette
+com.ochs.pipette/com.ochs.pipette.StartActivity
+------------------------------
+Pixel Player
+it.ncaferra.pixelplayerfree/it.pixel.player.frontend.activity.MainActivity
+------------------------------
+Pixlr
+com.pixlr.express/com.pixlr.express.StartupActivity
+------------------------------
+Pixolor
+com.embermitre.pixolor.app/com.embermitre.pixolor.app.StartProjectionManagerActivity
+------------------------------
+Plague Inc
+com.miniclip.plagueinc/com.miniclip.plagueinc.PlagueIncActivity
+------------------------------
+Plaid
+io.plaidapp/io.plaidapp.Launcher
+------------------------------
+Play Books
+com.google.android.apps.books/com.google.android.apps.books.app.BooksActivity
+------------------------------
+Play Games
+com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity
+------------------------------
+Play Movies & TV
+com.google.android.videos/com.google.android.youtube.videos.EntryPoint
+------------------------------
+Play Music
+com.google.android.music/com.android.music.activitymanagement.TopLevelActivity
+------------------------------
+Play Newsstand
+com.google.android.apps.magazines/com.google.apps.dots.android.app.activity.CurrentsStartActivity
+------------------------------
+Play Store
+com.android.vending/com.android.vending.AssetBrowserActivity
+------------------------------
+Pocket
+com.ideashower.readitlater.pro/com.ideashower.readitlater.activity.AppCacheCheckActivity
+------------------------------
+Pocket Casts
+au.com.shiftyjelly.pocketcasts/au.com.shiftyjelly.pocketcasts.ui.MainActivity
+------------------------------
+Podcast O2
+com.appo2.podcast/com.appo2.podcast.activity.HomeActivity
+------------------------------
+Polarr
+photo.editor.polarr/photo.editor.polarr.SplashScreen
+------------------------------
+Polycon
+com.thearclabs.polycon/com.thearclabs.polycon.HomeActivity
+------------------------------
+Pomotodo
+com.pomotodo/com.pomotodo.ui.activities.MainActivity
+------------------------------
+Popcorn Time
+pct.droid/pct.droid.activities.MainActivity
+------------------------------
+PowerPoint
+com.microsoft.office.powerpoint/com.microsoft.office.apphost.LaunchActivity
+------------------------------
+Poweramp
+com.maxmpz.audioplayer/com.maxmpz.audioplayer.StartupActivity
+------------------------------
+Poweramp Now Dark Skin
+com.ikorolkov.poweramp.skins.now.dark/com.maxmpz.poweramp.skinlib.InfoActivity
+------------------------------
+Poweramp Now Skin
+com.ikorolkov.poweramp.skins.now/com.maxmpz.poweramp.skinlib.InfoActivity
+------------------------------
+Poweramp Unlocker
+com.maxmpz.audioplayer.unlock/com.maxmpz.audioplayer.unlock.LauncherRedirectorActivity
+------------------------------
+Press
+com.twentyfivesquares.press/com.twentyfivesquares.press.base.HomeActivity
+------------------------------
+Prevent Running
+me.piebridge.forcestopgb/me.piebridge.prevent.ui.PreventActivity
+------------------------------
+Prune
+com.Polyculture.Prune/com.unity3d.player.UnityPlayerNativeActivity
+------------------------------
+Psiphon
+com.psiphon3/com.psiphon3.StatusActivity
+------------------------------
+Pure天气
+hanjie.app.pureweather/hanjie.app.pureweather.activity.HomeActivity
+------------------------------
+Pushbullet
+com.pushbullet.android/com.pushbullet.android.ui.LaunchActivity
+------------------------------
+QQ
+com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQ HD
+com.tencent.minihd.qq/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQLite
+com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQMusic
+com.tencent.qqmusic/com.tencent.qqmusic.activity.AppStarterActivity
+------------------------------
+QQUnrecalled
+com.fkzhang.qqunrecalled/com.fkzhang.qqunrecalled.MainActivity-Alias
+------------------------------
+QQhongbao
+com.xfunforx.qqhongbao/com.xfunforx.qqhongbao.MainActivity
+------------------------------
+QQi
+com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQ安全中心
+com.tencent.token/com.tencent.token.ui.LogoActivity
+------------------------------
+QQ邮箱
+com.tencent.androidqqmail/com.tencent.qqmail.LaucherActivity
+------------------------------
+QuickPic
+com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity
+------------------------------
+Quizlet
+com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity
+------------------------------
+Quora
+com.quora.android/com.quora.android.LauncherActivity
+------------------------------
+RE 管理器
+com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.RootExplorer
+------------------------------
+RSS Reader
+de.marvinach.rssreader/de.marvinach.rssreader.Splashscreen
+------------------------------
+RandomGame
+com.wuxianlin.randomgame/com.wuxianlin.randomgame.SettingsActivity
+------------------------------
+Rayman Adventures
+com.ubisoft.raymanadventures/com.ubisoft.uaf.SplashActivity
+------------------------------
+Recipe Book
+app.ristine.recipebook/app.ristine.recipebook2.MainActivity
+------------------------------
+Reflection
+hu.don.reflection/hu.don.reflection.SplashActivity
+------------------------------
+Reflexion
+net.oneplus.reflexion/net.oneplus.reflexion.presentation.Splash
+------------------------------
+Relay Pro
+reddit.news/reddit.news.RedditNavigation
+------------------------------
+Retrica
+com.venticake.retrica/com.venticake.retrica.MainActivity
+------------------------------
+Rewards
+com.google.android.apps.paidtasks/com.google.android.apps.paidtasks.LaunchActivity
+------------------------------
+Ricebook
+com.ricebook.activity/com.ricebook.app.ui.LandingActivity
+------------------------------
+Rippple
+mathieumaree.rippple/mathieumaree.rippple.ui.activities.MainActivity
+------------------------------
+Robinhood
+com.robinhood.android/com.robinhood.android.activity.WelcomeActivity
+------------------------------
+Robird
+com.aaplab.robird/com.aaplab.robird.ui.activity.SignInActivity
+------------------------------
+Running
+com.nike.plusgps/com.nike.plusgps.SplashActivity
+------------------------------
+Runtastic PRO
+com.runtastic.android.pro2/com.runtastic.android.activities.StartActivity
+------------------------------
+Runtastic Six Pack
+com.runtastic.android.sixpack.lite/com.runtastic.android.sixpack.activities.SixpackLoginActivity
+------------------------------
+SD Maid
+eu.thedarken.sdm/eu.thedarken.sdm.SDMMainActivity
+------------------------------
+SIM Toolkit
+com.android.stk/com.android.stk.StkLauncherActivity
+------------------------------
+Seed
+com.seed.app/com.seed.app.MainActivity
+------------------------------
+Seene
+com.obviousengine.seene.android.core/com.obviousengine.seene.android.ui.scene.TimelineScenesActivity
+------------------------------
+SeriesGuide
+com.battlelancer.seriesguide/com.battlelancer.seriesguide.ui.ShowsActivity
+------------------------------
+Servicely
+com.franco.servicely/com.franco.servicely.activities.MainActivity
+------------------------------
+Settings
+com.android.settings/com.android.settings.Settings
+------------------------------
+Shadowsocks
+com.github.shadowsocks/com.github.shadowsocks.Shadowsocks
+------------------------------
+ShadowsocksR
+com.proxy.shadowsocksr/com.proxy.shadowsocksr.MainActivity
+------------------------------
+Shazam
+com.shazam.encore.android/com.shazam.android.activities.SplashActivity
+------------------------------
+Sheets
+com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.app.NewMainProxyActivity
+------------------------------
+Shift
+com.pixite.shift/com.pixite.shift.activity.MainActivity
+------------------------------
+Shopping List
+com.DramaProductions.Einkaufen5/com.DramaProductions.Einkaufen5.main.activities.overview.view.OverviewActivity
+------------------------------
+Shuttle+
+com.simplecity.amp_pro/com.simplecity.amp_library.ui.activities.MainActivity
+------------------------------
+Simple Pomodoro
+com.dacer.simplepomodoro/com.dacer.simplepomodoro.MainActivity
+------------------------------
+Simplenote
+com.automattic.simplenote/com.automattic.simplenote.NotesActivity
+------------------------------
+Ski Safari 2
+com.sleepyzstudios.skisafari2/com.prime31.UnityPlayerActivity
+------------------------------
+SkillShot
+com.newtronium.skill_shot/com.reignstudios.reignnative.ReignUnityActivity
+------------------------------
+Skitch
+com.evernote.skitch/com.evernote.skitch.app.SwipeNavActivity
+------------------------------
+Sky Force
+pl.idreams.skyforcehd/com.prime31.UnityPlayerNativeActivity
+------------------------------
+Skype
+com.skype.raider/com.skype.raider.Main
+------------------------------
+Slack
+com.Slack/com.Slack.ui.HomeActivity
+------------------------------
+Sleep
+com.urbandroid.sleep/com.urbandroid.sleep.alarmclock.AlarmClock
+------------------------------
+Slides
+com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity
+------------------------------
+Smart AppLock
+com.sp.protector.free/com.sp.protector.free.StartActivity
+------------------------------
+Smartisan Calendar
+com.smartisan.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+Smartisan Clock
+com.smartisan.clock/com.smartisanos.clock.activity.ClockActivity
+------------------------------
+Smartisan Launcher Downloader
+com.smartisanos.home.downloader/com.smartisanos.home.downloader.MainActivity
+------------------------------
+Smartisan Mail
+com.smartisan.email/com.android.email.activity.Welcome
+------------------------------
+Smartisan Notes
+com.smartisan.notes/com.smartisan.notes.NewNotesActivity
+------------------------------
+SmartisanOS
+com.smartisanos.home/com.smartisanos.launcher.LauncherCover
+------------------------------
+Smooth
+com.mzba.happy.laugh/com.mzba.happy.laugh.SplashActivity
+------------------------------
+Snapseed
+com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
+------------------------------
+Snowball
+com.snowball.app/com.snowball.app.MainActivity
+------------------------------
+Solid Explorer
+pl.solidexplorer2/pl.solidexplorer.SolidExplorer
+------------------------------
+Solitaire
+com.blacklight.klondike.patience.solitaire/com.blacklight.klondike.patience.solitaire.SplasshActivity
+------------------------------
+Solitaire FRVR
+com.frvr.solitaire/com.frvr.solitaire.MainActivity
+------------------------------
+Sonic Dash
+com.sega.sonicdash/com.hardlightstudio.dev.sonicdash.plugin.DashActivity
+------------------------------
+Sorcery Icon Pack
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity
+------------------------------
+Sound Recorder
+com.android.soundrecorder/com.android.soundrecorder.SoundRecorder
+------------------------------
+SoundCloud
+com.soundcloud.android/com.soundcloud.android.main.LauncherActivity
+------------------------------
+SoundHound ∞
+com.melodis.midomiMusicIdentifier/com.soundhound.android.appcommon.activity.SplashScreenActivity
+------------------------------
+Speedtest
+org.zwanoo.android.speedtest/com.ookla.speedtest.softfacade.MainActivity
+------------------------------
+Spendee
+com.cleevio.spendee/com.cleevio.spendee.ui.MainActivity
+------------------------------
+Spotify
+com.spotify.music/com.spotify.music.MainActivity
+------------------------------
+Stagefright Detector
+com.zimperium.stagefrightdetector/com.zimperium.stagefrightdetector.MainActivity
+------------------------------
+Stardust
+com.chaozhuo.browser_phone/org.chromium.chrome.shell.ui.ChaoZhuoActivity
+------------------------------
+Steam
+com.valvesoftware.android.steam.community/com.valvesoftware.android.steam.community.activity.MainActivity
+------------------------------
+Stellio
+ru.stellio.player/ru.stellio.player.MainActivity
+------------------------------
+Stitch & Share
+com.glitch.stitchandshare/com.glitch.stitchandshare.ui.MainActivity
+------------------------------
+Stories
+com.google.android.spotlightstories/com.google.android.spotlightstories.app.SplashActivity
+------------------------------
+Strata
+com.graveck.strata/com.prime31.UnityPlayerProxyActivity
+------------------------------
+Strata
+com.graveck.stratapremium/com.prime31.UnityPlayerProxyActivity
+------------------------------
+Sunrise
+am.sunrise.android.calendar/am.sunrise.android.calendar.ui.HomeActivity
+------------------------------
+Sunshine Icon Pack
+com.samymarboy.theme.sunshine/com.samymarboy.theme.sunshine.ThemeActivity
+------------------------------
+Swarm
+com.foursquare.robin/com.foursquare.robin.activities.MainActivity
+------------------------------
+Sweetheart
+com.ayit.weibo/com.ayit.weibo.ui.WelcomeActivity
+------------------------------
+Swift
+com.helieu.materialupandroid/com.helieu.materialupandroid.MainActivity
+------------------------------
+SwiftKey Keyboard
+com.touchtype.swiftkey/com.touchtype.LauncherActivity
+------------------------------
+Sync Pro
+com.laurencedawson.reddit_sync.pro/com.laurencedawson.reddit_sync.ui.activities.HomeActivity
+------------------------------
+TED
+com.ted.android/com.ted.android.view.activity.SplashScreenActivity
+------------------------------
+TMall
+com.tmall.wireless/com.tmall.wireless.splash.TMSplashActivity
+------------------------------
+TWRP Manager
+com.jmz.soft.twrpmanager/com.jmz.soft.twrpmanager.MainActivity
+------------------------------
+Talk
+com.path.paperboy/com.path.activities.PaperboyEntryPointActivity
+------------------------------
+Talon
+com.klinker.android.twitter_l/com.klinker.android.twitter_l.ui.MainActivity
+------------------------------
+Talon
+com.klinker.android.twitter/com.klinker.android.twitter.ui.MainActivity
+------------------------------
+Tapatalk
+com.quoord.tapatalkpro.activity/com.quoord.tapatalkpro.activity.directory.ics.IcsEntryActivity
+------------------------------
+Tapet
+com.sharpregion.tapet/com.sharpregion.tapet.MainActivity
+------------------------------
+Tasker
+net.dinglisch.android.taskerm/net.dinglisch.android.taskerm.Tasker
+------------------------------
+Tasks
+ch.teamtasks.tasks.paid/ch.teamtasks.tasks.MainActivity
+------------------------------
+Tasty Recipes
+com.appsfromthelocker.recipes/com.appsfromthelocker.recipes.activities.SplashActivity
+------------------------------
+Telegram
+org.telegram.messenger/org.telegram.ui.LaunchActivity
+------------------------------
+Terminal Emulator
+jackpal.androidterm/jackpal.androidterm.Term
+------------------------------
+TeslaUnread
+com.teslacoilsw.notifier/com.teslacoilsw.notifier.NotifierSettings
+------------------------------
+That Level Again
+ru.iamtagir.game.android/ru.iamtagir.game.android.AndroidLauncher
+------------------------------
+That Level Again 2
+ru.iamtagir.thatlevelagain2.android/ru.iamtagir.thatlevelagain2.android.AndroidLauncher
+------------------------------
+The Weather Channel
+com.weather.Weather/com.weather.Weather.app.SplashScreenActivity
+------------------------------
+The Weaver
+net.pyrosphere.weaver/net.pyrosphere.weaver.AppActivity
+------------------------------
+TheDay
+bos.consoar.countdown/bos.consoar.countdown.ui.MainActivity
+------------------------------
+Themes
+org.cyanogenmod.theme.chooser/org.cyanogenmod.theme.chooser.ChooserActivity
+------------------------------
+Tholotis
+com.chris.tholotis/com.chris.tholotis.MainActivity
+------------------------------
+TickTick
+com.ticktick.task/com.ticktick.task.activity.MeTaskActivity
+------------------------------
+Timber
+naman14.timber/com.naman14.timber.activities.MainActivity
+------------------------------
+Timely
+ch.bitspin.timely/ch.bitspin.timely.activity.MainActivity_
+------------------------------
+Tinted Recent Panels
+com.mohammadag.tintedrecentpanels/com.mohammadag.tintedrecentpanels.MainActivity
+------------------------------
+Tinted Status Bar
+com.mohammadag.colouredstatusbar/com.mohammadag.colouredstatusbar.MainActivity
+------------------------------
+Tiny Tiny RSS
+org.fox.ttrss/org.fox.ttrss.LaunchActivity
+------------------------------
+Tips & Help
+com.android.settings/com.android.settings.mokee.helper.activities.TipsHelp
+------------------------------
+Titanium Backup
+com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity
+------------------------------
+Today Calendar
+com.underwood.calendar_beta/com.android.calendar.AllInOneActivity
+------------------------------
+Today Calendar
+com.underwood.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+Todoist
+com.todoist/com.todoist.activity.HomeActivity
+------------------------------
+Toggl
+com.toggl.timer/toggl.joey.ui.activities.SplashActivity
+------------------------------
+Total Commander
+com.ghisler.android.TotalCommander/com.ghisler.android.TotalCommander.TotalCommander
+------------------------------
+TouchPal
+com.cootek.smartinputv5/com.cootek.smartinput5.GateActivity
+------------------------------
+TrackID™
+com.sonyericsson.trackid/com.sonyericsson.trackid.activity.WidgetHandlerActivity
+------------------------------
+Translate
+com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity
+------------------------------
+Transmission
+com.lojugames.games.transmission/com.unity3d.player.UnityPlayerNativeActivity
+------------------------------
+Trial Xtreme 3
+com.x3m.tx3/com.prime31.UnityPlayerProxyActivity
+------------------------------
+Trial Xtreme 4
+com.x3m.tx4/com.prime31.UnityPlayerNativeActivity
+------------------------------
+True Color
+com.aurelhubert.truecolor/com.aurelhubert.truecolor.activity.HomeActivity
+------------------------------
+Tuber
+com.prometheusinteractive.tuber/com.prometheusinteractive.tuber.ui.activities.SubscribedChannelsActivity
+------------------------------
+Tumblr
+com.tumblr/com.tumblr.ui.activity.JumpoffActivity
+------------------------------
+TuneIn Radio
+tunein.player/tunein.ui.actvities.TuneInHomeActivity
+------------------------------
+TweetComb
+org.MAW.tweetcomb/org.MAW.tweetcomb.Activities.BaseActivity
+------------------------------
+Twidere
+org.mariotaku.twidere/org.mariotaku.twidere.activity.MainActivity
+------------------------------
+Twilight
+com.urbandroid.lux/com.urbandroid.lux.MainActivity
+------------------------------
+Twitter
+com.twitter.android/com.twitter.android.StartActivity
+------------------------------
+Two Dots
+com.weplaydots.twodotsandroid/com.prime31.UnityPlayerNativeActivity
+------------------------------
+UC Browser
+com.UCMobile.intl/com.UCMobile.main.UCMobile
+------------------------------
+ULTRAFLOW
+com.DSS.ULTRAFLOW/com.unity3d.player.UnityPlayerNativeActivity
+------------------------------
+Uber
+com.ubercab/com.ubercab.UBUberActivity
+------------------------------
+Unclouded
+com.cgollner.unclouded/com.cgollner.unclouded.ui.MainActivity
+------------------------------
+Unicon
+sg.ruqqq.Unicon/sg.ruqqq.Unicon.ThemeChooserActivity_
+------------------------------
+Urban Dictionary
+uk.me.lewisdeane.urbandictionary/uk.me.lewisdeane.urbandictionary.MainActivity
+------------------------------
+UrbanDict
+info.tuohuang.urbandict/info.tuohuang.urbandict.MainActivity
+------------------------------
+VLC
+org.videolan.vlc/org.videolan.vlc.gui.MainActivity
+------------------------------
+VSCO
+com.vsco.cam/com.vsco.cam.gallery.ImageGridActivity
+------------------------------
+VTS for Android
+com.nowsecure.android.vts/fuzion24.device.vulnerability.test.ui.SplashScreenActivity
+------------------------------
+Vevo
+com.vevo/com.vevo.Startup
+------------------------------
+Via
+mark.via/mark.via.ui.activity.BrowserActivity
+------------------------------
+Vignette
+uk.co.neilandtheresa.NewVignette/uk.co.neilandtheresa.Vignette.Vignette
+------------------------------
+Vimeo
+com.vimeo.android.videoapp/com.vimeo.android.videoapp.activities.authentication.LaunchActivity
+------------------------------
+Voice
+com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity
+------------------------------
+Voice Search
+com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity
+------------------------------
+WALLpaper
+com.cd.allinoneweb/com.cd.allinoneweb.Splash
+------------------------------
+WPS Office
+cn.wps.moffice_eng/cn.wps.moffice.documentmanager.PreStartActivity
+------------------------------
+Wakelock Detector Free
+com.uzumapps.wakelockdetector/com.uzumapps.wakelockdetector.activity.IntroActivity
+------------------------------
+Wallax
+com.zavukodlak.wallax/com.zavukodlak.wallax.SettingsActivity
+------------------------------
+Wallet
+com.google.android.apps.gmoney/com.google.android.apps.wallet.entrypoint.WalletRootActivity
+------------------------------
+Wallet
+com.droid4you.application.wallet/com.droid4you.application.wallet.DispatcherActivity
+------------------------------
+Wallgram
+com.wall.gram/com.mikepenz.unsplash.activities.SplashActivity
+------------------------------
+Wally
+com.musenkishi.wally/com.musenkishi.wally.activities.MainActivity
+------------------------------
+We Heart It
+com.weheartit/com.weheartit.app.MainActivity
+------------------------------
+WeChat
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+Weather
+com.yahoo.mobile.client.android.weather/com.yahoo.mobile.client.android.weather.ui.WeatherMainActivity
+------------------------------
+Weather
+com.wunderground.android.weather/com.wunderground.android.weather.ui.WeatherHomeActivity
+------------------------------
+Weather Timeline
+com.samruston.weather/com.samruston.weather.MainActivity
+------------------------------
+WechatUnrecalled
+com.fkzhang.wechatunrecalled/com.fkzhang.wechatunrecalled.MainActivity-Alias
+------------------------------
+Weibo
+com.sina.weibo/com.sina.weibo.SplashActivity
+------------------------------
+Weico
+com.eico.weico/com.eico.weico.activity.LogoActivity
+------------------------------
+Welike
+com.sxy.ui/com.sxy.ui.view.MainActivity
+------------------------------
+WhatsApp
+com.whatsapp/com.whatsapp.Main
+------------------------------
+WiFi File Explorer PRO
+com.dooblou.WiFiFileExplorerPRO/com.dooblou.WiFiFileExplorerLib.Start
+------------------------------
+Wifi Analyzer
+com.farproc.wifi.analyzer/com.farproc.wifi.analyzer.MainScreen
+------------------------------
+Wikipedia
+org.wikipedia/org.wikipedia.page.PageActivity
+------------------------------
+Wikipedia Beta
+org.wikipedia.beta/org.wikipedia.page.PageActivity
+------------------------------
+WizNote
+cn.wiz.note/cn.wiz.note.MainActivity
+------------------------------
+Wolfram Alpha
+com.wolfram.android.alpha/com.wolfram.android.alpha.activity.WolframAlpha
+------------------------------
+Word
+com.microsoft.office.word/com.microsoft.office.apphost.LaunchActivity
+------------------------------
+WordPress
+org.wordpress.android/org.wordpress.android.ui.WPLaunchActivity
+------------------------------
+WorkFlowy
+com.workflowy.android/com.workflowy.android.MainActivity
+------------------------------
+Wunderlist
+com.wunderkinder.wunderlistandroid/com.wunderkinder.wunderlistandroid.activity.WLMainFragmentActivity
+------------------------------
+XBrowser
+com.mmbox.xbrowser.gp/com.mmbox.xbrowser.BrowserActivity
+------------------------------
+XBrowser
+com.mmbox.xbrowser.pro/com.mmbox.xbrowser.BrowserActivity
+------------------------------
+XDA Labs
+com.xda.labs/com.xda.labs.MainActivity
+------------------------------
+XDA One
+com.xda.one/com.xda.one.ui.MainActivity
+------------------------------
+XDA Premium 4
+com.quoord.tapatalkxdapre.activity/com.quoord.tapatalkpro.activity.directory.ics.IcsRebrandingEntryActivity
+------------------------------
+XPrivacy
+biz.bokhorst.xprivacy/biz.bokhorst.xprivacy.ActivityMain
+------------------------------
+Xposed Installer
+de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity
+------------------------------
+XyKey
+com.naxy.xykey/com.naxy.xykey.activities.ActivityMain
+------------------------------
+YNAB Classic
+com.youneedabudget.ynab.app.market/com.youneedabudget.ynab.app.StartActivity
+------------------------------
+YT Gaming
+com.google.android.apps.youtube.gaming/com.google.android.apps.youtube.gaming.watchwhile.activity.WatchWhileActivity
+------------------------------
+YT Music
+com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity
+------------------------------
+YouTube
+com.google.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity
+------------------------------
+ZAKER
+com.myzaker.ZAKER_Phone/com.myzaker.ZAKER_Phone.view.LogoActivity
+------------------------------
+Zedge
+net.zedge.android/net.zedge.android.Main
+------------------------------
+ZipSigner
+kellinwood.zipsigner2/kellinwood.zipsigner2.ZipPickerActivity
+------------------------------
+build.gradle
+org.zooper.zwpro/org.zooper.zwlib.Launcher
+------------------------------
+busuu
+com.busuu.android.enc/com.busuu.android.old_ui.BootStrapActivity
+------------------------------
+doubleTwist
+com.doubleTwist.androidPlayer/com.doubleTwist.androidPlayer.HomePagerActivity
+------------------------------
+feedly
+com.devhd.feedly/com.devhd.feedly.Main
+------------------------------
+iBeebo
+org.zarroboogs.weibo/org.zarroboogs.weibo.activity.MainTimeLineActivity
+------------------------------
+iFlat
+com.theme.mumu.flat/com.theme.mumu.flat.MainActivity
+------------------------------
+iHeartRadio
+com.clearchannel.iheartradio.controller/com.clearchannel.iheartradio.controller.activities.NavDrawerActivity
+------------------------------
+l.ist
+com.nasahapps.list/com.nasahapps.list.ui.MainActivity
+------------------------------
+lataclysm
+com.cataclysm.i/com.cataclysm.i.GuideActivity
+------------------------------
+myMail
+com.my.mail/ru.mail.mailapp.SplashScreenActivity
+------------------------------
+pixiv
+jp.pxv.android/jp.pxv.android.RootActivity
+------------------------------
+sFly
+com.cdnren.sfly/com.cdnren.sfly.ui.SplashActivity
+------------------------------
+spaRSS
+net.etuldan.sparss/net.etuldan.sparss.activity.HomeActivity
+------------------------------
+train & run
+com.adidas.micoach/com.adidas.micoach.ui.startup.SplashActivity
+------------------------------
+wallsplash
+com.mikepenz.unsplash/com.mikepenz.unsplash.activities.MainActivity
+------------------------------
+¯\_(ツ)_/¯
+com.codebutler.shrug/com.codebutler.shrug.MainActivity
+------------------------------
+∞
+com.balysv.loop/com.balysv.loop.GameActivity
+------------------------------
+一刻
+com.douban.daily/com.douban.daily.app.WelcomeActivity
+------------------------------
+丁香医生
+cn.dxy.android.aspirin/cn.dxy.android.aspirin.ui.activity.StartupActivity
+------------------------------
+下厨房
+com.xiachufang/com.xiachufang.activity.StartPageActivity
+------------------------------
+人人美剧
+com.zhongduomei.rrmj.society/com.zhongduomei.rrmj.society.ui.AppSplashActivity
+------------------------------
+什么值得买
+com.smzdm.client.android/com.smzdm.client.android.activity.WelComeActivity
+------------------------------
+优酷
+com.youku.phone/com.youku.phone.ActivityWelcome
+------------------------------
+剪码涂
+bos.consoar.photoeditor/bos.consoar.photoeditor.ui.ChoicePictureActivity
+------------------------------
+单读
+com.onewaystreet.weread/com.onewaystreet.weread.activity.HomePageActivity
+------------------------------
+即刻
+com.ruguoapp.jike/com.ruguoapp.jike.ui.activity.WelcomeActivity
+------------------------------
+四次元
+org.qii.weiciyuan/org.qii.weiciyuan.ui.login.AccountActivity
+------------------------------
+好奇心日报
+com.qdaily.ui/com.qdaily.ui.ui.LauncherActivity
+------------------------------
+字幕组影视
+com.yyets.zimuzu/com.yyets.zimuzu.activity.AppStartActivity
+------------------------------
+少数派
+com.sspai.client/com.sspai.client.ui.activity.SplashActivity
+------------------------------
+布卡漫画
+cn.ibuka.manga.ui/cn.ibuka.manga.ui.ActivityStartup
+------------------------------
+带壳截图
+com.sspai.dkjt/com.sspai.dkjt.ui.activity.LaunchActivity
+------------------------------
+应用变量
+com.sollyu.xposed.hook.model/com.sollyu.xposed.hook.model.launcher
+------------------------------
+应用宝
+com.tencent.android.qqdownloader/com.tencent.assistant.activity.SplashActivity
+------------------------------
+开眼视频
+com.wandoujia.eyepetizer/com.wandoujia.eyepetizer.ui.activity.LandingActivity
+------------------------------
+微云
+com.qq.qcloud/com.qq.qcloud.activity.WeiyunRootActivity
+------------------------------
+微信红包
+xyz.monkeytong.hongbao/xyz.monkeytong.hongbao.activities.MainActivity
+------------------------------
+微票儿
+com.tencent.movieticket/com.tencent.movieticket.activity.QQMovieTicketActivity
+------------------------------
+扇贝单词
+com.shanbay.words/com.shanbay.words.activity.SplashActivity
+------------------------------
+扇贝听力
+com.shanbay.listen/com.shanbay.listen.activity.SplashActivity
+------------------------------
+手机乐园
+cn.com.shouji.market/cn.com.shouji.market.MainTabActivity
+------------------------------
+手机淘宝
+com.taobao.taobao/com.taobao.tao.welcome.Welcome
+------------------------------
+手机营业厅
+com.greenpoint.android.mc10086.activity/com.leadeon.cmcc.base.StartPageActivity
+------------------------------
+掌上营业厅
+com.jsmcc/com.jsmcc.ui.WelcomeActivity
+------------------------------
+数字尾巴
+com.funinput.digit/com.funinput.digit.activity.WelcomeActivity
+------------------------------
+时光网
+com.mtime/com.mtime.mtmovie.MainActivity
+------------------------------
+曾几
+bos.consoar.lasttime/bos.consoar.lasttime.ui.MainActivity
+------------------------------
+有道云笔记
+com.youdao.note/com.youdao.note.activity2.SplashActivity
+------------------------------
+格瓦拉@电影
+com.gewara/com.gewara.main.CoverActivity
+------------------------------
+欧路词典
+com.eusoft.eudic/com.eusoft.dict.activity.SplashActivity
+------------------------------
+片刻
+com.pianke.client/com.pianke.client.ui.activity.SplashActivity
+------------------------------
+猫眼电影
+com.sankuai.movie/com.sankuai.movie.welcome.Welcome
+------------------------------
+界面
+com.jiemian.news/com.jiemian.news.activity.SplashActivity
+------------------------------
+知乎
+com.zhihu.android/com.zhihu.android.app.ui.activity.MainActivity
+------------------------------
+知乎日报
+com.zhihu.daily.android/com.zhihu.daily.android.activity.SplashActivity_
+------------------------------
+知豆了
+com.tf.mixReader/com.tf.mixReader.activity.WelcomeActivity2
+------------------------------
+简书
+com.jianshu.haruki/com.baiji.jianshu.account.AccountHomeActivity
+------------------------------
+简洁日历
+com.scliang.bqcalendar/com.scliang.bqcalendar.MainActivity
+------------------------------
+网易有道词典
+com.youdao.dict/com.youdao.dict.activity.LaunchActivity
+------------------------------
+美团
+com.sankuai.meituan/com.sankuai.meituan.activity.Welcome
+------------------------------
+舒心录
+com.myatejx.sakernote/com.myatejx.sakernote.aty.AtyMain
+------------------------------
+芝士阅读
+com.mrocker.cheese/com.mrocker.cheese.ui.activity.splash.SplashActivity
+------------------------------
+英语流利说
+com.liulishuo.engzo/com.liulishuo.engzo.app.activity.LauncherActivity
+------------------------------
+萌娘百科 α
+org.moegirl.moegirlview/org.moegirl.moepad.SplashActivity
+------------------------------
+虾米音乐
+fm.xiami.main/fm.xiami.main.SplashActivity
+------------------------------
+讯飞输入法
+com.iflytek.inputmethod.google/com.iflytek.inputmethod.google.LauncherActivity
+------------------------------
+读读日报
+com.zhihu.circlely.android/com.zhihu.circlely.android.activity.SplashActivity_
+------------------------------
+豆伴我读
+cn.wq.mydouread/cn.wq.mydouread.activity.MainActivity
+------------------------------
+豆瓣
+com.douban.frodo/com.douban.frodo.activity.SplashActivity
+------------------------------
+豆瓣FM
+com.douban.radio/com.douban.radio.ui.WelcomeActivity
+------------------------------
+豆瓣小组
+com.douban.group/com.douban.group.app.SplashActivity
+------------------------------
+豆瓣阅读
+com.douban.book.reader/com.douban.book.reader.activity.WelcomeActivity_
+------------------------------
+豌豆荚
+com.wandoujia.phoenix2/com.wandoujia.jupiter.activity.HomeActivity
+------------------------------
+豌豆荚一览
+com.wandoujia/com.wandoujia.ripple.activity.HomeActivity
+------------------------------
+贝阅
+me.zheteng.cbreader.beiyue/me.zheteng.cbreader.ui.StartupActivity
+------------------------------
+过日子
+com.huofar/com.huofar.activity.Splash
+------------------------------
+金山词霸
+com.kingsoft/com.kingsoft.StartActivity
+------------------------------
+阿里TV助手
+com.yunos.tvhelper/com.yunos.tvhelper.ui.trunk.activitiy.WelcomeActivity
+------------------------------
+驾考宝典
+com.handsgo.jiakao.android/com.handsgo.jiakao.android.Login
+------------------------------

@@ -2505,7 +2505,7 @@
         component="ComponentInfo{biz.bokhorst.xprivacy/biz.bokhorst.xprivacy.ActivityMain}"
         drawable="xprivacy"/>
     <item
-        component="ComponentInfo{}"
+        component="ComponentInfo{com.actionlauncher.playstore/com.actionlauncher.ActionLauncherActivity}"
         drawable=""/>
     <item
         component="ComponentInfo{}"

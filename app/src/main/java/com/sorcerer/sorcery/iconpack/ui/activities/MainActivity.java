@@ -20,7 +20,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
-import com.sorcerer.sorcery.iconpack.ui.demos.SettingsDemoActivity;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
