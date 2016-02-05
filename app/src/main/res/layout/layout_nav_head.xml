@@ -6,7 +6,7 @@
                 android:orientation="vertical">
 
     <ImageView
-        android:src="@drawable/tapet_wall"
+        android:src="@drawable/sandy_shore"
         android:scaleType="centerCrop"
         android:id="@+id/imageView_nav_head"
         android:layout_width="match_parent"

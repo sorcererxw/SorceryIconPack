@@ -2338,7 +2338,7 @@
         drawable="xunlei"/>
     <item
         component="ComponentInfo{com.alexjlockwood.twentyfortyeight/com.alexjlockwood.twentyfortyeight.MainActivity}"
-        drawable="2048plusplus"/>
+        drawable="a2048plusplus"/>
     <item
         component="ComponentInfo{com.scimob.ninetyfour.percent/com.scimob.ninetyfour.percent.MainActivity}"
         drawable="a94_percent"/>

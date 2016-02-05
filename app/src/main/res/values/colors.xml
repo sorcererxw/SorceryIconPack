@@ -4,6 +4,12 @@
     <color name="colorPrimaryDark">@color/green_700</color>
     <color name="colorAccent">@color/brown_700</color>
 
+    <color name="wechat">#37d72d</color>
+    <color name="alipay">#00a0e9</color>
+
+    <color name="title">@color/grey_800</color>
+    <color name="content">@color/grey_700</color>
+
     <color name="red_50">#FFEBEE</color>
     <color name="red_100">#FFCDD2</color>
     <color name="red_200">#EF9A9A</color>

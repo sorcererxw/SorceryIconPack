@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <application
         android:name=".SIP"
@@ -167,11 +169,36 @@
             android:label="@string/action_apply"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".ui.activities.DonateActivity"
+            android:label="@string/nav_item_donate"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="c.b.a.A"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="c.b.a.B"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent"/>
 
         <meta-data
             android:name="BUG_HD_SDK_GENERAL_KEY"
-            android:value="1983aa4d4ef750ea56aac707437d814e"/>
+            android:value="@string/bug_hd_sdk_general_key"/>
 
+        <activity android:name=".ui.activities.AboutActivity">
+        </activity>
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/nav_item_settings"
+            android:theme="@style/PreferenceTheme">
+        </activity>
+        <activity
+            android:name=".ui.demos.SettingsDemoActivity"
+            android:label="@string/title_activity_settings_demo">
+        </activity>
     </application>
 
 </manifest>

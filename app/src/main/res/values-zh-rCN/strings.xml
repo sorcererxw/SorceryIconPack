@@ -16,6 +16,7 @@
     <string name="not_installed">未安装</string>
     <string name="update_fail">获取失败, 请检查网络</string>
     <string name="find_new_version">发现新版</string>
+    <string name="ok">好的</string>
     <string name="download">下载</string>
     <string name="cancel">取消</string>
     <string name="action_apply">应用到启动器</string>
@@ -50,4 +51,24 @@
     <string name="nav_item_feedback">反馈</string>
     <string name="nav_item_welcome">欢迎使用</string>
     <string name="nav_item_update">检查更新</string>
+    <string name="donate_declaration_content">收款方为第三方支付服务商Bmob, 如有疑问请联系: feedback@sorcererxw.com</string>
+    <string name="alipay">支付宝</string>
+    <string name="wechat">微信</string>
+    <string name="donate_title">支持我</string>
+    <string name="donate_content">
+        如果您喜欢这款应用\n
+        并且愿意支持我\n
+        希望可以获得您的捐赠\n
+        我会向您表达由衷的感谢\n
+        谢谢:)</string>
+    <string name="nav_item_donate">捐赠</string>
+    <string name="donate_dialog_title">选择金额</string>
+    <string name="thanks">感  谢</string>
+    <string name="donate_success">捐赠成功 \^o^/</string>
+    <string name="donate_fail">捐赠失败, 不过我还是很感动</string>
+    <string name="open_alipay">正在打开支付宝</string>
+    <string name="nav_item_settings">设置</string>
+    <string name="pref_global_load_summary">不依赖启动器, 使用xposed加载图标</string>
+    <string name="pref_global_load_title">全局加载</string>
+    <string name="pref_global_hint">目前还在测试, 将在下个大版本更新中启用</string>
 </resources>

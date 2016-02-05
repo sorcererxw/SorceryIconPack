@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/pref_global_load_key"
+        android:summary="@string/pref_global_load_summary"
+        android:title="@string/pref_global_load_title"/>
+</PreferenceScreen>

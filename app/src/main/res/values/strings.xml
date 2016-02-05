@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Sorcery Icon Pack</string>
+    <string name="app_name">Sorcery Icon Pack</string>
 
     <string name="action_feedback">Feedback</string>
     <string name="action_welcome">Welcome</string>
@@ -34,12 +34,39 @@
     <string name="nav_open" translatable="false">open</string>
     <string name="nav_close" translatable="false">close</string>
 
+    <string name="thanks">thanks</string>
+
     <string name="nav_item_icon">icons</string>
     <string name="nav_item_apply">apply</string>
     <string name="nav_item_feedback">feedback</string>
+    <string name="nav_item_settings">settings</string>
     <string name="nav_item_update">update</string>
     <string name="nav_item_welcome">welcome</string>
+    <string name="nav_item_donate">donate</string>
 
+    <string name="donate_dialog_title">select amount</string>
+    <string name="donate_declaration_content"></string>
+
+    <string name="donate_title">Support Me</string>
+    <string name="donate_content">If you like my work\n
+    and\n
+    if you want to support me\n
+    please donate !\n
+    I would really appreciate that!\n
+    Thank you!</string>
+
+    <string name="open_alipay">opening alipay</string>
+
+    <string name="donate_success">donate success</string>
+    <string name="donate_fail">donate fail</string>
+
+    <string name="alipay">alipay</string>
+    <string name="wechat">wechat</string>
+
+    <string name="pref_global_load_title">global load</string>
+    <string name="pref_global_load_summary">load by xposed instead of launcher</string>
+    <string name="pref_global_load_key" translatable="false">pref_global_load</string>
+    <string name="pref_global_hint">It is not able now!</string>
     <string-array name="tab_name">
         <item>new</item>
         <item>all</item>
@@ -118,5 +145,75 @@
     </string-array>
 
     <bool name="config_iconpack">true</bool>
+    <string name="ok">ok</string>
+    <string name="title_activity_settings">Settings</string>
+
+
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_draw_demo">DrawDemoActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings_demo">Settings</string>
+
 
 </resources>

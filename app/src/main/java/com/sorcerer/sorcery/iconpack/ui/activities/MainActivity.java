@@ -2,8 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -17,13 +15,12 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
+import com.sorcerer.sorcery.iconpack.ui.demos.SettingsDemoActivity;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
@@ -40,16 +37,16 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        if (Build.VERSION.SDK_INT >= 21) {
-//            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-//        }
+
         setToolbarDoubleTap(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_main);
+        mNavigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.nav_open, R.string.nav_close) {
@@ -69,10 +66,6 @@ public class MainActivity extends AppCompatActivity implements
         };
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
-        mNavigationView.setNavigationItemSelectedListener(this);
-        View headView = mNavigationView.getHeaderView(0);
-//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.tapet_wall);
-//        ((ImageView) headView.findViewById(R.id.imageView_nav_head)).setImageBitmap(bitmap);
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
@@ -187,44 +180,33 @@ public class MainActivity extends AppCompatActivity implements
         adapter.addFragment(getIconFragment(IconFragment.FLAG_XIAOMI), name[14]);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == R.id.action_welcome) {
-//
-//
-//        } else if (id == R.id.action_update) {
-//
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_item_icon) {
 
         } else if (id == R.id.nav_item_apply) {
-            Intent intent = new Intent(this, ApplyActivity.class);
-            this.startActivity(intent);
+            activityShift(ApplyActivity.class);
         } else if (id == R.id.nav_item_feedback) {
-            Intent intent = new Intent(this, FeedbackActivity.class);
-            this.startActivity(intent);
+            activityShift(FeedbackActivity.class);
+        } else if (id == R.id.nav_item_settings) {
+            activityShift(SettingsActivity.class);
         } else if (id == R.id.nav_item_welcome) {
             showWelcomeDialog();
         } else if (id == R.id.nav_item_update) {
             UpdateHelper updateHelper =
                     new UpdateHelper(this, findViewById(R.id.coordinatorLayout_main));
             updateHelper.update();
+        } else if (id == R.id.nav_item_donate) {
+            activityShift(DonateActivity.class);
         }
         mDrawerLayout.closeDrawers();
         return true;
+    }
+
+    private void activityShift(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
     }
 }

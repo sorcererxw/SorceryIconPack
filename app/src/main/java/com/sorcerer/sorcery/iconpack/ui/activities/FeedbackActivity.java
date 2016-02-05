@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.design.widget.Snackbar;
@@ -20,12 +21,13 @@ import android.widget.Toast;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
+import com.sorcerer.sorcery.iconpack.ui.views.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.List;
 
-public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener {
+public class FeedbackActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
     private Context mContext;
     private Toolbar mToolbar;
@@ -39,7 +41,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
 
         mContext = this;
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_feedback);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (Build.VERSION.SDK_INT >= 21) {
@@ -67,6 +69,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                         return false;
                     }
                 });
+
     }
 
     @Override
@@ -104,18 +107,12 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                 Log.e("SendMail", e.getMessage(), e);
             }
         } else if (id == R.id.button_suggest) {
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("message/rfc822");
-            i.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.feedback_mailbox)});
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_SENDTO);
+            i.setData(Uri.parse("mailto:" + getString(R.string.feedback_receive_mailbox)));
             i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: suggest");
             i.putExtra(Intent.EXTRA_TEXT, "write down your suggestion:\n");
-            try {
-                startActivity(Intent.createChooser(i, getString(R.string.choose_mail_app)));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(this,
-                        "There are no email clients installed.",
-                        Toast.LENGTH_SHORT).show();
-            }
+            startActivity(i);
         }
     }
 
@@ -125,6 +122,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         public SendMailAsyncTask() {
             mProgressDialog = new ProgressDialog(mContext);
             mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            mProgressDialog.setCanceledOnTouchOutside(false);
         }
 
         protected void onPreExecute() {

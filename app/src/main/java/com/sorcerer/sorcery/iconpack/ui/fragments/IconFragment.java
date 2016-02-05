@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
+import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
 
 public class IconFragment extends Fragment {
 
@@ -32,7 +35,7 @@ public class IconFragment extends Fragment {
     public static final int FLAG_TENCENT = 7;
     public static final int FLAG_XIAOMI = 4;
 
-    private RecyclerView mGridView;
+    private AutoLoadRecyclerView mGridView;
 
     public IconFragment() {
 
@@ -42,14 +45,27 @@ public class IconFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
-        mGridView = (RecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
-        GridLayoutManager layoutManager = new GridLayoutManager(view.getContext(), calcNumOfRows());
+        mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
         mGridView.setLayoutManager(layoutManager);
         mGridView.setHasFixedSize(true);
-        mGridView.setAdapter(new IconAdapter(view.getContext(), getArguments().getInt("flag", 0)));
+        mGridView.setOnLoadMoreListener(new AutoLoadRecyclerView.OnLoadMoreListener() {
+            @Override
+            public void loadMore() {
+
+            }
+        });
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, true);
+        mGridView.setAdapter(new IconAdapter(getContext(), getArguments().getInt("flag", 0)));
     }
 
     private int calcNumOfRows() {
@@ -61,7 +77,7 @@ public class IconFragment extends Fragment {
         return (int) (size.x / s);
     }
 
-    public RecyclerView getRecyclerView(){
+    public RecyclerView getRecyclerView() {
         return mGridView;
     }
 }

@@ -3,15 +3,21 @@ package com.sorcerer.sorcery.iconpack.adapters;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
+import android.net.Uri;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 
 import java.util.ArrayList;
@@ -26,6 +32,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private String[] mIconNames;
     private Context mContext;
     private List<Integer> mItems;
+    private int lastPosition = -1;
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
@@ -118,7 +125,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, final int position) {
-        holder.icon.setImageResource(mItems.get(position));
         holder.main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,10 +137,24 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                         .show();
             }
         });
+        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
+                SIP.mOptions);
+        setAnimation(holder.icon, position);
+    }
+
+    //动画加载
+    private void setAnimation(View viewToAnimate, int position) {
+        if (position > lastPosition) {
+            Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(),
+                    android.R.anim.fade_in);
+            viewToAnimate.startAnimation(animation);
+            lastPosition = position;
+        }
     }
 
     @Override
     public int getItemCount() {
         return mItems.size();
     }
+
 }

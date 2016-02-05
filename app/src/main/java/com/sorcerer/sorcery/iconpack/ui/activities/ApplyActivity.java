@@ -14,13 +14,14 @@ import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ApplyAdapter;
+import com.sorcerer.sorcery.iconpack.ui.views.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.LauncherApplier;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ApplyActivity extends AppCompatActivity {
+public class ApplyActivity extends SlideInAndOutAppCompatActivity {
 
     private Toolbar mToolbar;
     private RecyclerView mApplyRecyclerView;
@@ -30,7 +31,7 @@ public class ApplyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_apply);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (Build.VERSION.SDK_INT >= 21) {
