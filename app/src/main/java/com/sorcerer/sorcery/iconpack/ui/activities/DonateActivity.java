@@ -1,32 +1,30 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.Manifest;
 import android.animation.Animator;
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
-import com.sorcerer.sorcery.iconpack.ui.views.SlideInAndOutAppCompatActivity;
-import com.sorcerer.sorcery.iconpack.util.Utility;
+import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
@@ -35,6 +33,7 @@ import c.b.BP;
 public class DonateActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
     private Activity mActivity;
+    private int mAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +58,20 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
         findViewById(R.id.button_donate_alipay).setOnClickListener(this);
         findViewById(R.id.button_donate_wechat).setOnClickListener(this);
+
+        final ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView_donate);
+        QCardView cardView = (QCardView) findViewById(R.id.cardView_donate_thank);
+        cardView.setTouchCallBack(new QCardView.TouchCallBack() {
+            @Override
+            public void onDown() {
+                scrollView.requestDisallowInterceptTouchEvent(true);
+            }
+
+            @Override
+            public void onUp() {
+                scrollView.requestDisallowInterceptTouchEvent(false);
+            }
+        });
     }
 
     @Override
@@ -100,7 +113,13 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
             @Override
             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                 if (which == DialogAction.POSITIVE) {
-                    pay(seekBar.getProgress(), isAlipay);
+                    mAmount = seekBar.getProgress();
+                    if (Build.VERSION.SDK_INT >= 23 && !PermissionsHelper.hasPermission
+                            (mActivity, PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
+                        PermissionsHelper.requestReadPhoneState(mActivity);
+                    } else {
+                        pay(isAlipay);
+                    }
                 } else if (which == DialogAction.NEGATIVE) {
                     Snackbar.make(findViewById(R.id.linearLayout_donate_docker),
                             getString(R.string.donate_success),
@@ -113,8 +132,8 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         builder.show();
     }
 
-    private void pay(int money, boolean isAlipay) {
-        BP.pay(mActivity, "捐赠", "感谢捐赠:)", money, isAlipay, new c.b.PListener() {
+    private void pay(boolean isAlipay) {
+        BP.pay(mActivity, "捐赠", "感谢捐赠:)", mAmount, isAlipay, new c.b.PListener() {
 
             @Override
             public void orderId(String s) {
@@ -157,23 +176,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         DisplayMetrics dm = getResources().getDisplayMetrics();
         int w_screen = dm.widthPixels;
         cardView.setTranslationX(w_screen);
-//        cardView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                switch (event.getAction()){
-//                    case MotionEvent.ACTION_DOWN:
-//
-//                        break;
-//                    case MotionEvent.ACTION_UP:
-//                        break;
-//                    case MotionEvent.ACTION_MOVE:
-//                        cardView.animate().
-//                        cardView.setY(event.getY());
-//                        break;
-//                }
-//                return false;
-//            }
-//        });
+
         cardView.animate().setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -195,5 +198,22 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
             }
         }).setDuration(1000).translationX(0).start();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        doNext(requestCode, grantResults);
+    }
+
+    private void doNext(int requestCode, int[] grantResults) {
+        if (requestCode == PermissionsHelper.READ_PHONE_STATE_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                pay(true);
+            } else {
+                Toast.makeText(mActivity, "no permission", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

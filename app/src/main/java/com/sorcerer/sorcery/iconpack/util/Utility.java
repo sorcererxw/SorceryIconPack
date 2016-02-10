@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.widget.Toast;
@@ -50,7 +51,8 @@ public class Utility {
             ResolveInfo resolveInfo = (ResolveInfo) iterator.next();
             AppInfo tempAppInfo = new AppInfo(
                     resolveInfo.activityInfo.packageName + "/" + resolveInfo.activityInfo.name,
-                    resolveInfo.loadLabel(pm).toString());
+                    resolveInfo.loadLabel(pm).toString(),
+                    resolveInfo.loadIcon(pm));
             appInfoList.add(tempAppInfo);
         }
         Collections.sort(appInfoList, new Comparator<AppInfo>() {
@@ -130,13 +132,13 @@ public class Utility {
         return false;
     }
 
-    public static int dip2px(Context context, float dipValue){
+    public static int dip2px(Context context, float dipValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
-        return (int)(dipValue * scale + 0.5f);
+        return (int) (dipValue * scale + 0.5f);
     }
 
-    public static int px2dip(Context context, float pxValue){
+    public static int px2dip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
-        return (int)(pxValue / scale + 0.5f);
+        return (int) (pxValue / scale + 0.5f);
     }
 }

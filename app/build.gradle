@@ -8,8 +8,8 @@ android {
         applicationId "com.sorcerer.sorcery.iconpack"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 15
-        versionName "2.0"
+        versionCode 30
+        versionName "2.5"
     }
     buildTypes {
         debug{
@@ -34,11 +34,10 @@ dependencies {
     compile files('libs/mail.jar')
     compile files('libs/activation.jar')
     compile files('libs/additionnal.jar')
-
     //    compile files('libs/okio-1.4.0.jar')
-//    compile files('libs/okhttp-2.4.0.jar')
-//    compile files('libs/Bmob_Push_V0.6beta_20150408.jar')
-//    compile files('libs/BmobSDK_V3.4.5_1111.jar')
+    //    compile files('libs/okhttp-2.4.0.jar')
+    //    compile files('libs/Bmob_Push_V0.6beta_20150408.jar')
+    //    compile files('libs/BmobSDK_V3.4.5_1111.jar')
     compile files('libs/BmobPay_v2.4_160125.jar')
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
@@ -48,4 +47,7 @@ dependencies {
     compile 'org.adw.library:discrete-seekbar:1.0.1'
     compile 'im.fir:fir-sdk:latest.integration@aar'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.wang.avi:library:1.0.2'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile files('lib/XposedBridgeApi-20150213.jar')
 }

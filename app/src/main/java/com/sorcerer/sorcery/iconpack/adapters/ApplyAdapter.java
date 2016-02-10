@@ -1,8 +1,10 @@
 package com.sorcerer.sorcery.iconpack.adapters;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -74,15 +76,20 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
             }
         }
 
+        @TargetApi(Build.VERSION_CODES.LOLLIPOP)
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    v.animate().translationZ(5).start();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        v.animate().translationZ(5).start();
+                    }
                     break;
                 case MotionEvent.ACTION_CANCEL:
                 case MotionEvent.ACTION_UP:
-                    v.animate().translationZ(0).start();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        v.animate().translationZ(0).start();
+                    }
                     break;
             }
             return false;

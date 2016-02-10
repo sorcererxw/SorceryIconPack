@@ -194,7 +194,23 @@
             android:name=".ui.activities.SettingsActivity"
             android:label="@string/nav_item_settings"
             android:theme="@style/PreferenceTheme">
-        </activity>        
+        </activity>
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true"/>
+        <meta-data
+            android:name="xposeddescription"
+            android:value="global load sorcery icon pack"/>
+        <meta-data
+            android:name="xposedminversion"
+            android:value="30"/>
+
+        <activity
+            android:name=".ui.activities.AppSelectActivity"
+            android:label="@string/select_app">
+        </activity>
+
     </application>
 
 </manifest>

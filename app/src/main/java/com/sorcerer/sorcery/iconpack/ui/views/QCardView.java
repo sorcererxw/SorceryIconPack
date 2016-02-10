@@ -20,6 +20,11 @@ public class QCardView extends CardView {
     private int lastX;
     private int lastY;
     private Scroller mScroller;
+    private TouchCallBack mTouchCallBack;
+
+    public void setTouchCallBack(TouchCallBack touchCallBack) {
+        mTouchCallBack = touchCallBack;
+    }
 
     public QCardView(Context context) {
         this(context, null);
@@ -32,6 +37,12 @@ public class QCardView extends CardView {
     public QCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mScroller = new Scroller(context);
+    }
+
+    public interface TouchCallBack {
+        void onDown();
+
+        void onUp();
     }
 
 
@@ -83,6 +94,9 @@ public class QCardView extends CardView {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                if (mTouchCallBack != null) {
+                    mTouchCallBack.onDown();
+                }
                 lastX = x;
                 lastY = y;
                 break;
@@ -90,9 +104,12 @@ public class QCardView extends CardView {
                 int offsetX = x - lastX;
                 int offsetY = y - lastY;
                 // 通过layout方法来重新设置view的坐标
-                ((View)getParent()).scrollBy(-offsetX, -offsetY);
+                ((View) getParent()).scrollBy(-offsetX, -offsetY);
                 break;
             case MotionEvent.ACTION_UP:
+                if (mTouchCallBack != null) {
+                    mTouchCallBack.onUp();
+                }
                 mScroller.startScroll(
                         view.getScrollX(),
                         view.getScrollY(),

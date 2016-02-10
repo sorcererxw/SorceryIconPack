@@ -8,10 +8,12 @@ import android.graphics.drawable.Drawable;
 public class AppInfo {
     String code = null;
     String name = null;
+    Drawable icon = null;
 
-    public AppInfo(String paramString1, String paramString2) {
+    public AppInfo(String paramString1, String paramString2, Drawable paramDrawable) {
         code = paramString1;
         name = paramString2;
+        icon = paramDrawable;
     }
 
     public String getCode() {
@@ -32,5 +34,13 @@ public class AppInfo {
 
     public String toString() {
         return name + "\n" + code + "\n";
+    }
+
+    public Drawable getIcon() {
+        return icon;
+    }
+
+    public void setIcon(Drawable icon) {
+        this.icon = icon;
     }
 }

@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+#-libraryjars libs/activation.jar
+#-libraryjars libs/additionnal.jar

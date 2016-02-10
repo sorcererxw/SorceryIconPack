@@ -21,7 +21,7 @@
     <string name="cancel">取消</string>
     <string name="action_apply">应用到启动器</string>
     <string name="is_last_version">当前已为最新版本, 无需更新</string>
-    <string name="icon_request_sending">正在通知开发者更新图标库</string>
+    <string name="icon_request_sending">正在发送</string>
     <string name="version_name">版本名</string>
     <string name="action_update">检查更新</string>
     <string name="icon_request_send_fail">发送失败, 请通过邮箱方式反馈</string>
@@ -70,4 +70,9 @@
     <string name="pref_global_load_summary">不依赖启动器, 使用xposed加载图标</string>
     <string name="pref_global_load_title">全局加载</string>
     <string name="pref_global_hint">目前还在测试, 将在下个大版本更新中启用</string>
+    <string name="cancel_request">取消图标申请?</string>
+    <string name="yes">是的</string>
+    <string name="select_app">选择应用</string>
+    <string name="select_all">全选</string>
+    <string name="no">不</string>
 </resources>

@@ -6,6 +6,10 @@
     <string name="action_apply">Apply</string>
     <string name="action_update">Update</string>
 
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="ok">ok</string>
+
     <string name="request">Request icon</string>
     <string name="suggest">Suggest</string>
 
@@ -62,6 +66,10 @@
 
     <string name="alipay">alipay</string>
     <string name="wechat">wechat</string>
+
+    <string name="select_all">select all</string>
+    <string name="select_app">select app</string>
+    <string name="cancel_request">cancel_request?</string>
 
     <string name="pref_global_load_title">global load</string>
     <string name="pref_global_load_summary">load by xposed instead of launcher</string>
@@ -145,7 +153,4 @@
     </string-array>
 
     <bool name="config_iconpack">true</bool>
-    <string name="ok">ok</string>
-    <string name="title_activity_settings">Settings</string>
-
 </resources>

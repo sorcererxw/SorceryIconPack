@@ -189,7 +189,7 @@
 
     <item
         component="ComponentInfo{com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity}"
-        drawable="cloudmusic"/>
+        drawable="netease_music"/>
 
     <item
         component="ComponentInfo{com.zhihu.android/com.zhihu.android.ui.activity.GuideActivity}"
@@ -860,7 +860,7 @@
 
     <item
         component="ComponentInfo{com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity}"
-        drawable="cloudmusic"/>
+        drawable="netease_music"/>
 
     <item
         component="ComponentInfo{com.sec.pcw/com.mfluent.asp.ui.MobileChargesNotificationActivity}"
@@ -1145,7 +1145,7 @@
         drawable="tencent_news"/>
     <item
         component="ComponentInfo{com.autonavi.minimap/com.autonavi.map.activity.SplashActivity}"
-        drawable="gaode"/>
+        drawable="amap"/>
     <item
         component="ComponentInfo{com.UCMobile/com.UCMobile.main.UCMobile}"
         drawable="uc"/>
@@ -1671,24 +1671,6 @@
         component="ComponentInfo{com.dolphin.browser.xf/mobi.mgeek.TunnyBrowser.MainActivity}"
         drawable="dolphin_browser"/>
     <item
-        component="ComponentInfo{com.tencent.minihd.qq/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq"/>
-    <item
-        component="ComponentInfo{com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq"/>
-    <item
-        component="ComponentInfo{com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq"/>
-    <item
-        component="ComponentInfo{com.tencent.qqlite/com.tencent.qqlite.activity.SplashActivity}"
-        drawable="qq"/>
-    <item
-        component="ComponentInfo{com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq"/>
-    <item
-        component="ComponentInfo{com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq"/>
-    <item
         component="ComponentInfo{com.sec.android.app.music/com.sec.android.app.music.common.activity.MusicMainActivity}"
         drawable="samsung_music"/>
     <item
@@ -2104,7 +2086,7 @@
         drawable="officesuite"/>
     <item
         component="ComponentInfo{com.tencent.qqpim/com.tencent.qqpim.ui.QQPimAndroid}"
-        drawable="qq_sunc"/>
+        drawable="qq_sync"/>
     <item
         component="ComponentInfo{com.sonyericsson.extras.liveware/com.sonyericsson.extras.liveware.ui.LaunchActivity}"
         drawable="sony_smart_connect"/>
@@ -2506,61 +2488,79 @@
         drawable="xprivacy"/>
     <item
         component="ComponentInfo{com.actionlauncher.playstore/com.actionlauncher.ActionLauncherActivity}"
-        drawable=""/>
+        drawable="action_launcher"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.rytong.bankps/com.rytong.bankps.LPSplashScreen}"
+        drawable="zhongguoyouzheng"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.lovebizhi.wallpaper/com.lovebizhi.wallpaper.WelcomeActivity}"
+        drawable="aibizhi"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.gewara/com.gewara.main.CoverActivity}"
+        drawable="gewala_movie"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.qq.qcloud/com.qq.qcloud.activity.WeiyunRootActivity}"
+        drawable="weiyun"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tudou.android/com.tudou.ui.activity.WelcomeActivity}"
+        drawable="tudou"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.pplive.androidphone/com.pplive.androidphone.ui.FirstActivity}"
+        drawable="pptv"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.welove520.welove/com.welove520.welove.LaunchActivity}"
+        drawable="welove"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.minihd.qq/com.tencent.mobileqq.activity.SplashActivity}"
+        drawable="qq_hd"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity}"
+        drawable="qq_lite"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity}"
+        drawable="qq_international"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.qqlite/com.tencent.qqlite.activity.SplashActivity}"
+        drawable="qq_lite"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity}"
+        drawable="qq"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity}"
+        drawable="qq_international"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{android.zhibo8/android.zhibo8.ui.contollers.main.LaunchActivity}"
+        drawable="zhiboba"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.funinput.digit/com.funinput.digit.activity.WelcomeActivity}"
+        drawable="dgtle"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{de.defim.apk.bootmanager/de.defim.apk.bootmanager.Launch0}"
+        drawable="bootmanager"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.xiaomi.router/com.xiaomi.router.module.splash.SplashActivity}"
+        drawable="miwifi"/>
     <item
-        component="ComponentInfo{}"
-        drawable=""/>
+        component="ComponentInfo{com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity}"
+        drawable="quickpic"/>
+    <item
+        component="ComponentInfo{jackpal.androidterm/jackpal.androidterm.Term}"
+        drawable="terminal_emulator"/>
+    <item
+        component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.MainActivity}"
+        drawable="samsung_files"/>
+    <item
+        component="ComponentInfo{com.samsung.everglades.video/com.samsung.everglades.video.VideoMainsa}"
+        drawable="samsung_video"/>
+    <item
+        component="ComponentInfo{com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaShortcutHandler}"
+        drawable="nova_launcher"/>
+    <item
+        component="ComponentInfo{flipboard.cn/flipboard.activities.LaunchActivityAlias}"
+        drawable="flipboard"/>
+    <item
+        component="ComponentInfo{com.lenovo.security/com.lenovo.security.homepage.HomePageActivity}"
+        drawable="lenovo_security"/>
     <item
         component="ComponentInfo{}"
         drawable=""/>

@@ -21,7 +21,7 @@ import im.fir.sdk.FIR;
 public class SIP extends Application {
 
     public static DisplayImageOptions mOptions;
-
+    public static String LOGTAG = "[SIP]";
     @Override
     public void onCreate() {
         super.onCreate();

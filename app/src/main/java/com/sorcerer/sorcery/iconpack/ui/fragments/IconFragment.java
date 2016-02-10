@@ -64,7 +64,7 @@ public class IconFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, true);
+        mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, false);
         mGridView.setAdapter(new IconAdapter(getContext(), getArguments().getInt("flag", 0)));
     }
 

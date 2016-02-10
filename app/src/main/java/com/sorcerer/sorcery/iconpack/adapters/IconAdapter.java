@@ -125,6 +125,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, final int position) {
+        holder.icon.setImageResource(mItems.get(position));
         holder.main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,9 +138,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                         .show();
             }
         });
-        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
-                SIP.mOptions);
-        setAnimation(holder.icon, position);
+//        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
+//                SIP.mOptions);
+//        setAnimation(holder.icon, position);
     }
 
     //动画加载

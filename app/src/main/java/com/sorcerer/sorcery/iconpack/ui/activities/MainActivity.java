@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -15,12 +16,15 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
+import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
@@ -68,6 +72,24 @@ public class MainActivity extends AppCompatActivity implements
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
+
+        mViewPager.setOffscreenPageLimit(1);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset,
+                                       int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
 
         ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
         generateFragments(adapter);
@@ -207,5 +229,22 @@ public class MainActivity extends AppCompatActivity implements
         Intent intent = new Intent(this, cls);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        doNext(requestCode, grantResults);
+    }
+
+    private void doNext(int requestCode, int[] grantResults) {
+        if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                new UpdateHelper(this).update();
+            } else {
+                Toast.makeText(this, "no permission", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

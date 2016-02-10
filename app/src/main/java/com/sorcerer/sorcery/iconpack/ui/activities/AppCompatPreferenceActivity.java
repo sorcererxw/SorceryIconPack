@@ -12,6 +12,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sorcerer.sorcery.iconpack.R;
+
 /**
  * A {@link android.preference.PreferenceActivity} which implements and proxies the necessary calls
  * to be used with AppCompat.
@@ -105,5 +107,11 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
             mDelegate = AppCompatDelegate.create(this, null);
         }
         return mDelegate;
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_right_out);
     }
 }
