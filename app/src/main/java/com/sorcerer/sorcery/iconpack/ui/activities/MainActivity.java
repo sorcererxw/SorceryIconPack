@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,13 +14,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.nostra13.universalimageloader.core.ImageLoader;
+import com.github.florent37.hollyviewpager.HollyViewPager;
+import com.github.florent37.hollyviewpager.HollyViewPagerConfigurator;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements
     private TabLayout mTabLayout;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
+//    private HollyViewPager mHollyViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements
         toggle.syncState();
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
+
+//        mHollyViewPager = (HollyViewPager) findViewById(R.id.hollyViewPager_icon);
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
 
         mViewPager.setOffscreenPageLimit(1);
@@ -94,6 +101,15 @@ public class MainActivity extends AppCompatActivity implements
         ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
         generateFragments(adapter);
         mViewPager.setAdapter(adapter);
+//        mViewPager.setPageMargin(100);
+//        mHollyViewPager.setAdapter(adapter);
+//        mHollyViewPager.setConfigurator(new HollyViewPagerConfigurator() {
+//            @Override
+//            public float getHeightPercentForPage(int page) {
+//                return ((page+4)%10)/10f;
+//            }
+//        });
+//        mHollyViewPager.getViewPager().setPageMargin(16);
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
@@ -139,6 +155,9 @@ public class MainActivity extends AppCompatActivity implements
                 new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
                     @Override
                     public void onDoubleTap() {
+//                        int index = mHollyViewPager.getViewPager().getCurrentItem();
+//                        ViewPageAdapter adapter = (ViewPageAdapter) mHollyViewPager.getViewPager()
+//                                .getAdapter();
                         int index = mViewPager.getCurrentItem();
                         ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
                         IconFragment fragment = (IconFragment) adapter.getItem(index);
@@ -199,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements
         adapter.addFragment(getIconFragment(IconFragment.FLAG_SONY), name[12]);
         adapter.addFragment(getIconFragment(IconFragment.FLAG_TENCENT), name[13]);
         adapter.addFragment(getIconFragment(IconFragment.FLAG_XIAOMI), name[14]);
+
     }
 
     @Override
@@ -220,6 +240,8 @@ public class MainActivity extends AppCompatActivity implements
             updateHelper.update();
         } else if (id == R.id.nav_item_donate) {
             activityShift(DonateActivity.class);
+        } else if (id == R.id.nav_item_test) {
+            activityShift(TestActivity.class);
         }
         mDrawerLayout.closeDrawers();
         return true;

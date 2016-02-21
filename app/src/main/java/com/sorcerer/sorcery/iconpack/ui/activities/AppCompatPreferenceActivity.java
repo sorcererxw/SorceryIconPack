@@ -1,24 +1,39 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.MenuInflater;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 /**
  * A {@link android.preference.PreferenceActivity} which implements and proxies the necessary calls
  * to be used with AppCompat.
  */
-public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
+public abstract class AppCompatPreferenceActivity extends PreferenceActivity  {
 
     private AppCompatDelegate mDelegate;
 
@@ -27,12 +42,15 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
         getDelegate().installViewFactory();
         getDelegate().onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         getDelegate().onPostCreate(savedInstanceState);
+
+
     }
 
     public ActionBar getSupportActionBar() {
@@ -109,9 +127,12 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
         return mDelegate;
     }
 
-    @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_right_out);
-    }
+//    @Override
+//    public void finish() {
+//        super.finish();
+//        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_right_out);
+//    }
+
+
+
 }

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.view.View;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -104,4 +105,5 @@ public class AutoLoadRecyclerView extends RecyclerView implements LoadFinishCall
             }
         }
     }
+
 }

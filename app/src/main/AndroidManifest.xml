@@ -162,17 +162,31 @@
         <activity
             android:name=".ui.activities.FeedbackActivity"
             android:label="@string/action_feedback"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.ApplyActivity"
             android:label="@string/action_apply"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.DonateActivity"
             android:label="@string/nav_item_donate"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".ui.activities.AboutActivity"
+            android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/nav_item_settings"
+            android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".ui.activities.AppSelectActivity"
+            android:label="@string/select_app"/>
+        <activity
+            android:name=".ui.activities.TestActivity"
+            android:theme="@style/SubActivity"/>
+
+        <receiver android:name=".xposed.PackageInstalledReceiver"/>
+
         <activity
             android:name="c.b.a.A"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -187,15 +201,6 @@
         <meta-data
             android:name="BUG_HD_SDK_GENERAL_KEY"
             android:value="@string/bug_hd_sdk_general_key"/>
-
-        <activity android:name=".ui.activities.AboutActivity">
-        </activity>
-        <activity
-            android:name=".ui.activities.SettingsActivity"
-            android:label="@string/nav_item_settings"
-            android:theme="@style/PreferenceTheme">
-        </activity>
-
         <meta-data
             android:name="xposedmodule"
             android:value="true"/>
@@ -205,12 +210,6 @@
         <meta-data
             android:name="xposedminversion"
             android:value="30"/>
-
-        <activity
-            android:name=".ui.activities.AppSelectActivity"
-            android:label="@string/select_app">
-        </activity>
-
     </application>
 
 </manifest>

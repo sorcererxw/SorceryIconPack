@@ -52,9 +52,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
 
         findViewById(R.id.button_donate_alipay).setOnClickListener(this);
         findViewById(R.id.button_donate_wechat).setOnClickListener(this);

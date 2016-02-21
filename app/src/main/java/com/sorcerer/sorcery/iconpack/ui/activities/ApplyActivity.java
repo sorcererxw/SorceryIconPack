@@ -28,9 +28,6 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
 
         mApplyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
 
@@ -69,6 +66,7 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
         });
         mApplyRecyclerView.setAdapter(applyAdapter);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

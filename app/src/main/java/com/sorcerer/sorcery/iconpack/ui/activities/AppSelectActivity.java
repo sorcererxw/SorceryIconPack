@@ -51,6 +51,8 @@ public class AppSelectActivity extends AppCompatActivity {
     private AVLoadingIndicatorView mIndicatorView;
     private MyFloatingActionButton mFab;
     private boolean mCheckAll;
+    private boolean menuEnable;
+    private Menu mMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +97,7 @@ public class AppSelectActivity extends AppCompatActivity {
                 }
             }
         });
+        menuEnable = false;
         new LoadAppsAsyncTask(this).execute();
     }
 
@@ -124,6 +127,11 @@ public class AppSelectActivity extends AppCompatActivity {
 
             dismissIndicator();
             showRecyclerView();
+
+            menuEnable = true;
+            if(mMenu!=null){
+                onCreateOptionsMenu(mMenu);
+            }
         }
 
         private void setupRecyclerView(List<AppInfo> appInfoList) {
@@ -241,28 +249,32 @@ public class AppSelectActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_app_select, menu);
-        MenuItem item = menu.findItem(R.id.action_select_all);
-        SwitchCompat switchCompat = new SwitchCompat(this);
-        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mCheckAll = !mCheckAll;
-                mAdapter.checkAll(mCheckAll);
-                if (mCheckAll) {
-                    showFab();
-                } else {
-                    hideFab();
+        if (menuEnable == true) {
+            getMenuInflater().inflate(R.menu.menu_app_select, menu);
+            MenuItem item = menu.findItem(R.id.action_select_all);
+            SwitchCompat switchCompat = new SwitchCompat(this);
+            switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    mCheckAll = !mCheckAll;
+                    mAdapter.checkAll(mCheckAll);
+                    if (mCheckAll) {
+                        showFab();
+                    } else {
+                        hideFab();
+                    }
                 }
+            });
+            switchCompat.setText(getString(R.string.select_all));
+            switchCompat.setTextColor(getResources().getColor(R.color.white));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                switchCompat.setElegantTextHeight(true);
             }
-        });
-        switchCompat.setText(getString(R.string.select_all));
-        switchCompat.setTextColor(getResources().getColor(R.color.white));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            switchCompat.setElegantTextHeight(true);
+            item.setActionView(switchCompat);
+            item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        } else {
+            mMenu = menu;
         }
-        item.setActionView(switchCompat);
-        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return super.onCreateOptionsMenu(menu);
     }
 

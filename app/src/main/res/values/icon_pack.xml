@@ -1,31 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-        <item>zhihu</item>
-        <item>twitter</item>
-        <item>wandoujia_yilan</item>
-        <item>uber</item>
-        <item>dgtle</item>
-        <item>zhiboba</item>
-        <item>quickpic</item>
-        <item>miwifi</item>
-        <item>eleme</item>
-        <item>bootmanager</item>
-        <item>qq</item>
-        <item>qq_lite</item>
-        <item>qq_international</item>
-        <item>qq_hd</item>
+        <item>a10086</item>
+        <item>acfun</item>
+        <item>antutu</item>
+        <item>baidu_pan</item>
+        <item>bing_dict</item>
+        <item>bing_keyboard</item>
+        <item>ccb</item>
+        <item>chelaile</item>
+        <item>couplete</item>
+        <item>dandu</item>
+        <item>dangle</item>
+        <item>daxianggonghui</item>
+        <item>didi</item>
+        <item>dingxiangyisheng</item>
+        <item>douguomeishi</item>
+        <item>duokan</item>
+        <item>echo</item>
+        <item>evernote</item>
+        <item>flava</item>
+        <item>guokr</item>
+        <item>haici_dict</item>
+        <item>huya</item>
+        <item>icbc</item>
+        <item>it_home</item>
+        <item>jd_wallet</item>
+        <item>kaoyanbang</item>
+        <item>kfc</item>
+        <item>kugou</item>
+        <item>lbe</item>
+        <item>ledongli</item>
+        <item>lightalk</item>
+        <item>lingxi</item>
+        <item>medium</item>
+        <item>meiriyiwen</item>
+        <item>moji_weather</item>
+        <item>oneplus_weather</item>
+        <item>panda_tv</item>
+        <item>pomotodo</item>
+        <item>press</item>
+        <item>qq_mail</item>
+        <item>qufenqi</item>
+        <item>qunar</item>
+        <item>samsung_sreminder</item>
+        <item>seed</item>
+        <item>suning</item>
+        <item>tencent_file_manager</item>
         <item>tencent_news</item>
-        <item>amap</item>
-        <item>baidu_maps</item>
-        <item>bilibili</item>
-        <item>taobao</item>
-        <item>tieba</item>
-        <item>netease_music</item>
-        <item>qq_music</item>
-        <item>weibo</item>
+        <item>tencent_video</item>
+        <item>tianyashequ</item>
+        <item>ticktick</item>
+        <item>tmall</item>
+        <item>unicom</item>
+        <item>via_browser</item>
+        <item>wandoujia_yilan</item>
         <item>wechat</item>
-        <item>welove</item>
+        <item>weico</item>
+        <item>weizhong_bank</item>
+        <item>wooyun</item>
+        <item>xiami</item>
+        <item>xiaowo_weather</item>
+        <item>yangqi</item>
+        <item>yixi</item>
+        <item>youdao_translator</item>
+        <item>youku</item>
+        <item>zero</item>
+        <item>zhixing</item>
+        <item>zhuishushenqi</item>
+        <item>zol</item>
+        <item>zuzhiyunxing</item>
     </string-array>
 
     <string-array name="icon_pack_samsung">
@@ -271,6 +315,7 @@
     </string-array>
 
     <string-array name="icon_pack">
+        <item>a10086</item>
         <item>a115</item>
         <item>a12306</item>
         <item>a2048plusplus</item>
@@ -294,7 +339,6 @@
         <item>adw_launcher</item>
         <item>aibizhi</item>
         <item>aide</item>
-        <item>aillis</item>
         <item>airbnb</item>
         <item>airdroid</item>
         <item>alipay</item>
@@ -307,6 +351,7 @@
         <item>anime_taste</item>
         <item>ankidroid</item>
         <item>antennapod</item>
+        <item>antutu</item>
         <item>anydocal</item>
         <item>anydocal_1</item>
         <item>anydocal_10</item>
@@ -410,6 +455,8 @@
         <item>beyondpod</item>
         <item>bhoot</item>
         <item>bilibili</item>
+        <item>bing_dict</item>
+        <item>bing_keyboard</item>
         <item>bluenote</item>
         <item>boom_beach</item>
         <item>bootmanager</item>
@@ -455,6 +502,7 @@
         <item>camera360</item>
         <item>camera_fv_5</item>
         <item>camscanner</item>
+        <item>ccb</item>
         <item>changba</item>
         <item>chaojikechengbiao</item>
         <item>chelaile</item>
@@ -474,14 +522,18 @@
         <item>coolapk</item>
         <item>coolify</item>
         <item>cortana</item>
+        <item>couplete</item>
         <item>cpu_z</item>
         <item>crossyroad</item>
         <item>ctrip</item>
         <item>cyanogenmod_explorer</item>
         <item>cyanogenmod_screencast</item>
+        <item>dandu</item>
+        <item>dangle</item>
         <item>darker</item>
         <item>dashlane</item>
         <item>dashlane_browser</item>
+        <item>daxianggonghui</item>
         <item>dayima</item>
         <item>deviantart</item>
         <item>dgtle</item>
@@ -490,6 +542,7 @@
         <item>didi</item>
         <item>digg</item>
         <item>dingding</item>
+        <item>dingxiangyisheng</item>
         <item>documents</item>
         <item>doggcatcher</item>
         <item>dolphin_browser</item>
@@ -510,6 +563,7 @@
         <item>dumb_ways_to_die_2</item>
         <item>duokan</item>
         <item>duolingo</item>
+        <item>echo</item>
         <item>eleme</item>
         <item>email</item>
         <item>es_explorer</item>
@@ -530,6 +584,7 @@
         <item>fitbit</item>
         <item>fit_time</item>
         <item>flappy_bird</item>
+        <item>flava</item>
         <item>flipboard</item>
         <item>flynx</item>
         <item>fmradio</item>
@@ -597,7 +652,9 @@
         <item>gravity_box</item>
         <item>gravity_screen</item>
         <item>gudong</item>
+        <item>guokr</item>
         <item>hai360</item>
+        <item>haici_dict</item>
         <item>hayday</item>
         <item>hitman_go</item>
         <item>hitman_sniper</item>
@@ -629,6 +686,8 @@
         <item>htc_weather</item>
         <item>hupo_weather</item>
         <item>huputiyu</item>
+        <item>huya</item>
+        <item>icbc</item>
         <item>icourse163</item>
         <item>imagine</item>
         <item>imdb</item>
@@ -650,6 +709,7 @@
         <item>jotter_pad</item>
         <item>juejin</item>
         <item>kaifazhetoutiao</item>
+        <item>kaoyanbang</item>
         <item>kechenggezi</item>
         <item>keep_health</item>
         <item>kernel_adiutor</item>
@@ -662,6 +722,7 @@
         <item>kuaikuaicha_xinhuazidian</item>
         <item>kuaipan</item>
         <item>kuaiya</item>
+        <item>kugou</item>
         <item>lanrenzhoumo</item>
         <item>lastpass</item>
         <item>layers_manager</item>
@@ -741,12 +802,15 @@
         <item>line_camera</item>
         <item>line_deco</item>
         <item>lingshengduoduo</item>
+        <item>lingxi</item>
         <item>link_bubble</item>
         <item>lizhi_fm</item>
         <item>lucid_launcher</item>
         <item>lucky_patcher</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
+        <item>medium</item>
+        <item>meiriyiwen</item>
         <item>meituan</item>
         <item>meituan_waimai</item>
         <item>meituxiuxiu</item>
@@ -780,6 +844,7 @@
         <item>miui_weather</item>
         <item>miwifi</item>
         <item>mi_fit</item>
+        <item>moji_weather</item>
         <item>momo</item>
         <item>mono</item>
         <item>monument_valley</item>
@@ -809,6 +874,8 @@
         <item>onedrive</item>
         <item>onefootball</item>
         <item>oneplus_community</item>
+        <item>oneplus_weather</item>
+        <item>panda_tv</item>
         <item>peel_smart_remote</item>
         <item>pengpai_news</item>
         <item>pinglide</item>
@@ -816,11 +883,14 @@
         <item>pocket</item>
         <item>pocket_casts</item>
         <item>polaris_office</item>
+        <item>pomotodo</item>
         <item>poweramp</item>
         <item>power_clean</item>
         <item>pptv</item>
+        <item>press</item>
         <item>psiphon</item>
         <item>ps_touch</item>
+        <item>qdaily</item>
         <item>qingting_fm</item>
         <item>qq</item>
         <item>qq_browser</item>
@@ -828,13 +898,16 @@
         <item>qq_international</item>
         <item>qq_keyboard</item>
         <item>qq_lite</item>
+        <item>qq_mail</item>
         <item>qq_music</item>
         <item>qq_read</item>
         <item>qq_secure</item>
         <item>qq_sync</item>
         <item>quanminkge</item>
+        <item>qufenqi</item>
         <item>quickpic</item>
         <item>quickshortcutmaker</item>
+        <item>qunar</item>
         <item>qzone</item>
         <item>rar</item>
         <item>reaper</item>
@@ -894,12 +967,14 @@
         <item>samsung_smart_manager</item>
         <item>samsung_smemo</item>
         <item>samsung_sms</item>
+        <item>samsung_sreminder</item>
         <item>samsung_theme</item>
         <item>samsung_video</item>
         <item>samsung_voice</item>
         <item>sanguliupo</item>
         <item>screen_recorder</item>
         <item>sd_maid</item>
+        <item>seed</item>
         <item>shadowsocks</item>
         <item>shanbay</item>
         <item>shanbay_listen</item>
@@ -996,16 +1071,20 @@
         <item>temple_run_brave</item>
         <item>temple_run_oz</item>
         <item>temple_run_two</item>
+        <item>tencent_file_manager</item>
         <item>tencent_map</item>
         <item>tencent_news</item>
         <item>tencent_video</item>
         <item>terminal</item>
         <item>terminal_emulator</item>
         <item>texpand</item>
+        <item>tianyashequ</item>
+        <item>ticktick</item>
         <item>tieba</item>
         <item>timi</item>
         <item>tiny_thief</item>
         <item>titanium_backup</item>
+        <item>tmall</item>
         <item>toca_builders</item>
         <item>toca_cars</item>
         <item>toca_hair_salon_two</item>
@@ -1020,7 +1099,9 @@
         <item>twitter</item>
         <item>uber</item>
         <item>uc</item>
+        <item>unicom</item>
         <item>versus</item>
+        <item>via_browser</item>
         <item>viper4android</item>
         <item>vsco</item>
         <item>vst</item>
@@ -1035,6 +1116,7 @@
         <item>weather_timeline</item>
         <item>wechat</item>
         <item>weibo</item>
+        <item>weico</item>
         <item>weiyun</item>
         <item>weizhong_bank</item>
         <item>welove</item>
@@ -1051,6 +1133,7 @@
         <item>xiaoenai</item>
         <item>xiaohongshu</item>
         <item>xiaokaxiu</item>
+        <item>xiaowo_weather</item>
         <item>ximalayating</item>
         <item>xinstaller</item>
         <item>xposed</item>
@@ -1064,8 +1147,10 @@
         <item>yangqi</item>
         <item>yidianzixun</item>
         <item>yihaodian</item>
+        <item>yixi</item>
         <item>youdaodict</item>
         <item>youdao_note</item>
+        <item>youdao_translator</item>
         <item>youku</item>
         <item>youxiangdashi</item>
         <item>zaker</item>
@@ -1073,19 +1158,24 @@
         <item>zarchiver</item>
         <item>zealer</item>
         <item>zedge</item>
+        <item>zero</item>
         <item>zhangyu_keyboard</item>
         <item>zhengdian_naozhong</item>
         <item>zhengdian_rili</item>
         <item>zhiboba</item>
         <item>zhihu</item>
         <item>zhihu_ribao</item>
+        <item>zhixing</item>
         <item>zhixinghuochepiao</item>
         <item>zhongguoyouzheng</item>
         <item>zhonghuawannianli</item>
         <item>zhuanxin</item>
+        <item>zhuishushenqi</item>
         <item>zitiguanjia</item>
+        <item>zol</item>
         <item>zuimeishiguang</item>
         <item>zuimeiyingyong</item>
         <item>zuimeizipai</item>
+        <item>zuzhiyunxing</item>
     </string-array>
 </resources>

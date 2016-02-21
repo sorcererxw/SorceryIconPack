@@ -1,11 +1,15 @@
 package com.sorcerer.sorcery.iconpack.util;
 
+import android.app.Activity;
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -13,6 +17,9 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -140,5 +147,11 @@ public class Utility {
     public static int px2dip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
+    }
+
+    public static View getContentView(Activity ac){
+        ViewGroup view = (ViewGroup)ac.getWindow().getDecorView();
+        FrameLayout content = (FrameLayout)view.findViewById(android.R.id.content);
+        return content.getChildAt(0);
     }
 }
