@@ -66,7 +66,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
         mActive = mPrefs.getBoolean("pref_global_load", false);
         if (mActive) {
             if (action.equals(Intent.ACTION_PACKAGE_ADDED)) {
-                Toast.makeText(context, action, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, action, Toast.LENGTH_SHORT).show();
                 reapply(context);
 //            Toast.makeText(context, "added", Toast.LENGTH_SHORT).show();
                 if (!intent.getBooleanExtra("InvokedByIconThemer", false)) {

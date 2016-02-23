@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
@@ -28,7 +30,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     private int cnt;
     private Context mContext;
     private List<AppInfo> mAppInfoList;
+
     private List<Boolean> mCheckedList;
+
+    private boolean mShowAll = false;
 
     private OnCheckListener mOnCheckListener;
 
@@ -45,12 +50,31 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         public CheckBox check;
         public View main;
 
+
         public AppItemViewHolder(View itemView) {
             super(itemView);
             main = itemView;
             icon = (ImageView) itemView.findViewById(R.id.imageVIew_icon_request_icon);
             label = (TextView) itemView.findViewById(R.id.textView_icon_request_label);
             check = (CheckBox) itemView.findViewById(R.id.checkBox_icon_request_check);
+        }
+
+        public void show() {
+            RecyclerView.LayoutParams param = (RecyclerView.LayoutParams) main
+                    .getLayoutParams();
+            param.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+            param.width = LinearLayout.LayoutParams.MATCH_PARENT;
+            itemView.setVisibility(View.VISIBLE);
+            main.setLayoutParams(param);
+        }
+
+        public void hide() {
+            RecyclerView.LayoutParams param = (RecyclerView.LayoutParams) main
+                    .getLayoutParams();
+            main.setVisibility(View.GONE);
+            param.height = 0;
+            param.width = 0;
+            main.setLayoutParams(param);
         }
     }
 
@@ -72,6 +96,19 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
 
     @Override
     public void onBindViewHolder(final AppItemViewHolder holder, final int position) {
+//        if (!mShowAll) {
+//            holder.main.setVisibility(View.GONE);
+//            holder.check.setChecked(false);
+//        } else if (mShowAll) {
+//            holder.main.setVisibility(View.VISIBLE);
+//        }
+        if (mAppInfoList.get(position).isHasCustomIcon()) {
+            holder.check.setVisibility(View.GONE);
+            holder.hide();
+        } else {
+            holder.check.setVisibility(View.VISIBLE);
+            holder.show();
+        }
         holder.main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,5 +168,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
             cnt = 0;
         }
         notifyDataSetChanged();
+    }
+
+    public void setShowAll(boolean isShowAll) {
+
     }
 }

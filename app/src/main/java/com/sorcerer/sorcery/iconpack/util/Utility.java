@@ -8,15 +8,18 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -24,13 +27,18 @@ import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.ComponentBean;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 
+import org.xmlpull.v1.XmlPullParser;
+
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
@@ -48,7 +56,9 @@ import java.util.List;
  */
 public class Utility {
 
-    public static List<AppInfo> getComponentInfo(Context context) {
+    private static final String TAG = "SIP/Utility";
+
+    public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon) {
         List<AppInfo> appInfoList = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
         Intent intent = new Intent("android.intent.action.MAIN", null);
@@ -56,12 +66,25 @@ public class Utility {
         List list = pm.queryIntentActivities(intent, 0);
         Iterator iterator = list.iterator();
 
+        String xmlString = "";
+
+        if (withHasCustomIcon) {
+            xmlString = getAppfilterToString(context);
+        }
+        Log.d(TAG, xmlString);
+
         for (int i = 0; i < list.size(); i++) {
             ResolveInfo resolveInfo = (ResolveInfo) iterator.next();
             AppInfo tempAppInfo = new AppInfo(
                     resolveInfo.activityInfo.packageName + "/" + resolveInfo.activityInfo.name,
                     resolveInfo.loadLabel(pm).toString(),
                     resolveInfo.loadIcon(pm));
+            if (withHasCustomIcon) {
+                Log.d(TAG, tempAppInfo.getCode());
+                if (xmlString.contains(tempAppInfo.getCode())) {
+                    tempAppInfo.setHasCustomIcon(true);
+                }
+            }
             appInfoList.add(tempAppInfo);
         }
         Collections.sort(appInfoList, new Comparator<AppInfo>() {
@@ -78,6 +101,56 @@ public class Utility {
             }
         });
         return appInfoList;
+    }
+
+    public static String getAppfilterToString(Context context) {
+        String res = "";
+        int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
+        XmlResourceParser parser = context.getResources().getXml(i);
+        int eventType = -1;
+        try {
+            eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+
+                        if (parser.getName().equals("item")) {
+                            res += parser.getAttributeValue(0);
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        String s = "";
+//        for (int j = 0; j < list.size(); j++) {
+//            if (list.get(j).isCalendar()) {
+//                s += "calendar\n";
+//                s += list.get(j).getPrefix() + "\n";
+//            } else {
+//                s += "item\n";
+//                s += list.get(j).getDrawable() + "\n";
+//            }
+//            s += list.get(j).getComponent() + "\n\n";
+//        }
+        return res;
+    }
+
+    public static String convertStreamToString(InputStream is) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line).append("\n");
+        }
+        reader.close();
+        return sb.toString();
     }
 
     public static List<LauncherInfo> generateLauncherInfo(Context context) {
@@ -112,23 +185,6 @@ public class Utility {
                 .VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
         long id = downloadManager.enqueue(request);
-
-
-//        URL url = new URL(urlString.toString());
-//        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//        conn.setConnectTimeout(20000);
-//        conn.setRequestMethod("GET");
-//
-//        if (conn.getResponseCode() == 200) {
-//            success= true;
-//        }
-//        if(conn!=null)
-//            conn.disconnect();
-//        return success;
-
-//        Intent intent = new Intent(Intent.ACTION_VIEW);
-//        intent .setData(Uri.parse(urlString));
-//        context.startActivity(intent);
     }
 
 

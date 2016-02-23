@@ -70,8 +70,10 @@
     <string name="wechat">wechat</string>
 
     <string name="select_all">select all</string>
+    <string name="just_show_without_custom">just show without custom icon</string>
     <string name="select_app">select app</string>
     <string name="cancel_request">cancel_request?</string>
+
 
     <string name="pref_global_load_title">global load</string>
     <string name="pref_global_load_summary">load by xposed instead of launcher</string>

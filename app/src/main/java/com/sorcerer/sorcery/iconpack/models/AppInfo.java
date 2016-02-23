@@ -9,11 +9,20 @@ public class AppInfo {
     String code = null;
     String name = null;
     Drawable icon = null;
+    boolean hasCustomIcon = false;
 
     public AppInfo(String paramString1, String paramString2, Drawable paramDrawable) {
         code = paramString1;
         name = paramString2;
         icon = paramDrawable;
+    }
+
+    public void setHasCustomIcon(boolean paramBoolean) {
+        hasCustomIcon = paramBoolean;
+    }
+
+    public boolean isHasCustomIcon() {
+        return hasCustomIcon;
     }
 
     public String getCode() {

@@ -97,4 +97,5 @@
     <string name="global_state_not_active">尚未开启</string>
     <string name="global_state_not_root">未root</string>
     <string name="action_close">关闭</string>
+    <string name="just_show_without_custom">仅显示未适配图标</string>
 </resources>

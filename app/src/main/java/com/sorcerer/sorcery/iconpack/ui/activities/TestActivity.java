@@ -15,11 +15,13 @@ import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +41,23 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.imageView_test);
         mContext = this;
 
-        mTestButton.setOnClickListener(killListener);
+        mTestButton.setOnClickListener(getXmlStringListener);
     }
+
+    private View.OnClickListener getXmlStringListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+//            try {
+//                XmlResourceParser xml = getResources().getXml(R.xml.appfilter);
+//                String xmlString = Utility.convertStreamToString(inputStream);
+
+//                mTestTextView.setText(xmlString);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+            mTestTextView.setText(Utility.getAppfilterToString(mContext));
+        }
+    };
 
     private View.OnClickListener killListener = new View.OnClickListener() {
         @Override
@@ -62,6 +79,7 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
             mImageView.setImageBitmap(bitmap);
         }
     };
+
 
     private View.OnClickListener xmlListener = new View.OnClickListener() {
         @Override

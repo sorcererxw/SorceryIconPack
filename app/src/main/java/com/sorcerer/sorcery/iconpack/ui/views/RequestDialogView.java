@@ -49,7 +49,7 @@ public class RequestDialogView extends ViewGroup {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false)
         );
         recyclerView.setAdapter(
-                new RequestAdapter(getContext(), Utility.getComponentInfo(getContext()))
+                new RequestAdapter(getContext(), Utility.getComponentInfo(getContext(), true))
         );
         this.addView(recycler);
     }
