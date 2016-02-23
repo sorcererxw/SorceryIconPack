@@ -79,4 +79,8 @@
         <item name="android:minWidth">256dp</item>
     </style>
 
+    <style name="FlatButton">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>

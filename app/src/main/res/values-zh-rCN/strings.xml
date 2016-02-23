@@ -19,7 +19,7 @@
     <string name="ok">好的</string>
     <string name="download">下载</string>
     <string name="cancel">取消</string>
-    <string name="action_apply">应用到启动器</string>
+    <string name="action_apply">应用</string>
     <string name="is_last_version">当前已为最新版本, 无需更新</string>
     <string name="icon_request_sending">正在发送</string>
     <string name="version_name">版本名</string>
@@ -59,8 +59,6 @@
         并且愿意支持我\n
         希望可以获得您的捐赠\n
         我会向您表达由衷的感谢\n
-        有你捐赠\n
-        有我更新\n
         谢谢:)</string>
     <string name="nav_item_donate">捐赠</string>
     <string name="donate_dialog_title">选择金额</string>
@@ -77,4 +75,26 @@
     <string name="select_app">选择应用</string>
     <string name="select_all">全选</string>
     <string name="no">不</string>
+    <string name="xposed_tag">
+        全局加载Sorcery图标包\n
+        勾选并去图标包设置里面打开</string>
+    <string name="nav_item_lab">实验室</string>
+    <string name="global_detail">
+        通过Xposed进行加载图标包以实现全局更换图标\n
+        你需要先root您的设备并且在Xposed框架中勾选此应用
+    </string>
+
+    <string name="global_attention">
+        说明:\n
+            应用之后需要重启设备以更换图标\n
+            请在所有手机后台管理应用中将这个应用纳入白名单\n
+            当前Xposed模块暂不支持nova, 请在「应用到启动器」中更换nova图标\n
+            暂不支持热刷新, 安装了新的应用需要重启以使图标变更\n
+        运行样本较少, 无法保证模块百分百运行正常\n
+        启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
+    <string name="global_state_active">已开启</string>
+    <string name="global_state_label">当前状态</string>
+    <string name="global_state_not_active">尚未开启</string>
+    <string name="global_state_not_root">未root</string>
+    <string name="action_close">关闭</string>
 </resources>

@@ -1,14 +1,12 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
-import android.content.pm.ComponentInfo;
-import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,18 +15,13 @@ import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
+import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.mail.Quota;
 
 public class TestActivity extends SlideInAndOutAppCompatActivity {
 
@@ -46,8 +39,17 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.imageView_test);
         mContext = this;
 
-        mTestButton.setOnClickListener(bitmapListener);
+        mTestButton.setOnClickListener(killListener);
     }
+
+    private View.OnClickListener killListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ActivityManager manager = (ActivityManager) getSystemService(Context
+                    .ACTIVITY_SERVICE);
+            XposedUtils.killAll(getPackageManager(), manager);
+        }
+    };
 
     private View.OnClickListener bitmapListener = new View.OnClickListener() {
         @Override

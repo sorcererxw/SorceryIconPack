@@ -8,8 +8,8 @@ android {
         applicationId "com.sorcerer.sorcery.iconpack"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 30
-        versionName "2.5"
+        versionCode 103
+        versionName "3.0.0 beta1"
     }
     buildTypes {
         debug{
@@ -56,4 +56,5 @@ dependencies {
 
     compile 'com.github.florent37:hollyviewpager:1.0.1'
     compile 'com.github.ksoichiro:android-observablescrollview:1.5.2'
+//    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
 }

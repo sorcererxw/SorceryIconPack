@@ -7,10 +7,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
-import android.widget.EditText;
 
 import com.google.gson.Gson;
-import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 
 import java.io.BufferedInputStream;
@@ -28,7 +26,6 @@ import de.robv.android.xposed.IXposedHookInitPackageResources;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
 import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XC_MethodReplacement;
 import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
@@ -50,6 +47,8 @@ public class Xposed
             new HashMap();
     private static String mThemePackage;
     private static String mThemePackagePath;
+    private boolean mActive;
+
 
     private void log(Object o) {
         XposedBridge.log("[" + TAG + "]" + o.toString());
@@ -62,10 +61,13 @@ public class Xposed
         mDisplayDpi = XSharedPrefs.getInt("display_dpi", 320);
         mThemePackage = XSharedPrefs.getString("theme_package_name", null);
         mThemePackagePath = XSharedPrefs.getString("theme_package_path", null);
-        log(mThemePackage == null ? "theme package is null" : "theme package is contain");
-        if (mThemePackage != null) {
-            XposedBridge.log("[" + TAG + "] [" + mThemePackage + "] Loading...");
-            XModuleResources themeRes = XModuleResources.createInstance(mThemePackagePath, null);
+        mActive = XSharedPrefs.getBoolean("pref_global_load", false);
+        if (mActive) {
+            log(mThemePackage == null ? "theme package is null" : "theme package is contain");
+            if (mThemePackage != null) {
+                XposedBridge.log("[" + TAG + "] [" + mThemePackage + "] Loading...");
+                XModuleResources themeRes =
+                        XModuleResources.createInstance(mThemePackagePath, null);
 //            try {
 //                if (mThemeIconShader == null) {
 //                    int shaderRes = themeRes.getIdentifier("shader", "xml", mThemePackage);
@@ -77,57 +79,60 @@ public class Xposed
 //            } catch (Exception e) {
 //                e.printStackTrace();
 //            }
-            try {
-                Gson gson = new Gson();
+                try {
+                    Gson gson = new Gson();
 //                if (XSharedPrefs.getString("theme_icon_mask", null) != null) {
 //                    mThemeIconMask = (IconMaskItem) gson.fromJson(XSharedPrefs.getString("theme_icon_mask", null), IconMaskItem.class);
 //                }
-                for (String pkg : (String[]) gson
-                        .fromJson(XSharedPrefs.getString("theme_icon_packages", null),
-                                String[].class)) {
-                    mIconPackages.add(pkg);
-                    IconReplacementItem[] iconReplacementItems = (IconReplacementItem[]) gson
-                            .fromJson(XSharedPrefs.getString("theme_icon_for_" + pkg, null),
-                                    IconReplacementItem[].class);
-                    ArrayList<IconReplacementItem> items = new ArrayList();
-                    for (IconReplacementItem item : iconReplacementItems) {
-                        items.add(item);
+                    for (String pkg : (String[]) gson
+                            .fromJson(XSharedPrefs.getString("theme_icon_packages", null),
+                                    String[].class)) {
+                        mIconPackages.add(pkg);
+                        IconReplacementItem[] iconReplacementItems = (IconReplacementItem[]) gson
+                                .fromJson(XSharedPrefs.getString("theme_icon_for_" + pkg, null),
+                                        IconReplacementItem[].class);
+                        ArrayList<IconReplacementItem> items = new ArrayList();
+                        for (IconReplacementItem item : iconReplacementItems) {
+                            items.add(item);
+                        }
+                        mIconReplacementsHashMap.put(pkg, items);
                     }
-                    mIconReplacementsHashMap.put(pkg, items);
-                }
-                if (mIconPackages.contains("android")) {
-                    Iterator i$ = ((ArrayList) mIconReplacementsHashMap.get("android")).iterator();
-                    while (i$.hasNext()) {
-                        IconReplacementItem it = (IconReplacementItem) i$.next();
-                        if (new File(Utils.getCacheFilePath(it.getPackageName(), it.getOrigRes()))
-                                .exists()) {
-                            XResources.setSystemWideReplacement(it.getOrigRes(),
-                                    new XResources.DrawableLoader() {
-                                        public Drawable newDrawable(XResources res, int id)
-                                                throws Throwable {
-                                            return Utils.getCachedIcon(res,
-                                                    res.getResourcePackageName(id),
-                                                    id);
-                                        }
-                                    });
-                        } else if (!it.hasNoCustomIcon()) {
-                            try {
-                                final Drawable icon = new BitmapDrawable(XResources.getSystem(),
-                                        Utils.getBitmapForDensity(themeRes,
-                                                mDisplayDpi,
-                                                it.getReplacementRes()));
+                    if (mIconPackages.contains("android")) {
+                        Iterator i$ =
+                                ((ArrayList) mIconReplacementsHashMap.get("android")).iterator();
+                        while (i$.hasNext()) {
+                            IconReplacementItem it = (IconReplacementItem) i$.next();
+                            if (new File(XposedUtils
+                                    .getCacheFilePath(it.getPackageName(), it.getOrigRes()))
+                                    .exists()) {
                                 XResources.setSystemWideReplacement(it.getOrigRes(),
                                         new XResources.DrawableLoader() {
                                             public Drawable newDrawable(XResources res, int id)
                                                     throws Throwable {
-                                                return icon;
+                                                return XposedUtils.getCachedIcon(res,
+                                                        res.getResourcePackageName(id),
+                                                        id);
                                             }
                                         });
-                            } catch (Exception e2) {
-                                XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
-                                        it.getPackageName());
-                            }
-                        } else {
+                            } else if (!it.hasNoCustomIcon()) {
+                                try {
+                                    final Drawable icon = new BitmapDrawable(XResources.getSystem(),
+                                            XposedUtils.getBitmapForDensity(themeRes,
+                                                    mDisplayDpi,
+                                                    it.getReplacementRes()));
+                                    XResources.setSystemWideReplacement(it.getOrigRes(),
+                                            new XResources.DrawableLoader() {
+                                                public Drawable newDrawable(XResources res, int id)
+                                                        throws Throwable {
+                                                    return icon;
+                                                }
+                                            });
+                                } catch (Exception e2) {
+                                    XposedBridge
+                                            .log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
+                                                    it.getPackageName());
+                                }
+                            } else {
 //                            try {
 //                                XResources.setSystemWideReplacement(it.getOrigRes(),
 //                                        new DrawableLoader() {
@@ -151,32 +156,35 @@ public class Xposed
 //                                XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
 //                                        it.getPackageName());
 //                            }
+                            }
                         }
                     }
+                } catch (Exception e4) {
+                    Writer sw = new StringWriter();
+                    e4.printStackTrace(new PrintWriter(sw));
+                    XposedBridge.log(sw.toString());
                 }
-            } catch (Exception e4) {
-                Writer sw = new StringWriter();
-                e4.printStackTrace(new PrintWriter(sw));
-                XposedBridge.log(sw.toString());
             }
         }
     }
 
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
-        if (mThemePackage != null && new File(mThemePackagePath).exists()) {
-            if (lpparam.packageName.equals("com.teslacoilsw.launcher")) {
-                appWorkaroundOne(lpparam);
+        if (mActive) {
+            if (mThemePackage != null && new File(mThemePackagePath).exists()) {
+                if (lpparam.packageName.equals("com.teslacoilsw.launcher")) {
+                    appWorkaroundOne(lpparam);
+                }
+                if (lpparam.packageName.equals("com.abcOrganizer.lite")) {
+                    appWorkaroundThree(lpparam, "com.abcOrganizer.lite", "icon");
+                }
+                if (lpparam.packageName.equals("com.abcOrganizer")) {
+                    appWorkaroundThree(lpparam, "com.abcOrganizer", "icon");
+                }
             }
-            if (lpparam.packageName.equals("com.abcOrganizer.lite")) {
-                appWorkaroundThree(lpparam, "com.abcOrganizer.lite", "icon");
+            if (lpparam.packageName.equals("com.tsf.shell") && mThemePackage != null &&
+                    new File(mThemePackagePath).exists()) {
+                appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
             }
-            if (lpparam.packageName.equals("com.abcOrganizer")) {
-                appWorkaroundThree(lpparam, "com.abcOrganizer", "icon");
-            }
-        }
-        if (lpparam.packageName.equals("com.tsf.shell") && mThemePackage != null &&
-                new File(mThemePackagePath).exists()) {
-            appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
         }
     }
 
@@ -236,7 +244,7 @@ public class Xposed
                                 int resId = ((Integer) param.args[0]).intValue();
                                 String resName = res.getResourceName(resId);
                                 TypedValue value = (TypedValue) param.args[2];
-                                if (new File(Utils
+                                if (new File(XposedUtils
                                         .getCacheFilePath(res.getResourcePackageName(resId),
                                                 resId)).exists()) {
                                     value.string = "replaceWithIconThemer";
@@ -287,7 +295,7 @@ public class Xposed
                             while (i$.hasNext()) {
                                 IconReplacementItem it = (IconReplacementItem) i$.next();
                                 if (it.getOrigResName().equals(resName)) {
-                                    File file = new File(Utils
+                                    File file = new File(XposedUtils
                                             .getCacheFilePath(packageName, it.getOrigRes()));
                                     if (!(file.exists() || mThemePackagePath == null ||
                                             !new File(mThemePackagePath).exists())) {
@@ -295,12 +303,13 @@ public class Xposed
                                         if (it.hasNoCustomIcon() && false) {
 //                                    Utils.cacheDrawable(packageName, it.getOrigResName(), Utils.themeIconWithShader(res, themeRes, mDisplayDpi, resId, im, getIconShaders()));
                                         } else if (it.getReplacementResName() != null) {
-                                            Utils.cacheDrawable(it.getPackageName(),
+                                            XposedUtils.cacheDrawable(it.getPackageName(),
                                                     it.getOrigRes(),
                                                     (BitmapDrawable) new BitmapDrawable(res,
-                                                            Utils.getBitmapForDensity(themeRes,
-                                                                    mDisplayDpi,
-                                                                    it.getReplacementRes())));
+                                                            XposedUtils
+                                                                    .getBitmapForDensity(themeRes,
+                                                                            mDisplayDpi,
+                                                                            it.getReplacementRes())));
                                         }
                                     }
                                     if (file.exists()) {
@@ -342,7 +351,7 @@ public class Xposed
                     while (i$.hasNext()) {
                         IconReplacementItem it = (IconReplacementItem) i$.next();
                         if (it.getOrigResName().equals(resName)) {
-                            File file = new File(Utils
+                            File file = new File(XposedUtils
                                     .getCacheFilePath(packageName, it.getOrigRes()));
                             if (!(file.exists() || mThemePackage == null ||
                                     !new File(mThemePackagePath).exists())) {
@@ -357,16 +366,17 @@ public class Xposed
 //                                                    im,
 //                                                    getIconShaders()));
                                 } else if (it.getReplacementResName() != null) {
-                                    Utils.cacheDrawable(it.getPackageName(),
+                                    XposedUtils.cacheDrawable(it.getPackageName(),
                                             it.getOrigRes(),
                                             (BitmapDrawable) new BitmapDrawable(res,
-                                                    Utils.getBitmapForDensity(themeRes,
+                                                    XposedUtils.getBitmapForDensity(themeRes,
                                                             mDisplayDpi,
                                                             it.getReplacementRes())));
                                 }
                             }
                             if (file.exists()) {
-                                param.setResult(Utils.getCachedIcon(res, packageName, resId, bmOpts)
+                                param.setResult(XposedUtils
+                                        .getCachedIcon(res, packageName, resId, bmOpts)
                                         .getBitmap());
                                 return;
                             }
@@ -389,23 +399,29 @@ public class Xposed
 
     public void handleInitPackageResources(
             XC_InitPackageResources.InitPackageResourcesParam resparam) throws Throwable {
-        log("---------------------------------------------------");
-        log(resparam.packageName);
-        if (mIconPackages.contains(resparam.packageName)) {
-            log("contain");
-            Iterator i$ =
-                    ((ArrayList) mIconReplacementsHashMap.get(resparam.packageName)).iterator();
-            while (i$.hasNext()) {
-                IconReplacementItem it = (IconReplacementItem) i$.next();
-                if (new File(Utils.getCacheFilePath(it.getPackageName(), it.getOrigRes()))
-                        .exists()) {
-                    log("exist");
-                    resparam.res.setReplacement(it.getOrigRes(), new XResources.DrawableLoader() {
-                        public Drawable newDrawable(XResources res, int id) throws Throwable {
-                            return Utils.getCachedIcon(res, res.getResourcePackageName(id), id);
-                        }
-                    });
-                } else if (it.hasNoCustomIcon() && false) {
+        if (mActive) {
+            log("---------------------------------------------------");
+            log(resparam.packageName);
+            if (mIconPackages.contains(resparam.packageName)) {
+                log("contain");
+                Iterator i$ =
+                        ((ArrayList) mIconReplacementsHashMap.get(resparam.packageName)).iterator();
+                while (i$.hasNext()) {
+                    IconReplacementItem it = (IconReplacementItem) i$.next();
+                    if (new File(XposedUtils.getCacheFilePath(it.getPackageName(), it.getOrigRes()))
+                            .exists()) {
+                        log("exist");
+                        resparam.res
+                                .setReplacement(it.getOrigRes(), new XResources.DrawableLoader() {
+                                    public Drawable newDrawable(XResources res, int id)
+                                            throws Throwable {
+                                        return XposedUtils
+                                                .getCachedIcon(res,
+                                                        res.getResourcePackageName(id),
+                                                        id);
+                                    }
+                                });
+                    } else if (it.hasNoCustomIcon() && false) {
 //                    try {
 //                        resparam.res.setReplacement(it.getOrigRes(), new DrawableLoader() {
 //                            public Drawable newDrawable(XResources res, int id) throws Throwable {
@@ -425,31 +441,34 @@ public class Xposed
 //                        XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
 //                                it.getPackageName());
 //                    }
-                } else if (!it.hasNoCustomIcon()) {
-                    try {
-                        Utils.cacheDrawable(it.getPackageName(),
-                                it.getOrigRes(),
-                                (BitmapDrawable) new BitmapDrawable(resparam.res,
-                                        Utils.getBitmapForDensity(XModuleResources
-                                                        .createInstance(mThemePackagePath, resparam.res),
-                                                mDisplayDpi,
-                                                it.getReplacementRes())));
-                        resparam.res
-                                .setReplacement(it.getOrigRes(), new XResources.DrawableLoader() {
-                                    public Drawable newDrawable(XResources res, int id)
-                                            throws Throwable {
-                                        return Utils.getCachedIcon(res,
-                                                res.getResourcePackageName(id),
-                                                id);
-                                    }
-                                });
-                    } catch (Exception e2) {
-                        XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
-                                it.getPackageName());
+                    } else if (!it.hasNoCustomIcon()) {
+                        try {
+                            XposedUtils.cacheDrawable(it.getPackageName(),
+                                    it.getOrigRes(),
+                                    (BitmapDrawable) new BitmapDrawable(resparam.res,
+                                            XposedUtils.getBitmapForDensity(XModuleResources
+                                                            .createInstance(mThemePackagePath,
+                                                                    resparam.res),
+                                                    mDisplayDpi,
+                                                    it.getReplacementRes())));
+                            resparam.res
+                                    .setReplacement(it.getOrigRes(),
+                                            new XResources.DrawableLoader() {
+                                                public Drawable newDrawable(XResources res, int id)
+                                                        throws Throwable {
+                                                    return XposedUtils.getCachedIcon(res,
+                                                            res.getResourcePackageName(id),
+                                                            id);
+                                                }
+                                            });
+                        } catch (Exception e2) {
+                            XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
+                                    it.getPackageName());
+                        }
                     }
                 }
+            } else if (!new File(mThemePackagePath).exists()) {
             }
-        } else if (!new File(mThemePackagePath).exists()) {
         }
     }
 }

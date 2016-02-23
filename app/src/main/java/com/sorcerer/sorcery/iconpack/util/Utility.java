@@ -32,9 +32,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -65,7 +67,14 @@ public class Utility {
         Collections.sort(appInfoList, new Comparator<AppInfo>() {
             @Override
             public int compare(AppInfo lhs, AppInfo rhs) {
-                return lhs.getName().compareTo(rhs.getName());
+                try {
+                    String s1 = new String(lhs.getName().getBytes("GB2312"), "ISO-8859-1");
+                    String s2 = new String(rhs.getName().getBytes("GB2312"), "ISO-8859-1");
+                    return s1.compareTo(s2);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return lhs.getName().compareTo(rhs.getName());
+                }
             }
         });
         return appInfoList;
@@ -149,9 +158,9 @@ public class Utility {
         return (int) (pxValue / scale + 0.5f);
     }
 
-    public static View getContentView(Activity ac){
-        ViewGroup view = (ViewGroup)ac.getWindow().getDecorView();
-        FrameLayout content = (FrameLayout)view.findViewById(android.R.id.content);
+    public static View getContentView(Activity ac) {
+        ViewGroup view = (ViewGroup) ac.getWindow().getDecorView();
+        FrameLayout content = (FrameLayout) view.findViewById(android.R.id.content);
         return content.getChildAt(0);
     }
 }

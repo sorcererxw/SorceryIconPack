@@ -18,9 +18,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -33,11 +35,14 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
+import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
+import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.ui.views.ScrollDetectRecyclerView;
 import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
+import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -65,6 +70,7 @@ public class AppSelectActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+        setToolbarDoubleTap(toolbar);
 
         mContext = this;
 
@@ -129,7 +135,7 @@ public class AppSelectActivity extends AppCompatActivity {
             showRecyclerView();
 
             menuEnable = true;
-            if(mMenu!=null){
+            if (mMenu != null) {
                 onCreateOptionsMenu(mMenu);
             }
         }
@@ -276,6 +282,23 @@ public class AppSelectActivity extends AppCompatActivity {
             mMenu = menu;
         }
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private void setToolbarDoubleTap(Toolbar toolbar) {
+        final GestureDetector detector = new GestureDetector(this,
+                new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
+                    @Override
+                    public void onDoubleTap() {
+                        mRecyclerView.smoothScrollToPosition(0);
+                    }
+                }));
+        toolbar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                detector.onTouchEvent(event);
+                return true;
+            }
+        });
     }
 
 }

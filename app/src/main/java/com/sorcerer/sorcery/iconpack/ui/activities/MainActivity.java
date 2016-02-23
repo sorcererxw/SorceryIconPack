@@ -232,7 +232,10 @@ public class MainActivity extends AppCompatActivity implements
             activityShift(FeedbackActivity.class);
         } else if (id == R.id.nav_item_settings) {
             activityShift(SettingsActivity.class);
-        } else if (id == R.id.nav_item_welcome) {
+        } else if (id == R.id.nav_item_lab) {
+            activityShift(LabActivity.class);
+        } else if (id == R.id
+                .nav_item_welcome) {
             showWelcomeDialog();
         } else if (id == R.id.nav_item_update) {
             UpdateHelper updateHelper =

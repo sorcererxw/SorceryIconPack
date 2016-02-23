@@ -16,9 +16,15 @@
         android:title="@string/nav_item_feedback"/>
 
     <item
+        android:id="@+id/nav_item_lab"
+        android:icon="@drawable/ic_action_lab"
+        android:title="@string/nav_item_lab"/>
+
+    <item
         android:id="@+id/nav_item_settings"
         android:icon="@drawable/ic_settings_black_24dp"
-        android:title="@string/nav_item_settings"/>
+        android:title="@string/nav_item_settings"
+        android:visible="false"/>
 
     <item
         android:id="@+id/nav_item_welcome"
@@ -37,5 +43,6 @@
 
     <item
         android:id="@+id/nav_item_test"
-        android:title="test"/>
+        android:title="test"
+        android:visible="false"/>
 </menu>

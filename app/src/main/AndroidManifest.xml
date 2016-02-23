@@ -185,7 +185,25 @@
             android:name=".ui.activities.TestActivity"
             android:theme="@style/SubActivity"/>
 
-        <receiver android:name=".xposed.PackageInstalledReceiver"/>
+        <receiver
+            android:name=".xposed.PackageInstalledReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".xposed.MyselfUpdateReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name="c.b.a.A"
@@ -206,10 +224,18 @@
             android:value="true"/>
         <meta-data
             android:name="xposeddescription"
-            android:value="global load sorcery icon pack"/>
+            android:value="@string/xposed_tag"/>
         <meta-data
             android:name="xposedminversion"
             android:value="30"/>
+
+        <activity android:name=".ui.activities.XposedActivity">
+        </activity>
+        <activity
+            android:name=".ui.activities.LabActivity"
+            android:label="@string/nav_item_lab"
+            android:theme="@style/SubActivity">
+        </activity>
     </application>
 
 </manifest>

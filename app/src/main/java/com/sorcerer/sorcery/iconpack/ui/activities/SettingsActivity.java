@@ -9,14 +9,12 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -25,7 +23,8 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.SettingsAdapter;
 import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.SettingsItem;
-import com.sorcerer.sorcery.iconpack.xposed.Utils;
+import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
+import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 import com.stericson.RootTools.RootTools;
@@ -80,7 +79,8 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                         getString(R.string.pref_global_hint),
                         Toast.LENGTH_SHORT).show();
                 mPrefs.edit().putBoolean(getString(R.string.pref_global_load_key), true).commit();
-                tryAndApplyIcon(getApplication().getApplicationInfo());
+                boolean ok = tryAndApplyIcon(getApplication().getApplicationInfo());
+                global.setChecked(ok);
             }
 
             @Override
@@ -100,7 +100,9 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
 
     public void onResume() {
         super.onResume();
-
+        if (Build.VERSION.SDK_INT >= 23) {
+            PermissionsHelper.requestWriteExternalStorage(this);
+        }
     }
 
     private boolean appIsInstalledInMountASEC() {
@@ -117,18 +119,19 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
         return false;
     }
 
-    private void tryAndApplyIcon(final ApplicationInfo themePackage) {
+    private boolean tryAndApplyIcon(final ApplicationInfo themePackage) {
         if (!RootTools.isAccessGiven()) {
             try {
-                Toast.makeText(this, "IconThemer acquiring root...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "acquiring root...", Toast.LENGTH_SHORT).show();
                 RootTools.getShell(true).add(new CommandCapture(0, "echo Hello"));
             } catch (Exception e) {
                 e.printStackTrace();
+                return false;
             }
         }
         if (!RootTools.isAccessGiven()) {
-            Toast.makeText(this, "IconThemer need root access!", Toast.LENGTH_SHORT).show();
-            finish();
+            Toast.makeText(this, "need root access!", Toast.LENGTH_SHORT).show();
+            return false;
         }
 //        if (this.mInstallStep < 2 && appIsInstalledInMountASEC()) {
 //            this.mInstallStep = 2;
@@ -136,7 +139,8 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
 //        if (!(this.mInstallStep >= 3 || appIsInstalledInMountASEC() || checkForXposedInstaller())) {
 //            this.mInstallStep = 3;
 //        }
-//        if (this.mInstallStep < 4 && checkForXposedInstaller() && !Utils.checkIfModuleIsActivated(getPackageName())) {
+//        if (this.mInstallStep < 4 && checkForXposedInstaller() && !Utils
+// .checkIfModuleIsActivated(getPackageName())) {
 //            this.mInstallStep = 4;
 //        }
 //        if (!appIsInstalledInMountASEC() && checkForXposedInstaller() && Utils.checkIfModuleIsActivated(getPackageName())) {
@@ -166,21 +170,22 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
 //                        }
 //                }
 //            }
-            try {
-                Utils.copyAsset(this,
-                        "XposedBridge.jar",
-                        getExternalCacheDir().getAbsolutePath() + "/XposedBridge.jar.newversion");
-                RootTools.getShell(true).add(new CommandCapture(0,
-                        "cat " +
-                                getExternalCacheDir().getAbsolutePath() +
-                                "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar.newversion",
-                        "chmod 655 /data/xposed/XposedBridge.jar.newversion",
-                        "cat " + getExternalCacheDir().getAbsolutePath() +
-                                "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar",
-                        "chmod 655 /data/xposed/XposedBridge.jar"));
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
+
+//            try {
+//                Utils.copyAsset(this,
+//                        "XposedBridge.jar",
+//                        getExternalCacheDir().getAbsolutePath() + "/XposedBridge.jar.newversion");
+//                RootTools.getShell(true).add(new CommandCapture(0,
+//                        "cat " +
+//                                getExternalCacheDir().getAbsolutePath() +
+//                                "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar.newversion",
+//                        "chmod 655 /data/xposed/XposedBridge.jar.newversion",
+//                        "cat " + getExternalCacheDir().getAbsolutePath() +
+//                                "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar",
+//                        "chmod 655 /data/xposed/XposedBridge.jar"));
+//            } catch (Exception e2) {
+//                e2.printStackTrace();
+//            }
             if (!new File(getCacheDir().getAbsolutePath() + "/icons").exists()) {
                 try {
                     RootTools.getShell(true).add(new CommandCapture(0,
@@ -199,7 +204,14 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                     e222.printStackTrace();
                 }
             }
+
+            apply(themePackage);
+            return true;
         }
+        return false;
+    }
+
+    private void apply(final ApplicationInfo themePackage) {
         new Thread(new Runnable() {
             public void run() {
                 try {
@@ -273,7 +285,7 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                         xrp2 = r.getXml(r
                                 .getIdentifier("appfilter", "xml", themePackage.packageName));
                     }
-                    editor.putString("theme_icon_mask", null);
+//                    editor.putString("theme_icon_mask", null);
                     for (Map.Entry<String, ?> entry : mPrefs.getAll()
                             .entrySet()) {
                         if (((String) entry.getKey()).contains("theme_icon_for_")) {
@@ -326,10 +338,10 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                                 if (!items.contains(item)) {
                                     items.add(item);
 
-                                    Utils.cacheDrawable(item.getPackageName(),
+                                    XposedUtils.cacheDrawable(item.getPackageName(),
                                             item.getOrigRes(),
                                             (BitmapDrawable) new BitmapDrawable(origPkgRes,
-                                                    Utils.getBitmapForDensity(r,
+                                                    XposedUtils.getBitmapForDensity(r,
                                                             metrics.densityDpi,
                                                             item.getReplacementRes())));
                                 }
@@ -354,13 +366,12 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                         public void run() {
                             Toast.makeText(mContext, "Failed to apply icons!", Toast.LENGTH_SHORT)
                                     .show();
-                            tryAndApplyIcon(null);
-                            global.setChecked(false);
+//                            tryAndApplyIcon(null);
                         }
                     });
                 }
             }
         }).start();
     }
-
 }
+

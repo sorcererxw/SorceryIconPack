@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
+        <item>evernote</item>
+        <item>tencent_video</item>
+        <item>tencent_news</item>
+        <item>tmall</item>
+        <item>wechat</item>
+        <item>youku</item>
+        <item>coolapk</item>
+        <item>xiami</item>
+        <item>zhixing</item>
+        <item>momobeidanci</item>
+        <item>playstation</item>
+        <item>wangyi_huochepiao</item>
+        <item>sspai</item>
+        <item>yaokongjingling</item>
+        <item>a5sing</item>
+        <item>wuba</item>
+        <item>budingdonghua</item>
+        <item>doutushenqi</item>
+        <item>huaxiong</item>
+        <item>yuantiku_gongkao</item>
+        <item>yuantiku_sikao</item>
+        <item>yuantiku_kaoyan</item>
+        <item>yuantiku_souti</item>
+        <item>yuantiku_gaokao</item>
+        <item>x_browser</item>
+        <item>paypal</item>
         <item>a10086</item>
-        <item>acfun</item>
         <item>antutu</item>
         <item>baidu_pan</item>
         <item>bing_dict</item>
@@ -18,7 +43,6 @@
         <item>douguomeishi</item>
         <item>duokan</item>
         <item>echo</item>
-        <item>evernote</item>
         <item>flava</item>
         <item>guokr</item>
         <item>haici_dict</item>
@@ -47,26 +71,20 @@
         <item>seed</item>
         <item>suning</item>
         <item>tencent_file_manager</item>
-        <item>tencent_news</item>
-        <item>tencent_video</item>
         <item>tianyashequ</item>
         <item>ticktick</item>
-        <item>tmall</item>
         <item>unicom</item>
         <item>via_browser</item>
         <item>wandoujia_yilan</item>
-        <item>wechat</item>
         <item>weico</item>
         <item>weizhong_bank</item>
         <item>wooyun</item>
-        <item>xiami</item>
         <item>xiaowo_weather</item>
         <item>yangqi</item>
         <item>yixi</item>
         <item>youdao_translator</item>
         <item>youku</item>
         <item>zero</item>
-        <item>zhixing</item>
         <item>zhuishushenqi</item>
         <item>zol</item>
         <item>zuzhiyunxing</item>
@@ -323,11 +341,13 @@
         <item>a360_free_wifi</item>
         <item>a3c_toolbox</item>
         <item>a500px</item>
+        <item>a5sing</item>
         <item>a94_percent</item>
         <item>accuweather</item>
         <item>accuweather_plus</item>
         <item>acdisplay</item>
         <item>acfun</item>
+        <item>acfun_alt</item>
         <item>action_launcher</item>
         <item>adaway</item>
         <item>adobe_acrobat</item>
@@ -430,6 +450,7 @@
         <item>asus_calendar_9</item>
         <item>asus_camera</item>
         <item>asus_clock</item>
+        <item>asus_remote_link</item>
         <item>atom_launcher</item>
         <item>audiofx</item>
         <item>authy</item>
@@ -494,6 +515,7 @@
         <item>boxer_calendar_8</item>
         <item>boxer_calendar_9</item>
         <item>browser</item>
+        <item>budingdonghua</item>
         <item>busybox</item>
         <item>buzz_launcher</item>
         <item>cabinet</item>
@@ -520,6 +542,7 @@
         <item>cookbook</item>
         <item>cookpad</item>
         <item>coolapk</item>
+        <item>coolapk_alt</item>
         <item>coolify</item>
         <item>cortana</item>
         <item>couplete</item>
@@ -553,6 +576,7 @@
         <item>douban_fm</item>
         <item>douban_read</item>
         <item>douguomeishi</item>
+        <item>doutushenqi</item>
         <item>douyu</item>
         <item>download</item>
         <item>drippler</item>
@@ -593,6 +617,7 @@
         <item>gallery</item>
         <item>gaotieguanjia</item>
         <item>gewala_movie</item>
+        <item>github</item>
         <item>google_androidify</item>
         <item>google_android_auto</item>
         <item>google_arts</item>
@@ -684,6 +709,7 @@
         <item>htc_stock</item>
         <item>htc_tasks</item>
         <item>htc_weather</item>
+        <item>huaxiong</item>
         <item>hupo_weather</item>
         <item>huputiyu</item>
         <item>huya</item>
@@ -846,6 +872,7 @@
         <item>mi_fit</item>
         <item>moji_weather</item>
         <item>momo</item>
+        <item>momobeidanci</item>
         <item>mono</item>
         <item>monument_valley</item>
         <item>moto_alert</item>
@@ -876,10 +903,12 @@
         <item>oneplus_community</item>
         <item>oneplus_weather</item>
         <item>panda_tv</item>
+        <item>paypal</item>
         <item>peel_smart_remote</item>
         <item>pengpai_news</item>
         <item>pinglide</item>
         <item>pixolor</item>
+        <item>playstation</item>
         <item>pocket</item>
         <item>pocket_casts</item>
         <item>polaris_office</item>
@@ -975,6 +1004,7 @@
         <item>screen_recorder</item>
         <item>sd_maid</item>
         <item>seed</item>
+        <item>sevenminute</item>
         <item>shadowsocks</item>
         <item>shanbay</item>
         <item>shanbay_listen</item>
@@ -983,6 +1013,7 @@
         <item>simplenote</item>
         <item>skitch</item>
         <item>skype</item>
+        <item>slack</item>
         <item>smart_launcher</item>
         <item>smzdm</item>
         <item>sohu_video</item>
@@ -1017,6 +1048,7 @@
         <item>sougou_keyboard</item>
         <item>sound_recorder</item>
         <item>spendee</item>
+        <item>sspai</item>
         <item>stack_exchange</item>
         <item>starbucks</item>
         <item>steam</item>
@@ -1096,6 +1128,7 @@
         <item>tudou</item>
         <item>tuiku</item>
         <item>tujiedianying</item>
+        <item>tumblr</item>
         <item>twitter</item>
         <item>uber</item>
         <item>uc</item>
@@ -1111,6 +1144,7 @@
         <item>wandoujia_yilan</item>
         <item>wangxin</item>
         <item>wangyi_cloudclass</item>
+        <item>wangyi_huochepiao</item>
         <item>wangyi_news</item>
         <item>wangyi_youqian</item>
         <item>weather_timeline</item>
@@ -1126,6 +1160,7 @@
         <item>wiz_note</item>
         <item>wooyun</item>
         <item>wps</item>
+        <item>wuba</item>
         <item>wunderlist</item>
         <item>xiachufang</item>
         <item>xiami</item>
@@ -1143,8 +1178,10 @@
         <item>xunfei_keyboard</item>
         <item>xunlei</item>
         <item>xunlei_kuainiao</item>
+        <item>x_browser</item>
         <item>yahoo_weather</item>
         <item>yangqi</item>
+        <item>yaokongjingling</item>
         <item>yidianzixun</item>
         <item>yihaodian</item>
         <item>yixi</item>
@@ -1153,6 +1190,11 @@
         <item>youdao_translator</item>
         <item>youku</item>
         <item>youxiangdashi</item>
+        <item>yuantiku_gaokao</item>
+        <item>yuantiku_gongkao</item>
+        <item>yuantiku_kaoyan</item>
+        <item>yuantiku_sikao</item>
+        <item>yuantiku_souti</item>
         <item>zaker</item>
         <item>zank</item>
         <item>zarchiver</item>

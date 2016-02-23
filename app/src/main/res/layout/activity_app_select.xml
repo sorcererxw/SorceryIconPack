@@ -48,6 +48,7 @@
             android:layout_centerInParent="true">
 
             <android.support.v7.widget.RecyclerView
+                android:scrollbars="vertical"
                 android:id="@+id/recyclerView_app_select"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
