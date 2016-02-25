@@ -134,7 +134,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                         .setImageResource(mItems.get(position));
                 new MaterialDialog.Builder(mContext)
                         .customView(iconDialog, false)
-                        .title(mIconNames[position].toLowerCase(Locale.getDefault()))
+                        .title(handleIconName(mIconNames[position].toLowerCase(Locale.getDefault
+                                ())))
                         .show();
             }
         });
@@ -158,4 +159,13 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         return mItems.size();
     }
 
+    public static String handleIconName(String orgin) {
+        String res;
+        if (Character.isDigit(orgin.charAt(1))) {
+            res = orgin.substring(1, orgin.length());
+        } else {
+            res = orgin.substring(0, orgin.length());
+        }
+        return res.replaceAll("_", " ");
+    }
 }

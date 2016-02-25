@@ -148,6 +148,11 @@ times: 5
 com.sxy.ui/com.sxy.ui.view.MainActivity
 link: [http://www.coolapk.com/search?q=com.sxy.ui]
 --------------------
+bubei.tingshu/bubei.tingshu.ui.LOGOActivity
+times: 4
+------------------------------
+link: [http://www.coolapk.com/search?q=------------------------------]
+--------------------
 NETPAS云墙
 times: 4
 cc.netpas.android_firewall/cc.netpas.ui.OnLoadActivity
@@ -188,11 +193,6 @@ times: 4
 com.qqgame.hlddz/com.qqgame.hlddz.NewHLDDZ
 link: [http://www.coolapk.com/search?q=com.qqgame.hlddz]
 --------------------
-锤子便签
-times: 4
-com.smartisan.notes/com.smartisan.notes.NewNotesActivity
-link: [http://www.coolapk.com/search?q=com.smartisan.notes]
---------------------
 带壳截图
 times: 4
 com.sspai.dkjt/com.sspai.dkjt.ui.activity.LaunchActivity
@@ -202,11 +202,6 @@ link: [http://www.coolapk.com/search?q=com.sspai.dkjt]
 times: 4
 com.youdao.huihui.deals/com.youdao.huihui.deals.activity.StartUpActivity
 link: [http://www.coolapk.com/search?q=com.youdao.huihui.deals]
---------------------
-多多猫app
-times: 4
-org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
-link: [http://www.coolapk.com/search?q=org.noear.ddcat]
 --------------------
 Speedtest
 times: 4
@@ -333,6 +328,11 @@ times: 3
 com.shanbay.news/com.shanbay.news.activity.SplashActivity
 link: [http://www.coolapk.com/search?q=com.shanbay.news]
 --------------------
+锤子便签
+times: 3
+com.smartisan.notes/com.smartisan.notes.NewNotesActivity
+link: [http://www.coolapk.com/search?q=com.smartisan.notes]
+--------------------
 应用变量
 times: 3
 com.sollyu.xposed.hook.model/com.sollyu.xposed.hook.model.launcher
@@ -357,6 +357,11 @@ wifi密码分享侠
 times: 3
 com.wifishare.csl/com.uzmap.pkg.EntranceActivity
 link: [http://www.coolapk.com/search?q=com.wifishare.csl]
+--------------------
+多多猫app
+times: 3
+org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
+link: [http://www.coolapk.com/search?q=org.noear.ddcat]
 --------------------
 来电信息
 times: 3
@@ -803,6 +808,11 @@ times: 2
 sg.ruqqq.Unicon/sg.ruqqq.Unicon.ThemeChooserActivity_
 link: [http://www.coolapk.com/search?q=sg.ruqqq.Unicon]
 --------------------
+org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
+times: 1
+---------------
+link: [http://www.coolapk.com/search?q=---------------]
+--------------------
 KuKuKu
 times: 1
 acfunh.yoooo.org/acfunh.yoooo.org.MainActivity
@@ -887,11 +897,6 @@ WeChange
 times: 1
 bos.xposed.wechange/bos.xposed.wechange.SettingsActivityLauncher
 link: [http://www.coolapk.com/search?q=bos.xposed.wechange]
---------------------
- 懒人听书 
-times: 1
-bubei.tingshu/bubei.tingshu.ui.LOGOActivity
-link: [http://www.coolapk.com/search?q=bubei.tingshu]
 --------------------
 Freedom
 times: 1
@@ -1272,11 +1277,6 @@ Fake GPS
 times: 1
 com.blogspot.newapphorizons.fakegps/com.blogspot.newapphorizons.fakegps.MainActivity
 link: [http://www.coolapk.com/search?q=com.blogspot.newapphorizons.fakegps]
---------------------
-Money Lover
-times: 1
-com.bookmark.money/com.zoostudio.moneylover.ui.ActivitySplashScreen
-link: [http://www.coolapk.com/search?q=com.bookmark.money]
 --------------------
 Micro Pool
 times: 1
@@ -1967,11 +1967,6 @@ link: [http://www.coolapk.com/search?q=com.job.android]
 times: 1
 com.join.android.app.mgsim/com.join.mgps.activity.SplashActivity_
 link: [http://www.coolapk.com/search?q=com.join.android.app.mgsim]
---------------------
-Journey
-times: 1
-com.journey.app/com.journey.app.MainActivity
-link: [http://www.coolapk.com/search?q=com.journey.app]
 --------------------
 SimplePlanes
 times: 1
