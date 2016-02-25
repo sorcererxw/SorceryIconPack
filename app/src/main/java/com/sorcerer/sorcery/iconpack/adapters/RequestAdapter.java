@@ -102,7 +102,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
 //        } else if (mShowAll) {
 //            holder.main.setVisibility(View.VISIBLE);
 //        }
-        if (mAppInfoList.get(position).isHasCustomIcon()) {
+        if (mAppInfoList.get(position).isHasCustomIcon() && mShowAll == false) {
             holder.check.setVisibility(View.GONE);
             holder.hide();
         } else {
@@ -171,6 +171,36 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     }
 
     public void setShowAll(boolean isShowAll) {
-
+        mShowAll = isShowAll;
+        List tmp = new ArrayList();
+        for (int i = 0; i < mAppInfoList.size(); i++) {
+            tmp.add(mAppInfoList.get(i));
+        }
+        mAppInfoList.clear();
+        mAppInfoList.addAll(tmp);
+        notifyDataSetChanged();
+        if (!isShowAll) {
+            for (int i = 0; i < mCheckedList.size(); i++) {
+                if (mCheckedList.get(i)) {
+                    if (mAppInfoList.get(i).isHasCustomIcon()) {
+                        cnt--;
+                        if (cnt == 0 && mOnCheckListener != null) {
+                            mOnCheckListener.OnEmpty();
+                        }
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < mCheckedList.size(); i++) {
+                if (mCheckedList.get(i)) {
+                    if (mAppInfoList.get(i).isHasCustomIcon()) {
+                        cnt++;
+                        if (cnt == 1 && mOnCheckListener != null) {
+                            mOnCheckListener.OnUnEmpty();
+                        }
+                    }
+                }
+            }
+        }
     }
 }

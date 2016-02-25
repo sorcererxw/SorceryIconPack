@@ -58,8 +58,45 @@
                 android:id="@+id/textView_contributor_describe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/content"
+                android:textSize="14sp"
                 android:visibility="gone"/>
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="right">
+
+                <ImageView
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/imageView_contributor_github"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/github_icon"
+                    android:layout_margin="4dp"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/imageView_contributor_weibo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/weibo_icon"
+                    android:layout_margin="4dp"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:background="?android:attr/selectableItemBackground"
+                    android:id="@+id/imageView_contributor_email"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="4dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

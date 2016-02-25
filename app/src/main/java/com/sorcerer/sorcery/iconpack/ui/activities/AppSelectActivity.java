@@ -278,6 +278,7 @@ public class AppSelectActivity extends AppCompatActivity {
             }
             item.setActionView(switchCompat);
             item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
         } else {
             mMenu = menu;
         }
@@ -287,11 +288,11 @@ public class AppSelectActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-//        if (id == R.id.action_just_show_without_custom) {
-//            item.setChecked(!item.isChecked());
-//            mAdapter.setShowAll(!item.isChecked());
-//            return true;
-//        }
+        if (id == R.id.action_just_show_without_custom) {
+            item.setChecked(!item.isChecked());
+            mAdapter.setShowAll(!item.isChecked());
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

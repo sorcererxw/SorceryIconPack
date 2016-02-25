@@ -16,7 +16,19 @@
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
 
+        <!--<item name="android:popupMenuStyle">@style/AppTheme.PopupMenu</item>-->
+        <!--<item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>-->
+
     </style>
+
+    <!--<style name="AppTheme.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">-->
+        <!--<item name="android:popupBackground">@color/white</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; Bonus: if you want to style whole Action Bar, not just the menu &ndash;&gt;-->
+    <!--<style name="AppTheme.ActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">-->
+        <!--<item name="android:background">@color/white</item>-->
+    <!--</style>-->
 
     <style name="SubActivity" parent="Theme.AppCompat.Light.DarkActionBar">
 
@@ -35,7 +47,10 @@
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
+
+
     </style>
+
 
     <style name="PreferenceTheme" parent="AppTheme">
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>

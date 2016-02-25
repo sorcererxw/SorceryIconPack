@@ -52,11 +52,15 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(
                 getString(R.string.job_developer) + " & " + getString(R.string.job_icon_design));
+        sorcerer.setDescribe("hi, I'm Sorcerer.");
+        sorcerer.setGithub(Uri.parse("https://github.com/sorcererxw"));
+        sorcerer.setWeibo(Uri.parse("http://weibo.com/u/2262804212"));
 
         ContributorCard mozartjac = (ContributorCard) findViewById(R.id.contributorCard_mozartjac);
         mozartjac.setAvatar(getResources().getDrawable(R.drawable.mozartjac));
-        mozartjac.setName("mozartjac");
+        mozartjac.setName("翟宅宅Jack");
         mozartjac.setJob(getString(R.string.job_icon_design));
+        mozartjac.setWeibo(Uri.parse("http://weibo.com/mozartjac"));
 
         findViewById(R.id.cardView_about_lib).setOnClickListener(new View.OnClickListener() {
             @Override

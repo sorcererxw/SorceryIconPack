@@ -4,9 +4,9 @@
         android:id="@+id/action_select_all"
         android:title="select all"/>
 
-    <!--<item-->
-        <!--android:id="@+id/action_just_show_without_custom"-->
-        <!--android:checkable="true"-->
-        <!--android:checked="true"-->
-        <!--android:title="@string/just_show_without_custom"/>-->
+    <item
+        android:id="@+id/action_just_show_without_custom"
+        android:checkable="true"
+        android:checked="true"
+        android:title="@string/just_show_without_custom"/>
 </menu>

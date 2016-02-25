@@ -159,6 +159,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.activities.FeedbackActivity"
             android:label="@string/action_feedback"
@@ -180,12 +181,12 @@
             android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity"/>
         <activity
+            android:theme="@style/AppTheme.NoActionBar"
             android:name=".ui.activities.AppSelectActivity"
             android:label="@string/select_app"/>
         <activity
             android:name=".ui.activities.TestActivity"
             android:theme="@style/SubActivity"/>
-
         <activity android:name=".ui.activities.XposedActivity">
         </activity>
         <activity
@@ -205,7 +206,6 @@
                 <data android:scheme="package"/>
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".xposed.MyselfUpdateReceiver"
             android:enabled="true">
@@ -238,7 +238,8 @@
             android:name="xposedminversion"
             android:value="30"/>
 
-
+        <activity android:name=".ui.activities.SplashDonatedActivity">
+        </activity>
     </application>
 
 </manifest>

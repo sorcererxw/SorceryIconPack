@@ -1,18 +1,22 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 
 import org.w3c.dom.Text;
 
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -26,6 +30,9 @@ public class ContributorCard extends FrameLayout {
     private TextView mJob;
     private TextView mDescribe;
     private View mView;
+    private ImageView mWeibo;
+    private ImageView mGithub;
+    private ImageView mEmail;
 
     public ContributorCard(Context context) {
         super(context);
@@ -46,29 +53,78 @@ public class ContributorCard extends FrameLayout {
         mContext = context;
         mView = LayoutInflater.from(mContext).inflate(R.layout.layout_contributor, null);
         addView(mView);
-        mAvatar = (ImageView)mView.findViewById(R.id.imageView_contributor_avatar);
-        mName = (TextView)mView.findViewById(R.id.textView_contributor_name);
-        mJob = (TextView)mView.findViewById(R.id.textView_contributor_job);
-        mDescribe = (TextView)mView.findViewById(R.id.textView_contributor_describe);
+        mAvatar = (ImageView) mView.findViewById(R.id.imageView_contributor_avatar);
+        mName = (TextView) mView.findViewById(R.id.textView_contributor_name);
+        mJob = (TextView) mView.findViewById(R.id.textView_contributor_job);
+        mDescribe = (TextView) mView.findViewById(R.id.textView_contributor_describe);
+        mWeibo = (ImageView) mView.findViewById(R.id.imageView_contributor_weibo);
+        mGithub = (ImageView) mView.findViewById(R.id.imageView_contributor_github);
+        mEmail = (ImageView) mView.findViewById(R.id.imageView_contributor_email);
     }
 
-    public void setAvatar(Drawable drawable){
+    public void setAvatar(Drawable drawable) {
         mAvatar.setVisibility(VISIBLE);
         mAvatar.setImageDrawable(drawable);
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         mName.setVisibility(VISIBLE);
         mName.setText(name);
     }
 
-    public void setJob(String job){
+    public void setJob(String job) {
         mJob.setVisibility(VISIBLE);
         mJob.setText(job);
     }
 
-    public void setDescribe(String describe){
+    public void setDescribe(String describe) {
         mDescribe.setVisibility(VISIBLE);
         mDescribe.setText(describe);
+    }
+
+    public void setWeibo(final Uri weibo) {
+        mWeibo.setVisibility(VISIBLE);
+        mWeibo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent =
+                        new Intent(Intent.ACTION_VIEW, weibo);
+                mContext.startActivity(browserIntent);
+            }
+        });
+    }
+
+    public void setGithub(final Uri github) {
+        mGithub.setVisibility(VISIBLE);
+        mGithub.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent =
+                        new Intent(Intent.ACTION_VIEW, github);
+                mContext.startActivity(browserIntent);
+            }
+        });
+    }
+
+    public void setEmail(final String email) {
+        mEmail.setVisibility(VISIBLE);
+        mEmail.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent i = new Intent();
+                    i.setAction(Intent.ACTION_SENDTO);
+                    i.setData(Uri.parse("mailto:" + email));
+                    i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: suggest");
+                    i.putExtra(Intent.EXTRA_TEXT, "write down your suggestion:\n");
+                    mContext.startActivity(i);
+                } catch (Exception e) {
+                    Toast.makeText(mContext,
+                            "please login in your email app first",
+                            Toast.LENGTH_SHORT)
+                            .show();
+                }
+            }
+        });
     }
 }
