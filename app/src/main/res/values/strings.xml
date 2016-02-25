@@ -49,6 +49,7 @@
     <string name="nav_item_update">update</string>
     <string name="nav_item_welcome">welcome</string>
     <string name="nav_item_donate">donate</string>
+    <string name="nav_item_about">about</string>
 
     <string name="donate_dialog_title">select amount</string>
     <string name="donate_declaration_content"></string>
@@ -74,6 +75,10 @@
     <string name="select_app">select app</string>
     <string name="cancel_request">cancel_request?</string>
 
+    <string name="contributor">Contributor</string>
+    <string name="job_developer">Developer</string>
+    <string name="job_icon_design">icon design</string>
+    <string name="open_source_lib">Open Source Libs</string>
 
     <string name="pref_global_load_title">global load</string>
     <string name="pref_global_load_summary">load by xposed instead of launcher</string>
@@ -177,6 +182,19 @@
         <!--<item>Smart Launcher Pro|ginlemon.flowerpro</item>-->
         <!--<item>Solo Launcher|home.solo.launcher.free</item>-->
         <item>TSF Launcher|com.tsf.shell</item>
+    </string-array>
+
+    <string-array name="libs_list">
+        <item>DiscreteSeekBar|AnderWeb|https://github.com/AnderWeb/discreteSeekBar</item>
+        <item>Universal Image Loader|nostra13|https://github.com/nostra13/Android-Universal-Image-Loader</item>
+        <item>RootTools|Stericson|https://github.com/Stericson/RootTools</item>
+        <item>XposedBridge|rovo89|https://github.com/rovo89/XposedBridge</item>
+        <item>Okhttp|square|https://github.com/square/okhttp</item>
+        <item>Okio|square|https://github.com/square/okio</item>
+        <item>Gson|google|https://github.com/google/gson</item>
+        <item>Material Dialogs|afollestad|https://github.com/afollestad/material-dialogs</item>
+        <item>AVLoadingIndicatorView|81813780|https://github.com/81813780/AVLoadingIndicatorView</item>
+        <item>NineOldAndroids|JakeWharton|https://github.com/JakeWharton/NineOldAndroids</item>
     </string-array>
 
     <bool name="config_iconpack">true</bool>

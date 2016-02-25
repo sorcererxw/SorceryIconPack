@@ -90,7 +90,7 @@
             请在所有手机后台管理应用中将这个应用纳入白名单\n
             当前Xposed模块暂不支持nova, 请在「应用到启动器」中更换nova图标\n
             暂不支持热刷新, 安装了新的应用需要重启以使图标变更\n
-        运行样本较少, 无法保证模块百分百运行正常\n
+            运行样本较少, 无法保证模块百分百运行正常\n
         启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
     <string name="global_state_active">已开启</string>
     <string name="global_state_label">当前状态</string>
@@ -98,4 +98,9 @@
     <string name="global_state_not_root">未root</string>
     <string name="action_close">关闭</string>
     <string name="just_show_without_custom">仅显示未适配图标</string>
+    <string name="nav_item_about">关于</string>
+    <string name="open_source_lib">开源库</string>
+    <string name="job_developer">开发者</string>
+    <string name="job_icon_design">图标设计</string>
+    <string name="contributor">贡献者</string>
 </resources>

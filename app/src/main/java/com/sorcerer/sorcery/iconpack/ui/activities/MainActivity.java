@@ -245,6 +245,8 @@ public class MainActivity extends AppCompatActivity implements
             activityShift(DonateActivity.class);
         } else if (id == R.id.nav_item_test) {
             activityShift(TestActivity.class);
+        } else if (id == R.id.nav_item_about) {
+            activityShift(AboutActivity.class);
         }
         mDrawerLayout.closeDrawers();
         return true;

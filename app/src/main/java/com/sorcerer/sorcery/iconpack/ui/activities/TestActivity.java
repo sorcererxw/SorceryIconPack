@@ -7,13 +7,21 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.adapters.LibAdapter;
+import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
+import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
@@ -41,8 +49,33 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.imageView_test);
         mContext = this;
 
-        mTestButton.setOnClickListener(getXmlStringListener);
+        mTestButton.setOnClickListener(xmlListener);
     }
+
+//    private View.OnClickListener showListDialog = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            View view = LinearLayout.inflate(mContext, R.layout.layout_recyclerview, null);
+//            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id
+//                    .recyclerView_layout);
+//            recyclerView.setHasFixedSize(true);
+//            recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+//            recyclerView.setAdapter(new LibAdapter(mContext));
+//
+//            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+//            builder.setView(view);
+//            builder.create().show();
+//
+//
+////            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+//
+////            builder.customView(view, true);
+////            builder.adapter(new LibListAdapter(mContext), null);
+////            builder.title(getString(R.string.open_source_lib));
+////            builder.build().show();
+//        }
+//
+//    };
 
     private View.OnClickListener getXmlStringListener = new View.OnClickListener() {
         @Override

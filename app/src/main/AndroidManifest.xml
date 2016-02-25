@@ -173,6 +173,7 @@
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.AboutActivity"
+            android:label="@string/nav_item_about"
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.SettingsActivity"
@@ -184,6 +185,14 @@
         <activity
             android:name=".ui.activities.TestActivity"
             android:theme="@style/SubActivity"/>
+
+        <activity android:name=".ui.activities.XposedActivity">
+        </activity>
+        <activity
+            android:name=".ui.activities.LabActivity"
+            android:label="@string/nav_item_lab"
+            android:theme="@style/SubActivity">
+        </activity>
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"
@@ -229,13 +238,7 @@
             android:name="xposedminversion"
             android:value="30"/>
 
-        <activity android:name=".ui.activities.XposedActivity">
-        </activity>
-        <activity
-            android:name=".ui.activities.LabActivity"
-            android:label="@string/nav_item_lab"
-            android:theme="@style/SubActivity">
-        </activity>
+
     </application>
 
 </manifest>

@@ -19,4 +19,7 @@
 
     <dimen name="four_dp">4dp</dimen>
     <dimen name="eight_dp">8dp</dimen>
+
+    <dimen name="activity_scrollview_size">300dp</dimen>
+
 </resources>

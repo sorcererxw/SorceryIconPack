@@ -1,3870 +1,3096 @@
 Sorcery 图标包
 times: 17
 com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.sorcerer.sorcery.iconpack]
 --------------------
 MX Player Pro
 times: 13
 com.mxtech.videoplayer.pro/com.mxtech.videoplayer.pro.ActivityMediaList
-link: [http://www.coolapk.com/search?q=com.mxtech.videoplayer.pro]
 --------------------
 炉石传说
 times: 12
 com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneNativeActivity
-link: [http://www.coolapk.com/search?q=com.blizzard.wtcg.hearthstone]
 --------------------
 Google
 times: 11
 com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity
-link: [http://www.coolapk.com/search?q=com.google.android.googlequicksearchbox]
 --------------------
 冰箱
 times: 10
 com.catchingnow.icebox/com.catchingnow.icebox.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.catchingnow.icebox]
 --------------------
 语音搜索
 times: 10
 com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity
-link: [http://www.coolapk.com/search?q=com.google.android.googlequicksearchbox]
 --------------------
 红包插件
 times: 10
 com.wuxianlin.luckymoney/com.wuxianlin.luckymoney.SettingsActivity
-link: [http://www.coolapk.com/search?q=com.wuxianlin.luckymoney]
 --------------------
 Flash Player Settings
 times: 9
 com.adobe.flashplayer/com.adobe.flashplayer.SettingsManager
-link: [http://www.coolapk.com/search?q=com.adobe.flashplayer]
 --------------------
 浮動通知
 times: 8
 codes.simen.l50notifications/codes.simen.l50notifications.ui.WelcomeActivity
-link: [http://www.coolapk.com/search?q=codes.simen.l50notifications]
 --------------------
 Plague Inc
 times: 8
 com.miniclip.plagueinc/com.miniclip.plagueinc.PlagueIncActivity
-link: [http://www.coolapk.com/search?q=com.miniclip.plagueinc]
 --------------------
 掌上英雄联盟
 times: 8
 com.tencent.qt.qtl/com.tencent.qt.qtl.activity.main.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.tencent.qt.qtl]
 --------------------
 执业医师题库
 times: 7
 com.exam8.yishi/com.exam8.yishi.WelcomePhoneActivity
-link: [http://www.coolapk.com/search?q=com.exam8.yishi]
 --------------------
 PerfectColorBar
 times: 7
 com.flarejune.perfectcolorbar/com.flarejune.perfectcolorbar.ui.actMain
-link: [http://www.coolapk.com/search?q=com.flarejune.perfectcolorbar]
 --------------------
 文件
 times: 7
 com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.NewMainProxyActivity
-link: [http://www.coolapk.com/search?q=com.google.android.apps.docs.editors.docs]
 --------------------
 試算表
 times: 7
 com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.app.NewMainProxyActivity
-link: [http://www.coolapk.com/search?q=com.google.android.apps.docs.editors.sheets]
 --------------------
 簡報
 times: 7
 com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity
-link: [http://www.coolapk.com/search?q=com.google.android.apps.docs.editors.slides]
 --------------------
 XQS Background
 times: 7
 com.meloncookie.xqsbackground/com.meloncookie.xqsbackground.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.meloncookie.xqsbackground]
 --------------------
 Magicka
 times: 7
 com.paradoxplaza.imagicka/com.ama.billing.UnityBillingHUBActivity
-link: [http://www.coolapk.com/search?q=com.paradoxplaza.imagicka]
 --------------------
 西医综合真题
 times: 7
 com.psychiatrygarden/com.psychiatrygarden.activity.InitActivity
-link: [http://www.coolapk.com/search?q=com.psychiatrygarden]
 --------------------
 鞋码助手
 times: 7
 com.smzdm.android.sizetool/com.smzdm.android.sizetool.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.smzdm.android.sizetool]
 --------------------
 炸弹小分队
 times: 7
 net.froemling.bombsquad/net.froemling.bombsquad.BombSquad
-link: [http://www.coolapk.com/search?q=net.froemling.bombsquad]
 --------------------
 一个
 times: 7
 one.hh.oneclient/one.hh.oneclient.activitys.OneClient
-link: [http://www.coolapk.com/search?q=one.hh.oneclient]
 --------------------
 Snapseed
 times: 6
 com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
-link: [http://www.coolapk.com/search?q=com.niksoftware.snapseed]
 --------------------
 Alto
 times: 6
 com.noodlecake.altosadventure/com.prime31.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.noodlecake.altosadventure]
 --------------------
 S 健康
 times: 6
 com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity
-link: [http://www.coolapk.com/search?q=com.sec.android.app.shealth]
 --------------------
 字幕组影视
 times: 6
 com.yyets.zimuzu/com.yyets.zimuzu.activity.AppStartActivity
-link: [http://www.coolapk.com/search?q=com.yyets.zimuzu]
 --------------------
 手机乐园
 times: 5
 cn.com.shouji.market/cn.com.shouji.market.MainTabActivity
-link: [http://www.coolapk.com/search?q=cn.com.shouji.market]
 --------------------
 sFly
 times: 5
 com.cdnren.sfly/com.cdnren.sfly.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.cdnren.sfly]
 --------------------
 极路由
 times: 5
 com.hiwifi/com.hiwifi.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.hiwifi]
 --------------------
 Welike
 times: 5
 com.sxy.ui/com.sxy.ui.view.MainActivity
-link: [http://www.coolapk.com/search?q=com.sxy.ui]
 --------------------
 bubei.tingshu/bubei.tingshu.ui.LOGOActivity
 times: 4
 ------------------------------
-link: [http://www.coolapk.com/search?q=------------------------------]
 --------------------
 NETPAS云墙
 times: 4
 cc.netpas.android_firewall/cc.netpas.ui.OnLoadActivity
-link: [http://www.coolapk.com/search?q=cc.netpas.android_firewall]
 --------------------
 掌上生活
 times: 4
 com.cmbchina.ccd.pluto.cmbActivity/com.cmbchina.ccd.pluto.cmbActivity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.cmbchina.ccd.pluto.cmbActivity]
 --------------------
 GG助手
 times: 4
 com.iplay.assistant/com.iplay.assistant.ui.market_new.GGMarketActivity
-link: [http://www.coolapk.com/search?q=com.iplay.assistant]
 --------------------
 Seeder
 times: 4
 com.lcis.seeder/com.lcis.seeder.Seeder
-link: [http://www.coolapk.com/search?q=com.lcis.seeder]
 --------------------
 淘小说
 times: 4
 com.martian.ttbook/com.martian.mibook.EnterActivity
-link: [http://www.coolapk.com/search?q=com.martian.ttbook]
 --------------------
 掌上公交
 times: 4
 com.mygolbs.mybus/com.mygolbs.mybus.LoginActivity
-link: [http://www.coolapk.com/search?q=com.mygolbs.mybus]
 --------------------
 ?0?2PP助手
 times: 4
 com.pp.assistant/com.pp.assistant.PPWelComeActivity
-link: [http://www.coolapk.com/search?q=com.pp.assistant]
 --------------------
 欢乐斗地主
 times: 4
 com.qqgame.hlddz/com.qqgame.hlddz.NewHLDDZ
-link: [http://www.coolapk.com/search?q=com.qqgame.hlddz]
 --------------------
 带壳截图
 times: 4
 com.sspai.dkjt/com.sspai.dkjt.ui.activity.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.sspai.dkjt]
 --------------------
 惠惠购物助手
 times: 4
 com.youdao.huihui.deals/com.youdao.huihui.deals.activity.StartUpActivity
-link: [http://www.coolapk.com/search?q=com.youdao.huihui.deals]
 --------------------
 Speedtest
 times: 4
 org.zwanoo.android.speedtest/com.ookla.speedtest.softfacade.MainActivity
-link: [http://www.coolapk.com/search?q=org.zwanoo.android.speedtest]
 --------------------
 MinMinGuard
 times: 4
 tw.fatminmin.xposed.minminguard/tw.fatminmin.xposed.minminguard.ui.MainActivity
-link: [http://www.coolapk.com/search?q=tw.fatminmin.xposed.minminguard]
 --------------------
 Battery Monitor Widget Pro
 times: 3
 ccc71.bmw.pro/ccc71.at.activities.battery.at_batt_tabs
-link: [http://www.coolapk.com/search?q=ccc71.bmw.pro]
 --------------------
 布卡漫画
 times: 3
 cn.ibuka.manga.ui/cn.ibuka.manga.ui.ActivityStartup
-link: [http://www.coolapk.com/search?q=cn.ibuka.manga.ui]
 --------------------
 WPS 偷跑版
 times: 3
 cn.wps.moffice_tpt/cn.wps.moffice.documentmanager.PreStartActivity
-link: [http://www.coolapk.com/search?q=cn.wps.moffice_tpt]
 --------------------
 Iride UI
 times: 3
 com.Fraom.IrideUI/com.Fraom.IrideUI.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.Fraom.IrideUI]
 --------------------
 自动壁纸设置
 times: 3
 com.aws.WallpaperAutoSet/com.aws.WallpaperAutoSet.Activities.FolderSelecter
-link: [http://www.coolapk.com/search?q=com.aws.WallpaperAutoSet]
 --------------------
 百度云
 times: 3
 com.baidu.netdisk_ss/com.baidu.netdisk.ui.Navigate
-link: [http://www.coolapk.com/search?q=com.baidu.netdisk_ss]
 --------------------
 交通银行
 times: 3
 com.bankcomm/com.bankcomm.ui.SplashScreenActivity
-link: [http://www.coolapk.com/search?q=com.bankcomm]
 --------------------
 安全令
 times: 3
 com.blizzard.bma/com.blizzard.bma.ui.welcome.SplashActivity
-link: [http://www.coolapk.com/search?q=com.blizzard.bma]
 --------------------
 Flat Style Bar Indicators
 times: 3
 com.bocharov.xposed.fsbi/com.bocharov.xposed.fsbi.settings.Main
-link: [http://www.coolapk.com/search?q=com.bocharov.xposed.fsbi]
 --------------------
 FS 动态变色
 times: 3
 com.bocharov.xposed.fscb/com.bocharov.xposed.fscb.settings.ModuleSettings
-link: [http://www.coolapk.com/search?q=com.bocharov.xposed.fscb]
 --------------------
 触宝电话
 times: 3
 com.cootek.smartdialer/com.cootek.smartdialer.TStartup
-link: [http://www.coolapk.com/search?q=com.cootek.smartdialer]
 --------------------
 V2EX+
 times: 3
 com.czbix.v2ex/com.czbix.v2ex.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.czbix.v2ex]
 --------------------
 多玩我的世界盒子
 times: 3
 com.duowan.groundhog.mctools/com.duowan.groundhog.mctools.activity.StarActivity
-link: [http://www.coolapk.com/search?q=com.duowan.groundhog.mctools]
 --------------------
 静读天下专业版
 times: 3
 com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
-link: [http://www.coolapk.com/search?q=com.flyersoft.moonreaderp]
 --------------------
 Google设置
 times: 3
 com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsActivity
-link: [http://www.coolapk.com/search?q=com.google.android.gms]
 --------------------
 Phonograph
 times: 3
 com.kabouzeid.gramophone/com.kabouzeid.gramophone.ui.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.kabouzeid.gramophone]
 --------------------
 LOFTER
 times: 3
 com.lofter.android/com.lofter.android.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.lofter.android]
 --------------------
 Smooth
 times: 3
 com.mzba.happy.laugh/com.mzba.happy.laugh.SplashActivity
-link: [http://www.coolapk.com/search?q=com.mzba.happy.laugh]
 --------------------
 XyKey
 times: 3
 com.naxy.xykey/com.naxy.xykey.activities.ActivityMain
-link: [http://www.coolapk.com/search?q=com.naxy.xykey]
 --------------------
 Cytus
 times: 3
 com.rayark.Cytus.full/com.prime31.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.rayark.Cytus.full]
 --------------------
 萝莉状态栏
 times: 3
 com.rebelo.lolistat/com.rebelo.lolistat.ui.base.GlobalActivity
-link: [http://www.coolapk.com/search?q=com.rebelo.lolistat]
 --------------------
 简洁日历
 times: 3
 com.scliang.bqcalendar/com.scliang.bqcalendar.MainActivity
-link: [http://www.coolapk.com/search?q=com.scliang.bqcalendar]
 --------------------
 扇贝新闻
 times: 3
 com.shanbay.news/com.shanbay.news.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.shanbay.news]
 --------------------
 锤子便签
 times: 3
 com.smartisan.notes/com.smartisan.notes.NewNotesActivity
-link: [http://www.coolapk.com/search?q=com.smartisan.notes]
 --------------------
 应用变量
 times: 3
 com.sollyu.xposed.hook.model/com.sollyu.xposed.hook.model.launcher
-link: [http://www.coolapk.com/search?q=com.sollyu.xposed.hook.model]
 --------------------
 王者荣耀
 times: 3
 com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity
-link: [http://www.coolapk.com/search?q=com.tencent.tmgp.sgame]
 --------------------
 iFlat
 times: 3
 com.theme.mumu.flat/com.theme.mumu.flat.MainActivity
-link: [http://www.coolapk.com/search?q=com.theme.mumu.flat]
 --------------------
 VIP账号神器
 times: 3
 com.vipshare/com.vipshare.ui.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.vipshare]
 --------------------
 wifi密码分享侠
 times: 3
 com.wifishare.csl/com.uzmap.pkg.EntranceActivity
-link: [http://www.coolapk.com/search?q=com.wifishare.csl]
 --------------------
 多多猫app
 times: 3
 org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
-link: [http://www.coolapk.com/search?q=org.noear.ddcat]
 --------------------
 来电信息
 times: 3
 org.xdty.callerinfo/org.xdty.callerinfo.activity.MainActivity
-link: [http://www.coolapk.com/search?q=org.xdty.callerinfo]
 --------------------
 以图搜图
 times: 3
 rikka.searchbyimage/rikka.searchbyimage.ui.MainActivity
-link: [http://www.coolapk.com/search?q=rikka.searchbyimage]
 --------------------
 ATP/WTA Live
 times: 2
 atpwta.live/atpwta.live.activity.Main
-link: [http://www.coolapk.com/search?q=atpwta.live]
 --------------------
 PPIICC
 times: 2
 bos.consoar.imagestitch/bos.consoar.imagestitch.ui.MainActivity
-link: [http://www.coolapk.com/search?q=bos.consoar.imagestitch]
 --------------------
 浦发手机银行
 times: 2
 cn.com.spdb.mobilebank.per/cn.com.spdb.mobilebank.per.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=cn.com.spdb.mobilebank.per]
 --------------------
 MyAndroidTools Pro
 times: 2
 cn.wq.myandroidtoolspro/cn.wq.myandroidtoolspro.MainActivity
-link: [http://www.coolapk.com/search?q=cn.wq.myandroidtoolspro]
 --------------------
 1Password
 times: 2
 com.agilebits.onepassword/com.agilebits.onepassword.activity.LoginActivity
-link: [http://www.coolapk.com/search?q=com.agilebits.onepassword]
 --------------------
 厨房故事
 times: 2
 com.ajnsnewmedia.kitchenstories/com.ajnsnewmedia.kitchenstories.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.ajnsnewmedia.kitchenstories]
 --------------------
 Cube
 times: 2
 com.apponly.cube/org.cocos2dx.cpp.AppActivity
-link: [http://www.coolapk.com/search?q=com.apponly.cube]
 --------------------
 BetterBatteryStats
 times: 2
 com.asksven.betterbatterystats/com.asksven.betterbatterystats.StatsActivity
-link: [http://www.coolapk.com/search?q=com.asksven.betterbatterystats]
 --------------------
 WiFi连网神器
 times: 2
 com.autoconnectwifi.app/com.autoconnectwifi.app.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.autoconnectwifi.app]
 --------------------
 XX贴吧
 times: 2
 com.baidu.xxtieba/com.baidu.tieba.LogoActivity
-link: [http://www.coolapk.com/search?q=com.baidu.xxtieba]
 --------------------
 Dynamix
 times: 2
 com.c4cat.dynamix/com.prime31.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.c4cat.dynamix]
 --------------------
 NDR Utils
 times: 2
 com.camber.ndrutils/com.camber.ndrutils.NdrApp
-link: [http://www.coolapk.com/search?q=com.camber.ndrutils]
 --------------------
 汽车之家
 times: 2
 com.cubic.autohome/com.cubic.autohome.LogoActivity
-link: [http://www.coolapk.com/search?q=com.cubic.autohome]
 --------------------
 相机
 times: 2
 com.cyngn.cameranext/com.android.camera.CameraLauncher
-link: [http://www.coolapk.com/search?q=com.cyngn.cameranext]
 --------------------
 Native Clipboard
 times: 2
 com.dhm47.nativeclipboard/com.dhm47.nativeclipboard.Setting
-link: [http://www.coolapk.com/search?q=com.dhm47.nativeclipboard]
 --------------------
 动漫之家
 times: 2
 com.dmzj.manhua/com.dmzj.manhua.ui.LaunchInterceptorActivity
-link: [http://www.coolapk.com/search?q=com.dmzj.manhua]
 --------------------
 读览天下
 times: 2
 com.dooland.mobilefordooland.reader/com.dooland.phone.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.dooland.mobilefordooland.reader]
 --------------------
 欧路词典
 times: 2
 com.eusoft.eudic/com.eusoft.dict.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.eusoft.eudic]
 --------------------
 Wifi 分析仪
 times: 2
 com.farproc.wifi.analyzer/com.farproc.wifi.analyzer.MainScreen
-link: [http://www.coolapk.com/search?q=com.farproc.wifi.analyzer]
 --------------------
 中华农历
 times: 2
 com.findsdk.lunarcalendar/com.findsdk.lunarcalendar.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.findsdk.lunarcalendar]
 --------------------
 QQUnrecalled
 times: 2
 com.fkzhang.qqunrecalled/com.fkzhang.qqunrecalled.MainActivity-Alias
-link: [http://www.coolapk.com/search?q=com.fkzhang.qqunrecalled]
 --------------------
 Cinema FV-5
 times: 2
 com.flavionet.android.cinema.pro/com.flavionet.android.cinema.pro.Main
-link: [http://www.coolapk.com/search?q=com.flavionet.android.cinema.pro]
 --------------------
 福昕PDF
 times: 2
 com.foxit.mobile.pdf.lite/com.fuxin.home.imp.MainActivity
-link: [http://www.coolapk.com/search?q=com.foxit.mobile.pdf.lite]
 --------------------
 Focus
 times: 2
 com.franco.focus/com.franco.focus.Original
-link: [http://www.coolapk.com/search?q=com.franco.focus]
 --------------------
 Android通话振动
 times: 2
 com.gzplanet.xposed.xperiaphonevibrator/com.gzplanet.xposed.xperiaphonevibrator.XposedSettings
-link: [http://www.coolapk.com/search?q=com.gzplanet.xposed.xperiaphonevibrator]
 --------------------
 铃声剪辑
 times: 2
 com.herman.ringtone/com.herman.ringtone.MusicPicker
-link: [http://www.coolapk.com/search?q=com.herman.ringtone]
 --------------------
 战舰少女R
 times: 2
 com.huanmeng.zhanjian2/org.cocos2dx.cpp.AppActivity
-link: [http://www.coolapk.com/search?q=com.huanmeng.zhanjian2]
 --------------------
 HiLink
 times: 2
 com.huawei.mw/com.huawei.mw.plugin.guide.activity.GuideActivity
-link: [http://www.coolapk.com/search?q=com.huawei.mw]
 --------------------
 火猫TV
 times: 2
 com.huomaotv.mobile/com.huomaotv.mobile.ui.activity.StartActivity
-link: [http://www.coolapk.com/search?q=com.huomaotv.mobile]
 --------------------
 BusyBox
 times: 2
 com.jrummy.busybox.installer.pro/com.jrummyapps.busybox.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.jrummy.busybox.installer.pro]
 --------------------
 爱字体
 times: 2
 com.kapp.ifont/com.kapp.ifont.ui.SplashScreenActivity
-link: [http://www.coolapk.com/search?q=com.kapp.ifont]
 --------------------
 SuperBeam
 times: 2
 com.majedev.superbeam/com.liveqos.superbeam.ui.SendReceiveActivity
-link: [http://www.coolapk.com/search?q=com.majedev.superbeam]
 --------------------
 MalMath
 times: 2
 com.malmath.apps.mm/com.malmath.apps.mm.MainActivity
-link: [http://www.coolapk.com/search?q=com.malmath.apps.mm]
 --------------------
 集享卡
 times: 2
 com.maxxipoint.android/com.maxxipoint.android.shopping.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.maxxipoint.android]
 --------------------
 知趣天气
 times: 2
 com.metek.zqWeather/com.metek.zqWeather.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.metek.zqWeather]
 --------------------
 MONO
 times: 2
 com.mmmono.mono/com.mmmono.mono.ui.spalsh.SplashScreenActivity
-link: [http://www.coolapk.com/search?q=com.mmmono.mono]
 --------------------
 宙斯盾
 times: 2
 com.mokee.aegis/com.mokee.aegis.activities.ManagePermissionsActivity
-link: [http://www.coolapk.com/search?q=com.mokee.aegis]
 --------------------
 MX Player
 times: 2
 com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
-link: [http://www.coolapk.com/search?q=com.mxtech.videoplayer.ad]
 --------------------
 网易游戏论坛
 times: 2
 com.netease.gameforums/com.netease.gameforums.app.StartActivity
-link: [http://www.coolapk.com/search?q=com.netease.gameforums]
 --------------------
 梦幻西游
 times: 2
 com.netease.my/com.netease.my.AppActivity
-link: [http://www.coolapk.com/search?q=com.netease.my]
 --------------------
 网易公开课
 times: 2
 com.netease.vopen/com.netease.vopen.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.netease.vopen]
 --------------------
 Seene
 times: 2
 com.obviousengine.seene.android.core/com.obviousengine.seene.android.ui.scene.TimelineScenesActivity
-link: [http://www.coolapk.com/search?q=com.obviousengine.seene.android.core]
 --------------------
 Fing
 times: 2
 com.overlook.android.fing/com.overlook.android.fing.FingActivity
-link: [http://www.coolapk.com/search?q=com.overlook.android.fing]
 --------------------
 Phonegram
 times: 2
 com.pinssible.padgram/com.pinssible.padgram.ui.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.pinssible.padgram]
 --------------------
 XDA Premium 4
 times: 2
 com.quoord.tapatalkxdapre.activity/com.quoord.tapatalkpro.activity.directory.ics.IcsRebrandingEntryActivity
-link: [http://www.coolapk.com/search?q=com.quoord.tapatalkxdapre.activity]
 --------------------
 小影
 times: 2
 com.quvideo.xiaoying.pro/com.quvideo.xiaoying.app.SplashActivity
-link: [http://www.coolapk.com/search?q=com.quvideo.xiaoying.pro]
 --------------------
 Deemo
 times: 2
 com.rayark.pluto/com.prime31.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.rayark.pluto]
 --------------------
 MarkdownX
 times: 2
 com.ryeeeeee.markdownx/com.ryeeeeee.markdownx.activity.ChooserActivity
-link: [http://www.coolapk.com/search?q=com.ryeeeeee.markdownx]
 --------------------
 天天动听
 times: 2
 com.sds.android.ttpod/com.sds.android.ttpod.EntryActivity
-link: [http://www.coolapk.com/search?q=com.sds.android.ttpod]
 --------------------
 Shazam
 times: 2
 com.shazam.encore.android/com.shazam.android.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=com.shazam.encore.android]
 --------------------
 ColorShamu
 times: 2
 com.shiunghanching.colorshamu/com.shiunghanching.colorshamu.MainActivity
-link: [http://www.coolapk.com/search?q=com.shiunghanching.colorshamu]
 --------------------
 微博
 times: 2
 com.sina.weibog3/com.sina.weibo.SplashActivity
-link: [http://www.coolapk.com/search?q=com.sina.weibog3]
 --------------------
 锤子阅读
 times: 2
 com.smartisan.reader/com.smartisan.reader.activities.MainActivity_
-link: [http://www.coolapk.com/search?q=com.smartisan.reader]
 --------------------
 Blued
 times: 2
 com.soft.blued/com.soft.blued.ui.welcome.FirstActivity
-link: [http://www.coolapk.com/search?q=com.soft.blued]
 --------------------
 JuiceSSH
 times: 2
 com.sonelli.juicessh/com.sonelli.juicessh.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.sonelli.juicessh]
 --------------------
 生活轨迹
 times: 2
 com.sonymobile.lifelog/com.sonymobile.lifelog.login.StartActivity
-link: [http://www.coolapk.com/search?q=com.sonymobile.lifelog]
 --------------------
 Spotify
 times: 2
 com.spotify.music/com.spotify.music.MainActivity
-link: [http://www.coolapk.com/search?q=com.spotify.music]
 --------------------
 Lara Croft GO
 times: 2
 com.squareenixmontreal.lcgo/com.squareenixmontreal.semfullscreenactivity.FullScreenMainActivity
-link: [http://www.coolapk.com/search?q=com.squareenixmontreal.lcgo]
 --------------------
 应用宝
 times: 2
 com.tencent.android.qqdownloader/com.tencent.assistant.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.tencent.android.qqdownloader]
 --------------------
 微票儿
 times: 2
 com.tencent.movieticket/com.tencent.movieticket.activity.QQMovieTicketActivity
-link: [http://www.coolapk.com/search?q=com.tencent.movieticket]
 --------------------
 天天爱消除
 times: 2
 com.tencent.peng/com.tencent.peng.RedGame
-link: [http://www.coolapk.com/search?q=com.tencent.peng]
 --------------------
 手机管家
 times: 2
 com.tencent.qqpimsecure/com.tencent.server.fore.QuickLoadActivity
-link: [http://www.coolapk.com/search?q=com.tencent.qqpimsecure]
 --------------------
 企鹅FM
 times: 2
 com.tencent.radio/com.tencent.radio.common.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.tencent.radio]
 --------------------
 TeslaUnread
 times: 2
 com.teslacoilsw.notifier/com.teslacoilsw.notifier.NotifierSettings
-link: [http://www.coolapk.com/search?q=com.teslacoilsw.notifier]
 --------------------
 航旅纵横
 times: 2
 com.umetrip.android.msky.app/com.umetrip.android.msky.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.umetrip.android.msky.app]
 --------------------
 测网速
 times: 2
 com.uusense.speed/com.uusense.speed.GuiderPageActivity
-link: [http://www.coolapk.com/search?q=com.uusense.speed]
 --------------------
 万达电影
 times: 2
 com.wandafilm.app/com.wandafilm.app.MainEntrance
-link: [http://www.coolapk.com/search?q=com.wandafilm.app]
 --------------------
 小鸡模拟器
 times: 2
 com.xiaoji.emulator/com.xiaoji.emulator.Entry
-link: [http://www.coolapk.com/search?q=com.xiaoji.emulator]
 --------------------
 去你大爷的内置浏览器
 times: 2
 com.xloger.exlink.app/com.xloger.exlink.app.activity.XposedIntoActivity
-link: [http://www.coolapk.com/search?q=com.xloger.exlink.app]
 --------------------
 学堂在线
 times: 2
 com.xuetangx.mobile/com.xuetangx.mobile.gui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.xuetangx.mobile]
 --------------------
 易班
 times: 2
 com.yiban.app/com.yiban.app.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.yiban.app]
 --------------------
 云朵护眼
 times: 2
 com.yunduo.nighttools/com.yunduo.nighttools.activity.TransitActivity
-link: [http://www.coolapk.com/search?q=com.yunduo.nighttools]
 --------------------
 cnBeta Plus
 times: 2
 com.ywwxhz.cnbetareader/com.ywwxhz.activitys.MainActivity
-link: [http://www.coolapk.com/search?q=com.ywwxhz.cnbetareader]
 --------------------
 快喵
 times: 2
 com.yxnfnd9.android_fcvpn1/com.yxnfnd9.android_fcvpn1.SplashPage
-link: [http://www.coolapk.com/search?q=com.yxnfnd9.android_fcvpn1]
 --------------------
 PerfMon
 times: 2
 eu.chainfire.perfmon/eu.chainfire.perfmon.LaunchActivity
-link: [http://www.coolapk.com/search?q=eu.chainfire.perfmon]
 --------------------
 NGA玩家社区
 times: 2
 gov.pianzong.androidnga/gov.pianzong.androidnga.activity.LoadingActivity
-link: [http://www.coolapk.com/search?q=gov.pianzong.androidnga]
 --------------------
 Neko Atsume
 times: 2
 jp.co.hit_point.nekoatsume/jp.co.hit_point.nekoatsume.GActivity
-link: [http://www.coolapk.com/search?q=jp.co.hit_point.nekoatsume]
 --------------------
 pixiv
 times: 2
 jp.pxv.android/jp.pxv.android.RootActivity
-link: [http://www.coolapk.com/search?q=jp.pxv.android]
 --------------------
 文本自定义
 times: 2
 liubaoyua.customtext/liubaoyua.customtext.ui.AppListActivity
-link: [http://www.coolapk.com/search?q=liubaoyua.customtext]
 --------------------
 纯纯打码
 times: 2
 me.drakeet.puremosaic/me.drakeet.puremosaic.MainActivity
-link: [http://www.coolapk.com/search?q=me.drakeet.puremosaic]
 --------------------
 贝阅
 times: 2
 me.zheteng.cbreader.beiyue/me.zheteng.cbreader.ui.StartupActivity
-link: [http://www.coolapk.com/search?q=me.zheteng.cbreader.beiyue]
 --------------------
 Cloud VPN
 times: 2
 net.bypass.vpn/net.bypass.vpn.ui.MainActivity
-link: [http://www.coolapk.com/search?q=net.bypass.vpn]
 --------------------
 影视大全
 times: 2
 org.keke.tv.vod/org.ysdq.welcome.WelcomeActivity
-link: [http://www.coolapk.com/search?q=org.keke.tv.vod]
 --------------------
 Firefox
 times: 2
 org.mozilla.firefox/org.mozilla.firefox.App
-link: [http://www.coolapk.com/search?q=org.mozilla.firefox]
 --------------------
 Orbot
 times: 2
 org.torproject.android/org.torproject.android.OrbotMainActivity
-link: [http://www.coolapk.com/search?q=org.torproject.android]
 --------------------
 build.gradle
 times: 2
 org.zooper.zwpro/org.zooper.zwlib.Launcher
-link: [http://www.coolapk.com/search?q=org.zooper.zwpro]
 --------------------
 Unicon
 times: 2
 sg.ruqqq.Unicon/sg.ruqqq.Unicon.ThemeChooserActivity_
-link: [http://www.coolapk.com/search?q=sg.ruqqq.Unicon]
 --------------------
 org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
 times: 1
 ---------------
-link: [http://www.coolapk.com/search?q=---------------]
 --------------------
 KuKuKu
 times: 1
 acfunh.yoooo.org/acfunh.yoooo.org.MainActivity
-link: [http://www.coolapk.com/search?q=acfunh.yoooo.org]
 --------------------
 2048 Battle
 times: 1
 air.com.kappsule.battle/air.com.kappsule.battle.AppEntry
-link: [http://www.coolapk.com/search?q=air.com.kappsule.battle]
 --------------------
 BEAKER
 times: 1
 air.thix.sciencesense.beaker/air.thix.sciencesense.beaker.AppEntry
-link: [http://www.coolapk.com/search?q=air.thix.sciencesense.beaker]
 --------------------
 Chemist
 times: 1
 air.thix.sciencesense.chemist/air.thix.sciencesense.chemist.AppEntry
-link: [http://www.coolapk.com/search?q=air.thix.sciencesense.chemist]
 --------------------
 BatteryRepair
 times: 1
 air.ynfo.batteryrepair/air.ynfo.batteryrepair.AppEntry
-link: [http://www.coolapk.com/search?q=air.ynfo.batteryrepair]
 --------------------
 Jair Player
 times: 1
 aj.jair.music/aj.jair.music.Main-BY
-link: [http://www.coolapk.com/search?q=aj.jair.music]
 --------------------
 TXT2FIND
 times: 1
 alarm.silksuite.net.textalarm/alarm.silksuite.net.textalarm.MainActivity
-link: [http://www.coolapk.com/search?q=alarm.silksuite.net.textalarm]
 --------------------
 LollyDrop
 times: 1
 almrdesigns.lollydrop/com.almrdesigns.lollydrop.HomeActivity
-link: [http://www.coolapk.com/search?q=almrdesigns.lollydrop]
 --------------------
 OpenConnect
 times: 1
 app.openconnect/app.openconnect.MainActivity
-link: [http://www.coolapk.com/search?q=app.openconnect]
 --------------------
 Eggster
 times: 1
 areeb.xposed.eggster/areeb.xposed.eggster.Eggs
-link: [http://www.coolapk.com/search?q=areeb.xposed.eggster]
 --------------------
 Arity
 times: 1
 arity.calculator/calculator.Calculator
-link: [http://www.coolapk.com/search?q=arity.calculator]
 --------------------
 Speed Up Swap
 times: 1
 artur.m3rv.myszka.speedupswap/artur.m3rv.myszka.speedupswap.MainActivity
-link: [http://www.coolapk.com/search?q=artur.m3rv.myszka.speedupswap]
 --------------------
 AppOpsXposed
 times: 1
 at.jclehner.appopsxposed/at.jclehner.appopsxposed.LauncherActivity-Icon
-link: [http://www.coolapk.com/search?q=at.jclehner.appopsxposed]
 --------------------
 Backlog
 times: 1
 backlog.android/com.nulabinc.android.backlog.MainActivityFlat
-link: [http://www.coolapk.com/search?q=backlog.android]
 --------------------
 Device Info
 times: 1
 beans.network.NetworkInfo/beans.network.NetworkInfo.NetworkInfoActivity
-link: [http://www.coolapk.com/search?q=beans.network.NetworkInfo]
 --------------------
 Materis - Icon Pack
 times: 1
 blaze.pixel.materis.theme/blaze.pixel.materis.theme.LicenseActivity
-link: [http://www.coolapk.com/search?q=blaze.pixel.materis.theme]
 --------------------
 WeChange
 times: 1
 bos.xposed.wechange/bos.xposed.wechange.SettingsActivityLauncher
-link: [http://www.coolapk.com/search?q=bos.xposed.wechange]
 --------------------
 Freedom
 times: 1
 cc.madkite.freedom/cc.madkite.freedom.android.MainActivity
-link: [http://www.coolapk.com/search?q=cc.madkite.freedom]
 --------------------
 Pure Music
 times: 1
 cc.markc.puremusic/cc.markc.puremusic.MainActivity
-link: [http://www.coolapk.com/search?q=cc.markc.puremusic]
 --------------------
 Timely
 times: 1
 ch.bitspin.timely/ch.bitspin.timely.activity.MainActivity_
-link: [http://www.coolapk.com/search?q=ch.bitspin.timely]
 --------------------
 Aptoide
 times: 1
 cm.aptoide.pt/cm.aptoide.pt.MainActivity
-link: [http://www.coolapk.com/search?q=cm.aptoide.pt]
 --------------------
 8684公交
 times: 1
 cn.chinabus.main/cn.chinabus.main.startActivity
-link: [http://www.coolapk.com/search?q=cn.chinabus.main]
 --------------------
 8684地铁
 times: 1
 cn.chinabus.metro.main/cn.chinabus.metro.main.startActivity
-link: [http://www.coolapk.com/search?q=cn.chinabus.metro.main]
 --------------------
 不背单词
 times: 1
 cn.com.langeasy.LangEasyLexis/cn.com.langeasy.LangEasyLexis.activity.MainActivity
-link: [http://www.coolapk.com/search?q=cn.com.langeasy.LangEasyLexis]
 --------------------
 朗易思听
 times: 1
 cn.com.langeasy.LangEasyLrc/cn.com.langeasy.LangEasyLrc.activity.MainActivity
-link: [http://www.coolapk.com/search?q=cn.com.langeasy.LangEasyLrc]
 --------------------
 好好说
 times: 1
 cn.com.talker/cn.com.talker.HomeTabActivity
-link: [http://www.coolapk.com/search?q=cn.com.talker]
 --------------------
 丁香园
 times: 1
 cn.dxy.idxyer/cn.dxy.idxyer.activity.StartupActivity
-link: [http://www.coolapk.com/search?q=cn.dxy.idxyer]
 --------------------
 YGOMobile
 times: 1
 cn.garymb.ygomobile/cn.garymb.ygomobile.MainActivity
-link: [http://www.coolapk.com/search?q=cn.garymb.ygomobile]
 --------------------
 观察者
 times: 1
 cn.guancha.app/cn.guancha.app.WelcomeActivity
-link: [http://www.coolapk.com/search?q=cn.guancha.app]
 --------------------
 LeFit
 times: 1
 cn.l28t.appscomm.pedometer.activity/cn.appscomm.pedometer.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=cn.l28t.appscomm.pedometer.activity]
 --------------------
 八门神器
 times: 1
 cn.mc1.sq/cn.mc1.sq.Sq
-link: [http://www.coolapk.com/search?q=cn.mc1.sq]
 --------------------
 小小护目镜
 times: 1
 cn.mixiaoxiao.myappscreenmask/cn.mixiaoxiao.myappscreenmask.MainActivity
-link: [http://www.coolapk.com/search?q=cn.mixiaoxiao.myappscreenmask]
 --------------------
 字体商店
 times: 1
 cn.moppo.fontstore/cn.moppo.fontstore.activity.MainActivity
-link: [http://www.coolapk.com/search?q=cn.moppo.fontstore]
 --------------------
 九游
 times: 1
 cn.ninegame.gamemanager/cn.ninegame.gamemanager.activity.MainActivity
-link: [http://www.coolapk.com/search?q=cn.ninegame.gamemanager]
 --------------------
 VPNFree
 times: 1
 cn.vpn.vpnfree/cn.vpn.vpnfree.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=cn.vpn.vpnfree]
 --------------------
 味库
 times: 1
 cn.wecook.app/com.qihoo.util.StartActivity
-link: [http://www.coolapk.com/search?q=cn.wecook.app]
 --------------------
 Moffice
 times: 1
 cn.wps.moffice_xp/cn.wps.moffice.documentmanager.PreStartActivity
-link: [http://www.coolapk.com/search?q=cn.wps.moffice_xp]
 --------------------
 伴鱼口语
 times: 1
 cn.xckj.talk_customer/cn.xckj.talk.ui.base.SplashActivity
-link: [http://www.coolapk.com/search?q=cn.xckj.talk_customer]
 --------------------
 Xender
 times: 1
 cn.xender/cn.xender.ui.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=cn.xender]
 --------------------
 最右
 times: 1
 cn.xiaochuankeji.tieba/cn.xiaochuankeji.tieba.ui.base.ActivitySplash
-link: [http://www.coolapk.com/search?q=cn.xiaochuankeji.tieba]
 --------------------
 最右
 times: 1
 cn.xiaochuankeji.tieba/cn.xiaochuankeji.tieba.ui.base.SplashActivity
-link: [http://www.coolapk.com/search?q=cn.xiaochuankeji.tieba]
 --------------------
 Fabulous
 times: 1
 co.thefabulous.app/co.thefabulous.app.ui.activity.MainActivity
-link: [http://www.coolapk.com/search?q=co.thefabulous.app]
 --------------------
 Red Ball 4
 times: 1
 com.FDGEntertainment.redball4.gp/com.FDGEntertainment.redball4.gp.RedBall4
-link: [http://www.coolapk.com/search?q=com.FDGEntertainment.redball4.gp]
 --------------------
 The Room
 times: 1
 com.FireproofStudios.TheRoom/com.unity3d.player.UnityPlayerProxyActivity
-link: [http://www.coolapk.com/search?q=com.FireproofStudios.TheRoom]
 --------------------
 The Room Two
 times: 1
 com.FireproofStudios.TheRoom2/com.FireproofStudios.TheRoom2.TheRoom2NativeActivity
-link: [http://www.coolapk.com/search?q=com.FireproofStudios.TheRoom2]
 --------------------
 Catch
 times: 1
 com.FranticEyes.Catch/com.unity3d.player.UnityPlayerActivity
-link: [http://www.coolapk.com/search?q=com.FranticEyes.Catch]
 --------------------
 Kiwi UI
 times: 1
 com.Fraom.KiwiUI/com.Fraom.KiwiUI.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.Fraom.KiwiUI]
 --------------------
 Nucleo UI
 times: 1
 com.Fraom.NucleoUI/com.Fraom.NucleoUI.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.Fraom.NucleoUI]
 --------------------
 TeachingFeeling
 times: 1
 com.GreatLiu.TeachingFeeling/com.GreatLiu.TeachingFeeling.MainActivity
-link: [http://www.coolapk.com/search?q=com.GreatLiu.TeachingFeeling]
 --------------------
 P2PSearcher
 times: 1
 com.Huosu.p2psearcher/com.p2p.ui.ActivityMain
-link: [http://www.coolapk.com/search?q=com.Huosu.p2psearcher]
 --------------------
 Last Hope TD
 times: 1
 com.JESoftware.LastHopeTD/com.unity3d.player.UnityPlayerProxyActivity
-link: [http://www.coolapk.com/search?q=com.JESoftware.LastHopeTD]
 --------------------
 快递100
 times: 1
 com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceActivity
-link: [http://www.coolapk.com/search?q=com.Kingdee.Express]
 --------------------
 标准日本语
 times: 1
 com.PEP.biaori/com.PEP.biaori.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.PEP.biaori]
 --------------------
 CS Portable
 times: 1
 com.StudioOnMars.CSPortable/com.prime31.UnityPlayerProxyActivity
-link: [http://www.coolapk.com/search?q=com.StudioOnMars.CSPortable]
 --------------------
 LAS返回键
 times: 1
 com.abhi.lastappswitcher/com.abhi.lastappswitcher.MainActivity
-link: [http://www.coolapk.com/search?q=com.abhi.lastappswitcher]
 --------------------
 Lightroom
 times: 1
 com.adobe.lrmobile/com.adobe.lrmobile.StorageCheckActivity
-link: [http://www.coolapk.com/search?q=com.adobe.lrmobile]
 --------------------
 Earth&Moon
 times: 1
 com.afkettler.earth/com.afkettler.earth.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.afkettler.earth]
 --------------------
 云南移动
 times: 1
 com.ailk.ech.woxin/com.ailk.ech.woxin.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.ailk.ech.woxin]
 --------------------
 贴吧一键定时签到
 times: 1
 com.aiyouzhe.tieba/com.chris.activity.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.aiyouzhe.tieba]
 --------------------
 淘宝联盟
 times: 1
 com.alimama.moon/com.alimama.moon.ui.MainTabActivity
-link: [http://www.coolapk.com/search?q=com.alimama.moon]
 --------------------
 AMD ARK
 times: 1
 com.amd.app/com.amd.app.activities.StartupActivity
-link: [http://www.coolapk.com/search?q=com.amd.app]
 --------------------
 Blum
 times: 1
 com.andreapivetta.blu/com.andreapivetta.blu.activities.HomeActivity
-link: [http://www.coolapk.com/search?q=com.andreapivetta.blu]
 --------------------
 AngryGPS
 times: 1
 com.android.angryGps/com.android.angryGps.AngryGPS
-link: [http://www.coolapk.com/search?q=com.android.angryGps]
 --------------------
 券妈妈
 times: 1
 com.android.app.quanmama/com.android.app.quanmama.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.android.app.quanmama]
 --------------------
 农行掌上银行
 times: 1
 com.android.bankabc/com.android.bankabc.MainActivity
-link: [http://www.coolapk.com/search?q=com.android.bankabc]
 --------------------
 联系人
 times: 1
 com.android.contacts/com.android.contacts.mainlist.PeopleActivity
-link: [http://www.coolapk.com/search?q=com.android.contacts]
 --------------------
 指南针
 times: 1
 com.android.hicompass/com.android.hicompass.HiCompassActivity
-link: [http://www.coolapk.com/search?q=com.android.hicompass]
 --------------------
 信息
 times: 1
 com.android.mms/com.android.mms.tab.MmsMainActivity
-link: [http://www.coolapk.com/search?q=com.android.mms]
 --------------------
 设定
 times: 1
 com.android.settings/com.android.settings.GridSettings
-link: [http://www.coolapk.com/search?q=com.android.settings]
 --------------------
 设置
 times: 1
 com.android.settings/com.android.settings.SettingsTab
-link: [http://www.coolapk.com/search?q=com.android.settings]
 --------------------
 机油问答
 times: 1
 com.android.settings/com.android.settings.mokee.helper.activities.TipsHelp
-link: [http://www.coolapk.com/search?q=com.android.settings]
 --------------------
 SIM卡工具包2
 times: 1
 com.android.stk/com.android.stk.StkLauncherActivity2
-link: [http://www.coolapk.com/search?q=com.android.stk]
 --------------------
 幸运破解器
 times: 1
 com.android.vending.billing.InAppBillingService.LACK/com.android.vending.billing.InAppBillingService.LACK.MainActivity-5
-link: [http://www.coolapk.com/search?q=com.android.vending.billing.InAppBillingService.LACK]
 --------------------
 知亦行
 times: 1
 com.android.zhixing/com.android.zhixing.activity.SlidActivity
-link: [http://www.coolapk.com/search?q=com.android.zhixing]
 --------------------
 Settings
 times: 1
 com.andromium.os/com.andromium.support.AndromiumSettingActivity
-link: [http://www.coolapk.com/search?q=com.andromium.os]
 --------------------
 蚂蚁聚宝
 times: 1
 com.antfortune.wealth/com.alipay.mobile.quinox.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.antfortune.wealth]
 --------------------
 炉石传说掌游宝
 times: 1
 com.anzogame.hs/com.anzogame.hs.AppFlashActivity
-link: [http://www.coolapk.com/search?q=com.anzogame.hs]
 --------------------
 我的壁纸
 times: 1
 com.apalon.wallpapers/com.apalon.wallpapers.AdConfigActivity
-link: [http://www.coolapk.com/search?q=com.apalon.wallpapers]
 --------------------
 Business Calendar
 times: 1
 com.appgenix.bizcal/com.appgenix.bizcal.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.appgenix.bizcal]
 --------------------
 Default App Manager
 times: 1
 com.appiator.defaultappmanager/com.appiator.defaultappmanager.ui.activity.HomeActivity
-link: [http://www.coolapk.com/search?q=com.appiator.defaultappmanager]
 --------------------
 水族汇
 times: 1
 com.aquarium.housekeeper/com.aquarium.housekeeper.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.aquarium.housekeeper]
 --------------------
 Dict Aide
 times: 1
 com.arjerine.dictaide/com.arjerine.dictaide.Splash
-link: [http://www.coolapk.com/search?q=com.arjerine.dictaide]
 --------------------
 Text Aide
 times: 1
 com.arjerine.textxposed/com.arjerine.textxposed.Splash
-link: [http://www.coolapk.com/search?q=com.arjerine.textxposed]
 --------------------
 汽车之家论坛
 times: 1
 com.autohome.autoclub/com.autohome.autoclub.LogoActivity
-link: [http://www.coolapk.com/search?q=com.autohome.autoclub]
 --------------------
 Nuke My Device
 times: 1
 com.avengermobile.nukemyphone/com.avengermobile.nukemyphone.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=com.avengermobile.nukemyphone]
 --------------------
 作业帮
 times: 1
 com.baidu.homework/com.baidu.homework.activity.init.InitActivity
-link: [http://www.coolapk.com/search?q=com.baidu.homework]
 --------------------
 精简版贴吧
 times: 1
 com.baidu.tiebam/com.baidu.tieba.LogoActivity
-link: [http://www.coolapk.com/search?q=com.baidu.tiebam]
 --------------------
 百度文库
 times: 1
 com.baidu.wenku/com.baidu.wenku.splash.view.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.baidu.wenku]
 --------------------
 百度阅读
 times: 1
 com.baidu.yuedu/com.baidu.yuedu.splash.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.baidu.yuedu]
 --------------------
 EyeEm
 times: 1
 com.baseapp.eyeem/com.baseapp.eyeem.Start
-link: [http://www.coolapk.com/search?q=com.baseapp.eyeem]
 --------------------
 Mikro Winbox
 times: 1
 com.birkot/com.birkot.MikroWinboxMD
-link: [http://www.coolapk.com/search?q=com.birkot]
 --------------------
 Barcode Generator
 times: 1
 com.blogspot.aeioulabs.barcode/com.blogspot.aeioulabs.barcode.ui.list.CodeListActivity_
-link: [http://www.coolapk.com/search?q=com.blogspot.aeioulabs.barcode]
 --------------------
 Fake GPS
 times: 1
 com.blogspot.newapphorizons.fakegps/com.blogspot.newapphorizons.fakegps.MainActivity
-link: [http://www.coolapk.com/search?q=com.blogspot.newapphorizons.fakegps]
 --------------------
 Micro Pool
 times: 1
 com.botondfm.micropool/com.botondfm.micropool.MenuActivity
-link: [http://www.coolapk.com/search?q=com.botondfm.micropool]
 --------------------
 日历
 times: 1
 com.boxer.calendar/com.android.calendar.AllInOneActivity
-link: [http://www.coolapk.com/search?q=com.boxer.calendar]
 --------------------
 Bugtroid PRO
 times: 1
 com.bugtroid/com.bugtroid.licencia
-link: [http://www.coolapk.com/search?q=com.bugtroid]
 --------------------
 Psebay
 times: 1
 com.butakov.psebay/com.butakov.psebay.RunnerActivity
-link: [http://www.coolapk.com/search?q=com.butakov.psebay]
 --------------------
 黄油相机
 times: 1
 com.by.butter.camera/com.by.butter.camera.activity.SplashScreenActivity
-link: [http://www.coolapk.com/search?q=com.by.butter.camera]
 --------------------
 百分网
 times: 1
 com.byfen.market/com.byfen.market.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.byfen.market]
 --------------------
 全国空气质量
 times: 1
 com.cas.airquality/com.cas.airquality.AirQuality
-link: [http://www.coolapk.com/search?q=com.cas.airquality]
 --------------------
 地震速报
 times: 1
 com.ceic.app/com.ceic.app.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.ceic.app]
 --------------------
 超级视频
 times: 1
 com.chaojishipin.sarrs/com.chaojishipin.sarrs.activity.ChaojishipinSplashActivity
-link: [http://www.coolapk.com/search?q=com.chaojishipin.sarrs]
 --------------------
 iReader
 times: 1
 com.chaozh.iReader/com.chaozh.iReader.ui.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.chaozh.iReader]
 --------------------
 掌阅iReader
 times: 1
 com.chaozh.iReaderFree/com.chaozh.iReader.ui.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.chaozh.iReaderFree]
 --------------------
 星尘浏览器
 times: 1
 com.chaozhuo.browser_phone/org.chromium.chrome.shell.ui.ChaoZhuoActivity
-link: [http://www.coolapk.com/search?q=com.chaozhuo.browser_phone]
 --------------------
 巴士管家
 times: 1
 com.chebada/com.chebada.main.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.chebada]
 --------------------
 Doze Battery Saver
 times: 1
 com.chomic.dozebatterysaver/com.chomic.dozebatterysaver.intro.MyIntro
-link: [http://www.coolapk.com/search?q=com.chomic.dozebatterysaver]
 --------------------
 Album Art Grabber
 times: 1
 com.citc.aag/com.citc.aag.activities.Albums
-link: [http://www.coolapk.com/search?q=com.citc.aag]
 --------------------
 狗狗大全
 times: 1
 com.cjy.DogCollection/com.cjy.DogCollection.HoloMainActivity
-link: [http://www.coolapk.com/search?q=com.cjy.DogCollection]
 --------------------
 倒数日
 times: 1
 com.clover.daysmatter/com.clover.daysmatter.ui.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.clover.daysmatter]
 --------------------
 和包
 times: 1
 com.cmcc.wallet/com.cmcc.wallet.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.cmcc.wallet]
 --------------------
 CM Weather
 times: 1
 com.cmcm.weather/com.cmcm.weather.Splash
-link: [http://www.coolapk.com/search?q=com.cmcm.weather]
 --------------------
 钢琴块2
 times: 1
 com.cmplay.tiles2/com.cmplay.tile2.ui.AppActivity
-link: [http://www.coolapk.com/search?q=com.cmplay.tiles2]
 --------------------
 CAJViewer
 times: 1
 com.cnki.android.cnkireader/com.cnki.android.cnkireader.MainView
-link: [http://www.coolapk.com/search?q=com.cnki.android.cnkireader]
 --------------------
 中国象棋
 times: 1
 com.cnvcs.xiangqi/com.cnvcs.App
-link: [http://www.coolapk.com/search?q=com.cnvcs.xiangqi]
 --------------------
 CrashPlan
 times: 1
 com.code42.crashplan.android/com.code42.crashplan.android.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.code42.crashplan.android]
 --------------------
 Cool Search
 times: 1
 com.coolapk.searchbox/com.coolapk.searchbox.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.coolapk.searchbox]
 --------------------
 票贩子
 times: 1
 com.coolsoft.movie/com.coolsoft.movie.entry.EntryViewPagerActivity
-link: [http://www.coolapk.com/search?q=com.coolsoft.movie]
 --------------------
 IITC Mobile
 times: 1
 com.cradle.iitc_mobile/com.cradle.iitc_mobile.IITC_Mobile
-link: [http://www.coolapk.com/search?q=com.cradle.iitc_mobile]
 --------------------
 Crispy Icons
 times: 1
 com.crispy.icons.flatedge.iconpack/com.crispy.icons.flatedge.iconpack.HomeActivity
-link: [http://www.coolapk.com/search?q=com.crispy.icons.flatedge.iconpack]
 --------------------
 电信营业厅
 times: 1
 com.ct.client/com.ct.client.SplashActivity
-link: [http://www.coolapk.com/search?q=com.ct.client]
 --------------------
 CyanDelta
 times: 1
 com.cyandelta/com.cyandelta.CyandeltaActivity
-link: [http://www.coolapk.com/search?q=com.cyandelta]
 --------------------
 炉石传说攻略
 times: 1
 com.cyou.strategy.ls/com.mobile17173.game.GuideActivity
-link: [http://www.coolapk.com/search?q=com.cyou.strategy.ls]
 --------------------
 dailymotion
 times: 1
 com.dailymotion.dailymotion/com.dailymotion.dailymotion.mobile.activity.InterstitialActivity
-link: [http://www.coolapk.com/search?q=com.dailymotion.dailymotion]
 --------------------
 CPU Awake
 times: 1
 com.dambara.wakelocker/com.dambara.wakelocker.WakeLockMain
-link: [http://www.coolapk.com/search?q=com.dambara.wakelocker]
 --------------------
 Askarp
 times: 1
 com.ddev.askarp.iconpack/com.ddev.askarp.iconpack.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=com.ddev.askarp.iconpack]
 --------------------
 Hubble
 times: 1
 com.derek_s.hubble_gallery/com.derek_s.hubble_gallery.ui.activities.ActMain
-link: [http://www.coolapk.com/search?q=com.derek_s.hubble_gallery]
 --------------------
 QQHook
 times: 1
 com.dhb.qqhook/com.dhb.qqhook.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.dhb.qqhook]
 --------------------
 Akinator
 times: 1
 com.digidust.elokence.akinator.paid/com.digidust.elokence.akinator.activities.SplashscreenActivity
-link: [http://www.coolapk.com/search?q=com.digidust.elokence.akinator.paid]
 --------------------
 Lost in Harmony
 times: 1
 com.digixart.lostinharmony/com.unity3d.player.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.digixart.lostinharmony]
 --------------------
 Moko
 times: 1
 com.djskarpia.moko/com.djskarpia.moko.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.djskarpia.moko]
 --------------------
 一刻
 times: 1
 com.douban.daily/com.douban.daily.app.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.douban.daily]
 --------------------
 豆瓣电影
 times: 1
 com.douban.movie/com.douban.movie.app.HomeActivity
-link: [http://www.coolapk.com/search?q=com.douban.movie]
 --------------------
 豆瓣广播
 times: 1
 com.douban.shuo/com.douban.shuo.app.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.douban.shuo]
 --------------------
 艺龙旅行
 times: 1
 com.dp.android.elong/com.elong.activity.others.AppGuidActivity
-link: [http://www.coolapk.com/search?q=com.dp.android.elong]
 --------------------
 Transparent weather clock
 times: 1
 com.droid27.transparentclockweather/com.droid27.transparentclockweather.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.droid27.transparentclockweather]
 --------------------
 Mi Remote
 times: 1
 com.duokan.phone.remotecontroller/com.xiaomi.mitv.phone.remotecontroller.HoriWidgetMainActivityV2
-link: [http://www.coolapk.com/search?q=com.duokan.phone.remotecontroller]
 --------------------
 我的世界联机盒子
 times: 1
 com.duowan.mcbox.mconline/com.duowan.mcbox.mconline.ui.StartActivity
-link: [http://www.coolapk.com/search?q=com.duowan.mcbox.mconline]
 --------------------
 自由之战
 times: 1
 com.dw.fs.uc/com.channel.sdk.Splash
-link: [http://www.coolapk.com/search?q=com.dw.fs.uc]
 --------------------
 filtxr
 times: 1
 com.dwils.filtxr/com.dwils.filtxr.FilterActivity
-link: [http://www.coolapk.com/search?q=com.dwils.filtxr]
 --------------------
 NFS Most Wanted
 times: 1
 com.ea.games.nfs13_na/com.ea.ironmonkey.GameActivity
-link: [http://www.coolapk.com/search?q=com.ea.games.nfs13_na]
 --------------------
 Real Racing 3
 times: 1
 com.ea.games.r3_na/com.firemint.realracing.MainActivity
-link: [http://www.coolapk.com/search?q=com.ea.games.r3_na]
 --------------------
 Input Options
 times: 1
 com.elesbb.xposedinputautocorrectalways/com.elesbb.xposedinputautocorrectalways.Options
-link: [http://www.coolapk.com/search?q=com.elesbb.xposedinputautocorrectalways]
 --------------------
 这是我的战争
 times: 1
 com.elevenbitstudios.twommobile/com.android.Game11Bits.MainActivity
-link: [http://www.coolapk.com/search?q=com.elevenbitstudios.twommobile]
 --------------------
 电视家2.0
 times: 1
 com.elinkway.tvlive2/com.elinkway.tvlive2.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.elinkway.tvlive2]
 --------------------
 ExaGear Strategies
 times: 1
 com.eltechs.es/com.eltechs.es.ESStartupActivity
-link: [http://www.coolapk.com/search?q=com.eltechs.es]
 --------------------
 信达通讯录
 times: 1
 com.emoa.mobile/com.emoa.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.emoa.mobile]
 --------------------
 味觉大师
 times: 1
 com.eonoot.ue/com.eonoot.ue.activity.StartActivity
-link: [http://www.coolapk.com/search?q=com.eonoot.ue]
 --------------------
 星图∞
 times: 1
 com.escapistgames.starchartgoogleeducation/com.escapistgames.starchartgoogleeducation.StarChart
-link: [http://www.coolapk.com/search?q=com.escapistgames.starchartgoogleeducation]
 --------------------
 CPU Sleeper
 times: 1
 com.eugene373.cpu.sleepQC/com.eugene373.cpu.sleepQC.MainActivity
-link: [http://www.coolapk.com/search?q=com.eugene373.cpu.sleepQC]
 --------------------
 Device ID
 times: 1
 com.evozi.deviceid/com.evozi.deviceid.MainActivity
-link: [http://www.coolapk.com/search?q=com.evozi.deviceid]
 --------------------
 黑白门
 times: 1
 com.example.bwappdoor/com.example.bwappdoor.Welcome
-link: [http://www.coolapk.com/search?q=com.example.bwappdoor]
 --------------------
 表情豆豆
 times: 1
 com.facetech.emojiking/com.facetech.emojiking.MainActivity
-link: [http://www.coolapk.com/search?q=com.facetech.emojiking]
 --------------------
 伪装位置（Fake Location）
 times: 1
 com.fakegps.mock/com.fakegps.mock.activities.NewMainActivity
-link: [http://www.coolapk.com/search?q=com.fakegps.mock]
 --------------------
 FMR Memory Cleaner
 times: 1
 com.fantasmosoft.free_memory_recover/com.fantasmosoft.free_memory_recover.FreeMemoryRecover
-link: [http://www.coolapk.com/search?q=com.fantasmosoft.free_memory_recover]
 --------------------
 FastMail
 times: 1
 com.fastmail.app/com.fastmail.core.MainActivity
-link: [http://www.coolapk.com/search?q=com.fastmail.app]
 --------------------
 ?0?2遮遮
 times: 1
 com.feizao.facecover/com.feizao.facecover.MainActivity
-link: [http://www.coolapk.com/search?q=com.feizao.facecover]
 --------------------
 底部上滑导航栏
 times: 1
 com.feng.navtools/com.feng.navtools.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.feng.navtools]
 --------------------
 Trimmer (fstrim)
 times: 1
 com.fifthelement.trimmer/com.fifthelement.trimmer.MainActivity
-link: [http://www.coolapk.com/search?q=com.fifthelement.trimmer]
 --------------------
 登山赛车之天朝历险
 times: 1
 com.fingersoft.hillclimb.cn.noncmcc/com.mygamez.common.MyStartActivity
-link: [http://www.coolapk.com/search?q=com.fingersoft.hillclimb.cn.noncmcc]
 --------------------
 微信转发模块
 times: 1
 com.fkzhang.wechatforwarder/com.fkzhang.wechatforwarder.MainActivity-Alias
-link: [http://www.coolapk.com/search?q=com.fkzhang.wechatforwarder]
 --------------------
 ROM配置备份
 times: 1
 com.flextrick.settingssaverpro/com.flextrick.settingssaverpro.ScreenSlidePagerActivity
-link: [http://www.coolapk.com/search?q=com.flextrick.settingssaverpro]
 --------------------
 NFC标签助手
 times: 1
 com.fmsh.appsys.nfctag/com.fmsh.appsys.nfctag.GuideActivity
-link: [http://www.coolapk.com/search?q=com.fmsh.appsys.nfctag]
 --------------------
 Swarm
 times: 1
 com.foursquare.robin/com.foursquare.robin.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.foursquare.robin]
 --------------------
 Carton
 times: 1
 com.francescopennella.carton/com.francescopennella.carton.MainActivity
-link: [http://www.coolapk.com/search?q=com.francescopennella.carton]
 --------------------
 空气质量
 times: 1
 com.freshideas.airindex/com.freshideas.airindex.AIMainActivity
-link: [http://www.coolapk.com/search?q=com.freshideas.airindex]
 --------------------
 FrostWire
 times: 1
 com.frostwire.android/com.frostwire.android.gui.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.frostwire.android]
 --------------------
 Server酱
 times: 1
 com.ftqq.serverchan/com.ftqq.serverchan.MainActivity
-link: [http://www.coolapk.com/search?q=com.ftqq.serverchan]
 --------------------
 Afterlight
 times: 1
 com.fueled.afterlight/com.fueled.afterlight.HomeActivity
-link: [http://www.coolapk.com/search?q=com.fueled.afterlight]
 --------------------
 战旗TV
 times: 1
 com.gameabc.zhanqiAndroid/com.uzmap.pkg.EntranceActivity
-link: [http://www.coolapk.com/search?q=com.gameabc.zhanqiAndroid]
 --------------------
 Walk Band
 times: 1
 com.gamestar.pianoperfect/com.gamestar.pianoperfect.Splash
-link: [http://www.coolapk.com/search?q=com.gamestar.pianoperfect]
 --------------------
 星之后裔
 times: 1
 com.gamevil.dragonblaze1.android.google.global.normal/com.seworks.medusah.MainActivity
-link: [http://www.coolapk.com/search?q=com.gamevil.dragonblaze1.android.google.global.normal]
 --------------------
 Offline Browser
 times: 1
 com.gashawmola.offline/com.gashawmola.offline.activities.ItemListActivity
-link: [http://www.coolapk.com/search?q=com.gashawmola.offline]
 --------------------
 iSeeNotes
 times: 1
 com.gearup.iseenotes/com.gearup.iseenotes.MainActivity
-link: [http://www.coolapk.com/search?q=com.gearup.iseenotes]
 --------------------
 GEM Xperia Xposed
 times: 1
 com.gem.xperiaxposed/com.gem.xperiaxposed.MainActivity
-link: [http://www.coolapk.com/search?q=com.gem.xperiaxposed]
 --------------------
 网盘助手
 times: 1
 com.general.share/com.general.share.SplashActivity
-link: [http://www.coolapk.com/search?q=com.general.share]
 --------------------
 ActivityForceNewTask
 times: 1
 com.germainz.activityforcenewtask/com.germainz.activityforcenewtask.Preferences-Alias
-link: [http://www.coolapk.com/search?q=com.germainz.activityforcenewtask]
 --------------------
 Pebble Time
 times: 1
 com.getpebble.android.basalt/com.getpebble.android.main.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.getpebble.android.basalt]
 --------------------
 权限掌门人
 times: 1
 com.gmail.heagoo.pmaster.pro/com.gmail.heagoo.pmaster.MainActivity
-link: [http://www.coolapk.com/search?q=com.gmail.heagoo.pmaster.pro]
 --------------------
 Raziko
 times: 1
 com.gmail.jp.raziko.radiko/com.gmail.nagamatu.radiko.main
-link: [http://www.coolapk.com/search?q=com.gmail.jp.raziko.radiko]
 --------------------
 共识网
 times: 1
 com.gongshi.app/com.gongshi.app.AppStart
-link: [http://www.coolapk.com/search?q=com.gongshi.app]
 --------------------
 One?0?2Today
 times: 1
 com.google.android.apps.onetoday/com.google.android.apps.onetoday.ui.host.HostActivity
-link: [http://www.coolapk.com/search?q=com.google.android.apps.onetoday]
 --------------------
 Stories
 times: 1
 com.google.android.spotlightstories/com.google.android.spotlightstories.app.SplashActivity
-link: [http://www.coolapk.com/search?q=com.google.android.spotlightstories]
 --------------------
 街景
 times: 1
 com.google.android.street/com.google.android.apps.dragonfly.activities.main.MainActivity
-link: [http://www.coolapk.com/search?q=com.google.android.street]
 --------------------
 Android Wear
 times: 1
 com.google.android.wearable.app/com.google.android.clockwork.companion.StatusActivity
-link: [http://www.coolapk.com/search?q=com.google.android.wearable.app]
 --------------------
 五十音圖
 times: 1
 com.gracecode.android.gojuon/com.gracecode.android.gojuon.ui.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.gracecode.android.gojuon]
 --------------------
 桂林银行
 times: 1
 com.guilinbank.mobilebank/com.hundsun.mobile.v3.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.guilinbank.mobilebank]
 --------------------
 水果忍者
 times: 1
 com.halfbrick.fruitninjafree/com.halfbrick.mortar.MortarGameActivity
-link: [http://www.coolapk.com/search?q=com.halfbrick.fruitninjafree]
 --------------------
 WiFi鑰匙
 times: 1
 com.halo.wifikey.wifilocating/com.lantern.launcher.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.halo.wifikey.wifilocating]
 --------------------
 驾考宝典
 times: 1
 com.handsgo.jiakao.android/com.handsgo.jiakao.android.Login
-link: [http://www.coolapk.com/search?q=com.handsgo.jiakao.android]
 --------------------
 Eraser
 times: 1
 com.handycloset.android.eraser/com.handycloset.android.eraser.MainActivity
-link: [http://www.coolapk.com/search?q=com.handycloset.android.eraser]
 --------------------
 White Light
 times: 1
 com.hexinnovation.flashlight/com.hexinnovation.flashlight.MyActivity
-link: [http://www.coolapk.com/search?q=com.hexinnovation.flashlight]
 --------------------
 Clouds & Sheep 2
 times: 1
 com.hg.cloudsandsheep2free/com.hg.android.cocos2dx.Application
-link: [http://www.coolapk.com/search?q=com.hg.cloudsandsheep2free]
 --------------------
 ?0?2安卓市场?0?2
 times: 1
 com.hiapk.marketpho/com.hiapk.marketpho.SplashFrame
-link: [http://www.coolapk.com/search?q=com.hiapk.marketpho]
 --------------------
 EhViewer
 times: 1
 com.hippo.ehviewer/com.hippo.ehviewer.StartActivity
-link: [http://www.coolapk.com/search?q=com.hippo.ehviewer]
 --------------------
 Nimingban
 times: 1
 com.hippo.nimingban/com.hippo.nimingban.ui.ListActivity
-link: [http://www.coolapk.com/search?q=com.hippo.nimingban]
 --------------------
 沪江开心词场
 times: 1
 com.hjwordgames/com.hjwordgames.activity.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.hjwordgames]
 --------------------
 一览
 times: 1
 com.hl.matrix/com.hl.matrix.ui.activities.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.hl.matrix]
 --------------------
 充电加速器
 times: 1
 com.hodanet.charge/com.hodanet.charge.business.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.hodanet.charge]
 --------------------
 科技美学
 times: 1
 com.hoge.appivihzh1g4k/com.dingdone.app.welcome.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.hoge.appivihzh1g4k]
 --------------------
 ?0?2Hola桌面
 times: 1
 com.hola.launcher/com.hola.launcher.Launcher
-link: [http://www.coolapk.com/search?q=com.hola.launcher]
 --------------------
 Recordr
 times: 1
 com.hootapps.soundrecorder/com.anttek.soundrecorder.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.hootapps.soundrecorder]
 --------------------
 设置向导
 times: 1
 com.htc.android.htcsetupwizard/com.htc.android.htcsetupwizard.SetupWizardActivity
-link: [http://www.coolapk.com/search?q=com.htc.android.htcsetupwizard]
 --------------------
 计算器
 times: 1
 com.htc.calculator/com.htc.calculator.Calculator
-link: [http://www.coolapk.com/search?q=com.htc.calculator]
 --------------------
 系统与安全
 times: 1
 com.htc.safetygate/com.htc.safetygate.activity.SafetyGateMainActivity
-link: [http://www.coolapk.com/search?q=com.htc.safetygate]
 --------------------
 使用攻略
 times: 1
 com.htc.showme/com.htc.showme.ui.MainPage
-link: [http://www.coolapk.com/search?q=com.htc.showme]
 --------------------
 华住
 times: 1
 com.htinns/com.htinns.UI.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.htinns]
 --------------------
 葫芦侠3楼
 times: 1
 com.huati/com.huluxia.ui.base.BBSAppStart
-link: [http://www.coolapk.com/search?q=com.huati]
 --------------------
 沪江小D
 times: 1
 com.hujiang.dict/com.hujiang.dict.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.hujiang.dict]
 --------------------
 沪江网校
 times: 1
 com.hujiang.hjclass/com.hujiang.hjclass.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.hujiang.hjclass]
 --------------------
 FeedlyReader
 times: 1
 com.huwenqi.feedlyreader.app/com.huwenqi.feedlyreader.app.ui.AccountActivity
-link: [http://www.coolapk.com/search?q=com.huwenqi.feedlyreader.app]
 --------------------
 种子习惯
 times: 1
 com.idothing.zz/com.idothing.zz.activity.RouterActivity
-link: [http://www.coolapk.com/search?q=com.idothing.zz]
 --------------------
 免费WiFi大师
 times: 1
 com.ijinshan.kwifi/com.ijinshan.kwifi.activity.KStartupActivity
-link: [http://www.coolapk.com/search?q=com.ijinshan.kwifi]
 --------------------
 宜家《家居指南》
 times: 1
 com.ikea.catalogue.android/com.ikea.catalogue.android.Splash
-link: [http://www.coolapk.com/search?q=com.ikea.catalogue.android]
 --------------------
 IKEA Store
 times: 1
 com.ikea.kompis/com.ikea.kompis.extendedcontent.ECStartupActivity
-link: [http://www.coolapk.com/search?q=com.ikea.kompis]
 --------------------
 Poweramp Material Skin
 times: 1
 com.ikorolkov.poweramp.skins.material/com.maxmpz.poweramp.skinlib.InfoActivity
-link: [http://www.coolapk.com/search?q=com.ikorolkov.poweramp.skins.material]
 --------------------
 Mercury
 times: 1
 com.ilegendsoft.mercury/com.ilegendsoft.mercury.ui.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=com.ilegendsoft.mercury]
 --------------------
 漫画人
 times: 1
 com.ilike.cartoon/com.qihoo.util.StartActivity
-link: [http://www.coolapk.com/search?q=com.ilike.cartoon]
 --------------------
 Imagine
 times: 1
 com.imagine/com.imagine.MainActivity
-link: [http://www.coolapk.com/search?q=com.imagine]
 --------------------
 神庙逃亡2
 times: 1
 com.imangi.templerun2/com.templerun2.SuperIdsSingleSplashActivity
-link: [http://www.coolapk.com/search?q=com.imangi.templerun2]
 --------------------
 广州地铁
 times: 1
 com.infothinker.gzmetro/com.infothinker.gzmetro.activity.HomeActivity
-link: [http://www.coolapk.com/search?q=com.infothinker.gzmetro]
 --------------------
 中国 空气质量
 times: 1
 com.insdio.aqicn.airwidget.China/com.insdio.aqicn.airwidget.China.MainActivity
-link: [http://www.coolapk.com/search?q=com.insdio.aqicn.airwidget.China]
 --------------------
 Intel ARK
 times: 1
 com.intel.ark/com.intel.ark.SplashScreen
-link: [http://www.coolapk.com/search?q=com.intel.ark]
 --------------------
 GG助手
 times: 1
 com.iplay.assistant/com.iplay.assistant.ui.GMSplashActivity
-link: [http://www.coolapk.com/search?q=com.iplay.assistant]
 --------------------
 Petralex
 times: 1
 com.it4you.petralex/com.it4you.petralex.SplashScreenActivity
-link: [http://www.coolapk.com/search?q=com.it4you.petralex]
 --------------------
 天气
 times: 1
 com.iwoll.weather/com.iwoll.weather.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.iwoll.weather]
 --------------------
 920文本编辑器
 times: 1
 com.jecelyin.editor/com.jecelyin.editor.JecEditor
-link: [http://www.coolapk.com/search?q=com.jecelyin.editor]
 --------------------
 美食杰
 times: 1
 com.jesson.meishi/com.jesson.meishi.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.jesson.meishi]
 --------------------
 GO备份
 times: 1
 com.jiubang.go.backup.ex/com.jiubang.go.backup.pro.StartupPageActivity
-link: [http://www.coolapk.com/search?q=com.jiubang.go.backup.ex]
 --------------------
 前程无忧
 times: 1
 com.job.android/com.job.android.pages.common.OpenImageActivity
-link: [http://www.coolapk.com/search?q=com.job.android]
 --------------------
 啪啪游戏厅
 times: 1
 com.join.android.app.mgsim/com.join.mgps.activity.SplashActivity_
-link: [http://www.coolapk.com/search?q=com.join.android.app.mgsim]
 --------------------
 SimplePlanes
 times: 1
 com.jundroo.SimplePlanes/com.jundroo.simpleplanesplugin.MainActivity
-link: [http://www.coolapk.com/search?q=com.jundroo.SimplePlanes]
 --------------------
 Super Resolution Scaler(waifu2x)
 times: 1
 com.kaede_software.superresolutionwaifu2x/com.kaede_software.superresolutionwaifu2x.SdFileListActivity
-link: [http://www.coolapk.com/search?q=com.kaede_software.superresolutionwaifu2x]
 --------------------
 看法 法律数据库
 times: 1
 com.kanfa.readlaw/com.kanfa.readlaw.MainActivity
-link: [http://www.coolapk.com/search?q=com.kanfa.readlaw]
 --------------------
 Kickstarter
 times: 1
 com.kickstarter.kickstarter/com.kickstarter.ui.activities.DiscoveryActivity
-link: [http://www.coolapk.com/search?q=com.kickstarter.kickstarter]
 --------------------
 WPS邮箱
 times: 1
 com.kingsoft.email/com.kingsoft.email.activity.Welcome
-link: [http://www.coolapk.com/search?q=com.kingsoft.email]
 --------------------
 KK 通讯录
 times: 1
 com.kk.contacts/com.android.contacts.activities.PeopleActivity
-link: [http://www.coolapk.com/search?q=com.kk.contacts]
 --------------------
 KK 电话
 times: 1
 com.kk.dialer/com.android.dialer.DialtactsActivity
-link: [http://www.coolapk.com/search?q=com.kk.dialer]
 --------------------
 古诗词典
 times: 1
 com.kk.poem/com.kk.poem.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.kk.poem]
 --------------------
 快科技
 times: 1
 com.kkeji.news.client/com.kkeji.news.client.ui.ActivityStartLogo
-link: [http://www.coolapk.com/search?q=com.kkeji.news.client]
 --------------------
 遥控专家酷控
 times: 1
 com.kookong.app/com.hzy.tvmao.view.activity.StartActivity
-link: [http://www.coolapk.com/search?q=com.kookong.app]
 --------------------
 图片万能编辑助手photoviva
 times: 1
 com.laminadesign.PhotoViva/com.laminadesign.PhotoViva.PhotoViva
-link: [http://www.coolapk.com/search?q=com.laminadesign.PhotoViva]
 --------------------
 单手划划
 times: 1
 com.lazyswipe/com.lazyswipe.ui.StartupActivity
-link: [http://www.coolapk.com/search?q=com.lazyswipe]
 --------------------
 Parallel Space
 times: 1
 com.lbe.parallel.intl/com.lbe.parallel.ui.tour.SplashActivity
-link: [http://www.coolapk.com/search?q=com.lbe.parallel.intl]
 --------------------
 隐私空间
 times: 1
 com.lbe.privacy/com.lbe.privacy.ui.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.lbe.privacy]
 --------------------
 乐域词霸
 times: 1
 com.le.word/com.le.word.ui.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.le.word]
 --------------------
 影视大全
 times: 1
 com.le123.ysdq/com.elinkway.infinitemovies.ui.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.le123.ysdq]
 --------------------
 哔哩净化
 times: 1
 com.leon.bilineat/com.leon.bilineat.SettingActivity
-link: [http://www.coolapk.com/search?q=com.leon.bilineat]
 --------------------
 乐视体育
 times: 1
 com.lesports.glivesports/com.lesports.glivesports.launcher.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.lesports.glivesports]
 --------------------
 Zombie GS
 times: 1
 com.limbic.ac130/com.apportable.activity.VerdeActivity
-link: [http://www.coolapk.com/search?q=com.limbic.ac130]
 --------------------
 禁止唤醒
 times: 1
 com.linangran.nowakelock/com.linangran.nowakelock.MainActivity
-link: [http://www.coolapk.com/search?q=com.linangran.nowakelock]
 --------------------
 Chrome UA
 times: 1
 com.linuxjet.apps.ChromeUA/com.linuxjet.apps.ChromeUA.MainActivity
-link: [http://www.coolapk.com/search?q=com.linuxjet.apps.ChromeUA]
 --------------------
 Rocket VPN
 times: 1
 com.liquidum.rocketvpn/com.liquidum.rocketvpn.Launcher
-link: [http://www.coolapk.com/search?q=com.liquidum.rocketvpn]
 --------------------
 8Bit wallpaper
 times: 1
 com.lolbrothers.canvasproj/com.lolbrothers.canvasproj.SetWallpaperActivity
-link: [http://www.coolapk.com/search?q=com.lolbrothers.canvasproj]
 --------------------
 Guides
 times: 1
 com.lonelyplanet.guides/com.lonelyplanet.guides.ui.activity.OnboardingActivity
-link: [http://www.coolapk.com/search?q=com.lonelyplanet.guides]
 --------------------
 TrinusVR
 times: 1
 com.loxai.trinus.full/com.loxai.trinus.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.loxai.trinus.full]
 --------------------
 传感器工具箱
 times: 1
 com.lvable.mysensorbox/com.lvable.mysensorbox.MainActivity
-link: [http://www.coolapk.com/search?q=com.lvable.mysensorbox]
 --------------------
 云集
 times: 1
 com.lydiabox.android/com.lydiabox.android.functions.mainPage.views.MainActivity
-link: [http://www.coolapk.com/search?q=com.lydiabox.android]
 --------------------
 计划电影
 times: 1
 com.lyx.doubanrener.doubanrener/com.lyx.doubanrener.doubanrener.Splash
-link: [http://www.coolapk.com/search?q=com.lyx.doubanrener.doubanrener]
 --------------------
 AirBrush
 times: 1
 com.magicv.airbrush/com.magicv.airbrush.StartupActivity
-link: [http://www.coolapk.com/search?q=com.magicv.airbrush]
 --------------------
 全民TV
 times: 1
 com.maimiao.live.tv/com.maimiao.live.tv.MainActivity
-link: [http://www.coolapk.com/search?q=com.maimiao.live.tv]
 --------------------
 动动
 times: 1
 com.mandian.android.dongdong/cc.pacer.androidapp.ui.splash.SplashActivity
-link: [http://www.coolapk.com/search?q=com.mandian.android.dongdong]
 --------------------
 呱呱漫画
 times: 1
 com.manhuazhushou.app/com.manhuazhushou.app.LauncherAct
-link: [http://www.coolapk.com/search?q=com.manhuazhushou.app]
 --------------------
 ?0?2图吧导航(GPS离线版)
 times: 1
 com.mapbar.android.trybuynavi/com.mapbar.android.trybuynavi.MapViewActivity
-link: [http://www.coolapk.com/search?q=com.mapbar.android.trybuynavi]
 --------------------
 市场解锁
 times: 1
 com.marketunlocker.free/com.marketunlocker.free.MainActivity
-link: [http://www.coolapk.com/search?q=com.marketunlocker.free]
 --------------------
 水贴助手
 times: 1
 com.maxine.wh/com.maxine.wh.MainA
-link: [http://www.coolapk.com/search?q=com.maxine.wh]
 --------------------
 MBA智库百科
 times: 1
 com.mbalib.android.wiki/com.mbalib.android.wiki.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.mbalib.android.wiki]
 --------------------
 地图
 times: 1
 com.meizu.net.map/com.meizu.net.map.MainMapActivity
-link: [http://www.coolapk.com/search?q=com.meizu.net.map]
 --------------------
 SoundHound ∞
 times: 1
 com.melodis.midomiMusicIdentifier/com.soundhound.android.appcommon.activity.SplashScreenActivity
-link: [http://www.coolapk.com/search?q=com.melodis.midomiMusicIdentifier]
 --------------------
 崩坏学园2
 times: 1
 com.miHoYo.HSoDv22144.wdj/com.mihoyo.channels.wdjsdk.WDJSDKUtil
-link: [http://www.coolapk.com/search?q=com.miHoYo.HSoDv22144.wdj]
 --------------------
 PhotoMath
 times: 1
 com.microblink.photomath/com.microblink.photomath.MainActivity
-link: [http://www.coolapk.com/search?q=com.microblink.photomath]
 --------------------
 Outlook
 times: 1
 com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity
-link: [http://www.coolapk.com/search?q=com.microsoft.office.outlook]
 --------------------
 RD Client
 times: 1
 com.microsoft.rdc.android/com.microsoft.rdc.ui.activities.HomeActivity
-link: [http://www.coolapk.com/search?q=com.microsoft.rdc.android]
 --------------------
 Translator
 times: 1
 com.microsoft.translator/com.microsoft.translator.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.microsoft.translator]
 --------------------
 Shooty Skies
 times: 1
 com.mightygamesgroup.shootyskies/com.unity3d.player.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.mightygamesgroup.shootyskies]
 --------------------
 Mighty Recorder
 times: 1
 com.mightyworksinc.androidapp.mightyrecorder/com.mightyworksinc.androidapp.mightyrecorder.RecorderMain
-link: [http://www.coolapk.com/search?q=com.mightyworksinc.androidapp.mightyrecorder]
 --------------------
 MIUI论坛
 times: 1
 com.miui.miuibbs/com.miui.miuibbs.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.miui.miuibbs]
 --------------------
 一键锁屏
 times: 1
 com.mokee.lockscreen/com.mokee.lockscreen.LockScreen
-link: [http://www.coolapk.com/search?q=com.mokee.lockscreen]
 --------------------
 Morse Code
 times: 1
 com.morsecode.translator.jinh/com.morsecode.translator.jinh.MainActivity
-link: [http://www.coolapk.com/search?q=com.morsecode.translator.jinh]
 --------------------
 时光网
 times: 1
 com.mtime/com.mtime.mtmovie.MainActivity
-link: [http://www.coolapk.com/search?q=com.mtime]
 --------------------
 闲暇
 times: 1
 com.mummyding.app.leisure/com.mummyding.app.leisure.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.mummyding.app.leisure]
 --------------------
 Solar 2
 times: 1
 com.murudai.Solar2/solar2.Activity1
-link: [http://www.coolapk.com/search?q=com.murudai.Solar2]
 --------------------
 Star Music Tag Editor
 times: 1
 com.music.star.startag/com.music.star.tag.MainActivity
-link: [http://www.coolapk.com/search?q=com.music.star.startag]
 --------------------
 拇指玩
 times: 1
 com.muzhiwan.market/com.muzhiwan.market.ui.Splash
-link: [http://www.coolapk.com/search?q=com.muzhiwan.market]
 --------------------
 舒心录
 times: 1
 com.myatejx.sakernote/com.myatejx.sakernote.gui.AtyNoteMain
-link: [http://www.coolapk.com/search?q=com.myatejx.sakernote]
 --------------------
 mysms mirror
 times: 1
 com.mysms.android.mirror/com.mysms.android.mirror.activity.ConversationListActivity
-link: [http://www.coolapk.com/search?q=com.mysms.android.mirror]
 --------------------
 武汉通行
 times: 1
 com.ncape.wht/com.ncape.wht.SplashActivity
-link: [http://www.coolapk.com/search?q=com.ncape.wht]
 --------------------
 笔记
 times: 1
 com.nearme.note/com.nearme.note.view.SetAndCheckPasswordActivity
-link: [http://www.coolapk.com/search?q=com.nearme.note]
 --------------------
 ·?0?2Light?0?2·
 times: 1
 com.netease.light/com.netease.light.ui.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.netease.light]
 --------------------
 LOFTCam
 times: 1
 com.netease.loftercam.activity/com.netease.loftercam.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.netease.loftercam.activity]
 --------------------
 1元夺宝
 times: 1
 com.netease.mail.oneduobaohydrid/com.netease.mail.oneduobaohydrid.activity.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.netease.mail.oneduobaohydrid]
 --------------------
 KineMaster 视频编辑器
 times: 1
 com.nexstreaming.app.kinemasterfree/com.nextreaming.nexeditorui.MainActivity
-link: [http://www.coolapk.com/search?q=com.nexstreaming.app.kinemasterfree]
 --------------------
 Nod手机定位套件
 times: 1
 com.node.locationtrace/com.node.locationtrace.PageSplash
-link: [http://www.coolapk.com/search?q=com.node.locationtrace]
 --------------------
 Launcher
 times: 1
 com.nokia.z/com.nokia.z.ui.NextUIMain
-link: [http://www.coolapk.com/search?q=com.nokia.z]
 --------------------
 TouchVPN
 times: 1
 com.northghost.touchvpn/com.northghost.touchvpn.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.northghost.touchvpn]
 --------------------
 山海伏妖录
 times: 1
 com.nova.DemonSouls/org.cocos2dx.lua.AppActivity
-link: [http://www.coolapk.com/search?q=com.nova.DemonSouls]
 --------------------
 cnBeta
 times: 1
 com.novcat.cnbetareader/com.novcat.cnbetareader.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.novcat.cnbetareader]
 --------------------
 彩云天气
 times: 1
 com.nowcasting.activity/com.nowcasting.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.nowcasting.activity]
 --------------------
 公式
 times: 1
 com.nsc.mf/com.nsc.mathformulas.MainActivity
-link: [http://www.coolapk.com/search?q=com.nsc.mf]
 --------------------
 Javelin
 times: 1
 com.nubelacorp.javelin/com.nubelacorp.javelin.activities.StackActivity
-link: [http://www.coolapk.com/search?q=com.nubelacorp.javelin]
 --------------------
 Pipette
 times: 1
 com.ochs.pipette/com.ochs.pipette.StartActivity
-link: [http://www.coolapk.com/search?q=com.ochs.pipette]
 --------------------
 优恪
 times: 1
 com.okoer/com.okoer.AppStart
-link: [http://www.coolapk.com/search?q=com.okoer]
 --------------------
 万能影视
 times: 1
 com.omnivideo.video/com.omnivideo.video.activity.CoverActivity
-link: [http://www.coolapk.com/search?q=com.omnivideo.video]
 --------------------
 退烧
 times: 1
 com.onexuan.coolify.flat/com.onexuan.coolify.flat.CoolifyFlatActivity
-link: [http://www.coolapk.com/search?q=com.onexuan.coolify.flat]
 --------------------
 Muffin
 times: 1
 com.onyxdev.iconpack.theme.codenamem/com.onyxdev.iconpack.theme.codenamem.HomeActivity
-link: [http://www.coolapk.com/search?q=com.onyxdev.iconpack.theme.codenamem]
 --------------------
 相机
 times: 1
 com.oppo.camera/com.oppo.camera.Camera
-link: [http://www.coolapk.com/search?q=com.oppo.camera]
 --------------------
 欧朋浏览器
 times: 1
 com.oupeng.browser/com.opera.android.OperaStartActivity
-link: [http://www.coolapk.com/search?q=com.oupeng.browser]
 --------------------
 欧朋浏览器
 times: 1
 com.oupeng.mini.android/com.opera.android.OperaStartActivity
-link: [http://www.coolapk.com/search?q=com.oupeng.mini.android]
 --------------------
 我的汤姆猫
 times: 1
 com.outfit7.mytalkingtomfree/com.outfit7.mytalkingtom.MyTalkingTomNativeActivity
-link: [http://www.coolapk.com/search?q=com.outfit7.mytalkingtomfree]
 --------------------
 VolumeSteps+
 times: 1
 com.p1ngu1n.volumesteps/com.p1ngu1n.volumesteps.SettingsActivity-Alias
-link: [http://www.coolapk.com/search?q=com.p1ngu1n.volumesteps]
 --------------------
 派乐趣
 times: 1
 com.pailequ.mobile/com.pailequ.mobile.activity.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.pailequ.mobile]
 --------------------
 EarthViewer
 times: 1
 com.pddstudio.earthviewer/com.pddstudio.earthviewer.DemoActivity
-link: [http://www.coolapk.com/search?q=com.pddstudio.earthviewer]
 --------------------
 Xposed One Tap Video Download
 times: 1
 com.phantom.onetapvideodownload/com.phantom.onetapvideodownload.MainActivity
-link: [http://www.coolapk.com/search?q=com.phantom.onetapvideodownload]
 --------------------
 全能手势
 times: 1
 com.phoenixstudios.aiogestures/com.phoenixstudios.aiogestures.SplashScreen
-link: [http://www.coolapk.com/search?q=com.phoenixstudios.aiogestures]
 --------------------
 Now for Reddit
 times: 1
 com.phyora.apps.reddit_now/com.phyora.apps.reddit_now.activities.ActivityRedditNow
-link: [http://www.coolapk.com/search?q=com.phyora.apps.reddit_now]
 --------------------
 CCleaner
 times: 1
 com.piriform.ccleaner/com.piriform.ccleaner.ui.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.piriform.ccleaner]
 --------------------
 Pixate
 times: 1
 com.pixate.pixate/com.pixate.pixate.player.MainActivity
-link: [http://www.coolapk.com/search?q=com.pixate.pixate]
 --------------------
 Platy Pop
 times: 1
 com.platypus.platypop/com.platypus.platypop.activities.MainActivity
-link: [http://www.coolapk.com/search?q=com.platypus.platypop]
 --------------------
 Impulse
 times: 1
 com.prodigyarts.iconpack.impulse/com.prodigyarts.iconpack.impulse.HomeActivity
-link: [http://www.coolapk.com/search?q=com.prodigyarts.iconpack.impulse]
 --------------------
 Samp1.8
 times: 1
 com.proxy.samp/com.proxy.samp.MainActivity
-link: [http://www.coolapk.com/search?q=com.proxy.samp]
 --------------------
 Pushbullet
 times: 1
 com.pushbullet.android/com.pushbullet.android.ui.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.pushbullet.android]
 --------------------
 TextLinkify
 times: 1
 com.pyler.textlinkify/com.pyler.textlinkify.Settings
-link: [http://www.coolapk.com/search?q=com.pyler.textlinkify]
 --------------------
 XInternalSD
 times: 1
 com.pyler.xinternalsd/com.pyler.xinternalsd.Preferences
-link: [http://www.coolapk.com/search?q=com.pyler.xinternalsd]
 --------------------
 起点读书
 times: 1
 com.qidian.QDReader/com.qidian.QDReader.SplashActivity
-link: [http://www.coolapk.com/search?q=com.qidian.QDReader]
 --------------------
 360卫士
 times: 1
 com.qihoo.antivirus/com.qihoo.antivirus.ui.index.AppEnterActivity
-link: [http://www.coolapk.com/search?q=com.qihoo.antivirus]
 --------------------
 360清理大师
 times: 1
 com.qihoo.cleandroid_cn/com.qihoo360.mobilesafe.opti.ui.main.AppEnterActivity
-link: [http://www.coolapk.com/search?q=com.qihoo.cleandroid_cn]
 --------------------
 360流量卫士
 times: 1
 com.qihoo.vpnmaster/com.qihoo.vpnmaster.FlashActivity
-link: [http://www.coolapk.com/search?q=com.qihoo.vpnmaster]
 --------------------
 欢乐斗牛
 times: 1
 com.qqgame.hldouniu/com.qqgame.hldouniu.NewHLDN
-link: [http://www.coolapk.com/search?q=com.qqgame.hldouniu]
 --------------------
 完美囚徒健身
 times: 1
 com.qtjianshen.Main/com.qtjianshen.Main.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.qtjianshen.Main]
 --------------------
 Quickoffice
 times: 1
 com.quickoffice.android/com.google.android.apps.docs.quickoffice.HomeActivity
-link: [http://www.coolapk.com/search?q=com.quickoffice.android]
 --------------------
 Custom Quick Settings
 times: 1
 com.quinny898.app.customquicksettings/com.quinny898.app.customquicksettings.ConfigActivity
-link: [http://www.coolapk.com/search?q=com.quinny898.app.customquicksettings]
 --------------------
 Tapatalk
 times: 1
 com.quoord.tapatalkpro.activity/com.quoord.tapatalkpro.activity.directory.ics.IcsEntryActivity
-link: [http://www.coolapk.com/search?q=com.quoord.tapatalkpro.activity]
 --------------------
 XDA Free
 times: 1
 com.quoord.tapatalkxda.activity/com.quoord.tapatalkxda.activity.forum.ForumNavigationActivity
-link: [http://www.coolapk.com/search?q=com.quoord.tapatalkxda.activity]
 --------------------
 Multi Mount SD-Card
 times: 1
 com.rafoid.multimountsdcard.widget/com.rafoid.multimountsdcard.widget.MultiMountSDCardConfigure
-link: [http://www.coolapk.com/search?q=com.rafoid.multimountsdcard.widget]
 --------------------
 Pixive
 times: 1
 com.reiya.pixive/com.reiya.pixive.MainActivity
-link: [http://www.coolapk.com/search?q=com.reiya.pixive]
 --------------------
 Death Rally
 times: 1
 com.remedy.DeathRallyFREE/com.remedy.DeathRallyFREE.DeathRallyActivity
-link: [http://www.coolapk.com/search?q=com.remedy.DeathRallyFREE]
 --------------------
 Heart Rate
 times: 1
 com.repsi.heartrate/com.repsi.heartrate.MainActivity
-link: [http://www.coolapk.com/search?q=com.repsi.heartrate]
 --------------------
 流氓终结者
 times: 1
 com.rexpress.xposed.malwarebuster/com.rexpress.xposed.malwarebuster.MainActivity
-link: [http://www.coolapk.com/search?q=com.rexpress.xposed.malwarebuster]
 --------------------
 QuickEdit
 times: 1
 com.rhmsoft.edit/com.rhmsoft.edit.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.rhmsoft.edit]
 --------------------
 Cyber-shot?6?4 Xposed
 times: 1
 com.rizal.lovins.cybershot/com.rizal.lovins.cybershot.SettingsActivity
-link: [http://www.coolapk.com/search?q=com.rizal.lovins.cybershot]
 --------------------
 WiFi连接管理器
 times: 1
 com.roamingsoft.manager/com.roamingsoft.manager.Manager
-link: [http://www.coolapk.com/search?q=com.roamingsoft.manager]
 --------------------
 Perfect Viewer
 times: 1
 com.rookiestudio.perfectviewer/com.rookiestudio.perfectviewer.TStartup
-link: [http://www.coolapk.com/search?q=com.rookiestudio.perfectviewer]
 --------------------
 RT News
 times: 1
 com.rt.mobile.english/com.rt.mobile.english.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.rt.mobile.english]
 --------------------
 Runtastic PRO
 times: 1
 com.runtastic.android.pro2/com.runtastic.android.activities.StartActivity
-link: [http://www.coolapk.com/search?q=com.runtastic.android.pro2]
 --------------------
 华夏银行
 times: 1
 com.rytong.app.bankhx/com.rytong.app.bankhx.EMPView
-link: [http://www.coolapk.com/search?q=com.rytong.app.bankhx]
 --------------------
 AutoMath
 times: 1
 com.s2dio.automath/com.s2dio.automath.Scan
-link: [http://www.coolapk.com/search?q=com.s2dio.automath]
 --------------------
 日语学习
 times: 1
 com.sage.ljpp/com.sage.ljp.controller.HomeActivity
-link: [http://www.coolapk.com/search?q=com.sage.ljpp]
 --------------------
 剪贴库
 times: 1
 com.samsung.android.app.pinboard/com.samsung.android.app.pinboard.ui.PinboardActivity
-link: [http://www.coolapk.com/search?q=com.samsung.android.app.pinboard]
 --------------------
 内存管理器
 times: 1
 com.samsung.memorymanager/com.samsung.memorymanager.RamActivity
-link: [http://www.coolapk.com/search?q=com.samsung.memorymanager]
 --------------------
 Sunshine Icon Pack
 times: 1
 com.samymarboy.theme.sunshine/com.samymarboy.theme.sunshine.ThemeActivity
-link: [http://www.coolapk.com/search?q=com.samymarboy.theme.sunshine]
 --------------------
 猫眼专业版
 times: 1
 com.sankuai.moviepro/com.sankuai.moviepro.mvp.views.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.sankuai.moviepro]
 --------------------
 nicoid
 times: 1
 com.sauzask.nicoid/com.sauzask.nicoid.NicoidTopActivity
-link: [http://www.coolapk.com/search?q=com.sauzask.nicoid]
 --------------------
 Scanner Radio Pro
 times: 1
 com.scannerradio_pro/com.scannerradio_pro.DirectoryActivity
-link: [http://www.coolapk.com/search?q=com.scannerradio_pro]
 --------------------
 SD 卡速度增强器
 times: 1
 com.sdincrease.premium.it/com.sdincrease.premium.it.Main
-link: [http://www.coolapk.com/search?q=com.sdincrease.premium.it]
 --------------------
 极管家
 times: 1
 com.sdo.sdaccountkey/com.sdo.sdaccountkey.activity.guide.TXZFirstActivity_
-link: [http://www.coolapk.com/search?q=com.sdo.sdaccountkey]
 --------------------
 S 窗口共享
 times: 1
 com.sec.android.sidesync30/com.sec.android.sidesync30.ui.SideSyncActivity
-link: [http://www.coolapk.com/search?q=com.sec.android.sidesync30]
 --------------------
 My KNOX
 times: 1
 com.sec.knox.switchknoxI/com.sec.knox.switchknoxI.SwitchB2bActivityI
-link: [http://www.coolapk.com/search?q=com.sec.knox.switchknoxI]
 --------------------
 Xperia?6?4 Xposed (KK)
 times: 1
 com.serajr.xperia.xposed.kk/com.serajr.xperia.xposed.kk.activities.XperiaXposed_Activity
-link: [http://www.coolapk.com/search?q=com.serajr.xperia.xposed.kk]
 --------------------
 顺丰速运
 times: 1
 com.sf.activity/com.syt.ui.activity.InitActivity
-link: [http://www.coolapk.com/search?q=com.sf.activity]
 --------------------
 搜狗号码通
 times: 1
 com.sg.sledog/com.sogou.sledog.app.tabhost.MainTabHostActivity
-link: [http://www.coolapk.com/search?q=com.sg.sledog]
 --------------------
 Macaroons
 times: 1
 com.shahid.macaroons/com.afollestad.polar.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.shahid.macaroons]
 --------------------
 Shazam
 times: 1
 com.shazam.android/com.shazam.android.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=com.shazam.android]
 --------------------
 Autodesk SketchBook
 times: 1
 com.sketchbook/com.adsk.sketchbook.SketchBook
-link: [http://www.coolapk.com/search?q=com.sketchbook]
 --------------------
 Spout
 times: 1
 com.slipcorp.spout/org.cocos2dx.cpp.AppActivity
-link: [http://www.coolapk.com/search?q=com.slipcorp.spout]
 --------------------
 TVAPP
 times: 1
 com.smart.tvapp/com.smart.tvapp.view.DispatchActivity
-link: [http://www.coolapk.com/search?q=com.smart.tvapp]
 --------------------
 锤子日历
 times: 1
 com.smartisan.calendar/com.android.calendar.AllInOneActivity
-link: [http://www.coolapk.com/search?q=com.smartisan.calendar]
 --------------------
 欢喜云同步工具
 times: 1
 com.smartisan.mover/com.smartisan.accounts.MoverActivity
-link: [http://www.coolapk.com/search?q=com.smartisan.mover]
 --------------------
 锤子桌面
 times: 1
 com.smartisanos.home/com.smartisanos.launcher.LauncherCover
-link: [http://www.coolapk.com/search?q=com.smartisanos.home]
 --------------------
 Memory Locker
 times: 1
 com.smartprojects.MemoryLocker/com.smartprojects.MemoryLocker.StartActivity
-link: [http://www.coolapk.com/search?q=com.smartprojects.MemoryLocker]
 --------------------
 PHIX
 times: 1
 com.smophix.phix/com.smophix.phix.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.smophix.phix]
 --------------------
 搜库视频
 times: 1
 com.soku.videostore/com.soku.videostore.act.SplashAct
-link: [http://www.coolapk.com/search?q=com.soku.videostore]
 --------------------
 新闻
 times: 1
 com.sony.nfx.app.sfrc/com.sony.nfx.app.sfrc.npam.InitialActivity
-link: [http://www.coolapk.com/search?q=com.sony.nfx.app.sfrc]
 --------------------
 PlayMemories Mobile
 times: 1
 com.sony.playmemories.mobile/com.sony.playmemories.mobile.splash.SplashActivity
-link: [http://www.coolapk.com/search?q=com.sony.playmemories.mobile]
 --------------------
 Video Unlimited
 times: 1
 com.sony.snei.vu/com.sony.snei.vu.storeclient.activity.StoreClientHomeActivity
-link: [http://www.coolapk.com/search?q=com.sony.snei.vu]
 --------------------
 数字时钟
 times: 1
 com.sonyericsson.digitalclockwidget2/com.sonyericsson.digitalclockwidget2.Info
-link: [http://www.coolapk.com/search?q=com.sonyericsson.digitalclockwidget2]
 --------------------
 便签
 times: 1
 com.sonyericsson.notes/com.sonyericsson.notes.NotesListActivity
-link: [http://www.coolapk.com/search?q=com.sonyericsson.notes]
 --------------------
 What's New
 times: 1
 com.sonymobile.advancedwidget.entrance/com.sonymobile.entrance.EntranceActivity
-link: [http://www.coolapk.com/search?q=com.sonymobile.advancedwidget.entrance]
 --------------------
 AR图片效果
 times: 1
 com.sonymobile.androidapp.cameraaddon.areffect/com.sonymobile.androidapp.cameraaddon.areffect.AREffectApp
-link: [http://www.coolapk.com/search?q=com.sonymobile.androidapp.cameraaddon.areffect]
 --------------------
 AR趣拍
 times: 1
 com.sonymobile.androidapp.cameraaddon.arfun/com.sonymobile.androidapp.cameraaddon.arfun.ARfunApp
-link: [http://www.coolapk.com/search?q=com.sonymobile.androidapp.cameraaddon.arfun]
 --------------------
 黑名单
 times: 1
 com.sonymobile.blacklist/com.sonymobile.blacklist.BlacklistActivity
-link: [http://www.coolapk.com/search?q=com.sonymobile.blacklist]
 --------------------
 Live Screen Streaming
 times: 1
 com.sonymobile.screenrecording/com.sonymobile.screenrecording.MainActivity
-link: [http://www.coolapk.com/search?q=com.sonymobile.screenrecording]
 --------------------
 支持
 times: 1
 com.sonymobile.support/com.sonymobile.support.InAppSupport
-link: [http://www.coolapk.com/search?q=com.sonymobile.support]
 --------------------
 备份和恢复
 times: 1
 com.sonymobile.synchub/com.sonymobile.synchub.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.sonymobile.synchub]
 --------------------
 天气
 times: 1
 com.sonymobile.xperiaweather/com.sonymobile.xperiaweather.MainActivity
-link: [http://www.coolapk.com/search?q=com.sonymobile.xperiaweather]
 --------------------
 Xposed Additions
 times: 1
 com.spazedog.xposed.additionsgb/com.spazedog.xposed.additionsgb.ActivityMain
-link: [http://www.coolapk.com/search?q=com.spazedog.xposed.additionsgb]
 --------------------
 浦发信用卡
 times: 1
 com.spdbccc.app/com.spdbccc.app.activity.splash.SplashActivity
-link: [http://www.coolapk.com/search?q=com.spdbccc.app]
 --------------------
 Splashtop
 times: 1
 com.splashtop.remote.pad.v2/com.splashtop.remote.FirstActivity
-link: [http://www.coolapk.com/search?q=com.splashtop.remote.pad.v2]
 --------------------
 Barcode Scanner+
 times: 1
 com.srowen.bs.android/com.srowen.bs.android.CaptureActivity
-link: [http://www.coolapk.com/search?q=com.srowen.bs.android]
 --------------------
 Xposed短信 SMS Xposed
 times: 1
 com.stephapps.smsxposed/com.stephapps.smsxposed.MainActivity
-link: [http://www.coolapk.com/search?q=com.stephapps.smsxposed]
 --------------------
 Storeprefs
 times: 1
 com.stirante.storeprefs/com.stirante.storeprefs.activities.SettingsActivity
-link: [http://www.coolapk.com/search?q=com.stirante.storeprefs]
 --------------------
 暴风影音
 times: 1
 com.storm.smart/com.storm.smart.LogoActivity
-link: [http://www.coolapk.com/search?q=com.storm.smart]
 --------------------
 Time Lapse
 times: 1
 com.sukros.timelapse/com.sukros.timelapse.MainActivity
-link: [http://www.coolapk.com/search?q=com.sukros.timelapse]
 --------------------
 古汉语精解词典
 times: 1
 com.sun.cidian.zhongxueshengguhanyu/com.waiyutong.yinghan.StartActivity
-link: [http://www.coolapk.com/search?q=com.sun.cidian.zhongxueshengguhanyu]
 --------------------
 海岛奇兵
 times: 1
 com.supercell.boombeach.wdj/com.supercell.boombeach.GameAppKunlun
-link: [http://www.coolapk.com/search?q=com.supercell.boombeach.wdj]
 --------------------
 部落冲突
 times: 1
 com.supercell.clashofclans.qihoo/com.supercell.clashofclans.GameAppKunlun
-link: [http://www.coolapk.com/search?q=com.supercell.clashofclans.qihoo]
 --------------------
 部落冲突
 times: 1
 com.supercell.clashofclans.wdj/com.flamingo.sdk.view.WDJSplashActivity
-link: [http://www.coolapk.com/search?q=com.supercell.clashofclans.wdj]
 --------------------
 Clash Royale
 times: 1
 com.supercell.clashroyale/com.supercell.clashroyale.GameApp
-link: [http://www.coolapk.com/search?q=com.supercell.clashroyale]
 --------------------
 NBA 2K15
 times: 1
 com.t2ksports.nba2k15android/com.inject.InjectActivity
-link: [http://www.coolapk.com/search?q=com.t2ksports.nba2k15android]
 --------------------
 记事本
 times: 1
 com.tcl.note/com.tcl.note.activity.NoteListActivity
-link: [http://www.coolapk.com/search?q=com.tcl.note]
 --------------------
 TeamViewer
 times: 1
 com.teamviewer.teamviewer.market.mobile/com.teamviewer.remotecontrollib.activity.MainActivity
-link: [http://www.coolapk.com/search?q=com.teamviewer.teamviewer.market.mobile]
 --------------------
 MCSM
 times: 1
 com.telltalegames.minecraft100/com.telltalegames.expansion.downloader.SampleDownloaderActivity
-link: [http://www.coolapk.com/search?q=com.telltalegames.minecraft100]
 --------------------
 雷霆战机
 times: 1
 com.tencent.clover/com.tencent.clover.Clover
-link: [http://www.coolapk.com/search?q=com.tencent.clover]
 --------------------
 节奏大师
 times: 1
 com.tencent.game.rhythmmaster/com.tencent.game.rhythmmaster.rhythmmaster
-link: [http://www.coolapk.com/search?q=com.tencent.game.rhythmmaster]
 --------------------
 天刀助手
 times: 1
 com.tencent.gamehelper.wuxia/com.tencent.gamehelper.ui.main.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.tencent.gamehelper.wuxia]
 --------------------
 糖果传奇
 times: 1
 com.tencent.king.candycrushsaga/com.king.candycrushsaga.CandyCrushSagaActivity
-link: [http://www.coolapk.com/search?q=com.tencent.king.candycrushsaga]
 --------------------
 Q立方桌面
 times: 1
 com.tencent.qlauncher/com.tencent.qlauncher.home.LauncherShell
-link: [http://www.coolapk.com/search?q=com.tencent.qlauncher]
 --------------------
 腾讯体育
 times: 1
 com.tencent.qqsports/com.tencent.qqsports.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.tencent.qqsports]
 --------------------
 穿越火线：枪战王者
 times: 1
 com.tencent.tmgp.cf/com.tencent.tmgp.cf.AFMainActivity
-link: [http://www.coolapk.com/search?q=com.tencent.tmgp.cf]
 --------------------
 脑力达人
 times: 1
 com.tencent.wequiz/com.tencent.wequiz.AppEntry
-link: [http://www.coolapk.com/search?q=com.tencent.wequiz]
 --------------------
 Termux
 times: 1
 com.termux/com.termux.app.TermuxActivity
-link: [http://www.coolapk.com/search?q=com.termux]
 --------------------
 Nova Launcher Prime
 times: 1
 com.teslacoilsw.launcher.prime/com.teslacoilsw.launcher.prime.NovaLauncherPrimeActivity
-link: [http://www.coolapk.com/search?q=com.teslacoilsw.launcher.prime]
 --------------------
 Polycon
 times: 1
 com.thearclabs.polycon/com.afollestad.polar.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.thearclabs.polycon]
 --------------------
 端
 times: 1
 com.theinitium.news/com.theinitium.news.ui.activity.StartActivity
-link: [http://www.coolapk.com/search?q=com.theinitium.news]
 --------------------
 OCR Instantly Free
 times: 1
 com.thesimplest.ocr/com.thesimplest.ocr.MainActivity
-link: [http://www.coolapk.com/search?q=com.thesimplest.ocr]
 --------------------
 thorvpn
 times: 1
 com.thorvpn.app/com.thorvpn.app.activities.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.thorvpn.app]
 --------------------
 跑跑卡丁车手机版
 times: 1
 com.tiancity.mpopkart.tc/com.mpopkart.android.GameMainActivity
-link: [http://www.coolapk.com/search?q=com.tiancity.mpopkart.tc]
 --------------------
 老虎翻墙大师
 times: 1
 com.tigervpns.android/com.tigervpns.android.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.tigervpns.android]
 --------------------
 White Noise
 times: 1
 com.tmsoft.whitenoise.full/com.tmsoft.whitenoise.full.MainActivity
-link: [http://www.coolapk.com/search?q=com.tmsoft.whitenoise.full]
 --------------------
 Screen Filter
 times: 1
 com.tonymanou.screenfilter/com.tonymanou.screenfilter.ui.ScreenFilterActivity
-link: [http://www.coolapk.com/search?q=com.tonymanou.screenfilter]
 --------------------
 CleanWiz
 times: 1
 com.toolwiz.clean/com.toolwiz.clean.lite.ui.activity.GuideActivity
-link: [http://www.coolapk.com/search?q=com.toolwiz.clean]
 --------------------
 TVShow Time
 times: 1
 com.tozelabs.tvshowtime/com.tozelabs.tvshowtime.activity.MainActivity_
-link: [http://www.coolapk.com/search?q=com.tozelabs.tvshowtime]
 --------------------
 League of Hero Defenders
 times: 1
 com.tsgroup.herodefender/com.unity3d.player.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=com.tsgroup.herodefender]
 --------------------
 KAIP Prime
 times: 1
 com.ttop.kaip_prime/com.afollestad.polar.ui.MainActivity
-link: [http://www.coolapk.com/search?q=com.ttop.kaip_prime]
 --------------------
 OneSync
 times: 1
 com.ttxapps.onesyncv2/com.ttxapps.syncapp.MainActivity
-link: [http://www.coolapk.com/search?q=com.ttxapps.onesyncv2]
 --------------------
 BT种子搜索
 times: 1
 com.txbnx.torrentsearcher/com.txbnx.torrentsearcher.MainActivity
-link: [http://www.coolapk.com/search?q=com.txbnx.torrentsearcher]
 --------------------
 Rayman Fiesta Run
 times: 1
 com.ubisoft.rayman.fiestarun/com.pastagames.android.LaunchActivity
-link: [http://www.coolapk.com/search?q=com.ubisoft.rayman.fiestarun]
 --------------------
 别踩白块儿
 times: 1
 com.umonistudio.tile/com.umonistudio.tile.tile
-link: [http://www.coolapk.com/search?q=com.umonistudio.tile]
 --------------------
 unusual
 times: 1
 com.unusual.wallpapers/com.unusual.wallpapers.HomeActivity
-link: [http://www.coolapk.com/search?q=com.unusual.wallpapers]
 --------------------
 薄暮微光
 times: 1
 com.urbandroid.lux/com.urbandroid.lux.MainActivity
-link: [http://www.coolapk.com/search?q=com.urbandroid.lux]
 --------------------
 UU安全
 times: 1
 com.uusafe.appmaster/com.uusafe.appmaster.ui.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=com.uusafe.appmaster]
 --------------------
 Dives
 times: 1
 com.vertumus.dives/com.vertumus.dives.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.vertumus.dives]
 --------------------
 Urmun
 times: 1
 com.vertumus.urmun/com.vertumus.urmun.LicenseActivity
-link: [http://www.coolapk.com/search?q=com.vertumus.urmun]
 --------------------
 XToast
 times: 1
 com.vikas.toaststyler/com.vikas.toaststyler.SettingActivity
-link: [http://www.coolapk.com/search?q=com.vikas.toaststyler]
 --------------------
 Lux Dash
 times: 1
 com.vito.lux/com.vito.lux.Dashboard
-link: [http://www.coolapk.com/search?q=com.vito.lux]
 --------------------
 Platycon
 times: 1
 com.viztushar.iconpack.platycon.lite/com.viztushar.iconpack.platycon.lite.activities.StartActivity
-link: [http://www.coolapk.com/search?q=com.viztushar.iconpack.platycon.lite]
 --------------------
 和留言
 times: 1
 com.vvm/com.vvm.ui.StartActivity
-link: [http://www.coolapk.com/search?q=com.vvm]
 --------------------
 挖财记账理财
 times: 1
 com.wacai365/com.wacai365.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.wacai365]
 --------------------
 A9VG电玩部落
 times: 1
 com.wanmei.a9vg/com.wanmei.a9vg.activity.common.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.wanmei.a9vg]
 --------------------
 完美刀塔助手
 times: 1
 com.wanmei.dota2app/com.wanmei.dota2app.ui.MainTabActivity
-link: [http://www.coolapk.com/search?q=com.wanmei.dota2app]
 --------------------
 Aloha
 times: 1
 com.wealoha.social/com.wealoha.social.ui.navi.NaviIntroActivity
-link: [http://www.coolapk.com/search?q=com.wealoha.social]
 --------------------
 Webkey
 times: 1
 com.webkey/com.webkey.Webkey
-link: [http://www.coolapk.com/search?q=com.webkey]
 --------------------
 萌爪医生
 times: 1
 com.wecarepet.petquest/com.wecarepet.petquest.Activity.Welcome.Welcome_
-link: [http://www.coolapk.com/search?q=com.wecarepet.petquest]
 --------------------
 XPhonePlus
 times: 1
 com.wedy.semcphoneov/com.wedy.semcphoneov.SettingActivity
-link: [http://www.coolapk.com/search?q=com.wedy.semcphoneov]
 --------------------
 查看无线密码
 times: 1
 com.whd.wifikeyview/com.whd.wifikeyview.preferences.SettingsActivity-Alias
-link: [http://www.coolapk.com/search?q=com.whd.wifikeyview]
 --------------------
 hCamera
 times: 1
 com.widefide.hCamera/com.widefide.hCamera.MainActivity
-link: [http://www.coolapk.com/search?q=com.widefide.hCamera]
 --------------------
 wifi密码分享侠
 times: 1
 com.wifishare/com.uzmap.pkg.EntranceActivity
-link: [http://www.coolapk.com/search?q=com.wifishare]
 --------------------
 MacChanger
 times: 1
 com.wireless.macchanger/com.wireless.macchanger.MacChangerActivity
-link: [http://www.coolapk.com/search?q=com.wireless.macchanger]
 --------------------
 zsun
 times: 1
 com.wltx.mycloudclient/com.zsun.myclouds.activity.AppStartActivity
-link: [http://www.coolapk.com/search?q=com.wltx.mycloudclient]
 --------------------
 WO Mic
 times: 1
 com.wo.voice/com.wo.voice.MainActivity
-link: [http://www.coolapk.com/search?q=com.wo.voice]
 --------------------
 我查查
 times: 1
 com.wochacha/com.wochacha.StartupActivity
-link: [http://www.coolapk.com/search?q=com.wochacha]
 --------------------
 伪装位置
 times: 1
 com.woshantu.modifyPosition/com.woshantu.modifyPosition.view.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.woshantu.modifyPosition]
 --------------------
 无界新闻
 times: 1
 com.wujiemedia.app/io.dcloud.PandoraEntry
-link: [http://www.coolapk.com/search?q=com.wujiemedia.app]
 --------------------
 Phone Location
 times: 1
 com.wuxianlin.phonelocation/com.wuxianlin.phonelocation.MainActivity
-link: [http://www.coolapk.com/search?q=com.wuxianlin.phonelocation]
 --------------------
 随机游戏插件
 times: 1
 com.wuxianlin.randomgame/com.wuxianlin.randomgame.SettingsActivity
-link: [http://www.coolapk.com/search?q=com.wuxianlin.randomgame]
 --------------------
 XDA Labs
 times: 1
 com.xda.labs/com.xda.labs.MainActivity
-link: [http://www.coolapk.com/search?q=com.xda.labs]
 --------------------
 乐词-新东方
 times: 1
 com.xdf.recite/com.xdf.recite.android.ui.activity.load.WelcomeActivity
-link: [http://www.coolapk.com/search?q=com.xdf.recite]
 --------------------
 小米应用商店
 times: 1
 com.xiaomi.market/com.xiaomi.market.ui.MainTabActivity
-link: [http://www.coolapk.com/search?q=com.xiaomi.market]
 --------------------
 投屏神器
 times: 1
 com.xiaomi.mitv.phone.tvassistant/com.xiaomi.mitv.phone.tvassistant.MainActivityV2
-link: [http://www.coolapk.com/search?q=com.xiaomi.mitv.phone.tvassistant]
 --------------------
 就看天气
 times: 1
 com.xiecc.seeWeather/com.xiecc.seeWeather.FirstActivity
-link: [http://www.coolapk.com/search?q=com.xiecc.seeWeather]
 --------------------
 Flair
 times: 1
 com.xonyxltd.icon.flair/com.xonyxltd.icon.flair.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.xonyxltd.icon.flair]
 --------------------
 Luminara
 times: 1
 com.yadli.luminara/com.yadli.luminara.MainActivity
-link: [http://www.coolapk.com/search?q=com.yadli.luminara]
 --------------------
 News Digest
 times: 1
 com.yahoo.mobile.client.android.atom/com.yahoo.mobile.client.android.atom.ui.activity.NewsDigestActivity
-link: [http://www.coolapk.com/search?q=com.yahoo.mobile.client.android.atom]
 --------------------
 音悦台
 times: 1
 com.yinyuetai.ui/com.yinyuetai.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=com.yinyuetai.ui]
 --------------------
 成都银行
 times: 1
 com.yitong.cd.mbank.android/com.yitong.cd.mbank.android.activity.ManagerActivity
-link: [http://www.coolapk.com/search?q=com.yitong.cd.mbank.android]
 --------------------
 易到用车
 times: 1
 com.yongche.android/com.yongche.android.welcome.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.yongche.android]
 --------------------
 好壁纸
 times: 1
 com.youba.wallpaper/com.youba.wallpaper.LauncherActivity
-link: [http://www.coolapk.com/search?q=com.youba.wallpaper]
 --------------------
 超级计算器
 times: 1
 com.youdao.calculator/com.youdao.calculator.activities.SplashActivity
-link: [http://www.coolapk.com/search?q=com.youdao.calculator]
 --------------------
 猿辅导
 times: 1
 com.yuantiku.tutor/com.fenbi.tutor.activity.HomeActivity
-link: [http://www.coolapk.com/search?q=com.yuantiku.tutor]
 --------------------
 悦动圈跑步
 times: 1
 com.yuedong.sport/com.yuedong.sport.main.WelcomeActivity_
-link: [http://www.coolapk.com/search?q=com.yuedong.sport]
 --------------------
 影之刃
 times: 1
 com.yzr.bili/com.yzr.bili.AdapterActivity
-link: [http://www.coolapk.com/search?q=com.yzr.bili]
 --------------------
 CandyCons
 times: 1
 com.zavukodlak.candycons/com.zavukodlak.candycons.HomeActivity
-link: [http://www.coolapk.com/search?q=com.zavukodlak.candycons]
 --------------------
 智友
 times: 1
 com.zhiyoo/com.zhiyoo.SplashActivity
-link: [http://www.coolapk.com/search?q=com.zhiyoo]
 --------------------
 夜间模式 月食
 times: 1
 com.zilla.android.product.bright.lite/com.zilla.android.product.bright.MainActivity
-link: [http://www.coolapk.com/search?q=com.zilla.android.product.bright.lite]
 --------------------
 zANTI
 times: 1
 com.zimperium.zanti/com.zimperium.zanti.zcloud.ZcloudMainActivity
-link: [http://www.coolapk.com/search?q=com.zimperium.zanti]
 --------------------
 紫小子库
 times: 1
 com.zixiaozi/org.zywx.wbpalmstar.engine.LoadingActivity
-link: [http://www.coolapk.com/search?q=com.zixiaozi]
 --------------------
 屏幕关闭动画
 times: 1
 com.zst.xposed.screenoffanimation/com.zst.xposed.screenoffanimation.MainActivity
-link: [http://www.coolapk.com/search?q=com.zst.xposed.screenoffanimation]
 --------------------
 化学方程式
 times: 1
 com.zzu.sxm.chemical/com.zzu.sxm.chemical.SplashActivity
-link: [http://www.coolapk.com/search?q=com.zzu.sxm.chemical]
 --------------------
 体检宝测血压视力心率
 times: 1
 comm.cchong.BloodAssistant/comm.cchong.MainPage.WelcomeActivity
-link: [http://www.coolapk.com/search?q=comm.cchong.BloodAssistant]
 --------------------
 种子搜索
 times: 1
 d.torrent.tsearch/d.torrent.tsearch.WelcomeActivity
-link: [http://www.coolapk.com/search?q=d.torrent.tsearch]
 --------------------
 Boeffla-Config V2
 times: 1
 de.andip71.boeffla_config_v2/de.andip71.boeffla_config_v2.MainActivity
-link: [http://www.coolapk.com/search?q=de.andip71.boeffla_config_v2]
 --------------------
 VpnDialog Xposed Module
 times: 1
 de.blinkt.vpndialogxposed/de.blinkt.vpndialogxposed.AllowedVPNsChooser
-link: [http://www.coolapk.com/search?q=de.blinkt.vpndialogxposed]
 --------------------
 NotifyClean
 times: 1
 de.defim.apk.notifyclean/de.defim.apk.notifyclean.Launch0
-link: [http://www.coolapk.com/search?q=de.defim.apk.notifyclean]
 --------------------
 NotifyClean
 times: 1
 de.defim.apk.notifyclean/de.defim.apk.notifyclean.Launch1
-link: [http://www.coolapk.com/search?q=de.defim.apk.notifyclean]
 --------------------
 TaskManager
 times: 1
 de.defim.apk.taskmanager/de.defim.apk.taskmanager.Launch0
-link: [http://www.coolapk.com/search?q=de.defim.apk.taskmanager]
 --------------------
 UnbelovedHosts
 times: 1
 de.defim.apk.unbelovedhosts/de.defim.apk.unbelovedhosts.Launch0
-link: [http://www.coolapk.com/search?q=de.defim.apk.unbelovedhosts]
 --------------------
 ViewPasswords
 times: 1
 de.defim.apk.viewpasswords/de.defim.apk.viewpasswords.Launch0
-link: [http://www.coolapk.com/search?q=de.defim.apk.viewpasswords]
 --------------------
 xSuite(for now)
 times: 1
 de.galaxyinabox.xsuite2/de.galaxyinabox.xsuite2.MainActivity
-link: [http://www.coolapk.com/search?q=de.galaxyinabox.xsuite2]
 --------------------
 Perfectly Clear
 times: 1
 de.worldiety.athentech.perfectlyclear/de.worldiety.athentech.perfectlyclear.ActivityPerfectlyClear
-link: [http://www.coolapk.com/search?q=de.worldiety.athentech.perfectlyclear]
 --------------------
 Food
 times: 1
 digifit.virtuagym.foodtracker/digifit.virtuagym.foodtracker.ui.MainActivity
-link: [http://www.coolapk.com/search?q=digifit.virtuagym.foodtracker]
 --------------------
 Hosts
 times: 1
 dphdjy.hostseditor/me.gitai.hosts.ui.MainActivity
-link: [http://www.coolapk.com/search?q=dphdjy.hostseditor]
 --------------------
 Material Cards
 times: 1
 drase.materialcards.iconpack/drase.materialcards.iconpack.ui.MainActivity
-link: [http://www.coolapk.com/search?q=drase.materialcards.iconpack]
 --------------------
 Multi Users
 times: 1
 droidmate.multiuser.xposed/droidmate.multiuser.xposed.Main
-link: [http://www.coolapk.com/search?q=droidmate.multiuser.xposed]
 --------------------
 全球付钱包
 times: 1
 epaylinks.global.payment/epaylinks.global.payment.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=epaylinks.global.payment]
 --------------------
 Epson iPrint
 times: 1
 epson.print/epson.print.WellcomeScreenActivity
-link: [http://www.coolapk.com/search?q=epson.print]
 --------------------
 500 Firepaper
 times: 1
 eu.chainfire.firepaper.fivehundredpx/eu.chainfire.firepaper.fivehundredpx.MainActivity
-link: [http://www.coolapk.com/search?q=eu.chainfire.firepaper.fivehundredpx]
 --------------------
 LiveBoot
 times: 1
 eu.chainfire.liveboot/eu.chainfire.liveboot.MainActivity
-link: [http://www.coolapk.com/search?q=eu.chainfire.liveboot]
 --------------------
 StickMount
 times: 1
 eu.chainfire.stickmount/eu.chainfire.stickmount.StickMountActivity
-link: [http://www.coolapk.com/search?q=eu.chainfire.stickmount]
 --------------------
 超级授权
 times: 1
 eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-SuperSU
-link: [http://www.coolapk.com/search?q=eu.chainfire.supersu]
 --------------------
 SD Maid
 times: 1
 eu.thedarken.sdr/eu.thedarken.sdr.SDMMainActivity
-link: [http://www.coolapk.com/search?q=eu.thedarken.sdr]
 --------------------
 Type Machine
 times: 1
 fi.rojekti.typemachine/fi.rojekti.typemachine.activity.EventListActivity
-link: [http://www.coolapk.com/search?q=fi.rojekti.typemachine]
 --------------------
 DevCheck
 times: 1
 flar2.devcheck/flar2.devcheck.MainActivity
-link: [http://www.coolapk.com/search?q=flar2.devcheck]
 --------------------
 翻墙路由器
 times: 1
 fq.router2/fq.router2.MainActivity
-link: [http://www.coolapk.com/search?q=fq.router2]
 --------------------
 Relay
 times: 1
 free.reddit.news/reddit.news.RedditNavigation
-link: [http://www.coolapk.com/search?q=free.reddit.news]
 --------------------
 Fonter Pro
 times: 1
 git.hub.font.paid/git.hub.font.MainActivity
-link: [http://www.coolapk.com/search?q=git.hub.font.paid]
 --------------------
 万宝乐
 times: 1
 goofy2.swably.zh/goofy2.swably.Main
-link: [http://www.coolapk.com/search?q=goofy2.swably.zh]
 --------------------
 Pure天气
 times: 1
 hanjie.app.pureweather/hanjie.app.pureweather.activity.HomeActivity
-link: [http://www.coolapk.com/search?q=hanjie.app.pureweather]
 --------------------
 HDP直播
 times: 1
 hdpfans.com/hdp.player.GuideActivity
-link: [http://www.coolapk.com/search?q=hdpfans.com]
 --------------------
 APM+
 times: 1
 hk.kennethso168.xposed.apmplus/hk.kennethso168.xposed.apmplus.MainActivity
-link: [http://www.coolapk.com/search?q=hk.kennethso168.xposed.apmplus]
 --------------------
 AGNi Control
 times: 1
 hm.agni/hm.agni.AGNiActivity
-link: [http://www.coolapk.com/search?q=hm.agni]
 --------------------
 全局震动开关
 times: 1
 hovn.app.global_vibration_control/hovn.app.global_vibration_control.MainActivity
-link: [http://www.coolapk.com/search?q=hovn.app.global_vibration_control]
 --------------------
 3G/4G/Wifi DNS Settings
 times: 1
 htmt.rootdnssettings/htmt.rootdnssettings.MainActivity
-link: [http://www.coolapk.com/search?q=htmt.rootdnssettings]
 --------------------
 轻文轻小说
 times: 1
 in.iqing.app/in.iqing.view.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=in.iqing.app]
 --------------------
 Icondy Pro
 times: 1
 ind.fem.black.rayyan.blendicons.pay/ind.fem.black.rayyan.blendicons.pay.IcondyProActivity
-link: [http://www.coolapk.com/search?q=ind.fem.black.rayyan.blendicons.pay]
 --------------------
 ICondy
 times: 1
 ind.fem.black.rayyan.blendicons/ind.fem.black.rayyan.blendicons.BlendActivity
-link: [http://www.coolapk.com/search?q=ind.fem.black.rayyan.blendicons]
 --------------------
 手势导航
 times: 1
 ind.fem.black.rayyan.xposed.gesturenavigation/ind.fem.black.rayyan.xposed.gesturenavigation.GNSettings
-link: [http://www.coolapk.com/search?q=ind.fem.black.rayyan.xposed.gesturenavigation]
 --------------------
 EBPocket
 times: 1
 info.ebstudio.ebpocket/info.ebstudio.ebpocket.SplashActivity
-link: [http://www.coolapk.com/search?q=info.ebstudio.ebpocket]
 --------------------
 全景截图
 times: 1
 info.papdt.pano/info.papdt.pano.ui.activities.MainActivity
-link: [http://www.coolapk.com/search?q=info.papdt.pano]
 --------------------
 Cracker
 times: 1
 io.github.mthli.Cracker/io.github.mthli.Cracker.Activity.MainActivity
-link: [http://www.coolapk.com/search?q=io.github.mthli.Cracker]
 --------------------
 琉璃神社
 times: 1
 io.github.yueeng.hacg/io.github.yueeng.hacg.MainActivity
-link: [http://www.coolapk.com/search?q=io.github.yueeng.hacg]
 --------------------
 Bluetooth File Transfer
 times: 1
 it.medieval.blueftp/it.medieval.blueftp.AMain
-link: [http://www.coolapk.com/search?q=it.medieval.blueftp]
 --------------------
 Dukto
 times: 1
 it.msec.dukto/it.msec.dukto.Dukto
-link: [http://www.coolapk.com/search?q=it.msec.dukto]
 --------------------
 ぼくとわんこ
 times: 1
 jp.app.bokutowanko/org.cocos2dx.cpp.AppActivity
-link: [http://www.coolapk.com/search?q=jp.app.bokutowanko]
 --------------------
 昭和盛夏祭典
 times: 1
 jp.co.gagex.capellaCN/jp.co.gagex.capella.StarsMainActivity
-link: [http://www.coolapk.com/search?q=jp.co.gagex.capellaCN]
 --------------------
 Jorte
 times: 1
 jp.co.johospace.jorte/jp.co.johospace.jorte.MainActivity
-link: [http://www.coolapk.com/search?q=jp.co.johospace.jorte]
 --------------------
 元素周期表
 times: 1
 jqsoft.apps.periodictable.hd/jqsoft.apps.periodictable.hd.PeriodicTable
-link: [http://www.coolapk.com/search?q=jqsoft.apps.periodictable.hd]
 --------------------
 智能工具箱
 times: 1
 kr.mytools.tools/kr.mytools.tools.MsgCheck
-link: [http://www.coolapk.com/search?q=kr.mytools.tools]
 --------------------
 绝对领域
 times: 1
 kroderia.im.atfield/kroderia.im.atfield.ui.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=kroderia.im.atfield]
 --------------------
 Xstana
 times: 1
 lfprodev.xposed.xstana/lfprodev.xposed.xstana.ActivityXstana
-link: [http://www.coolapk.com/search?q=lfprodev.xposed.xstana]
 --------------------
 智能网络
 times: 1
 ma.wanam.smartnetwork/ma.wanam.smartnetwork.SmartNetworkActivity
-link: [http://www.coolapk.com/search?q=ma.wanam.smartnetwork]
 --------------------
 Xposed Torch
 times: 1
 ma.wanam.torch/ma.wanam.torch.LauncherAlias
-link: [http://www.coolapk.com/search?q=ma.wanam.torch]
 --------------------
 Wanam Xposed
 times: 1
 ma.wanam.xposed/ma.wanam.xposed.WanamXposed
-link: [http://www.coolapk.com/search?q=ma.wanam.xposed]
 --------------------
 电量校准
 times: 1
 mark.batterysave/mark.batterysave.Main
-link: [http://www.coolapk.com/search?q=mark.batterysave]
 --------------------
 Copas
 times: 1
 mark.compass/mark.compass.CompassActivity
-link: [http://www.coolapk.com/search?q=mark.compass]
 --------------------
 通知通知
 times: 1
 mark.notification/mark.notification.Main
-link: [http://www.coolapk.com/search?q=mark.notification]
 --------------------
 Quada
 times: 1
 maximiliankeppeler.icons.quada/maximiliankeppeler.icons.quada.activities.StartActivity
-link: [http://www.coolapk.com/search?q=maximiliankeppeler.icons.quada]
 --------------------
 战舰少女Viewer
 times: 1
 me.crafter.android.zjsnviewer/me.crafter.android.zjsnviewer.ZjsnViewer
-link: [http://www.coolapk.com/search?q=me.crafter.android.zjsnviewer]
 --------------------
 妹纸&gank.io
 times: 1
 me.drakeet.meizhi/me.drakeet.meizhi.ui.MainActivity
-link: [http://www.coolapk.com/search?q=me.drakeet.meizhi]
 --------------------
 贝壳单词
 times: 1
 me.drakeet.seashell/me.drakeet.seashell.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=me.drakeet.seashell]
 --------------------
 Captchas Tools
 times: 1
 me.gitai.smscodehelper/me.gitai.smscodehelper.MainPreferences
-link: [http://www.coolapk.com/search?q=me.gitai.smscodehelper]
 --------------------
 Captchas Tools
 times: 1
 me.gitai.smscodehelper/me.gitai.smscodehelper.ui.MainPreferences
-link: [http://www.coolapk.com/search?q=me.gitai.smscodehelper]
 --------------------
 SmartProxy
 times: 1
 me.smartproxy/me.smartproxy.ui.MainActivity
-link: [http://www.coolapk.com/search?q=me.smartproxy]
 --------------------
 优美图
 times: 1
 me.topit.TopAndroid2/me.topit.ui.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=me.topit.TopAndroid2]
 --------------------
 网页更新提醒
 times: 1
 me.webalert/me.webalert.activity.JobsActivity
-link: [http://www.coolapk.com/search?q=me.webalert]
 --------------------
 AirDebug
 times: 1
 me.yourbay.airdebug/me.yourbay.airdebug.MainActivity
-link: [http://www.coolapk.com/search?q=me.yourbay.airdebug]
 --------------------
 壁虎数据恢复
 times: 1
 mobi.bihu.recovery/mobi.bihu.recovery.ui.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=mobi.bihu.recovery]
 --------------------
 Silhouette
 times: 1
 mobi.infolife.ezweather.iconset.silhouette/mobi.infolife.ezweather.iconset.silhouette.MainActivity
-link: [http://www.coolapk.com/search?q=mobi.infolife.ezweather.iconset.silhouette]
 --------------------
 Space
 times: 1
 mobi.infolife.ezweather.iconset.space/mobi.infolife.ezweather.iconset.space.MainActivity
-link: [http://www.coolapk.com/search?q=mobi.infolife.ezweather.iconset.space]
 --------------------
 Sm-artists
 times: 1
 mobi.infolife.ezweather.smartists/mobi.infolife.ezweather.smartists.MainActivity
-link: [http://www.coolapk.com/search?q=mobi.infolife.ezweather.smartists]
 --------------------
 ScreenDim Full
 times: 1
 mobi.omegacentauri.ScreenDim.Full/mobi.omegacentauri.ScreenDim.Full.ScreenDim
-link: [http://www.coolapk.com/search?q=mobi.omegacentauri.ScreenDim.Full]
 --------------------
 Send Reduced
 times: 1
 mobi.omegacentauri.SendReduced/mobi.omegacentauri.SendReduced.Options
-link: [http://www.coolapk.com/search?q=mobi.omegacentauri.SendReduced]
 --------------------
 随身风暴英雄
 times: 1
 ne.hs.hsapp/ne.hs.hsapp.hero.activity.LauncherActivity
-link: [http://www.coolapk.com/search?q=ne.hs.hsapp]
 --------------------
 炉石下载器
 times: 1
 ne.lushi.lushilauncher/ne.lushi.lushilauncher.MainActivity
-link: [http://www.coolapk.com/search?q=ne.lushi.lushilauncher]
 --------------------
 神行者
 times: 1
 net.anylocation/net.anylocation.SplashActivity
-link: [http://www.coolapk.com/search?q=net.anylocation]
 --------------------
 Network Tools
 times: 1
 net.he.networktools/net.he.networktools.MainActivity
-link: [http://www.coolapk.com/search?q=net.he.networktools]
 --------------------
 凯迪
 times: 1
 net.kdnet.club/net.kdnet.club.BootActivity
-link: [http://www.coolapk.com/search?q=net.kdnet.club]
 --------------------
 落网
 times: 1
 net.luoo.LuooFM/net.luoo.LuooFM.ui.SplashActivity
-link: [http://www.coolapk.com/search?q=net.luoo.LuooFM]
 --------------------
 CheckR
 times: 1
 net.mderezynski.checkr/net.mderezynski.checkr.MainActivity
-link: [http://www.coolapk.com/search?q=net.mderezynski.checkr]
 --------------------
 Simple MarkPad
 times: 1
 net.mindbeta.simplenote/net.mindbeta.ui.IndexActivity
-link: [http://www.coolapk.com/search?q=net.mindbeta.simplenote]
 --------------------
 Override DNS
 times: 1
 net.mx17.overridedns/net.mx17.overridedns.MainActivity
-link: [http://www.coolapk.com/search?q=net.mx17.overridedns]
 --------------------
 果壳的壳
 times: 1
 net.nashlegend.sourcewall/net.nashlegend.sourcewall.MainActivity
-link: [http://www.coolapk.com/search?q=net.nashlegend.sourcewall]
 --------------------
 GoTweet
 times: 1
 net.ngee.gotweet/net.ngee.gotweet.SplashActivity
-link: [http://www.coolapk.com/search?q=net.ngee.gotweet]
 --------------------
 OpenVPN Connect
 times: 1
 net.openvpn.openvpn/net.openvpn.openvpn.OpenVPNClient
-link: [http://www.coolapk.com/search?q=net.openvpn.openvpn]
 --------------------
 LTE Discovery
 times: 1
 net.simplyadvanced.ltediscovery/net.simplyadvanced.ltediscovery.main.FragmentActivityMain
-link: [http://www.coolapk.com/search?q=net.simplyadvanced.ltediscovery]
 --------------------
 Zero VPN
 times: 1
 net.tntapp.app.zerovpn/net.tntapp.app.vpn.MainActivity
-link: [http://www.coolapk.com/search?q=net.tntapp.app.zerovpn]
 --------------------
 BlockLauncher Pro
 times: 1
 net.zhuoweizhang.mcpelauncher.pro/net.zhuoweizhang.mcpelauncher.pro.LauncherProActivity
-link: [http://www.coolapk.com/search?q=net.zhuoweizhang.mcpelauncher.pro]
 --------------------
 PocketInvEditor Pro
 times: 1
 net.zhuoweizhang.pocketinveditor.pro/net.zhuoweizhang.pocketinveditor.pro.PocketInvEditorProActivity
-link: [http://www.coolapk.com/search?q=net.zhuoweizhang.pocketinveditor.pro]
 --------------------
 FX
 times: 1
 nextapp.fx/nextapp.fx.ui.ExplorerActivity
-link: [http://www.coolapk.com/search?q=nextapp.fx]
 --------------------
 FX TextEdit
 times: 1
 nextapp.fx/nextapp.fx.ui.textedit.TextEditorActivity
-link: [http://www.coolapk.com/search?q=nextapp.fx]
 --------------------
 Fire.onion
 times: 1
 onion.fire/onion.fire.BrowserActivity
-link: [http://www.coolapk.com/search?q=onion.fire]
 --------------------
 靓晒
 times: 1
 ooo.oxo.apps.materialize/ooo.oxo.apps.materialize.MainActivity
-link: [http://www.coolapk.com/search?q=ooo.oxo.apps.materialize]
 --------------------
 名为梦梦奈的Servant
 times: 1
 org.alie.momona/org.alie.momona.view.activity.MainActivity
-link: [http://www.coolapk.com/search?q=org.alie.momona]
 --------------------
 XPhonePlus
 times: 1
 org.androplus.phone/org.androplus.phone.SettingActivity
-link: [http://www.coolapk.com/search?q=org.androplus.phone]
 --------------------
 Log Me
 times: 1
 org.baole.fakelog/org.baole.fakelog.activity.MainActivity
-link: [http://www.coolapk.com/search?q=org.baole.fakelog]
 --------------------
 Waves
 times: 1
 org.cohortor.gstringsng/org.cohortor.gstringsng.NgActivity
-link: [http://www.coolapk.com/search?q=org.cohortor.gstringsng]
 --------------------
 cSploit
 times: 1
 org.csploit.android/org.csploit.android.MainActivity
-link: [http://www.coolapk.com/search?q=org.csploit.android]
 --------------------
 叹号杀手
 times: 1
 org.foxteam.noisyfox.noexclamation/org.foxteam.noisyfox.noexclamation.MyActivity
-link: [http://www.coolapk.com/search?q=org.foxteam.noisyfox.noexclamation]
 --------------------
 掌上教务
 times: 1
 org.foxteam.noisyfox.nuaa.academic/org.foxteam.noisyfox.nuaa.academic.ui.LoginActivity
-link: [http://www.coolapk.com/search?q=org.foxteam.noisyfox.nuaa.academic]
 --------------------
 自由浏览
 times: 1
 org.greatfire.freebrowser/org.greatfire.freebrowser.MainActivity
-link: [http://www.coolapk.com/search?q=org.greatfire.freebrowser]
 --------------------
 Gravity Defied
 times: 1
 org.happysanta.gd/org.happysanta.gd.GDActivity
-link: [http://www.coolapk.com/search?q=org.happysanta.gd]
 --------------------
 成语词典
 times: 1
 org.hisand.android.chengyu/com.huadict.dict.SplashActivity
-link: [http://www.coolapk.com/search?q=org.hisand.android.chengyu]
 --------------------
 汉语字典
 times: 1
 org.hisand.zidian.zhs/com.huadict.dict.SplashActivity
-link: [http://www.coolapk.com/search?q=org.hisand.zidian.zhs]
 --------------------
 Khan Academy
 times: 1
 org.khanacademy.android/org.khanacademy.android.ui.library.MainActivity
-link: [http://www.coolapk.com/search?q=org.khanacademy.android]
 --------------------
 多引擎搜索神器
 times: 1
 org.leicheng.magnetsearch/org.leicheng.activity.MainActivity
-link: [http://www.coolapk.com/search?q=org.leicheng.magnetsearch]
 --------------------
 MaterialOS
 times: 1
 org.materialos.icons/org.materialos.icons.ui.MainActivity
-link: [http://www.coolapk.com/search?q=org.materialos.icons]
 --------------------
 萌娘百科 α
 times: 1
 org.moegirl.moegirlview/org.moegirl.moepad.SplashActivity
-link: [http://www.coolapk.com/search?q=org.moegirl.moegirlview]
 --------------------
 ROM Extra Settings
 times: 1
 org.morphic.ts.extra/org.morphic.ts.extra.SettingsActivity
-link: [http://www.coolapk.com/search?q=org.morphic.ts.extra]
 --------------------
 Nightly
 times: 1
 org.mozilla.fennec/org.mozilla.gecko.BrowserApp
-link: [http://www.coolapk.com/search?q=org.mozilla.fennec]
 --------------------
 OmniSwitch
 times: 1
 org.omnirom.omniswitch/org.omnirom.omniswitch.SettingsActivity
-link: [http://www.coolapk.com/search?q=org.omnirom.omniswitch]
 --------------------
 PPSSPP
 times: 1
 org.ppsspp.ppsspp/org.ppsspp.ppsspp.PpssppActivity
-link: [http://www.coolapk.com/search?q=org.ppsspp.ppsspp]
 --------------------
 连接服务修改器
 times: 1
 org.tracetool.hackconnectivityservice/org.tracetool.hackconnectivityservice.MainActivity
-link: [http://www.coolapk.com/search?q=org.tracetool.hackconnectivityservice]
 --------------------
 TaskMan
 times: 1
 org.wen.taskman/org.wen.taskman.MainActivity
-link: [http://www.coolapk.com/search?q=org.wen.taskman]
 --------------------
 网盘提取器
 times: 1
 pan.howdifficult/pan.howdifficult.MainActivity
-link: [http://www.coolapk.com/search?q=pan.howdifficult]
 --------------------
 ClearFocus
 times: 1
 personal.andreabasso.clearfocus/personal.andreabasso.clearfocus.main_activity.MainActivity
-link: [http://www.coolapk.com/search?q=personal.andreabasso.clearfocus]
 --------------------
 泼辣修图
 times: 1
 photo.editor.polarr/photo.editor.polarr.SplashScreen
-link: [http://www.coolapk.com/search?q=photo.editor.polarr]
 --------------------
 Cornie Icons
 times: 1
 pl.patrykgoworowski.cornieicons/pl.patrykgoworowski.cornieicons.HomeActivity
-link: [http://www.coolapk.com/search?q=pl.patrykgoworowski.cornieicons]
 --------------------
 Manual Camera
 times: 1
 pl.vipek.camera2/pl.vipek.camera2.CameraActivity
-link: [http://www.coolapk.com/search?q=pl.vipek.camera2]
 --------------------
 3G/4G 优化器专业版
 times: 1
 provision.netspeed.optimizer.pro/provision.netspeed.optimizer.pro.MainActivity
-link: [http://www.coolapk.com/search?q=provision.netspeed.optimizer.pro]
 --------------------
 SIM Number Changer
 times: 1
 pt.oxinarf.simnumberchanger/pt.oxinarf.simnumberchanger.MainActivity
-link: [http://www.coolapk.com/search?q=pt.oxinarf.simnumberchanger]
 --------------------
 Use USB for Marshmallow
 times: 1
 rayyan.black.fem.ind.runner/rayyan.black.fem.ind.runner.UUSBFActivity
-link: [http://www.coolapk.com/search?q=rayyan.black.fem.ind.runner]
 --------------------
 以图搜图
 times: 1
 rikka.searchbyimage2/rikka.searchbyimage.ui.MainActivity
-link: [http://www.coolapk.com/search?q=rikka.searchbyimage2]
 --------------------
 Willx
 times: 1
 ru.xorrisont.simplymaterial/ru.xorrisont.simplymaterial.activities.StartActivity
-link: [http://www.coolapk.com/search?q=ru.xorrisont.simplymaterial]
 --------------------
 Xperia?6?4 Xposed (LP)
 times: 1
 serajr.xx.lp/serajr.xx.lp.activities.MainActivity
-link: [http://www.coolapk.com/search?q=serajr.xx.lp]
 --------------------
 Ascape
 times: 1
 to.jumps.ascape/to.jumps.ascape.activites.MainActivity
-link: [http://www.coolapk.com/search?q=to.jumps.ascape]
 --------------------
 科学计算器
 times: 1
 uk.co.nickfines.RealCalcPlus/uk.co.nickfines.RealCalcPlus.Calculator
-link: [http://www.coolapk.com/search?q=uk.co.nickfines.RealCalcPlus]
 --------------------
 Mathlab图形计算器
 times: 1
 us.mathlab.android.calc.edu/us.mathlab.android.StartActivity
-link: [http://www.coolapk.com/search?q=us.mathlab.android.calc.edu]
 --------------------
 BlackLight
 times: 1
 us.shandian.blacklight/info.papdt.blacklight.ui.entry.EntryActivity
-link: [http://www.coolapk.com/search?q=us.shandian.blacklight]
 --------------------
 Threes
 times: 1
 vo.threes.exclaim/com.unity3d.player.UnityPlayerNativeActivity
-link: [http://www.coolapk.com/search?q=vo.threes.exclaim]
 --------------------
 Geometric weather
 times: 1
 wangdaye.com.geometricweather/wangdaye.com.geometricweather.UserInterface.MainActivity
-link: [http://www.coolapk.com/search?q=wangdaye.com.geometricweather]
 --------------------
 TMMI
 times: 1
 wellingtomworks.tmmi/wellingtomworks.tmmi.HomeActivity
-link: [http://www.coolapk.com/search?q=wellingtomworks.tmmi]
 --------------------
 WiFi密码查看
 times: 1
 wilk.wifi.pwd/wilk.wifi.pwd.ui.MainActivity
-link: [http://www.coolapk.com/search?q=wilk.wifi.pwd]
 --------------------
 天行VPN
 times: 1
 xsky.txvpn/xsky.txvpn.activity.SplashActivity
-link: [http://www.coolapk.com/search?q=xsky.txvpn]
 --------------------
