@@ -3,7 +3,9 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.XmlResourceParser;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +30,9 @@ import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
+import com.stericson.RootTools.RootTools;
+import com.stericson.RootTools.execution.Command;
+import com.stericson.RootTools.execution.CommandCapture;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -51,8 +57,34 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.imageView_test);
         mContext = this;
 
-        mTestButton.setOnClickListener(xmlAnimListener);
+        mTestButton.setOnClickListener(catDBListener);
     }
+
+    private View.OnClickListener catDBListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            String launcherdb = "/data/data/com.teslacoilsw.launcher/databases/launcher.db";
+            String tmpdb = "/sdcard/nova_tmp.db";
+            try {
+                RootTools.getShell(true).add(new CommandCapture(0,
+                        "if [ -f /data/data/com.teslacoilsw.launcher/databases/launcher.db ]; " +
+                                "then cat /data/data/com.teslacoilsw.launcher/databases/launcher" +
+                                ".db > /sdcard/nova_tmp.db; fi;")).waitForFinish();
+//                    SQLiteDatabase db =
+//                            SQLiteDatabase.openDatabase("/sdcard/nova_tmp.db", null, 0);
+//                    db.execSQL("update allapps set icon = null; ");
+//                    db.close();
+//                    RootTools.getShell(true).add(new CommandCapture(0,
+//                            "cat /sdcard/nova_tmp.db > /data/data/com.teslacoilsw.launcher/databases/launcher.db; owner=$(stat -c %u /data/data/com.teslacoilsw.launcher/databases/launcher.db-journal);chown $owner:$owner /data/data/com.teslacoilsw.launcher/databases/launcher.db; chmod 660 /data/data/com.teslacoilsw.launcher/databases/launcher.db; rm /sdcard/nova_tmp.db*;"))
+//                            .waitForFinish();
+//                    Log.d(TAG, "Cleared Nova Launcher cache");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    };
 
     private View.OnClickListener xmlAnimListener = new View.OnClickListener() {
         @Override
@@ -108,7 +140,7 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         public void onClick(View v) {
             ActivityManager manager = (ActivityManager) getSystemService(Context
                     .ACTIVITY_SERVICE);
-            XposedUtils.killAll(getPackageManager(), manager);
+//            XposedUtils.killAll(getPackageManager(), manager);
         }
     };
 

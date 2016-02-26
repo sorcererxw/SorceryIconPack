@@ -104,11 +104,23 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/button_lab_xposed_reboot"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:minWidth="0dp"
+                        android:text="@string/action_reboot"
+                        android:textSize="16sp"/>
+
+
+                    <Button
                         android:id="@+id/button_lab_xposed_refresh"
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:enabled="false"
+                        android:minWidth="0dp"
                         android:text="@string/action_refresh"
                         android:textSize="16sp"/>
 
@@ -118,6 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:enabled="false"
+                        android:minWidth="0dp"
                         android:text="@string/action_close"
                         android:textSize="16sp"/>
 
@@ -126,6 +139,7 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:minWidth="0dp"
                         android:text="@string/action_apply"
                         android:textSize="16sp"/>
 

@@ -181,9 +181,9 @@
             android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity"/>
         <activity
-            android:theme="@style/AppTheme.NoActionBar"
             android:name=".ui.activities.AppSelectActivity"
-            android:label="@string/select_app"/>
+            android:label="@string/select_app"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activities.TestActivity"
             android:theme="@style/SubActivity"/>
@@ -195,6 +195,18 @@
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".xposed.PackageAddedReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED"/>
@@ -204,6 +216,7 @@
                 <data android:scheme="package"/>
             </intent-filter>
         </receiver>
+
         <receiver
             android:name=".xposed.MyselfUpdateReceiver"
             android:enabled="true">

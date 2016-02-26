@@ -38,6 +38,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 public class Xposed
         implements IXposedHookZygoteInit, IXposedHookLoadPackage, IXposedHookInitPackageResources {
     private static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
+    private static final String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
     private static String MODULE_PATH;
     public static String TAG = "SIP/Xposed";
     public static XSharedPreferences XSharedPrefs;
@@ -56,7 +57,7 @@ public class Xposed
 
     public void initZygote(StartupParam startupParam) throws Throwable {
         MODULE_PATH = startupParam.modulePath;
-        XSharedPrefs = new XSharedPreferences("com.sorcerer.sorcery.iconpack",
+        XSharedPrefs = new XSharedPreferences(PACKAGE_NAME,
                 SHARED_PREFERENCE_NAME);
         mDisplayDpi = XSharedPrefs.getInt("display_dpi", 320);
         mThemePackage = XSharedPrefs.getString("theme_package_name", null);
@@ -185,6 +186,19 @@ public class Xposed
                     new File(mThemePackagePath).exists()) {
                 appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
             }
+            if (lpparam.packageName.equals(PACKAGE_NAME)) {
+                XposedHelpers.findAndHookMethod("com.sorcerer.sorcery.iconpack.xposed.XposedUtils",
+                        lpparam.classLoader,
+                        "reloadResource",
+                        new Object[]{new XC_MethodHook() {
+                            protected void afterHookedMethod(MethodHookParam param)
+                                    throws Throwable {
+                                XposedBridge.log("[" + TAG + "] [" + mThemePackage +
+                                        "] Overriding Nova Asset Manager call");
+
+                            }
+                        }});
+            }
         }
     }
 
@@ -247,7 +261,7 @@ public class Xposed
                                 if (new File(XposedUtils
                                         .getCacheFilePath(res.getResourcePackageName(resId),
                                                 resId)).exists()) {
-                                    value.string = "replaceWithIconThemer";
+                                    value.string = "replaceWithSIP";
                                 }
                             }
                         }});
@@ -256,7 +270,7 @@ public class Xposed
                 "openNonAssetFd",
                 new Object[]{Integer.TYPE, String.class, new XC_MethodHook() {
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                        if (param.args[1].equals("replaceWithIconThemer")) {
+                        if (param.args[1].equals("replaceWithSIP")) {
                             param.setResult(null);
                         }
                     }
@@ -266,7 +280,7 @@ public class Xposed
                 "openNonAssetFd",
                 new Object[]{String.class, new XC_MethodHook() {
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                        if (param.args[0].equals("replaceWithIconThemer")) {
+                        if (param.args[0].equals("replaceWithSIP")) {
                             param.setResult(null);
                         }
                     }

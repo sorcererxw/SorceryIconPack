@@ -26,11 +26,13 @@ import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
 import android.util.TypedValue;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconMaskItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconShader;
 import com.stericson.RootTools.RootTools;
+import com.stericson.RootTools.exceptions.RootDeniedException;
 import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
 
@@ -45,7 +47,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 public class XposedUtils {
 
@@ -286,40 +290,20 @@ public class XposedUtils {
         }
     }
 
-    public static void clearNovaCache(PackageManager pm) {
+    public static void clearNovaCache() {
+        String launcherdb = "/data/data/com.teslacoilsw.launcher/databases/launcher.db";
+        String tmpdb = "/sdcard/nova_tmp.db";
         try {
-            pm.getPackageInfo("com.teslacoilsw.launcher", 64);
-            String launcherdb = "/data/data/com.teslacoilsw.launcher/databases/launcher.db";
-            String tmpdb = "/sdcard/nova_tmp.db";
-            try {
-                CommandWaitToFinish(RootTools.getShell(true).add(new CommandCapture(0,
-                        "if [ -f /data/data/com.teslacoilsw.launcher/databases/launcher.db ]; then cat /data/data/com.teslacoilsw.launcher/databases/launcher.db > /sdcard/nova_tmp.db; fi;"))
-                );
-//                CommandWaitToFinish(RootTools.getShell(true).add(new CommandCapture(0,
-//                        "cp " + launcherdb + " " + tmpdb))
-//                );
-                SQLiteDatabase db = SQLiteDatabase.openDatabase("/sdcard/nova_tmp.db", null, 0);
-                db.execSQL("update allapps set icon = null; ");
-                db.close();
-                CommandWaitToFinish(RootTools.getShell(true).add(new CommandCapture(0,
-                        "cat /sdcard/nova_tmp.db > /data/data/com.teslacoilsw.launcher/databases/launcher.db; owner=$(stat -c %u /data/data/com.teslacoilsw.launcher/databases/launcher.db-journal);chown $owner:$owner /data/data/com.teslacoilsw.launcher/databases/launcher.db; chmod 660 /data/data/com.teslacoilsw.launcher/databases/launcher.db; rm /sdcard/nova_tmp.db*;"))
-                );
-                Log.d(TAG, "Cleared Nova Launcher cache");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } catch (PackageManager.NameNotFoundException e2) {
-        }
-    }
-
-    public static void fixLauncherCache(PackageManager pm) {
-        clearNovaCache(pm);
-        try {
-            CommandWaitToFinish(RootTools.getShell(true).add(new CommandCapture(0,
-                    "rm /data/data/com.google.android.googlequicksearchbox/databases/app_icons.db*"))
-            );
-            CommandWaitToFinish(RootTools.getShell(true).add(new CommandCapture(0,
-                    "am force-stop com.google.android.googlequicksearchbox")));
+            RootTools.getShell(true).add(new CommandCapture(0,
+                    "if [ -f /data/data/com.teslacoilsw.launcher/databases/launcher.db ]; then cat /data/data/com.teslacoilsw.launcher/databases/launcher.db > /sdcard/nova_tmp.db; fi;"))
+                    .waitForFinish();
+            SQLiteDatabase db = SQLiteDatabase.openDatabase("/sdcard/nova_tmp.db", null, 0);
+            db.execSQL("update allapps set icon = null; ");
+            db.close();
+            RootTools.getShell(true).add(new CommandCapture(0,
+                    "cat /sdcard/nova_tmp.db > /data/data/com.teslacoilsw.launcher/databases/launcher.db; owner=$(stat -c %u /data/data/com.teslacoilsw.launcher/databases/launcher.db-journal);chown $owner:$owner /data/data/com.teslacoilsw.launcher/databases/launcher.db; chmod 660 /data/data/com.teslacoilsw.launcher/databases/launcher.db; rm /sdcard/nova_tmp.db*;"))
+                    .waitForFinish();
+            Log.d(TAG, "Cleared Nova Launcher cache");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -329,24 +313,24 @@ public class XposedUtils {
         try {
             Intent intent = new Intent("android.intent.action.MAIN");
             intent.addCategory("android.intent.category.HOME");
-            Log.d(TAG,
-                    "KillLauncher: " + pm.resolveActivity(intent,
-                            AccessibilityNodeInfoCompat.ACTION_CUT).activityInfo.packageName);
-            fixLauncherCache(pm);
-            CommandWaitToFinish(RootTools.getShell(true)
-                    .add(new CommandCapture(0, "am force-stop " + getCurrentHome
-                            (pm))));
+            if (pm.resolveActivity(intent,
+                    PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName
+                    .contains("teslacoilsw.launcher")) {
+                clearNovaCache();
+            }
+            RootTools.getShell(true).add(new CommandCapture(0, "am force-stop " + getCurrentHome
+                    (pm)))
+                    .waitForFinish();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void killAll(PackageManager pm, ActivityManager am) {
+    public static void killAll(ActivityManager am) {
         try {
-            List<RunningTaskInfo> tasks = am.getRunningTasks(1000);
-            String forceStops = BuildConfig.VERSION_NAME;
-            for (RunningTaskInfo rti : tasks) {
-                if (!(rti.baseActivity.getPackageName().equals(BuildConfig.APPLICATION_ID) ||
+            String forceStops = "";
+            for (RunningTaskInfo rti : am.getRunningTasks(1000)) {
+                if (!(rti.baseActivity.getPackageName().equals(PACKAGE_NAME) ||
                         rti.baseActivity.getPackageName().equals("com.android.systemui") ||
                         rti.numRunning <= 0)) {
                     if (forceStops.length() > 0) {
@@ -355,11 +339,14 @@ public class XposedUtils {
                     forceStops = forceStops + "am force-stop " + rti.baseActivity.getPackageName();
                 }
             }
-            fixLauncherCache(pm);
+            if (forceStops.contains("teslacoilsw.launcher")) {
+                clearNovaCache();
+            }
             Log.d(TAG, "forceStops: " + forceStops);
-            CommandWaitToFinish(RootTools.getShell(true).add(new CommandCapture(0,
-                    forceStops + " & am force-stop sg.ruqqq.Unicon && am start sg.ruqqq.Unicon"))
-            );
+            RootTools.getShell(true).add(new CommandCapture(0,
+                    forceStops +
+                            " & am force-stop " + PACKAGE_NAME + " && am start " + PACKAGE_NAME))
+                    .waitForFinish();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -385,13 +372,19 @@ public class XposedUtils {
         }
     }
 
-    public static void CommandWaitToFinish(Command command) {
+    public static boolean isModuleActive() {
+        return false;
+    }
+
+    public static void reloadResource() {
+
+    }
+
+    public static void reboot() {
         try {
-            while (!command.isFinished()) {
-                Thread.sleep(50);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            Runtime.getRuntime().exec("su");
+            Runtime.getRuntime().exec("reboot");
+        } catch (IOException e) {
         }
     }
 }

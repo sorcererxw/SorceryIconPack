@@ -105,5 +105,4 @@ public class AutoLoadRecyclerView extends RecyclerView implements LoadFinishCall
             }
         }
     }
-
 }

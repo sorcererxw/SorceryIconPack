@@ -232,7 +232,7 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                                 "rm " + getExternalCacheDir()
                                         .getAbsolutePath() + "/current_theme.apk"));
                         Log.d(TAG, "contains");
-                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
+//                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
 //                        synchronized (tmp) {
 //                            while (!tmp.isFinished()) {
 //                                tmp.wait();
@@ -258,7 +258,7 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
 //                            }
 //                        }
                         Log.d(TAG, "not contains");
-                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
+//                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
 
                         themePackagePath = getExternalCacheDir() +
                                 "/current_theme.apk";

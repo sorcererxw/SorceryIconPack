@@ -53,12 +53,7 @@ public class IconFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         mGridView.setLayoutManager(layoutManager);
         mGridView.setHasFixedSize(true);
-        mGridView.setOnLoadMoreListener(new AutoLoadRecyclerView.OnLoadMoreListener() {
-            @Override
-            public void loadMore() {
 
-            }
-        });
         return view;
     }
 

@@ -225,6 +225,7 @@
 <item>dayima</item>
 <item>deviantart</item>
 <item>dgtle</item>
+<item>dgtle_alt</item>
 <item>dianping</item>
 <item>didaqingdan</item>
 <item>didi</item>
@@ -409,6 +410,7 @@
 <item>kingroot</item>
 <item>kk_launcher</item>
 <item>koubei_waimai</item>
+<item>koubei_waimai_alt</item>
 <item>koudaijizhang</item>
 <item>kuaikuaicha_xinhuazidian</item>
 <item>kuaipan</item>
@@ -571,6 +573,7 @@
 <item>paypal</item>
 <item>peel_smart_remote</item>
 <item>pengpai_news</item>
+<item>pianke</item>
 <item>pinglide</item>
 <item>pixolor</item>
 <item>playstation</item>
@@ -788,6 +791,7 @@
 <item>toca_kitchen</item>
 <item>toca_lab</item>
 <item>toca_mini</item>
+<item>tonghuashun</item>
 <item>touchpal</item>
 <item>tsf_launcher</item>
 <item>tudou</item>
@@ -808,6 +812,7 @@
 <item>wandoujia_qingzhuomian</item>
 <item>wandoujia_yilan</item>
 <item>wangxin</item>
+<item>wangxin_alt</item>
 <item>wangyi_cloudclass</item>
 <item>wangyi_huochepiao</item>
 <item>wangyi_news</item>

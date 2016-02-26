@@ -1,16 +1,20 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -22,6 +26,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
@@ -52,7 +57,7 @@ import java.util.concurrent.TimeoutException;
 
 public class LabActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
-    private static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
+    public static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private SharedPreferences mPrefs;
     private static final String TAG = "SIP/Lab";
     private Context mContext;
@@ -65,6 +70,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     private Button mXposedApplyButton;
     private Button mXposedCloseButton;
     private Button mXposedRefreshButton;
+    private Button mXposedRebootButton;
     private ProgressDialog mProgressDialog;
 
     @Override
@@ -78,6 +84,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedApplyButton = (Button) findViewById(R.id.button_lab_xposed_apply);
         mXposedCloseButton = (Button) findViewById(R.id.button_lab_xposed_close);
         mXposedRefreshButton = (Button) findViewById(R.id.button_lab_xposed_refresh);
+        mXposedRebootButton = (Button) findViewById(R.id.button_lab_xposed_reboot);
         mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
 
         setSupportActionBar(mToolbar);
@@ -92,6 +99,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedApplyButton.setOnClickListener(this);
         mXposedCloseButton.setOnClickListener(this);
         mXposedRefreshButton.setOnClickListener(this);
+        mXposedRebootButton.setOnClickListener(this);
 
         if (mActive) {
             mXposedStateTextView.setText(getString(R.string.global_state_active));
@@ -99,6 +107,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             mXposedApplyButton.setEnabled(false);
             mXposedRefreshButton.setEnabled(true);
             mXposedCloseButton.setEnabled(true);
+            mXposedRebootButton.setEnabled(true);
         } else {
             if (RootTools.isRootAvailable()) {
                 mXposedStateTextView.setText(getString(R.string.global_state_not_active));
@@ -106,18 +115,110 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                 mXposedApplyButton.setEnabled(true);
                 mXposedRefreshButton.setEnabled(false);
                 mXposedCloseButton.setEnabled(false);
+                mXposedRebootButton.setEnabled(false);
             } else {
                 mXposedStateTextView.setText(getString(R.string.global_state_not_root));
                 mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
                 mXposedApplyButton.setEnabled(false);
                 mXposedRefreshButton.setEnabled(false);
                 mXposedCloseButton.setEnabled(false);
+                mXposedRebootButton.setEnabled(false);
             }
         }
         if (Build.VERSION.SDK_INT >= 23) {
             PermissionsHelper.requestWriteExternalStorage(this);
         }
     }
+/*
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        refreshThemeList();
+    }
+
+    private void refreshThemeList() {
+        if (!this.mIsRefreshingThemeList) {
+            this.mIsRefreshingThemeList = true;
+            this.mThemePackagesList.clear();
+            this.mThemeList.clear();
+            this.mThemePackages.clear();
+            this.mThemeList.add("\u7cfb\u7edf\u9ed8\u8ba4");
+            this.mThemePackages.add(null);
+            new Thread(new Runnable() {
+                public void run() {
+                    final ArrayList<ApplicationInfo> themePackages = new ArrayList();
+                    loadThemeListFor(themePackages,
+                            "android.intent.action.MAIN",
+                            "com.anddoes.launcher.THEME");
+                    loadThemeListFor(themePackages,
+                            "org.adw.launcher.THEMES",
+                            "android.intent.category.DEFAULT");
+                    loadThemeListFor(themePackages,
+                            "android.intent.action.MAIN",
+                            "com.fede.launcher.THEME_ICONPACK");
+                    loadThemeListFor(themePackages,
+                            "ginlemon.smartlauncher.THEMES",
+                            "android.intent.category.DEFAULT");
+                    loadThemeListFor(themePackages,
+                            "com.gau.go.launcherex.theme",
+                            "android.intent.category.DEFAULT");
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            mThemePackages.addAll(themePackages);
+                            if (mThemeAdapter != null) {
+                                mThemeAdapter.notifyDataSetChanged();
+                            }
+                            if (this.mReApplyTheme) {
+                                this.mApplyBtn.callOnClick();
+                                this.mReApplyTheme = false;
+                            }
+                            mIsRefreshingThemeList = false;
+                            setSelectedTheme(mCurrentSetThemeIndex);
+                        }
+                    });
+                }
+            }).start();
+        }
+    }
+
+    private void loadThemeListFor(ArrayList<ApplicationInfo> themePackages, String intentName,
+                                  String intentCat) {
+        PackageManager pm = getPackageManager();
+        try {
+            Intent intent = new Intent(intentName);
+            intent.addCategory(intentCat);
+            List<ResolveInfo> themes = pm.queryIntentActivities(intent, 0);
+            for (int i = 0; i < themes.size(); i++) {
+                try {
+                    String packageName = ((ResolveInfo) themes.get(i)).activityInfo.packageName;
+                    String themeName = ((ResolveInfo) themes.get(i)).loadLabel(pm).toString();
+                    ApplicationInfo appInfo = pm.getApplicationInfo(packageName, PackageManager
+                            .GET_META_DATA);
+                    if (!this.mThemePackagesList.contains(packageName)) {
+                        Resources themeRes =
+                                getPackageManager().getResourcesForApplication(packageName);
+                        if (themeRes.getIdentifier("appfilter", "xml", packageName) == 0) {
+                            InputStream is = themeRes.getAssets().open("appfilter.xml");
+                            if (is != null) {
+                                is.close();
+                            }
+                        }
+                        if (packageName.equals(this.mCurrentSetTheme)) {
+                            themeName = themeName + " *";
+                            this.mCurrentSetThemeIndex = this.mThemeList.size();
+                        }
+                        this.mThemePackagesList.add(packageName);
+                        this.mThemeList.add(themeName);
+                        themePackages.add(appInfo);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e2) {
+            e2.printStackTrace();
+        }
+    }
+*/
 
     /**
      * Called when a view has been clicked.
@@ -151,10 +252,25 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
             mXposedApplyButton.setEnabled(true);
             mXposedCloseButton.setEnabled(false);
-        }else if(id==R.id.button_lab_xposed_refresh){
+            mXposedRefreshButton.setEnabled(false);
+            mXposedRebootButton.setEnabled(false);
+        } else if (id == R.id.button_lab_xposed_refresh) {
 //            XposedUtils.killLauncher();
 //            XposedUtils.clearNovaCache2(getPackageManager());
-            XposedUtils.killLauncher(getPackageManager());
+            XposedUtils.killAll(
+                    (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
+        } else if (id == R.id.button_lab_xposed_reboot) {
+            MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+            builder.title(getString(R.string.action_reboot) + "?");
+            builder.positiveText(getString(R.string.yes));
+            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+                @Override
+                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                    XposedUtils.reboot();
+                }
+            });
+            builder.negativeText(getString(R.string.no));
+            builder.show();
         }
     }
 
@@ -166,6 +282,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedApplyButton.setEnabled(false);
         mXposedCloseButton.setEnabled(true);
         mXposedRefreshButton.setEnabled(true);
+        mXposedRebootButton.setEnabled(true);
         mProgressDialog.dismiss();
         MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
     }

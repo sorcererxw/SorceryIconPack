@@ -71,7 +71,7 @@
     <string name="pref_global_load_title">全局加载</string>
     <string name="pref_global_hint">目前还在测试, 将在下个大版本更新中启用</string>
     <string name="cancel_request">取消图标申请?</string>
-    <string name="yes">是的</string>
+    <string name="yes">是</string>
     <string name="select_app">选择应用</string>
     <string name="select_all">全选</string>
     <string name="no">不</string>
@@ -104,4 +104,7 @@
     <string name="job_icon_design">图标设计</string>
     <string name="contributor">贡献者</string>
     <string name="action_refresh">强制刷新</string>
+    <string name="global_load_package_add_notify">重启以显示新应用的sorcery图标</string>
+    <string name="action_soft_reboot">软重启</string>
+    <string name="action_reboot">重启设备</string>
 </resources>
