@@ -25,7 +25,6 @@
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="4dp">
 
             <RelativeLayout
@@ -38,26 +37,26 @@
                     android:id="@+id/textView_lab_xposed_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Xposed"
+                    android:text="@string/pref_global_load_title"
                     android:textColor="@color/title"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
 
                 <View
-                    android:layout_marginRight="32dp"
                     android:id="@+id/view_lab_xposed_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@id/textView_lab_xposed_title"
-                    android:background="@color/grey_300"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginRight="32dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/grey_300"/>
 
                 <LinearLayout
                     android:id="@+id/linearLayout_lab_xposed_state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_below="@id/view_lab_xposed_line"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -97,30 +96,38 @@
                     android:textStyle="bold"/>
 
                 <LinearLayout
-                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView_lab_xposed_attention"
+                    android:layout_marginTop="16dp"
                     android:gravity="right"
                     android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/button_lab_xposed_refresh"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:text="@string/action_refresh"
+                        android:textSize="16sp"/>
 
                     <Button
-                        android:textSize="16sp"
                         android:id="@+id/button_lab_xposed_close"
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:text="@string/action_close"/>
+                        android:text="@string/action_close"
+                        android:textSize="16sp"/>
 
                     <Button
-                        android:textSize="16sp"
                         android:id="@+id/button_lab_xposed_apply"
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/action_apply"/>
+                        android:text="@string/action_apply"
+                        android:textSize="16sp"/>
 
                 </LinearLayout>
             </RelativeLayout>

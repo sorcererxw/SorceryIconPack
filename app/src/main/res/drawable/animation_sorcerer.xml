@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/sorcerer_1" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_2" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_3" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_4" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_5" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_6" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_7" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_8" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_9" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_10" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_11" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_12" android:duration="28"/>
+    <item android:drawable="@drawable/sorcerer_13" android:duration="28"/>
+
+</animation-list>

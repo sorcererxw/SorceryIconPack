@@ -10,4 +10,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sorcerer.sorcery.iconpack.ui.activities.SplashDonatedActivity">
 
+
 </RelativeLayout>

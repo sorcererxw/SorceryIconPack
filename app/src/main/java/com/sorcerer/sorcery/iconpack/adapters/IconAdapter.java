@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;

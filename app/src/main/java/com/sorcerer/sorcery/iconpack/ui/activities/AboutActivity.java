@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -47,13 +48,13 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        ContributorCard sorcerer = (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
-        sorcerer.setAvatar(getResources().getDrawable(R.drawable.sorcerer));
+        final ContributorCard sorcerer = (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
+        sorcerer.setAnimAvatar(getResources().getDrawable(R.drawable.animation_sorcerer));
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(
                 getString(R.string.job_developer) + " & " + getString(R.string.job_icon_design));
-        sorcerer.setDescribe("hi, I'm Sorcerer.");
-        sorcerer.setGithub(Uri.parse("https://github.com/sorcererxw"));
+//        sorcerer.setDescribe("hi, I'm Sorcerer.");
+//        sorcerer.setGithub(Uri.parse("https://github.com/sorcererxw"));
         sorcerer.setWeibo(Uri.parse("http://weibo.com/u/2262804212"));
 
         ContributorCard mozartjac = (ContributorCard) findViewById(R.id.contributorCard_mozartjac);

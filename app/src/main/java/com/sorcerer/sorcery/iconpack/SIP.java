@@ -32,6 +32,7 @@ public class SIP extends Application {
     /**
      * 初始化ImageLoader
      */
+
     private void initImageLoader(Context context) {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .threadPriority(Thread.NORM_PRIORITY - 2)

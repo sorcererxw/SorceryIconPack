@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -49,8 +51,17 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.imageView_test);
         mContext = this;
 
-        mTestButton.setOnClickListener(xmlListener);
+        mTestButton.setOnClickListener(xmlAnimListener);
     }
+
+    private View.OnClickListener xmlAnimListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Drawable drawable = getResources().getDrawable(R.drawable.animation_sorcerer);
+            mImageView.setImageDrawable(drawable);
+            ((AnimationDrawable) mImageView.getDrawable()).start();
+        }
+    };
 
 //    private View.OnClickListener showListDialog = new View.OnClickListener() {
 //        @Override
@@ -104,8 +115,9 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
     private View.OnClickListener bitmapListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            File file = new File("/data/data/com.sorcerer.sorcery.iconpack/cache/icons/com.google" +
-                    ".android.apps.paidtasks_drawable_google_opinion_rewards");
+            File file =
+                    new File("/data/data/com.sorcerer.sorcery.iconpack/cache/icons/com.google" +
+                            ".android.apps.paidtasks_drawable_google_opinion_rewards");
             Bitmap bitmap = BitmapFactory
                     .decodeFile("/data/data/com.sorcerer.sorcery.iconpack/cache/icons/" +
                             ((EditText) findViewById(R.id.editText_test)).getText().toString());

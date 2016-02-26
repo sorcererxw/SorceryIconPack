@@ -22,4 +22,6 @@
 
     <dimen name="activity_scrollview_size">300dp</dimen>
 
+    <dimen name="contributor_link_icon_size">32dp</dimen>
+
 </resources>

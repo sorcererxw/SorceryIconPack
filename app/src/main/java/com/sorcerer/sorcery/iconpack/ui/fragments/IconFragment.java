@@ -18,6 +18,8 @@ import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
 
 public class IconFragment extends Fragment {
 
+    private int maxCol = 8;
+
     private int mFlag;
     public static final int FLAG_NEW = 1;
     public static final int FLAG_ALL = 0;
@@ -74,7 +76,9 @@ public class IconFragment extends Fragment {
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.icon_grid_item_size) + getResources()
                 .getDimension(R.dimen.icon_grid_item_margin);
-        return (int) (size.x / s);
+
+        int res = (int) (size.x / s);
+        return res > maxCol ? maxCol : res;
     }
 
     public RecyclerView getRecyclerView() {

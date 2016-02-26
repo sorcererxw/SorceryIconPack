@@ -1,8 +1,5 @@
 package com.sorcerer.sorcery.iconpack.xposed;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,16 +9,10 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.xposed.theme.IconMaskItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 
@@ -53,11 +44,9 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
         mActive = mPrefs.getBoolean("pref_global_load", false);
         if (mActive) {
             if (action.equals(Intent.ACTION_MY_PACKAGE_REPLACED)) {
-//                Toast.makeText(context, action, Toast.LENGTH_SHORT).show();
                 reapply(context);
-//            Toast.makeText(context, "added", Toast.LENGTH_SHORT).show();
                 String installedPkgName = "com.sorcerer.sorcery.iconpack";
-//                Log.d(TAG, "\tApp Name: " + installedPkgName);
+
                 PackageManager pm = context.getPackageManager();
                 SharedPreferences prefs =
                         context.getSharedPreferences(SHARED_PREFERENCE_NAME,
@@ -71,7 +60,6 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                 if (themePackageName != null && themePackagePath != null &&
                         new File(themePackagePath).exists()) {
                     Log.d(TAG, "start");
-                    Intent intent2;
 //                    if (themePackageName.equals(installedPkgName)) {
 //                        if (prefs.getBoolean("restartNotification", true)) {
 //                            intent2 = new Intent(context, MainActivity.class);
@@ -98,20 +86,7 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                         ApplicationInfo themePackage =
                                 pm.getApplicationInfo(themePackageName, 128);
                         Resources r = pm.getResourcesForApplication(themePackage.packageName);
-//                        IconMaskItem mThemeIconMask = null;
-//                        try {
-//                            int shaderRes = r.getIdentifier("shader", "xml", themePackageName);
-//                            if (shaderRes != 0) {
-//                                mThemeIconShader = IconShader.parseXml(r.getXml(shaderRes));
-//                            }
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                        if (prefs.getString("theme_icon_mask", null) != null) {
-//                            mThemeIconMask = (IconMaskItem) gson
-//                                    .fromJson(prefs.getString("theme_icon_mask", null),
-//                                            IconMaskItem.class);
-//                        }
+
                         if (r.getIdentifier("appfilter", "xml", themePackage.packageName) ==
                                 0) {
                             InputStream istr = r.getAssets().open("appfilter.xml");
@@ -256,7 +231,6 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                         xrp2 = r.getXml(r
                                 .getIdentifier("appfilter", "xml", themePackage.packageName));
                     }
-//                    editor.putString("theme_icon_mask", null);
                     for (Map.Entry<String, ?> entry : mPrefs.getAll()
                             .entrySet()) {
                         if (((String) entry.getKey()).contains("theme_icon_for_")) {
@@ -337,5 +311,4 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
             }
         }).start();
     }
-
 }

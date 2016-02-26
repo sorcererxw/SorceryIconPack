@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
@@ -71,30 +72,33 @@
                 android:gravity="right">
 
                 <ImageView
-                    android:background="?android:attr/selectableItemBackground"
                     android:id="@+id/imageView_contributor_github"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/contributor_link_icon_size"
+                    android:layout_height="@dimen/contributor_link_icon_size"
+                    android:layout_margin="4dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/github_icon"
-                    android:layout_margin="4dp"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    tools:targetApi="lollipop"/>
 
                 <ImageView
-                    android:background="?android:attr/selectableItemBackground"
                     android:id="@+id/imageView_contributor_weibo"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/weibo_icon"
+                    android:layout_width="@dimen/contributor_link_icon_size"
+                    android:layout_height="@dimen/contributor_link_icon_size"
                     android:layout_margin="4dp"
-                    android:visibility="gone"/>
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/weibo_icon"
+                    android:visibility="gone"
+                    tools:targetApi="lollipop"/>
 
                 <ImageView
-                    android:background="?android:attr/selectableItemBackground"
                     android:id="@+id/imageView_contributor_email"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/contributor_link_icon_size"
+                    android:layout_height="@dimen/contributor_link_icon_size"
                     android:layout_margin="4dp"
-                    android:visibility="gone"/>
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:visibility="gone"
+                    tools:targetApi="lollipop"/>
 
             </LinearLayout>
         </LinearLayout>

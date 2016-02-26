@@ -187,8 +187,6 @@
         <activity
             android:name=".ui.activities.TestActivity"
             android:theme="@style/SubActivity"/>
-        <activity android:name=".ui.activities.XposedActivity">
-        </activity>
         <activity
             android:name=".ui.activities.LabActivity"
             android:label="@string/nav_item_lab"

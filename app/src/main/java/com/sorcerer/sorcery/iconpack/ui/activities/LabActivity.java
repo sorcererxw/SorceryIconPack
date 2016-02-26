@@ -64,6 +64,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     private TextView mXposedAttentionTextView;
     private Button mXposedApplyButton;
     private Button mXposedCloseButton;
+    private Button mXposedRefreshButton;
     private ProgressDialog mProgressDialog;
 
     @Override
@@ -76,10 +77,13 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedAttentionTextView = (TextView) findViewById(R.id.textView_lab_xposed_attention);
         mXposedApplyButton = (Button) findViewById(R.id.button_lab_xposed_apply);
         mXposedCloseButton = (Button) findViewById(R.id.button_lab_xposed_close);
+        mXposedRefreshButton = (Button) findViewById(R.id.button_lab_xposed_refresh);
         mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
 
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         mContext = this;
         mPrefs = getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
@@ -87,22 +91,26 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
 
         mXposedApplyButton.setOnClickListener(this);
         mXposedCloseButton.setOnClickListener(this);
+        mXposedRefreshButton.setOnClickListener(this);
 
         if (mActive) {
             mXposedStateTextView.setText(getString(R.string.global_state_active));
             mXposedStateTextView.setTextColor(getResources().getColor(R.color.green_500));
             mXposedApplyButton.setEnabled(false);
+            mXposedRefreshButton.setEnabled(true);
             mXposedCloseButton.setEnabled(true);
         } else {
             if (RootTools.isRootAvailable()) {
                 mXposedStateTextView.setText(getString(R.string.global_state_not_active));
                 mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
                 mXposedApplyButton.setEnabled(true);
+                mXposedRefreshButton.setEnabled(false);
                 mXposedCloseButton.setEnabled(false);
             } else {
                 mXposedStateTextView.setText(getString(R.string.global_state_not_root));
                 mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
                 mXposedApplyButton.setEnabled(false);
+                mXposedRefreshButton.setEnabled(false);
                 mXposedCloseButton.setEnabled(false);
             }
         }
@@ -133,6 +141,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             }
             mProgressDialog = new ProgressDialog(this);
             mProgressDialog.setMessage("opening...");
+            mProgressDialog.setCanceledOnTouchOutside(false);
             mProgressDialog.show();
             tryAndApplyIcon(getApplicationInfo());
         } else if (id == R.id.button_lab_xposed_close) {
@@ -142,6 +151,10 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
             mXposedApplyButton.setEnabled(true);
             mXposedCloseButton.setEnabled(false);
+        }else if(id==R.id.button_lab_xposed_refresh){
+//            XposedUtils.killLauncher();
+//            XposedUtils.clearNovaCache2(getPackageManager());
+            XposedUtils.killLauncher(getPackageManager());
         }
     }
 
@@ -152,6 +165,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedStateTextView.setTextColor(getResources().getColor(R.color.green_500));
         mXposedApplyButton.setEnabled(false);
         mXposedCloseButton.setEnabled(true);
+        mXposedRefreshButton.setEnabled(true);
         mProgressDialog.dismiss();
         MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
     }
@@ -191,59 +205,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             Toast.makeText(this, "need root access!", Toast.LENGTH_SHORT).show();
             return false;
         }
-//        if (this.mInstallStep < 2 && appIsInstalledInMountASEC()) {
-//            this.mInstallStep = 2;
-//        }
-//        if (!(this.mInstallStep >= 3 || appIsInstalledInMountASEC() || checkForXposedInstaller())) {
-//            this.mInstallStep = 3;
-//        }
-//        if (this.mInstallStep < 4 && checkForXposedInstaller() && !Utils
-// .checkIfModuleIsActivated(getPackageName())) {
-//            this.mInstallStep = 4;
-//        }
-//        if (!appIsInstalledInMountASEC() && checkForXposedInstaller() && Utils.checkIfModuleIsActivated(getPackageName())) {
-//            this.mInstallStep = 5;
-//        }
         if (RootTools.isAccessGiven()) {
-//            if (this.mInstallStepBeforePause != this.mInstallStep) {
-//                switch (this.mInstallStep) {
-//                    case TestHandler.ACTION_HIDE /*2*/:
-//                        PromptMoveAppDialog.newInstance().show(getFragmentManager(), "dialog");
-//                        break;
-//                    case TestHandler.ACTION_DISPLAY /*3*/:
-//                        PromptInstallXposedDialog.newInstance().show(getFragmentManager(), "dialog");
-//                        break;
-//                    case TestHandler.ACTION_PDISPLAY /*4*/:
-//                        PromptActivateModuleDialog.newInstance(true).show(getFragmentManager(), "dialog");
-//                        break;
-//                    case 5:
-//                        try {
-//                            Utils.copyAsset(this, "XposedBridge.jar", getExternalCacheDir().getAbsolutePath() + "/XposedBridge.jar.newversion");
-//                            RootTools.getShell(true).add(new CommandCapture(0, "cat " +
-//                                    getExternalCacheDir().getAbsolutePath() + "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar.newversion", "chmod 655 /data/xposed/XposedBridge.jar.newversion", "cat " + getExternalCacheDir().getAbsolutePath() + "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar", "chmod 655 /data/xposed/XposedBridge.jar"));
-//                            break;
-//                        } catch (Exception e2) {
-//                            e2.printStackTrace();
-//                            break;
-//                        }
-//                }
-//            }
-
-//            try {
-//                Utils.copyAsset(this,
-//                        "XposedBridge.jar",
-//                        getExternalCacheDir().getAbsolutePath() + "/XposedBridge.jar.newversion");
-//                RootTools.getShell(true).add(new CommandCapture(0,
-//                        "cat " +
-//                                getExternalCacheDir().getAbsolutePath() +
-//                                "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar.newversion",
-//                        "chmod 655 /data/xposed/XposedBridge.jar.newversion",
-//                        "cat " + getExternalCacheDir().getAbsolutePath() +
-//                                "/XposedBridge.jar.newversion > /data/xposed/XposedBridge.jar",
-//                        "chmod 655 /data/xposed/XposedBridge.jar"));
-//            } catch (Exception e2) {
-//                e2.printStackTrace();
-//            }
             if (!new File(getCacheDir().getAbsolutePath() + "/icons").exists()) {
                 try {
                     RootTools.getShell(true).add(new CommandCapture(0,
@@ -289,13 +251,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                                         "/cache/icons/*",
                                 "rm " + getExternalCacheDir()
                                         .getAbsolutePath() + "/current_theme.apk"));
-                        Log.d(TAG, "contains");
-                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
-//                        synchronized (tmp) {
-//                            while (!tmp.isFinished()) {
-//                                tmp.wait();
-//                            }
-//                        }
+
                     } else {
                         Log.d(TAG,
                                 "Original Theme APK is at " + themePackage.sourceDir);
@@ -309,14 +265,6 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                                 "chmod 644 " + getExternalCacheDir()
                                         .getAbsolutePath() + "/current_theme.apk");
                         Command tmp = RootTools.getShell(true).add(commandCapture);
-
-//                        synchronized (tmp) {
-//                            while (!tmp.isFinished()) {
-//                                tmp.wait();
-//                            }
-//                        }
-                        Log.d(TAG, "not contains");
-                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
 
                         themePackagePath = getExternalCacheDir() +
                                 "/current_theme.apk";
@@ -343,7 +291,6 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                         xrp2 = r.getXml(r
                                 .getIdentifier("appfilter", "xml", themePackage.packageName));
                     }
-//                    editor.putString("theme_icon_mask", null);
                     for (Map.Entry<String, ?> entry : mPrefs.getAll()
                             .entrySet()) {
                         if (((String) entry.getKey()).contains("theme_icon_for_")) {

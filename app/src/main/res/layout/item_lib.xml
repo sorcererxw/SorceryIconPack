@@ -34,11 +34,12 @@
     </LinearLayout>
 
     <ImageView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:alpha="0.8"
+        android:alpha="0.5"
         android:src="@drawable/ic_launch_black_24dp"/>
     </RelativeLayout>
 </FrameLayout>

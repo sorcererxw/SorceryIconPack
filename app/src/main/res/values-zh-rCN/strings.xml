@@ -103,4 +103,5 @@
     <string name="job_developer">开发者</string>
     <string name="job_icon_design">图标设计</string>
     <string name="contributor">贡献者</string>
+    <string name="action_refresh">强制刷新</string>
 </resources>

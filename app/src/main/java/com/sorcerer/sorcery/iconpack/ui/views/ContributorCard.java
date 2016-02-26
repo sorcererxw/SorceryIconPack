@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
@@ -50,6 +51,12 @@ public class ContributorCard extends FrameLayout {
     }
 
     private void init(Context context) {
+        setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         mContext = context;
         mView = LayoutInflater.from(mContext).inflate(R.layout.layout_contributor, null);
         addView(mView);
@@ -65,6 +72,12 @@ public class ContributorCard extends FrameLayout {
     public void setAvatar(Drawable drawable) {
         mAvatar.setVisibility(VISIBLE);
         mAvatar.setImageDrawable(drawable);
+    }
+
+    public void setAnimAvatar(Drawable drawable) {
+        mAvatar.setVisibility(VISIBLE);
+        mAvatar.setImageDrawable(drawable);
+        ((AnimationDrawable) mAvatar.getDrawable()).start();
     }
 
     public void setName(String name) {
