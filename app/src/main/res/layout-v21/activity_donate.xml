@@ -65,7 +65,7 @@
                     android:id="@+id/button_donate_alipay"
                     android:layout_width="@dimen/medium_button_width"
                     android:layout_height="@dimen/medium_button_height"
-                    android:background="@color/alipay"
+                    android:backgroundTint="@color/alipay"
                     android:text="@string/alipay"
                     android:textColor="@color/white"
                     android:textSize="16sp"/>
@@ -74,7 +74,7 @@
                     android:id="@+id/button_donate_wechat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/wechat"
+                    android:backgroundTint="@color/wechat"
                     android:text="@string/wechat"
                     android:textColor="@color/white"
                     android:visibility="gone"/>

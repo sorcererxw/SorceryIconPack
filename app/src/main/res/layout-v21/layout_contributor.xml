@@ -76,7 +76,7 @@
                     android:layout_width="@dimen/contributor_link_icon_size"
                     android:layout_height="@dimen/contributor_link_icon_size"
                     android:layout_margin="4dp"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/github_icon"
                     android:visibility="gone"/>
 
@@ -85,7 +85,7 @@
                     android:layout_width="@dimen/contributor_link_icon_size"
                     android:layout_height="@dimen/contributor_link_icon_size"
                     android:layout_margin="4dp"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/weibo_icon"
                     android:visibility="gone"/>
 
@@ -94,7 +94,7 @@
                     android:layout_width="@dimen/contributor_link_icon_size"
                     android:layout_height="@dimen/contributor_link_icon_size"
                     android:layout_margin="4dp"
-                    android:background="?android:attr/selectableItemBackground"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
                     android:visibility="gone"/>
 
             </LinearLayout>

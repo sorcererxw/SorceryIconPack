@@ -43,7 +43,19 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         new Thread(new Runnable() {
             @Override
             public void run() {
-                BP.init(getApplication(), getString(R.string.bmob_app_id));
+                try {
+                    BP.init(getApplication(), getString(R.string.bmob_app_id));
+                }catch (Exception e){
+                    e.printStackTrace();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(mActivity, "fail to load service", Toast.LENGTH_SHORT)
+                                    .show();
+                            findViewById(R.id.button_donate_alipay).setEnabled(false);
+                        }
+                    });
+                }
             }
         }).start();
 
