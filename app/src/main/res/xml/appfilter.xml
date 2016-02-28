@@ -237,7 +237,7 @@
         drawable="clock"/>
     <item
         component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer}"
-        drawable="clock"/>
+        drawable="sony_clock"/>
     <item
         component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}"
         drawable="email"/>
@@ -327,10 +327,10 @@
         drawable="phone"/>
     <item
         component="ComponentInfo{com.sec.android.app.dialertab/com.sec.android.app.dialertab.DialerTabActivity}"
-        drawable="phone"/>
+        drawable="samsung_phone"/>
     <item
         component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.DialerEntryActivity}"
-        drawable="phone"/>
+        drawable="sony_phone"/>
     <item
         component="ComponentInfo{com.android.phone/com.android.phone.DialtactsContactsEntryActivity}"
         drawable="phone"/>
@@ -360,7 +360,7 @@
         drawable="phone"/>
     <item
         component="ComponentInfo{com.android.htccontacts/com.android.htccontacts.DialerTabActivity}"
-        drawable="phone"/>
+        drawable="htc_phone"/>
     <item
         component="ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}"
         drawable="phone"/>
@@ -369,7 +369,7 @@
         drawable="phone"/>
     <item
         component="ComponentInfo{com.htc.contacts/com.htc.contacts.DialerTabActivity}"
-        drawable="phone"/>
+        drawable="htc_phone"/>
     <item
         component="ComponentInfo{com.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}"
         drawable="phone"/>

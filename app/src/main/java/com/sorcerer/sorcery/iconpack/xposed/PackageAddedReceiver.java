@@ -41,11 +41,19 @@ import java.util.Iterator;
  * Created by Sorcerer on 2016/2/26 0026.
  */
 public class PackageAddedReceiver extends BroadcastReceiver {
-
     private static final String TAG = "SIP/PAReceiver";
 
+    private static String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
+    private boolean mActive;
+    private SharedPreferences mPrefs;
 
     public void onReceive(Context context, Intent intent) {
+
+        mPrefs = context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_WORLD_READABLE);
+        mActive = mPrefs.getBoolean("pref_global_load", false);
+        if (mActive == false) {
+            return;
+        }
         String action = intent.getAction();
         Log.d(TAG, "PackageInstalledReceiver onReceive: " + action);
         if (action.equals("android.intent.action.PACKAGE_ADDED")) {

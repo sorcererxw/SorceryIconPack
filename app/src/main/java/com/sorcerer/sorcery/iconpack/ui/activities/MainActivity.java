@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.florent37.hollyviewpager.HollyViewPager;
 import com.github.florent37.hollyviewpager.HollyViewPagerConfigurator;
+import com.quinny898.library.persistentsearch.SearchBox;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
@@ -36,9 +37,12 @@ import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
 
+    private SearchBox mSearchBox;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private DrawerLayout mDrawerLayout;
@@ -117,6 +121,19 @@ public class MainActivity extends AppCompatActivity implements
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
+
+        mSearchBox = (SearchBox) findViewById(R.id.searchBox_main_icon);
+        mSearchBox.setHint(getString(R.string.app_name));
+        mSearchBox.setLogoText(getString(R.string.app_name));
+        mSearchBox.setMenuListener(new SearchBox.MenuListener() {
+            @Override
+            public void onMenuClick() {
+                mDrawerLayout.openDrawer(mNavigationView);
+            }
+        });
+        mSearchBox.setLogoTextColor(getResources().getColor(R.color.grey_500));
+
+
 
         UpdateHelper updateHelper =
                 new UpdateHelper(this);
