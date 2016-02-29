@@ -108,4 +108,6 @@
     <string name="action_soft_reboot">软重启</string>
     <string name="action_reboot">重启设备</string>
     <string name="action_search">搜索</string>
+    <string name="action_like">赞</string>
+    <string name="action_dislike">踩</string>
 </resources>

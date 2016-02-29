@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.nostra13.universalimageloader.utils.L;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.IconBmobHelper;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 
 /**
@@ -17,6 +20,7 @@ import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 public class LikeLayout extends FrameLayout {
     public static final String PREF_NAME = "ICON_LIKE";
     private SharedPreferences mSharedPreferences;
+    private IconBmobHelper mIconBmobHelper;
     private String mName;
     private Context mContext;
     private boolean mBind;
@@ -25,8 +29,8 @@ public class LikeLayout extends FrameLayout {
 
     private ImageView mLikeImg;
     private ImageView mDislikeImg;
-    private FrameLayout mLikeLayout;
-    private FrameLayout mDislikeLayout;
+    private LinearLayout mLikeLayout;
+    private LinearLayout mDislikeLayout;
 
     public LikeLayout(Context context) {
         super(context);
@@ -49,16 +53,17 @@ public class LikeLayout extends FrameLayout {
         this.addView(view);
         mLikeImg = (ImageView) view.findViewById(R.id.imageView_icon_like);
         mDislikeImg = (ImageView) view.findViewById(R.id.imageView_icon_dislike);
-        mLikeLayout = (FrameLayout) view.findViewById(R.id.frameLayout_icon_like);
-        mDislikeLayout = (FrameLayout) view.findViewById(R.id.frameLayout_icon_dislike);
+        mLikeLayout = (LinearLayout) view.findViewById(R.id.linerLayout_icon_like);
+        mDislikeLayout = (LinearLayout) view.findViewById(R.id.linerLayout_icon_dislike);
 
         mLikeLayout.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 mFlag = 1;
                 handleFlag(mFlag);
-                if(mBind){
+                if (mBind) {
                     mSharedPreferences.edit().putInt(mName, mFlag).commit();
+                    mIconBmobHelper.like(mName, true);
                 }
             }
         });
@@ -68,8 +73,9 @@ public class LikeLayout extends FrameLayout {
             public void onClick(View v) {
                 mFlag = -1;
                 handleFlag(mFlag);
-                if(mBind){
+                if (mBind) {
                     mSharedPreferences.edit().putInt(mName, mFlag).commit();
+                    mIconBmobHelper.like(mName, false);
                 }
             }
         });
@@ -78,6 +84,7 @@ public class LikeLayout extends FrameLayout {
     public void bindIcon(String name) {
         mBind = true;
         mName = name;
+        mIconBmobHelper = new IconBmobHelper(mContext);
         mSharedPreferences = mContext.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         mFlag = mSharedPreferences.getInt(name, 0);
         handleFlag(mFlag);

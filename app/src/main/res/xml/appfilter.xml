@@ -60,7 +60,7 @@
         drawable="chrome"/>
     <item
         component="ComponentInfo{com.microsoft.cortana/com.microsoft.bing.dss.SplashActivity}"
-        drawable="cortana"/>
+        drawable="microsoft_cortana"/>
     <item
         component="ComponentInfo{com.evernote/com.evernote.ui.HomeActivity}"
         drawable="evernote"/>
@@ -129,7 +129,7 @@
         drawable="youtube"/>
     <item
         component="ComponentInfo{com.tencent.mm/com.tencent.mm.ui.LauncherUI}"
-        drawable="wechat"/>
+        drawable="tencent_wechat"/>
     <item
         component="ComponentInfo{com.sina.weibo/com.sina.weibo.SplashActivity}"
         drawable="weibo"/>
@@ -447,7 +447,7 @@
         drawable="wikipedia_beta"/>
     <item
         component="ComponentInfo{com.tencent.mm/com.tencent.mm.ui.LauncherUI}"
-        drawable="wechat"/>
+        drawable="tencent_wechat"/>
     <item
         component="ComponentInfo{com.sina.weibo/com.sina.weibo.SplashActivity}"
         drawable="weibo"/>
@@ -534,7 +534,7 @@
         drawable="xposed"/>
     <item
         component="ComponentInfo{com.microsoft.skydrive/com.microsoft.skydrive.MainActivity}"
-        drawable="onedrive"/>
+        drawable="microsoft_onedrive"/>
     <item
         component="ComponentInfo{cn.wps.moffice/cn.wps.moffice.documentmanager.PreStartActivity}"
         drawable="wps"/>
@@ -777,16 +777,16 @@
         drawable="baidu_pan"/>
     <item
         component="ComponentInfo{com.baidu.input/com.baidu.input.ImeMainConfigActivity}"
-        drawable="baidu_input"/>
+        drawable="baidu_keyboard"/>
     <item
         component="ComponentInfo{com.baidu.input/com.baidu.input.ConfigActivity}"
-        drawable="baidu_input"/>
+        drawable="baidu_keyboard"/>
     <item
         component="ComponentInfo{com.baidu.padinput/com.baidu.padinput.ConfigActivity}"
-        drawable="baidu_input"/>
+        drawable="baidu_keyboard"/>
     <item
         component="ComponentInfo{com.taobao.taobao/com.taobao.tao.Welcome}"
-        drawable="taobao"/>
+        drawable="ali_taobao"/>
     <item
         component="ComponentInfo{com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity}"
         drawable="netease_music"/>
@@ -804,7 +804,7 @@
         drawable="zhihu"/>
     <item
         component="ComponentInfo{com.taobao.fleamarket/com.taobao.fleamarket.activity.InitActivity}"
-        drawable="xianyu"/>
+        drawable="ali_xianyu"/>
     <item
         component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}"
         drawable="amazon"/>
@@ -852,7 +852,7 @@
         drawable="xinstaller"/>
     <item
         component="ComponentInfo{com.youdao.dict/com.youdao.dict.activity.LaunchActivity}"
-        drawable="youdaodict"/>
+        drawable="netease_youdao_dict"/>
     <item
         component="ComponentInfo{com.oneplus.bbs/com.oneplus.bbs.ui.activity.TutorialActivity}"
         drawable="oneplus_community"/>
@@ -894,13 +894,13 @@
         drawable="reaper"/>
     <item
         component="ComponentInfo{com.taobao.shoppingstreets/com.taobao.shoppingstreets.activity.InitActivity}"
-        drawable="miaojie"/>
+        drawable="ali_miaojie"/>
     <item
         component="ComponentInfo{com.sankuai.movie/com.sankuai.movie.welcome.Welcome}"
-        drawable="maoyan"/>
+        drawable="ali_maoyan"/>
     <item
         component="ComponentInfo{com.taobao.mobile.dipei/com.taobao.ecoupon.activity.SplashActivity}"
-        drawable="koubei_waimai"/>
+        drawable="ali_koubei_waimai"/>
     <item
         component="ComponentInfo{com.yek.android.kfc.activitys/com.yum.brandkfc.SplashAct}"
         drawable="kfc"/>
@@ -963,7 +963,7 @@
         drawable="changba"/>
     <item
         component="ComponentInfo{com.tencent.qqmusicpad/com.tencent.qqmusicpad.activity.AppStarterActivity}"
-        drawable="qq_music"/>
+        drawable="tencent_qq_music"/>
     <item
         component="ComponentInfo{com.zdworks.android.zdcalendar/com.zdworks.android.zdcalendar.ZDCalendarActivity}"
         drawable="zhengdian_rili"/>
@@ -1029,7 +1029,7 @@
         drawable="suning"/>
     <item
         component="ComponentInfo{com.alibaba.mobileim/com.alibaba.mobileim.SplashActivity}"
-        drawable="wangxin"/>
+        drawable="ali_wangxin"/>
     <item
         component="ComponentInfo{com.wenba.bangbang/com.wenba.bangbang.activity.CoverActivity}"
         drawable="xuebajun"/>
@@ -1047,7 +1047,7 @@
         drawable="meiyanxiangji"/>
     <item
         component="ComponentInfo{com.qq.reader/com.qq.reader.activity.SplashActivity}"
-        drawable="qq_read"/>
+        drawable="tencent_qq_read"/>
     <item
         component="ComponentInfo{com.MobileTicket/com.MobileTicket.MobileTicket}"
         drawable="a12306"/>
@@ -1332,22 +1332,22 @@
         drawable="jianshu"/>
     <item
         component="ComponentInfo{com.tencent.token/com.tencent.token.ui.LogoActivity}"
-        drawable="qq_secure"/>
+        drawable="tencent_qq_secure"/>
     <item
         component="ComponentInfo{com.netease.mail/com.netease.mobimail.activity.LaunchActivity}"
-        drawable="youxiangdashi"/>
+        drawable="netease_youxiangdashi"/>
     <item
         component="ComponentInfo{com.taobao.taobao/com.taobao.tao.welcome.Welcome}"
-        drawable="taobao"/>
+        drawable="ali_taobao"/>
     <item
         component="ComponentInfo{com.kk.dict/com.kk.dict.activity.SplashActivity}"
         drawable="kuaikuaicha_xinhuazidian"/>
     <item
         component="ComponentInfo{com.tencent.qqpinyin/com.tencent.qqpinyin.activity.GuideDialogActivity}"
-        drawable="qq_keyboard"/>
+        drawable="tencent_qq_keyboard"/>
     <item
         component="ComponentInfo{com.baidu.tieba/com.baidu.tieba.LogoActivity}"
-        drawable="tieba"/>
+        drawable="baidu_tieba"/>
     <item
         component="ComponentInfo{com.letv.android.client/com.letv.android.client.activity.SplashActivity}"
         drawable="letv"/>
@@ -1563,16 +1563,16 @@
         drawable="google_play_books"/>
     <item
         component="ComponentInfo{com.baidu.input/com.baidu.input.ImeAppMainActivity}"
-        drawable="baidu_input"/>
+        drawable="baidu_keyboard"/>
     <item
         component="ComponentInfo{com.smzdm.client.android/com.smzdm.client.android.activity.WelComeActivity}"
         drawable="smzdm"/>
     <item
         component="ComponentInfo{com.tencent.mtt/com.tencent.mtt.SplashActivity}"
-        drawable="qq_browser"/>
+        drawable="tencent_qq_browser"/>
     <item
         component="ComponentInfo{com.taobao.cun/com.taobao.cun.SplashActivity}"
-        drawable="taobao_nongcun"/>
+        drawable="ali_taobao_nongcun"/>
     <item
         component="ComponentInfo{ru.zdevs.zarchiver.pro/ru.zdevs.zarchiver.pro.ZArchiver}"
         drawable="zarchiver"/>
@@ -1740,7 +1740,7 @@
         drawable="lbe_pingxingkongjian"/>
     <item
         component="ComponentInfo{com.tencent.qqmusic/com.tencent.qqmusic.activity.AppStarterActivity}"
-        drawable="qq_music"/>
+        drawable="tencent_qq_music"/>
     <item
         component="ComponentInfo{com.kiloo.subwaysurf/com.idsky.android.impl.ui.IdskySplashActivity}"
         drawable="subway_surfers"/>
@@ -1761,7 +1761,7 @@
         drawable="kuaiya"/>
     <item
         component="ComponentInfo{com.microsoft.launcher/com.microsoft.launcher.EntryActivity}"
-        drawable="arrow_launcher"/>
+        drawable="microsoft_arrow_launcher"/>
     <item
         component="ComponentInfo{com.samsung.android.email.ui/com.samsung.android.email.ui.activity.MessageListXL}"
         drawable="samsung_email"/>
@@ -1776,7 +1776,7 @@
         drawable="lbe"/>
     <item
         component="ComponentInfo{com.youdao.note/com.youdao.note.activity2.SplashActivity}"
-        drawable="youdao_note"/>
+        drawable="netease_youdao_note"/>
     <item
         component="ComponentInfo{com.lastpass.lpandroid/com.lastpass.lpandroid.WebBrowserActivity}"
         drawable="lastpass"/>
@@ -1839,19 +1839,19 @@
         drawable="hupo_weather"/>
     <item
         component="ComponentInfo{com.netease.newsreader.activity/com.netease.nr.biz.ad.AdActivity}"
-        drawable="wangyi_news"/>
+        drawable="netease_news"/>
     <item
         component="ComponentInfo{tv.peel.app/com.peel.main.Main}"
         drawable="peel_smart_remote"/>
     <item
         component="ComponentInfo{com.qzone/com.tencent.sc.activity.SplashActivity}"
-        drawable="qzone"/>
+        drawable="tencent_qzone"/>
     <item
         component="ComponentInfo{com.kingroot.kinguser/com.kingroot.kinguser.activitys.SliderMainActivity}"
         drawable="kingroot"/>
     <item
         component="ComponentInfo{com.baidu.input_yijia/com.baidu.input_yijia.ImeMainConfigActivity}"
-        drawable="baidu_input"/>
+        drawable="baidu_keyboard"/>
     <item
         component="ComponentInfo{com.cootek.smartinputv5/com.cootek.smartinput5.GateActivity}"
         drawable="touchpal"/>
@@ -1878,16 +1878,16 @@
         drawable="baidu_nuomi"/>
     <item
         component="ComponentInfo{com.taobao.movie.android/com.taobao.movie.android.app.home.activity.SplashActivity}"
-        drawable="taobao_dianying"/>
+        drawable="ali_taobao_dianying"/>
     <item
         component="ComponentInfo{com.android.documentsui/com.android.documentsui.DocumentsActivity}"
         drawable="documents"/>
     <item
         component="ComponentInfo{com.tencent.lightalk/com.tencent.lightalk.SplashActivity}"
-        drawable="lightalk"/>
+        drawable="tencent_lightalk"/>
     <item
         component="ComponentInfo{com.webank.wemoney/com.webank.wemoney.MainActivity}"
-        drawable="weizhong_bank"/>
+        drawable="tencent_webank"/>
     <item
         component="ComponentInfo{de.robv.android.xposed.mods.appsettings/de.robv.android.xposed.mods.appsettings.XposedModActivity}"
         drawable="app_settings"/>
@@ -1899,10 +1899,10 @@
         drawable="xposed"/>
     <item
         component="ComponentInfo{com.netease.moneykeeper/com.netease.moneykeeper.ui.launch.LaunchActivity}"
-        drawable="wangyi_youqian"/>
+        drawable="netease_youqian"/>
     <item
         component="ComponentInfo{com.baidu.tieba_mini/com.baidu.tieba.LogoActivity}"
-        drawable="tieba"/>
+        drawable="baidu_tieba"/>
     <item
         component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}"
         drawable="email"/>
@@ -1998,7 +1998,7 @@
         drawable="officesuite"/>
     <item
         component="ComponentInfo{com.tencent.qqpim/com.tencent.qqpim.ui.QQPimAndroid}"
-        drawable="qq_sync"/>
+        drawable="tencent_qq_sync"/>
     <item
         component="ComponentInfo{com.sonyericsson.extras.liveware/com.sonyericsson.extras.liveware.ui.LaunchActivity}"
         drawable="sony_smart_connect"/>
@@ -2043,7 +2043,7 @@
         drawable="htc_scribble"/>
     <item
         component="ComponentInfo{com.baidu.tieba.noAD/com.baidu.tieba.LogoActivity}"
-        drawable="tieba"/>
+        drawable="baidu_tieba"/>
     <item
         component="ComponentInfo{com.jiongji.andriod.card/com.baicizhan.main.activity.LoadingPageActivity}"
         drawable="baicizhan"/>
@@ -2205,16 +2205,16 @@
         drawable="bilibili"/>
     <item
         component="ComponentInfo{com.youdao.dict/com.youdao.dict.activity.DictSplashActivity}"
-        drawable="yaodaodict"/>
+        drawable="netease_yaodao_dict"/>
     <item
         component="ComponentInfo{com.taobao.htao.android/com.taobao.htao.android.common.activity.MainDockerActivity}"
-        drawable="taobao"/>
+        drawable="ali_taobao"/>
     <item
         component="ComponentInfo{com.android.gallery3d/com.android.camera.CameraLauncher}"
         drawable="camera"/>
     <item
         component="ComponentInfo{com.netease.edu.study/com.netease.edu.study.activity.ActivityWelcome}"
-        drawable="wangyi_cloudclass"/>
+        drawable="netease_cloudclass"/>
     <item
         component="ComponentInfo{com.tencent.karaoke/com.tencent.karaoke.module.splash.ui.SplashBaseActivity}"
         drawable="quanminkge"/>
@@ -2226,7 +2226,7 @@
         drawable="google_goggles"/>
     <item
         component="ComponentInfo{com.baidu.tiebar/com.baidu.tieba.LogoActivity}"
-        drawable="tieba"/>
+        drawable="baidu_tieba"/>
     <item
         component="ComponentInfo{com.xunlei.downloadprovider/com.xunlei.downloadprovider.loading.LoadingActivity}"
         drawable="xunlei"/>
@@ -2391,7 +2391,7 @@
         drawable="xunfei_keyboard"/>
     <item
         component="ComponentInfo{com.wandoujia.eyepetizer/com.wandoujia.eyepetizer.ui.activity.LandingActivity}"
-        drawable="eyepetizer"/>
+        drawable="wandoujia_eyepetizer"/>
     <item
         component="ComponentInfo{net.zedge.android/net.zedge.android.Main}"
         drawable="zedge"/>
@@ -2412,7 +2412,7 @@
         drawable="gewala_movie"/>
     <item
         component="ComponentInfo{com.qq.qcloud/com.qq.qcloud.activity.WeiyunRootActivity}"
-        drawable="weiyun"/>
+        drawable="tencent_weiyun"/>
     <item
         component="ComponentInfo{com.tudou.android/com.tudou.ui.activity.WelcomeActivity}"
         drawable="tudou"/>
@@ -2424,22 +2424,22 @@
         drawable="welove"/>
     <item
         component="ComponentInfo{com.tencent.minihd.qq/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq_hd"/>
+        drawable="tencent_qq_hd"/>
     <item
         component="ComponentInfo{com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq_lite"/>
+        drawable="tencent_qq_lite"/>
     <item
         component="ComponentInfo{com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq_international"/>
+        drawable="tencent_qq_international"/>
     <item
         component="ComponentInfo{com.tencent.qqlite/com.tencent.qqlite.activity.SplashActivity}"
-        drawable="qq_lite"/>
+        drawable="tencent_qq_lite"/>
     <item
         component="ComponentInfo{com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq"/>
+        drawable="tencent_qq"/>
     <item
         component="ComponentInfo{com.tencent.mobileqqi/com.tencent.mobileqq.activity.SplashActivity}"
-        drawable="qq_international"/>
+        drawable="tencent_qq_international"/>
     <item
         component="ComponentInfo{android.zhibo8/android.zhibo8.ui.contollers.main.LaunchActivity}"
         drawable="zhiboba"/>
@@ -2508,7 +2508,7 @@
         drawable="microsoft_account"/>
     <item
         component="ComponentInfo{com.alibaba.android.rimet/com.alibaba.android.rimet.biz.SplashActivity}"
-        drawable="dingding"/>
+        drawable="ali_dingding"/>
     <item
         component="ComponentInfo{com.supercell.clashofclans.wdj/com.supercell.clashofclans.GameAppKunlun}"
         drawable="clash_of_clans"/>
@@ -2526,16 +2526,16 @@
         drawable="kaoyanbang"/>
     <item
         component="ComponentInfo{bingdic.android.activity/bingdic.android.activity.SplashscreenActivity}"
-        drawable="bing_dict"/>
+        drawable="microsoft_bing_dict"/>
     <item
         component="ComponentInfo{air.tv.douyu.android/tv.douyu.view.activity.SplashActivity}"
         drawable="douyu"/>
     <item
         component="ComponentInfo{com.youdao.hanyu/com.youdao.hanyu.activity.SplashActv}"
-        drawable="youdaodict"/>
+        drawable="netease_youdao_dict"/>
     <item
         component="ComponentInfo{com.youdao.translator/com.youdao.translator.activity.LaunchActivity}"
-        drawable="youdao_translator"/>
+        drawable="netease_youdao_translator"/>
     <item
         component="ComponentInfo{com.kibey.echo/com.kibey.echo.ui.account.EchoLoadingActivity}"
         drawable="echo"/>
@@ -2634,7 +2634,7 @@
         drawable="qufenqi"/>
     <item
         component="ComponentInfo{com.bingime.ime/com.bingime.wizard.SetupWizardActivity}"
-        drawable="bing_keyboard"/>
+        drawable="microsoft_bing_keyboard"/>
     <item
         component="ComponentInfo{com.duowan.kiwi/com.duowan.kiwi.simpleactivity.SplashActivity}"
         drawable="huya"/>
@@ -2652,7 +2652,7 @@
         drawable="zol"/>
     <item
         component="ComponentInfo{com.tmall.wireless/com.tmall.wireless.splash.TMSplashActivity}"
-        drawable="tmall"/>
+        drawable="ali_tmall"/>
     <item
         component="ComponentInfo{com.xwtec.sd.mobileclient/com.xwtec.sd.mobileclient.LoadingActivity}"
         drawable="a10086"/>
@@ -2718,7 +2718,7 @@
         drawable="ccb"/>
     <item
         component="ComponentInfo{com.tencent.androidqqmail/com.tencent.qqmail.LaucherActivity}"
-        drawable="qq_mail"/>
+        drawable="tencent_qq_mail"/>
     <item
         component="ComponentInfo{com.maimemo.android.momo/com.maimemo.android.momo.ui.MainActivity}"
         drawable="momobeidanci"/>
@@ -2739,7 +2739,7 @@
         drawable="lantern"/>
     <item
         component="ComponentInfo{com.netease.railwayticket/com.netease.railwayticket.activity.SplashActivity}"
-        drawable="wangyi_huochepiao"/>
+        drawable="netease_huochepiao"/>
     <item
         component="ComponentInfo{com.tumblr/com.tumblr.ui.activity.JumpoffActivity}"
         drawable="tumblr"/>
@@ -2821,18 +2821,18 @@
     <item
         component="ComponentInfo{com.pianke.client/com.pianke.client.ui.activity.SplashActivity}"
         drawable="pianke"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.MainActivity}"
+        drawable="icebox"/>
+    <item
+        component="ComponentInfo{com.umetrip.android.msky.app/com.umetrip.android.msky.activity.SplashActivity}"
+        drawable="hanglvzongheng"/>
+    <item
+        component="ComponentInfo{com.sds.android.ttpod/com.sds.android.ttpod.EntryActivity}"
+        drawable="ttpod"/>
+    <item
+        component="ComponentInfo{com.baidu.lbs.waimai/com.baidu.lbs.waimai.SplashActivity}"
+        drawable="baidu_waimai"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

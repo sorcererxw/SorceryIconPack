@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.adapters;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,8 @@ import java.util.List;
  * Created by Sorcerer on 2016/1/19 0019.
  */
 public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHolder> {
+
+    private static final String TAG = "IconAdapter";
 
     private String[] mIconNames;
     private Context mContext;
@@ -55,7 +58,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         final String packageName = mContext.getPackageName();
         addIcons(mContext.getResources(), packageName, flag);
 
+        Log.d(TAG, "" + mIconNames.length);
+        Log.d(TAG, "" + mItems.size());
+
         for (int i = 0; i < mIconNames.length; i++) {
+            Log.d(TAG, i + " " + mIconNames[i] + " " + mItems.get(i));
             mIconBeanList.add(new IconBean(mIconNames[i], mItems.get(i)));
         }
         mIconList.clear();
@@ -118,7 +125,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 final int thumbRes = resources.getIdentifier(name, "drawable", packageName);
                 if (thumbRes != 0) {
                     mItems.add(thumbRes);
+                } else {
+                    Log.d(TAG, "thumb = 0: " + name);
                 }
+            }else {
+                Log.d(TAG, "res = 0: " + name);
             }
         }
     }

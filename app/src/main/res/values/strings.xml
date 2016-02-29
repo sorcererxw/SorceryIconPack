@@ -9,6 +9,8 @@
     <string name="action_refresh">refresh</string>
     <string name="action_reboot">reboot</string>
     <string name="action_search">search</string>
+    <string name="action_like">like</string>
+    <string name="action_dislike">dislike</string>
 
     <string name="yes">yes</string>
     <string name="no">no</string>
