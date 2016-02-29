@@ -28,11 +28,14 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.florent37.hollyviewpager.HollyViewPager;
 import com.github.florent37.hollyviewpager.HollyViewPagerConfigurator;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.quinny898.library.persistentsearch.SearchBox;
+import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
+import com.sorcerer.sorcery.iconpack.ui.views.SorcerySearchBox;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
@@ -42,12 +45,12 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
 
-    private SearchBox mSearchBox;
+    private ViewPageAdapter mPageAdapter;
+    private MaterialSearchView mSearchBox;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-//    private HollyViewPager mHollyViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements
                 super.onDrawerOpened(drawerView);
                 invalidateOptionsMenu();
                 syncState();
+                if (mSearchBox.isSearchOpen()) {
+                    closeSearch();
+                }
             }
 
             @Override
@@ -85,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
 
-//        mHollyViewPager = (HollyViewPager) findViewById(R.id.hollyViewPager_icon);
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
 
         mViewPager.setOffscreenPageLimit(1);
@@ -93,12 +98,16 @@ public class MainActivity extends AppCompatActivity implements
             @Override
             public void onPageScrolled(int position, float positionOffset,
                                        int positionOffsetPixels) {
-
+                if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
+                    closeSearch();
+                }
             }
 
             @Override
             public void onPageSelected(int position) {
-
+                if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
+                    closeSearch();
+                }
             }
 
             @Override
@@ -106,34 +115,15 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
-        generateFragments(adapter);
-        mViewPager.setAdapter(adapter);
-//        mViewPager.setPageMargin(100);
-//        mHollyViewPager.setAdapter(adapter);
-//        mHollyViewPager.setConfigurator(new HollyViewPagerConfigurator() {
-//            @Override
-//            public float getHeightPercentForPage(int page) {
-//                return ((page+4)%10)/10f;
-//            }
-//        });
-//        mHollyViewPager.getViewPager().setPageMargin(16);
+        mPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
+
+        generateFragments(mPageAdapter);
+        mViewPager.setAdapter(mPageAdapter);
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
 
-        mSearchBox = (SearchBox) findViewById(R.id.searchBox_main_icon);
-        mSearchBox.setHint(getString(R.string.app_name));
-        mSearchBox.setLogoText(getString(R.string.app_name));
-        mSearchBox.setMenuListener(new SearchBox.MenuListener() {
-            @Override
-            public void onMenuClick() {
-                mDrawerLayout.openDrawer(mNavigationView);
-            }
-        });
-        mSearchBox.setLogoTextColor(getResources().getColor(R.color.grey_500));
-
-
+        initSearchBox();
 
         UpdateHelper updateHelper =
                 new UpdateHelper(this);
@@ -176,9 +166,6 @@ public class MainActivity extends AppCompatActivity implements
                 new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
                     @Override
                     public void onDoubleTap() {
-//                        int index = mHollyViewPager.getViewPager().getCurrentItem();
-//                        ViewPageAdapter adapter = (ViewPageAdapter) mHollyViewPager.getViewPager()
-//                                .getAdapter();
                         int index = mViewPager.getCurrentItem();
                         ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
                         IconFragment fragment = (IconFragment) adapter.getItem(index);
@@ -202,26 +189,6 @@ public class MainActivity extends AppCompatActivity implements
         return fragment;
     }
 
-    /*
-    <string-array name="tab_name">
-        <item>new</item>
-        <item>all</item>
-        <item>ALi</item>
-        <item>Baidu</item>
-        <item>Cyanogenmod</item>
-        <item>Google</item>
-        <item>HTC</item>
-        <item>Lenovo</item>
-        <item>LG</item>
-        <item>Moto</item>
-        <item>Microsoft</item>
-        <item>Samsung</item>
-        <item>SONY</item>
-        <item>Tencent</item>
-        <item>Xiaomi</item>
-    </string-array>
-     */
-
     private void generateFragments(ViewPageAdapter adapter) {
         String[] name = getResources().getStringArray(R.array.tab_name);
         adapter.addFragment(getIconFragment(IconFragment.FLAG_NEW), name[0]);
@@ -239,7 +206,6 @@ public class MainActivity extends AppCompatActivity implements
         adapter.addFragment(getIconFragment(IconFragment.FLAG_SONY), name[12]);
         adapter.addFragment(getIconFragment(IconFragment.FLAG_TENCENT), name[13]);
         adapter.addFragment(getIconFragment(IconFragment.FLAG_XIAOMI), name[14]);
-
     }
 
     @Override
@@ -296,16 +262,64 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(final Menu menu) {
-//
-//        getMenuInflater().inflate(R.menu.menu_app_select, menu);
-//
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public void onBackPressed() {
+        if (mSearchBox.isSearchOpen()) {
+            closeSearch();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+    private void initSearchBox() {
+        mSearchBox = (MaterialSearchView) findViewById(R.id.searchBox_main_icon);
+//        mSearchBox.setSuggestions(getResources().getStringArray(R.array.icon_pack));
+        mSearchBox.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+                ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem())).showWithString
+                        ("");
+            }
+        });
+        mSearchBox.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem())).showWithString
+                        (newText);
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        mSearchBox.setMenuItem(menu.findItem(R.id.action_search_icon));
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void closeSearch() {
+        mSearchBox.clearFocus();
+        mSearchBox.closeSearch();
+    }
 }

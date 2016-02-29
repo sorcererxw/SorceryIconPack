@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Display;
@@ -40,6 +41,7 @@ public class IconFragment extends Fragment {
 
     private AutoLoadRecyclerView mGridView;
     private FloatingActionButton mSearchFab;
+    private IconAdapter mIconAdapter;
 
 
     public IconFragment() {
@@ -57,6 +59,7 @@ public class IconFragment extends Fragment {
         layoutManager.scrollToPosition(0);
         mGridView.setLayoutManager(layoutManager);
         mGridView.setHasFixedSize(true);
+        mGridView.setItemAnimator(new DefaultItemAnimator());
 
         return view;
     }
@@ -65,8 +68,9 @@ public class IconFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        mIconAdapter = new IconAdapter(getContext(), getArguments().getInt("flag", 0));
         mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, false);
-        mGridView.setAdapter(new IconAdapter(getContext(), getArguments().getInt("flag", 0)));
+        mGridView.setAdapter(mIconAdapter);
     }
 
     private int calcNumOfRows() {
@@ -82,5 +86,9 @@ public class IconFragment extends Fragment {
 
     public RecyclerView getRecyclerView() {
         return mGridView;
+    }
+
+    public void showWithString(String s) {
+        mIconAdapter.showWithString(s);
     }
 }

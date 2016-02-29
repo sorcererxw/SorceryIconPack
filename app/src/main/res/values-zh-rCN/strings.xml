@@ -107,4 +107,5 @@
     <string name="global_load_package_add_notify">重启以显示新应用的sorcery图标</string>
     <string name="action_soft_reboot">软重启</string>
     <string name="action_reboot">重启设备</string>
+    <string name="action_search">搜索</string>
 </resources>

@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.adapters;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,9 +18,12 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
+import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -32,6 +36,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private Context mContext;
     private List<Integer> mItems;
     private int lastPosition = -1;
+    private List<IconBean> mIconBeanList = new ArrayList<>();
+    private List<IconBean> mIconList = new ArrayList();
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
@@ -54,6 +60,12 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         mItems = new ArrayList<>();
         final String packageName = mContext.getPackageName();
         addIcons(mContext.getResources(), packageName, flag);
+
+        for (int i = 0; i < mIconNames.length; i++) {
+            mIconBeanList.add(new IconBean(mIconNames[i], mItems.get(i)));
+        }
+        mIconList.clear();
+        mIconList.addAll(mIconBeanList);
     }
 
     private void addIcons(Resources resources, String packageName, int flag) {
@@ -124,20 +136,20 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, final int position) {
-        holder.icon.setImageResource(mItems.get(position));
+        holder.icon.setImageResource(mIconList.get(position).getRes());
         holder.main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
                 ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
-                        .setImageResource(mItems.get(position));
+                        .setImageResource(mIconList.get(position).getRes());
                 new MaterialDialog.Builder(mContext)
                         .customView(iconDialog, false)
-                        .title(handleIconName(mIconNames[position].toLowerCase(Locale.getDefault
-                                ())))
+                        .title(mIconList.get(position).getLabel())
                         .show();
             }
         });
+
 //        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
 //                SIP.mOptions);
 //        setAnimation(holder.icon, position);
@@ -155,16 +167,24 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return mIconList.size();
     }
 
-    public static String handleIconName(String orgin) {
-        String res;
-        if (Character.isDigit(orgin.charAt(1))) {
-            res = orgin.substring(1, orgin.length());
+    public void showWithString(String s) {
+        mIconList.clear();
+        if (s.isEmpty()) {
+            for (int i = 0; i < mIconNames.length; i++) {
+                mIconList.add(mIconBeanList.get(i));
+            }
         } else {
-            res = orgin.substring(0, orgin.length());
+            for (int i = 0; i < mIconNames.length; i++) {
+                if (mIconBeanList.get(i).getLabel().contains(s)) {
+                    mIconList.add(mIconBeanList.get(i));
+                }
+            }
         }
-        return res.replaceAll("_", " ");
+        notifyDataSetChanged();
+
     }
+
 }

@@ -8,6 +8,7 @@
     <string name="action_close">close</string>
     <string name="action_refresh">refresh</string>
     <string name="action_reboot">reboot</string>
+    <string name="action_search">search</string>
 
     <string name="yes">yes</string>
     <string name="no">no</string>
