@@ -58,7 +58,5 @@ dependencies {
     compile 'com.github.ksoichiro:android-observablescrollview:1.5.2'
 //    compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
 
-    compile 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
-
 }

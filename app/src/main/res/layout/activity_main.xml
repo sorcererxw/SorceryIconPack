@@ -31,17 +31,6 @@
                     app:layout_scrollFlags="scroll|enterAlways"
                     app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
-                <!--<com.sorcerer.sorcery.iconpack.ui.views.SorcerySearchBox-->
-                <!--android:visibility="gone"-->
-                <!--android:id="@+id/searchBox_main_icon"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_alignParentLeft="true"-->
-                <!--android:layout_alignParentTop="true"-->
-                <!--android:layout_marginLeft="0dp"-->
-                <!--android:layout_marginRight="0dp"-->
-                <!--android:layout_marginTop="0dp"/>-->
-
                 <com.miguelcatalan.materialsearchview.MaterialSearchView
                     android:id="@+id/searchBox_main_icon"
                     android:layout_width="match_parent"
@@ -61,21 +50,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-        <!--<com.github.florent37.hollyviewpager.HollyViewPager-->
-        <!--app:hvp_headerHeight="150dp"-->
-        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-        <!--android:id="@+id/hollyViewPager_icon"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
-        <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/fab"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom|end"-->
-        <!--android:layout_margin="@dimen/fab_margin"-->
-        <!--android:src="@android:drawable/ic_dialog_email"-->
-        <!--android:visibility="gone"/>-->
 
     </android.support.design.widget.CoordinatorLayout>
 

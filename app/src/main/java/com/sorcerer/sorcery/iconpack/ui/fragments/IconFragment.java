@@ -3,7 +3,6 @@ package com.sorcerer.sorcery.iconpack.ui.fragments;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -40,7 +39,6 @@ public class IconFragment extends Fragment {
     public static final int FLAG_XIAOMI = 4;
 
     private AutoLoadRecyclerView mGridView;
-    private FloatingActionButton mSearchFab;
     private IconAdapter mIconAdapter;
 
 
@@ -52,7 +50,6 @@ public class IconFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
-//        mSearchFab = (FloatingActionButton) view.findViewById(R.id.fab_icon_search);
         mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);

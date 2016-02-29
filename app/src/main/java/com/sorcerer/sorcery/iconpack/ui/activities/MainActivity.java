@@ -29,18 +29,17 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.florent37.hollyviewpager.HollyViewPager;
 import com.github.florent37.hollyviewpager.HollyViewPagerConfigurator;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
-import com.quinny898.library.persistentsearch.SearchBox;
-import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
-import com.sorcerer.sorcery.iconpack.ui.views.SorcerySearchBox;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
 import org.w3c.dom.Text;
+
+import cn.bmob.v3.Bmob;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements
 
         initSearchBox();
 
+        Bmob.initialize(this, getString(R.string.bmob_app_id));
         UpdateHelper updateHelper =
                 new UpdateHelper(this);
         updateHelper.update();
