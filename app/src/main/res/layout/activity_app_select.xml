@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".ui.activities.AppSelectActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -28,10 +29,10 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/include2"
-        android:id="@+id/relativeLayout">
+        android:layout_below="@+id/include2">
 
         <com.wang.avi.AVLoadingIndicatorView
             android:id="@+id/avLoadingIndicatorView_icon_select"
@@ -48,10 +49,10 @@
             android:layout_centerInParent="true">
 
             <android.support.v7.widget.RecyclerView
-                android:scrollbars="vertical"
                 android:id="@+id/recyclerView_app_select"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scrollbars="vertical"
                 android:visibility="gone"/>
 
             <com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton

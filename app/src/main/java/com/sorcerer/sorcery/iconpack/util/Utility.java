@@ -164,6 +164,14 @@ public class Utility {
     }
 
     public static boolean isLauncherInstalled(Context context, String packageName) {
+        return isPackageInstalled(context, packageName);
+    }
+
+    public static boolean isXposedInstalled(Context context) {
+        return isPackageInstalled(context, "de.robv.android.xposed.installed");
+    }
+
+    public static boolean isPackageInstalled(Context context, String packageName) {
         final PackageManager pm = context.getPackageManager();
         try {
             pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
@@ -218,5 +226,11 @@ public class Utility {
         ViewGroup view = (ViewGroup) ac.getWindow().getDecorView();
         FrameLayout content = (FrameLayout) view.findViewById(android.R.id.content);
         return content.getChildAt(0);
+    }
+
+    public static String handleLongXmlString(String s) {
+        String res = s.replace("|", "\n");
+        res = res.replace("#", "    ");
+        return res;
     }
 }

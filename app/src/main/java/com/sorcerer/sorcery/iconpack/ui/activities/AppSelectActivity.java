@@ -70,6 +70,11 @@ public class AppSelectActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white_24dp);
+        }
+
         setToolbarDoubleTap(toolbar);
 
         mContext = this;
@@ -292,6 +297,9 @@ public class AppSelectActivity extends AppCompatActivity {
             item.setChecked(!item.isChecked());
             mAdapter.setShowAll(!item.isChecked());
             return true;
+        }
+        if (id == android.R.id.home) {
+            onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }

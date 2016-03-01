@@ -101,4 +101,5 @@ public class LikeLayout extends FrameLayout {
             mLikeImg.setImageDrawable(getResources().getDrawable(R.drawable.ic_like));
         }
     }
+
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
 import com.sorcerer.sorcery.iconpack.ui.views.ContributorCard;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +51,8 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        final ContributorCard sorcerer = (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
+        final ContributorCard sorcerer =
+                (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
         sorcerer.setAnimAvatar(getResources().getDrawable(R.drawable.animation_sorcerer));
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(

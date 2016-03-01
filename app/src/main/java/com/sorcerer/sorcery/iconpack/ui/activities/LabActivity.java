@@ -34,6 +34,7 @@ import com.sorcerer.sorcery.iconpack.adapters.SettingsAdapter;
 import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.SettingsItem;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
@@ -95,6 +96,11 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mContext = this;
         mPrefs = getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
         mActive = mPrefs.getBoolean("pref_global_load", false);
+
+        mXposedContentTextView
+                .setText(Utility.handleLongXmlString(getString(R.string.global_detail)));
+        mXposedAttentionTextView
+                .setText(Utility.handleLongXmlString(getString(R.string.global_attention)));
 
         mXposedApplyButton.setOnClickListener(this);
         mXposedCloseButton.setOnClickListener(this);

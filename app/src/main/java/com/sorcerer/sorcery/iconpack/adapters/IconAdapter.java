@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
@@ -128,7 +129,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 } else {
                     Log.d(TAG, "thumb = 0: " + name);
                 }
-            }else {
+            } else {
                 Log.d(TAG, "res = 0: " + name);
             }
         }
@@ -146,6 +147,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             @Override
             public void onClick(View v) {
                 View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
+//                ((TextView) iconDialog.findViewById(R.id.textView_dialog_title))
+//                        .setText(mIconList.get(position).getLabel());
                 ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
                         .setImageResource(mIconList.get(position).getRes());
                 ((LikeLayout) iconDialog.findViewById(R.id.likeLayout)).bindIcon(mIconList.get

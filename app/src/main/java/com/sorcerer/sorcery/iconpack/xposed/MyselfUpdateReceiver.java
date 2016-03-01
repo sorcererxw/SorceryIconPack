@@ -60,24 +60,6 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                 if (themePackageName != null && themePackagePath != null &&
                         new File(themePackagePath).exists()) {
                     Log.d(TAG, "start");
-//                    if (themePackageName.equals(installedPkgName)) {
-//                        if (prefs.getBoolean("restartNotification", true)) {
-//                            intent2 = new Intent(context, MainActivity.class);
-//                            intent2.putExtra("reapplyTheme", true);
-//                            ((NotificationManager) context.getSystemService("notification")).notify(
-//                                    1,
-//                                    new Notification.Action.Builder(context)
-//                                            .setSmallIcon(R.mipmap.ic_launcher)
-//                                            .setContentTitle("Unicon").setContentText(
-//                                            "Tap here to reapply theme for changes to take " +
-//                                                     "effect.")
-//                                            .setTicker(
-//                                                    "Unicon needs to reapply your theme for changes to take effect")
-//                                            .setPriority(-2).setContentIntent(PendingIntent
-//                                            .getActivity(context, 1, intent2, 268435456)).build());
-//                            return;
-//                        }
-//                    }
                     try {
                         XmlPullParser xrp;
                         ArrayList<IconReplacementItem> items;
@@ -153,27 +135,6 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                         editor.putLong("theme_last_applied", System.currentTimeMillis());
                         editor.commit();
                         Log.d(TAG, "Updated " + installedPkgName);
-
-//                        Notification.Builder builder = new Notification.Builder(mContext);
-//                        builder.setSmallIcon(R.mipmap.ic_launcher);
-//                        builder.setContentTitle("Sorcery");
-//                        builder.setContentText("reboot to refresh icons");
-//
-//                        Intent push = new Intent();
-//                        push.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        push.setClass(mContext, MainActivity.class);
-//                        PendingIntent pendingIntent =
-//                                PendingIntent.getActivity(mContext, 0, push, PendingIntent
-//                                        .FLAG_CANCEL_CURRENT);
-//                        builder.setContentText("head up");
-//
-//                        // 关键
-//                        builder.setFullScreenIntent(pendingIntent, true);
-//
-//                        NotificationManager manager =
-//                                (NotificationManager) mContext.getSystemService
-//                                        (Context.NOTIFICATION_SERVICE);
-//                        manager.notify(2, builder.build());
 
                     } catch (Exception e7) {
                         e7.printStackTrace();

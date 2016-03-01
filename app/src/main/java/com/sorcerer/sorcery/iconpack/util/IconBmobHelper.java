@@ -36,15 +36,12 @@ public class IconBmobHelper {
             icon.save(mContext, new SaveListener() {
                 @Override
                 public void onSuccess() {
-                    Toast.makeText(mContext, "save success", Toast.LENGTH_SHORT).show();
-//                    Log.d(TAG, icon.getObjectId());
                     mSharedPreferences.edit().putString(name + "_ID", icon.getObjectId()).apply();
                     Log.d(TAG, "apply " + name + "_ID");
                 }
 
                 @Override
                 public void onFailure(int i, String s) {
-//                    Toast.makeText(mContext, "save fail\n" + s, Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
@@ -55,13 +52,10 @@ public class IconBmobHelper {
             icon.update(mContext, id, new UpdateListener() {
                 @Override
                 public void onSuccess() {
-//                    Toast.makeText(mContext, "update success", Toast.LENGTH_SHORT).show();
-//                    Log.d(TAG, icon.getObjectId());
                 }
 
                 @Override
                 public void onFailure(int i, String s) {
-//                    Toast.makeText(mContext, "update fail\n" + s, Toast.LENGTH_SHORT).show();
                 }
             });
         }

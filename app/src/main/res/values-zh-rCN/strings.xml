@@ -76,22 +76,20 @@
     <string name="select_all">全选</string>
     <string name="no">不</string>
     <string name="xposed_tag">
-        全局加载Sorcery图标包\n
-        勾选并去图标包设置里面打开</string>
+        全局加载Sorcery图标包, 勾选并去图标包设置里面打开</string>
     <string name="nav_item_lab">实验室</string>
     <string name="global_detail">
-        通过Xposed进行加载图标包以实现全局更换图标\n
-        你需要先root您的设备并且在Xposed框架中勾选此应用
+        #通过Xposed进行加载图标包以实现全局更换图标|#你需要先root您的设备并且在Xposed框架中勾选此应用
     </string>
 
     <string name="global_attention">
-        说明:\n
-            应用之后需要重启设备以更换图标\n
-            请在所有手机后台管理应用中将这个应用纳入白名单\n
-            当前Xposed模块暂不支持nova, 请在「应用到启动器」中更换nova图标\n
-            暂不支持热刷新, 安装了新的应用需要重启以使图标变更\n
-            运行样本较少, 无法保证模块百分百运行正常\n
-        启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
+        说明:|
+        #1.应用之后需要重启设备以更换图标|
+        #2.请在所有手机后台管理应用中将这个应用纳入白名单|
+        #3.当前Xposed模块暂不支持nova, 请在「应用到启动器」中更换nova图标|
+        #4.暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
+        #5.运行样本较少, 无法保证模块百分百运行正常|
+        #6.启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
     <string name="global_state_active">已开启</string>
     <string name="global_state_label">当前状态</string>
     <string name="global_state_not_active">尚未开启</string>
@@ -110,4 +108,5 @@
     <string name="action_search">搜索</string>
     <string name="action_like">赞</string>
     <string name="action_dislike">踩</string>
+    <string name="about_main">用「质感」妆点你的桌面</string>
 </resources>
