@@ -10,6 +10,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -190,22 +191,34 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void generateFragments(ViewPageAdapter adapter) {
+
         String[] name = getResources().getStringArray(R.array.tab_name);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_NEW), name[0]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_ALL), name[1]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_ALI), name[2]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_BAIDU), name[3]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_CYANOGENMOD), name[4]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_GOOGLE), name[5]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_HTC), name[6]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_LENOVO), name[7]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_LG), name[8]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_MOTO), name[9]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_MICROSOFT), name[10]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_SAMSUNG), name[11]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_SONY), name[12]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_TENCENT), name[13]);
-        adapter.addFragment(getIconFragment(IconFragment.FLAG_XIAOMI), name[14]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_NEW), name[0]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_ALL), name[1]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_ALI), name[2]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_BAIDU), name[3]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_CYANOGENMOD), name[4]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_GOOGLE), name[5]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_HTC), name[6]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_LENOVO), name[7]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_LG), name[8]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_MOTO), name[9]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_MICROSOFT), name[10]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_SAMSUNG), name[11]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_SONY), name[12]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_TENCENT), name[13]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_XIAOMI), name[14]);
+    }
+
+    private IconFragment generateFragment(int flag) {
+        IconFragment iconFragment = getIconFragment(flag);
+        iconFragment.setSearchListener(new IconFragment.SearchListener() {
+            @Override
+            public void onSearch() {
+                mSearchBox.showSearch();
+            }
+        });
+        return iconFragment;
     }
 
     @Override

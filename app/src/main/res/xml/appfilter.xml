@@ -2833,15 +2833,15 @@
     <item
         component="ComponentInfo{com.baidu.lbs.waimai/com.baidu.lbs.waimai.SplashActivity}"
         drawable="baidu_waimai"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{com.wuxianlin.luckymoney/com.wuxianlin.luckymoney.SettingsActivity}"
+        drawable="luckymoney"/>
+    <item
+        component="ComponentInfo{com.exam8.yishi/com.exam8.yishi.WelcomePhoneActivity}"
+        drawable="zhiyeyishiwantiku"/>
+    <item
+        component="ComponentInfo{me.zheteng.cbreader.beiyue/me.zheteng.cbreader.ui.StartupActivity}"
+        drawable="beiyue"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

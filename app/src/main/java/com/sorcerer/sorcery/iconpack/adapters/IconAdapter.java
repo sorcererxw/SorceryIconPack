@@ -59,11 +59,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         final String packageName = mContext.getPackageName();
         addIcons(mContext.getResources(), packageName, flag);
 
-        Log.d(TAG, "" + mIconNames.length);
-        Log.d(TAG, "" + mItems.size());
+//        Log.d(TAG, "" + mIconNames.length);
+//        Log.d(TAG, "" + mItems.size());
 
         for (int i = 0; i < mIconNames.length; i++) {
-            Log.d(TAG, i + " " + mIconNames[i] + " " + mItems.get(i));
+//            Log.d(TAG, i + " " + mIconNames[i] + " " + mItems.get(i));
             mIconBeanList.add(new IconBean(mIconNames[i], mItems.get(i)));
         }
         mIconList.clear();
@@ -127,10 +127,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 if (thumbRes != 0) {
                     mItems.add(thumbRes);
                 } else {
-                    Log.d(TAG, "thumb = 0: " + name);
+//                    Log.d(TAG, "thumb = 0: " + name);
                 }
             } else {
-                Log.d(TAG, "res = 0: " + name);
+//                Log.d(TAG, "res = 0: " + name);
             }
         }
     }

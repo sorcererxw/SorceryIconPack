@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
+        <item>luckymoney</item>
+        <item>zhiyeyishiwantiku</item>
+        <item>eleme</item>
+        <item>beiyue</item>
         <item>dgtle</item>
         <item>baidu_waimai</item>
         <item>netease_music</item>

@@ -71,33 +71,33 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                 if (themePackageName != null && themePackagePath != null &&
                         new File(themePackagePath).exists()) {
                     Intent intent2;
-                    if (themePackageName.equals(installedPkgName)) {
-                        if (prefs.getBoolean("restartNotification", true)) {
-                            intent2 = new Intent(context, LabActivity.class);
-                            intent2.putExtra("reapplyTheme", true);
-                            ((NotificationManager) context
-                                    .getSystemService(Context.NOTIFICATION_SERVICE)).notify(
-                                    1,
-                                    new Builder(context)
+//                    if (themePackageName.equals(installedPkgName)) {
+//                        if (prefs.getBoolean("restartNotification", true)) {
+//                            intent2 = new Intent(context, LabActivity.class);
+//                            intent2.putExtra("reapplyTheme", true);
+//                            ((NotificationManager) context
+//                                    .getSystemService(Context.NOTIFICATION_SERVICE)).notify(
+//                                    1,
+//                                    new Builder(context)
 //                                            .setLargeIcon(BitmapFactory.decodeResource(context
 //                                                    .getResources(), R.mipmap.ic_launcher))
-                                            .setSmallIcon(R.mipmap.ic_launcher)
-                                            .setContentTitle("Sorcery")
-                                            .setContentText(
-                                                    context.getString(R.string.global_load_package_add_notify))
+//                                            .setSmallIcon(R.mipmap.ic_launcher)
+//                                            .setContentTitle("Sorcery")
+//                                            .setContentText(
+//                                                    context.getString(R.string.global_load_package_add_notify))
 //                                            .setTicker(
 //                                                    "Sorcery needs to reapply your theme for " +
 //                                                            "changes to take effect")
 //                                            .setPriority(Notification.PRIORITY_DEFAULT)
-                                            .setContentIntent(PendingIntent.getActivity(context,
-                                                    1,
-                                                    intent2,
-                                                    PendingIntent.FLAG_CANCEL_CURRENT))
-                                            .setAutoCancel(true)
-                                            .build());
-                            return;
-                        }
-                    }
+//                                            .setContentIntent(PendingIntent.getActivity(context,
+//                                                    1,
+//                                                    intent2,
+//                                                    PendingIntent.FLAG_CANCEL_CURRENT))
+//                                            .setAutoCancel(true)
+//                                            .build());
+//                            return;
+//                        }
+//                    }
                     try {
                         XmlPullParser xrp;
                         ArrayList<IconReplacementItem> items;
@@ -248,7 +248,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                     new Builder(context)
 //                                            .setLargeIcon(BitmapFactory.decodeResource(context
 //                                                    .getResources(), R.mipmap.ic_launcher))
-                                            .setSmallIcon(R.mipmap.ic_launcher)
+                                            .setSmallIcon(R.drawable.ic_notification)
                                             .setContentTitle("Sorcery")
                                             .setContentText(
                                                     context.getString(R.string.global_load_package_add_notify))

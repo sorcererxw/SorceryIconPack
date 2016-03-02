@@ -4,14 +4,18 @@
                 android:layout_height="match_parent"
                 tools:context="com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment">
 
-
-    <com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView
-        android:id="@+id/recyclerView_icon_gird"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout_icon_search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical">
+        android:layout_height="match_parent">
+
+        <com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView
+            android:id="@+id/recyclerView_icon_gird"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
 
 
-    </com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView>
-
+        </com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

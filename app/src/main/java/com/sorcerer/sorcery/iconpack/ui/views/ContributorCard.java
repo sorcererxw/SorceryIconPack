@@ -34,6 +34,7 @@ public class ContributorCard extends FrameLayout {
     private ImageView mWeibo;
     private ImageView mGithub;
     private ImageView mEmail;
+    private ImageView mWebsite;
 
     public ContributorCard(Context context) {
         super(context);
@@ -67,6 +68,7 @@ public class ContributorCard extends FrameLayout {
         mWeibo = (ImageView) mView.findViewById(R.id.imageView_contributor_weibo);
         mGithub = (ImageView) mView.findViewById(R.id.imageView_contributor_github);
         mEmail = (ImageView) mView.findViewById(R.id.imageView_contributor_email);
+        mWebsite = (ImageView)mView.findViewById(R.id.imageView_contributor_website);
     }
 
     public void setAvatar(Drawable drawable) {
@@ -102,6 +104,18 @@ public class ContributorCard extends FrameLayout {
             public void onClick(View v) {
                 Intent browserIntent =
                         new Intent(Intent.ACTION_VIEW, weibo);
+                mContext.startActivity(browserIntent);
+            }
+        });
+    }
+
+    public void setWebsite(final Uri website){
+        mWebsite.setVisibility(VISIBLE);
+        mWebsite.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent =
+                        new Intent(Intent.ACTION_VIEW, website);
                 mContext.startActivity(browserIntent);
             }
         });

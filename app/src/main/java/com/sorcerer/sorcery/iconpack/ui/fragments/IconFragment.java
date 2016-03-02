@@ -2,8 +2,10 @@ package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,11 +13,18 @@ import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.utils.L;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
+
+import java.lang.reflect.Field;
 
 public class IconFragment extends Fragment {
 
@@ -40,7 +49,12 @@ public class IconFragment extends Fragment {
 
     private AutoLoadRecyclerView mGridView;
     private IconAdapter mIconAdapter;
+    private SwipeRefreshLayout mSearchLayout;
+    private SearchListener mSearchListener;
 
+    public interface SearchListener {
+        void onSearch();
+    }
 
     public IconFragment() {
 
@@ -48,7 +62,7 @@ public class IconFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
         mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
@@ -57,6 +71,30 @@ public class IconFragment extends Fragment {
         mGridView.setLayoutManager(layoutManager);
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
+
+        mSearchLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout_icon_search);
+        try {
+            Field f = mSearchLayout.getClass().getDeclaredField("mCircleView");
+            f.setAccessible(true);
+            ImageView img = (ImageView) f.get(mSearchLayout);
+            img.setImageResource(R.drawable.ic_action_search_icon_inner);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        if (mSearchListener != null) {
+            mSearchLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    mSearchLayout.setRefreshing(true);
+                    mSearchListener.onSearch();
+                    mSearchLayout.setRefreshing(false);
+                }
+            });
+        } else {
+            mSearchLayout.setEnabled(false);
+        }
 
         return view;
     }
@@ -87,5 +125,9 @@ public class IconFragment extends Fragment {
 
     public void showWithString(String s) {
         mIconAdapter.showWithString(s);
+    }
+
+    public void setSearchListener(@NonNull final SearchListener searchListener) {
+        mSearchListener = searchListener;
     }
 }
