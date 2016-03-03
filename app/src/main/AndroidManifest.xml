@@ -116,6 +116,7 @@
                 <category android:name="com.fede.launcher.THEME_ICONPACK"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+
             <intent-filter>
                 <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
                 <action android:name="mobi.bbase.ahome.THEME"/>
@@ -123,6 +124,7 @@
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+
             <intent-filter>
                 <action android:name="cdproductions.crazyicons.TWO"/>
 

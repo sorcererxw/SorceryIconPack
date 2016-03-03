@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
+import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,6 +31,8 @@ public class IconFragment extends Fragment {
 
     private int maxCol = 8;
 
+    private Activity mParentActivity;
+    private boolean mCustomPicker = false;
     private int mFlag;
     public static final int FLAG_NEW = 1;
     public static final int FLAG_ALL = 0;
@@ -104,6 +107,9 @@ public class IconFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         mIconAdapter = new IconAdapter(getContext(), getArguments().getInt("flag", 0));
+        if (mCustomPicker) {
+            mIconAdapter.setCustomPicker(mParentActivity, mCustomPicker);
+        }
         mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, false);
         mGridView.setAdapter(mIconAdapter);
     }
@@ -129,5 +135,14 @@ public class IconFragment extends Fragment {
 
     public void setSearchListener(@NonNull final SearchListener searchListener) {
         mSearchListener = searchListener;
+    }
+
+    public boolean isCustomPicker() {
+        return mCustomPicker;
+    }
+
+    public void setCustomPicker(Activity activity, boolean customPicker) {
+        mParentActivity = activity;
+        mCustomPicker = customPicker;
     }
 }

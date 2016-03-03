@@ -1,7 +1,12 @@
 package com.sorcerer.sorcery.iconpack.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +22,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.models.IconBmob;
+import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 
@@ -30,6 +36,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     private static final String TAG = "IconAdapter";
 
+    private Activity mParentActivity;
+    private boolean mCustomPicker = false;
     private String[] mIconNames;
     private Context mContext;
     private List<Integer> mItems;
@@ -143,22 +151,51 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, final int position) {
         holder.icon.setImageResource(mIconList.get(position).getRes());
-        holder.main.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
+        if (!mCustomPicker) {
+            holder.main.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
 //                ((TextView) iconDialog.findViewById(R.id.textView_dialog_title))
 //                        .setText(mIconList.get(position).getLabel());
-                ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
-                        .setImageResource(mIconList.get(position).getRes());
-                ((LikeLayout) iconDialog.findViewById(R.id.likeLayout)).bindIcon(mIconList.get
-                        (position).getName());
-                new MaterialDialog.Builder(mContext)
-                        .customView(iconDialog, false)
-                        .title(mIconList.get(position).getLabel())
-                        .show();
-            }
-        });
+                    ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
+                            .setImageResource(mIconList.get(position).getRes());
+                    ((LikeLayout) iconDialog.findViewById(R.id.likeLayout)).bindIcon(mIconList.get
+                            (position).getName());
+                    new MaterialDialog.Builder(mContext)
+                            .customView(iconDialog, false)
+                            .title(mIconList.get(position).getLabel())
+                            .show();
+                }
+            });
+        } else {
+            holder.main.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    Bitmap bitmap = null;
+
+                    try {
+                        bitmap = BitmapFactory.decodeResource(mContext.getResources(),
+                                mIconList.get(position).getRes());
+                    } catch (Exception e) {
+                    }
+
+                    if (bitmap != null) {
+                        intent.putExtra("icon", bitmap);
+                        intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE",
+                                mIconList.get(position).getRes());
+                        String bmUri = "android.resource://" + mContext.getPackageName() + "/" +
+                                String.valueOf(mIconList.get(position).getRes());
+                        intent.setData(Uri.parse(bmUri));
+                        mParentActivity.setResult(Activity.RESULT_OK, intent);
+                    } else {
+                        mParentActivity.setResult(Activity.RESULT_CANCELED, intent);
+                    }
+                    mParentActivity.finish();
+                }
+            });
+        }
 
 //        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
 //                SIP.mOptions);
@@ -194,7 +231,16 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             }
         }
         notifyDataSetChanged();
+    }
 
+
+    public boolean isCustomPicker() {
+        return mCustomPicker;
+    }
+
+    public void setCustomPicker(Activity activity, boolean customPicker) {
+        mParentActivity = activity;
+        mCustomPicker = customPicker;
     }
 
 }

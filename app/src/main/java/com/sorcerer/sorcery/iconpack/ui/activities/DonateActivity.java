@@ -45,7 +45,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
             public void run() {
                 try {
                     BP.init(getApplication(), getString(R.string.bmob_app_id));
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                     runOnUiThread(new Runnable() {
                         @Override
@@ -84,14 +84,20 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
+
         SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
                 MODE_PRIVATE);
         boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
         if (isDonated) {
             showThanksCard();
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override

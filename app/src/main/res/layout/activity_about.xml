@@ -111,8 +111,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/contributor"
-                android:textColor="@color/content"
-                android:textSize="22sp"/>
+                android:textColor="@color/title"
+                android:textSize="18sp"/>
 
             <com.sorcerer.sorcery.iconpack.ui.views.ContributorCard
                 android:id="@+id/contributorCard_sorcerer"

@@ -45,23 +45,34 @@ import cn.bmob.v3.Bmob;
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
 
+    public static Intent mLaunchIntent;
     private ViewPageAdapter mPageAdapter;
     private MaterialSearchView mSearchBox;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
+    private boolean mCustomPicker = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mLaunchIntent = getIntent();
+        String action = getIntent().getAction();
+        if (action == "com.novalauncher.THEME") {
+            mCustomPicker = true;
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         setToolbarDoubleTap(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        initTabAndPager();
+
+        initSearchBox();
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_main);
@@ -89,6 +100,41 @@ public class MainActivity extends AppCompatActivity implements
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
+        if (!mCustomPicker) {
+            Bmob.initialize(this, getString(R.string.bmob_app_id));
+            UpdateHelper updateHelper =
+                    new UpdateHelper(this);
+            updateHelper.update();
+        } else {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
+                MODE_PRIVATE);
+        int launchTimes = sharedPreferences.getInt("launch times", 0);
+        Log.d("sip", "launch time " + launchTimes);
+        if (launchTimes == 0) {
+            showWelcomeDialog();
+        } else {
+            if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
+//                showWelcomeDialog();
+                sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
+            }
+        }
+        if (launchTimes % 5 == 0) {
+//            UpdateHelper updateHelper =
+//                    new UpdateHelper(this);
+//            updateHelper.update();
+        }
+        sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
+    }
+
+    private void initTabAndPager() {
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
 
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
@@ -122,36 +168,6 @@ public class MainActivity extends AppCompatActivity implements
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
-
-        initSearchBox();
-
-        Bmob.initialize(this, getString(R.string.bmob_app_id));
-        UpdateHelper updateHelper =
-                new UpdateHelper(this);
-        updateHelper.update();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
-                MODE_PRIVATE);
-        int launchTimes = sharedPreferences.getInt("launch times", 0);
-        Log.d("sip", "launch time " + launchTimes);
-        if (launchTimes == 0) {
-            showWelcomeDialog();
-        } else {
-            if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
-//                showWelcomeDialog();
-                sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
-            }
-        }
-        if (launchTimes % 5 == 0) {
-//            UpdateHelper updateHelper =
-//                    new UpdateHelper(this);
-//            updateHelper.update();
-        }
-        sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
     }
 
     private void showWelcomeDialog() {
@@ -218,6 +234,7 @@ public class MainActivity extends AppCompatActivity implements
                 mSearchBox.showSearch();
             }
         });
+        iconFragment.setCustomPicker(this, mCustomPicker);
         return iconFragment;
     }
 
@@ -257,6 +274,7 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(intent);
         overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions,

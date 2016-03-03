@@ -37,11 +37,12 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
 
         mApplyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
 
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
         mApplyRecyclerView.setLayoutManager(layoutManager);
-        mApplyRecyclerView.setHasFixedSize(true);
+        mApplyRecyclerView.setHasFixedSize(false);
         mApplyRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
 
             @Override

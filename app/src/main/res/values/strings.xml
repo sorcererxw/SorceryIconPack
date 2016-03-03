@@ -85,7 +85,7 @@
     <string name="job_icon_design">icon design</string>
     <string name="open_source_lib">Open Source Libs</string>
 
-    <string name="about_main">let material colorful launcher</string>
+    <string name="about_main">let 「material」 colorful launcher</string>
     
     <string name="pref_global_load_title">global load</string>
     <string name="pref_global_load_summary">load by xposed instead of launcher</string>
