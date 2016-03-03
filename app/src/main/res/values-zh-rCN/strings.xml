@@ -109,4 +109,5 @@
     <string name="action_like">赞</string>
     <string name="action_dislike">踩</string>
     <string name="about_main">用「质感」妆点你的桌面</string>
+    <string name="select_an_icon">选择一个图标</string>
 </resources>

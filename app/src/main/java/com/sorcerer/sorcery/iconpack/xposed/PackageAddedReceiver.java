@@ -240,27 +240,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                         editor.commit();
                         Log.d(TAG, "Updated " + installedPkgName);
                         if (prefs.getBoolean("restartNotification", true)) {
-                            intent2 = new Intent(context, LabActivity.class);
-                            intent2.putExtra("promptRestartLauncher", true);
-                            ((NotificationManager) context
-                                    .getSystemService(Context.NOTIFICATION_SERVICE)).notify(
-                                    0,
-                                    new Builder(context)
-//                                            .setLargeIcon(BitmapFactory.decodeResource(context
-//                                                    .getResources(), R.mipmap.ic_launcher))
-                                            .setSmallIcon(R.drawable.ic_notification)
-                                            .setContentTitle("Sorcery")
-                                            .setContentText(
-                                                    context.getString(R.string.global_load_package_add_notify))
-//                                            .setTicker("Sorcery needs to restart your launcher")
-//                                            .setPriority(Notification.PRIORITY_MIN)
-                                            .setContentIntent
-                                                    (PendingIntent.getActivity(context,
-                                                            0,
-                                                            intent2,
-                                                            PendingIntent.FLAG_CANCEL_CURRENT))
-                                            .setAutoCancel(true)
-                                            .build());
+                            showNotification(context);
                         }
                     } catch (Exception e7) {
                         e7.printStackTrace();
@@ -268,5 +248,29 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                 }
             }
         }
+    }
+
+    private void showNotification(Context context) {
+        Intent intent2 = new Intent(context, LabActivity.class);
+        intent2.putExtra("promptRestartLauncher", true);
+        ((NotificationManager) context
+                .getSystemService(Context.NOTIFICATION_SERVICE)).notify(
+                0,
+                new Builder(context)
+//                                            .setLargeIcon(BitmapFactory.decodeResource(context
+//                                                    .getResources(), R.mipmap.ic_launcher))
+                        .setSmallIcon(R.drawable.ic_notification)
+                        .setContentTitle(context.getString(R.string.app_name))
+                        .setContentText(
+                                context.getString(R.string.global_load_package_add_notify))
+//                                            .setTicker("Sorcery needs to restart your launcher")
+//                                            .setPriority(Notification.PRIORITY_MIN)
+                        .setContentIntent
+                                (PendingIntent.getActivity(context,
+                                        0,
+                                        intent2,
+                                        PendingIntent.FLAG_CANCEL_CURRENT))
+                        .setAutoCancel(true)
+                        .build());
     }
 }

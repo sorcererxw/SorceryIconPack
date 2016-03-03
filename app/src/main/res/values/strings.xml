@@ -12,6 +12,8 @@
     <string name="action_like">like</string>
     <string name="action_dislike">dislike</string>
 
+    <string name="select_an_icon">select_an_icon</string>
+
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="ok">ok</string>

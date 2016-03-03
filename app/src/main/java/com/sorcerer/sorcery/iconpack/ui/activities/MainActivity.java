@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements
             updateHelper.update();
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setTitle(getString(R.string.select_an_icon));
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
     }
