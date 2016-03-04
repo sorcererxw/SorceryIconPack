@@ -52,6 +52,10 @@
     <calendar
         component="ComponentInfo{com.anydo.cal/com.anydo.cal.activities.OnBoardActivity}"
         prefix="anydocal_"/>
+    <calendar
+        component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}"
+        prefix="flyme_calendar_"/>
+
     <item
         component="ComponentInfo{org.adaway/org.adaway.ui.BaseActivity}"
         drawable="adaway"/>
@@ -897,7 +901,7 @@
         drawable="ali_miaojie"/>
     <item
         component="ComponentInfo{com.sankuai.movie/com.sankuai.movie.welcome.Welcome}"
-        drawable="ali_maoyan"/>
+        drawable="maoyan"/>
     <item
         component="ComponentInfo{com.taobao.mobile.dipei/com.taobao.ecoupon.activity.SplashActivity}"
         drawable="ali_koubei_waimai"/>
@@ -2899,96 +2903,97 @@
     <item
         component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityI}"
         drawable="sim"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+
+    <item
+        component="ComponentInfo{com.meizu.net.map/com.meizu.net.map.MainMapActivity}"
+        drawable="flyme_map"/>
+    <item
+        component="ComponentInfo{com.meizu.mstore/com.meizu.flyme.appcenter.activitys.AppMainActivity}"
+        drawable="flyme_appcenter"/>
+    <item
+        component="ComponentInfo{com.meizu.customizecenter/com.meizu.customizecenter.CustomizeCenterActivity}"
+        drawable="flyme_customizecenter"/>
+    <item
+        component="ComponentInfo{com.meizu.notepaper/com.meizu.flyme.notepaper.NotePaperActivity}"
+        drawable="flyme_notepaper"/>
+    <item
+        component="ComponentInfo{com.meizu.media.gallery/com.meizu.media.gallery.GalleryActivity}"
+        drawable="flyme_gallery"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.weather/com.meizu.flyme.weather.WeatherMainActivity}"
+        drawable="flyme_weather"/>
+    <item
+        component="ComponentInfo{com.meizu.safe/com.meizu.safe.SecurityCenterActivity}"
+        drawable="flyme_safe"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.toolbox/com.meizu.flyme.toolbox.activity.ToolBoxActivity}"
+        drawable="flyme_toolbox"/>
+    <item
+        component="ComponentInfo{com.meizu.media.video/com.meizu.media.video.VideoMainActivity}"
+        drawable="flyme_video"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.scanner/com.meizu.flyme.scanner.activity.ScannerActivity}"
+        drawable="flyme_scanner"/>
+    <item
+        component="ComponentInfo{com.meizu.filemanager/com.meizu.flyme.filemanager.activity.FileManagerActivity}"
+        drawable="flyme_filemanager"/>
+    <item
+        component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}"
+        drawable="flyme_calendar"/>
+    <item
+        component="ComponentInfo{com.android.alarmclock/com.meizu.flyme.alarmclock.AlarmClock}"
+        drawable="flyme_clock"/>
+    <item
+        component="ComponentInfo{com.android.alarmclock/com.meizu.flyme.alarmclock.DeskClock}"
+        drawable="flyme_clock"/>
+    <item
+        component="ComponentInfo{com.meizu.filemanager/com.meizu.flyme.filemanager.activity.HomeActivity}"
+        drawable="flyme_filemanager"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.gamecenter/com.meizu.flyme.gamecenter.GameMainTabActivity}"
+        drawable="flyme_game"/>
+    <item
+        component="ComponentInfo{com.meizu.media.life/com.meizu.media.life.ui.activity.HomeActivity}"
+        drawable="flyme_life"/>
+    <item
+        component="ComponentInfo{com.meizu.media.painter/com.meizu.media.painter.PainterMainActivity}"
+        drawable="flyme_painter"/>
+    <item
+        component="ComponentInfo{com.meizu.media.camera/com.meizu.media.camera.CameraLauncher}"
+        drawable="flyme_camera"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.update/com.meizu.flyme.update.SystemUpgradeListActivity}"
+        drawable="flyme_update"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.calculator/com.meizu.flyme.calculator.Calculator}"
+        drawable="flyme_calculator"/>
+    <item
+        component="ComponentInfo{com.meizu.voiceassistant/com.meizu.voiceassistant.MainActivity}"
+        drawable="flyme_voice_assistant"/>
+    <item
+        component="ComponentInfo{com.meizu.media.music/com.meizu.media.music.MusicActivity}"
+        drawable="flyme_music"/>
+    <item
+        component="ComponentInfo{com.meizu.safe/com.meizu.safe.SecurityMainActivity}"
+        drawable="flyme_safe"/>
+    <item
+        component="ComponentInfo{com.meizu.mstore/com.meizu.flyme.appcenter.activitys.AppMainTabActivity}"
+        drawable="flyme_appcenter"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.gamecenter/com.meizu.flyme.gamecenter.activity.GameMainActivity}"
+        drawable="flyme_game"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.update/com.meizu.flyme.update.SystemUpdateListActivity}"
+        drawable="flyme_update"/>
+    <item
+        component="ComponentInfo{com.meizu.notepaper/com.meizu.flyme.notepaper.app.NotePaperActivity}"
+        drawable="flyme_notepaper"/>
+    <item
+        component="ComponentInfo{com.hiwifi/com.hiwifi.ui.SplashActivity}"
+        drawable="hiwifi"/>
+    <item
+        component="ComponentInfo{com.linecorp.foodcam.android/com.linecorp.foodcam.android.camera.CameraActivity}"
+        drawable="foodie"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

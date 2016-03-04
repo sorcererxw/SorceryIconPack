@@ -110,6 +110,10 @@ public class MainActivity extends AppCompatActivity implements
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
+
+        if(Build.VERSION.SDK_INT>=23){
+            (new PermissionsHelper()).requestWriteExternalStorage(this);
+        }
     }
 
     @Override

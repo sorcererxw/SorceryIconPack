@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-        <item>zhihu</item>
-        <item>luckymoney</item>
-        <item>zhiyeyishiwantiku</item>
-        <item>eleme</item>
-        <item>beiyue</item>
-        <item>dgtle</item>
-        <item>baidu_waimai</item>
-        <item>netease_music</item>
-        <item>tencent_qq_music</item>
-        <item>ttpod</item>
-        <item>icebox</item>
-        <item>hanglvzongheng</item>
+        <item>foodie</item>
+        <item>duduribao</item>
+        <item>hiwifi</item>
+        <item>flyme_appcenter</item>
+        <item>flyme_browser</item>
+        <item>flyme_calculator</item>
+        <item>flyme_calendar</item>
+        <item>flyme_camera</item>
+        <item>flyme_clock</item>
+        <item>flyme_customizecenter</item>
+        <item>flyme_dialer</item>
+        <item>flyme_download</item>
+        <item>flyme_email</item>
+        <item>flyme_feedback</item>
+        <item>flyme_filemanager</item>
+        <item>flyme_gallery</item>
+        <item>flyme_game</item>
+        <item>flyme_life</item>
+        <item>flyme_map</item>
+        <item>flyme_music</item>
+        <item>flyme_notepaper</item>
+        <item>flyme_painter</item>
+        <item>flyme_read</item>
+        <item>flyme_safe</item>
+        <item>flyme_scanner</item>
+        <item>flyme_settings</item>
+        <item>flyme_sms</item>
+        <item>flyme_soundrecorder</item>
+        <item>flyme_toolbox</item>
+        <item>flyme_update</item>
+        <item>flyme_video</item>
+        <item>flyme_voice_assistant</item>
+        <item>flyme_weather</item>
     </string-array>
 
     <string-array name="icon_pack_samsung">
@@ -424,6 +445,7 @@
         <item>battery_widget_reborn</item>
         <item>bbc_news</item>
         <item>behance</item>
+        <item>beiyue</item>
         <item>beyondpod</item>
         <item>bhoot</item>
         <item>bilibili</item>
@@ -532,6 +554,7 @@
         <item>dropbox</item>
         <item>dropsync</item>
         <item>duduribao</item>
+        <item>duduribao_alt</item>
         <item>dumb_ways_to_die</item>
         <item>dumb_ways_to_die_2</item>
         <item>duokan</item>
@@ -559,8 +582,70 @@
         <item>flappy_bird</item>
         <item>flava</item>
         <item>flipboard</item>
+        <item>flyme_appcenter</item>
+        <item>flyme_browser</item>
+        <item>flyme_calculator</item>
+        <item>flyme_calendar</item>
+        <item>flyme_calendar_1</item>
+        <item>flyme_calendar_10</item>
+        <item>flyme_calendar_11</item>
+        <item>flyme_calendar_12</item>
+        <item>flyme_calendar_13</item>
+        <item>flyme_calendar_14</item>
+        <item>flyme_calendar_15</item>
+        <item>flyme_calendar_16</item>
+        <item>flyme_calendar_17</item>
+        <item>flyme_calendar_18</item>
+        <item>flyme_calendar_19</item>
+        <item>flyme_calendar_2</item>
+        <item>flyme_calendar_20</item>
+        <item>flyme_calendar_21</item>
+        <item>flyme_calendar_22</item>
+        <item>flyme_calendar_23</item>
+        <item>flyme_calendar_24</item>
+        <item>flyme_calendar_25</item>
+        <item>flyme_calendar_26</item>
+        <item>flyme_calendar_27</item>
+        <item>flyme_calendar_28</item>
+        <item>flyme_calendar_29</item>
+        <item>flyme_calendar_3</item>
+        <item>flyme_calendar_30</item>
+        <item>flyme_calendar_31</item>
+        <item>flyme_calendar_4</item>
+        <item>flyme_calendar_5</item>
+        <item>flyme_calendar_6</item>
+        <item>flyme_calendar_7</item>
+        <item>flyme_calendar_8</item>
+        <item>flyme_calendar_9</item>
+        <item>flyme_camera</item>
+        <item>flyme_clock</item>
+        <item>flyme_customizecenter</item>
+        <item>flyme_dialer</item>
+        <item>flyme_download</item>
+        <item>flyme_email</item>
+        <item>flyme_feedback</item>
+        <item>flyme_filemanager</item>
+        <item>flyme_gallery</item>
+        <item>flyme_game</item>
+        <item>flyme_life</item>
+        <item>flyme_map</item>
+        <item>flyme_music</item>
+        <item>flyme_notepaper</item>
+        <item>flyme_painter</item>
+        <item>flyme_read</item>
+        <item>flyme_safe</item>
+        <item>flyme_scanner</item>
+        <item>flyme_settings</item>
+        <item>flyme_sms</item>
+        <item>flyme_soundrecorder</item>
+        <item>flyme_toolbox</item>
+        <item>flyme_update</item>
+        <item>flyme_video</item>
+        <item>flyme_voice_assistant</item>
+        <item>flyme_weather</item>
         <item>flynx</item>
         <item>fmradio</item>
+        <item>foodie</item>
         <item>fotor</item>
         <item>franco_kernel</item>
         <item>gallery</item>
@@ -633,6 +718,7 @@
         <item>hayday</item>
         <item>hitman_go</item>
         <item>hitman_sniper</item>
+        <item>hiwifi</item>
         <item>holo_launcher</item>
         <item>houzz</item>
         <item>htc_backup</item>
@@ -781,6 +867,7 @@
         <item>link_bubble</item>
         <item>lizhi_fm</item>
         <item>lucid_launcher</item>
+        <item>luckymoney</item>
         <item>lucky_patcher</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
@@ -1160,6 +1247,7 @@
         <item>zhihu_ribao</item>
         <item>zhixing</item>
         <item>zhixinghuochepiao</item>
+        <item>zhiyeyishiwantiku</item>
         <item>zhongguoyouzheng</item>
         <item>zhonghuawannianli</item>
         <item>zhuanxin</item>
