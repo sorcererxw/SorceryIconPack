@@ -133,6 +133,7 @@
         <item>SONY</item>
         <item>Tencent</item>
         <item>Xiaomi</item>
+        <item>Meizu</item>
     </string-array>
 
     <string-array name="launchers">

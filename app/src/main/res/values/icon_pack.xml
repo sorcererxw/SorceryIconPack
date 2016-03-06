@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
+        <item>instagram</item>
+        <item>didi</item>
+        <item>shuqi</item>
         <item>foodie</item>
         <item>duduribao</item>
         <item>hiwifi</item>
@@ -35,6 +38,41 @@
         <item>flyme_voice_assistant</item>
         <item>flyme_weather</item>
     </string-array>
+
+
+    <string-array name="icon_pack_flyme">
+        <item>flyme_appcenter</item>
+        <item>flyme_browser</item>
+        <item>flyme_calculator</item>
+        <item>flyme_calendar</item>
+        <item>flyme_camera</item>
+        <item>flyme_clock</item>
+        <item>flyme_customizecenter</item>
+        <item>flyme_dialer</item>
+        <item>flyme_download</item>
+        <item>flyme_email</item>
+        <item>flyme_feedback</item>
+        <item>flyme_filemanager</item>
+        <item>flyme_gallery</item>
+        <item>flyme_game</item>
+        <item>flyme_life</item>
+        <item>flyme_map</item>
+        <item>flyme_music</item>
+        <item>flyme_notepaper</item>
+        <item>flyme_painter</item>
+        <item>flyme_read</item>
+        <item>flyme_safe</item>
+        <item>flyme_scanner</item>
+        <item>flyme_settings</item>
+        <item>flyme_sms</item>
+        <item>flyme_soundrecorder</item>
+        <item>flyme_toolbox</item>
+        <item>flyme_update</item>
+        <item>flyme_video</item>
+        <item>flyme_voice_assistant</item>
+        <item>flyme_weather</item>
+    </string-array>
+
 
     <string-array name="icon_pack_samsung">
         <item>samsung_apps</item>

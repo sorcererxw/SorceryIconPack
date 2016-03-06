@@ -51,9 +51,12 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+//        ((ImageView) findViewById(R.id.imageView_about_toolbar)).setImageBitmap(BitmapFactory
+//                .decodeResource(getResources(), R.drawable.sorcery_icon_pack));
+
         final ContributorCard sorcerer =
                 (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
-        sorcerer.setAnimAvatar(getResources().getDrawable(R.drawable.animation_sorcerer));
+//        sorcerer.setAnimAvatar(getResources().getDrawable(R.drawable.animation_sorcerer));
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(
                 getString(R.string.job_developer) + " & " + getString(R.string.job_icon_design));

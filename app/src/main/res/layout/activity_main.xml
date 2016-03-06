@@ -32,6 +32,7 @@
                     app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
                 <com.miguelcatalan.materialsearchview.MaterialSearchView
+                    android:hint="search..."
                     android:id="@+id/searchBox_main_icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>

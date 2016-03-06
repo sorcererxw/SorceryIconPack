@@ -2994,18 +2994,18 @@
     <item
         component="ComponentInfo{com.linecorp.foodcam.android/com.linecorp.foodcam.android.camera.CameraActivity}"
         drawable="foodie"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{com.meizu.media.reader/com.meizu.media.reader.ReaderMainActivity}"
+        drawable="flyme_read"/>
+    <item
+        component="ComponentInfo{com.meizu.feedback/com.meizu.feedback.activity.MainActivity}"
+        drawable="flyme_feedback"/>
+    <item
+        component="ComponentInfo{com.shuqi.controller/com.shuqi.activity.SplashActivity}"
+        drawable="shuqi"/>
+    <item
+        component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.MzRecorderActivity}"
+        drawable="flyme_soundrecorder"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

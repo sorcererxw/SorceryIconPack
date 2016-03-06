@@ -125,6 +125,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             case IconFragment.FLAG_XIAOMI:
                 mIconNames = resources.getStringArray(R.array.icon_pack_xiaomi);
                 break;
+            case IconFragment.FLAG_FLYME:
+                mIconNames = resources.getStringArray(R.array.icon_pack_flyme);
+                break;
             default:
                 mIconNames = new String[]{""};
         }

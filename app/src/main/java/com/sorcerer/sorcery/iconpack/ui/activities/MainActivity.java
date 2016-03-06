@@ -229,6 +229,7 @@ public class MainActivity extends AppCompatActivity implements
         adapter.addFragment(generateFragment(IconFragment.FLAG_SONY), name[12]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_TENCENT), name[13]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_XIAOMI), name[14]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_FLYME), name[15]);
     }
 
     private IconFragment generateFragment(int flag) {

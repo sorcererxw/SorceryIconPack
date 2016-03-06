@@ -48,10 +48,10 @@
                 app:layout_collapseMode="parallax">
 
                 <ImageView
+                    android:id="@+id/imageView_about_toolbar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/sorcery_icon_pack"/>
+                    android:layout_weight="1"/>
 
             </LinearLayout>
 

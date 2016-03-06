@@ -44,6 +44,7 @@
         <item>索尼</item>
         <item>腾讯</item>
         <item>小米</item>
+        <item>魅族</item>
     </string-array>
     <string name="nav_item_apply">应用到启动器</string>
     <string name="nav_item_icon">图标</string>

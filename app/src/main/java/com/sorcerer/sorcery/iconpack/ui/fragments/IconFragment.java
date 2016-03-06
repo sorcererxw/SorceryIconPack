@@ -49,6 +49,7 @@ public class IconFragment extends Fragment {
     public static final int FLAG_SONY = 6;
     public static final int FLAG_TENCENT = 7;
     public static final int FLAG_XIAOMI = 4;
+    public static final int FLAG_FLYME = 15;
 
     private AutoLoadRecyclerView mGridView;
     private IconAdapter mIconAdapter;

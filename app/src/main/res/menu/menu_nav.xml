@@ -49,7 +49,7 @@
         android:title="@string/nav_item_about"/>
 
     <item
-        android:visible="false"
+        android:visible="true"
         android:id="@+id/nav_item_test"
         android:title="test"/>
 </menu>

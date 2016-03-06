@@ -10,6 +10,11 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
+    <uses-feature android:name="org.cyanogenmod.theme" android:required="true" />
+    <meta-data android:name="org.cyanogenmod.theme.name" android:value="Sorcery" />
+    <meta-data android:name="org.cyanogenmod.theme.author" android:value="Sorcerer" />
+
+
     <application
         android:name=".SIP"
         android:allowBackup="true"

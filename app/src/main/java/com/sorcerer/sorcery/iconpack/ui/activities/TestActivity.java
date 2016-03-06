@@ -3,7 +3,9 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.XmlResourceParser;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -11,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -28,8 +31,10 @@ import com.sorcerer.sorcery.iconpack.adapters.LibAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
+import com.sorcerer.sorcery.iconpack.util.ApkUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
+import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 import com.stericson.RootTools.RootTools;
 import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
@@ -37,11 +42,18 @@ import com.stericson.RootTools.execution.CommandCapture;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestActivity extends SlideInAndOutAppCompatActivity {
+
+    private static final String TAG = "TestActivity";
 
     private Context mContext;
     private Button mTestButton;
@@ -57,8 +69,64 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
         mImageView = (ImageView) findViewById(R.id.imageView_test);
         mContext = this;
 
-        mTestButton.setOnClickListener(catDBListener);
+        mTestButton.setOnClickListener(zipListener);
     }
+
+    private View.OnClickListener zipListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+            mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+            final List pkgAppsList =
+                    getPackageManager().queryIntentActivities(mainIntent, 0);
+            int z = 0;
+            for (Object object : pkgAppsList) {
+
+                ResolveInfo info = (ResolveInfo) object;
+                if (!info.activityInfo.applicationInfo.packageName
+                        .equals(getApplicationInfo().packageName)) {
+                    continue;
+                }
+                File f1 = new File(info.activityInfo.applicationInfo.publicSourceDir);
+
+                Log.v("file--",
+                        " " + f1.getName().toString() + "----" +
+                                info.loadLabel(getPackageManager()));
+                try {
+
+                    String file_name = info.loadLabel(getPackageManager()).toString();
+                    Log.d("file_name--", " " + file_name);
+
+                    // File f2 = new File(Environment.getExternalStorageDirectory().toString()+"/Folder/"+file_name+".apk");
+                    // f2.createNewFile();
+
+                    File f2 = new File(
+                            Environment.getExternalStorageDirectory().toString() + "/Folder");
+                    f2.mkdirs();
+                    f2 = new File(f2.getPath() + "/" + file_name + ".apk");
+                    f2.createNewFile();
+
+                    InputStream in = new FileInputStream(f1);
+
+                    OutputStream out = new FileOutputStream(f2);
+
+                    byte[] buf = new byte[1024];
+                    int len;
+                    while ((len = in.read(buf)) > 0) {
+                        out.write(buf, 0, len);
+                    }
+                    in.close();
+                    out.close();
+                    System.out.println("File copied.");
+                } catch (FileNotFoundException ex) {
+                    System.out.println(ex.getMessage() + " in the specified directory.");
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+
+                }
+            }
+        }
+    };
 
     private View.OnClickListener catDBListener = new View.OnClickListener() {
         @Override
