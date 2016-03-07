@@ -44,14 +44,20 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_collapseMode="parallax">
 
                 <ImageView
+                    android:layout_gravity="center_horizontal"
                     android:id="@+id/imageView_about_toolbar"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"/>
+
+                <TextView
+                    android:text="version: 3.0.3(128)"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -93,12 +99,14 @@
                     android:gravity="center">
 
                     <com.sorcerer.sorcery.iconpack.ui.views.FontTextView
+                        android:lineSpacingExtra="10sp"
                         android:id="@+id/textView_about_main"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="@string/about_main"
                         android:textColor="@color/black"
                         android:textSize="18sp"
+                        android:gravity="center"
                         android:typeface="sans"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>

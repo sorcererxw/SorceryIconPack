@@ -46,17 +46,17 @@
     <string name="nav_open" translatable="false">open</string>
     <string name="nav_close" translatable="false">close</string>
 
-    <string name="thanks">thanks</string>
+    <string name="thanks">Thanks</string>
 
-    <string name="nav_item_icon">icons</string>
-    <string name="nav_item_apply">apply</string>
-    <string name="nav_item_feedback">feedback</string>
-    <string name="nav_item_settings">settings</string>
-    <string name="nav_item_lab">lab</string>
-    <string name="nav_item_update">update</string>
-    <string name="nav_item_welcome">welcome</string>
-    <string name="nav_item_donate">donate</string>
-    <string name="nav_item_about">about</string>
+    <string name="nav_item_icon">Icons</string>
+    <string name="nav_item_apply">Apply</string>
+    <string name="nav_item_feedback">Feedback</string>
+    <string name="nav_item_settings">Settings</string>
+    <string name="nav_item_lab">Lab</string>
+    <string name="nav_item_update">Update</string>
+    <string name="nav_item_welcome">Welcome</string>
+    <string name="nav_item_donate">Donate</string>
+    <string name="nav_item_about">About</string>
 
     <string name="donate_dialog_title">select amount</string>
     <string name="donate_declaration_content"></string>
@@ -64,9 +64,9 @@
     <string name="donate_title">Support Us</string>
     <string name="donate_content">If you like my work\n
     and\n
-    if you want to support me\n
+    if you want to support us\n
     please donate !\n
-    I would really appreciate that!\n
+    We would really appreciate that!\n
     Thank you!</string>
 
     <string name="open_alipay">opening alipay</string>
@@ -87,8 +87,9 @@
     <string name="job_icon_design">icon design</string>
     <string name="open_source_lib">Open Source Libs</string>
 
-    <string name="about_main">let 「material」 colorful launcher</string>
-    
+    <string name="about_main">let 「material」\n
+        colorful your phone</string>
+
     <string name="pref_global_load_title">global load</string>
     <string name="pref_global_load_summary">load by xposed instead of launcher</string>
     <string name="pref_global_load_key" translatable="false">pref_global_load</string>
@@ -117,9 +118,9 @@
 
     <string name="xposed_tag">load sorcery icon pack globally</string>
 
-    <string-array name="tab_name">
-        <item>new</item>
-        <item>all</item>
+    <string-array name="tab_name" >
+        <item>New</item>
+        <item>All</item>
         <item>ALi</item>
         <item>Baidu</item>
         <item>Cyanogenmod</item>
@@ -127,7 +128,7 @@
         <item>HTC</item>
         <item>Lenovo</item>
         <item>LG</item>
-        <item>Moto</item>
+        <item>MOTO</item>
         <item>Microsoft</item>
         <item>Samsung</item>
         <item>SONY</item>
@@ -172,7 +173,7 @@
         <item>Apex Launcher|com.anddoes.launcher</item>
         <item>Atom Launcher|com.dlto.atom.launcher</item>
         <item>Aviate Launcher|com.tul.aviate</item>
-        <!--<item>CM Theme Engine|org.cyanogenmod.theme.chooser</item>-->
+        <item>CM Theme Engine|org.cyanogenmod.theme.chooser</item>
         <!--<item>Epic Launcher|com.epic.launcher</item>-->
         <item>Go Launcher|com.gau.go.launcherex</item>
         <!--<item>Google Now Launcher|com.google.android.launcher</item>-->

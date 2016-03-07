@@ -117,21 +117,27 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             mXposedCloseButton.setEnabled(true);
             mXposedRebootButton.setEnabled(true);
         } else {
-            if (RootTools.isRootAvailable()) {
-                mXposedStateTextView.setText(getString(R.string.global_state_not_active));
-                mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
-                mXposedApplyButton.setEnabled(true);
-                mXposedRefreshButton.setEnabled(false);
-                mXposedCloseButton.setEnabled(false);
-                mXposedRebootButton.setEnabled(false);
-            } else {
-                mXposedStateTextView.setText(getString(R.string.global_state_not_root));
-                mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
-                mXposedApplyButton.setEnabled(false);
-                mXposedRefreshButton.setEnabled(false);
-                mXposedCloseButton.setEnabled(false);
-                mXposedRebootButton.setEnabled(false);
-            }
+//            if (RootTools.isRootAvailable()) {
+//                mXposedStateTextView.setText(getString(R.string.global_state_not_active));
+//                mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
+//                mXposedApplyButton.setEnabled(true);
+//                mXposedRefreshButton.setEnabled(false);
+//                mXposedCloseButton.setEnabled(false);
+//                mXposedRebootButton.setEnabled(false);
+//            } else {
+//                mXposedStateTextView.setText(getString(R.string.global_state_not_root));
+//                mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
+//                mXposedApplyButton.setEnabled(false);
+//                mXposedRefreshButton.setEnabled(false);
+//                mXposedCloseButton.setEnabled(false);
+//                mXposedRebootButton.setEnabled(false);
+//            }
+            mXposedStateTextView.setText(getString(R.string.global_state_not_active));
+            mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
+            mXposedApplyButton.setEnabled(true);
+            mXposedRefreshButton.setEnabled(false);
+            mXposedCloseButton.setEnabled(false);
+            mXposedRebootButton.setEnabled(false);
         }
         if (Build.VERSION.SDK_INT >= 23) {
             PermissionsHelper.requestWriteExternalStorage(this);

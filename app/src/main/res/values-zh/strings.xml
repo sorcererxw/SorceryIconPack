@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Sorcery 图标包</string>
+
+    <string name="action_feedback">反馈</string>
+    <string name="action_welcome">感谢使用</string>
+
+    <string name="request">申请图标</string>
+    <string name="suggest">建议</string>
+
+    <string name="choose_mail_app">请选择邮箱</string>
+
+    <string name="welcome_title">感谢使用</string>
+    <string name="welcome_body">感谢使用这款图标包, 由于刚刚制作完成, 图标覆盖上不够全面, 如果没有适合你的图标, 可以在左侧抽屉的反馈中告诉我</string>
+    <string name="welcome_close">好的</string>
+    <string name="installed">已安装</string>
+    <string name="not_installed">未安装</string>
+    <string name="update_fail">获取失败, 请检查网络</string>
+    <string name="find_new_version">发现新版</string>
+    <string name="ok">好的</string>
+    <string name="download">下载</string>
+    <string name="cancel">取消</string>
+    <string name="action_apply">应用</string>
+    <string name="is_last_version">当前已为最新版本, 无需更新</string>
+    <string name="icon_request_sending">正在发送</string>
+    <string name="version_name">版本名</string>
+    <string name="action_update">检查更新</string>
+    <string name="icon_request_send_fail">发送失败, 请通过邮箱方式反馈</string>
+    <string name="icon_request_send_success">发送成功, 感谢反馈</string>
+    <string name="update_start">检查更新</string>
+
+    <string-array name="tab_name">
+        <item>最新</item>
+        <item>所有</item>
+        <item>阿里</item>
+        <item>百度</item>
+        <item>Cyanogenmod</item>
+        <item>谷歌</item>
+        <item>HTC</item>
+        <item>联想</item>
+        <item>LG</item>
+        <item>MOTO</item>
+        <item>微软</item>
+        <item>三星</item>
+        <item>索尼</item>
+        <item>腾讯</item>
+        <item>小米</item>
+        <item>魅族</item>
+    </string-array>
+    <string name="nav_item_apply">应用到启动器</string>
+    <string name="nav_item_icon">图标</string>
+    <string name="nav_item_feedback">反馈</string>
+    <string name="nav_item_welcome">欢迎使用</string>
+    <string name="nav_item_update">检查更新</string>
+    <string name="donate_declaration_content">收款方为第三方支付服务商Bmob, 如有疑问请联系: feedback@sorcererxw.com</string>
+    <string name="alipay">支付宝</string>
+    <string name="wechat">微信</string>
+    <string name="donate_title">支持我们</string>
+    <string name="donate_content">
+        如果您喜欢这款应用\n
+        并且愿意支持我们\n
+        希望可以获得您的捐赠\n
+        我们会向您表达由衷的感谢\n
+        谢谢:)</string>
+    <string name="nav_item_donate">捐赠</string>
+    <string name="donate_dialog_title">选择金额</string>
+    <string name="thanks">感  谢</string>
+    <string name="donate_success">捐赠成功 \^o^/</string>
+    <string name="donate_fail">捐赠失败, 不过我还是很感动</string>
+    <string name="open_alipay">正在打开支付宝</string>
+    <string name="nav_item_settings">设置</string>
+    <string name="pref_global_load_summary">不依赖启动器, 使用xposed加载图标</string>
+    <string name="pref_global_load_title">全局加载</string>
+    <string name="pref_global_hint">目前还在测试, 将在下个大版本更新中启用</string>
+    <string name="cancel_request">取消图标申请?</string>
+    <string name="yes">是</string>
+    <string name="select_app">选择应用</string>
+    <string name="select_all">全选</string>
+    <string name="no">不</string>
+    <string name="xposed_tag">
+        全局加载Sorcery图标包, 勾选并去图标包设置里面打开</string>
+    <string name="nav_item_lab">实验室</string>
+    <string name="global_detail">
+        #通过Xposed进行加载图标包以实现全局更换图标|#你需要先root您的设备并且在Xposed框架中勾选此应用
+    </string>
+
+    <string name="global_attention">
+        说明:|
+        #1.应用之后需要重启设备以更换图标|
+        #2.请在所有手机后台管理应用中将这个应用纳入白名单|
+        #3.当前Xposed模块暂不支持nova, 请在「应用到启动器」中更换nova图标|
+        #4.暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
+        #5.运行样本较少, 无法保证模块百分百运行正常|
+        #6.启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
+    <string name="global_state_active">已开启</string>
+    <string name="global_state_label">当前状态</string>
+    <string name="global_state_not_active">尚未开启</string>
+    <string name="global_state_not_root">未root</string>
+    <string name="action_close">关闭</string>
+    <string name="just_show_without_custom">仅显示未适配图标</string>
+    <string name="nav_item_about">关于</string>
+    <string name="open_source_lib">开源库</string>
+    <string name="job_developer">开发者</string>
+    <string name="job_icon_design">图标设计</string>
+    <string name="contributor">贡献者</string>
+    <string name="action_refresh">强制刷新</string>
+    <string name="global_load_package_add_notify">重启以显示新应用的sorcery图标</string>
+    <string name="action_soft_reboot">软重启</string>
+    <string name="action_reboot">重启设备</string>
+    <string name="action_search">搜索</string>
+    <string name="action_like">赞</string>
+    <string name="action_dislike">踩</string>
+    <string name="about_main">用「质感」妆点你的手机</string>
+    <string name="select_an_icon">选择一个图标</string>
+</resources>

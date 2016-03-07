@@ -110,10 +110,6 @@ public class MainActivity extends AppCompatActivity implements
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
-
-        if(Build.VERSION.SDK_INT>=23){
-            (new PermissionsHelper()).requestWriteExternalStorage(this);
-        }
     }
 
     @Override
@@ -137,6 +133,14 @@ public class MainActivity extends AppCompatActivity implements
 //            updateHelper.update();
         }
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        if (Build.VERSION.SDK_INT >= 23) {
+            (new PermissionsHelper()).requestWriteExternalStorage(this);
+        }
     }
 
     private void initTabAndPager() {

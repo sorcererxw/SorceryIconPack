@@ -13,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 
 import org.w3c.dom.Text;
 
@@ -74,6 +76,11 @@ public class ContributorCard extends FrameLayout {
     public void setAvatar(Drawable drawable) {
         mAvatar.setVisibility(VISIBLE);
         mAvatar.setImageDrawable(drawable);
+    }
+
+    public void setAvatarByImageLoader(int id) {
+        mAvatar.setVisibility(VISIBLE);
+        ImageLoader.getInstance().displayImage("drawable://"+id,mAvatar, SIP.mOptions);
     }
 
     public void setAnimAvatar(Drawable drawable) {

@@ -112,7 +112,7 @@
                             android:enabled="false"
                             android:minWidth="0dp"
                             android:text="@string/action_reboot"
-                            android:textSize="16sp"/>
+                            android:textSize="14sp"/>
 
 
                         <Button
@@ -123,7 +123,7 @@
                             android:enabled="false"
                             android:minWidth="0dp"
                             android:text="@string/action_refresh"
-                            android:textSize="16sp"/>
+                            android:textSize="14sp"/>
 
                         <Button
                             android:id="@+id/button_lab_xposed_close"
@@ -133,7 +133,7 @@
                             android:enabled="false"
                             android:minWidth="0dp"
                             android:text="@string/action_close"
-                            android:textSize="16sp"/>
+                            android:textSize="14sp"/>
 
                         <Button
                             android:id="@+id/button_lab_xposed_apply"
@@ -142,7 +142,7 @@
                             android:layout_height="wrap_content"
                             android:minWidth="0dp"
                             android:text="@string/action_apply"
-                            android:textSize="16sp"/>
+                            android:textSize="14sp"/>
 
                     </LinearLayout>
                 </RelativeLayout>

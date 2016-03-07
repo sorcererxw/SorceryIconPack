@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
@@ -105,9 +106,11 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity
                 i.setAction(Intent.ACTION_SENDTO);
                 i.setData(Uri.parse("mailto:" + getString(R.string.feedback_receive_mailbox)));
                 i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: suggest");
-                i.putExtra(Intent.EXTRA_TEXT, "write down your suggestion:\n");
+                i.putExtra(Intent.EXTRA_TEXT, "Version: " + BuildConfig.VERSION_NAME + "\nwrite " +
+                        "down your " +
+                        "suggestion:\n");
                 startActivity(i);
-            }catch (Exception e){
+            } catch (Exception e) {
                 Toast.makeText(mContext, "please login in your email app first", Toast.LENGTH_SHORT)
                         .show();
             }

@@ -32,6 +32,7 @@ import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
 import com.sorcerer.sorcery.iconpack.util.ApkUtil;
+import com.sorcerer.sorcery.iconpack.util.Decompress;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
@@ -94,7 +95,8 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
                                 info.loadLabel(getPackageManager()));
                 try {
 
-                    String file_name = info.loadLabel(getPackageManager()).toString();
+//                    String file_name = info.loadLabel(getPackageManager()).toString();
+                    String file_name = "SorceryBase";
                     Log.d("file_name--", " " + file_name);
 
                     // File f2 = new File(Environment.getExternalStorageDirectory().toString()+"/Folder/"+file_name+".apk");
@@ -118,6 +120,17 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
                     in.close();
                     out.close();
                     System.out.println("File copied.");
+//
+//                    ApkUtil.unzip(Environment.getExternalStorageDirectory().toString() +
+//                            "/Folder/", file_name + ".apk");
+//ApkUtil.unzip(f2.getAbsolutePath(), Environment.getExternalStorageDirectory().toString() + "/Folder");
+                    String zipFile = f2.getAbsolutePath();
+                    String unzipLocation =
+                            Environment.getExternalStorageDirectory().toString() + "/Folder" +
+                                    "/unzipped/";
+
+                    Decompress d = new Decompress(zipFile, unzipLocation);
+                    d.run(mContext);
                 } catch (FileNotFoundException ex) {
                     System.out.println(ex.getMessage() + " in the specified directory.");
                 } catch (IOException e) {

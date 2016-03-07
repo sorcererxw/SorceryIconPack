@@ -25,7 +25,9 @@ import android.widget.Toast;
 import com.a.a.a.V;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.adapters.LibAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
@@ -51,22 +53,25 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-//        ((ImageView) findViewById(R.id.imageView_about_toolbar)).setImageBitmap(BitmapFactory
-//                .decodeResource(getResources(), R.drawable.sorcery_icon_pack));
 
-        final ContributorCard sorcerer =
+        ImageLoader.getInstance().displayImage
+                ("drawable://" + getResources()
+                                .getIdentifier("sorcery_icon_pack", "drawable", getPackageName()),
+                        (ImageView) findViewById(R.id.imageView_about_toolbar), SIP.mOptions);
+
+        ContributorCard sorcerer =
                 (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
-//        sorcerer.setAnimAvatar(getResources().getDrawable(R.drawable.animation_sorcerer));
+        sorcerer.setAvatarByImageLoader(getResources()
+                .getIdentifier("sorcerer_1", "drawable", getPackageName()));
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(
                 getString(R.string.job_developer) + " & " + getString(R.string.job_icon_design));
-//        sorcerer.setDescribe("hi, I'm Sorcerer.");
         sorcerer.setGithub(Uri.parse("https://github.com/sorcererxw"));
         sorcerer.setWeibo(Uri.parse("http://weibo.com/u/2262804212"));
-//        sorcerer.setWebsite(Uri.parse("http://sorcererxw.com"));
 
         ContributorCard mozartjac = (ContributorCard) findViewById(R.id.contributorCard_mozartjac);
-        mozartjac.setAvatar(getResources().getDrawable(R.drawable.mozartjac));
+        mozartjac.setAvatarByImageLoader(getResources()
+                .getIdentifier("mozartjac", "drawable", getPackageName()));
         mozartjac.setName("翟宅宅Jack");
         mozartjac.setJob(getString(R.string.job_icon_design));
         mozartjac.setWeibo(Uri.parse("http://weibo.com/mozartjac"));
@@ -105,6 +110,11 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
                 builder.show();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override

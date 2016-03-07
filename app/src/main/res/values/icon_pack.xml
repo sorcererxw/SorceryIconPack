@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-        <item>instagram</item>
-        <item>didi</item>
-        <item>shuqi</item>
-        <item>foodie</item>
-        <item>duduribao</item>
-        <item>hiwifi</item>
-        <item>flyme_appcenter</item>
-        <item>flyme_browser</item>
-        <item>flyme_calculator</item>
-        <item>flyme_calendar</item>
-        <item>flyme_camera</item>
-        <item>flyme_clock</item>
-        <item>flyme_customizecenter</item>
-        <item>flyme_dialer</item>
-        <item>flyme_download</item>
-        <item>flyme_email</item>
-        <item>flyme_feedback</item>
-        <item>flyme_filemanager</item>
-        <item>flyme_gallery</item>
-        <item>flyme_game</item>
-        <item>flyme_life</item>
-        <item>flyme_map</item>
-        <item>flyme_music</item>
-        <item>flyme_notepaper</item>
-        <item>flyme_painter</item>
-        <item>flyme_read</item>
-        <item>flyme_safe</item>
-        <item>flyme_scanner</item>
-        <item>flyme_settings</item>
-        <item>flyme_sms</item>
-        <item>flyme_soundrecorder</item>
-        <item>flyme_toolbox</item>
-        <item>flyme_update</item>
-        <item>flyme_video</item>
-        <item>flyme_voice_assistant</item>
-        <item>flyme_weather</item>
+        <item>bughd</item>
+        <item>luyinbao</item>
+        <item>ali_xiaohao</item>
+        <item>green_vpn</item>
+        <item>tencent_qpaint</item>
+        <item>dice</item>
     </string-array>
-
 
     <string-array name="icon_pack_flyme">
         <item>flyme_appcenter</item>
@@ -72,7 +41,6 @@
         <item>flyme_voice_assistant</item>
         <item>flyme_weather</item>
     </string-array>
-
 
     <string-array name="icon_pack_samsung">
         <item>samsung_apps</item>
@@ -222,6 +190,7 @@
     </string-array>
 
     <string-array name="icon_pack_lg">
+        <item>lg_backup</item>
         <item>lg_browser</item>
         <item>lg_calculator</item>
         <item>lg_calendar</item>
@@ -237,15 +206,16 @@
         <item>lg_music</item>
         <item>lg_notebook</item>
         <item>lg_phone</item>
-        <item>lg_quick_remote</item>
         <item>lg_quickmemo</item>
+        <item>lg_quick_remote</item>
         <item>lg_radio</item>
         <item>lg_remote_call_service</item>
         <item>lg_settings</item>
         <item>lg_smartworld</item>
-        <item>lg_task_manager</item>
         <item>lg_tasks</item>
+        <item>lg_task_manager</item>
         <item>lg_update_center</item>
+        <item>lg_video</item>
         <item>lg_video_editor</item>
         <item>lg_voice_mate</item>
         <item>lg_voice_recorder</item>
@@ -573,6 +543,7 @@
         <item>dianping</item>
         <item>didaqingdan</item>
         <item>didi</item>
+        <item>didi_alt</item>
         <item>digg</item>
         <item>dingxiangyisheng</item>
         <item>documents</item>
@@ -970,7 +941,6 @@
         <item>netease_cloudclass</item>
         <item>netease_huochepiao</item>
         <item>netease_music</item>
-        <item>netease_music_alt</item>
         <item>netease_news</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_note</item>
@@ -1018,7 +988,6 @@
         <item>romow_fluxo</item>
         <item>root_explorer</item>
         <item>ruler</item>
-        <item>runtastic_six_pack</item>
         <item>same</item>
         <item>samsung_apps</item>
         <item>samsung_browser</item>
@@ -1083,6 +1052,7 @@
         <item>shanbay</item>
         <item>shanbay_listen</item>
         <item>shouxin_keyboard</item>
+        <item>shuqi</item>
         <item>sim</item>
         <item>simplenote</item>
         <item>skitch</item>
@@ -1186,7 +1156,6 @@
         <item>tencent_qq_lite</item>
         <item>tencent_qq_mail</item>
         <item>tencent_qq_music</item>
-        <item>tencent_qq_music_alt</item>
         <item>tencent_qq_read</item>
         <item>tencent_qq_secure</item>
         <item>tencent_qq_sync</item>
