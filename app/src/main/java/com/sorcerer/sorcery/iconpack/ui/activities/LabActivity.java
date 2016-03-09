@@ -88,8 +88,8 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedCloseButton = (Button) findViewById(R.id.button_lab_xposed_close);
         mXposedRefreshButton = (Button) findViewById(R.id.button_lab_xposed_refresh);
         mXposedRebootButton = (Button) findViewById(R.id.button_lab_xposed_reboot);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
 
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

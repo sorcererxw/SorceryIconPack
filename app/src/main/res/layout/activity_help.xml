@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sorcerer.sorcery.iconpack.ui.activities.HelpActivity">
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/toolbar_universal"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_help"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include4">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

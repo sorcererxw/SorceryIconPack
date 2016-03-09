@@ -1858,7 +1858,7 @@
         drawable="baidu_keyboard"/>
     <item
         component="ComponentInfo{com.cootek.smartinputv5/com.cootek.smartinput5.GateActivity}"
-        drawable="touchpal"/>
+        drawable="touchpal_keyboard"/>
     <item
         component="ComponentInfo{com.psiphon3.subscription/com.psiphon3.StatusActivity}"
         drawable="psiphon"/>
@@ -1876,7 +1876,7 @@
         drawable="versus"/>
     <item
         component="ComponentInfo{com.cootek.smartinputv5/com.cootek.smartinput5.TouchPalOption}"
-        drawable="touchpal"/>
+        drawable="touchpal_keyboard"/>
     <item
         component="ComponentInfo{com.nuomi/com.baidu.bainuo.splash.SplashActivity}"
         drawable="baidu_nuomi"/>
@@ -3118,27 +3118,27 @@
     <item
         component="ComponentInfo{com.tencent.qpaint/com.tencent.qpaint.gallery.GalleryActivity}"
         drawable="tencent_qpaint"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{com.meizu.account/com.meizu.account.AccountCenterActivity}"
+        drawable="flyme_account"/>
+    <item
+        component="ComponentInfo{com.soft.blued/com.soft.blued.ui.welcome.FirstActivity}"
+        drawable="blued"/>
+    <item
+        component="ComponentInfo{com.flarejune.perfectcolorbar/com.flarejune.perfectcolorbar.ui.actMain}"
+        drawable="perfect_color_bar"/>
+    <item
+        component="ComponentInfo{com.flarejune.perfectcolorbar.kk/com.flarejune.perfectcolorbar.kk.ui.actMain}"
+        drawable="perfect_color_bar"/>
+    <item
+        component="ComponentInfo{com.coolsoft.movie/com.coolsoft.movie.entry.EntryViewPagerActivity}"
+        drawable="piaofanzi"/>
+    <item
+        component="ComponentInfo{com.by.butter.camera/com.by.butter.camera.activity.SplashScreenActivity}"
+        drawable="butter_camera"/>
+    <item
+        component="ComponentInfo{com.jotterpad.x/com.jotterpad.x.MainActivity}"
+        drawable="jotterpad"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

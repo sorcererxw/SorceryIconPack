@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sorcery 图标包</string>
+    <string name="app_name">Sorcery图标包</string>
 
     <string name="action_feedback">反馈</string>
     <string name="action_welcome">感谢使用</string>
@@ -87,10 +87,9 @@
         说明:|
         #1.应用之后需要重启设备以更换图标|
         #2.请在所有手机后台管理应用中将这个应用纳入白名单|
-        #3.当前Xposed模块暂不支持nova, 请在「应用到启动器」中更换nova图标|
-        #4.暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
-        #5.运行样本较少, 无法保证模块百分百运行正常|
-        #6.启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
+        #3.暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
+        #4.运行样本较少, 无法保证模块百分百运行正常|
+        #5.启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
     <string name="global_state_active">已开启</string>
     <string name="global_state_label">当前状态</string>
     <string name="global_state_not_active">尚未开启</string>
@@ -111,4 +110,9 @@
     <string name="action_dislike">踩</string>
     <string name="about_main">用「质感」妆点你的手机</string>
     <string name="select_an_icon">选择一个图标</string>
+    <string name="nav_item_help">常见问题</string>
+    <string name="please_give_permission">请给予权限</string>
+    <string name="sorcery"></string>
+    <string name="changelog">更新日志</string>
+    <string name="action_dismiss">关闭</string>
 </resources>

@@ -164,7 +164,7 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
         boolean ignoreSwipe = false;
         View content;
         Activity mActivity;
-        int sideWidthInDP = 16;
+        int sideWidthInDP = 24;
         int sideWidth = 72;
         int screenWidth = 1080;
         VelocityTracker tracker;

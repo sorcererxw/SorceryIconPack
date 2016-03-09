@@ -39,9 +39,15 @@
         android:title="@string/nav_item_update"/>
 
     <item
+        android:id="@+id/nav_item_help"
+        android:icon="@drawable/ic_help_black_24dp"
+        android:title="@string/nav_item_help"/>
+
+    <item
         android:id="@+id/nav_item_donate"
         android:icon="@drawable/ic_attach_money_black_24dp"
         android:title="@string/nav_item_donate"/>
+
 
     <item
         android:id="@+id/nav_item_about"
@@ -49,7 +55,7 @@
         android:title="@string/nav_item_about"/>
 
     <item
-        android:visible="false"
         android:id="@+id/nav_item_test"
-        android:title="test"/>
+        android:title="test"
+        android:visible="false"/>
 </menu>

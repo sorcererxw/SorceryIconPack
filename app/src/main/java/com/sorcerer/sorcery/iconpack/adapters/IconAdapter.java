@@ -19,7 +19,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.models.IconBmob;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
@@ -153,7 +155,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, final int position) {
-        holder.icon.setImageResource(mIconList.get(position).getRes());
         if (!mCustomPicker) {
             holder.main.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -199,6 +200,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 }
             });
         }
+        holder.icon.setImageResource(mIconList.get(position).getRes());
 
 //        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
 //                SIP.mOptions);

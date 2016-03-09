@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -41,6 +42,7 @@ import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 import org.w3c.dom.Text;
 
 import cn.bmob.v3.Bmob;
+import im.fir.sdk.FIR;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -54,14 +56,20 @@ public class MainActivity extends AppCompatActivity implements
     private NavigationView mNavigationView;
     private boolean mCustomPicker = false;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+//        Intent intent = new Intent(this, SplashActivity.class);
+//        startActivity(intent);
         setContentView(R.layout.activity_main);
 
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
-        if (action == "com.novalauncher.THEME") {
+        if (action.equals("com.novalauncher.THEME")) {
             mCustomPicker = true;
         }
 
@@ -101,6 +109,8 @@ public class MainActivity extends AppCompatActivity implements
         toggle.syncState();
 
         if (!mCustomPicker) {
+            FIR.init(getApplicationContext());
+
             Bmob.initialize(this, getString(R.string.bmob_app_id));
             UpdateHelper updateHelper =
                     new UpdateHelper(this);
@@ -139,7 +149,8 @@ public class MainActivity extends AppCompatActivity implements
     protected void onPostResume() {
         super.onPostResume();
         if (Build.VERSION.SDK_INT >= 23) {
-            (new PermissionsHelper()).requestWriteExternalStorage(this);
+            PermissionsHelper.requestWriteExternalStorage(this);
+            PermissionsHelper.requestReadPhoneState(this);
         }
     }
 
@@ -274,6 +285,8 @@ public class MainActivity extends AppCompatActivity implements
             activityShift(TestActivity.class);
         } else if (id == R.id.nav_item_about) {
             activityShift(AboutActivity.class);
+        } else if (id == R.id.nav_item_help) {
+            activityShift(HelpActivity.class);
         }
         mDrawerLayout.closeDrawers();
         return true;
@@ -298,7 +311,8 @@ public class MainActivity extends AppCompatActivity implements
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 new UpdateHelper(this).update();
             } else {
-                Toast.makeText(this, "no permission", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.please_give_permission), Toast.LENGTH_SHORT)
+                        .show();
             }
         }
     }

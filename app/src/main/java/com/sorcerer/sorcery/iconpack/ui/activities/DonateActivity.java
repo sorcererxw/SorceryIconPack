@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -17,12 +18,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 
@@ -31,7 +37,7 @@ import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import c.b.BP;
 
 public class DonateActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
-
+    private static final String TAG = "DonateActivity";
     private Activity mActivity;
     private int mAmount;
 
@@ -192,27 +198,53 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         int w_screen = dm.widthPixels;
         cardView.setTranslationX(w_screen);
 
-        cardView.animate().setListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-                cardView.setVisibility(View.VISIBLE);
-            }
+        ImageLoader.getInstance().displayImage(
+                "drawable://" +
+                        getResources()
+                                .getIdentifier("gnarly_90s", "drawable", getPackageName()),
+                (ImageView) findViewById(R.id.imageView_donate_card),
+                SIP.mOptions, new ImageLoadingListener() {
+                    @Override
+                    public void onLoadingStarted(String imageUri, View view) {
 
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                findViewById(R.id.imageView_donate_heart).setVisibility(View.VISIBLE);
-            }
+                    }
 
-            @Override
-            public void onAnimationCancel(Animator animation) {
+                    @Override
+                    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
 
-            }
+                    }
 
-            @Override
-            public void onAnimationRepeat(Animator animation) {
+                    @Override
+                    public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                        cardView.animate().setListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+                                cardView.setVisibility(View.VISIBLE);
+                            }
 
-            }
-        }).setDuration(1000).translationX(0).start();
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                findViewById(R.id.imageView_donate_heart)
+                                        .setVisibility(View.VISIBLE);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).setDuration(1000).translationX(0).start();
+                    }
+
+                    @Override
+                    public void onLoadingCancelled(String imageUri, View view) {
+
+                    }
+                });
     }
 
     @Override

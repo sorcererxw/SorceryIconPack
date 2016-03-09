@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
+        <item>baidu_keyboard</item>
+        <item>microsoft_bing_keyboard</item>
+        <item>shouxin_keyboard</item>
+        <item>sougou_keyboard</item>
+        <item>swiftkey_keyboard</item>
+        <item>tencent_qq_keyboard</item>
+        <item>touchpal_keyboard</item>
+        <item>xunfei_keyboard</item>
+        <item>zhangyu_keyboard</item>
+        <item>bilibili_alt</item>
+        <item>butter_camera</item>
+        <item>piaofanzi</item>
+        <item>flyme_account</item>
+        <item>blued</item>
+        <item>perfect_color_bar</item>
         <item>bughd</item>
         <item>luyinbao</item>
         <item>ali_xiaohao</item>
         <item>green_vpn</item>
         <item>tencent_qpaint</item>
         <item>dice</item>
+        <item>wandoujia_alt</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
+        <item>flyme_account</item>
         <item>flyme_appcenter</item>
         <item>flyme_browser</item>
         <item>flyme_calculator</item>
@@ -341,6 +358,7 @@
         <item>ali_wangxin</item>
         <item>ali_wangxin_alt</item>
         <item>ali_xianyu</item>
+        <item>ali_xiaohao</item>
         <item>allcast</item>
         <item>amap</item>
         <item>amazon</item>
@@ -457,6 +475,8 @@
         <item>beyondpod</item>
         <item>bhoot</item>
         <item>bilibili</item>
+        <item>bilibili_alt</item>
+        <item>blued</item>
         <item>bluenote</item>
         <item>boom_beach</item>
         <item>bootmanager</item>
@@ -495,7 +515,9 @@
         <item>boxer_calendar_9</item>
         <item>browser</item>
         <item>budingdonghua</item>
+        <item>bughd</item>
         <item>busybox</item>
+        <item>butter_camera</item>
         <item>buzz_launcher</item>
         <item>cabinet</item>
         <item>calculator</item>
@@ -541,6 +563,7 @@
         <item>dgtle_alt</item>
         <item>dgtle_alt_2</item>
         <item>dianping</item>
+        <item>dice</item>
         <item>didaqingdan</item>
         <item>didi</item>
         <item>didi_alt</item>
@@ -591,6 +614,7 @@
         <item>flappy_bird</item>
         <item>flava</item>
         <item>flipboard</item>
+        <item>flyme_account</item>
         <item>flyme_appcenter</item>
         <item>flyme_browser</item>
         <item>flyme_calculator</item>
@@ -719,6 +743,7 @@
         <item>go_launcher</item>
         <item>gravity_box</item>
         <item>gravity_screen</item>
+        <item>green_vpn</item>
         <item>gudong</item>
         <item>guokr</item>
         <item>hai360</item>
@@ -778,7 +803,7 @@
         <item>jike</item>
         <item>jinritoutiao</item>
         <item>jinsanciba</item>
-        <item>jotter_pad</item>
+        <item>jotterpad</item>
         <item>juejin</item>
         <item>kaifazhetoutiao</item>
         <item>kaoyanbang</item>
@@ -840,6 +865,7 @@
         <item>lenovo_shareit</item>
         <item>lenovo_syncit</item>
         <item>letv</item>
+        <item>lg_backup</item>
         <item>lg_browser</item>
         <item>lg_calculator</item>
         <item>lg_calendar</item>
@@ -864,6 +890,7 @@
         <item>lg_tasks</item>
         <item>lg_task_manager</item>
         <item>lg_update_center</item>
+        <item>lg_video</item>
         <item>lg_video_editor</item>
         <item>lg_voice_mate</item>
         <item>lg_voice_recorder</item>
@@ -878,6 +905,7 @@
         <item>lucid_launcher</item>
         <item>luckymoney</item>
         <item>lucky_patcher</item>
+        <item>luyinbao</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
         <item>medium</item>
@@ -961,7 +989,9 @@
         <item>paypal</item>
         <item>peel_smart_remote</item>
         <item>pengpai_news</item>
+        <item>perfect_color_bar</item>
         <item>pianke</item>
+        <item>piaofanzi</item>
         <item>pinglide</item>
         <item>pixolor</item>
         <item>playstation</item>
@@ -1148,6 +1178,7 @@
         <item>tencent_lightalk</item>
         <item>tencent_map</item>
         <item>tencent_news</item>
+        <item>tencent_qpaint</item>
         <item>tencent_qq</item>
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
@@ -1180,6 +1211,7 @@
         <item>toca_mini</item>
         <item>tonghuashun</item>
         <item>touchpal</item>
+        <item>touchpal_keyboard</item>
         <item>tsf_launcher</item>
         <item>ttpod</item>
         <item>tudou</item>
@@ -1197,6 +1229,7 @@
         <item>vst</item>
         <item>wakelock_detector</item>
         <item>wandoujia</item>
+        <item>wandoujia_alt</item>
         <item>wandoujia_eyepetizer</item>
         <item>wandoujia_qingzhuomian</item>
         <item>wandoujia_yilan</item>

@@ -32,18 +32,18 @@
                     app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
                 <com.miguelcatalan.materialsearchview.MaterialSearchView
-                    android:hint="search..."
                     android:id="@+id/searchBox_main_icon"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="search..."/>
 
             </RelativeLayout>
 
             <android.support.design.widget.TabLayout
-                app:tabTextAppearance="@style/TabTextAppearance"
                 android:id="@+id/tabLayout_icon"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/TabTextAppearance"/>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -63,3 +63,4 @@
         app:headerLayout="@layout/layout_nav_head"
         app:menu="@menu/menu_nav"/>
 </android.support.v4.widget.DrawerLayout>
+

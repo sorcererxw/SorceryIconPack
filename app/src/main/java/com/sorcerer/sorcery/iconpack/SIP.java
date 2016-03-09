@@ -13,6 +13,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import cn.bmob.v3.Bmob;
 import im.fir.sdk.FIR;
 
 /**
@@ -23,12 +24,19 @@ public class SIP extends Application {
     public static final String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
     public static DisplayImageOptions mOptions;
     public static String LOGTAG = "[SIP]";
+    private Application mApplication = this;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        FIR.init(this);
-        initImageLoader(this);
+//        initImageLoader(this);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                initImageLoader(mApplication);
+            }
+        }).start();
     }
 
     /**
@@ -49,9 +57,9 @@ public class SIP extends Application {
 
 
         mOptions = new DisplayImageOptions.Builder()
-//                .showImageOnLoading(
-//                        new ColorDrawable(getResources().getColor(R.color.transparent))
-//                )   //加载过程中
+                .showImageOnLoading(
+                        new ColorDrawable(getResources().getColor(R.color.transparent))
+                )   //加载过程中
 //                .showImageForEmptyUri(R.mipmap.ic_launcher) //uri为空时
 //                .showImageOnFail(R.mipmap.ic_launcher)      //加载失败时
                 .cacheOnDisk(true)

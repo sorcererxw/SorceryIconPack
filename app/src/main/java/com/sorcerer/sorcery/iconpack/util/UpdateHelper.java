@@ -45,7 +45,6 @@ public class UpdateHelper {
         mRootView = rootView;
     }
 
-
     public void update() {
         FIR.checkForUpdateInFIR(mContext.getString(R.string.fir_token), new VersionCheckCallback() {
             @Override
@@ -93,6 +92,8 @@ public class UpdateHelper {
         });
     }
 
+
+
     private void showUpdateDialog(final FirVersion firVersion) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
         builder.title(mContext.getString(R.string.find_new_version))
@@ -132,4 +133,5 @@ public class UpdateHelper {
                         "" +
                         ".apk");
     }
+
 }

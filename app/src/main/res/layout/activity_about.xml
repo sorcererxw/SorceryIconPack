@@ -54,7 +54,7 @@
                     android:layout_height="200dp"/>
 
                 <TextView
-                    android:text="version: 3.0.3(128)"
+                    android:id="@+id/textView_about_version_code"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>

@@ -108,15 +108,15 @@
                         app:cardElevation="8dp">
 
                         <RelativeLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/imageView_donate_card"
+                                android:layout_width="match_parent"
                                 android:layout_height="216dp"
                                 android:layout_centerInParent="true"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/gnarly_90s"/>
+                                android:scaleType="centerCrop"/>
 
                             <TextView
                                 android:layout_width="wrap_content"

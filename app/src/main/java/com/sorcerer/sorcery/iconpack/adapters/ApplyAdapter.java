@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,7 +14,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
@@ -25,7 +28,7 @@ import java.util.List;
  * Created by Sorcerer on 2016/1/24 0024.
  */
 public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherViewHolder> {
-
+    private static final String TAG = "ApplyAdapter";
     private List<LauncherInfo> mLauncherList;
     private Context mContext;
     private OnItemClickListener mListener;
@@ -113,6 +116,12 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
             holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.red_500));
         }
         holder.icon.setImageResource(mLauncherList.get(position).getIcon());
+//        String resName = mLauncherList.get(position).getLabel().replace(" ", "_").toLowerCase();
+//        Log.d(TAG, resName);
+//        ImageLoader.getInstance().displayImage("drawable://" + mContext.getResources()
+//                        .getIdentifier(resName, "drawable", mContext.getPackageName()),
+//                holder.icon,
+//                SIP.mOptions);
     }
 
     @Override

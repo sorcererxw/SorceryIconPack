@@ -7,16 +7,20 @@ import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +30,7 @@ import com.a.a.a.V;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.adapters.LibAdapter;
@@ -58,6 +63,9 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
                 ("drawable://" + getResources()
                                 .getIdentifier("sorcery_icon_pack", "drawable", getPackageName()),
                         (ImageView) findViewById(R.id.imageView_about_toolbar), SIP.mOptions);
+
+        ((TextView) findViewById(R.id.textView_about_version_code)).setText(
+                "Version: " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
 
         ContributorCard sorcerer =
                 (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
@@ -123,7 +131,21 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
 
         if (id == android.R.id.home) {
             super.onBackPressed();
+        } else if (id == R.id.action_about_changelog) {
+            MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+            builder.title(getString(R.string.changelog));
+            builder.content(getString(R.string.changelog_content).replace("|", "\n")
+                    .replace("#", "" +
+                            "    "));
+            builder.positiveText(getString(R.string.action_dismiss));
+            builder.show();
         }
         return false;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_about, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
