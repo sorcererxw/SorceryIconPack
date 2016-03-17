@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -14,6 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -23,13 +26,12 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
+import android.view.animation.Animation;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.github.florent37.hollyviewpager.HollyViewPager;
-import com.github.florent37.hollyviewpager.HollyViewPagerConfigurator;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
@@ -56,8 +58,58 @@ public class MainActivity extends AppCompatActivity implements
     private NavigationView mNavigationView;
     private boolean mCustomPicker = false;
 
+    private ViewPager.OnPageChangeListener mPageChangeListener =
+            new ViewPager.OnPageChangeListener() {
+                @Override
+                public void onPageScrolled(int position, float positionOffset,
+                                           int positionOffsetPixels) {
+                    if (position != mViewPager.getCurrentItem()
+                            && mSearchBox.isSearchOpen()) {
+                        closeSearch();
+                    }
+                }
 
+                @Override
+                public void onPageSelected(int position) {
+                    if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
+                        closeSearch();
+                    }
+                }
 
+                @Override
+                public void onPageScrollStateChanged(int state) {
+                }
+            };
+
+    private MaterialSearchView.SearchViewListener mSearchViewListener =
+            new MaterialSearchView.SearchViewListener() {
+                @Override
+                public void onSearchViewShown() {
+                }
+
+                @Override
+                public void onSearchViewClosed() {
+                    ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
+                            .showWithString
+                                    ("");
+                }
+            };
+
+    private MaterialSearchView.OnQueryTextListener mSearchQueryTextListener =
+            new MaterialSearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
+                            .showWithString
+                                    (newText);
+                    return false;
+                }
+            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +124,14 @@ public class MainActivity extends AppCompatActivity implements
         if (action.equals("com.novalauncher.THEME")) {
             mCustomPicker = true;
         }
+
+//        if (Build.VERSION.SDK_INT >= 21) {
+//            ActivityManager.TaskDescription
+//                    taskDescription =
+//                    new ActivityManager.TaskDescription(getString(R.string.app_name), null,
+//                            getResources().getColor(R.color.colorPrimary));
+//            setTaskDescription(taskDescription);
+//        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -160,26 +220,7 @@ public class MainActivity extends AppCompatActivity implements
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
 
         mViewPager.setOffscreenPageLimit(1);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset,
-                                       int positionOffsetPixels) {
-                if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
-                    closeSearch();
-                }
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
-                    closeSearch();
-                }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
+        mViewPager.addOnPageChangeListener(mPageChangeListener);
 
         mPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
 
@@ -329,32 +370,8 @@ public class MainActivity extends AppCompatActivity implements
 
     private void initSearchBox() {
         mSearchBox = (MaterialSearchView) findViewById(R.id.searchBox_main_icon);
-//        mSearchBox.setSuggestions(getResources().getStringArray(R.array.icon_pack));
-        mSearchBox.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
-            @Override
-            public void onSearchViewShown() {
-
-            }
-
-            @Override
-            public void onSearchViewClosed() {
-                ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem())).showWithString
-                        ("");
-            }
-        });
-        mSearchBox.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem())).showWithString
-                        (newText);
-                return false;
-            }
-        });
+        mSearchBox.setOnSearchViewListener(mSearchViewListener);
+        mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
     }
 
     @Override

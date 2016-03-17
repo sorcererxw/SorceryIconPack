@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="@color/root_background"
     android:id="@+id/recyclerView_donate_root"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/root_background"
     tools:context="com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity">
 
     <include
@@ -54,32 +54,7 @@
                     android:textSize="16sp"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="32dp">
-
-                <Button
-                    android:id="@+id/button_donate_alipay"
-                    android:layout_width="@dimen/medium_button_width"
-                    android:layout_height="@dimen/medium_button_height"
-                    android:background="@color/alipay"
-                    android:text="@string/alipay"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"/>
-
-                <Button
-                    android:id="@+id/button_donate_wechat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/wechat"
-                    android:text="@string/wechat"
-                    android:textColor="@color/white"
-                    android:visibility="gone"/>
-
-            </LinearLayout>
+            <include layout="@layout/layout_donate_button_bar"/>
 
             <RelativeLayout
                 android:layout_width="wrap_content"

@@ -4,6 +4,9 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -32,6 +35,8 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     private List<LauncherInfo> mLauncherList;
     private Context mContext;
     private OnItemClickListener mListener;
+    private ColorMatrixColorFilter mGrayScaleFilter;
+
 
     public ApplyAdapter(Context context, List<LauncherInfo> launcherList) {
         mContext = context;
@@ -42,6 +47,10 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
                 return lhs.compareTo(rhs);
             }
         });
+
+        ColorMatrix matrix = new ColorMatrix();
+        matrix.setSaturation(0);
+        mGrayScaleFilter = new ColorMatrixColorFilter(matrix);
     }
 
     public interface OnItemClickListener {
@@ -108,14 +117,18 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     @Override
     public void onBindViewHolder(LauncherViewHolder holder, int position) {
         holder.label.setText(mLauncherList.get(position).getLabel());
+
+        holder.icon.setImageResource(mLauncherList.get(position).getIcon());
+
         if (mLauncherList.get(position).isInstalled()) {
             holder.isInstalled.setText(mContext.getString(R.string.installed));
-            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.green_500));
+//            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.green_500));
+            holder.icon.setColorFilter(null);
         } else {
             holder.isInstalled.setText(mContext.getString(R.string.not_installed));
-            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.red_500));
+//            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.red_500));
+            holder.icon.setColorFilter(mGrayScaleFilter);
         }
-        holder.icon.setImageResource(mLauncherList.get(position).getIcon());
 //        String resName = mLauncherList.get(position).getLabel().replace(" ", "_").toLowerCase();
 //        Log.d(TAG, resName);
 //        ImageLoader.getInstance().displayImage("drawable://" + mContext.getResources()

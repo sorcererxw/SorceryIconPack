@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-        <item>baidu_keyboard</item>
-        <item>microsoft_bing_keyboard</item>
-        <item>shouxin_keyboard</item>
-        <item>sougou_keyboard</item>
-        <item>swiftkey_keyboard</item>
-        <item>tencent_qq_keyboard</item>
-        <item>touchpal_keyboard</item>
-        <item>xunfei_keyboard</item>
-        <item>zhangyu_keyboard</item>
-        <item>bilibili_alt</item>
-        <item>butter_camera</item>
-        <item>piaofanzi</item>
-        <item>flyme_account</item>
-        <item>blued</item>
-        <item>perfect_color_bar</item>
-        <item>bughd</item>
-        <item>luyinbao</item>
-        <item>ali_xiaohao</item>
-        <item>green_vpn</item>
-        <item>tencent_qpaint</item>
-        <item>dice</item>
-        <item>wandoujia_alt</item>
+        <item>v2ex</item>
+        <item>oneplus_community</item>
+        <item>a94_percent</item>
+        <item>netease_cloudclass</item>
+        <item>zhiqu_weather</item>
+        <item>shadowsocks</item>
+        <item>google_pinyin_keyboard</item>
+        <item>google_keyboard</item>
+        <item>microsoft_onedrive</item>
+        <item>tencent_weiyun_alt</item>
+        <item>snaptube</item>
+        <item>google_youtube</item>
+        <item>google_play_store</item>
+        <item>ali_tmall</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
@@ -355,6 +347,7 @@
         <item>ali_taobao_dianying</item>
         <item>ali_taobao_nongcun</item>
         <item>ali_tmall</item>
+        <item>ali_tmall_alt</item>
         <item>ali_wangxin</item>
         <item>ali_wangxin_alt</item>
         <item>ali_xianyu</item>
@@ -728,10 +721,12 @@
         <item>google_hangout</item>
         <item>google_inbox</item>
         <item>google_keep</item>
+        <item>google_keyboard</item>
         <item>google_maps</item>
         <item>google_messenger</item>
         <item>google_now_launcher</item>
         <item>google_opinion_rewards</item>
+        <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
@@ -967,6 +962,7 @@
         <item>muzei</item>
         <item>myboy_gba</item>
         <item>netease_cloudclass</item>
+        <item>netease_cloudclass_alt</item>
         <item>netease_huochepiao</item>
         <item>netease_music</item>
         <item>netease_news</item>
@@ -1090,6 +1086,7 @@
         <item>slack</item>
         <item>smart_launcher</item>
         <item>smzdm</item>
+        <item>snaptube</item>
         <item>sohu_video</item>
         <item>solid_explorer</item>
         <item>solo_launcher</item>
@@ -1195,6 +1192,7 @@
         <item>tencent_webank</item>
         <item>tencent_wechat</item>
         <item>tencent_weiyun</item>
+        <item>tencent_weiyun_alt</item>
         <item>terminal</item>
         <item>terminal_emulator</item>
         <item>texpand</item>
@@ -1210,7 +1208,6 @@
         <item>toca_lab</item>
         <item>toca_mini</item>
         <item>tonghuashun</item>
-        <item>touchpal</item>
         <item>touchpal_keyboard</item>
         <item>tsf_launcher</item>
         <item>ttpod</item>
@@ -1222,6 +1219,7 @@
         <item>uber</item>
         <item>uc</item>
         <item>unicom</item>
+        <item>v2ex</item>
         <item>versus</item>
         <item>via_browser</item>
         <item>viper4android</item>
@@ -1285,6 +1283,7 @@
         <item>zhiboba</item>
         <item>zhihu</item>
         <item>zhihu_ribao</item>
+        <item>zhiqu_weather</item>
         <item>zhixing</item>
         <item>zhixinghuochepiao</item>
         <item>zhiyeyishiwantiku</item>

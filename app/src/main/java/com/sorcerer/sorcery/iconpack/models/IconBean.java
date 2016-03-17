@@ -48,7 +48,7 @@ public class IconBean {
 
     public static String handleIconName(String orgin) {
         String res;
-        if (Character.isDigit(orgin.charAt(1))) {
+        if (Character.isDigit(orgin.charAt(1)) && orgin.charAt(0)=='a') {
             res = orgin.substring(1, orgin.length());
         } else {
             res = orgin.substring(0, orgin.length());

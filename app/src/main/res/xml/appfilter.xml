@@ -3139,18 +3139,18 @@
     <item
         component="ComponentInfo{com.jotterpad.x/com.jotterpad.x.MainActivity}"
         drawable="jotterpad"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{com.snaptube.premium/com.snaptube.premium.activity.ExploreActivity}"
+        drawable="snaptube"/>
+    <item
+        component="ComponentInfo{com.czbix.v2ex/com.czbix.v2ex.ui.MainActivity}"
+        drawable="v2ex"/>
+    <item
+        component="ComponentInfo{ctrip.android.view/ctrip.android.view.splash.CtripSplashActivity}"
+        drawable="ctrip"/>
+    <item
+        component="ComponentInfo{com.oneplus.bbs/com.oneplus.bbs.ui.activity.PreStartActivity}"
+        drawable="oneplus_community"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:paddingTop="32dp">
+
+    <com.sorcerer.sorcery.iconpack.ui.views.materialDesignLibrary.views.ButtonRectangle
+        android:id="@+id/button_donate_alipay"
+        android:layout_width="@dimen/medium_button_width"
+        android:layout_height="@dimen/medium_button_height"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/alipay"
+        android:text="@string/alipay"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_donate_wechat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/wechat"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
+</LinearLayout>
