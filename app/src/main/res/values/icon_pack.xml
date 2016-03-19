@@ -15,6 +15,15 @@
         <item>google_youtube</item>
         <item>google_play_store</item>
         <item>ali_tmall</item>
+        <item>a360</item>
+        <item>huluxia_wifi</item>
+        <item>apkpure</item>
+        <item>adobe_flash</item>
+        <item>shoujileyuan</item>
+        <item>ali_miaojie</item>
+        <item>google_camera</item>
+        <item>netease_music</item>
+        <item>netease_music_alt</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
@@ -169,6 +178,7 @@
         <item>google_authenticator</item>
         <item>google_blogger</item>
         <item>google_calendar</item>
+        <item>google_camera</item>
         <item>google_device_manager</item>
         <item>google_earth</item>
         <item>google_goggles</item>
