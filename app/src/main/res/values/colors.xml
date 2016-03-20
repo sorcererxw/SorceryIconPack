@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">@color/green_700</color>
     <color name="colorAccent">@color/brown_700</color>
 
+    <color name="google_plus">#dc493c</color>
     <color name="wechat">#37d72d</color>
     <color name="alipay">#00a0e9</color>
 

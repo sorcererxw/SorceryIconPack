@@ -40,12 +40,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     private Activity mParentActivity;
     private boolean mCustomPicker = false;
-    private String[] mIconNames;
     private Context mContext;
-    private List<Integer> mItems;
     private int lastPosition = -1;
     private List<IconBean> mIconBeanList = new ArrayList<>();
-    private List<IconBean> mIconList = new ArrayList();
+    private List<IconBean> mShowIconList = new ArrayList<>();
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
@@ -65,22 +63,19 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     private void loadIcons(int flag) {
-        mItems = new ArrayList<>();
         final String packageName = mContext.getPackageName();
         addIcons(mContext.getResources(), packageName, flag);
 
-        Log.d(TAG, "" + mIconNames.length);
-        Log.d(TAG, "" + mItems.size());
+//        Log.d(TAG, "" + mIconNames.length);
+//        Log.d(TAG, "" + mItems.size());
 
-        for (int i = 0; i < mIconNames.length; i++) {
-//            Log.d(TAG, i + " " + mIconNames[i] + " " + mItems.get(i));
-            mIconBeanList.add(new IconBean(mIconNames[i], mItems.get(i)));
-        }
-        mIconList.clear();
-        mIconList.addAll(mIconBeanList);
+        mShowIconList.clear();
+        mShowIconList.addAll(mIconBeanList);
     }
 
     private void addIcons(Resources resources, String packageName, int flag) {
+        String[] mIconNames;
+
         switch (flag) {
             case IconFragment.FLAG_ALL:
                 mIconNames = resources.getStringArray(R.array.icon_pack);
@@ -134,17 +129,22 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 mIconNames = new String[]{""};
         }
         for (String name : mIconNames) {
+            IconBean iconBean = new IconBean(name);
+
             int res = resources.getIdentifier(name, "drawable", packageName);
+
             if (res != 0) {
                 final int thumbRes = resources.getIdentifier(name, "drawable", packageName);
                 if (thumbRes != 0) {
-                    mItems.add(thumbRes);
+                    iconBean.setRes(thumbRes);
                 } else {
                     Log.d(TAG, "thumb = 0: " + name);
                 }
             } else {
                 Log.d(TAG, "res = 0: " + name);
             }
+
+            mIconBeanList.add(iconBean);
         }
     }
 
@@ -161,14 +161,28 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 public void onClick(View v) {
                     View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
 //                ((TextView) iconDialog.findViewById(R.id.textView_dialog_title))
-//                        .setText(mIconList.get(position).getLabel());
+//                        .setText(mShowIconList.get(position).getLabel());
                     ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
-                            .setImageResource(mIconList.get(position).getRes());
-                    ((LikeLayout) iconDialog.findViewById(R.id.likeLayout)).bindIcon(mIconList.get
-                            (position).getName());
+                            .setImageResource(mShowIconList.get(position).getRes());
+                    ((LikeLayout) iconDialog.findViewById(R.id.likeLayout))
+                            .bindIcon(mShowIconList.get
+                                    (position).getName());
+                    if (mIconBeanList.get(position).getLabel().equals("google plus")) {
+                        Button join =
+                                (Button) iconDialog.findViewById(R.id.button_dialog_icon_join);
+                        join.setVisibility(View.VISIBLE);
+                        join.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse
+                                        ("https://plus.google.com/communities/115317471515103046699"));
+                                mContext.startActivity(intent);
+                            }
+                        });
+                    }
                     new MaterialDialog.Builder(mContext)
                             .customView(iconDialog, false)
-                            .title(mIconList.get(position).getLabel())
+                            .title(mShowIconList.get(position).getLabel())
                             .show();
                 }
             });
@@ -181,16 +195,16 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
                     try {
                         bitmap = BitmapFactory.decodeResource(mContext.getResources(),
-                                mIconList.get(position).getRes());
+                                mShowIconList.get(position).getRes());
                     } catch (Exception e) {
                     }
 
                     if (bitmap != null) {
                         intent.putExtra("icon", bitmap);
                         intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE",
-                                mIconList.get(position).getRes());
+                                mShowIconList.get(position).getRes());
                         String bmUri = "android.resource://" + mContext.getPackageName() + "/" +
-                                String.valueOf(mIconList.get(position).getRes());
+                                String.valueOf(mShowIconList.get(position).getRes());
                         intent.setData(Uri.parse(bmUri));
                         mParentActivity.setResult(Activity.RESULT_OK, intent);
                     } else {
@@ -200,7 +214,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 }
             });
         }
-        holder.icon.setImageResource(mIconList.get(position).getRes());
+        holder.icon.setImageResource(mShowIconList.get(position).getRes());
 
 //        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
 //                SIP.mOptions);
@@ -219,19 +233,19 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public int getItemCount() {
-        return mIconList.size();
+        return mShowIconList.size();
     }
 
     public void showWithString(String s) {
-        mIconList.clear();
+        mShowIconList.clear();
         if (s.isEmpty()) {
-            for (int i = 0; i < mIconNames.length; i++) {
-                mIconList.add(mIconBeanList.get(i));
+            for (int i = 0; i < mIconBeanList.size(); i++) {
+                mShowIconList.add(mIconBeanList.get(i));
             }
         } else {
-            for (int i = 0; i < mIconNames.length; i++) {
+            for (int i = 0; i < mIconBeanList.size(); i++) {
                 if (mIconBeanList.get(i).getLabel().contains(s)) {
-                    mIconList.add(mIconBeanList.get(i));
+                    mShowIconList.add(mIconBeanList.get(i));
                 }
             }
         }

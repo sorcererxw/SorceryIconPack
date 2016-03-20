@@ -56,13 +56,24 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         mRequestButton = (Button) findViewById(R.id.button_request);
         mSuggestButton = (Button) findViewById(R.id.button_suggest);
 
         mRequestButton.setOnClickListener(this);
         mSuggestButton.setOnClickListener(this);
+
+        (findViewById(R.id.button_feedback_join)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse
+                        ("https://plus.google.com/communities/115317471515103046699"));
+                mContext.startActivity(intent);
+            }
+        });
 
         (findViewById(R.id.textView_feedback_explain))
                 .setOnLongClickListener(new View.OnLongClickListener() {

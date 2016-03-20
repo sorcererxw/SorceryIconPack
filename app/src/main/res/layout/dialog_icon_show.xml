@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
 
     <!--<TextView-->
-        <!--android:text="sorcery"-->
-        <!--android:id="@+id/textView_dialog_title"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="24dp"-->
-        <!--android:layout_marginTop="24dp"-->
-        <!--android:textColor="@color/title"-->
-        <!--android:textSize="20sp"-->
-        <!--android:textStyle="bold"/>-->
+    <!--android:text="sorcery"-->
+    <!--android:id="@+id/textView_dialog_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="24dp"-->
+    <!--android:layout_marginTop="24dp"-->
+    <!--android:textColor="@color/title"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textStyle="bold"/>-->
 
     <ImageView
-        android:src="@mipmap/ic_launcher"
         android:id="@+id/imageView_dialog_icon"
         android:layout_width="@dimen/dialog_icon_size"
         android:layout_height="@dimen/dialog_icon_size"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="24dp"/>
+        android:layout_margin="24dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <Button
+        android:id="@+id/button_dialog_icon_join"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="24dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/action_join_google_plus"
+        android:textColor="@color/google_plus"
+        android:visibility="gone"/>
 
     <com.sorcerer.sorcery.iconpack.ui.views.LikeLayout
         android:id="@+id/likeLayout"

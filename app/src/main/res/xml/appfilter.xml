@@ -679,16 +679,16 @@
         drawable="google_plus"/>
     <item
         component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}"
-        drawable="google_plusphotos"/>
+        drawable="google_photos"/>
     <item
         component="ComponentInfo{com.google.android.apps.plus/com.google.android.apps.plus.phone.ConversationListActivity}"
-        drawable="google_plusphotos"/>
+        drawable="google_photos"/>
     <item
         component="ComponentInfo{com.google.android.apps.plus/com.google.android.apps.circles.realtimechat.ConversationListActivity}"
-        drawable="google_plusphotos"/>
+        drawable="google_photos"/>
     <item
         component="ComponentInfo{com.gplus.circles/com.gplus.social.HuddleMain}"
-        drawable="google_plusphotos"/>
+        drawable="google_photos"/>
     <item
         component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.android.apps.wallet.entrypoint.WalletRootActivity}"
         drawable="google_wallet"/>
@@ -1066,7 +1066,7 @@
         drawable="amap"/>
     <item
         component="ComponentInfo{com.UCMobile/com.UCMobile.main.UCMobile}"
-        drawable="uc"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{us.pinguo.selfie/us.pinguo.selfie.module.home.MainActivity}"
         drawable="zuimeizipai"/>
@@ -2809,7 +2809,7 @@
         drawable="samsung_smemo"/>
     <item
         component="ComponentInfo{com.UCMobile.internet.org/com.UCMobile.main.UCMobile}"
-        drawable="uc"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.hexin.plat.android/com.hexin.plat.android.AndroidLogoActivity}"
         drawable="tonghuashun"/>
@@ -2821,7 +2821,7 @@
         drawable="iqiyi"/>
     <item
         component="ComponentInfo{com.UCMobile.intl/com.UCMobile.main.UCMobile}"
-        drawable="uc"/>
+        drawable="uc_browser"/>
     <item
         component="ComponentInfo{com.pianke.client/com.pianke.client.ui.activity.SplashActivity}"
         drawable="pianke"/>

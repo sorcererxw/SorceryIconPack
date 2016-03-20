@@ -5,6 +5,7 @@ import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -105,8 +106,7 @@ public class MainActivity extends AppCompatActivity implements
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
-                            .showWithString
-                                    (newText);
+                            .showWithString(newText);
                     return false;
                 }
             };
@@ -367,7 +367,6 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-
     private void initSearchBox() {
         mSearchBox = (MaterialSearchView) findViewById(R.id.searchBox_main_icon);
         mSearchBox.setOnSearchViewListener(mSearchViewListener);
@@ -393,5 +392,13 @@ public class MainActivity extends AppCompatActivity implements
     private void closeSearch() {
         mSearchBox.clearFocus();
         mSearchBox.closeSearch();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        for (int i = 0; i < mPageAdapter.getCount(); i++) {
+            ((IconFragment) mPageAdapter.getItem(i)).resize();
+        }
     }
 }

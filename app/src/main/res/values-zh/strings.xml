@@ -115,4 +115,5 @@
     <string name="sorcery"></string>
     <string name="changelog">更新日志</string>
     <string name="action_dismiss">关闭</string>
+    <string name="action_join_google_plus">加入本应用的G+社群</string>
 </resources>

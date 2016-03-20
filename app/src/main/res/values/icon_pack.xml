@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
+    	<item>google_plus</item>
         <item>v2ex</item>
         <item>oneplus_community</item>
         <item>a94_percent</item>
@@ -23,7 +24,11 @@
         <item>ali_miaojie</item>
         <item>google_camera</item>
         <item>netease_music</item>
-        <item>netease_music_alt</item>
+        <item>uc_browser</item>
+        <item>google_opinion_rewards</item>
+        <item>coolapk</item>
+        <item>meituan</item>
+        <item>ali_koubei_waimai</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
@@ -195,6 +200,7 @@
         <item>google_play_music</item>
         <item>google_play_newsstand</item>
         <item>google_play_store</item>
+        <item>google_plus</item>
         <item>google_translate</item>
         <item>google_youtube</item>
     </string-array>
@@ -323,6 +329,7 @@
         <item>a115</item>
         <item>a12306</item>
         <item>a2048plusplus</item>
+        <item>a360</item>
         <item>a360_cloud</item>
         <item>a360_free_wifi</item>
         <item>a3c_toolbox</item>
@@ -406,6 +413,7 @@
         <item>anyview</item>
         <item>any_do</item>
         <item>apex_launcher</item>
+        <item>apkpure</item>
         <item>apple_music</item>
         <item>app_drawer</item>
         <item>app_sales</item>
@@ -725,6 +733,7 @@
         <item>google_calendar_7</item>
         <item>google_calendar_8</item>
         <item>google_calendar_9</item>
+        <item>google_camera</item>
         <item>google_device_manager</item>
         <item>google_earth</item>
         <item>google_goggles</item>
@@ -785,6 +794,7 @@
         <item>htc_tasks</item>
         <item>htc_weather</item>
         <item>huaxiong</item>
+        <item>huluxia_wifi</item>
         <item>hupo_weather</item>
         <item>huputiyu</item>
         <item>huya</item>
@@ -975,6 +985,7 @@
         <item>netease_cloudclass_alt</item>
         <item>netease_huochepiao</item>
         <item>netease_music</item>
+        <item>netease_music_alt</item>
         <item>netease_news</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_note</item>
@@ -1024,6 +1035,7 @@
         <item>romow_fluxo</item>
         <item>root_explorer</item>
         <item>ruler</item>
+        <item>runtastic_six_pack</item>
         <item>same</item>
         <item>samsung_apps</item>
         <item>samsung_browser</item>
@@ -1087,6 +1099,7 @@
         <item>shadowsocks</item>
         <item>shanbay</item>
         <item>shanbay_listen</item>
+        <item>shoujileyuan</item>
         <item>shouxin_keyboard</item>
         <item>shuqi</item>
         <item>sim</item>
@@ -1194,6 +1207,7 @@
         <item>tencent_qq_lite</item>
         <item>tencent_qq_mail</item>
         <item>tencent_qq_music</item>
+        <item>tencent_qq_music_alt</item>
         <item>tencent_qq_read</item>
         <item>tencent_qq_secure</item>
         <item>tencent_qq_sync</item>
@@ -1201,6 +1215,7 @@
         <item>tencent_video</item>
         <item>tencent_webank</item>
         <item>tencent_wechat</item>
+        <item>tencent_wechat_alt</item>
         <item>tencent_weiyun</item>
         <item>tencent_weiyun_alt</item>
         <item>terminal</item>
@@ -1227,7 +1242,7 @@
         <item>tumblr</item>
         <item>twitter</item>
         <item>uber</item>
-        <item>uc</item>
+        <item>uc_browser</item>
         <item>unicom</item>
         <item>v2ex</item>
         <item>versus</item>

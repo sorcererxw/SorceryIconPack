@@ -1,7 +1,9 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Point;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -23,9 +26,13 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.L;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
+import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
+import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.lang.reflect.Field;
+import java.util.List;
 
 public class IconFragment extends Fragment {
 
@@ -55,6 +62,7 @@ public class IconFragment extends Fragment {
     private IconAdapter mIconAdapter;
     private SwipeRefreshLayout mSearchLayout;
     private SearchListener mSearchListener;
+    private GridLayoutManager mGridLayoutManager;
 
     public interface SearchListener {
         void onSearch();
@@ -64,17 +72,21 @@ public class IconFragment extends Fragment {
 
     }
 
-
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
         mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
-        layoutManager.setOrientation(GridLayoutManager.VERTICAL);
-        layoutManager.scrollToPosition(0);
-        mGridView.setLayoutManager(layoutManager);
+        mGridLayoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
+        mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
+        mGridLayoutManager.scrollToPosition(0);
+        mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
 
@@ -102,19 +114,15 @@ public class IconFragment extends Fragment {
             mSearchLayout.setEnabled(false);
         }
 
-        return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
         mIconAdapter = new IconAdapter(getContext(), getArguments().getInt("flag", 0));
+
         if (mCustomPicker) {
             mIconAdapter.setCustomPicker(mParentActivity, mCustomPicker);
         }
         mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, false);
         mGridView.setAdapter(mIconAdapter);
+
+        return view;
     }
 
     private int calcNumOfRows() {
@@ -133,7 +141,9 @@ public class IconFragment extends Fragment {
     }
 
     public void showWithString(String s) {
-        mIconAdapter.showWithString(s);
+        if (mIconAdapter != null) {
+            mIconAdapter.showWithString(s);
+        }
     }
 
     public void setSearchListener(@NonNull final SearchListener searchListener) {
@@ -148,4 +158,9 @@ public class IconFragment extends Fragment {
         mParentActivity = activity;
         mCustomPicker = customPicker;
     }
+
+    public void resize() {
+//        mGridLayoutManager.setSpanCount(calcNumOfRows());
+    }
+
 }

@@ -13,6 +13,7 @@
     <string name="action_like">like</string>
     <string name="action_dislike">dislike</string>
     <string name="action_dismiss">dismiss</string>
+    <string name="action_join_google_plus">Join G+ group of the app</string>
 
     <string name="select_an_icon">select an icon</string>
 

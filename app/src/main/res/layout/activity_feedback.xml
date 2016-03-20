@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="@color/root_background"
     android:id="@+id/relativeLayout_feedback_root"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/root_background"
     tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
 
 
@@ -41,13 +41,25 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button_feedback_join"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="right"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/action_join_google_plus"
+        android:textColor="@color/google_plus"/>
+
     <TextView
-        android:visibility="gone"
         android:id="@+id/textView_feedback_explain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:gravity="center"
-        android:text="If you are unable to send mail by phone\n it's my email address \n feedback@sorcererxw.com \n (press to copy)"/>
+        android:text="If you are unable to send mail by phone\n it's my email address \n feedback@sorcererxw.com \n (press to copy)"
+        android:visibility="gone"/>
 </RelativeLayout>
