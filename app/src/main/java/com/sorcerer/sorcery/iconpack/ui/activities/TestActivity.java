@@ -1,43 +1,29 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.XmlResourceParser;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.LibAdapter;
-import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
-import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
-import com.sorcerer.sorcery.iconpack.util.ApkUtil;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.Decompress;
 import com.sorcerer.sorcery.iconpack.util.Utility;
-import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
-import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 import com.stericson.RootTools.RootTools;
-import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
 
 import org.xmlpull.v1.XmlPullParser;

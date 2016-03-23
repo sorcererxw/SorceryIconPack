@@ -1,12 +1,16 @@
 package com.sorcerer.sorcery.iconpack.adapters;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +31,7 @@ import com.sorcerer.sorcery.iconpack.models.IconBmob;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
+import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,12 +43,13 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     private static final String TAG = "IconAdapter";
 
-    private Activity mParentActivity;
+    private Activity mActivity;
     private boolean mCustomPicker = false;
     private Context mContext;
     private int lastPosition = -1;
     private List<IconBean> mIconBeanList = new ArrayList<>();
     private List<IconBean> mShowIconList = new ArrayList<>();
+    private View mLastClickItem = null;
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
@@ -57,7 +63,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }
     }
 
-    public IconAdapter(Context context, int flag) {
+    public IconAdapter(Activity activity, Context context, int flag) {
+        mActivity = activity;
         mContext = context;
         loadIcons(flag);
     }
@@ -154,38 +161,68 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     @Override
-    public void onBindViewHolder(IconItemViewHolder holder, final int position) {
+    public void onBindViewHolder(final IconItemViewHolder holder, final int position) {
         if (!mCustomPicker) {
-            holder.main.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
+            if (false && Build.VERSION.SDK_INT < 21) {
+                holder.main.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
 //                ((TextView) iconDialog.findViewById(R.id.textView_dialog_title))
 //                        .setText(mShowIconList.get(position).getLabel());
-                    ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
-                            .setImageResource(mShowIconList.get(position).getRes());
-                    ((LikeLayout) iconDialog.findViewById(R.id.likeLayout))
-                            .bindIcon(mShowIconList.get
-                                    (position).getName());
-                    if (mIconBeanList.get(position).getLabel().equals("google plus")) {
-                        Button join =
-                                (Button) iconDialog.findViewById(R.id.button_dialog_icon_join);
-                        join.setVisibility(View.VISIBLE);
-                        join.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse
-                                        ("https://plus.google.com/communities/115317471515103046699"));
-                                mContext.startActivity(intent);
-                            }
-                        });
+                        ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
+                                .setImageResource(mShowIconList.get(position).getRes());
+                        ((LikeLayout) iconDialog.findViewById(R.id.likeLayout))
+                                .bindIcon(mShowIconList.get
+                                        (position).getName());
+                        if (mIconBeanList.get(position).getLabel().equals("google plus")) {
+                            Button join =
+                                    (Button) iconDialog.findViewById(R.id.button_dialog_icon_join);
+                            join.setVisibility(View.VISIBLE);
+                            join.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse
+                                            ("https://plus.google.com/communities/115317471515103046699"));
+                                    mContext.startActivity(intent);
+                                }
+                            });
+                        }
+                        new MaterialDialog.Builder(mContext)
+                                .customView(iconDialog, false)
+                                .title(mShowIconList.get(position).getLabel())
+                                .show();
                     }
-                    new MaterialDialog.Builder(mContext)
-                            .customView(iconDialog, false)
-                            .title(mShowIconList.get(position).getLabel())
-                            .show();
-                }
-            });
+                });
+            } else {
+                holder.main.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        lock(v);
+
+                        Intent intent = new Intent(mContext, IconDialogActivity.class);
+
+                        intent.putExtra(IconDialogActivity.EXTRA_RES,
+                                mShowIconList.get(position).getRes());
+                        intent.putExtra(IconDialogActivity.EXTRA_NAME,
+                                mShowIconList.get(position).getName());
+                        intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowIconList.get
+                                (position).getLabel());
+
+                        if (Build.VERSION.SDK_INT >= 21) {
+                            mActivity.startActivityForResult(intent,
+                                    MainActivity.REQUEST_ICON_DIALOG,
+                                    ActivityOptions.makeSceneTransitionAnimation(mActivity,
+                                            holder.icon,
+                                            "icon").toBundle());
+                        } else {
+                            mActivity.startActivityForResult(intent,
+                                    MainActivity.REQUEST_ICON_DIALOG);
+                            mActivity.overridePendingTransition(android.R.anim.fade_in, 0);
+                        }
+                    }
+                });
+            }
         } else {
             holder.main.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -206,16 +243,16 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                         String bmUri = "android.resource://" + mContext.getPackageName() + "/" +
                                 String.valueOf(mShowIconList.get(position).getRes());
                         intent.setData(Uri.parse(bmUri));
-                        mParentActivity.setResult(Activity.RESULT_OK, intent);
+                        mActivity.setResult(Activity.RESULT_OK, intent);
                     } else {
-                        mParentActivity.setResult(Activity.RESULT_CANCELED, intent);
+                        mActivity.setResult(Activity.RESULT_CANCELED, intent);
                     }
-                    mParentActivity.finish();
+                    mActivity.finish();
                 }
             });
         }
         holder.icon.setImageResource(mShowIconList.get(position).getRes());
-
+        setAnimation(holder.icon, 0);
 //        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
 //                SIP.mOptions);
 //        setAnimation(holder.icon, position);
@@ -223,12 +260,14 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     //动画加载
     private void setAnimation(View viewToAnimate, int position) {
-        if (position > lastPosition) {
-            Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(),
-                    android.R.anim.fade_in);
-            viewToAnimate.startAnimation(animation);
-            lastPosition = position;
-        }
+//        if (position > lastPosition) {
+//            Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(),
+//                    android.R.anim.fade_in);
+        Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(),
+                R.anim.scale_in);
+        viewToAnimate.startAnimation(animation);
+//            lastPosition = position;
+//        }
     }
 
     @Override
@@ -237,6 +276,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     public void showWithString(String s) {
+        if (s.isEmpty() && mShowIconList.size() == mIconBeanList.size()) {
+            return;
+        }
+
         mShowIconList.clear();
         if (s.isEmpty()) {
             for (int i = 0; i < mIconBeanList.size(); i++) {
@@ -258,8 +301,22 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     public void setCustomPicker(Activity activity, boolean customPicker) {
-        mParentActivity = activity;
+        mActivity = activity;
         mCustomPicker = customPicker;
+    }
+
+    public void lock(View view) {
+        if (mLastClickItem != null && !mLastClickItem.isClickable()) {
+            mLastClickItem.setClickable(true);
+        }
+        mLastClickItem = view;
+        mLastClickItem.setClickable(false);
+    }
+
+    public void unlock() {
+        if (mLastClickItem != null) {
+            mLastClickItem.setClickable(true);
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.renderscript.Type;
 import android.util.AttributeSet;
 import android.widget.TextView;
 

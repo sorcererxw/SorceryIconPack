@@ -206,6 +206,7 @@
 <item>buzz_launcher</item>
 <item>cabinet</item>
 <item>calculator</item>
+<item>calc_plus</item>
 <item>camera</item>
 <item>camera360</item>
 <item>camera_fv_5</item>
@@ -426,6 +427,7 @@
 <item>google_play_music</item>
 <item>google_play_newsstand</item>
 <item>google_play_store</item>
+<item>google_plus</item>
 <item>google_translate</item>
 <item>google_youtube</item>
 <item>go_launcher</item>
@@ -468,10 +470,10 @@
 <item>htc_tasks</item>
 <item>htc_weather</item>
 <item>huaxiong</item>
-<item>huluxia_wifi</item>
 <item>hupo_weather</item>
 <item>huputiyu</item>
 <item>huya</item>
+<item>ia_writer</item>
 <item>icbc</item>
 <item>icebox</item>
 <item>icourse163</item>
@@ -608,6 +610,7 @@
 <item>microsoft_bing_dict</item>
 <item>microsoft_bing_keyboard</item>
 <item>microsoft_cortana</item>
+<item>microsoft_cortana_alt</item>
 <item>microsoft_excel</item>
 <item>microsoft_office_lens</item>
 <item>microsoft_office_mobile</item>
@@ -658,6 +661,7 @@
 <item>netease_cloudclass</item>
 <item>netease_cloudclass_alt</item>
 <item>netease_huochepiao</item>
+<item>netease_lofter</item>
 <item>netease_music</item>
 <item>netease_music_alt</item>
 <item>netease_news</item>
@@ -776,6 +780,7 @@
 <item>shoujileyuan</item>
 <item>shouxin_keyboard</item>
 <item>shuqi</item>
+<item>shuqi_alt</item>
 <item>sim</item>
 <item>simplenote</item>
 <item>skitch</item>
@@ -916,7 +921,7 @@
 <item>tumblr</item>
 <item>twitter</item>
 <item>uber</item>
-<item>uc</item>
+<item>uc_browser</item>
 <item>unicom</item>
 <item>v2ex</item>
 <item>versus</item>
@@ -934,6 +939,7 @@
 <item>weibo</item>
 <item>weico</item>
 <item>welove</item>
+<item>wififenxiangxia</item>
 <item>wifi_key</item>
 <item>wikipedia</item>
 <item>wikipedia_beta</item>

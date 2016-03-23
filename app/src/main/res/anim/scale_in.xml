@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+       android:duration="@android:integer/config_mediumAnimTime"
+       android:fromXScale="0"
+       android:fromYScale="0"
+       android:interpolator="@android:interpolator/decelerate_quad"
+       android:pivotX="50%p"
+       android:pivotY="50%p"
+       android:toXScale="@dimen/icon_grid_item_size"
+       android:toYScale="@dimen/icon_grid_item_size"/>

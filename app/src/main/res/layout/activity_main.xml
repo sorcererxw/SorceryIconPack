@@ -42,7 +42,8 @@
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabLayout_icon"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/TabTextAppearance"/>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -58,8 +59,16 @@
         android:id="@+id/navigation_main"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/layout_nav_head"
-        app:menu="@menu/menu_nav"/>
+        app:headerLayout="@layout/layout_drawer_menu"
+        android:layout_gravity="start"/>
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/frameLayout_custom_navigationView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start">-->
+
+        <!--<include layout="@layout/layout_drawer_menu"/>-->
+    <!--</FrameLayout>-->
 </android.support.v4.widget.DrawerLayout>
 

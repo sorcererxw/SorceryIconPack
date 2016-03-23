@@ -2,6 +2,8 @@ package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Point;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -64,6 +66,7 @@ public class IconFragment extends Fragment {
     private SearchListener mSearchListener;
     private GridLayoutManager mGridLayoutManager;
 
+
     public interface SearchListener {
         void onSearch();
     }
@@ -114,7 +117,8 @@ public class IconFragment extends Fragment {
             mSearchLayout.setEnabled(false);
         }
 
-        mIconAdapter = new IconAdapter(getContext(), getArguments().getInt("flag", 0));
+        mIconAdapter =
+                new IconAdapter(getActivity(), getContext(), getArguments().getInt("flag", 0));
 
         if (mCustomPicker) {
             mIconAdapter.setCustomPicker(mParentActivity, mCustomPicker);
@@ -123,6 +127,12 @@ public class IconFragment extends Fragment {
         mGridView.setAdapter(mIconAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        resize();
     }
 
     private int calcNumOfRows() {
@@ -159,8 +169,17 @@ public class IconFragment extends Fragment {
         mCustomPicker = customPicker;
     }
 
-    public void resize() {
-//        mGridLayoutManager.setSpanCount(calcNumOfRows());
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        resize();
     }
 
+    private void resize() {
+        mGridLayoutManager.setSpanCount(calcNumOfRows());
+    }
+
+    public IconAdapter getIconAdapter() {
+        return mIconAdapter;
+    }
 }

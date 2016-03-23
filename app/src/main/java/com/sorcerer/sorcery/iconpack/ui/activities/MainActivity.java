@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -17,6 +18,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
@@ -27,8 +31,12 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,19 +44,32 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.adapters.DrawerMenuAdapter;
+import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
+import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.bmob.v3.Bmob;
 import im.fir.sdk.FIR;
+import tourguide.tourguide.Overlay;
+import tourguide.tourguide.Pointer;
+import tourguide.tourguide.ToolTip;
+import tourguide.tourguide.TourGuide;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+
+    public static final int REQUEST_ICON_DIALOG = 100;
 
     public static Intent mLaunchIntent;
     private ViewPageAdapter mPageAdapter;
@@ -58,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
     private boolean mCustomPicker = false;
+    private Context mContext = this;
+    private RecyclerView mMenuView;
 
     private ViewPager.OnPageChangeListener mPageChangeListener =
             new ViewPager.OnPageChangeListener() {
@@ -90,9 +113,9 @@ public class MainActivity extends AppCompatActivity implements
 
                 @Override
                 public void onSearchViewClosed() {
-                    ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
-                            .showWithString
-                                    ("");
+                    for (int i = 0; i < mPageAdapter.getCount(); i++) {
+                        ((IconFragment) mPageAdapter.getItem(i)).showWithString("");
+                    }
                 }
             };
 
@@ -115,8 +138,6 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-//        Intent intent = new Intent(this, SplashActivity.class);
-//        startActivity(intent);
         setContentView(R.layout.activity_main);
 
         mLaunchIntent = getIntent();
@@ -124,14 +145,6 @@ public class MainActivity extends AppCompatActivity implements
         if (action.equals("com.novalauncher.THEME")) {
             mCustomPicker = true;
         }
-
-//        if (Build.VERSION.SDK_INT >= 21) {
-//            ActivityManager.TaskDescription
-//                    taskDescription =
-//                    new ActivityManager.TaskDescription(getString(R.string.app_name), null,
-//                            getResources().getColor(R.color.colorPrimary));
-//            setTaskDescription(taskDescription);
-//        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -143,8 +156,10 @@ public class MainActivity extends AppCompatActivity implements
         initSearchBox();
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
+
         mNavigationView = (NavigationView) findViewById(R.id.navigation_main);
         mNavigationView.setNavigationItemSelectedListener(this);
+        initDrawerView();
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.nav_open, R.string.nav_close) {
@@ -190,18 +205,16 @@ public class MainActivity extends AppCompatActivity implements
         int launchTimes = sharedPreferences.getInt("launch times", 0);
         Log.d("sip", "launch time " + launchTimes);
         if (launchTimes == 0) {
-            showWelcomeDialog();
         } else {
             if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
-//                showWelcomeDialog();
                 sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
             }
         }
-        if (launchTimes % 5 == 0) {
-//            UpdateHelper updateHelper =
-//                    new UpdateHelper(this);
-//            updateHelper.update();
+        if (!sharedPreferences.getBoolean("know help", false)) {
+            showWelcomeDialog();
+            sharedPreferences.edit().putBoolean("know help", true).apply();
         }
+
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
     }
 
@@ -339,6 +352,14 @@ public class MainActivity extends AppCompatActivity implements
         overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_ICON_DIALOG) {
+            ((IconFragment) (mPageAdapter.getItem(mViewPager.getCurrentItem()))).getIconAdapter()
+                    .unlock();
+        }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions,
@@ -390,15 +411,69 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void closeSearch() {
-        mSearchBox.clearFocus();
-        mSearchBox.closeSearch();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        for (int i = 0; i < mPageAdapter.getCount(); i++) {
-            ((IconFragment) mPageAdapter.getItem(i)).resize();
+        if (mSearchBox.isSearchOpen()) {
+            mSearchBox.clearFocus();
+            mSearchBox.closeSearch();
         }
     }
+
+    private void initDrawerView() {
+        View head = mNavigationView.getHeaderView(0);
+
+        mMenuView = (RecyclerView) head.findViewById(R.id.recyclerView_drawer_menu);
+
+        List<SorceryMenuItem.OnSelectListener> listeners = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            final int finalI = i;
+            listeners.add(new SorceryMenuItem.OnSelectListener() {
+                @Override
+                public void onSelect() {
+                    if (finalI == 0) {
+                        activityShift(ApplyActivity.class);
+                    } else if (finalI == 1) {
+                        activityShift(FeedbackActivity.class);
+                    } else if (finalI == 2) {
+                        activityShift(LabActivity.class);
+                    } else if (finalI == 3) {
+                        UpdateHelper updateHelper =
+                                new UpdateHelper(mContext,
+                                        findViewById(R.id.coordinatorLayout_main));
+                        updateHelper.update();
+                    } else if (finalI == 4) {
+                        activityShift(HelpActivity.class);
+                    } else if (finalI == 5) {
+                        activityShift(DonateActivity.class);
+                    } else if (finalI == 6) {
+                        activityShift(AboutActivity.class);
+                    }
+                    mDrawerLayout.closeDrawers();
+                }
+            });
+        }
+
+        List<SorceryMenuItem> list = new ArrayList<>();
+        list.add(new SorceryMenuItem(listeners.get(0), R.drawable.ic_input_black_24dp,
+                getString(R.string.nav_item_apply)));
+        list.add(new SorceryMenuItem(listeners.get(1), R.drawable.ic_mail_black_24dp,
+                getString(R.string.nav_item_feedback)));
+        list.add(new SorceryMenuItem(listeners.get(2), R.drawable.ic_settings_black_24dp,
+                getString(R.string.nav_item_lab)));
+        list.add(new SorceryMenuItem(listeners.get(3),
+                R.drawable.ic_system_update_black_24dp,
+                getString(R.string.nav_item_update)));
+        list.add(new SorceryMenuItem(listeners.get(4), R.drawable.ic_help_black_24dp,
+                getString(R.string.nav_item_help)));
+        list.add(new SorceryMenuItem(listeners.get(5), R.drawable.ic_attach_money_black_24dp,
+                getString(R.string.nav_item_donate)));
+        list.add(new SorceryMenuItem(listeners.get(6), R.drawable.ic_face_black_24dp,
+                getString(R.string.nav_item_about)));
+
+        DrawerMenuAdapter adapter = new DrawerMenuAdapter(this, list);
+        mMenuView.setAdapter(adapter);
+        mMenuView.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL,
+                false));
+        mMenuView.setHasFixedSize(true);
+    }
+
 }

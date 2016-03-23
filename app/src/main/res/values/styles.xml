@@ -39,6 +39,10 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="AppTheme.Dialog" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/dialog_background_scrim</item>
+    </style>
 
     <style name="PreferenceTheme" parent="AppTheme">
         <!--<item name="android:statusBarColor">@color/colorPrimaryDark</item>-->
@@ -78,6 +82,10 @@
 
     <style name="FlatButton">
         <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
     </style>
 
 </resources>

@@ -1,41 +1,22 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
-import com.sorcerer.sorcery.iconpack.models.AppInfo;
-import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
-import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.Utility;
-
-import java.util.List;
 
 public class FeedbackActivity extends SlideInAndOutAppCompatActivity
         implements View.OnClickListener {

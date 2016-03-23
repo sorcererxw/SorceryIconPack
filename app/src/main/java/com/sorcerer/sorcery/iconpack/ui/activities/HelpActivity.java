@@ -1,14 +1,16 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.HelpAdapter;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 
 public class HelpActivity extends SlideInAndOutAppCompatActivity {
 
@@ -30,6 +32,15 @@ public class HelpActivity extends SlideInAndOutAppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager
                 .VERTICAL, false));
         mRecyclerView.setHasFixedSize(true);
+//        mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+//            @Override
+//            public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
+//                                       RecyclerView.State state) {
+//                super.getItemOffsets(outRect, view, parent, state);
+//                outRect.top = 4;
+//                outRect.bottom = 4;
+//            }
+//        });
     }
 
     @Override

@@ -2,43 +2,26 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
-import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.a.a.a.V;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
-import com.sorcerer.sorcery.iconpack.adapters.LibAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.ContributorCard;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,8 +52,7 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
 
         ContributorCard sorcerer =
                 (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
-        sorcerer.setAvatarByImageLoader(getResources()
-                .getIdentifier("sorcerer_1", "drawable", getPackageName()));
+        sorcerer.setAvatar(getResources().getDrawable(R.drawable.sorcerer_1));
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(
                 getString(R.string.job_developer) + " & " + getString(R.string.job_icon_design));
@@ -78,8 +60,7 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
         sorcerer.setWeibo(Uri.parse("http://weibo.com/u/2262804212"));
 
         ContributorCard mozartjac = (ContributorCard) findViewById(R.id.contributorCard_mozartjac);
-        mozartjac.setAvatarByImageLoader(getResources()
-                .getIdentifier("mozartjac", "drawable", getPackageName()));
+        mozartjac.setAvatar(getResources().getDrawable(R.drawable.mozartjac));
         mozartjac.setName("翟宅宅Jack");
         mozartjac.setJob(getString(R.string.job_icon_design));
         mozartjac.setWeibo(Uri.parse("http://weibo.com/mozartjac"));

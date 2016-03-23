@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="178dp"
-                android:id="@+id/relativeLayout_nav_head"
-                android:orientation="vertical">
+<RelativeLayout
+    android:id="@+id/relativeLayout_nav_head"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="178dp"
+    android:orientation="vertical"
+    android:layout_marginBottom="16dp">
 
     <ImageView
-        android:src="@drawable/sandy_shore"
-        android:scaleType="centerCrop"
+        android:elevation="8dp"
         android:id="@+id/imageView_nav_head"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sandy_shore"/>
 
 </RelativeLayout>

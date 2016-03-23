@@ -10,7 +10,7 @@
     <string name="choose_mail_app">请选择邮箱</string>
 
     <string name="welcome_title">感谢使用</string>
-    <string name="welcome_body">感谢使用这款图标包, 由于刚刚制作完成, 图标覆盖上不够全面, 如果没有适合你的图标, 可以在左侧抽屉的反馈中告诉我</string>
+    <string name="welcome_body">如果有任何问题请先在左侧抽屉中的 常见问题 中寻找答案</string>
     <string name="welcome_close">好的</string>
     <string name="installed">已安装</string>
     <string name="not_installed">未安装</string>
@@ -108,7 +108,7 @@
     <string name="action_search">搜索</string>
     <string name="action_like">赞</string>
     <string name="action_dislike">踩</string>
-    <string name="about_main">用「质感」妆点你的手机</string>
+    <string name="about_main">用「material」妆点你的手机</string>
     <string name="select_an_icon">选择一个图标</string>
     <string name="nav_item_help">常见问题</string>
     <string name="please_give_permission">请给予权限</string>

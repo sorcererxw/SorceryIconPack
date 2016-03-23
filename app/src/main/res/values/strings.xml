@@ -29,7 +29,7 @@
     <string name="choose_mail_app">please choose a mail app</string>
 
     <string name="welcome_title">Welcome</string>
-    <string name="welcome_body">welcome :)</string>
+    <string name="welcome_body">If there is any problem, search answer in FAQ</string>
     <string name="welcome_close">OK</string>
 
     <string name="installed">installed</string>
@@ -94,7 +94,7 @@
     <string name="open_source_lib">Open Source Libs</string>
 
     <string name="changelog">changelog</string>
-    <string name="changelog_content">1. 22个新图标|2. 加入「常见问题」页|3. 修复6.0下权限错误|4. 细节优化</string>
+    <string name="changelog_content">1. 79个新图标|2. 加入图标页动效|3. 修复BUG|4. 调整界面细节|5. 增加对Sony新版启动器支持</string>
 
     <string name="about_main">let 「material」\n
         colorful your phone</string>
@@ -227,8 +227,8 @@
         <item>如果启动器支持单独定义某个图标, 现在以nova启动器为例, 其他启动器都是异曲同工|在启动器内长按对应应用, 会出现应用详情, 点击图标, 会跳到图标设定界面, 单击Sorcery图标包, 然后会看到图标包的所有图标, 但是这个并不好寻找, 点击右上角, 会跳转到图标包内, 配合搜索可以快速找到图标, 点击即可更换</item>
         <item>为何搜索不到某个图标?</item>
         <item>因为为每个应用加上中文, 这是巨大的工作量, 暂时没有这个计划(如果愿意帮助我做这件事, 可以联系我), 你只能使用英文来搜索, 比如网易, 可以我是使用netease来命名, 如果使用wangyi则无法找到, 建议同时使用英文和拼音尝试</item>
-        <item>为何在Cyanogenmod主题引擎中应用后出现图标错乱和应用崩溃?</item>
-        <item>因为Cyanogenmod主题引擎存在一定问题, 至今尚未修复, 导致在其中应用图标包会出现各类问题, 建议不要使用</item>
+        <item>为何不支持Cyanogenmod主题引擎(包括mokee在内的基于cm的rom)?</item>
+        <item>因为Cyanogenmod主题引擎存在一定问题, 至今尚未修复, 导致在其中应用图标包会出现各类问题</item>
         <item>如何进行图标申请?</item>
         <item>在左侧抽屉菜单中选择反馈, 然后点击申请图标, 等待稍许, 即可看到所有暂时没有适配的应用, 勾选然后点击右下角的按钮进行发送</item>
         <item>如何进行反馈?</item>

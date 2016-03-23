@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/green_500</color>
-    <color name="colorPrimaryDark">@color/green_700</color>
-    <color name="colorAccent">@color/brown_700</color>
+    <color name="colorPrimary">@color/primary</color>
+    <color name="colorPrimaryDark">@color/primary_dark</color>
+    <color name="colorAccent">@color/accent</color>
+
+    <color name="title">@color/primary_text</color>
+    <color name="content">@color/secondary_text</color>
+
+    <color name="primary">#4CAF50</color>
+    <color name="primary_dark">#388E3C</color>
+    <color name="primary_light">#C8E6C9</color>
+    <color name="accent">#795548</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
 
     <color name="google_plus">#dc493c</color>
     <color name="wechat">#37d72d</color>
     <color name="alipay">#00a0e9</color>
 
-    <color name="title">@color/grey_800</color>
-    <color name="content">@color/grey_700</color>
+    <color name="dialog_background_scrim">#99000000</color>
 
     <color name="root_background">@color/grey_200</color>
 

@@ -10,6 +10,17 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
+    <uses-feature
+        android:name="org.cyanogenmod.theme"
+        android:required="true"/>
+
+    <meta-data
+        android:name="org.cyanogenmod.theme.name"
+        android:value="Sorcery"/>
+    <meta-data
+        android:name="org.cyanogenmod.theme.author"
+        android:value="Sorcerer"/>
+
     <application
         android:name=".SIP"
         android:allowBackup="true"
@@ -20,14 +31,8 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.activities.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-        <activity
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".ui.activities.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
@@ -168,6 +173,12 @@
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+            <!-- Sony -->
+            <intent-filter>
+                <action android:name="com.sonymobile.home.ICON_PACK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.activities.FeedbackActivity"
@@ -207,6 +218,10 @@
             android:label="@string/nav_item_help"
             android:theme="@style/SubActivity">
         </activity>
+
+        <activity
+            android:name=".ui.activities.IconDialogActivity"
+            android:theme="@style/AppTheme.Dialog"/>
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"
@@ -261,9 +276,6 @@
         <meta-data
             android:name="xposedminversion"
             android:value="30"/>
-
-        <activity android:name=".ui.activities.SplashDonatedActivity">
-        </activity>
 
     </application>
 

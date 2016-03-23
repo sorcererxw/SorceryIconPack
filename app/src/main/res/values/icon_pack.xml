@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-    	<item>google_plus</item>
+        <item>google_plus</item>
+        <item>evernote</item>
         <item>v2ex</item>
+        <item>wunderlist</item>
         <item>oneplus_community</item>
         <item>a94_percent</item>
         <item>netease_cloudclass</item>
@@ -10,6 +12,8 @@
         <item>shadowsocks</item>
         <item>google_pinyin_keyboard</item>
         <item>google_keyboard</item>
+        <item>pocket_casts</item>
+        <item>ia_writer</item>
         <item>microsoft_onedrive</item>
         <item>tencent_weiyun_alt</item>
         <item>snaptube</item>
@@ -17,7 +21,7 @@
         <item>google_play_store</item>
         <item>ali_tmall</item>
         <item>a360</item>
-        <item>huluxia_wifi</item>
+        <item>wififenxiangxia</item>
         <item>apkpure</item>
         <item>adobe_flash</item>
         <item>shoujileyuan</item>
@@ -29,6 +33,49 @@
         <item>coolapk</item>
         <item>meituan</item>
         <item>ali_koubei_waimai</item>
+        <item>keep_health</item>
+        <item>tencent_qq_secure</item>
+        <item>shuqi</item>
+        <item>microsoft_cortana</item>
+        <item>alipay</item>
+        <item>calc_plus</item>
+        <item>netease_lofter</item>
+        <item>wuba</item>
+        <item>wps</item>
+        <item>zhihu_ribao</item>
+        <item>ali_xianyu</item>
+        <item>sunrise</item>
+        <item>sunrise_1</item>
+        <item>sunrise_10</item>
+        <item>sunrise_11</item>
+        <item>sunrise_12</item>
+        <item>sunrise_13</item>
+        <item>sunrise_14</item>
+        <item>sunrise_15</item>
+        <item>sunrise_16</item>
+        <item>sunrise_17</item>
+        <item>sunrise_18</item>
+        <item>sunrise_19</item>
+        <item>sunrise_2</item>
+        <item>sunrise_20</item>
+        <item>sunrise_21</item>
+        <item>sunrise_22</item>
+        <item>sunrise_23</item>
+        <item>sunrise_24</item>
+        <item>sunrise_25</item>
+        <item>sunrise_26</item>
+        <item>sunrise_27</item>
+        <item>sunrise_28</item>
+        <item>sunrise_29</item>
+        <item>sunrise_3</item>
+        <item>sunrise_30</item>
+        <item>sunrise_31</item>
+        <item>sunrise_4</item>
+        <item>sunrise_5</item>
+        <item>sunrise_6</item>
+        <item>sunrise_7</item>
+        <item>sunrise_8</item>
+        <item>sunrise_9</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
@@ -190,10 +237,12 @@
         <item>google_hangout</item>
         <item>google_inbox</item>
         <item>google_keep</item>
+        <item>google_keyboard</item>
         <item>google_maps</item>
         <item>google_messenger</item>
         <item>google_now_launcher</item>
         <item>google_opinion_rewards</item>
+        <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
@@ -269,6 +318,7 @@
         <item>tencent_webank</item>
         <item>tencent_wechat</item>
         <item>tencent_weiyun</item>
+        <item>tencent_weiyun_alt</item>
     </string-array>
 
     <string-array name="icon_pack_moto">
@@ -532,6 +582,7 @@
         <item>buzz_launcher</item>
         <item>cabinet</item>
         <item>calculator</item>
+        <item>calc_plus</item>
         <item>camera</item>
         <item>camera360</item>
         <item>camera_fv_5</item>
@@ -752,6 +803,7 @@
         <item>google_play_music</item>
         <item>google_play_newsstand</item>
         <item>google_play_store</item>
+        <item>google_plus</item>
         <item>google_translate</item>
         <item>google_youtube</item>
         <item>go_launcher</item>
@@ -794,10 +846,10 @@
         <item>htc_tasks</item>
         <item>htc_weather</item>
         <item>huaxiong</item>
-        <item>huluxia_wifi</item>
         <item>hupo_weather</item>
         <item>huputiyu</item>
         <item>huya</item>
+        <item>ia_writer</item>
         <item>icbc</item>
         <item>icebox</item>
         <item>icourse163</item>
@@ -934,6 +986,7 @@
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
+        <item>microsoft_cortana_alt</item>
         <item>microsoft_excel</item>
         <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
@@ -984,6 +1037,7 @@
         <item>netease_cloudclass</item>
         <item>netease_cloudclass_alt</item>
         <item>netease_huochepiao</item>
+        <item>netease_lofter</item>
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
@@ -1102,6 +1156,7 @@
         <item>shoujileyuan</item>
         <item>shouxin_keyboard</item>
         <item>shuqi</item>
+        <item>shuqi_alt</item>
         <item>sim</item>
         <item>simplenote</item>
         <item>skitch</item>
@@ -1260,6 +1315,7 @@
         <item>weibo</item>
         <item>weico</item>
         <item>welove</item>
+        <item>wififenxiangxia</item>
         <item>wifi_key</item>
         <item>wikipedia</item>
         <item>wikipedia_beta</item>
