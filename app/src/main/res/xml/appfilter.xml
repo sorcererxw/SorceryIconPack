@@ -1256,7 +1256,7 @@
         drawable="vst"/>
     <item
         component="ComponentInfo{org.cyanogenmod.snap/com.android.camera.CameraLauncher}"
-        drawable="camera"/>
+        drawable="cyanogenmod_camera"/>
     <item
         component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryActivity}"
         drawable="gallery"/>
@@ -3165,29 +3165,29 @@
         component="ComponentInfo{com.noshufou.android.su/com.noshufou.android.su.Su}"
         drawable="supersu"/>
     <item
-    component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.MainTabActivity}"
-    drawable="shoujileyuan"/>
+        component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.MainTabActivity}"
+        drawable="shoujileyuan"/>
     <item
-    component="ComponentInfo{com.apkpure.aegon/com.apkpure.aegon.activities.MainFrameActivity}"
-    drawable="apkpure"/>
+        component="ComponentInfo{com.apkpure.aegon/com.apkpure.aegon.activities.MainFrameActivity}"
+        drawable="apkpure"/>
     <item
-    component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}"
-    drawable="google_pinyin_keyboard"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+        component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}"
+        drawable="google_pinyin_keyboard"/>
+    <item
+        component="ComponentInfo{com.instagram.layout/com.instagram.layout.LayoutActivity}"
+        drawable="layout"/>
+    <item
+        component="ComponentInfo{com.instagram.boomerang/com.instagram.boomerang.BoomerangActivity}"
+        drawable="boomerang"/>
+    <item
+        component="ComponentInfo{com.alorma.github/com.alorma.github.ui.activity.MainActivity}"
+        drawable="gitskarios"/>
+    <item
+        component="ComponentInfo{bos.consoar.imagestitch/bos.consoar.imagestitch.ui.MainActivity}"
+        drawable="ppiicc"/>
+    <item
+        component="ComponentInfo{net.doo.snap/net.doo.snap.ui.InitActivity}"
+        drawable="scanbot"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

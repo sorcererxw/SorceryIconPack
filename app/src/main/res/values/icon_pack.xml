@@ -1,81 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-        <item>google_plus</item>
-        <item>evernote</item>
-        <item>v2ex</item>
-        <item>wunderlist</item>
-        <item>oneplus_community</item>
-        <item>a94_percent</item>
-        <item>netease_cloudclass</item>
-        <item>zhiqu_weather</item>
-        <item>shadowsocks</item>
-        <item>google_pinyin_keyboard</item>
-        <item>google_keyboard</item>
-        <item>pocket_casts</item>
-        <item>ia_writer</item>
-        <item>microsoft_onedrive</item>
-        <item>tencent_weiyun_alt</item>
-        <item>snaptube</item>
-        <item>google_youtube</item>
-        <item>google_play_store</item>
-        <item>ali_tmall</item>
-        <item>a360</item>
-        <item>wififenxiangxia</item>
-        <item>apkpure</item>
-        <item>adobe_flash</item>
-        <item>shoujileyuan</item>
-        <item>ali_miaojie</item>
-        <item>google_camera</item>
-        <item>netease_music</item>
-        <item>uc_browser</item>
-        <item>google_opinion_rewards</item>
-        <item>coolapk</item>
-        <item>meituan</item>
-        <item>ali_koubei_waimai</item>
-        <item>keep_health</item>
-        <item>tencent_qq_secure</item>
-        <item>shuqi</item>
-        <item>microsoft_cortana</item>
-        <item>alipay</item>
-        <item>calc_plus</item>
-        <item>netease_lofter</item>
-        <item>wuba</item>
-        <item>wps</item>
-        <item>zhihu_ribao</item>
-        <item>ali_xianyu</item>
+        <item>layout</item>
+        <item>boomerang</item>
+        <item>tencent_qzone</item>
         <item>sunrise</item>
-        <item>sunrise_1</item>
-        <item>sunrise_10</item>
-        <item>sunrise_11</item>
-        <item>sunrise_12</item>
-        <item>sunrise_13</item>
-        <item>sunrise_14</item>
-        <item>sunrise_15</item>
-        <item>sunrise_16</item>
-        <item>sunrise_17</item>
-        <item>sunrise_18</item>
-        <item>sunrise_19</item>
-        <item>sunrise_2</item>
-        <item>sunrise_20</item>
-        <item>sunrise_21</item>
-        <item>sunrise_22</item>
-        <item>sunrise_23</item>
-        <item>sunrise_24</item>
-        <item>sunrise_25</item>
-        <item>sunrise_26</item>
-        <item>sunrise_27</item>
-        <item>sunrise_28</item>
-        <item>sunrise_29</item>
-        <item>sunrise_3</item>
-        <item>sunrise_30</item>
-        <item>sunrise_31</item>
-        <item>sunrise_4</item>
-        <item>sunrise_5</item>
-        <item>sunrise_6</item>
-        <item>sunrise_7</item>
-        <item>sunrise_8</item>
-        <item>sunrise_9</item>
+        <item>b612</item>
+        <item>yuelaiyuehao</item>
+        <item>baixingwang</item>
+        <item>wandoujia_youxiribao</item>
+        <item>dreamdays</item>
+        <item>bank_of_communications</item>
+        <item>flyme_account</item>
+        <item>zedge</item>
+        <item>xunlei_kuainiao</item>
+        <item>terminal</item>
+        <item>suishouji</item>
+        <item>line_deco</item>
+        <item>douban_fm</item>
+        <item>kitchen_stories</item>
+        <item>a5sing</item>
+        <item>gudong</item>
+        <item>yidaoyongche</item>
+        <item>ppiicc</item>
+        <item>netease_youxiangdashi</item>
+        <item>gitskarios</item>
+        <item>scanbot</item>
+        <item>tencent_qq</item>
+        <item>tencent_qq_alt</item>
+        <item>geometric_weather</item>
+        <item>letv_sport</item>
+        <item>sfly</item>
+        <item>ctrip_alt</item>
+        <item>microsoft_translator</item>
+        <item>jianjie_calendar</item>
+        <item>qunidaye_browser</item>
+        <item>zhangshangshenghuo</item>
+        <item>eudic</item>
+        <item>welike</item>
+        <item>weather_timeline</item>
+        <item>cyanogenmod_camera</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
@@ -378,7 +342,6 @@
         <item>a10086</item>
         <item>a115</item>
         <item>a12306</item>
-        <item>a2048plusplus</item>
         <item>a360</item>
         <item>a360_cloud</item>
         <item>a360_free_wifi</item>

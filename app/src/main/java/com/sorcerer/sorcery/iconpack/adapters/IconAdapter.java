@@ -50,6 +50,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private List<IconBean> mIconBeanList = new ArrayList<>();
     private List<IconBean> mShowIconList = new ArrayList<>();
     private View mLastClickItem = null;
+    private boolean mClicked = false;
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
@@ -167,6 +168,13 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 holder.main.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        if(mClicked){
+                            return;
+                        }
+
+                        lock(v);
+
                         View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
 //                ((TextView) iconDialog.findViewById(R.id.textView_dialog_title))
 //                        .setText(mShowIconList.get(position).getLabel());
@@ -198,6 +206,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 holder.main.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        if(mClicked){
+                            return;
+                        }
+
                         lock(v);
 
                         Intent intent = new Intent(mContext, IconDialogActivity.class);
@@ -252,22 +265,17 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             });
         }
         holder.icon.setImageResource(mShowIconList.get(position).getRes());
-        setAnimation(holder.icon, 0);
+        setAnimation(holder.icon);
 //        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
 //                SIP.mOptions);
 //        setAnimation(holder.icon, position);
     }
 
     //动画加载
-    private void setAnimation(View viewToAnimate, int position) {
-//        if (position > lastPosition) {
-//            Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(),
-//                    android.R.anim.fade_in);
+    private void setAnimation(View viewToAnimate) {
         Animation animation = AnimationUtils.loadAnimation(viewToAnimate.getContext(),
                 R.anim.scale_in);
         viewToAnimate.startAnimation(animation);
-//            lastPosition = position;
-//        }
     }
 
     @Override
@@ -295,6 +303,16 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         notifyDataSetChanged();
     }
 
+    private void lock(View v){
+        mClicked = true;
+
+        v.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mClicked = false;
+            }
+        }, 500);
+    }
 
     public boolean isCustomPicker() {
         return mCustomPicker;
@@ -303,20 +321,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     public void setCustomPicker(Activity activity, boolean customPicker) {
         mActivity = activity;
         mCustomPicker = customPicker;
-    }
-
-    public void lock(View view) {
-        if (mLastClickItem != null && !mLastClickItem.isClickable()) {
-            mLastClickItem.setClickable(true);
-        }
-        mLastClickItem = view;
-        mLastClickItem.setClickable(false);
-    }
-
-    public void unlock() {
-        if (mLastClickItem != null) {
-            mLastClickItem.setClickable(true);
-        }
     }
 
 }
