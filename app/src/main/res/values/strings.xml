@@ -14,7 +14,11 @@
     <string name="action_dislike">dislike</string>
     <string name="action_dismiss">dismiss</string>
     <string name="action_join_google_plus">Join G+ group of the app</string>
-
+    <string name="action_copy">copy</string>
+    <string name="action_copy_to_clipboard">copy to clipboard</string>
+    <string name="action_premium_request">premium request</string>
+    <string name="action_select_all">select all</string>
+    
     <string name="select_an_icon">select an icon</string>
 
     <string name="yes">yes</string>
@@ -87,6 +91,10 @@
     <string name="just_show_without_custom">just show without custom icon</string>
     <string name="select_app">select app</string>
     <string name="cancel_request">cancel request?</string>
+
+    <string name="premium_request_title">Premium Request</string>
+    <string name="premium_request_content">Pay some money(2￥/icon) to make sure this icon included in the next version.</string>
+
 
     <string name="contributor">Contributor</string>
     <string name="job_developer">Developer</string>

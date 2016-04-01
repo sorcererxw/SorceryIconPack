@@ -7,12 +7,17 @@
         <item>sunrise</item>
         <item>b612</item>
         <item>yuelaiyuehao</item>
+        <item>telegram</item>
         <item>baixingwang</item>
         <item>wandoujia_youxiribao</item>
         <item>dreamdays</item>
+        <item>google_camera</item>
+        <item>anydo</item>
+        <item>anydo_calendar</item>
         <item>bank_of_communications</item>
         <item>flyme_account</item>
         <item>zedge</item>
+        <item>duokan</item>
         <item>xunlei_kuainiao</item>
         <item>terminal</item>
         <item>suishouji</item>
@@ -22,24 +27,69 @@
         <item>a5sing</item>
         <item>gudong</item>
         <item>yidaoyongche</item>
+        <item>netease_youqian</item>
         <item>ppiicc</item>
         <item>netease_youxiangdashi</item>
         <item>gitskarios</item>
         <item>scanbot</item>
         <item>tencent_qq</item>
         <item>tencent_qq_alt</item>
+        <item>qingting_fm</item>
         <item>geometric_weather</item>
         <item>letv_sport</item>
         <item>sfly</item>
         <item>ctrip_alt</item>
+        <item>houzz</item>
+        <item>tencent_qq_browser</item>
+        <item>forest</item>
+        <item>wifi_luyouguanjia</item>
         <item>microsoft_translator</item>
         <item>jianjie_calendar</item>
         <item>qunidaye_browser</item>
         <item>zhangshangshenghuo</item>
         <item>eudic</item>
+        <item>dailycost</item>
         <item>welike</item>
+        <item>kejimeixue</item>
+        <item>wandoujia_wechat_helper</item>
         <item>weather_timeline</item>
         <item>cyanogenmod_camera</item>
+        <item>wandoujia</item>
+        <item>yixi</item>
+        <item>weibo</item>
+        <item>anydo_calendar</item>
+        <item>google_calendar</item>
+        <item>google_calendar_1</item>
+        <item>google_calendar_10</item>
+        <item>google_calendar_11</item>
+        <item>google_calendar_12</item>
+        <item>google_calendar_13</item>
+        <item>google_calendar_14</item>
+        <item>google_calendar_15</item>
+        <item>google_calendar_16</item>
+        <item>google_calendar_17</item>
+        <item>google_calendar_18</item>
+        <item>google_calendar_19</item>
+        <item>google_calendar_2</item>
+        <item>google_calendar_20</item>
+        <item>google_calendar_21</item>
+        <item>google_calendar_22</item>
+        <item>google_calendar_23</item>
+        <item>google_calendar_24</item>
+        <item>google_calendar_25</item>
+        <item>google_calendar_26</item>
+        <item>google_calendar_27</item>
+        <item>google_calendar_28</item>
+        <item>google_calendar_29</item>
+        <item>google_calendar_3</item>
+        <item>google_calendar_30</item>
+        <item>google_calendar_31</item>
+        <item>google_calendar_4</item>
+        <item>google_calendar_5</item>
+        <item>google_calendar_6</item>
+        <item>google_calendar_7</item>
+        <item>google_calendar_8</item>
+        <item>google_calendar_9</item>
     </string-array>
 
     <string-array name="icon_pack_flyme">
@@ -391,40 +441,8 @@
         <item>ankidroid</item>
         <item>antennapod</item>
         <item>antutu</item>
-        <item>anydocal</item>
-        <item>anydocal_1</item>
-        <item>anydocal_10</item>
-        <item>anydocal_11</item>
-        <item>anydocal_12</item>
-        <item>anydocal_13</item>
-        <item>anydocal_14</item>
-        <item>anydocal_15</item>
-        <item>anydocal_16</item>
-        <item>anydocal_17</item>
-        <item>anydocal_18</item>
-        <item>anydocal_19</item>
-        <item>anydocal_2</item>
-        <item>anydocal_20</item>
-        <item>anydocal_21</item>
-        <item>anydocal_22</item>
-        <item>anydocal_23</item>
-        <item>anydocal_24</item>
-        <item>anydocal_25</item>
-        <item>anydocal_26</item>
-        <item>anydocal_27</item>
-        <item>anydocal_28</item>
-        <item>anydocal_29</item>
-        <item>anydocal_3</item>
-        <item>anydocal_30</item>
-        <item>anydocal_31</item>
-        <item>anydocal_4</item>
-        <item>anydocal_5</item>
-        <item>anydocal_6</item>
-        <item>anydocal_7</item>
-        <item>anydocal_8</item>
-        <item>anydocal_9</item>
         <item>anyview</item>
-        <item>any_do</item>
+        <item>anydo</item>
         <item>apex_launcher</item>
         <item>apkpure</item>
         <item>apple_music</item>

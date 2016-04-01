@@ -51,7 +51,7 @@
         prefix="lenovo_calendar_"/>
     <calendar
         component="ComponentInfo{com.anydo.cal/com.anydo.cal.activities.OnBoardActivity}"
-        prefix="anydocal_"/>
+        prefix="anydo_calendar_"/>
     <calendar
         component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}"
         prefix="flyme_calendar_"/>
@@ -2249,7 +2249,7 @@
         drawable="antennapod"/>
     <item
         component="ComponentInfo{com.anydo/com.anydo.mainlist.MainListActivity}"
-        drawable="any_do"/>
+        drawable="anydo"/>
     <item
         component="ComponentInfo{net.tsapps.appsales/net.tsapps.appsales.MainActivity}"
         drawable="app_sales"/>
@@ -2306,7 +2306,7 @@
         drawable="cmbchina"/>
     <item
         component="ComponentInfo{com.anydo.cal/com.anydo.cal.activities.OnBoardActivity}"
-        drawable="anydocal"/>
+        drawable="anydo_calendar"/>
     <item
         component="ComponentInfo{com.intsig.lic.camscanner/com.intsig.lic.camscanner.CamScannerLicense}"
         drawable="camscanner"/>
@@ -3188,12 +3188,12 @@
     <item
         component="ComponentInfo{net.doo.snap/net.doo.snap.ui.InitActivity}"
         drawable="scanbot"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{com.wandoujia.ymir/com.wandoujia.ymir.activity.HomeActivity}"
+        drawable="wandoujia_wechat_helper"/>
+    <item
+        component="ComponentInfo{com.bhu.wifioverlook/com.bhu.wifioverlook.ui.InitAct}"
+        drawable="wifi_luyouguanjia"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

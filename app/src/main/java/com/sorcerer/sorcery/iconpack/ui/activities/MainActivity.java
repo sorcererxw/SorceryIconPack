@@ -1,43 +1,26 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.widget.CompoundButton;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -45,26 +28,18 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.DrawerMenuAdapter;
-import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
-import com.sorcerer.sorcery.iconpack.util.Utility;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import im.fir.sdk.FIR;
-import tourguide.tourguide.Overlay;
-import tourguide.tourguide.Pointer;
-import tourguide.tourguide.ToolTip;
-import tourguide.tourguide.TourGuide;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -84,6 +59,11 @@ public class MainActivity extends AppCompatActivity implements
 
     private ViewPager.OnPageChangeListener mPageChangeListener =
             new ViewPager.OnPageChangeListener() {
+                private boolean mIsScrolling = false;
+                private boolean mIsRight = false;
+                private boolean mIsLeft = false;
+                private int mLastValue = 0;
+
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
                                            int positionOffsetPixels) {
@@ -91,6 +71,23 @@ public class MainActivity extends AppCompatActivity implements
                             && mSearchBox.isSearchOpen()) {
                         closeSearch();
                     }
+
+
+                    if (mLastValue > positionOffsetPixels) {
+                        // 递减，向右侧滑动
+                        mIsRight = true;
+                        mIsLeft = false;
+
+                    } else if (mLastValue < positionOffsetPixels) {
+                        // 递减，向右侧滑动
+                        mIsRight = false;
+                        mIsLeft = true;
+
+                    } else if (mLastValue == positionOffsetPixels) {
+                        mIsRight = mIsLeft = false;
+                    }
+
+                    mLastValue = positionOffsetPixels;
                 }
 
                 @Override
@@ -102,11 +99,22 @@ public class MainActivity extends AppCompatActivity implements
 
                 @Override
                 public void onPageScrollStateChanged(int state) {
+                    if (state == 1) {
+                        mIsScrolling = true;
+                    } else {
+                        mIsScrolling = false;
+                    }
+
+                    if (state == 2) {
+                        mIsLeft = mIsRight = false;
+                    }
                 }
             };
 
+
     private MaterialSearchView.SearchViewListener mSearchViewListener =
             new MaterialSearchView.SearchViewListener() {
+
                 @Override
                 public void onSearchViewShown() {
                 }
@@ -142,14 +150,15 @@ public class MainActivity extends AppCompatActivity implements
 
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
-        if (action.equals("com.novalauncher.THEME")) {
-            mCustomPicker = true;
-        }
+
+        mCustomPicker = action.equals("com.novalauncher.THEME");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setToolbarDoubleTap(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         initTabAndPager();
 
@@ -158,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
 
         mNavigationView = (NavigationView) findViewById(R.id.navigation_main);
+        assert mNavigationView != null;
         mNavigationView.setNavigationItemSelectedListener(this);
         initDrawerView();
 
@@ -180,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements
                 syncState();
             }
         };
-        mDrawerLayout.setDrawerListener(toggle);
+        mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         if (!mCustomPicker) {
@@ -205,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements
         int launchTimes = sharedPreferences.getInt("launch times", 0);
         Log.d("sip", "launch time " + launchTimes);
         if (launchTimes == 0) {
+
         } else {
             if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
                 sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
@@ -232,7 +243,9 @@ public class MainActivity extends AppCompatActivity implements
 
         mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
 
+        assert mViewPager != null;
         mViewPager.setOffscreenPageLimit(1);
+
         mViewPager.addOnPageChangeListener(mPageChangeListener);
 
         mPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
@@ -283,6 +296,7 @@ public class MainActivity extends AppCompatActivity implements
     private void generateFragments(ViewPageAdapter adapter) {
 
         String[] name = getResources().getStringArray(R.array.tab_name);
+
         adapter.addFragment(generateFragment(IconFragment.FLAG_NEW), name[0]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_ALL), name[1]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_ALI), name[2]);
@@ -386,6 +400,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void initSearchBox() {
         mSearchBox = (MaterialSearchView) findViewById(R.id.searchBox_main_icon);
+        assert mSearchBox != null;
         mSearchBox.setOnSearchViewListener(mSearchViewListener);
         mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
     }
@@ -401,8 +416,6 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 

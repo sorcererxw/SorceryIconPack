@@ -102,7 +102,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
 //        } else if (mShowAll) {
 //            holder.main.setVisibility(View.VISIBLE);
 //        }
-        if (mAppInfoList.get(position).isHasCustomIcon() && mShowAll == false) {
+        if (mAppInfoList.get(position).isHasCustomIcon() && !mShowAll) {
             holder.check.setVisibility(View.GONE);
             holder.hide();
         } else {
@@ -158,17 +158,37 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         return list;
     }
 
+    public List<String> getSelectedAppsNameList() {
+        List list = new ArrayList();
+        for (int i = 0; i < mCheckedList.size(); i++) {
+            if (mCheckedList.get(i)) {
+                list.add(mAppInfoList.get(i).getName());
+            }
+        }
+        return list;
+    }
+
     public void checkAll(boolean check) {
         for (int i = 0; i < mCheckedList.size(); i++) {
+            if (!check) {
+                mCheckedList.set(i, check);
+                continue;
+            }
+
+            if (!mShowAll && mAppInfoList.get(i).isHasCustomIcon()) {
+                continue;
+            }
+
             mCheckedList.set(i, check);
         }
-        if (check == true) {
+        if (check) {
             cnt = mCheckedList.size();
         } else {
             cnt = 0;
         }
         notifyDataSetChanged();
     }
+
 
     public void setShowAll(boolean isShowAll) {
         mShowAll = isShowAll;
@@ -184,20 +204,21 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
                 if (mCheckedList.get(i)) {
                     if (mAppInfoList.get(i).isHasCustomIcon()) {
                         cnt--;
+                        mCheckedList.set(i, false);
                         if (cnt == 0 && mOnCheckListener != null) {
                             mOnCheckListener.OnEmpty();
                         }
                     }
                 }
             }
-        } else {
-            for (int i = 0; i < mCheckedList.size(); i++) {
-                if (mCheckedList.get(i)) {
-                    if (mAppInfoList.get(i).isHasCustomIcon()) {
-                        cnt++;
-                        if (cnt == 1 && mOnCheckListener != null) {
-                            mOnCheckListener.OnUnEmpty();
-                        }
+            return;
+        }
+        for (int i = 0; i < mCheckedList.size(); i++) {
+            if (mCheckedList.get(i)) {
+                if (mAppInfoList.get(i).isHasCustomIcon()) {
+                    cnt++;
+                    if (cnt == 1 && mOnCheckListener != null) {
+                        mOnCheckListener.OnUnEmpty();
                     }
                 }
             }

@@ -1,6 +1,9 @@
 package com.sorcerer.sorcery.iconpack.adapters;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
@@ -53,17 +58,41 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(mStrings[position * 2]);
-        holder.content.setText(mStrings[position * 2 + 1].replace("|", "\n").replace("#", "    "));
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        holder.title.setText(getTitle(position));
+        holder.content.setText(getContent(position));
 
         if (position == 0) {
-            holder.card.setLayoutParams(getItemParams(8,8,8,4));
+            holder.card.setLayoutParams(getItemParams(8, 8, 8, 4));
         } else if (position == getItemCount()) {
-            holder.card.setLayoutParams(getItemParams(8,4,8,8));
+            holder.card.setLayoutParams(getItemParams(8, 4, 8, 8));
         } else {
-            holder.card.setLayoutParams(getItemParams(8,4,8,4));
+            holder.card.setLayoutParams(getItemParams(8, 4, 8, 4));
         }
+
+        holder.card.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                builder.title(mContext.getString(R.string.action_copy_to_clipboard) + " ?");
+                builder.positiveText(mContext.getString(R.string.action_copy));
+                builder.negativeText(mContext.getString(R.string.cancel));
+                builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog,
+                                        @NonNull DialogAction which) {
+                        ClipboardManager clipboard =
+                                (ClipboardManager) mContext.getSystemService
+                                        (Context.CLIPBOARD_SERVICE);
+                        ClipData clip =
+                                ClipData.newPlainText(getTitle(position), getContent(position));
+                        clipboard.setPrimaryClip(clip);
+                    }
+                });
+                builder.show();
+                return false;
+            }
+        });
     }
 
     private LinearLayout.LayoutParams getItemParams(int left, int top, int right, int
@@ -83,5 +112,13 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return mStrings.length / 2;
+    }
+
+    private String getTitle(int position) {
+        return mStrings[position * 2];
+    }
+
+    private String getContent(int position) {
+        return mStrings[position * 2 + 1].replace("|", "\n").replace("#", "    ");
     }
 }

@@ -46,10 +46,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private Activity mActivity;
     private boolean mCustomPicker = false;
     private Context mContext;
-    private int lastPosition = -1;
     private List<IconBean> mIconBeanList = new ArrayList<>();
     private List<IconBean> mShowIconList = new ArrayList<>();
-    private View mLastClickItem = null;
     private boolean mClicked = false;
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {

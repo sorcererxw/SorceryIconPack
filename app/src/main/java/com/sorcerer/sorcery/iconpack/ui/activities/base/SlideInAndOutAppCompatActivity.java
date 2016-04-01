@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 /**
  * Created by Sorcerer on 2016/2/5 0005.
@@ -137,6 +138,9 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
             sideWidth = (int) (sideWidthInDP * activity.getResources().getDisplayMetrics().density);
             mActivity = activity;
             screenWidth = getScreenWidth(activity);
+
+            sideWidthInDP = Utility.px2dip(activity, screenWidth / 10);
+
             setClickable(true);
             final ViewGroup root = (ViewGroup) activity.getWindow().getDecorView();
             content = root.getChildAt(0);

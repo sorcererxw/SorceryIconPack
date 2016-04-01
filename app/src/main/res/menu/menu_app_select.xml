@@ -2,9 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <item
+        android:id="@+id/action_premium_request"
+        android:icon="@drawable/ic_attach_money_white_24dp"
+        android:title="@string/action_premium_request"
+        app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/action_select_all"
-        android:title="select all"/>
+        android:icon="@drawable/ic_select_all_white_24dp"
+        android:title="@string/select_all"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/action_just_show_without_custom"

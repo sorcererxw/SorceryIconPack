@@ -116,4 +116,10 @@
     <string name="changelog">更新日志</string>
     <string name="action_dismiss">关闭</string>
     <string name="action_join_google_plus">加入本应用的G+社群</string>
+    <string name="action_copy">复制</string>
+    <string name="action_copy_to_clipboard">复制剪贴板</string>
+    <string name="action_premium_request">付费申请</string>
+    <string name="action_select_all">全选</string>
+    <string name="premium_request_content">通过付费来确保一个图标能在下个版本中出现|收费标准: 2元一个图标</string>
+    <string name="premium_request_title">付费申请</string>
 </resources>
