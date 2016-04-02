@@ -112,7 +112,6 @@
     <string name="select_an_icon">选择一个图标</string>
     <string name="nav_item_help">常见问题</string>
     <string name="please_give_permission">请给予权限</string>
-    <string name="sorcery"></string>
     <string name="changelog">更新日志</string>
     <string name="action_dismiss">关闭</string>
     <string name="action_join_google_plus">加入本应用的G+社群</string>
@@ -122,4 +121,12 @@
     <string name="action_select_all">全选</string>
     <string name="premium_request_content">通过付费来确保一个图标能在下个版本中出现|收费标准: 2元一个图标</string>
     <string name="premium_request_title">付费申请</string>
+    <string name="RMB">元</string>
+    <string name="premium_alipay_title">Sorcery 付费申请图标</string>
+    <string name="premium_alipay_descript">Sorcery 付费申请图标</string>
+    <string name="premium_send_title">确认付费</string>
+    <string name="premium_send_content">由于您开启了付费模式,  以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认</string>
+    <string name="pay_fail">付款失败</string>
+    <string name="pay_success">付款成功</string>
+    <string name="fail_open_premium">无法开启付费模式</string>
 </resources>

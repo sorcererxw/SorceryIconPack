@@ -64,6 +64,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     private Menu mMenu;
     private boolean mPremium = false;
     private Activity mActivity = this;
+    private boolean mLoadOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +82,16 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white_24dp);
 
-
         setToolbarDoubleTap(toolbar);
 
-        BP.init(mContext, getString(R.string.bmob_app_id));
+
+        try {
+            BP.init(mContext, getString(R.string.bmob_app_id));
+            mLoadOk = true;
+        } catch (Exception e) {
+            mLoadOk = false;
+        }
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_app_select);
 
@@ -103,19 +110,21 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (mPremium) {
             MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-            builder.title("confirm your order");
+            builder.title(getString(R.string.premium_send_title));
             String s = "";
             final List<String> list = mAdapter.getSelectedAppsNameList();
             for (int i = 0; i < list.size(); i++) {
                 s += list.get(i) + "\n";
             }
-            builder.content(s + "\n" + list.size() * 2 + " yuan");
-            builder.positiveText("ok");
-            builder.negativeText("cancel");
+            final int amount = list.size() * 2;
+
+            builder.content(getString(R.string.premium_send_content) + "\n" + s);
+            builder.positiveText(amount + getString(R.string.RMB));
+            builder.negativeText(getString(R.string.cancel));
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    pay(true, list.size() * 2);
+                    pay(true, amount);
                 }
             });
             builder.show();
@@ -125,7 +134,8 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void pay(boolean isAlipay, int amount) {
-        BP.pay(mActivity, "premium", "thx", amount, isAlipay, new c.b.PListener() {
+        BP.pay(mActivity, getString(R.string.premium_alipay_title), getString(R.string
+                .premium_alipay_descript), amount, isAlipay, new c.b.PListener() {
 
             @Override
             public void orderId(String s) {
@@ -135,16 +145,18 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
 
             @Override
             public void succeed() {
+                getString(R.string.pay_success);
                 send();
             }
 
             @Override
             public void fail(int i, String s) {
+                getString(R.string.pay_fail);
             }
 
             @Override
             public void unknow() {
-                Log.d("sip donate", "unknow");
+                Log.d("sip premium", "unknow");
             }
         });
     }
@@ -329,6 +341,12 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog,
                                         @NonNull DialogAction which) {
+                        if (!mLoadOk) {
+                            Toast.makeText(mContext,
+                                    getString(R.string.fail_open_premium),
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                         mPremium = true;
                         item.setIcon(R.drawable.ic_money_off_white_24dp);
                     }
@@ -388,5 +406,4 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             Log.e("SendMail", e.getMessage(), e);
         }
     }
-
 }

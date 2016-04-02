@@ -18,12 +18,17 @@
     <string name="action_copy_to_clipboard">copy to clipboard</string>
     <string name="action_premium_request">premium request</string>
     <string name="action_select_all">select all</string>
-    
+
     <string name="select_an_icon">select an icon</string>
+
+    <string name="pay_success">pay successfully</string>
+    <string name="pay_fail">fail</string>
 
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="ok">OK</string>
+
+    <string name="RMB">yuan</string>
 
     <string name="please_give_permission">please give it permission</string>
 
@@ -92,9 +97,12 @@
     <string name="select_app">select app</string>
     <string name="cancel_request">cancel request?</string>
 
+    <string name="fail_open_premium">unable to open premium mode</string>
     <string name="premium_request_title">Premium Request</string>
     <string name="premium_request_content">Pay some money(2￥/icon) to make sure this icon included in the next version.</string>
-
+    <string name="premium_send_title">confirm order</string>
+    <string name="premium_send_content"></string>
+    <string name="premium_alipay_title">Sorcery Premium Request</string>
 
     <string name="contributor">Contributor</string>
     <string name="job_developer">Developer</string>
@@ -253,4 +261,5 @@
 
     <bool name="config_iconpack">true</bool>
     <string name="action_soft_reboot">soft reboot</string>
+    <string name="premium_alipay_descript">Sorcery Premium Request</string>
 </resources>
