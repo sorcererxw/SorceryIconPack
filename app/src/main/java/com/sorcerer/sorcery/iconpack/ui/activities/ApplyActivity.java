@@ -28,9 +28,10 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mApplyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
 
