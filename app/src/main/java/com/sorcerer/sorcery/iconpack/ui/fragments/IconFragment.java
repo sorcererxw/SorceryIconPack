@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Point;
+import android.graphics.drawable.Icon;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +17,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,13 +33,16 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 public class IconFragment extends Fragment {
+    private static final String TAG = "IconFragment";
 
     private int maxCol = 8;
 
@@ -57,15 +63,16 @@ public class IconFragment extends Fragment {
     public static final int FLAG_SAMSUNG = 5;
     public static final int FLAG_SONY = 6;
     public static final int FLAG_TENCENT = 7;
-    public static final int FLAG_XIAOMI = 4;
+    public static final int FLAG_MIUI = 4;
     public static final int FLAG_FLYME = 15;
+
+    private List<IconBean> mIconBeanList;
 
     private AutoLoadRecyclerView mGridView;
     private IconAdapter mIconAdapter;
     private SwipeRefreshLayout mSearchLayout;
     private SearchListener mSearchListener;
     private GridLayoutManager mGridLayoutManager;
-
 
     public interface SearchListener {
         void onSearch();
@@ -84,9 +91,19 @@ public class IconFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
+        mIconBeanList = getIconBeanList(getResources(),
+                getContext().getPackageName(),
+                getArguments().getInt("flag", 0));
+
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
         mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
         mGridLayoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
+        mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return mIconBeanList.get(position).getName().charAt(0) == '*' ? calcNumOfRows() : 1;
+            }
+        });
         mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mGridLayoutManager.scrollToPosition(0);
         mGridView.setLayoutManager(mGridLayoutManager);
@@ -118,7 +135,9 @@ public class IconFragment extends Fragment {
         }
 
         mIconAdapter =
-                new IconAdapter(getActivity(), getContext(), getArguments().getInt("flag", 0));
+                new IconAdapter(getActivity(),
+                        getContext(),
+                        mIconBeanList);
 
         if (mCustomPicker) {
             mIconAdapter.setCustomPicker(mParentActivity, mCustomPicker);
@@ -151,6 +170,25 @@ public class IconFragment extends Fragment {
     }
 
     public void showWithString(String s) {
+        if (mGridLayoutManager != null) {
+            if (s.isEmpty()) {
+                mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        return mIconBeanList.get(position).getName().charAt(0) == '*' ?
+                                calcNumOfRows() : 1;
+                    }
+                });
+            } else {
+                mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        return 1;
+                    }
+                });
+            }
+        }
+
         if (mIconAdapter != null) {
             mIconAdapter.showWithString(s);
         }
@@ -158,10 +196,6 @@ public class IconFragment extends Fragment {
 
     public void setSearchListener(@NonNull final SearchListener searchListener) {
         mSearchListener = searchListener;
-    }
-
-    public boolean isCustomPicker() {
-        return mCustomPicker;
     }
 
     public void setCustomPicker(Activity activity, boolean customPicker) {
@@ -181,5 +215,85 @@ public class IconFragment extends Fragment {
 
     public IconAdapter getIconAdapter() {
         return mIconAdapter;
+    }
+
+    private List<IconBean> getIconBeanList(Resources resources, String packageName, int flag) {
+        List<IconBean> list = new ArrayList<>();
+
+        for (String name : getIconNames(resources, flag)) {
+            IconBean iconBean = new IconBean(name);
+            int res = resources.getIdentifier(name, "drawable", packageName);
+            if (res != 0) {
+                final int thumbRes = resources.getIdentifier(name, "drawable", packageName);
+                if (thumbRes != 0) {
+                    iconBean.setRes(thumbRes);
+                } else {
+                    Log.d(TAG, "thumb = 0: " + name);
+                }
+            } else {
+                Log.d(TAG, "res = 0: " + name);
+            }
+            list.add(iconBean);
+        }
+        return list;
+    }
+
+    private String[] getIconNames(Resources resources, int flag) {
+        String[] mIconNames;
+
+        switch (flag) {
+            case IconFragment.FLAG_ALL:
+                mIconNames = resources.getStringArray(R.array.icon_pack);
+                break;
+            case IconFragment.FLAG_NEW:
+                mIconNames = resources.getStringArray(R.array.icon_pack_new);
+                break;
+            case IconFragment.FLAG_ALI:
+                mIconNames = resources.getStringArray(R.array.icon_pack_ali);
+                break;
+            case IconFragment.FLAG_BAIDU:
+                mIconNames = resources.getStringArray(R.array.icon_pack_baidu);
+                break;
+            case IconFragment.FLAG_CYANOGENMOD:
+                mIconNames = resources.getStringArray(R.array.icon_pack_cyanogenmod);
+                break;
+            case IconFragment.FLAG_GOOGLE:
+                mIconNames = resources.getStringArray(R.array.icon_pack_google);
+                break;
+            case IconFragment.FLAG_HTC:
+                mIconNames = resources.getStringArray(R.array.icon_pack_htc);
+                break;
+            case IconFragment.FLAG_LENOVO:
+                mIconNames = resources.getStringArray(R.array.icon_pack_lenovo);
+                break;
+            case IconFragment.FLAG_LG:
+                mIconNames = resources.getStringArray(R.array.icon_pack_lg);
+                break;
+            case IconFragment.FLAG_MICROSOFT:
+                mIconNames = resources.getStringArray(R.array.icon_pack_microsoft);
+                break;
+            case IconFragment.FLAG_MOTO:
+                mIconNames = resources.getStringArray(R.array.icon_pack_moto);
+                break;
+            case IconFragment.FLAG_SAMSUNG:
+                mIconNames = resources.getStringArray(R.array.icon_pack_samsung);
+                break;
+            case IconFragment.FLAG_SONY:
+                mIconNames = resources.getStringArray(R.array.icon_pack_sony);
+                break;
+            case IconFragment.FLAG_TENCENT:
+                mIconNames = resources.getStringArray(R.array.icon_pack_tencent);
+                break;
+            case IconFragment.FLAG_MIUI:
+                mIconNames = resources.getStringArray(R.array.icon_pack_miui);
+                break;
+            case IconFragment.FLAG_FLYME:
+                mIconNames = resources.getStringArray(R.array.icon_pack_flyme);
+                break;
+            default:
+                mIconNames = new String[]{""};
+        }
+
+        return mIconNames;
     }
 }

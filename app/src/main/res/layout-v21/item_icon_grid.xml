@@ -5,11 +5,6 @@
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackgroundBorderless">
 
-    <ImageView
-        android:transitionName="icon"
-        android:id="@+id/imageView_item_icon_grid"
-        android:layout_width="@dimen/icon_grid_item_size"
-        android:layout_height="@dimen/icon_grid_item_size"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/icon_grid_item_margin"/>
+    <include layout="@layout/layout_icon_content"/>
+
 </RelativeLayout>

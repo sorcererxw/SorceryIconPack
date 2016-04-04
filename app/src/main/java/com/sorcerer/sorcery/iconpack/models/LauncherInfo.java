@@ -84,7 +84,7 @@ public class LauncherInfo implements Comparable {
                 mIcon = R.drawable.aviate_launcher;
                 break;
             case "cm":
-                mIcon = R.drawable.cm_theme_engine;
+                mIcon = R.drawable.cyanogenmod_theme_engine;
                 break;
             case "epic":
                 break;

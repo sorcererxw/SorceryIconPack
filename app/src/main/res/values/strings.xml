@@ -198,7 +198,7 @@
         <item>Apex Launcher|com.anddoes.launcher</item>
         <item>Atom Launcher|com.dlto.atom.launcher</item>
         <item>Aviate Launcher|com.tul.aviate</item>
-        <item>CM Theme Engine|org.cyanogenmod.theme.chooser</item>
+        <!--<item>CM Theme Engine|org.cyanogenmod.theme.chooser</item>-->
         <!--<item>Epic Launcher|com.epic.launcher</item>-->
         <item>Go Launcher|com.gau.go.launcherex</item>
         <!--<item>Google Now Launcher|com.google.android.launcher</item>-->

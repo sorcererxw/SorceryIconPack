@@ -1064,7 +1064,7 @@
         drawable="apple_music"/>
     <item
         component="ComponentInfo{org.cyanogenmod.theme.chooser/org.cyanogenmod.theme.chooser.ChooserActivity}"
-        drawable="cm_theme_engine"/>
+        drawable="cyanogenmod_theme_engine"/>
     <item
         component="ComponentInfo{com.iflytek.inputmethod/com.iflytek.inputmethod.LauncherActivity}"
         drawable="xunfei_keyboard"/>
@@ -2815,6 +2815,9 @@
         component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.MainActivity}"
         drawable="icebox"/>
     <item
+        component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.mainActivity.MainActivity}"
+        drawable="icebox"/>
+    <item
         component="ComponentInfo{com.umetrip.android.msky.app/com.umetrip.android.msky.activity.SplashActivity}"
         drawable="hanglvzongheng"/>
     <item
@@ -3194,75 +3197,75 @@
     <item
         component="ComponentInfo{com.bhu.wifioverlook/com.bhu.wifioverlook.ui.InitAct}"
         drawable="wifi_luyouguanjia"/>
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
-    <!--<item-->
-    <!--component="ComponentInfo{}"-->
-    <!--drawable=""/>-->
+    <item
+        component="ComponentInfo{wangdaye.com.geometricweather/wangdaye.com.geometricweather.UserInterface.MainActivity}"
+        drawable="geometric_weather"/>
+    <item
+        component="ComponentInfo{com.scliang.bqcalendar/com.scliang.bqcalendar.MainActivity}"
+        drawable="jianjie_calendar"/>
+    <item
+        component="ComponentInfo{com.eusoft.eudic/com.eusoft.dict.activity.SplashActivity}"
+        drawable="eudic"/>
+    <item
+        component="ComponentInfo{bos.consoar.imagestitch/bos.consoar.imagestitch.ui.MainActivity}"
+        drawable="ppiicc"/>
+    <item
+        component="ComponentInfo{com.bankcomm/com.bankcomm.ui.SplashScreenActivity}"
+        drawable="bank_of_communications"/>
+    <item
+        component="ComponentInfo{com.microsoft.translator/com.microsoft.translator.activity.SplashActivity}"
+        drawable="microsoft_translator"/>
+    <item
+        component="ComponentInfo{com.codoon.gps/com.codoon.gps.ui.login.WelcomeActivity}"
+        drawable="gudong"/>
+    <item
+        component="ComponentInfo{com.xloger.exlink.app/com.xloger.exlink.app.activity.XposedIntoActivity}"
+        drawable="qunidaye_browser"/>
+    <item
+        component="ComponentInfo{cc.forestapp/cc.forestapp.activities.PlantView.PlantViewController}"
+        drawable="forest"/>
+    <item
+        component="ComponentInfo{com.sxy.ui/com.sxy.ui.view.MainActivity}"
+        drawable="welike"/>
+    <item
+        component="ComponentInfo{com.hoge.appivihzh1g4k/com.dingdone.app.welcome.WelcomeActivity}"
+        drawable="kejimeixue"/>
+    <item
+        component="ComponentInfo{com.cmbchina.ccd.pluto.cmbActivity/com.cmbchina.ccd.pluto.cmbActivity.SplashActivity}"
+        drawable="zhangshangshenghuo"/>
+    <item
+        component="ComponentInfo{com.lesports.glivesports/com.lesports.glivesports.launcher.LauncherActivity}"
+        drawable="letv_sport"/>
+    <item
+        component="ComponentInfo{com.cdnren.sfly/com.cdnren.sfly.ui.SplashActivity}"
+        drawable="sfly"/>
+    <item
+        component="ComponentInfo{com.quanleimu.activity/com.baixing.activity.SplashActivity}"
+        drawable="baixingwang"/>
+    <item
+        component="ComponentInfo{com.wandoujia.sonic/com.wandoujia.sonic.ui.activity.SonicActivity}"
+        drawable="wandoujia_youxiribao"/>
+    <item
+        component="ComponentInfo{com.guxiu.dreamdays_l/al.com.dreamdays.activity.ALWelcomeActivity}"
+        drawable="dreamdays"/>
+    <item
+        component="ComponentInfo{com.huofar.ylyh/com.huofar.ylyh.base.activity.LoadingActivity}"
+        drawable="yuelaiyuehao"/>
+    <item
+        component="ComponentInfo{com.lovinc.radio/com.lovinc.radio.ui.LavaWelcomeActivity}"
+        drawable="lavaradio"/>
+    <item
+        component="ComponentInfo{com.phhhoto.android/com.phhhoto.android.ui.login.SplashActivity}"
+        drawable="phhhoto"/>
+    <item
+        component="ComponentInfo{com.ajnsnewmedia.kitchenstories/com.ajnsnewmedia.kitchenstories.ui.SplashActivity}"
+        drawable="kitchen_stories"/>
+    <item
+        component="ComponentInfo{com.sevendosoft.tools.everydayaccount/com.qihoo.util.StartActivity}"
+        drawable="dailycost"/>
+    <item
+        component="ComponentInfo{com.yongche.android/com.yongche.android.welcome.LoadingActivity}"
+        drawable="yidaoyongche"/>
     <!--<item-->
     <!--component="ComponentInfo{}"-->
     <!--drawable=""/>-->

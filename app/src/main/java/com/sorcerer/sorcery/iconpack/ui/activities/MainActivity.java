@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -311,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements
         adapter.addFragment(generateFragment(IconFragment.FLAG_SAMSUNG), name[11]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_SONY), name[12]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_TENCENT), name[13]);
-        adapter.addFragment(generateFragment(IconFragment.FLAG_XIAOMI), name[14]);
+        adapter.addFragment(generateFragment(IconFragment.FLAG_MIUI), name[14]);
         adapter.addFragment(generateFragment(IconFragment.FLAG_FLYME), name[15]);
     }
 
@@ -372,8 +373,8 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         doNext(requestCode, grantResults);
     }
