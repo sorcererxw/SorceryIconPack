@@ -26,8 +26,6 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity
     private Button mRequestButton;
     private Button mSuggestButton;
 
-    private MaterialDialog.Builder mBuilder;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -64,6 +64,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(toolbar);
+        assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         findViewById(R.id.button_donate_alipay).setOnClickListener(this);
@@ -129,20 +130,19 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
                     Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
-            }else{
+            } else {
                 showMoneySelectDialog(true);
             }
         }
-
-
     }
 
     private void showMoneySelectDialog(final boolean isAlipay) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+        final MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
         builder.title(getString(R.string.donate_dialog_title));
         View view = LayoutInflater.from(this).inflate(R.layout.layout_donate_money_select, null);
         final DiscreteSeekBar seekBar = (DiscreteSeekBar) view.findViewById(R.id
                 .discreteSeekBar_donate_money_select);
+        seekBar.setProgress(6);
         builder.customView(view, true);
         builder.onAny(new MaterialDialog.SingleButtonCallback() {
             @Override
@@ -205,6 +205,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
     private void showThanksCard() {
         final QCardView cardView = (QCardView) findViewById(R.id.cardView_donate_thank);
+        assert cardView != null;
         if (cardView.getVisibility() == View.VISIBLE) {
             return;
         }
@@ -238,8 +239,14 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
                             @Override
                             public void onAnimationEnd(Animator animation) {
-                                findViewById(R.id.imageView_donate_heart)
-                                        .setVisibility(View.VISIBLE);
+
+                                ImageView heart =
+                                        (ImageView) findViewById(R.id.imageView_donate_heart);
+                                heart.setVisibility(View.VISIBLE);
+                                ImageLoader.getInstance().displayImage(
+                                        "drawable://" + getResources().getIdentifier("heart",
+                                                "drawable",
+                                                getPackageName()), heart);
                             }
 
                             @Override
@@ -262,8 +269,8 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         doNext(requestCode, grantResults);
     }

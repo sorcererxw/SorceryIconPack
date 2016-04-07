@@ -69,14 +69,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
             holder.summary.setText(item.getSummary());
         }
 
-//        holder.main.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                v.dispatchTouchEvent(event);
-//                return false;
-//            }
-//        });
-
         if (item instanceof CheckSettingsItem) {
             final CheckSettingsItem tmp = (CheckSettingsItem) item;
             holder.check.setVisibility(View.VISIBLE);

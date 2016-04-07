@@ -3,22 +3,15 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Canvas;
-import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -26,23 +19,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.Switch;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.a.a.a.V;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
-import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
-import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
-import com.sorcerer.sorcery.iconpack.ui.views.ScrollDetectRecyclerView;
 import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.Utility;
@@ -114,39 +101,71 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             String s = "";
             final List<String> list = mAdapter.getSelectedAppsNameList();
             for (int i = 0; i < list.size(); i++) {
-                s += list.get(i) + "\n";
+                s += "<li>" + list.get(i) + "</li><br/>";
             }
             final int amount = list.size() * 2;
 
-            builder.content(getString(R.string.premium_send_content) + "\n" + s);
+            View view = LayoutInflater.from(mContext)
+                    .inflate(R.layout.layout_premium_custom_info_input, null);
+            TextView text = (TextView) view.findViewById(R.id.textView_premium_info_text);
+            text.setText(Html.fromHtml(
+                    "<p>" + getString(R.string.premium_send_content) + "</p><ul>" + s +
+                            "</ul>"));
+            final EditText email =
+                    (EditText) view.findViewById(R.id.materialEditText_premium_info_email);
+            final EditText note =
+                    (EditText) view.findViewById(R.id.materialEditText_premium_info_note);
+
             builder.positiveText(amount + getString(R.string.RMB));
             builder.negativeText(getString(R.string.cancel));
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    pay(true, amount);
+                    if (!Utility.isMail(email.getText().toString())) {
+                        Toast.makeText(mContext,
+                                getString(R.string.please_input_right_mail_address),
+                                Toast.LENGTH_SHORT)
+                                .show();
+                        return;
+                    }
+                    pay(true, amount,
+                            email.getText().toString() + "\n" + note.getText().toString(), dialog);
                 }
             });
+            builder.onNegative(new MaterialDialog.SingleButtonCallback() {
+                @Override
+                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                    dialog.dismiss();
+                }
+            });
+            builder.autoDismiss(false);
+            builder.customView(view, true);
             builder.show();
         } else {
-            send();
+            send("");
         }
     }
 
-    private void pay(boolean isAlipay, int amount) {
+    private void pay(boolean isAlipay, int amount, final String sendAfterPay, final MaterialDialog
+            payDialog) {
         BP.pay(mActivity, getString(R.string.premium_alipay_title), getString(R.string
                 .premium_alipay_descript), amount, isAlipay, new c.b.PListener() {
 
+            private String mOrderid;
+
             @Override
             public void orderId(String s) {
-                Toast.makeText(mActivity, getString(R.string.open_alipay), Toast.LENGTH_LONG)
+                Toast.makeText(mActivity, getString(R.string.open_alipay) + s, Toast.LENGTH_LONG)
                         .show();
+                mOrderid = s;
             }
 
             @Override
             public void succeed() {
-                getString(R.string.pay_success);
-                send();
+                Toast.makeText(mContext, getString(R.string.pay_success), Toast.LENGTH_SHORT)
+                        .show();
+                payDialog.dismiss();
+                send(sendAfterPay + "\norderid: " + mOrderid);
             }
 
             @Override
@@ -259,12 +278,17 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     private class SendMailAsyncTask extends AsyncTask<MailSenderInfo, Integer, Boolean> {
         private ProgressDialog mProgressDialog;
         private Context mContext;
+        private String stringToSend = "";
 
         public SendMailAsyncTask(Context context) {
             mContext = context;
             mProgressDialog = new ProgressDialog(context);
             mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             mProgressDialog.setCanceledOnTouchOutside(false);
+        }
+
+        public void setStringToSend(String s) {
+            stringToSend = s;
         }
 
         protected void onPreExecute() {
@@ -296,7 +320,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                 s += "------------------------------\n";
             }
             try {
-                params[0].setContent(s);
+                params[0].setContent(stringToSend + "\n\n" + s);
                 SimpleMailSender sms = new SimpleMailSender();
                 sms.sendTextMail(params[0]);
                 return true;
@@ -383,7 +407,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         });
     }
 
-    private void send() {
+    private void send(String sendString) {
         try {
             MailSenderInfo mailInfo = new MailSenderInfo();
             mailInfo.setMailServerHost("smtp.163.com");
@@ -401,6 +425,9 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                 mailInfo.setSubject("icon request");
             }
             SendMailAsyncTask myAsyncTask = new SendMailAsyncTask(mContext);
+            if (!sendString.isEmpty()) {
+                myAsyncTask.setStringToSend(sendString);
+            }
             myAsyncTask.execute(mailInfo);
         } catch (Exception e) {
             Log.e("SendMail", e.getMessage(), e);

@@ -52,7 +52,7 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
 
         ContributorCard sorcerer =
                 (ContributorCard) findViewById(R.id.contributorCard_sorcerer);
-        sorcerer.setAvatar(getResources().getDrawable(R.drawable.sorcerer_1));
+        sorcerer.setAvatarByImageLoader(R.drawable.sorcerer_1);
         sorcerer.setName("Sorcerer");
         sorcerer.setJob(
                 getString(R.string.job_developer) + " & " + getString(R.string.job_icon_design));
@@ -60,7 +60,7 @@ public class AboutActivity extends SlideInAndOutAppCompatActivity {
         sorcerer.setWeibo(Uri.parse("http://weibo.com/u/2262804212"));
 
         ContributorCard mozartjac = (ContributorCard) findViewById(R.id.contributorCard_mozartjac);
-        mozartjac.setAvatar(getResources().getDrawable(R.drawable.mozartjac));
+        mozartjac.setAvatarByImageLoader(R.drawable.mozartjac);
         mozartjac.setName("翟宅宅Jack");
         mozartjac.setJob(getString(R.string.job_icon_design));
         mozartjac.setWeibo(Uri.parse("http://weibo.com/mozartjac"));

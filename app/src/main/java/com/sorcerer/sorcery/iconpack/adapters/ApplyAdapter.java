@@ -1,27 +1,25 @@
 package com.sorcerer.sorcery.iconpack.adapters;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import android.graphics.PorterDuff;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
-import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -118,23 +116,73 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     public void onBindViewHolder(LauncherViewHolder holder, int position) {
         holder.label.setText(mLauncherList.get(position).getLabel());
 
-        holder.icon.setImageResource(mLauncherList.get(position).getIcon());
+        ImageLoader.getInstance().displayImage("drawable://" + mContext.getResources()
+                        .getIdentifier(mLauncherList.get(position).getLabel().replace(" ", "_")
+                                        .toLowerCase(),
+                                "drawable", mContext
+                                        .getPackageName()),
+                holder.icon, SIP.mOptions);
+
+        setItemParams(holder, position);
 
         if (mLauncherList.get(position).isInstalled()) {
             holder.isInstalled.setText(mContext.getString(R.string.installed));
-//            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.green_500));
             holder.icon.setColorFilter(null);
+            holder.label.setTextColor(ContextCompat.getColor(mContext, R.color.primary_text));
+            holder.isInstalled.setTextColor(ContextCompat.getColor(mContext, R.color.primary_text));
         } else {
             holder.isInstalled.setText(mContext.getString(R.string.not_installed));
-//            holder.isInstalled.setTextColor(mContext.getResources().getColor(R.color.red_500));
             holder.icon.setColorFilter(mGrayScaleFilter);
+            holder.label.setTextColor(ContextCompat.getColor(mContext, R.color.secondary_text));
+            holder.isInstalled
+                    .setTextColor(ContextCompat.getColor(mContext, R.color.secondary_text));
         }
-//        String resName = mLauncherList.get(position).getLabel().replace(" ", "_").toLowerCase();
-//        Log.d(TAG, resName);
-//        ImageLoader.getInstance().displayImage("drawable://" + mContext.getResources()
-//                        .getIdentifier(resName, "drawable", mContext.getPackageName()),
-//                holder.icon,
-//                SIP.mOptions);
+    }
+
+    private void setItemParams(LauncherViewHolder holder, int position) {
+        int top, bottom, left, right;
+
+        if (position % 2 == 0) {
+            left = 8;
+            right = 4;
+        } else {
+            right = 8;
+            left = 4;
+        }
+
+        if (position == 0 || position == 1) {
+            top = 8;
+        } else {
+            top = 4;
+        }
+
+        if (position >= getItemCount() - 2) {
+            if (getItemCount() % 2 == 0 && position == getItemCount() - 2) {
+                bottom = 8;
+            } else if (getItemCount() % 2 == 1 && position == getItemCount() - 2) {
+                bottom = 4;
+            } else {
+                bottom = 8;
+            }
+        } else {
+            bottom = 4;
+        }
+
+        holder.main.setLayoutParams(getItemParams(left, top, right, bottom));
+    }
+
+    private LinearLayout.LayoutParams getItemParams(int left, int top, int right, int
+            bottom) {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.setMargins(dp2px(left), dp2px(top), dp2px(right), dp2px(bottom));
+        return params;
+    }
+
+    private int dp2px(int dp) {
+        return Utility.dip2px(mContext, dp);
     }
 
     @Override

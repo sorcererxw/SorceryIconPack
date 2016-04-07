@@ -119,14 +119,21 @@
     <string name="action_copy_to_clipboard">复制剪贴板</string>
     <string name="action_premium_request">付费申请</string>
     <string name="action_select_all">全选</string>
-    <string name="premium_request_content">通过付费来确保一个图标能在下个版本中出现|收费标准: 2元一个图标</string>
+    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现, 以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配</string>
     <string name="premium_request_title">付费申请</string>
     <string name="RMB">元</string>
     <string name="premium_alipay_title">Sorcery 付费申请图标</string>
     <string name="premium_alipay_descript">Sorcery 付费申请图标</string>
     <string name="premium_send_title">确认付费</string>
-    <string name="premium_send_content">由于您开启了付费模式,  以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认</string>
+    <string name="premium_send_content">由于您开启了付费模式,  以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认并留下您的邮箱地址</string>
     <string name="pay_fail">付款失败</string>
     <string name="pay_success">付款成功</string>
     <string name="fail_open_premium">无法开启付费模式</string>
+    <string name="premium_send_dialog_mail_label">邮箱</string>
+    <string name="premium_send_dialog_mail_hint">请留下您的邮箱(必填)</string>
+    <string name="premium_send_dialog_note_hint">捎句话...</string>
+    <string name="premium_send_dialog_note_label">备注</string>
+    <string name="please_input_right_mail_address">请输入正确的邮箱地址</string>
+    <string name="icon_label_added">**最近添加**</string>
+    <string name="icon_label_updated">**调整更新**</string>
 </resources>

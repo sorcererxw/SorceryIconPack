@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewStub;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -22,7 +23,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
@@ -50,13 +53,46 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         public ImageView icon;
         public View main;
         public TextView header;
+        public boolean isViewStubInflate = false;
 
         public IconItemViewHolder(View itemView) {
             super(itemView);
 
             main = itemView;
             icon = (ImageView) main.findViewById(R.id.imageView_item_icon_grid);
-            header = (TextView) main.findViewById(R.id.textView_item_icon_header);
+        }
+
+        public void inflateHeader() {
+            View view = ((ViewStub) (main.findViewById(R.id.viewStub_item_icon_header))).inflate();
+            header = (TextView) view.findViewById(R.id.textView_item_icon_header);
+            isViewStubInflate = true;
+        }
+
+        public void showHeader(String s) {
+            main.setClickable(false);
+
+            if (!isViewStubInflate) {
+                inflateHeader();
+            }
+            if (isViewStubInflate && header != null) {
+                header.setVisibility(View.VISIBLE);
+                header.setText(s);
+            }
+        }
+
+        public void hideHeader() {
+            if (isViewStubInflate && header != null) {
+                header.setVisibility(View.GONE);
+            }
+        }
+
+        public void showIcon() {
+            main.setClickable(true);
+            icon.setVisibility(View.VISIBLE);
+        }
+
+        public void hideIcon() {
+            icon.setVisibility(View.GONE);
         }
     }
 
@@ -78,14 +114,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     @Override
     public void onBindViewHolder(final IconItemViewHolder holder, final int position) {
         if (isLabel(mShowIconList.get(position).getName())) {
-            holder.icon.setVisibility(View.GONE);
-            holder.header.setVisibility(View.VISIBLE);
-            holder.main.setClickable(false);
-            holder.header.setText(getLabel(mShowIconList.get(position).getName()));
+            holder.hideIcon();
+            holder.showHeader(getLabel(mShowIconList.get(position).getName()));
         } else {
-            holder.icon.setVisibility(View.VISIBLE);
-            holder.header.setVisibility(View.GONE);
-            holder.main.setClickable(true);
+            holder.showIcon();
+            holder.hideHeader();
 
             if (!mCustomPicker) {
                 holder.main.setOnClickListener(new View.OnClickListener() {
@@ -106,12 +139,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     }
                 });
             }
-            holder.icon.setImageResource(mShowIconList.get(position).getRes());
+            ImageLoader.getInstance()
+                    .displayImage("drawable://" + mShowIconList.get(position).getRes(), holder.icon,
+                            SIP.mOptions);
             setAnimation(holder.icon);
         }
-//        ImageLoader.getInstance().displayImage("drawable://" + mItems.get(position), holder.icon,
-//                SIP.mOptions);
-//        setAnimation(holder.icon, position);
     }
 
     @Override

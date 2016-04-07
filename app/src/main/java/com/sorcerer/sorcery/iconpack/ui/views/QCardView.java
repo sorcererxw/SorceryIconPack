@@ -45,37 +45,6 @@ public class QCardView extends CardView {
         void onUp();
     }
 
-
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        int x = (int) event.getX();
-//        int y = (int) event.getY();
-//
-//        switch (event.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                lastX = x;
-//                lastY = y;
-//                orginX = getX();
-//                orginY = getY();
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                int offsetX = x - lastX;
-//                int offsetY = y - lastY;
-//                sumX += offsetX;
-//                sumY += offsetY;
-//                // 通过layout方法来重新设置view的坐标
-//                layout(getLeft() + offsetX,
-//                        getTop() + offsetY,
-//                        getRight() + offsetX,
-//                        getBottom() + offsetY);
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                animate().setDuration(200).translationXBy(-sumX).translationYBy(-sumY).start();
-//                break;
-//        }
-//        return true;
-//    }
-
     @Override
     public void computeScroll() {
         super.computeScroll();

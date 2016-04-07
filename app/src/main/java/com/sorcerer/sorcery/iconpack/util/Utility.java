@@ -233,4 +233,38 @@ public class Utility {
         res = res.replace("#", "    ");
         return res;
     }
+
+    public static boolean isMail(String mail) {
+        boolean hasAt = false;
+        boolean hasDot = false;
+        boolean first = false;
+        boolean second = false;
+        boolean third = false;
+        for (int i = 0; i < mail.length(); i++) {
+            if (Character.isLetter(mail.charAt(i))) {
+                if (i == 0) {
+                    first = true;
+                }
+                if (i == mail.length() - 1) {
+                    third = true;
+                }
+                if (i != 0 && mail.charAt(i - 1) == '@') {
+                    second = true;
+                }
+            } else if (mail.charAt(i) == '@') {
+                if (hasAt || hasDot) {
+                    return false;
+                }
+                hasAt = true;
+            } else if (mail.charAt(i) == '.') {
+                if (!hasAt || hasDot) {
+                    return false;
+                }
+                hasDot = true;
+            } else {
+                return false;
+            }
+        }
+        return hasAt && hasDot && first && second && third;
+    }
 }

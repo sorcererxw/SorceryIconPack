@@ -64,7 +64,7 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
 
         if (position == 0) {
             holder.card.setLayoutParams(getItemParams(8, 8, 8, 4));
-        } else if (position == getItemCount()) {
+        } else if (position == getItemCount()-1) {
             holder.card.setLayoutParams(getItemParams(8, 4, 8, 8));
         } else {
             holder.card.setLayoutParams(getItemParams(8, 4, 8, 4));

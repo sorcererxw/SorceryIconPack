@@ -19,13 +19,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.DrawerMenuAdapter;
@@ -112,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements
                 }
             };
 
-
     private MaterialSearchView.SearchViewListener mSearchViewListener =
             new MaterialSearchView.SearchViewListener() {
 
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
-                            .showWithString(newText);
+                            .showWithString(newText.toLowerCase());
                     return false;
                 }
             };
@@ -220,6 +220,7 @@ public class MainActivity extends AppCompatActivity implements
         } else {
             if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
                 sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
+                ImageLoader.getInstance().clearDiskCache();
             }
         }
         if (!sharedPreferences.getBoolean("know help", false)) {

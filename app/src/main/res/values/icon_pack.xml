@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new">
-        <item>**Added**</item>
+        <item>@string/icon_label_added</item>
         <item>wandoujia_wechat_helper</item>
         <item>layout</item>
+        <item>polarr</item>
+        <item>duitang</item>
         <item>boomerang</item>
+        <item>flickr</item>
         <item>phhhoto</item>
+        <item>line</item>
+        <item>line_at</item>
+        <item>line_dict</item>
         <item>letv_sport</item>
         <item>yuelaiyuehao</item>
         <item>welike</item>
@@ -30,8 +36,14 @@
         <item>microsoft_translator</item>
         <item>jianjie_calendar</item>
         <item>dailycost</item>
-        <item>**Updated**</item>
+        <item>uber_partner</item>
+        <item>@string/icon_label_updated</item>
         <item>alipay</item>
+        <item>google_play_games</item>
+        <item>google_play_books</item>
+        <item>google_play_newsstand</item>
+        <item>google_play_movies</item>
+        <item>google_play_music</item>
         <item>tencent_qzone</item>
         <item>sunrise</item>
         <item>b612</item>
@@ -62,6 +74,7 @@
         <item>wandoujia</item>
         <item>yixi</item>
         <item>weibo</item>
+        <item>uber</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
         <item>google_calendar_10</item>
@@ -778,7 +791,6 @@
         <item>dropbox</item>
         <item>dropsync</item>
         <item>duduribao</item>
-        <item>duduribao_alt</item>
         <item>dumb_ways_to_die</item>
         <item>dumb_ways_to_die_2</item>
         <item>duokan</item>

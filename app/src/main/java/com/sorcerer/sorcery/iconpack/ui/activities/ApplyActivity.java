@@ -18,48 +18,23 @@ import com.sorcerer.sorcery.iconpack.util.Utility;
 
 public class ApplyActivity extends SlideInAndOutAppCompatActivity {
 
-    private Toolbar mToolbar;
-    private RecyclerView mApplyRecyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
-        setSupportActionBar(mToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
+        setSupportActionBar(toolbar);
 
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-        mApplyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
-
+        RecyclerView applyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
-        mApplyRecyclerView.setLayoutManager(layoutManager);
-        mApplyRecyclerView.setHasFixedSize(false);
-        mApplyRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
-                                       RecyclerView.State state) {
-//                super.getItemOffsets(outRect, view, parent, state);
-                int position = parent.getChildAdapterPosition(view);
-                if (position % 3 == 0) {
-//                    outRect.left = 16;
-//                    outRect.right = 16;
-                } else if (position % 3 == 1) {
-//                    outRect.left = 16;
-//                    outRect.right = 16;
-                } else if (position % 3 == 2) {
-//                    outRect.left = 16;
-//                    outRect.right = 16;
-                }
-            }
-        });
+        applyRecyclerView.setLayoutManager(layoutManager);
+        applyRecyclerView.setHasFixedSize(false);
 
         final ApplyAdapter applyAdapter = new ApplyAdapter(this, Utility.generateLauncherInfo
                 (this));
@@ -85,20 +60,7 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                 }
             }
         });
-        mApplyRecyclerView.setAdapter(applyAdapter);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        if (Utility.isXposedInstalled(this) || true) {
-//            Toast.makeText(this, "add view", Toast.LENGTH_SHORT).show();
-//            LinearLayout root  = (LinearLayout) findViewById(R.id.linearLayout_apply_root);
-//            CardView cardView = new CardView(this);
-//            cardView.setMinimumHeight(100);
-//            cardView.setMinimumWidth(100);
-//            root.addView(cardView,1);
-//        }
+        applyRecyclerView.setAdapter(applyAdapter);
     }
 
     @Override

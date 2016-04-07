@@ -29,7 +29,7 @@ public class SIP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        initImageLoader(this);
+        initImageLoader(this);
 
         new Thread(new Runnable() {
             @Override
@@ -54,7 +54,6 @@ public class SIP extends Application {
                 .build();
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config);
-
 
         mOptions = new DisplayImageOptions.Builder()
                 .showImageOnLoading(

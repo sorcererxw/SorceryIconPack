@@ -103,6 +103,13 @@
     <string name="premium_send_title">confirm order</string>
     <string name="premium_send_content"></string>
     <string name="premium_alipay_title">Sorcery Premium Request</string>
+    <string name="premium_send_dialog_mail_label">Email</string>
+    <string name="premium_send_dialog_note_label">Notes</string>
+    <string name="premium_send_dialog_note_hint">Leave your message to developer</string>
+    <string name="please_input_right_mail_address">please input right mail address</string>
+
+    <string name="icon_label_added">**Added**</string>
+    <string name="icon_label_updated">**Updated**</string>
 
     <string name="contributor">Contributor</string>
     <string name="job_developer">Developer</string>
@@ -111,7 +118,6 @@
 
     <string name="changelog">changelog</string>
     <string name="changelog_content">1. 79个新图标|2. 加入图标页动效|3. 修复BUG|4. 调整界面细节|5. 增加对Sony新版启动器支持</string>
-
     <string name="about_main">let 「material」\n
         colorful your phone</string>
 
@@ -262,4 +268,5 @@
     <bool name="config_iconpack">true</bool>
     <string name="action_soft_reboot">soft reboot</string>
     <string name="premium_alipay_descript">Sorcery Premium Request</string>
+    <string name="premium_send_dialog_mail_hint">Please leave your mail adress(must)</string>
 </resources>

@@ -1,22 +1,14 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Explode;
 import android.transition.Fade;
-import android.transition.Slide;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,8 +16,6 @@ import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by Sorcerer on 2016/3/22 0022.
