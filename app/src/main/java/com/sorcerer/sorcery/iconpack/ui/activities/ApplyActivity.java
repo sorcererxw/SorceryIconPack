@@ -33,6 +33,7 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);
+        assert applyRecyclerView != null;
         applyRecyclerView.setLayoutManager(layoutManager);
         applyRecyclerView.setHasFixedSize(false);
 

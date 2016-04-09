@@ -2,6 +2,7 @@
 <resources>
     <string-array name="icon_pack_new">
         <item>@string/icon_label_added</item>
+        <item>yidong_gps</item>
         <item>wandoujia_wechat_helper</item>
         <item>layout</item>
         <item>polarr</item>

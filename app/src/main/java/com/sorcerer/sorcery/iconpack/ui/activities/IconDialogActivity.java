@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
 import android.view.MotionEvent;
 import android.view.View;
@@ -36,9 +37,9 @@ public class IconDialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 
         if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
             getWindow().setEnterTransition(new Fade());
             getWindow().setExitTransition(new Fade());
         }
@@ -54,6 +55,10 @@ public class IconDialogActivity extends AppCompatActivity {
         if (mRes == 0) {
             this.finish();
         }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_icon_dialog);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(mLabel);
 
         ((TextView) findViewById(R.id.textView_dialog_title)).setText(mLabel);
 
