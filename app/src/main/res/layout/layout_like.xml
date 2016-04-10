@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="right"
+    android:gravity="end"
     android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/linerLayout_icon_dislike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:orientation="horizontal"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginRight="24dp">
 
         <ImageView
             android:id="@+id/imageView_icon_dislike"
@@ -21,21 +23,23 @@
             android:background="@drawable/ic_dislike"/>
 
         <TextView
-            android:layout_marginLeft="4dp"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"
-            android:text="@string/action_dislike"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:text="@string/action_dislike"
+            android:textSize="20sp"
+            android:layout_marginLeft="4dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linerLayout_icon_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:orientation="horizontal"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginRight="24dp">
 
         <ImageView
             android:id="@+id/imageView_icon_like"
@@ -44,12 +48,13 @@
             android:background="@drawable/ic_like"/>
 
         <TextView
-            android:layout_marginLeft="4dp"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"
-            android:text="@string/action_like"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:text="@string/action_like"
+            android:textSize="20sp"
+            android:layout_marginLeft="4dp"/>
     </LinearLayout>
 
 </LinearLayout>

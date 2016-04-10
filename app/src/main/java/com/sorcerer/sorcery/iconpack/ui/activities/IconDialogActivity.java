@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -56,9 +58,9 @@ public class IconDialogActivity extends AppCompatActivity {
             this.finish();
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_icon_dialog);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(mLabel);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_icon_dialog);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("  " + mLabel);
 
         ((TextView) findViewById(R.id.textView_dialog_title)).setText(mLabel);
 
@@ -119,4 +121,19 @@ public class IconDialogActivity extends AppCompatActivity {
             overridePendingTransition(0, android.R.anim.fade_out);
         }
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if(id==R.id.action_show_in_store){
+//
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }

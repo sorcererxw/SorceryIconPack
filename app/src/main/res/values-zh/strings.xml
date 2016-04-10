@@ -136,4 +136,5 @@
     <string name="please_input_right_mail_address">请输入正确的邮箱地址</string>
     <string name="icon_label_added">**最近添加**</string>
     <string name="icon_label_updated">**调整更新**</string>
+    <string name="action_show_in_store">前往商店</string>
 </resources>

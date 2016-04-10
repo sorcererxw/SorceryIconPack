@@ -18,6 +18,7 @@
     <string name="action_copy_to_clipboard">copy to clipboard</string>
     <string name="action_premium_request">premium request</string>
     <string name="action_select_all">select all</string>
+    <string name="action_show_in_store">show in store</string>
 
     <string name="select_an_icon">select an icon</string>
 
@@ -28,7 +29,7 @@
     <string name="no">no</string>
     <string name="ok">OK</string>
 
-    <string name="RMB">yuan</string>
+    <string name="RMB"> yuan</string>
 
     <string name="please_give_permission">please give it permission</string>
 

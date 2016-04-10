@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +25,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements
     private NavigationView mNavigationView;
     private boolean mCustomPicker = false;
     private Context mContext = this;
+    private Activity mActivity = this;
     private RecyclerView mMenuView;
 
     private ViewPager.OnPageChangeListener mPageChangeListener =
@@ -224,9 +227,11 @@ public class MainActivity extends AppCompatActivity implements
             }
         }
         if (!sharedPreferences.getBoolean("know help", false)) {
-            showWelcomeDialog();
+//            showWelcomeDialog();
             sharedPreferences.edit().putBoolean("know help", true).apply();
         }
+
+        showPermissionDialog();
 
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
     }
@@ -234,10 +239,10 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        if (Build.VERSION.SDK_INT >= 23) {
-            PermissionsHelper.requestWriteExternalStorage(this);
-            PermissionsHelper.requestReadPhoneState(this);
-        }
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            PermissionsHelper.requestWriteExternalStorage(this);
+//            PermissionsHelper.requestReadPhoneState(this);
+//        }
     }
 
     private void initTabAndPager() {
@@ -265,6 +270,34 @@ public class MainActivity extends AppCompatActivity implements
                 .content(getString(R.string.welcome_body))
                 .positiveText(getString(R.string.welcome_close))
                 .build().show();
+    }
+
+    private void showPermissionDialog() {
+        boolean show = PermissionsHelper.hasPermission(mActivity, PermissionsHelper
+                .READ_PHONE_STATE_MANIFEST) && PermissionsHelper.hasPermission(mActivity,
+                PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST);
+
+        if (Build.VERSION.SDK_INT >= 23 && !show) {
+            new MaterialDialog.Builder(this)
+                    .autoDismiss(false)
+                    .canceledOnTouchOutside(false)
+                    .title("申请授权")
+                    .content("提供授权")
+                    .positiveText("授权")
+                    .negativeText("不")
+                    .onAny(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog,
+                                            @NonNull DialogAction which) {
+                            if (which == DialogAction.POSITIVE) {
+                                PermissionsHelper.requestWriteExternalStorage(mActivity);
+                                PermissionsHelper.requestReadPhoneState(mActivity);
+                            } else {
+                                mActivity.finish();
+                            }
+                        }
+                    }).show();
+        }
     }
 
     private void setToolbarDoubleTap(Toolbar toolbar) {
