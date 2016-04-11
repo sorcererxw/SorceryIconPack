@@ -137,4 +137,5 @@
     <string name="icon_label_added">**最近添加**</string>
     <string name="icon_label_updated">**调整更新**</string>
     <string name="action_show_in_store">前往商店</string>
+    <string name="search_hint">搜索(仅支持英文)</string>
 </resources>

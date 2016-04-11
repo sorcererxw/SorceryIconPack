@@ -11,7 +11,7 @@
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout_main"
-    android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
@@ -35,7 +35,8 @@
                     android:id="@+id/searchBox_main_icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="search..."/>
+                    android:hint="@string/search_hint"
+                    android:textColorHint="@color/content"/>
 
             </RelativeLayout>
 

@@ -22,6 +22,8 @@
 
     <string name="select_an_icon">select an icon</string>
 
+    <string name="search_hint">Search...</string>
+
     <string name="pay_success">pay successfully</string>
     <string name="pay_fail">fail</string>
 
@@ -75,7 +77,7 @@
     <string name="nav_item_help">FAQ</string>
 
     <string name="donate_dialog_title">select amount</string>
-    <string name="donate_declaration_content"></string>
+    <string name="donate_declaration_content">powered by Bmob</string>
 
     <string name="donate_title">Support Us</string>
     <string name="donate_content">If you like my work\n
@@ -155,15 +157,15 @@
         <item>All</item>
         <item>ALi</item>
         <item>Baidu</item>
-        <item>Cyanogenmod</item>
+        <item>Cyanogen</item>
         <item>Google</item>
         <item>HTC</item>
         <item>Lenovo</item>
         <item>LG</item>
-        <item>MOTO</item>
+        <item>Moto</item>
         <item>Microsoft</item>
         <item>Samsung</item>
-        <item>SONY</item>
+        <item>Sony</item>
         <item>Tencent</item>
         <item>Xiaomi</item>
         <item>Meizu</item>
@@ -264,6 +266,25 @@
         <item>由于Xposed模块尚未得到完善, 无法保证能够在你的设备上成功应用</item>
         <item>为何要申请这些权限?</item>
         <item>现在应用主要申请了存储和电话这两个敏感的权限, 因为应用使用bmob的sdk, 需要记录设备的imei来统计设备, 并且在捐赠和Xposed部分均需要用到本地存储</item>
+    </string-array>
+
+    <string-array name="search_suggestion">
+        <item>adobe</item>
+        <item>ali</item>
+        <item>baidu</item>
+        <item>cyanogenmod</item>
+        <item>google</item>
+        <item>htc</item>
+        <item>lenovo</item>
+        <item>lg</item>
+        <item>moto</item>
+        <item>microsoft</item>
+        <item>netease</item>
+        <item>samsung</item>
+        <item>sony</item>
+        <item>tencent</item>
+        <item>xiaomi</item>
+        <item>flyme</item>
     </string-array>
 
     <bool name="config_iconpack">true</bool>

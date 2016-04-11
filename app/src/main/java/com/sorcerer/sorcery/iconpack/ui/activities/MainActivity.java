@@ -5,11 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.DataSetObserver;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,6 +26,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -35,10 +43,13 @@ import com.sorcerer.sorcery.iconpack.adapters.DrawerMenuAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
+import com.sorcerer.sorcery.iconpack.ui.views.MyMaterialSearchView;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,13 +72,11 @@ public class MainActivity extends AppCompatActivity implements
     private Context mContext = this;
     private Activity mActivity = this;
     private RecyclerView mMenuView;
+    private boolean mCloseEnable = true;
 
     private ViewPager.OnPageChangeListener mPageChangeListener =
+
             new ViewPager.OnPageChangeListener() {
-                private boolean mIsScrolling = false;
-                private boolean mIsRight = false;
-                private boolean mIsLeft = false;
-                private int mLastValue = 0;
 
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
@@ -76,23 +85,6 @@ public class MainActivity extends AppCompatActivity implements
                             && mSearchBox.isSearchOpen()) {
                         closeSearch();
                     }
-
-
-                    if (mLastValue > positionOffsetPixels) {
-                        // 递减，向右侧滑动
-                        mIsRight = true;
-                        mIsLeft = false;
-
-                    } else if (mLastValue < positionOffsetPixels) {
-                        // 递减，向右侧滑动
-                        mIsRight = false;
-                        mIsLeft = true;
-
-                    } else if (mLastValue == positionOffsetPixels) {
-                        mIsRight = mIsLeft = false;
-                    }
-
-                    mLastValue = positionOffsetPixels;
                 }
 
                 @Override
@@ -104,23 +96,23 @@ public class MainActivity extends AppCompatActivity implements
 
                 @Override
                 public void onPageScrollStateChanged(int state) {
-                    if (state == 1) {
-                        mIsScrolling = true;
-                    } else {
-                        mIsScrolling = false;
-                    }
-
-                    if (state == 2) {
-                        mIsLeft = mIsRight = false;
-                    }
                 }
             };
 
     private MaterialSearchView.SearchViewListener mSearchViewListener =
-            new MaterialSearchView.SearchViewListener() {
+            new MyMaterialSearchView.SearchViewListener() {
 
                 @Override
                 public void onSearchViewShown() {
+                    mCloseEnable = false;
+                    mViewPager.setCurrentItem(1);
+                    mSearchBox.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mCloseEnable = true;
+                        }
+                    }, 300);
+                    mSearchBox.showSuggestions();
                 }
 
                 @Override
@@ -132,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements
             };
 
     private MaterialSearchView.OnQueryTextListener mSearchQueryTextListener =
-            new MaterialSearchView.OnQueryTextListener() {
+            new MyMaterialSearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
                     return false;
@@ -438,7 +430,10 @@ public class MainActivity extends AppCompatActivity implements
         assert mSearchBox != null;
         mSearchBox.setOnSearchViewListener(mSearchViewListener);
         mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
+        String[] suggestions = getResources().getStringArray(R.array.search_suggestion);
+        mSearchBox.setSuggestions(suggestions);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
@@ -455,7 +450,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void closeSearch() {
-        if (mSearchBox.isSearchOpen()) {
+        if (mSearchBox.isSearchOpen() && mCloseEnable) {
             mSearchBox.clearFocus();
             mSearchBox.closeSearch();
         }

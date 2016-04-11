@@ -63,11 +63,11 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
         holder.content.setText(getContent(position));
 
         if (position == 0) {
-            holder.card.setLayoutParams(getItemParams(8, 8, 8, 4));
+            holder.card.setLayoutParams(getItemParams(0, 8, 0, 0));
         } else if (position == getItemCount()-1) {
-            holder.card.setLayoutParams(getItemParams(8, 4, 8, 8));
+            holder.card.setLayoutParams(getItemParams(0, 0, 0, 8));
         } else {
-            holder.card.setLayoutParams(getItemParams(8, 4, 8, 4));
+            holder.card.setLayoutParams(getItemParams(0, 0, 0, 0));
         }
 
         holder.card.setOnLongClickListener(new View.OnLongClickListener() {

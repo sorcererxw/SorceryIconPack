@@ -38,6 +38,21 @@
         <item>jianjie_calendar</item>
         <item>dailycost</item>
         <item>uber_partner</item>
+        <item>adobe_acrobat</item>
+        <item>adobe_air</item>
+        <item>adobe_brush</item>
+        <item>adobe_capture</item>
+        <item>adobe_color</item>
+        <item>adobe_connect</item>
+        <item>adobe_fill</item>
+        <item>adobe_flash</item>
+        <item>adobe_illustrator_draw</item>
+        <item>adobe_lightroom</item>
+        <item>adobe_mix</item>
+        <item>adobe_photoshop</item>
+        <item>adobe_premiere_clip</item>
+        <item>adobe_shape</item>
+        <item>adobe_sign_manager</item>
         <item>@string/icon_label_updated</item>
         <item>alipay</item>
         <item>google_play_games</item>
@@ -559,8 +574,19 @@
         <item>adaway</item>
         <item>adobe_acrobat</item>
         <item>adobe_air</item>
+        <item>adobe_brush</item>
+        <item>adobe_capture</item>
+        <item>adobe_color</item>
+        <item>adobe_connect</item>
+        <item>adobe_fill</item>
         <item>adobe_flash</item>
-        <item>adobe_photoshop_mix</item>
+        <item>adobe_illustrator_draw</item>
+        <item>adobe_lightroom</item>
+        <item>adobe_mix</item>
+        <item>adobe_photoshop</item>
+        <item>adobe_premiere_clip</item>
+        <item>adobe_shape</item>
+        <item>adobe_sign_manager</item>
         <item>advanced_download_manager</item>
         <item>adwex_launcher</item>
         <item>adw_launcher</item>
@@ -792,6 +818,7 @@
         <item>dropbox</item>
         <item>dropsync</item>
         <item>duduribao</item>
+        <item>duitang</item>
         <item>dumb_ways_to_die</item>
         <item>dumb_ways_to_die_2</item>
         <item>duokan</item>
@@ -821,6 +848,7 @@
         <item>fit_time</item>
         <item>flappy_bird</item>
         <item>flava</item>
+        <item>flickr</item>
         <item>flipboard</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
@@ -1124,8 +1152,11 @@
         <item>lg_voice_recorder</item>
         <item>lg_weather</item>
         <item>lightning_browser</item>
+        <item>line</item>
+        <item>line_at</item>
         <item>line_camera</item>
         <item>line_deco</item>
+        <item>line_dict</item>
         <item>lingshengduoduo</item>
         <item>lingxi</item>
         <item>link_bubble</item>
@@ -1236,6 +1267,7 @@
         <item>pocket</item>
         <item>pocket_casts</item>
         <item>polaris_office</item>
+        <item>polarr</item>
         <item>pomotodo</item>
         <item>poweramp</item>
         <item>power_clean</item>
@@ -1243,7 +1275,6 @@
         <item>pptv</item>
         <item>press</item>
         <item>psiphon</item>
-        <item>ps_touch</item>
         <item>**Q**</item>
         <item>qdaily</item>
         <item>qingting_fm</item>
@@ -1474,6 +1505,7 @@
         <item>twitter</item>
         <item>**U**</item>
         <item>uber</item>
+        <item>uber_partner</item>
         <item>uc_browser</item>
         <item>unicom</item>
         <item>v2ex</item>
@@ -1530,6 +1562,7 @@
         <item>yaokongjingling</item>
         <item>yidaoyongche</item>
         <item>yidianzixun</item>
+        <item>yidong_gps</item>
         <item>yihaodian</item>
         <item>yixi</item>
         <item>youku</item>
@@ -1568,4 +1601,6 @@
         <item>zuimeizipai</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
+
 </resources>

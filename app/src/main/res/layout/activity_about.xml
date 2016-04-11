@@ -85,9 +85,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="4dp">
+                app:cardCornerRadius="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -122,26 +125,40 @@
                 android:textColor="@color/title"
                 android:textSize="18sp"/>
 
-            <com.sorcerer.sorcery.iconpack.ui.views.ContributorCard
-                android:id="@+id/contributorCard_sorcerer"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="0dp">
 
-            <com.sorcerer.sorcery.iconpack.ui.views.ContributorCard
-                android:id="@+id/contributorCard_mozartjac"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.sorcerer.sorcery.iconpack.ui.views.ContributorCard
+                        android:id="@+id/contributorCard_sorcerer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <com.sorcerer.sorcery.iconpack.ui.views.ContributorCard
+                        android:id="@+id/contributorCard_mozartjac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardView_about_lib"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
                 android:layout_marginTop="8dp"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="4dp">
+                app:cardCornerRadius="0dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"

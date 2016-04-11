@@ -142,30 +142,56 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     private void setItemParams(LauncherViewHolder holder, int position) {
         int top, bottom, left, right;
 
+//        if (position % 2 == 0) {
+//            left = 8;
+//            right = 4;
+//        } else {
+//            right = 8;
+//            left = 4;
+//        }
+//
+//        if (position == 0 || position == 1) {
+//            top = 8;
+//        } else {
+//            top = 4;
+//        }
+//
+//        if (position >= getItemCount() - 2) {
+//            if (getItemCount() % 2 == 0 && position == getItemCount() - 2) {
+//                bottom = 8;
+//            } else if (getItemCount() % 2 == 1 && position == getItemCount() - 2) {
+//                bottom = 4;
+//            } else {
+//                bottom = 8;
+//            }
+//        } else {
+//            bottom = 4;
+//        }
+
         if (position % 2 == 0) {
-            left = 8;
-            right = 4;
+            left = 0;
+            right = 0;
         } else {
-            right = 8;
-            left = 4;
+            right = 0;
+            left = 0;
         }
 
         if (position == 0 || position == 1) {
             top = 8;
         } else {
-            top = 4;
+            top = 0;
         }
 
         if (position >= getItemCount() - 2) {
             if (getItemCount() % 2 == 0 && position == getItemCount() - 2) {
                 bottom = 8;
             } else if (getItemCount() % 2 == 1 && position == getItemCount() - 2) {
-                bottom = 4;
+                bottom = 0;
             } else {
                 bottom = 8;
             }
         } else {
-            bottom = 4;
+            bottom = 0;
         }
 
         holder.main.setLayoutParams(getItemParams(left, top, right, bottom));

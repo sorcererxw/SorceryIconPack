@@ -91,9 +91,11 @@ public class IconFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
-        mIconBeanList = getIconBeanList(getResources(),
-                getContext().getPackageName(),
-                getArguments().getInt("flag", 0));
+        if (mIconBeanList == null) {
+            mIconBeanList = getIconBeanList(getResources(),
+                    getContext().getPackageName(),
+                    getArguments().getInt("flag", 0));
+        }
 
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
         mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
@@ -211,10 +213,6 @@ public class IconFragment extends Fragment {
 
     private void resize() {
         mGridLayoutManager.setSpanCount(calcNumOfRows());
-    }
-
-    public IconAdapter getIconAdapter() {
-        return mIconAdapter;
     }
 
     private List<IconBean> getIconBeanList(Resources resources, String packageName, int flag) {
