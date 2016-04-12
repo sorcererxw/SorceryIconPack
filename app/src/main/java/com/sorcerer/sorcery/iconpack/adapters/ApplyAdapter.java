@@ -76,7 +76,7 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
             icon = (ImageView) itemView.findViewById(R.id.imageView_item_apply_icon);
 
             main.setOnClickListener(this);
-            main.setOnTouchListener(this);
+//            main.setOnTouchListener(this);
         }
 
         @Override

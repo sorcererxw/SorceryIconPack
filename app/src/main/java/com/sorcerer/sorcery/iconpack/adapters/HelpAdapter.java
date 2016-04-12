@@ -63,11 +63,11 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
         holder.content.setText(getContent(position));
 
         if (position == 0) {
-            holder.card.setLayoutParams(getItemParams(0, 8, 0, 0));
-        } else if (position == getItemCount()-1) {
-            holder.card.setLayoutParams(getItemParams(0, 0, 0, 8));
+            holder.card.setLayoutParams(getItemParams(0, 8, 0, 1));
+        } else if (position == getItemCount() - 1) {
+            holder.card.setLayoutParams(getItemParams(0, 1, 0, 8));
         } else {
-            holder.card.setLayoutParams(getItemParams(0, 0, 0, 0));
+            holder.card.setLayoutParams(getItemParams(0, 1, 0, 1));
         }
 
         holder.card.setOnLongClickListener(new View.OnLongClickListener() {
@@ -106,6 +106,9 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
     }
 
     private int dp2px(int dp) {
+        if (dp == 1) {
+            return dp;
+        }
         return Utility.dip2px(mContext, dp);
     }
 

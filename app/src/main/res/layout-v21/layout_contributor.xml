@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
@@ -27,7 +28,8 @@
                     android:id="@+id/imageView_contributor_avatar"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    tools:src="@drawable/sorcerer_1"/>
 
 
                 <LinearLayout
@@ -107,6 +109,8 @@
                     android:visibility="gone"/>
 
             </LinearLayout>
+
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
