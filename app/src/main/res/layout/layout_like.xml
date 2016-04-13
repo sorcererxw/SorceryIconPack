@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:orientation="horizontal"
-        android:layout_marginRight="24dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView_icon_dislike"
@@ -26,10 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
             android:layout_marginStart="4dp"
             android:text="@string/action_dislike"
-            android:textSize="20sp"
-            android:layout_marginLeft="4dp"/>
+            android:textSize="@dimen/dialog_like_text_size"/>
     </LinearLayout>
 
     <LinearLayout
@@ -37,9 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:orientation="horizontal"
-        android:layout_marginRight="24dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView_icon_like"
@@ -51,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
             android:layout_marginStart="4dp"
             android:text="@string/action_like"
-            android:textSize="20sp"
-            android:layout_marginLeft="4dp"/>
+            android:textSize="@dimen/dialog_like_text_size"/>
     </LinearLayout>
 
 </LinearLayout>

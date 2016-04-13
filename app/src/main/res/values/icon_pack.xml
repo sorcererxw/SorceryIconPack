@@ -4,19 +4,22 @@
         <item>@string/icon_label_added</item>
         <item>yidong_gps</item>
         <item>wandoujia_wechat_helper</item>
+        <item>wandoujia_tongzhiqingli</item>
         <item>layout</item>
         <item>polarr</item>
         <item>duitang</item>
         <item>boomerang</item>
         <item>flickr</item>
         <item>phhhoto</item>
+        <item>google_snapseed</item>
         <item>line</item>
         <item>line_at</item>
         <item>line_dict</item>
         <item>bittorrent_sync</item>
         <item>ifttt</item>
         <item>picooc</item>
-        <item>ookala</item>
+        <item>ookla_speedtest</item>
+        <item>myandroidtools</item>
         <item>smooth</item>
         <item>smooth_alt</item>
         <item>meiriyujia</item>
@@ -98,7 +101,7 @@
         <item>tencent_qq</item>
         <item>tencent_qq_alt</item>
         <item>qingting_fm</item>
-        <item>ctrip_alt</item>
+        <item>ctrip</item>
         <item>houzz</item>
         <item>tencent_qq_browser</item>
         <item>weather_timeline</item>
@@ -106,6 +109,8 @@
         <item>wandoujia</item>
         <item>yixi</item>
         <item>weibo</item>
+        <item>dayima</item>
+        <item>suning</item>
         <item>uber</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
@@ -233,6 +238,7 @@
         <item>google_play_newsstand</item>
         <item>google_play_store</item>
         <item>google_plus</item>
+        <item>google_snapseed</item>
         <item>google_translate</item>
         <item>google_youtube</item>
     </string-array>
@@ -356,6 +362,7 @@
 
     <string-array name="icon_pack_microsoft">
         <item>microsoft_account</item>
+        <item>microsoft_arrow_launcher</item>
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
@@ -462,6 +469,7 @@
         <item>tencent_lightalk</item>
         <item>tencent_map</item>
         <item>tencent_news</item>
+        <item>tencent_ps_play</item>
         <item>tencent_qpaint</item>
         <item>tencent_qq</item>
         <item>tencent_qq_alt</item>
@@ -644,8 +652,6 @@
         <item>app_drawer</item>
         <item>app_sales</item>
         <item>app_settings</item>
-        <item>arrow_launcher</item>
-        <item>asphalt_8</item>
         <item>asus_backup</item>
         <item>asus_browser</item>
         <item>asus_calculator</item>
@@ -716,6 +722,7 @@
         <item>bhoot</item>
         <item>bilibili</item>
         <item>bilibili_alt</item>
+        <item>bittorrent_sync</item>
         <item>blued</item>
         <item>bluenote</item>
         <item>boomerang</item>
@@ -757,6 +764,7 @@
         <item>browser</item>
         <item>budingdonghua</item>
         <item>bughd</item>
+        <item>bukamanhua</item>
         <item>busybox</item>
         <item>butter_camera</item>
         <item>buzz_launcher</item>
@@ -835,13 +843,12 @@
         <item>dropsync</item>
         <item>duduribao</item>
         <item>duitang</item>
-        <item>dumb_ways_to_die</item>
-        <item>dumb_ways_to_die_2</item>
         <item>duokan</item>
         <item>duolingo</item>
         <item>**E**</item>
         <item>echo</item>
         <item>eleme</item>
+        <item>eleme_alt</item>
         <item>email</item>
         <item>es_explorer</item>
         <item>eudic</item>
@@ -862,7 +869,6 @@
         <item>financius</item>
         <item>fitbit</item>
         <item>fit_time</item>
-        <item>flappy_bird</item>
         <item>flava</item>
         <item>flickr</item>
         <item>flipboard</item>
@@ -998,6 +1004,7 @@
         <item>google_play_newsstand</item>
         <item>google_play_store</item>
         <item>google_plus</item>
+        <item>google_snapseed</item>
         <item>google_translate</item>
         <item>google_youtube</item>
         <item>go_launcher</item>
@@ -1049,6 +1056,7 @@
         <item>icbc</item>
         <item>icebox</item>
         <item>icourse163</item>
+        <item>ifttt</item>
         <item>imagine</item>
         <item>imdb</item>
         <item>imooc</item>
@@ -1177,6 +1185,7 @@
         <item>lingxi</item>
         <item>link_bubble</item>
         <item>lizhi_fm</item>
+        <item>lol</item>
         <item>lucid_launcher</item>
         <item>luckymoney</item>
         <item>lucky_patcher</item>
@@ -1186,12 +1195,14 @@
         <item>maoyan</item>
         <item>medium</item>
         <item>meiriyiwen</item>
+        <item>meiriyujia</item>
         <item>meituan</item>
         <item>meituan_waimai</item>
         <item>meituxiuxiu</item>
         <item>meiyanxiangji</item>
         <item>messaging</item>
         <item>microsoft_account</item>
+        <item>microsoft_arrow_launcher</item>
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
@@ -1243,6 +1254,7 @@
         <item>moto_updater</item>
         <item>music</item>
         <item>muzei</item>
+        <item>myandroidtools</item>
         <item>myboy_gba</item>
         <item>**N**</item>
         <item>netease_cloudclass</item>
@@ -1265,18 +1277,22 @@
         <item>**O**</item>
         <item>officesuite</item>
         <item>olo</item>
+        <item>olympus_image_share</item>
         <item>onefootball</item>
         <item>oneplus_community</item>
         <item>oneplus_weather</item>
+        <item>ookla_speedtest</item>
         <item>**P**</item>
         <item>panda_tv</item>
         <item>paypal</item>
         <item>peel_smart_remote</item>
         <item>pengpai_news</item>
         <item>perfect_color_bar</item>
+        <item>periscope</item>
         <item>phhhoto</item>
         <item>pianke</item>
         <item>piaofanzi</item>
+        <item>picooc</item>
         <item>pinglide</item>
         <item>pixolor</item>
         <item>playstation</item>
@@ -1384,6 +1400,8 @@
         <item>skype</item>
         <item>slack</item>
         <item>smart_launcher</item>
+        <item>smooth</item>
+        <item>smooth_alt</item>
         <item>smzdm</item>
         <item>snaptube</item>
         <item>sohu_video</item>
@@ -1467,14 +1485,11 @@
         <item>tasker</item>
         <item>ted</item>
         <item>telegram</item>
-        <item>temple_run</item>
-        <item>temple_run_brave</item>
-        <item>temple_run_oz</item>
-        <item>temple_run_two</item>
         <item>tencent_file_manager</item>
         <item>tencent_lightalk</item>
         <item>tencent_map</item>
         <item>tencent_news</item>
+        <item>tencent_ps_play</item>
         <item>tencent_qpaint</item>
         <item>tencent_qq</item>
         <item>tencent_qq_alt</item>
@@ -1502,18 +1517,12 @@
         <item>tianyashequ</item>
         <item>ticktick</item>
         <item>timi</item>
-        <item>tiny_thief</item>
         <item>titanium_backup</item>
-        <item>toca_builders</item>
-        <item>toca_cars</item>
-        <item>toca_hair_salon_two</item>
-        <item>toca_kitchen</item>
-        <item>toca_lab</item>
-        <item>toca_mini</item>
         <item>tonghuashun</item>
         <item>touchpal_keyboard</item>
         <item>tsf_launcher</item>
         <item>ttpod</item>
+        <item>tuchong</item>
         <item>tudou</item>
         <item>tuiku</item>
         <item>tujiedianying</item>
@@ -1537,6 +1546,7 @@
         <item>wandoujia_alt</item>
         <item>wandoujia_eyepetizer</item>
         <item>wandoujia_qingzhuomian</item>
+        <item>wandoujia_tongzhiqingli</item>
         <item>wandoujia_wechat_helper</item>
         <item>wandoujia_yilan</item>
         <item>wandoujia_youxiribao</item>
@@ -1617,6 +1627,7 @@
         <item>zuimeizipai</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
 
 
 </resources>

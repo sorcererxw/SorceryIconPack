@@ -223,7 +223,9 @@ public class MainActivity extends AppCompatActivity implements
             sharedPreferences.edit().putBoolean("know help", true).apply();
         }
 
-        showPermissionDialog();
+//        if (!sharedPreferences.getBoolean("showed permission dialog", false)) {
+//            showPermissionDialog();
+//        }
 
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
     }
@@ -231,10 +233,10 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onPostResume() {
         super.onPostResume();
-//        if (Build.VERSION.SDK_INT >= 23) {
-//            PermissionsHelper.requestWriteExternalStorage(this);
-//            PermissionsHelper.requestReadPhoneState(this);
-//        }
+        if (Build.VERSION.SDK_INT >= 23) {
+            PermissionsHelper.requestWriteExternalStorage(this);
+            PermissionsHelper.requestReadPhoneState(this);
+        }
     }
 
     private void initTabAndPager() {
@@ -271,21 +273,25 @@ public class MainActivity extends AppCompatActivity implements
 
         if (Build.VERSION.SDK_INT >= 23 && !show) {
             new MaterialDialog.Builder(this)
-                    .autoDismiss(false)
                     .canceledOnTouchOutside(false)
-                    .title("申请授权")
-                    .content("提供授权")
-                    .positiveText("授权")
-                    .negativeText("不")
+                    .title(R.string.permission_request_title)
+                    .content(R.string.permission_request_content)
+                    .positiveText(R.string.action_give_permission)
+                    .negativeText(R.string.no)
                     .onAny(new MaterialDialog.SingleButtonCallback() {
                         @Override
                         public void onClick(@NonNull MaterialDialog dialog,
                                             @NonNull DialogAction which) {
-                            if (which == DialogAction.POSITIVE) {
-                                PermissionsHelper.requestWriteExternalStorage(mActivity);
-                                PermissionsHelper.requestReadPhoneState(mActivity);
+                            if (which == DialogAction.POSITIVE) {if (!PermissionsHelper.hasPermission(mActivity, PermissionsHelper
+                                        .WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+                                    PermissionsHelper.requestWriteExternalStorage(mActivity);
+                                } else {
+                                    PermissionsHelper.requestReadPhoneState(mActivity);
+                                }
                             } else {
-                                mActivity.finish();
+                                getSharedPreferences("sorcery icon pack",
+                                        MODE_PRIVATE).edit().putBoolean("showed permission " +
+                                        "dialog", true);
                             }
                         }
                     }).show();
@@ -406,6 +412,15 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void doNext(int requestCode, int[] grantResults) {
+//        if (!PermissionsHelper.hasPermission(this, PermissionsHelper
+//                .WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+//            PermissionsHelper.requestWriteExternalStorage(this);
+//        }
+//        if (!PermissionsHelper.hasPermission(this, PermissionsHelper
+//                .READ_PHONE_STATE_MANIFEST)) {
+//            PermissionsHelper.requestReadPhoneState(this);
+//        }
+
         if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 new UpdateHelper(this).update();

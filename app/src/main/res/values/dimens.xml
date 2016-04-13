@@ -6,7 +6,8 @@
 
     <dimen name="icon_grid_item_size">70dp</dimen>
     <dimen name="icon_grid_item_margin">6dp</dimen>
-    <dimen name="dialog_like_size">32dp</dimen>
+    <dimen name="dialog_like_size">28dp</dimen>
+    <dimen name="dialog_like_text_size">18sp</dimen>
     <dimen name="dialog_icon_size">96dp</dimen>
     <dimen name="app_select_icon_size">56dp</dimen>
 

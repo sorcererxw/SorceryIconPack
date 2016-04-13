@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.adapters;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutCompat;
@@ -41,13 +42,23 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
         public TextView title;
         public TextView content;
         public CardView card;
+        private View line;
 
         public ViewHolder(View itemView) {
             super(itemView);
             main = itemView;
-            card = (CardView) itemView.findViewById(R.id.cardView_help_card_item);
-            title = (TextView) itemView.findViewById(R.id.textView_help_item_title);
-            content = (TextView) itemView.findViewById(R.id.textView_help_item_content);
+            card = (CardView) findViewById(R.id.cardView_help_card_item);
+            title = (TextView) findViewById(R.id.textView_help_item_title);
+            content = (TextView) findViewById(R.id.textView_help_item_content);
+            line = findViewById(R.id.view_help_item_line);
+
+            ViewGroup.LayoutParams p = line.getLayoutParams();
+            p.height = dp2px(0.5f);
+            line.setLayoutParams(p);
+        }
+
+        private View findViewById(@IdRes int id) {
+            return itemView.findViewById(id);
         }
     }
 
@@ -63,11 +74,14 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
         holder.content.setText(getContent(position));
 
         if (position == 0) {
-            holder.card.setLayoutParams(getItemParams(0, 8, 0, 1));
+            holder.card.setLayoutParams(getItemParams(0, 8, 0, 0));
+            holder.line.setVisibility(View.GONE);
         } else if (position == getItemCount() - 1) {
-            holder.card.setLayoutParams(getItemParams(0, 1, 0, 8));
+            holder.card.setLayoutParams(getItemParams(0, 0, 0, 8));
+            holder.line.setVisibility(View.VISIBLE);
         } else {
-            holder.card.setLayoutParams(getItemParams(0, 1, 0, 1));
+            holder.card.setLayoutParams(getItemParams(0, 0, 0, 0));
+            holder.line.setVisibility(View.VISIBLE);
         }
 
         holder.card.setOnLongClickListener(new View.OnLongClickListener() {
@@ -105,9 +119,9 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
         return params;
     }
 
-    private int dp2px(int dp) {
+    private int dp2px(float dp) {
         if (dp == 1) {
-            return dp;
+            return 1;
         }
         return Utility.dip2px(mContext, dp);
     }

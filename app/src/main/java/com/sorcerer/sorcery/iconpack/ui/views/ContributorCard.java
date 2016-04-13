@@ -8,14 +8,17 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.a.a.a.V;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.w3c.dom.Text;
 
@@ -37,6 +40,7 @@ public class ContributorCard extends FrameLayout {
     private ImageView mGithub;
     private ImageView mEmail;
     private ImageView mWebsite;
+    private View mDivideLine;
 
     public ContributorCard(Context context) {
         super(context);
@@ -70,7 +74,16 @@ public class ContributorCard extends FrameLayout {
         mWeibo = (ImageView) mView.findViewById(R.id.imageView_contributor_weibo);
         mGithub = (ImageView) mView.findViewById(R.id.imageView_contributor_github);
         mEmail = (ImageView) mView.findViewById(R.id.imageView_contributor_email);
-        mWebsite = (ImageView)mView.findViewById(R.id.imageView_contributor_website);
+        mWebsite = (ImageView) mView.findViewById(R.id.imageView_contributor_website);
+        mDivideLine = mView.findViewById(R.id.view_contributor_divide_line);
+
+        ViewGroup.LayoutParams params = mDivideLine.getLayoutParams();
+        params.height = Utility.dip2px(mContext, 0.5f);
+        mDivideLine.setLayoutParams(params);
+    }
+
+    public void showDivideLine(boolean show) {
+        mDivideLine.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     public void setAvatar(Drawable drawable) {
@@ -80,7 +93,7 @@ public class ContributorCard extends FrameLayout {
 
     public void setAvatarByImageLoader(int id) {
         mAvatar.setVisibility(VISIBLE);
-        ImageLoader.getInstance().displayImage("drawable://"+id,mAvatar, SIP.mOptions);
+        ImageLoader.getInstance().displayImage("drawable://" + id, mAvatar, SIP.mOptions);
     }
 
     public void setAnimAvatar(Drawable drawable) {
@@ -116,7 +129,7 @@ public class ContributorCard extends FrameLayout {
         });
     }
 
-    public void setWebsite(final Uri website){
+    public void setWebsite(final Uri website) {
         mWebsite.setVisibility(VISIBLE);
         mWebsite.setOnClickListener(new OnClickListener() {
             @Override

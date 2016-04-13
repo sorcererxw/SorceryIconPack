@@ -19,6 +19,7 @@
     <string name="action_premium_request">premium request</string>
     <string name="action_select_all">select all</string>
     <string name="action_show_in_store">show in store</string>
+    <string name="action_give_permission">authorize</string>
 
     <string name="select_an_icon">select an icon</string>
 
@@ -43,6 +44,9 @@
     <string name="welcome_title">Welcome</string>
     <string name="welcome_body">If there is any problem, search answer in FAQ</string>
     <string name="welcome_close">OK</string>
+
+    <string name="permission_request_title">申请授权</string>
+    <string name="permission_request_content">由于需要收集应用的崩溃信息并且接入了Bmob的接口, 所以请您提供网络存储权限和电话权限, 否则无法保证使用中不会出现崩溃</string>
 
     <string name="installed">installed</string>
     <string name="not_installed">not installed</string>

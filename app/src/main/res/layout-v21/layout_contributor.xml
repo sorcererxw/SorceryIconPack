@@ -113,5 +113,13 @@
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/view_contributor_divide_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:alpha="0.2"
+            android:background="@color/black"/>
     </android.support.v7.widget.CardView>
 </FrameLayout>
