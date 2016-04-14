@@ -116,6 +116,12 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     public void onBindViewHolder(LauncherViewHolder holder, int position) {
         holder.label.setText(mLauncherList.get(position).getLabel());
 
+//        holder.icon.setImageResource(mContext.getResources()
+//                .getIdentifier(mLauncherList.get(position).getLabel().replace(" ", "_")
+//                                .toLowerCase(),
+//                        "drawable", mContext
+//                                .getPackageName()));
+//
         ImageLoader.getInstance().displayImage("drawable://" + mContext.getResources()
                         .getIdentifier(mLauncherList.get(position).getLabel().replace(" ", "_")
                                         .toLowerCase(),

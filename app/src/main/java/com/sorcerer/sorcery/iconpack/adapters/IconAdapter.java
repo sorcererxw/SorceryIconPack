@@ -205,7 +205,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     private void showIconDialog(final IconItemViewHolder holder, final int position) {
-        if (Build.VERSION.SDK_INT < 21) {
+        if (Build.VERSION.SDK_INT < 21 && false) {
             View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
             ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
                     .setImageResource(mShowIconList.get(position).getRes());

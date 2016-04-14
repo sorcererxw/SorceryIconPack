@@ -40,11 +40,13 @@
         <item>wandoujia_youxiribao</item>
         <item>dreamdays</item>
         <item>lavaradio</item>
+        <item>ledongli_run</item>
         <item>bank_of_communications</item>
         <item>kitchen_stories</item>
         <item>gudong</item>
         <item>ppiicc</item>
         <item>sfly</item>
+        <item>coolapk_alt</item>
         <item>yidaoyongche</item>
         <item>geometric_weather</item>
         <item>zhangshangshenghuo</item>
@@ -83,6 +85,7 @@
         <item>sunrise</item>
         <item>b612</item>
         <item>telegram</item>
+        <item>ledongli</item>
         <item>google_camera</item>
         <item>anydo</item>
         <item>anydo_calendar</item>
@@ -92,6 +95,7 @@
         <item>xunlei_kuainiao</item>
         <item>terminal</item>
         <item>suishouji</item>
+        <item>chaojikechengbiao</item>
         <item>line_deco</item>
         <item>douban_fm</item>
         <item>a5sing</item>
@@ -604,6 +608,7 @@
         <item>adobe_connect</item>
         <item>adobe_fill</item>
         <item>adobe_flash</item>
+        <item>adobe_flash_alt</item>
         <item>adobe_illustrator_draw</item>
         <item>adobe_lightroom</item>
         <item>adobe_mix</item>
@@ -1017,9 +1022,6 @@
         <item>hai360</item>
         <item>haici_dict</item>
         <item>hanglvzongheng</item>
-        <item>hayday</item>
-        <item>hitman_go</item>
-        <item>hitman_sniper</item>
         <item>hiwifi</item>
         <item>holo_launcher</item>
         <item>houzz</item>
@@ -1104,6 +1106,7 @@
         <item>lbe</item>
         <item>lbe_pingxingkongjian</item>
         <item>ledongli</item>
+        <item>ledongli_run</item>
         <item>lenovo_calculator</item>
         <item>lenovo_calendar</item>
         <item>lenovo_calendar_1</item>
@@ -1627,7 +1630,4 @@
         <item>zuimeizipai</item>
         <item>zuzhiyunxing</item>
     </string-array>
-
-
-
 </resources>

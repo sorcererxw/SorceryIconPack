@@ -6,7 +6,7 @@
         drawable="app_drawer"/>
     <item
         component=":BROWSER"
-        drawable=""/>
+        drawable="browser"/>
     <item
         component=":SMS"
         drawable=""/>
@@ -327,6 +327,9 @@
     <item
         component="ComponentInfo{com.asus.calculator/com.asus.calculator.Calculator}"
         drawable="asus_calculator"/>
+    <item
+        component="ComponentInfo{com.asus.calendar/com.android.calendar.AllInOneActivity}"
+        drawable="asus_calendar"/>
     <item
         component="ComponentInfo{com.asus.remotelink.full/com.asus.remotelink.full.AsusMainActivity}"
         drawable="asus_remote_link"/>
@@ -1417,12 +1420,6 @@
         component="ComponentInfo{com.umetrip.android.msky.app/com.umetrip.android.msky.activity.SplashActivity}"
         drawable="hanglvzongheng"/>
     <item
-        component="ComponentInfo{com.supercell.hayday/com.supercell.hayday.GameApp}"
-        drawable="hayday"/>
-    <item
-        component="ComponentInfo{com.squareenixmontreal.hitmansniperandroid/com.prime31.UnityPlayerNativeActivity}"
-        drawable="hitman_sniper"/>
-    <item
         component="ComponentInfo{com.hiwifi/com.hiwifi.ui.SplashActivity}"
         drawable="hiwifi"/>
     <item
@@ -1677,6 +1674,9 @@
     <item
         component="ComponentInfo{cn.ledongli.ldl/cn.ledongli.ldl.activity.SplashScreenActivity}"
         drawable="ledongli"/>
+    <item
+        component="ComponentInfo{cn.ledongli.runner/cn.ledongli.runner.ui.activity.SplashScreenActivity}"
+        drawable="ledongli_run"/>
     <item
         component="ComponentInfo{com.lenovo.calculator/com.lenovo.calculator.Calculator}"
         drawable="lenovo_calculator"/>
@@ -2046,6 +2046,9 @@
     <item
         component="ComponentInfo{com.motorola.contextual.smartrules2/com.motorola.contextaware.ui.GalleryActivity}"
         drawable="moto_assist"/>
+    <item
+        component="ComponentInfo{com.motorola.omni/com.motorola.omni.MainActivity}"
+        drawable="moto_body"/>
     <item
         component="ComponentInfo{com.motorola.camera/com.motorola.camera.Camera}"
         drawable="moto_camera"/>
@@ -2578,11 +2581,20 @@
         component="ComponentInfo{com.sonymobile.backgrounddefocus/com.sonymobile.backgrounddefocus.ViewFinderActivity}"
         drawable="sony_background_defocus"/>
     <item
+        component="ComponentInfo{com.sonyericsson.vendor.backuprestore/com.sonyericsson.vendor.backuprestore.ui.MainActivity}"
+        drawable="sony_backup"/>
+    <item
+        component="ComponentInfo{com.sonymobile.synchub/com.sonymobile.synchub.LaunchActivity}"
+        drawable="sony_backup"/>
+    <item
         component="ComponentInfo{com.sonyericsson.android.camera/com.sonyericsson.android.camera.CameraActivity}"
         drawable="sony_camera"/>
     <item
         component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer}"
         drawable="sony_clock"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.LaunchActivity}"
+        drawable="sony_contacts"/>
     <item
         component="ComponentInfo{com.sonymobile.moviecreator.rmm/com.sonymobile.moviecreator.rmm.LaunchActivity}"
         drawable="sony_movie_creator"/>
