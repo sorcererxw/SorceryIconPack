@@ -235,36 +235,42 @@ public class Utility {
     }
 
     public static boolean isMail(String mail) {
-        boolean hasAt = false;
-        boolean hasDot = false;
-        boolean first = false;
-        boolean second = false;
-        boolean third = false;
-        for (int i = 0; i < mail.length(); i++) {
-            if (Character.isLetter(mail.charAt(i))) {
-                if (i == 0) {
-                    first = true;
-                }
-                if (i == mail.length() - 1) {
-                    third = true;
-                }
-                if (i != 0 && mail.charAt(i - 1) == '@') {
-                    second = true;
-                }
-            } else if (mail.charAt(i) == '@') {
-                if (hasAt || hasDot) {
-                    return false;
-                }
-                hasAt = true;
-            } else if (mail.charAt(i) == '.') {
-                if (!hasAt || hasDot) {
-                    return false;
-                }
-                hasDot = true;
-            } else {
-                return false;
-            }
-        }
-        return hasAt && hasDot && first && second && third;
+        return mail.matches("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\\.[a-zA-Z0_9_-]{2,3}){1,2})$");
+//        boolean hasAt = false;
+//        boolean hasDot = false;
+//        boolean first = false;
+//        boolean second = false;
+//        boolean third = false;
+//        for (int i = 0; i < mail.length(); i++) {
+//            if (Character.isLetter(mail.charAt(i)) || Character.isDigit(mail.charAt(i))) {
+//                if (i == 0) {
+//                    first = true;
+//                }
+//                if (i == mail.length() - 1) {
+//                    third = true;
+//                }
+//                if (hasDot && Character.isDigit(mail.charAt(i))) {
+//                    return false;
+//                }
+//                if (i != 0 && mail.charAt(i - 1) == '@') {
+//                    second = true;
+//                }
+//            } else if (mail.charAt(i) == '@') {
+//                if (hasAt || hasDot) {
+//                    return false;
+//                }
+//                hasAt = true;
+//            } else if (mail.charAt(i) == '.') {
+//                if (!hasAt || hasDot) {
+//                    return false;
+//                }
+//                hasDot = true;
+//            } else {
+//                return false;
+//            }
+//        }
+//        return hasAt && hasDot && first && second && third;
     }
+
+
 }
