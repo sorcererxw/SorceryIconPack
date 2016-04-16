@@ -29,13 +29,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ui.activities.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -153,7 +151,6 @@
                 <action android:name="com.gau.go.launcherex.theme"/>
                 <action android:name="android.intent.action.MAIN"/>
 
-
                 <category android:name="android.intent.category.THEME_SCENE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
@@ -175,10 +172,10 @@
             </intent-filter>
             <!-- Sony -->
             <intent-filter>
-                <action android:name="com.sonymobile.home.ICON_PACK" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                <action android:name="com.sonymobile.home.ICON_PACK"/>
 
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activities.FeedbackActivity"
@@ -212,16 +209,18 @@
             android:label="@string/nav_item_lab"
             android:theme="@style/SubActivity">
         </activity>
-
         <activity
             android:name=".ui.activities.HelpActivity"
             android:label="@string/nav_item_help"
             android:theme="@style/SubActivity">
         </activity>
-
         <activity
             android:name=".ui.activities.IconDialogActivity"
             android:theme="@style/AppTheme.Dialog"/>
+
+
+        <activity android:name=".ui.activities.AboutDialogActivity"
+                  android:theme="@style/AppTheme.Dialog"/>
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"

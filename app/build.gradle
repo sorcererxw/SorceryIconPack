@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 184
-        versionName "3.2.0"
+        versionName "3.2.1"
     }
     buildTypes {
         debug{

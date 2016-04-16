@@ -282,7 +282,8 @@ public class MainActivity extends AppCompatActivity implements
                         @Override
                         public void onClick(@NonNull MaterialDialog dialog,
                                             @NonNull DialogAction which) {
-                            if (which == DialogAction.POSITIVE) {if (!PermissionsHelper.hasPermission(mActivity, PermissionsHelper
+                            if (which == DialogAction.POSITIVE) {
+                                if (!PermissionsHelper.hasPermission(mActivity, PermissionsHelper
                                         .WRITE_EXTERNAL_STORAGE_MANIFEST)) {
                                     PermissionsHelper.requestWriteExternalStorage(mActivity);
                                 } else {
@@ -498,7 +499,9 @@ public class MainActivity extends AppCompatActivity implements
                     } else if (finalI == 5) {
                         activityShift(DonateActivity.class);
                     } else if (finalI == 6) {
-                        activityShift(AboutActivity.class);
+                        Intent intent = new Intent(mContext, AboutDialogActivity.class);
+                        mContext.startActivity(intent);
+                        mActivity.overridePendingTransition(android.R.anim.slide_in_left, 0);
                     }
                     mDrawerLayout.closeDrawers();
                 }
