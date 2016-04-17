@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -73,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements
     private Activity mActivity = this;
     private RecyclerView mMenuView;
     private boolean mCloseEnable = true;
+    private Toolbar mToolbarContainer;
+    private AppBarLayout mAppBarLayout;
 
     private ViewPager.OnPageChangeListener mPageChangeListener =
 
@@ -112,7 +115,14 @@ public class MainActivity extends AppCompatActivity implements
                             mCloseEnable = true;
                         }
                     }, 300);
+
                     mSearchBox.showSuggestions();
+                    mAppBarLayout.setExpanded(true);
+//                    AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) mToolbarContainer
+//                            .getLayoutParams();
+//                    params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+//                            | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
+//                    mToolbarContainer.setLayoutParams(params);
                 }
 
                 @Override
@@ -120,6 +130,11 @@ public class MainActivity extends AppCompatActivity implements
                     for (int i = 0; i < mPageAdapter.getCount(); i++) {
                         ((IconFragment) mPageAdapter.getItem(i)).showWithString("");
                     }
+
+//                    AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) mToolbarContainer
+//                            .getLayoutParams();
+//                    params.setScrollFlags(0);
+//                    mToolbarContainer.setLayoutParams(params);
                 }
             };
 
@@ -159,6 +174,9 @@ public class MainActivity extends AppCompatActivity implements
         initTabAndPager();
 
         initSearchBox();
+
+        mToolbarContainer = (Toolbar) findViewById(R.id.toolbar_main_toolbar_container);
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout_main);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
 
@@ -501,7 +519,7 @@ public class MainActivity extends AppCompatActivity implements
                     } else if (finalI == 6) {
                         Intent intent = new Intent(mContext, AboutDialogActivity.class);
                         mContext.startActivity(intent);
-                        mActivity.overridePendingTransition(android.R.anim.slide_in_left, 0);
+                        mActivity.overridePendingTransition(R.anim.fade_in, 0);
                     }
                     mDrawerLayout.closeDrawers();
                 }

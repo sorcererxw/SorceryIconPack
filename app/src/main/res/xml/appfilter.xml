@@ -1075,6 +1075,9 @@
         component="ComponentInfo{com.meizu.media.life/com.meizu.media.life.ui.activity.HomeActivity}"
         drawable="flyme_life"/>
     <item
+        component="ComponentInfo{com.meizu.lifekit/com.meizu.lifekit.LoadingActivity}"
+        drawable="flyme_lifekit"/>
+    <item
         component="ComponentInfo{com.meizu.net.map/com.meizu.net.map.MainMapActivity}"
         drawable="flyme_map"/>
     <item
@@ -1182,6 +1185,9 @@
     <item
         component="ComponentInfo{com.cooliris.media/com.cooliris.media.Gallery}"
         drawable="gallery"/>
+    <item
+        component="ComponentInfo{com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneNativeActivity}"
+        drawable="game_heartstone"/>
     <item
         component="ComponentInfo{com.gtgj.view/com.gtgj.view.LaunchActivity}"
         drawable="gaotieguanjia"/>

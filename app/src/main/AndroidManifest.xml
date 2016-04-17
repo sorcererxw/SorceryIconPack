@@ -219,8 +219,9 @@
             android:theme="@style/AppTheme.Dialog"/>
 
 
-        <activity android:name=".ui.activities.AboutDialogActivity"
-                  android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:name=".ui.activities.AboutDialogActivity"
+            android:theme="@style/AppTheme.Dialog"/>
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"

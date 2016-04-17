@@ -124,7 +124,7 @@
     <string name="open_source_lib">Open Source Libs</string>
 
     <string name="changelog">changelog</string>
-    <string name="changelog_content">1. 145个新图标|2. 调整细节|3. 修复BUG|4. 加入优先图标申请</string>
+    <string name="changelog_content">1. 2个新图标|2. 修复图标申请邮箱验证bug|3. 调整关于页|4. 优化细节</string>
     <string name="about_main">let 「material」\n
         colorful your phone</string>
 
@@ -239,12 +239,14 @@
         <item>Universal Image Loader|nostra13|https://github.com/nostra13/Android-Universal-Image-Loader</item>
         <item>RootTools|Stericson|https://github.com/Stericson/RootTools</item>
         <item>XposedBridge|rovo89|https://github.com/rovo89/XposedBridge</item>
-        <item>Okhttp|square|https://github.com/square/okhttp</item>
-        <item>Okio|square|https://github.com/square/okio</item>
+        <!--<item>Okhttp|square|https://github.com/square/okhttp</item>-->
+        <!--<item>Okio|square|https://github.com/square/okio</item>-->
         <item>Gson|google|https://github.com/google/gson</item>
         <item>Material Dialogs|afollestad|https://github.com/afollestad/material-dialogs</item>
         <item>AVLoadingIndicatorView|81813780|https://github.com/81813780/AVLoadingIndicatorView</item>
         <item>NineOldAndroids|JakeWharton|https://github.com/JakeWharton/NineOldAndroids</item>
+        <item>MaterialSearchView|MiguelCatalan|https://github.com/MiguelCatalan/MaterialSearchView</item>
+        <item>MaterialEditText|rengwuxian|https://github.com/rengwuxian/MaterialEditText</item>
     </string-array>
 
     <string-array name="help_list">
@@ -289,6 +291,7 @@
         <item>tencent</item>
         <item>xiaomi</item>
         <item>flyme</item>
+        <item>game</item>
     </string-array>
 
     <bool name="config_iconpack">true</bool>

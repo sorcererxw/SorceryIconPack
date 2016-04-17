@@ -412,6 +412,7 @@
    <item>flyme_gallery</item>
    <item>flyme_game</item>
    <item>flyme_life</item>
+   <item>flyme_lifekit</item>
    <item>flyme_map</item>
    <item>flyme_music</item>
    <item>flyme_notepaper</item>
@@ -773,6 +774,7 @@
    <item>flyme_gallery</item>
    <item>flyme_game</item>
    <item>flyme_life</item>
+   <item>flyme_lifekit</item>
    <item>flyme_map</item>
    <item>flyme_music</item>
    <item>flyme_notepaper</item>
@@ -796,6 +798,7 @@
    <item>franco_kernel</item>
    <item>**G**</item>
    <item>gallery</item>
+   <item>game_heartstone</item>
    <item>gaotieguanjia</item>
    <item>geometric_weather</item>
    <item>gewala_movie</item>

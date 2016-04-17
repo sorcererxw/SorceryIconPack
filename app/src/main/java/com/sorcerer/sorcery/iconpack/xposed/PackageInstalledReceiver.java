@@ -1,8 +1,5 @@
 package com.sorcerer.sorcery.iconpack.xposed;
 
-import android.app.Notification;
-import android.app.Notification.Builder;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;

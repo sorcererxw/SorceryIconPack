@@ -15,12 +15,14 @@
         android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 
 
             <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_main_toolbar_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentInsetLeft="0dp"

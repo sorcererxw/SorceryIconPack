@@ -1,6 +1,5 @@
 package com.sorcerer.sorcery.iconpack.xposed;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -251,6 +250,9 @@ public class PackageAddedReceiver extends BroadcastReceiver {
     }
 
     private void showNotification(Context context) {
+        if(true){
+            return;
+        }
         Intent intent2 = new Intent(context, LabActivity.class);
         intent2.putExtra("promptRestartLauncher", true);
         ((NotificationManager) context

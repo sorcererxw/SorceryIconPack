@@ -43,6 +43,11 @@
         <item name="android:windowBackground">@color/dialog_background_scrim</item>
     </style>
 
+    <style name="AppTheme.Dialog.About" parent="AppTheme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
     <style name="PreferenceTheme" parent="AppTheme">
         <!--<item name="android:statusBarColor">@color/colorPrimaryDark</item>-->
         <item name="windowActionBar">true</item>

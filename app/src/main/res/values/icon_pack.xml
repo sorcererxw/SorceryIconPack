@@ -2,152 +2,9 @@
 <resources>
     <string-array name="icon_pack_new">
         <item>@string/icon_label_added</item>
-        <item>yidong_gps</item>
-        <item>wandoujia_wechat_helper</item>
-        <item>wandoujia_tongzhiqingli</item>
-        <item>layout</item>
-        <item>polarr</item>
-        <item>duitang</item>
-        <item>boomerang</item>
-        <item>flickr</item>
-        <item>phhhoto</item>
-        <item>google_snapseed</item>
-        <item>line</item>
-        <item>line_at</item>
-        <item>line_dict</item>
-        <item>bittorrent_sync</item>
-        <item>ifttt</item>
-        <item>picooc</item>
-        <item>ookla_speedtest</item>
-        <item>myandroidtools</item>
-        <item>smooth</item>
-        <item>smooth_alt</item>
-        <item>meiriyujia</item>
-        <item>lol</item>
-        <item>bukamanhua</item>
-        <item>olympus_image_share</item>
-        <item>periscope</item>
-        <item>tencent_ps_play</item>
-        <item>tuchong</item>
-        <item>letv_sport</item>
-        <item>yuelaiyuehao</item>
-        <item>welike</item>
-        <item>forest</item>
-        <item>gitskarios</item>
-        <item>kejimeixue</item>
-        <item>qunidaye_browser</item>
-        <item>baixingwang</item>
-        <item>wandoujia_youxiribao</item>
-        <item>dreamdays</item>
-        <item>lavaradio</item>
-        <item>ledongli_run</item>
-        <item>bank_of_communications</item>
-        <item>kitchen_stories</item>
-        <item>gudong</item>
-        <item>ppiicc</item>
-        <item>sfly</item>
-        <item>coolapk_alt</item>
-        <item>yidaoyongche</item>
-        <item>geometric_weather</item>
-        <item>zhangshangshenghuo</item>
-        <item>eudic</item>
-        <item>wifi_luyouguanjia</item>
-        <item>microsoft_translator</item>
-        <item>jianjie_calendar</item>
-        <item>dailycost</item>
-        <item>uber_partner</item>
-        <item>adobe_acrobat</item>
-        <item>adobe_air</item>
-        <item>adobe_brush</item>
-        <item>adobe_capture</item>
-        <item>adobe_color</item>
-        <item>adobe_connect</item>
-        <item>adobe_fill</item>
-        <item>adobe_flash</item>
-        <item>adobe_illustrator_draw</item>
-        <item>adobe_lightroom</item>
-        <item>adobe_mix</item>
-        <item>adobe_photoshop</item>
-        <item>adobe_premiere_clip</item>
-        <item>adobe_shape</item>
-        <item>adobe_sign_manager</item>
-        <item>@string/icon_label_updated</item>
-        <item>alipay</item>
-        <item>eleme</item>
-        <item>google_play_games</item>
-        <item>google_play_books</item>
-        <item>google_play_newsstand</item>
-        <item>google_play_movies</item>
-        <item>google_play_music</item>
-        <item>browser</item>
-        <item>tencent_wechat</item>
-        <item>tencent_qzone</item>
-        <item>sunrise</item>
-        <item>b612</item>
-        <item>telegram</item>
-        <item>ledongli</item>
-        <item>google_camera</item>
-        <item>anydo</item>
-        <item>anydo_calendar</item>
-        <item>flyme_account</item>
-        <item>zedge</item>
-        <item>duokan</item>
-        <item>xunlei_kuainiao</item>
-        <item>terminal</item>
-        <item>suishouji</item>
-        <item>chaojikechengbiao</item>
-        <item>line_deco</item>
-        <item>douban_fm</item>
-        <item>a5sing</item>
-        <item>netease_youqian</item>
-        <item>netease_youxiangdashi</item>
-        <item>scanbot</item>
-        <item>tencent_qq</item>
-        <item>tencent_qq_alt</item>
-        <item>qingting_fm</item>
-        <item>ctrip</item>
-        <item>houzz</item>
-        <item>tencent_qq_browser</item>
-        <item>weather_timeline</item>
-        <item>cyanogenmod_camera</item>
-        <item>wandoujia</item>
-        <item>yixi</item>
-        <item>weibo</item>
-        <item>dayima</item>
-        <item>suning</item>
-        <item>uber</item>
-        <item>google_calendar</item>
-        <item>google_calendar_1</item>
-        <item>google_calendar_10</item>
-        <item>google_calendar_11</item>
-        <item>google_calendar_12</item>
-        <item>google_calendar_13</item>
-        <item>google_calendar_14</item>
-        <item>google_calendar_15</item>
-        <item>google_calendar_16</item>
-        <item>google_calendar_17</item>
-        <item>google_calendar_18</item>
-        <item>google_calendar_19</item>
-        <item>google_calendar_2</item>
-        <item>google_calendar_20</item>
-        <item>google_calendar_21</item>
-        <item>google_calendar_22</item>
-        <item>google_calendar_23</item>
-        <item>google_calendar_24</item>
-        <item>google_calendar_25</item>
-        <item>google_calendar_26</item>
-        <item>google_calendar_27</item>
-        <item>google_calendar_28</item>
-        <item>google_calendar_29</item>
-        <item>google_calendar_3</item>
-        <item>google_calendar_30</item>
-        <item>google_calendar_31</item>
-        <item>google_calendar_4</item>
-        <item>google_calendar_5</item>
-        <item>google_calendar_6</item>
-        <item>google_calendar_7</item>
-        <item>google_calendar_8</item>
-        <item>google_calendar_9</item>
+        <item>flyme_lifekit</item>
+        <item>game_heartstone</item>
+        <!--<item>@string/icon_label_updated</item>-->
     </string-array>
     <string-array name="icon_pack_ali">
         <item>alipay</item>
@@ -563,6 +420,7 @@
         <item>flyme_gallery</item>
         <item>flyme_game</item>
         <item>flyme_life</item>
+        <item>flyme_lifekit</item>
         <item>flyme_map</item>
         <item>flyme_music</item>
         <item>flyme_notepaper</item>
@@ -924,6 +782,7 @@
         <item>flyme_gallery</item>
         <item>flyme_game</item>
         <item>flyme_life</item>
+        <item>flyme_lifekit</item>
         <item>flyme_map</item>
         <item>flyme_music</item>
         <item>flyme_notepaper</item>
@@ -947,6 +806,7 @@
         <item>franco_kernel</item>
         <item>**G**</item>
         <item>gallery</item>
+        <item>game_heartstone</item>
         <item>gaotieguanjia</item>
         <item>geometric_weather</item>
         <item>gewala_movie</item>
@@ -1630,4 +1490,6 @@
         <item>zuimeizipai</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
+
 </resources>
