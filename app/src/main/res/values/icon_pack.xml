@@ -2,8 +2,12 @@
 <resources>
     <string-array name="icon_pack_new">
         <item>@string/icon_label_added</item>
-        <item>flyme_lifekit</item>
-        <item>game_heartstone</item>
+        <item>fangdai_calculator</item>
+        <item>dialer</item>
+        <item>dialer_teal_alt</item>
+        <item>snapchat</item>
+        <item>a360_liuliang</item>
+        <item>abchina_bank</item>
         <!--<item>@string/icon_label_updated</item>-->
     </string-array>
     <string-array name="icon_pack_ali">
