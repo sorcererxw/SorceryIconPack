@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements
     private Activity mActivity = this;
     private RecyclerView mMenuView;
     private boolean mCloseEnable = true;
-    private Toolbar mToolbarContainer;
     private AppBarLayout mAppBarLayout;
 
     private ViewPager.OnPageChangeListener mPageChangeListener =
@@ -118,11 +117,7 @@ public class MainActivity extends AppCompatActivity implements
 
                     mSearchBox.showSuggestions();
                     mAppBarLayout.setExpanded(true);
-//                    AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) mToolbarContainer
-//                            .getLayoutParams();
-//                    params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
-//                            | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-//                    mToolbarContainer.setLayoutParams(params);
+                    mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
                 }
 
                 @Override
@@ -130,11 +125,6 @@ public class MainActivity extends AppCompatActivity implements
                     for (int i = 0; i < mPageAdapter.getCount(); i++) {
                         ((IconFragment) mPageAdapter.getItem(i)).showWithString("");
                     }
-
-//                    AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) mToolbarContainer
-//                            .getLayoutParams();
-//                    params.setScrollFlags(0);
-//                    mToolbarContainer.setLayoutParams(params);
                 }
             };
 
@@ -175,7 +165,6 @@ public class MainActivity extends AppCompatActivity implements
 
         initSearchBox();
 
-        mToolbarContainer = (Toolbar) findViewById(R.id.toolbar_main_toolbar_container);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout_main);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
@@ -431,15 +420,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void doNext(int requestCode, int[] grantResults) {
-//        if (!PermissionsHelper.hasPermission(this, PermissionsHelper
-//                .WRITE_EXTERNAL_STORAGE_MANIFEST)) {
-//            PermissionsHelper.requestWriteExternalStorage(this);
-//        }
-//        if (!PermissionsHelper.hasPermission(this, PermissionsHelper
-//                .READ_PHONE_STATE_MANIFEST)) {
-//            PermissionsHelper.requestReadPhoneState(this);
-//        }
-
         if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 new UpdateHelper(this).update();

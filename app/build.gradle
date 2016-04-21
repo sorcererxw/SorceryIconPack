@@ -8,17 +8,21 @@ android {
         applicationId "com.sorcerer.sorcery.iconpack"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 189
+        versionCode 193
         versionName "3.2.1"
     }
     buildTypes {
-        debug{
+        debug {
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
