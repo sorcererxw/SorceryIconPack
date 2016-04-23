@@ -29,7 +29,7 @@ public class SIP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initImageLoader(this);
+//        initImageLoader(this);
 
         new Thread(new Runnable() {
             @Override

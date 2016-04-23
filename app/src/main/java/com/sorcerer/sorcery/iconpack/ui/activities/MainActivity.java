@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.DataSetObserver;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -23,6 +25,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -75,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements
     private RecyclerView mMenuView;
     private boolean mCloseEnable = true;
     private AppBarLayout mAppBarLayout;
-
+    private View mContentView;
     private ViewPager.OnPageChangeListener mPageChangeListener =
 
             new ViewPager.OnPageChangeListener() {
@@ -94,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements
                     if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
                         closeSearch();
                     }
+//                    ((IconFragment) mPageAdapter.getItem(position)).show();
                 }
 
                 @Override
@@ -145,16 +149,16 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        mContentView = LayoutInflater.from(this).inflate(R.layout.activity_main, null);
 
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
 
         mCustomPicker = action.equals("com.novalauncher.THEME");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) mFindViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setToolbarDoubleTap(toolbar);
         if (getSupportActionBar() != null) {
@@ -165,11 +169,11 @@ public class MainActivity extends AppCompatActivity implements
 
         initSearchBox();
 
-        mAppBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout_main);
+        mAppBarLayout = (AppBarLayout) mFindViewById(R.id.appBarLayout_main);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
+        mDrawerLayout = (DrawerLayout) mFindViewById(R.id.drawerLayout_main);
 
-        mNavigationView = (NavigationView) findViewById(R.id.navigation_main);
+        mNavigationView = (NavigationView) mFindViewById(R.id.navigation_main);
         assert mNavigationView != null;
         mNavigationView.setNavigationItemSelectedListener(this);
         initDrawerView();
@@ -208,6 +212,8 @@ public class MainActivity extends AppCompatActivity implements
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
+
+        setContentView(mContentView);
     }
 
     @Override
@@ -247,9 +253,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void initTabAndPager() {
-        mTabLayout = (TabLayout) findViewById(R.id.tabLayout_icon);
+        mTabLayout = (TabLayout) mFindViewById(R.id.tabLayout_icon);
 
-        mViewPager = (ViewPager) findViewById(R.id.viewPager_icon);
+        mViewPager = (ViewPager) mFindViewById(R.id.viewPager_icon);
 
         assert mViewPager != null;
         mViewPager.setOffscreenPageLimit(1);
@@ -386,7 +392,7 @@ public class MainActivity extends AppCompatActivity implements
             showWelcomeDialog();
         } else if (id == R.id.nav_item_update) {
             UpdateHelper updateHelper =
-                    new UpdateHelper(this, findViewById(R.id.coordinatorLayout_main));
+                    new UpdateHelper(this, mFindViewById(R.id.coordinatorLayout_main));
             updateHelper.update();
         } else if (id == R.id.nav_item_donate) {
             activityShift(DonateActivity.class);
@@ -440,7 +446,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void initSearchBox() {
-        mSearchBox = (MaterialSearchView) findViewById(R.id.searchBox_main_icon);
+        mSearchBox = (MaterialSearchView) mFindViewById(R.id.searchBox_main_icon);
         assert mSearchBox != null;
         mSearchBox.setOnSearchViewListener(mSearchViewListener);
         mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
@@ -490,7 +496,7 @@ public class MainActivity extends AppCompatActivity implements
                     } else if (finalI == 3) {
                         UpdateHelper updateHelper =
                                 new UpdateHelper(mContext,
-                                        findViewById(R.id.coordinatorLayout_main));
+                                        mFindViewById(R.id.coordinatorLayout_main));
                         updateHelper.update();
                     } else if (finalI == 4) {
                         activityShift(HelpActivity.class);
@@ -529,6 +535,16 @@ public class MainActivity extends AppCompatActivity implements
                 LinearLayoutManager.VERTICAL,
                 false));
         mMenuView.setHasFixedSize(true);
+    }
+
+    private void launcherSplash() {
+        Intent intent = new Intent(this, SplashActivity.class);
+        mContext.startActivity(intent);
+        mActivity.overridePendingTransition(R.anim.fade_in, 0);
+    }
+
+    private View mFindViewById(@IdRes int id) {
+        return mContentView.findViewById(id);
     }
 
 }

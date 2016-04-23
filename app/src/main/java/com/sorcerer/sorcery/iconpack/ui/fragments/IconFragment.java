@@ -23,9 +23,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.ViewStub;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.L;
@@ -73,6 +75,9 @@ public class IconFragment extends Fragment {
     private SwipeRefreshLayout mSearchLayout;
     private SearchListener mSearchListener;
     private GridLayoutManager mGridLayoutManager;
+    private View mMainView;
+    private boolean mShow;
+    private View mRecycler = null;
 
     public interface SearchListener {
         void onSearch();
@@ -87,6 +92,7 @@ public class IconFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -150,6 +156,7 @@ public class IconFragment extends Fragment {
         return view;
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
@@ -211,8 +218,11 @@ public class IconFragment extends Fragment {
         resize();
     }
 
+
     private void resize() {
-        mGridLayoutManager.setSpanCount(calcNumOfRows());
+        if (mShow) {
+            mGridLayoutManager.setSpanCount(calcNumOfRows());
+        }
     }
 
     private List<IconBean> getIconBeanList(Resources resources, String packageName, int flag) {
@@ -294,4 +304,93 @@ public class IconFragment extends Fragment {
 
         return mIconNames;
     }
+
+//    public void show() {
+//        initRecyclerView();
+//        mShow = true;
+//        showWait(false);
+//        initRecyclerView();
+//    }
+//
+//    private void initRecyclerView() {
+//        if (mIconBeanList == null) {
+//            mIconBeanList = getIconBeanList(getResources(),
+//                    getContext().getPackageName(),
+//                    getArguments().getInt("flag", 0));
+//        }
+//
+//        if (mRecycler == null) {
+//            ViewStub mStub =
+//                    (ViewStub) mMainView.findViewById(R.id.viewStub_icon_fragment_list);
+//            mRecycler = mStub.inflate();
+//        }
+//
+//
+//        if (mGridLayoutManager == null) {
+//            mGridLayoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
+//            mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//                @Override
+//                public int getSpanSize(int position) {
+//                    return mIconBeanList.get(position).getName().charAt(0) == '*' ?
+//                            calcNumOfRows() : 1;
+//                }
+//            });
+//            mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
+//            mGridLayoutManager.scrollToPosition(0);
+//        }
+//
+//
+//        mSearchLayout =
+//                (SwipeRefreshLayout) mRecycler
+//                        .findViewById(R.id.swipeRefreshLayout_icon_search);
+//        try {
+//            Field f = mSearchLayout.getClass().getDeclaredField("mCircleView");
+//            f.setAccessible(true);
+//            ImageView img = (ImageView) f.get(mSearchLayout);
+//            img.setImageResource(R.drawable.ic_action_search_icon_inner);
+//        } catch (NoSuchFieldException e) {
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        }
+//        if (mSearchListener != null) {
+//            mSearchLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//                @Override
+//                public void onRefresh() {
+//                    mSearchLayout.setRefreshing(true);
+//                    mSearchListener.onSearch();
+//                    mSearchLayout.setRefreshing(false);
+//                }
+//            });
+//        } else {
+//            mSearchLayout.setEnabled(false);
+//        }
+//
+//        if (mIconAdapter == null) {
+//            mIconAdapter = new IconAdapter(getActivity(),
+//                    getContext(),
+//                    mIconBeanList);
+//        }
+//
+//        if (mCustomPicker) {
+//            mIconAdapter.setCustomPicker(mParentActivity, mCustomPicker);
+//        }
+//
+//        if (mGridView == null) {
+//            mGridView = (AutoLoadRecyclerView) mRecycler.findViewById(R.id.recyclerView_icon_gird);
+//            mGridView.setLayoutManager(mGridLayoutManager);
+//            mGridView.setHasFixedSize(true);
+//            mGridView.setItemAnimator(new DefaultItemAnimator());
+//            mGridView.setOnPauseListenerParams(ImageLoader.getInstance(), false, false);
+//            mGridView.setAdapter(mIconAdapter);
+//        }
+//
+//    }
+//
+//    private void showWait(boolean show) {
+//        mMainView.findViewById(R.id.avLoadingIndicatorView_icon_fragment)
+//                .setVisibility(show ? View.VISIBLE : View.GONE);
+////        mMainView.findViewById(R.id.viewStub_icon_fragment_list)
+////                .setVisibility(show ? View.GONE : View.VISIBLE);
+//    }
 }
