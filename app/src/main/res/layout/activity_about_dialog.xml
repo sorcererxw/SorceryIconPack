@@ -1,142 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/relativeLayout_about_dialog_background"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.AboutDialogActivity">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardView_about_dialog_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:minWidth="300dp"
-        app:cardElevation="16dp">
+<layout>
 
-        <LinearLayout android:id="@+id/linearLayout_dialog_icon_show_root"
-                      xmlns:android="http://schemas.android.com/apk/res/android"
-                      xmlns:app="http://schemas.android.com/apk/res-auto"
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:gravity="center_horizontal"
-                      android:orientation="vertical"
-                      android:paddingLeft="32dp"
-                      android:paddingRight="32dp">
+    <data>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@mipmap/ic_launcher"/>
+        <import type="android.view.View.OnClickListener"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:text="Sorcery"
-                android:textAllCaps="true"
-                android:textColor="@color/title"
-                android:textSize="28dp"
-                android:textStyle="bold"/>
+        <variable
+            name="versionText"
+            type="String"/>
+
+        <variable
+            name="versionListener"
+            type="OnClickListener"/>
+
+        <variable
+            name="openSourceListener"
+            type="OnClickListener"/>
+
+        <variable
+            name="credits"
+            type="android.text.Spanned"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_about_dialog_background"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.AboutDialogActivity">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView_about_dialog_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:minWidth="300dp"
+            app:cardElevation="16dp">
+
+            <LinearLayout android:id="@+id/linearLayout_dialog_icon_show_root"
+                          xmlns:android="http://schemas.android.com/apk/res/android"
+                          xmlns:app="http://schemas.android.com/apk/res-auto"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:gravity="center_horizontal"
+                          android:orientation="vertical"
+                          android:paddingLeft="32dp"
+                          android:paddingRight="32dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Sorcery"
+                    android:textAllCaps="true"
+                    android:textColor="@color/title"
+                    android:textSize="28dp"
+                    android:textStyle="bold"/>
 
 
-            <TextView
-                android:id="@+id/textView_about_dialog_open_source"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:gravity="center_horizontal"
-                android:padding="16dp"
-                android:text="@string/open_source_lib"
-                android:textColor="@color/title"/>
+                <TextView
+                    android:id="@+id/textView_about_dialog_open_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{openSourceListener}"
+                    android:padding="16dp"
+                    android:text="@string/open_source_lib"
+                    android:textColor="@color/title"/>
 
-            <TextView
-                android:id="@+id/textView_about_dialog_version"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="32dp"
-                android:background="?attr/selectableItemBackground"
-                android:padding="16dp"
-                android:text="Version"
-                android:textColor="@color/content"
-                android:textSize="15dp"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/textView_about_dialog_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:onClick="@{versionListener}"
+                    android:padding="16dp"
+                    android:text="@{versionText"
+                    android:textColor="@color/content"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/textView_about_dialog_credits"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clickable="true"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="6dp"
-                android:text="By"
-                android:textColorLink="?attr/colorAccent"
-                android:textStyle="italic"/>
+                <TextView
+                    android:id="@+id/textView_about_dialog_credits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@{credits}"
+                    android:textColorLink="?attr/colorAccent"
+                    android:textStyle="italic"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-            <!--<TextView-->
-            <!--android:id="@+id/credits_sorcerer"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="3dp"-->
-            <!--android:layout_marginTop="0dp"-->
-            <!--android:clickable="true"-->
-            <!--android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"-->
-            <!--android:lineSpacingExtra="0dp"-->
-            <!--android:text="Sorcerer"-->
-            <!--android:textColorLink="?attr/colorAccent"-->
-            <!--android:textStyle="italic"/>-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/credits_mozartjac"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="16dp"-->
-            <!--android:layout_marginTop="0dp"-->
-            <!--android:clickable="true"-->
-            <!--android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"-->
-            <!--android:lineSpacingExtra="0dp"-->
-            <!--android:text="霍宅宅Jack"-->
-            <!--android:textColorLink="?attr/colorAccent"-->
-            <!--android:textStyle="italic"/>-->
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:background="?attr/mainBackground"-->
-    <!--android:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"-->
-    <!--android:orientation="vertical"-->
-    <!--android:paddingLeft="32dp"-->
-    <!--android:paddingRight="32dp">-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/icon"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginTop="16dp"-->
-    <!--android:src="@drawable/quote_icon"/>-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/quote"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:fontFamily="sans-serif-condensed"-->
-    <!--android:text="Quote"-->
-    <!--android:textAllCaps="true"-->
-    <!--android:textColor="?unknown_attr_ref: 1010036"-->
-    <!--android:textSize="28dp"/>-->
-
-    <!--</LinearLayout>-->
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

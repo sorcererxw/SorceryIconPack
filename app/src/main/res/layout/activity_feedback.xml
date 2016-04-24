@@ -1,65 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/relativeLayout_feedback_root"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/root_background"
-    tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
+<layout>
 
+    <data>
 
-    <include
-        android:id="@+id/toolbar_feedback"
-        layout="@layout/toolbar_universal"/>
+        <import type="android.view.View.OnClickListener"/>
 
-    <LinearLayout
+        <variable
+            name="requestListener"
+            type="OnClickListener"/>
+
+        <variable
+            name="suggestListener"
+            type="OnClickListener"/>
+
+        <variable
+            name="joinListener"
+            type="OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_feedback_root"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/textView_feedback_explain"
-        android:layout_below="@+id/toolbar_feedback"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:background="@color/root_background"
+        tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
+
+        <include
+            android:id="@+id/toolbar_feedback"
+            layout="@layout/toolbar_universal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar_feedback"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_request"
+                style="@style/FeedbackRaisedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="32dp"
+                android:onClick="@{requestListener}"
+                android:text="@string/request"/>
+
+            <Button
+                android:id="@+id/button_suggest"
+                style="@style/FeedbackRaisedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="32dp"
+                android:onClick="@{suggestListener}"
+                android:text="@string/suggest"/>
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/button_request"
-            style="@style/FeedbackRaisedButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/button_feedback_join"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="32dp"
-            android:text="@string/request"/>
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{joinListener}"
+            android:text="@string/action_join_google_plus"
+            android:textColor="@color/google_plus"/>
 
-        <Button
-            android:id="@+id/button_suggest"
-            style="@style/FeedbackRaisedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="32dp"
-            android:text="@string/suggest"/>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_feedback_join"
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="right"
-        android:background="?android:attr/selectableItemBackground"
-        android:gravity="center"
-        android:text="@string/action_join_google_plus"
-        android:textColor="@color/google_plus"/>
-
-    <TextView
-        android:id="@+id/textView_feedback_explain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:gravity="center"
-        android:text="If you are unable to send mail by phone\n it's my email address \n feedback@sorcererxw.com \n (press to copy)"
-        android:visibility="gone"/>
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

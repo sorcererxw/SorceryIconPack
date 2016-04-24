@@ -1,17 +1,17 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
-import android.graphics.Rect;
+import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.ApplyAdapter;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityApplyBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.LauncherApplier;
 import com.sorcerer.sorcery.iconpack.util.Utility;
@@ -21,15 +21,14 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apply);
+        ActivityApplyBinding binding = DataBindingUtil.setContentView(this, R.layout
+                .activity_apply);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
-        setSupportActionBar(toolbar);
-
+        setSupportActionBar(binding.toolbarApply.toolbarUniversal);
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        RecyclerView applyRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_apply);
+        RecyclerView applyRecyclerView = binding.recyclerViewApply;
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         layoutManager.scrollToPosition(0);

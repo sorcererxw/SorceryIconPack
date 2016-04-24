@@ -3,10 +3,12 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +29,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityAppSelectBinding;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
@@ -45,31 +48,31 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     private RecyclerView mRecyclerView;
     private RequestAdapter mAdapter;
     private AVLoadingIndicatorView mIndicatorView;
-    private MyFloatingActionButton mFab;
     private boolean mCheckAll = false;
     private boolean menuEnable;
     private Menu mMenu;
     private boolean mPremium = false;
     private Activity mActivity = this;
     private boolean mLoadOk;
+    private ActivityAppSelectBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_select);
 
+        mBinding = DataBindingUtil.setContentView(this, R.layout
+                .activity_app_select);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mBinding.toolbarUniversal);
         if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         }
 
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white_24dp);
 
-        setToolbarDoubleTap(toolbar);
+        setToolbarDoubleTap(mBinding.toolbarUniversal);
 
 
         try {
@@ -80,14 +83,11 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         }
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView_app_select);
+        mRecyclerView = mBinding.recyclerViewAppSelect;
 
-        mIndicatorView = (AVLoadingIndicatorView) findViewById(R.id
-                .avLoadingIndicatorView_icon_select);
+        mIndicatorView = mBinding.avLoadingIndicatorViewIconSelect;
 
-        mFab = (MyFloatingActionButton) findViewById(R.id.fab_app_select);
-        assert mFab != null;
-        mFab.setOnClickListener(this);
+        mBinding.setFabListener(this);
 
         menuEnable = false;
         new LoadAppsAsyncTask(this).execute();
@@ -266,13 +266,13 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void showFab() {
-        mFab.setShow(true);
-        mFab.show();
+        mBinding.fabAppSelect.setShow(true);
+        mBinding.fabAppSelect.show();
     }
 
     private void hideFab() {
-        mFab.setShow(false);
-        mFab.hide();
+        mBinding.fabAppSelect.setShow(false);
+        mBinding.fabAppSelect.hide();
     }
 
     private class SendMailAsyncTask extends AsyncTask<MailSenderInfo, Integer, Boolean> {

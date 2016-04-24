@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    android:id="@+id/linearLayout_apply_root"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:background="@color/root_background"
-    tools:context="com.sorcerer.sorcery.iconpack.ui.activities.ApplyActivity">
+<layout>
 
-    <include
-        android:id="@+id/toolbar_apply"
-        layout="@layout/toolbar_universal"/>
+    <data>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_apply"
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_apply_root"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/root_background"
+        android:orientation="vertical"
+        tools:context="com.sorcerer.sorcery.iconpack.ui.activities.ApplyActivity">
 
-</LinearLayout>
+        <include
+            android:id="@+id/toolbar_apply"
+            layout="@layout/toolbar_universal"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_apply"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>

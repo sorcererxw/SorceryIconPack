@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Sorcery Icons</string>
-    <string name="sorcery">Sorcery</string>
+    <string name="sorcery" translatable="false">Sorcery</string>
 
     <string name="action_feedback">feedback</string>
     <string name="action_welcome">welcome</string>
@@ -45,8 +45,8 @@
     <string name="welcome_body">If there is any problem, search answer in FAQ</string>
     <string name="welcome_close">OK</string>
 
-    <string name="permission_request_title">申请授权</string>
-    <string name="permission_request_content">由于需要收集应用的崩溃信息并且接入了Bmob的接口, 所以请您提供网络存储权限和电话权限, 否则无法保证使用中不会出现崩溃</string>
+    <string name="permission_request_title" translatable="false">申请授权</string>
+    <string name="permission_request_content" translatable="false">由于需要收集应用的崩溃信息并且接入了Bmob的接口, 所以请您提供网络存储权限和电话权限, 否则无法保证使用中不会出现崩溃</string>
 
     <string name="installed">installed</string>
     <string name="not_installed">not installed</string>
@@ -81,7 +81,7 @@
     <string name="nav_item_help">FAQ</string>
 
     <string name="donate_dialog_title">select amount</string>
-    <string name="donate_declaration_content">powered by Bmob</string>
+    <string name="donate_declaration_content" translatable="false">powered by Bmob</string>
 
     <string name="donate_title">Support Us</string>
     <string name="donate_content">If you like my work\n
@@ -124,7 +124,7 @@
     <string name="open_source_lib">Open Source Libs</string>
 
     <string name="changelog">changelog</string>
-    <string name="changelog_content">1. 2个新图标|2. 修复图标申请邮箱验证bug|3. 调整关于页|4. 优化细节</string>
+    <string name="changelog_content" translatable="false">1. 2个新图标|2. 修复图标申请邮箱验证bug|3. 调整关于页|4. 优化细节</string>
     <string name="about_main">let 「material」\n
         colorful your phone</string>
 

@@ -214,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         setContentView(mContentView);
+
     }
 
     @Override

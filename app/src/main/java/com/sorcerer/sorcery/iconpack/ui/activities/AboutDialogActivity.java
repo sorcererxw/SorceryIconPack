@@ -2,11 +2,11 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.net.Uri;
-import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -20,9 +20,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityAboutDialogBinding;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,46 +33,42 @@ public class AboutDialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_dialog);
 
-        TextView versionText = (TextView) findViewById(R.id.textView_about_dialog_version);
-        assert versionText != null;
-        versionText.setText("Version " + BuildConfig.VERSION_NAME);
-        versionText.setOnClickListener(new View.OnClickListener() {
+        final ActivityAboutDialogBinding binding = DataBindingUtil.setContentView(this, R.layout
+                .activity_about_dialog);
+
+        binding.setVersionText("Version " + BuildConfig.VERSION_NAME);
+        binding.setVersionListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showChangeLog();
             }
         });
 
-        TextView openSourceText = (TextView) findViewById(R.id.textView_about_dialog_open_source);
-        assert openSourceText != null;
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);
-        openSourceText.setText(openSource);
-        openSourceText.setOnClickListener(new View.OnClickListener() {
+        binding.textViewAboutDialogOpenSource.setText(openSource);
+        binding.setVersionListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showOpenSourceLibs();
             }
         });
 
-        TextView creditText = (TextView) findViewById(R.id.textView_about_dialog_credits);
         StringBuilder htmlBuilder = new StringBuilder("");
         htmlBuilder.append("<a>By</a><br>");
         htmlBuilder.append("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
         htmlBuilder.append("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a>");
-        creditText.setText(Html.fromHtml(htmlBuilder.toString()));
-        creditText.setClickable(true);
-        creditText.setMovementMethod(LinkMovementMethod.getInstance());
+        binding.setCredits(Html.fromHtml(htmlBuilder.toString()));
+        binding.textViewAboutDialogCredits.setMovementMethod(LinkMovementMethod.getInstance());
 
-        (findViewById(R.id.relativeLayout_about_dialog_background)).setOnTouchListener(new View
+        binding.relativeLayoutAboutDialogBackground.setOnTouchListener(new View
                 .OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (isPointInsideView(event.getX(),
                         event.getY(),
-                        findViewById(R.id.cardView_about_dialog_card))) {
+                        binding.cardViewAboutDialogCard)) {
                 } else {
                     onBackPressed();
                 }
@@ -88,7 +83,6 @@ public class AboutDialogActivity extends AppCompatActivity {
         int viewX = location[0];
         int viewY = location[1];
 
-        //point is inside view bounds
         if ((x > viewX && x < (viewX + view.getWidth())) &&
                 (y > viewY && y < (viewY + view.getHeight()))) {
             return true;

@@ -1,74 +1,37 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityFeedbackBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 public class FeedbackActivity extends SlideInAndOutAppCompatActivity
         implements View.OnClickListener {
 
-    private Context mContext;
-    private Toolbar mToolbar;
-    private Button mRequestButton;
-    private Button mSuggestButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
 
-        mContext = this;
+        ActivityFeedbackBinding binding = DataBindingUtil.setContentView(this, R.layout
+                .activity_feedback);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
-        setSupportActionBar(mToolbar);
+        setSupportActionBar(binding.toolbarFeedback.toolbarUniversal);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        mRequestButton = (Button) findViewById(R.id.button_request);
-        mSuggestButton = (Button) findViewById(R.id.button_suggest);
-
-        mRequestButton.setOnClickListener(this);
-        mSuggestButton.setOnClickListener(this);
-
-        (findViewById(R.id.button_feedback_join)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse
-                        ("https://plus.google.com/communities/115317471515103046699"));
-                mContext.startActivity(intent);
-            }
-        });
-
-        (findViewById(R.id.textView_feedback_explain))
-                .setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        ClipboardManager clipboard = (ClipboardManager)
-                                getSystemService(Context.CLIPBOARD_SERVICE);
-                        ClipData clip = ClipData.newPlainText("feedback mailbox", getString(R.string
-                                .feedback_mailbox));
-                        clipboard.setPrimaryClip(clip);
-                        Toast.makeText(FeedbackActivity.this,
-                                "copied to your clipboard :)",
-                                Toast.LENGTH_SHORT).show();
-                        return false;
-                    }
-                });
+        binding.setRequestListener(this);
+        binding.setSuggestListener(this);
+        binding.setJoinListener(this);
     }
 
     @Override
@@ -83,13 +46,15 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();
         if (!Utility.isNetworkAvailable(this)) {
-            Toast.makeText(mContext, "network error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "network error", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        int id = v.getId();
         if (id == R.id.button_request) {
-            showRequestDialog();
+            Intent intent = new Intent(this, AppSelectActivity.class);
+            startActivity(intent);
         } else if (id == R.id.button_suggest) {
             try {
                 Intent i = new Intent();
@@ -101,15 +66,14 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity
                         "suggestion:\n");
                 startActivity(i);
             } catch (Exception e) {
-                Toast.makeText(mContext, "please login in your email app first", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "please login in your email app first", Toast.LENGTH_SHORT)
                         .show();
             }
+        } else if (id == R.id.button_feedback_join) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse
+                    ("https://plus.google.com/communities/115317471515103046699"));
+            startActivity(intent);
         }
-    }
-
-    private void showRequestDialog() {
-        Intent intent = new Intent(this, AppSelectActivity.class);
-        startActivity(intent);
     }
 }
 

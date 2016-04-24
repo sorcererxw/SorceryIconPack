@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -29,6 +30,7 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityDonateBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
@@ -46,7 +48,9 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donate);
+
+        ActivityDonateBinding binding = DataBindingUtil.setContentView(this, R.layout
+                .activity_donate);
 
         new Thread(new Runnable() {
             @Override
@@ -62,17 +66,17 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
         mActivity = this;
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
-        setSupportActionBar(toolbar);
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(binding.include.toolbarUniversal);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        findViewById(R.id.button_donate_alipay).setOnClickListener(this);
-        findViewById(R.id.button_donate_wechat).setOnClickListener(this);
+        binding.layoutButtonDonates.setAlipayListener(this);
+        binding.layoutButtonDonates.setWechatListener(this);
 
-        final ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView_donate);
-        QCardView cardView = (QCardView) findViewById(R.id.cardView_donate_thank);
-        cardView.setTouchCallBack(new QCardView.TouchCallBack() {
+        final ScrollView scrollView = binding.scrollViewDonate;
+
+        binding.cardViewDonateThank.setTouchCallBack(new QCardView.TouchCallBack() {
             @Override
             public void onDown() {
                 scrollView.requestDisallowInterceptTouchEvent(true);
