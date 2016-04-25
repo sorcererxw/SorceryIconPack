@@ -6,9 +6,12 @@
         <item>dialer</item>
         <item>evernote</item>
         <item>snapchat</item>
+        <item>sougou_wallpaper</item>
         <item>a360_liuliang</item>
         <item>abchina_bank</item>
         <item>lattern</item>
+        <item>unicon</item>
+        <item>game_prune</item>
         <item>greenify</item>
         <item>@string/icon_label_updated</item>
         <item>press</item>
@@ -19,6 +22,7 @@
         <item>google_play_games</item>
         <item>microsoft_office_word</item>
         <item>microsoft_office_excel</item>
+        <item>microsoft_office_powerpoint</item>
     </string-array>
     <string-array name="icon_pack_ali">
         <item>alipay</item>

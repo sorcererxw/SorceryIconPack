@@ -1,26 +1,19 @@
 package com.sorcerer.sorcery.iconpack.util;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
-
-import java.util.List;
 
 /**
  * Created by Sorcerer on 2016/4/24.
  */
 public class MailUtil {
+    public static final String MAIL_SERVER_HOST_163 = "smtp.163.com";
+    public static final String MAIL_SERVER_PORT_163 = "25";
 
-    private Context mContext;
+    public static String MAIL_ADDRESS_FEEDBACK_163;
+    public static String MAIL_PASSWORD_FEEDBACK_163;
 
-    public MailUtil(Context context){
-        mContext =context;
-    }
+    public static String MAIL_ADDRESS_SORCERER_SORCERERXW;
+    public static String MAIL_ADDRESS_FEEDBACK_SORCERERXW;
 
     public interface SendMailCallback {
         void onSuccess();
@@ -28,78 +21,39 @@ public class MailUtil {
         void onFail();
     }
 
-    private void send(String sendString, MailSenderInfo mailInfo,
-                      SendMailCallback callback) {
+    public static MailSenderInfo generateMailSenderInfo(String content,
+                                                 String mailServerHost,
+                                                 String mailServerPort,
+                                                 Boolean validate,
+                                                 String userName,
+                                                 String password,
+                                                 String fromAddress,
+                                                 String toAddress,
+                                                 String subject) {
+        MailSenderInfo mailSenderInfo = new MailSenderInfo();
+        mailSenderInfo.setContent(content);
+        mailSenderInfo.setMailServerHost(mailServerHost);
+        mailSenderInfo.setMailServerPort(mailServerPort);
+        mailSenderInfo.setValidate(validate);
+        mailSenderInfo.setUserName(userName);
+        mailSenderInfo.setPassword(password);
+        mailSenderInfo.setFromAddress(fromAddress);
+        mailSenderInfo.setToAddress(toAddress);
+        mailSenderInfo.setSubject(subject);
+        return mailSenderInfo;
+    }
+
+    public static void send(MailSenderInfo mailSenderInfo,
+                     SendMailCallback callback) {
         try {
-            SendMailAsyncTask myAsyncTask = new SendMailAsyncTask(mContext);
-            if (!sendString.isEmpty()) {
-                myAsyncTask.setStringToSend(sendString);
+            SimpleMailSender sms = new SimpleMailSender();
+            sms.sendTextMail(mailSenderInfo);
+            if (callback != null) {
+                callback.onSuccess();
             }
-            myAsyncTask.execute(mailInfo);
         } catch (Exception e) {
-            Log.e("SendMail", e.getMessage(), e);
+            e.printStackTrace();
+            callback.onFail();
         }
     }
-
-    private class SendMailAsyncTask extends AsyncTask<MailSenderInfo, Integer, Boolean> {
-        private ProgressDialog mProgressDialog;
-        private Context mContext;
-        private String stringToSend = "";
-        private SendMailCallback mSendMailCallback;
-
-        public void setSendMailCallback(SendMailCallback callback) {
-            mSendMailCallback = callback;
-        }
-
-
-        public SendMailAsyncTask(Context context) {
-            mContext = context;
-            mProgressDialog = new ProgressDialog(context);
-            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            mProgressDialog.setCanceledOnTouchOutside(false);
-        }
-
-        public void setStringToSend(String s) {
-            stringToSend = s;
-        }
-
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressDialog.setMessage(mContext.getString(R.string.icon_request_sending));
-            mProgressDialog.show();
-        }
-
-        @Override
-        protected void onPostExecute(final Boolean success) {
-            super.onPostExecute(success);
-            if (mProgressDialog.isShowing()) {
-                mProgressDialog.dismiss();
-            }
-            if (success && mSendMailCallback != null) {
-                mSendMailCallback.onSuccess();
-            } else if (mSendMailCallback != null) {
-                mSendMailCallback.onFail();
-            }
-        }
-
-        @Override
-        protected Boolean doInBackground(MailSenderInfo... params) {
-            String s = "";
-//            List list = mAdapter.getCheckedAppsList();
-//            for (int i = 0; i < list.size(); i++) {
-//                s += list.get(i).toString();
-//                s += "------------------------------\n";
-//            }
-            try {
-                params[0].setContent(stringToSend + "\n\n" + s);
-                SimpleMailSender sms = new SimpleMailSender();
-                sms.sendTextMail(params[0]);
-                return true;
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-    }
-
 }

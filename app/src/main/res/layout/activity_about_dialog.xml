@@ -92,7 +92,7 @@
                     android:gravity="center"
                     android:onClick="@{versionListener}"
                     android:padding="16dp"
-                    android:text="@{versionText"
+                    android:text="@{versionText}"
                     android:textColor="@color/content"
                     android:textSize="15dp"
                     android:textStyle="bold"/>

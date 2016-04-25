@@ -119,7 +119,7 @@
     <string name="action_copy_to_clipboard">复制剪贴板</string>
     <string name="action_premium_request">付费申请</string>
     <string name="action_select_all">全选</string>
-    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现, 以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配</string>
+    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现, 以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配|拒绝适配游戏图标|拒绝适配游戏图标|拒绝适配游戏图标</string>
     <string name="premium_request_title">付费申请</string>
     <string name="RMB">元</string>
     <string name="premium_alipay_title">Sorcery 付费申请图标</string>

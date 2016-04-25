@@ -26,7 +26,7 @@ import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AboutDialogActivity extends AppCompatActivity {
+public class AboutDialogActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Context mContext = this;
 
@@ -38,22 +38,12 @@ public class AboutDialogActivity extends AppCompatActivity {
                 .activity_about_dialog);
 
         binding.setVersionText("Version " + BuildConfig.VERSION_NAME);
-        binding.setVersionListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showChangeLog();
-            }
-        });
+        binding.setVersionListener(this);
 
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);
         binding.textViewAboutDialogOpenSource.setText(openSource);
-        binding.setVersionListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showOpenSourceLibs();
-            }
-        });
+        binding.setOpenSourceListener(this);
 
         StringBuilder htmlBuilder = new StringBuilder("");
         htmlBuilder.append("<a>By</a><br>");
@@ -137,5 +127,14 @@ public class AboutDialogActivity extends AppCompatActivity {
             }
         });
         builder.show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.textView_about_dialog_open_source) {
+            showOpenSourceLibs();
+        } else if (v.getId() == R.id.textView_about_dialog_version) {
+            showChangeLog();
+        }
     }
 }

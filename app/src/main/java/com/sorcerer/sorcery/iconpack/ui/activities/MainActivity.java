@@ -5,17 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.DataSetObserver;
-import android.os.AsyncTask;
+import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,16 +21,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -45,6 +35,7 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.DrawerMenuAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.ViewPageAdapter;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityMainBinding;
 import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.MyMaterialSearchView;
@@ -52,8 +43,6 @@ import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements
 
     public static final int REQUEST_ICON_DIALOG = 100;
 
+    private ActivityMainBinding mBinding;
     public static Intent mLaunchIntent;
     private ViewPageAdapter mPageAdapter;
     private MaterialSearchView mSearchBox;
@@ -78,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements
     private RecyclerView mMenuView;
     private boolean mCloseEnable = true;
     private AppBarLayout mAppBarLayout;
-    private View mContentView;
     private ViewPager.OnPageChangeListener mPageChangeListener =
 
             new ViewPager.OnPageChangeListener() {
@@ -151,16 +140,15 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mContentView = LayoutInflater.from(this).inflate(R.layout.activity_main, null);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
 
         mCustomPicker = action.equals("com.novalauncher.THEME");
 
-        Toolbar toolbar = (Toolbar) mFindViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        setToolbarDoubleTap(toolbar);
+        setSupportActionBar(mBinding.toolbar);
+        setToolbarDoubleTap(mBinding.toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -169,34 +157,35 @@ public class MainActivity extends AppCompatActivity implements
 
         initSearchBox();
 
-        mAppBarLayout = (AppBarLayout) mFindViewById(R.id.appBarLayout_main);
+        mAppBarLayout = mBinding.appBarLayoutMain;
 
-        mDrawerLayout = (DrawerLayout) mFindViewById(R.id.drawerLayout_main);
+        mDrawerLayout = mBinding.drawerLayoutMain;
 
-        mNavigationView = (NavigationView) mFindViewById(R.id.navigation_main);
+        mNavigationView = mBinding.navigationMain;
         assert mNavigationView != null;
         mNavigationView.setNavigationItemSelectedListener(this);
         initDrawerView();
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
-                R.string.nav_open, R.string.nav_close) {
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                invalidateOptionsMenu();
-                syncState();
-                if (mSearchBox.isSearchOpen()) {
-                    closeSearch();
-                }
-            }
+        ActionBarDrawerToggle toggle =
+                new ActionBarDrawerToggle(this, mDrawerLayout, mBinding.toolbar,
+                        R.string.nav_open, R.string.nav_close) {
+                    @Override
+                    public void onDrawerOpened(View drawerView) {
+                        super.onDrawerOpened(drawerView);
+                        invalidateOptionsMenu();
+                        syncState();
+                        if (mSearchBox.isSearchOpen()) {
+                            closeSearch();
+                        }
+                    }
 
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                invalidateOptionsMenu();
-                syncState();
-            }
-        };
+                    @Override
+                    public void onDrawerClosed(View drawerView) {
+                        super.onDrawerClosed(drawerView);
+                        invalidateOptionsMenu();
+                        syncState();
+                    }
+                };
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -213,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
 
-        setContentView(mContentView);
+//        setContentView(mContentView);
 
     }
 
@@ -254,9 +243,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void initTabAndPager() {
-        mTabLayout = (TabLayout) mFindViewById(R.id.tabLayout_icon);
+        mTabLayout = mBinding.tabLayoutIcon;
 
-        mViewPager = (ViewPager) mFindViewById(R.id.viewPager_icon);
+        mViewPager = mBinding.viewPagerIcon;
 
         assert mViewPager != null;
         mViewPager.setOffscreenPageLimit(1);
@@ -393,7 +382,7 @@ public class MainActivity extends AppCompatActivity implements
             showWelcomeDialog();
         } else if (id == R.id.nav_item_update) {
             UpdateHelper updateHelper =
-                    new UpdateHelper(this, mFindViewById(R.id.coordinatorLayout_main));
+                    new UpdateHelper(this, mBinding.coordinatorLayoutMain);
             updateHelper.update();
         } else if (id == R.id.nav_item_donate) {
             activityShift(DonateActivity.class);
@@ -447,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void initSearchBox() {
-        mSearchBox = (MaterialSearchView) mFindViewById(R.id.searchBox_main_icon);
+        mSearchBox = mBinding.searchBoxMainIcon;
         assert mSearchBox != null;
         mSearchBox.setOnSearchViewListener(mSearchViewListener);
         mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
@@ -497,7 +486,7 @@ public class MainActivity extends AppCompatActivity implements
                     } else if (finalI == 3) {
                         UpdateHelper updateHelper =
                                 new UpdateHelper(mContext,
-                                        mFindViewById(R.id.coordinatorLayout_main));
+                                        mBinding.coordinatorLayoutMain);
                         updateHelper.update();
                     } else if (finalI == 4) {
                         activityShift(HelpActivity.class);
@@ -542,10 +531,6 @@ public class MainActivity extends AppCompatActivity implements
         Intent intent = new Intent(this, SplashActivity.class);
         mContext.startActivity(intent);
         mActivity.overridePendingTransition(R.anim.fade_in, 0);
-    }
-
-    private View mFindViewById(@IdRes int id) {
-        return mContentView.findViewById(id);
     }
 
 }

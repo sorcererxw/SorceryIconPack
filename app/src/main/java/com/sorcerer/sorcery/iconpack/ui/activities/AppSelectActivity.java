@@ -33,6 +33,7 @@ import com.sorcerer.sorcery.iconpack.databinding.ActivityAppSelectBinding;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
+import com.sorcerer.sorcery.iconpack.util.MailUtil;
 import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.Utility;
@@ -94,6 +95,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
+
     public void onClick(View v) {
         if (mPremium) {
             MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
@@ -109,7 +111,9 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                     .inflate(R.layout.layout_premium_custom_info_input, null);
             TextView text = (TextView) view.findViewById(R.id.textView_premium_info_text);
             text.setText(Html.fromHtml(
-                    "<p>" + getString(R.string.premium_send_content) + "</p><ul>" + s +
+                    "<p>" + getString(R.string.premium_send_content).replace("|","<br>") +
+                            "</p><ul>" +
+                            s +
                             "</ul>"));
             final EditText email =
                     (EditText) view.findViewById(R.id.materialEditText_premium_info_email);
@@ -142,42 +146,54 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             builder.customView(view, true);
             builder.show();
         } else {
-            send("");
+            new SendMailAsyncTask(mContext).execute();
         }
     }
 
     private void pay(boolean isAlipay, int amount, final String sendAfterPay, final MaterialDialog
             payDialog) {
-        BP.pay(mActivity, getString(R.string.premium_alipay_title), getString(R.string
-                .premium_alipay_descript), amount, isAlipay, new c.b.PListener() {
+        BP.pay(
+                mActivity,
+                getString(R.string.premium_alipay_title),
+                getString(R.string
+                        .premium_alipay_descript),
+                amount,
+                isAlipay,
+                new c.b.PListener() {
 
-            private String mOrderid;
+                    private String mOrderid;
 
-            @Override
-            public void orderId(String s) {
-                Toast.makeText(mActivity, getString(R.string.open_alipay) + s, Toast.LENGTH_LONG)
-                        .show();
-                mOrderid = s;
-            }
+                    @Override
+                    public void orderId(String s) {
+                        Toast.makeText(mActivity,
+                                getString(R.string.open_alipay) + s,
+                                Toast.LENGTH_LONG)
+                                .show();
+                        mOrderid = s;
+                    }
 
-            @Override
-            public void succeed() {
-                Toast.makeText(mContext, getString(R.string.pay_success), Toast.LENGTH_SHORT)
-                        .show();
-                payDialog.dismiss();
-                send(sendAfterPay + "\norderid: " + mOrderid);
-            }
+                    @Override
+                    public void succeed() {
+                        Toast.makeText(mContext,
+                                getString(R.string.pay_success),
+                                Toast.LENGTH_SHORT)
+                                .show();
+                        payDialog.dismiss();
+                        SendMailAsyncTask asyncTask = new SendMailAsyncTask(mContext);
+                        asyncTask.setStringToSend(sendAfterPay + "\norderid: " + mOrderid);
+                        asyncTask.execute();
+                    }
 
-            @Override
-            public void fail(int i, String s) {
-                getString(R.string.pay_fail);
-            }
+                    @Override
+                    public void fail(int i, String s) {
+                        getString(R.string.pay_fail);
+                    }
 
-            @Override
-            public void unknow() {
-                Log.d("sip premium", "unknow");
-            }
-        });
+                    @Override
+                    public void unknow() {
+                        Log.d("sip premium", "unknow");
+                    }
+                });
     }
 
     private class LoadAppsAsyncTask extends AsyncTask {
@@ -224,12 +240,12 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
                 @Override
                 public void OnEmpty() {
-                    hideFab();
+                    showFab(false);
                 }
 
                 @Override
                 public void OnUnEmpty() {
-                    showFab();
+                    showFab(true);
                 }
             });
             mRecyclerView.setAdapter(mAdapter);
@@ -244,35 +260,13 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 
-    @Override
-    public void onBackPressed() {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-        builder.content(getString(R.string.cancel_request));
-        builder.onAny(new MaterialDialog.SingleButtonCallback() {
-            @Override
-            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                if (which == DialogAction.POSITIVE) {
-                    back();
-                }
-            }
-        });
-        builder.positiveText(getString(R.string.yes));
-        builder.negativeText(getString(R.string.no));
-        builder.show();
-    }
-
-    private void back() {
-        super.onBackPressed();
-    }
-
-    private void showFab() {
-        mBinding.fabAppSelect.setShow(true);
-        mBinding.fabAppSelect.show();
-    }
-
-    private void hideFab() {
-        mBinding.fabAppSelect.setShow(false);
-        mBinding.fabAppSelect.hide();
+    private void showFab(boolean show) {
+        mBinding.fabAppSelect.setShow(show);
+        if (show) {
+            mBinding.fabAppSelect.show();
+        } else {
+            mBinding.fabAppSelect.hide();
+        }
     }
 
     private class SendMailAsyncTask extends AsyncTask<MailSenderInfo, Integer, Boolean> {
@@ -313,22 +307,99 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
 
         @Override
         protected Boolean doInBackground(MailSenderInfo... params) {
-            String s = "";
-            List list = mAdapter.getCheckedAppsList();
-            for (int i = 0; i < list.size(); i++) {
-                s += list.get(i).toString();
-                s += "------------------------------\n";
-            }
-            try {
-                params[0].setContent(stringToSend + "\n\n" + s);
-                SimpleMailSender sms = new SimpleMailSender();
-                sms.sendTextMail(params[0]);
-                return true;
-            } catch (Exception e) {
-                e.printStackTrace();
-                return false;
-            }
+            return send(stringToSend);
         }
+    }
+
+    private void setToolbarDoubleTap(Toolbar toolbar) {
+        final GestureDetector detector = new GestureDetector(this,
+                new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
+                    @Override
+                    public void onDoubleTap() {
+                        mRecyclerView.smoothScrollToPosition(0);
+                    }
+                }));
+        toolbar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                detector.onTouchEvent(event);
+                return true;
+            }
+        });
+    }
+
+    private boolean send(String sendString) {
+
+        MailSenderInfo mailInfo;
+        if (mPremium) {
+            mailInfo = MailUtil.generateMailSenderInfo(
+                    getStringToSend(sendString + "\n"),
+                    "smtp.163.com",
+                    "25",
+                    true,
+                    getString(R.string.feedback_mailbox),
+                    getString(R.string.feedback_mail_password),
+                    getString(R.string.feedback_mailbox),
+                    getString(R.string.feedback_receive_mailbox_premium),
+                    "premium icon request");
+        } else {
+            mailInfo = MailUtil.generateMailSenderInfo(
+                    getStringToSend(""),
+                    "smtp.163.com",
+                    "25",
+                    true,
+                    getString(R.string.feedback_mailbox),
+                    getString(R.string.feedback_mail_password),
+                    getString(R.string.feedback_mailbox),
+                    getString(R.string.feedback_receive_mailbox),
+                    "icon request");
+        }
+
+        final boolean[] res = new boolean[1];
+
+        MailUtil.send(mailInfo, new MailUtil.SendMailCallback() {
+            @Override
+            public void onSuccess() {
+                res[0] = true;
+            }
+
+            @Override
+            public void onFail() {
+                res[0] = false;
+            }
+        });
+        return res[0];
+    }
+
+    private String getStringToSend(String head) {
+        String s = "";
+        List list = mAdapter.getCheckedAppsList();
+        for (int i = 0; i < list.size(); i++) {
+            s += list.get(i).toString();
+            s += "------------------------------\n";
+        }
+        return head + s;
+    }
+
+    @Override
+    public void onBackPressed() {
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+        builder.content(getString(R.string.cancel_request));
+        builder.onAny(new MaterialDialog.SingleButtonCallback() {
+            @Override
+            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                if (which == DialogAction.POSITIVE) {
+                    back();
+                }
+            }
+        });
+        builder.positiveText(getString(R.string.yes));
+        builder.negativeText(getString(R.string.no));
+        builder.show();
+    }
+
+    private void back() {
+        super.onBackPressed();
     }
 
     @Override
@@ -381,56 +452,12 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             mCheckAll = !mCheckAll;
             mAdapter.checkAll(mCheckAll);
             if (mCheckAll) {
-                showFab();
+                showFab(true);
             } else {
-                hideFab();
+                showFab(false);
             }
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void setToolbarDoubleTap(Toolbar toolbar) {
-        final GestureDetector detector = new GestureDetector(this,
-                new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
-                    @Override
-                    public void onDoubleTap() {
-                        mRecyclerView.smoothScrollToPosition(0);
-                    }
-                }));
-        toolbar.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                detector.onTouchEvent(event);
-                return true;
-            }
-        });
-    }
-
-    private void send(String sendString) {
-        try {
-            MailSenderInfo mailInfo = new MailSenderInfo();
-            mailInfo.setMailServerHost("smtp.163.com");
-            mailInfo.setMailServerPort("25");
-
-            mailInfo.setValidate(true);
-            mailInfo.setUserName(getString(R.string.feedback_mailbox));
-            mailInfo.setPassword(getString(R.string.feedback_mail_password));
-            mailInfo.setFromAddress(getString(R.string.feedback_mailbox));
-            if (mPremium) {
-                mailInfo.setToAddress(getString(R.string.feedback_receive_mailbox_premium));
-                mailInfo.setSubject("premium icon request");
-            } else {
-                mailInfo.setToAddress(getString(R.string.feedback_receive_mailbox));
-                mailInfo.setSubject("icon request");
-            }
-            SendMailAsyncTask myAsyncTask = new SendMailAsyncTask(mContext);
-            if (!sendString.isEmpty()) {
-                myAsyncTask.setStringToSend(sendString);
-            }
-            myAsyncTask.execute(mailInfo);
-        } catch (Exception e) {
-            Log.e("SendMail", e.getMessage(), e);
-        }
     }
 }
