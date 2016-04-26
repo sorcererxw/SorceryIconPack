@@ -201,9 +201,6 @@ public class MainActivity extends AppCompatActivity implements
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
             mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         }
-
-//        setContentView(mContentView);
-
     }
 
     @Override

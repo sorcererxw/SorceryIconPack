@@ -28,6 +28,7 @@ import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
+import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
@@ -89,9 +90,9 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mActive = mPrefs.getBoolean("pref_global_load", false);
 
         mXposedContentTextView
-                .setText(Utility.handleLongXmlString(getString(R.string.global_detail)));
+                .setText(StringUtil.handleLongXmlString(getString(R.string.global_detail)));
         mXposedAttentionTextView
-                .setText(Utility.handleLongXmlString(getString(R.string.global_attention)));
+                .setText(StringUtil.handleLongXmlString(getString(R.string.global_attention)));
 
         mXposedApplyButton.setOnClickListener(this);
         mXposedCloseButton.setOnClickListener(this);

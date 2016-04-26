@@ -33,8 +33,10 @@ import com.sorcerer.sorcery.iconpack.databinding.ActivityAppSelectBinding;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
+import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.MailUtil;
 import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
+import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -125,7 +127,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    if (!Utility.isMail(email.getText().toString())) {
+                    if (!StringUtil.isMail(email.getText().toString())) {
                         Toast.makeText(mContext,
                                 getString(R.string.please_input_right_mail_address),
                                 Toast.LENGTH_SHORT)
@@ -211,7 +213,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
 
         @Override
         protected Object doInBackground(Object[] params) {
-            return Utility.getComponentInfo(mContext, true);
+            return AppInfoUtil.getComponentInfo(mContext, true);
         }
 
         @Override
@@ -428,7 +430,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             } else {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
                 builder.title(R.string.premium_request_title);
-                builder.content(Utility.handleLongXmlString(getString(R.string
+                builder.content(StringUtil.handleLongXmlString(getString(R.string
                         .premium_request_content)));
                 builder.negativeText(R.string.cancel);
                 builder.positiveText(R.string.ok);

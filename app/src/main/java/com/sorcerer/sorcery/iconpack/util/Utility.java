@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.google.repacked.apache.commons.codec.binary.StringUtils;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
@@ -58,90 +59,6 @@ public class Utility {
 
     private static final String TAG = "SIP/Utility";
 
-    public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon) {
-        List<AppInfo> appInfoList = new ArrayList<>();
-        PackageManager pm = context.getPackageManager();
-        Intent intent = new Intent("android.intent.action.MAIN", null);
-        intent.addCategory("android.intent.category.LAUNCHER");
-        List list = pm.queryIntentActivities(intent, 0);
-        Iterator iterator = list.iterator();
-
-        String xmlString = "";
-
-        if (withHasCustomIcon) {
-            xmlString = getAppfilterToString(context);
-        }
-        Log.d(TAG, xmlString);
-
-        for (int i = 0; i < list.size(); i++) {
-            ResolveInfo resolveInfo = (ResolveInfo) iterator.next();
-            AppInfo tempAppInfo = new AppInfo(
-                    resolveInfo.activityInfo.packageName + "/" + resolveInfo.activityInfo.name,
-                    resolveInfo.loadLabel(pm).toString(),
-                    resolveInfo.loadIcon(pm));
-            if (withHasCustomIcon) {
-                Log.d(TAG, tempAppInfo.getCode());
-                if (xmlString.contains(tempAppInfo.getCode())) {
-                    tempAppInfo.setHasCustomIcon(true);
-                }
-            }
-            appInfoList.add(tempAppInfo);
-        }
-        Collections.sort(appInfoList, new Comparator<AppInfo>() {
-            @Override
-            public int compare(AppInfo lhs, AppInfo rhs) {
-                try {
-                    String s1 = new String(lhs.getName().getBytes("GB2312"), "ISO-8859-1");
-                    String s2 = new String(rhs.getName().getBytes("GB2312"), "ISO-8859-1");
-                    return s1.compareTo(s2);
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                    return lhs.getName().compareTo(rhs.getName());
-                }
-            }
-        });
-        return appInfoList;
-    }
-
-    public static String getAppfilterToString(Context context) {
-        String res = "";
-        int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
-        XmlResourceParser parser = context.getResources().getXml(i);
-        int eventType = -1;
-        try {
-            eventType = parser.getEventType();
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-                        break;
-                    case XmlPullParser.START_TAG:
-
-                        if (parser.getName().equals("item")) {
-                            res += parser.getAttributeValue(0);
-                        }
-                        break;
-                    case XmlPullParser.END_TAG:
-                        break;
-                }
-                eventType = parser.next();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-//        String s = "";
-//        for (int j = 0; j < list.size(); j++) {
-//            if (list.get(j).isCalendar()) {
-//                s += "calendar\n";
-//                s += list.get(j).getPrefix() + "\n";
-//            } else {
-//                s += "item\n";
-//                s += list.get(j).getDrawable() + "\n";
-//            }
-//            s += list.get(j).getComponent() + "\n\n";
-//        }
-        return res;
-    }
-
     public static String convertStreamToString(InputStream is) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
@@ -163,23 +80,6 @@ public class Utility {
         return list;
     }
 
-    public static boolean isLauncherInstalled(Context context, String packageName) {
-        return isPackageInstalled(context, packageName);
-    }
-
-    public static boolean isXposedInstalled(Context context) {
-        return isPackageInstalled(context, "de.robv.android.xposed.installed");
-    }
-
-    public static boolean isPackageInstalled(Context context, String packageName) {
-        final PackageManager pm = context.getPackageManager();
-        try {
-            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
-            return true;
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
-    }
 
     public static void downloadFile(Context context, String urlString, String filename) {
         String serviceString = Context.DOWNLOAD_SERVICE;
@@ -226,50 +126,6 @@ public class Utility {
         ViewGroup view = (ViewGroup) ac.getWindow().getDecorView();
         FrameLayout content = (FrameLayout) view.findViewById(android.R.id.content);
         return content.getChildAt(0);
-    }
-
-    public static String handleLongXmlString(String s) {
-        String res = s.replace("|", "\n");
-        res = res.replace("#", "    ");
-        return res;
-    }
-
-    public static boolean isMail(String mail) {
-        return mail.matches("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\\.[a-zA-Z0_9_-]{2,3}){1,2})$");
-//        boolean hasAt = false;
-//        boolean hasDot = false;
-//        boolean first = false;
-//        boolean second = false;
-//        boolean third = false;
-//        for (int i = 0; i < mail.length(); i++) {
-//            if (Character.isLetter(mail.charAt(i)) || Character.isDigit(mail.charAt(i))) {
-//                if (i == 0) {
-//                    first = true;
-//                }
-//                if (i == mail.length() - 1) {
-//                    third = true;
-//                }
-//                if (hasDot && Character.isDigit(mail.charAt(i))) {
-//                    return false;
-//                }
-//                if (i != 0 && mail.charAt(i - 1) == '@') {
-//                    second = true;
-//                }
-//            } else if (mail.charAt(i) == '@') {
-//                if (hasAt || hasDot) {
-//                    return false;
-//                }
-//                hasAt = true;
-//            } else if (mail.charAt(i) == '.') {
-//                if (!hasAt || hasDot) {
-//                    return false;
-//                }
-//                hasDot = true;
-//            } else {
-//                return false;
-//            }
-//        }
-//        return hasAt && hasDot && first && second && third;
     }
 
 

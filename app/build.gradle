@@ -8,8 +8,8 @@ android {
         applicationId "com.sorcerer.sorcery.iconpack"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 195
-        versionName "3.2.1"
+        versionCode 197
+        versionName "3.2.2"
     }
     buildTypes {
         debug {

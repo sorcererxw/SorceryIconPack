@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
+import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 /**
@@ -49,7 +50,7 @@ public class RequestDialogView extends ViewGroup {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false)
         );
         recyclerView.setAdapter(
-                new RequestAdapter(getContext(), Utility.getComponentInfo(getContext(), true))
+                new RequestAdapter(getContext(), AppInfoUtil.getComponentInfo(getContext(), true))
         );
         this.addView(recycler);
     }

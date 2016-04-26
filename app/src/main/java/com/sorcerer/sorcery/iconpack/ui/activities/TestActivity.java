@@ -19,8 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.ComponentBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
+import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.Decompress;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.stericson.RootTools.RootTools;
@@ -198,7 +200,7 @@ public class TestActivity extends SlideInAndOutAppCompatActivity {
 //            } catch (Exception e) {
 //                e.printStackTrace();
 //            }
-            mTestTextView.setText(Utility.getAppfilterToString(mContext));
+            mTestTextView.setText(AppInfoUtil.getAppfilterToString(mContext));
         }
     };
 
