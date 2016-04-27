@@ -24,6 +24,7 @@ import com.sorcerer.sorcery.iconpack.databinding.ActivityIconDialogBinding;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
+import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 /**
  * Created by Sorcerer on 2016/3/22 0022.
@@ -55,8 +56,6 @@ public class IconDialogActivity extends AppCompatActivity {
         ActivityIconDialogBinding binding =
                 DataBindingUtil.setContentView(this, R.layout.dialog_icon_show);
 
-//        setContentView(R.layout.dialog_icon_show);
-
         mContext = this;
 
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
@@ -74,8 +73,6 @@ public class IconDialogActivity extends AppCompatActivity {
         binding.setTitle(mLabel);
         binding.setIconSrc(mRes);
 
-//        ((TextView) findViewById(R.id.textView_dialog_title)).setText(mLabel);
-//
         binding.imageViewDialogIcon.setImageResource(mRes);
 
         binding.likeLayout.bindIcon(mName);
@@ -98,7 +95,7 @@ public class IconDialogActivity extends AppCompatActivity {
         binding.relativeLayoutIconDialogBackground.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (isPointInsideView(event.getX(),
+                if (ViewUtil.isPointInsideView(event.getX(),
                         event.getY(),
                         findViewById(R.id.cardView_icon_dialog_card))) {
 
@@ -108,20 +105,6 @@ public class IconDialogActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    private boolean isPointInsideView(float x, float y, View view) {
-        int location[] = new int[2];
-        view.getLocationOnScreen(location);
-        int viewX = location[0];
-        int viewY = location[1];
-
-        if ((x > viewX && x < (viewX + view.getWidth())) &&
-                (y > viewY && y < (viewY + view.getHeight()))) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override

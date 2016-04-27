@@ -22,6 +22,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.databinding.ActivityAboutDialogBinding;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
+import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public class AboutDialogActivity extends AppCompatActivity implements View.OnCli
                 .OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (isPointInsideView(event.getX(),
+                if (ViewUtil.isPointInsideView(event.getX(),
                         event.getY(),
                         binding.cardViewAboutDialogCard)) {
                 } else {
@@ -65,20 +66,6 @@ public class AboutDialogActivity extends AppCompatActivity implements View.OnCli
                 return false;
             }
         });
-    }
-
-    private boolean isPointInsideView(float x, float y, View view) {
-        int location[] = new int[2];
-        view.getLocationOnScreen(location);
-        int viewX = location[0];
-        int viewY = location[1];
-
-        if ((x > viewX && x < (viewX + view.getWidth())) &&
-                (y > viewY && y < (viewY + view.getHeight()))) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override

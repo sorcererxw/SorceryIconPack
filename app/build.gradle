@@ -4,13 +4,22 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    def Properties versionProps = new Properties()
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.exists())
+        versionProps.load(new FileInputStream(versionPropsFile))
+    def code = (versionProps['VERSION_CODE'] ?: "0").toInteger() + 1
+    versionProps['VERSION_CODE'] = code.toString()
+    versionProps.store(versionPropsFile.newWriter(), null)
+
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
+        versionCode code
+        versionName "3.2.2 (" + code + ")"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 197
-        versionName "3.2.2"
     }
+
     buildTypes {
         debug {
         }

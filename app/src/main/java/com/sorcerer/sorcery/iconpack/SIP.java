@@ -6,6 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v4.content.ContextCompat;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -29,7 +30,7 @@ public class SIP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        initImageLoader(this);
+        initImageLoader(this);
 
         new Thread(new Runnable() {
             @Override
@@ -57,7 +58,7 @@ public class SIP extends Application {
 
         mOptions = new DisplayImageOptions.Builder()
                 .showImageOnLoading(
-                        new ColorDrawable(getResources().getColor(R.color.transparent))
+                        new ColorDrawable(ContextCompat.getColor(this, R.color.transparent))
                 )   //加载过程中
 //                .showImageForEmptyUri(R.mipmap.ic_launcher) //uri为空时
 //                .showImageOnFail(R.mipmap.ic_launcher)      //加载失败时

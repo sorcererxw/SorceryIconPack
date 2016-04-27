@@ -5,19 +5,25 @@
         <item>fangdai_calculator</item>
         <item>dialer</item>
         <item>evernote</item>
+        <item>tianshidongman</item>
         <item>snapchat</item>
         <item>sougou_wallpaper</item>
+        <item>a3dmark</item>
         <item>a360_liuliang</item>
-        <item>abchina_bank</item>
-        <item>lattern</item>
-        <item>unicon</item>
-        <item>game_prune</item>
         <item>greenify</item>
+        <item>lantern</item>
+        <item>perfmon</item>
+        <item>tp_link</item>
+        <item>unicon</item>
+        <item>haibei_music</item>
+        <item>game_prune</item>
+        <item>abchina_bank</item>
         <item>pixiv</item>
         <item>careland</item>
         <item>@string/icon_label_updated</item>
         <item>press</item>
         <item>feedly</item>
+        <item>google_plus</item>
         <item>zhuishushenqi</item>
         <item>shuqi</item>
         <item>a5sing</item>
@@ -250,8 +256,11 @@
         <item>microsoft_cortana</item>
         <item>microsoft_cortana_alt</item>
         <item>microsoft_excel</item>
+        <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
+        <item>microsoft_office_powerpoint</item>
+        <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
         <item>microsoft_onenote</item>
         <item>microsoft_outlook</item>
@@ -456,6 +465,7 @@
         <item>flyme_update</item>
         <item>flyme_video</item>
         <item>flyme_voice_assistant</item>
+        <item>flyme_wallet</item>
         <item>flyme_weather</item>
     </string-array>
 
@@ -467,11 +477,14 @@
         <item>a360</item>
         <item>a360_cloud</item>
         <item>a360_free_wifi</item>
+        <item>a360_liuliang</item>
         <item>a3c_toolbox</item>
+        <item>a3dmark</item>
         <item>a500px</item>
         <item>a5sing</item>
         <item>a94_percent</item>
         <item>**A**</item>
+        <item>abchina_bank</item>
         <item>accuweather</item>
         <item>accuweather_plus</item>
         <item>acdisplay</item>
@@ -660,6 +673,7 @@
         <item>camera360</item>
         <item>camera_fv_5</item>
         <item>camscanner</item>
+        <item>careland</item>
         <item>ccb</item>
         <item>changba</item>
         <item>chaojikechengbiao</item>
@@ -699,8 +713,7 @@
         <item>dayima</item>
         <item>deviantart</item>
         <item>dgtle</item>
-        <item>dgtle_alt</item>
-        <item>dgtle_alt_2</item>
+        <item>dialer</item>
         <item>dianping</item>
         <item>dice</item>
         <item>didaqingdan</item>
@@ -739,11 +752,13 @@
         <item>evermemo</item>
         <item>evernote</item>
         <item>evernote_alt</item>
+        <item>evernote_alt_2</item>
         <item>evolve_wallpapers</item>
         <item>ex_kernel_manager</item>
         <item>**F**</item>
         <item>facebook</item>
         <item>facebook_messenger</item>
+        <item>fangdai_calculator</item>
         <item>fanliwang</item>
         <item>feedly</item>
         <item>fenghuang</item>
@@ -818,6 +833,7 @@
         <item>flyme_update</item>
         <item>flyme_video</item>
         <item>flyme_voice_assistant</item>
+        <item>flyme_wallet</item>
         <item>flyme_weather</item>
         <item>flynx</item>
         <item>fmradio</item>
@@ -828,6 +844,7 @@
         <item>**G**</item>
         <item>gallery</item>
         <item>game_heartstone</item>
+        <item>game_prune</item>
         <item>gaotieguanjia</item>
         <item>geometric_weather</item>
         <item>gewala_movie</item>
@@ -896,11 +913,13 @@
         <item>go_launcher</item>
         <item>gravity_box</item>
         <item>gravity_screen</item>
+        <item>greenify</item>
         <item>green_vpn</item>
         <item>gudong</item>
         <item>guokr</item>
         <item>**H**</item>
         <item>hai360</item>
+        <item>haibei_music</item>
         <item>haici_dict</item>
         <item>hanglvzongheng</item>
         <item>hiwifi</item>
@@ -980,6 +999,7 @@
         <item>kugou</item>
         <item>**L**</item>
         <item>lanrenzhoumo</item>
+        <item>lantern</item>
         <item>lastpass</item>
         <item>lavaradio</item>
         <item>layers_manager</item>
@@ -1092,8 +1112,11 @@
         <item>microsoft_cortana</item>
         <item>microsoft_cortana_alt</item>
         <item>microsoft_excel</item>
+        <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
+        <item>microsoft_office_powerpoint</item>
+        <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
         <item>microsoft_onenote</item>
         <item>microsoft_outlook</item>
@@ -1172,12 +1195,14 @@
         <item>peel_smart_remote</item>
         <item>pengpai_news</item>
         <item>perfect_color_bar</item>
+        <item>perfmon</item>
         <item>periscope</item>
         <item>phhhoto</item>
         <item>pianke</item>
         <item>piaofanzi</item>
         <item>picooc</item>
         <item>pinglide</item>
+        <item>pixiv</item>
         <item>pixolor</item>
         <item>playstation</item>
         <item>pocket</item>
@@ -1287,6 +1312,7 @@
         <item>smooth</item>
         <item>smooth_alt</item>
         <item>smzdm</item>
+        <item>snapchat</item>
         <item>snaptube</item>
         <item>sohu_video</item>
         <item>solid_explorer</item>
@@ -1318,6 +1344,7 @@
         <item>sony_video</item>
         <item>sony_whatsnew</item>
         <item>sougou_keyboard</item>
+        <item>sougou_wallpaper</item>
         <item>sound_recorder</item>
         <item>spendee</item>
         <item>sspai</item>
@@ -1398,12 +1425,14 @@
         <item>terminal</item>
         <item>terminal_emulator</item>
         <item>texpand</item>
+        <item>tianshidongman</item>
         <item>tianyashequ</item>
         <item>ticktick</item>
         <item>timi</item>
         <item>titanium_backup</item>
         <item>tonghuashun</item>
         <item>touchpal_keyboard</item>
+        <item>tp_link</item>
         <item>tsf_launcher</item>
         <item>ttpod</item>
         <item>tuchong</item>
@@ -1417,6 +1446,7 @@
         <item>uber_partner</item>
         <item>uc_browser</item>
         <item>unicom</item>
+        <item>unicon</item>
         <item>v2ex</item>
         <item>**V**</item>
         <item>versus</item>
@@ -1511,6 +1541,8 @@
         <item>zuimeizipai</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
+
 
 
 </resources>

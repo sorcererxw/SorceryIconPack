@@ -72,12 +72,24 @@ public class MainActivity extends AppCompatActivity implements
 
             new ViewPager.OnPageChangeListener() {
 
+                private int currentPageIndex = 0;
+                private int times = 0;
+
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
                                            int positionOffsetPixels) {
+                    currentPageIndex = position;
+
                     if (position != mViewPager.getCurrentItem()
                             && mSearchBox.isSearchOpen()) {
                         closeSearch();
+                    }
+
+                    if (position == 0 && positionOffset == 0 && positionOffsetPixels == 0) {
+                        times++;
+                        if (times >= 3) {
+                            mDrawerLayout.openDrawer(mNavigationView);
+                        }
                     }
                 }
 
@@ -86,11 +98,13 @@ public class MainActivity extends AppCompatActivity implements
                     if (position != mViewPager.getCurrentItem() && mSearchBox.isSearchOpen()) {
                         closeSearch();
                     }
-//                    ((IconFragment) mPageAdapter.getItem(position)).show();
                 }
 
                 @Override
                 public void onPageScrollStateChanged(int state) {
+                    if (state == ViewPager.SCROLL_STATE_IDLE) {
+                        times = 0;
+                    }
                 }
             };
 
@@ -523,11 +537,4 @@ public class MainActivity extends AppCompatActivity implements
                 false));
         mMenuView.setHasFixedSize(true);
     }
-
-    private void launcherSplash() {
-        Intent intent = new Intent(this, SplashActivity.class);
-        mContext.startActivity(intent);
-        mActivity.overridePendingTransition(R.anim.fade_in, 0);
-    }
-
 }
