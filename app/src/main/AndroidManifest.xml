@@ -274,7 +274,7 @@
             android:value="true"/>
         <meta-data
             android:name="xposeddescription"
-            android:value="@string/xposed_tag"/>
+            android:value="全局加载Sorcery图标包, 勾选并去图标包设置里面打开"/>
         <meta-data
             android:name="xposedminversion"
             android:value="30"/>

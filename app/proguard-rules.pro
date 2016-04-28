@@ -18,3 +18,10 @@
 
 #-libraryjars libs/activation.jar
 #-libraryjars libs/additionnal.jar
+
+-dontwarn okio.**
+-dontwarn org.apache.**
+-dontwarn com.sun.mail.**
+-dontwarn cn.bmob.**
+-dontwarn c.b.Unity
+-dontwarn javax.**

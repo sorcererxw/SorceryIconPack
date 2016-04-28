@@ -81,7 +81,7 @@
     <string name="nav_item_help">FAQ</string>
 
     <string name="donate_dialog_title">select amount</string>
-    <string name="donate_declaration_content" translatable="false">powered by Bmob</string>
+    <string name="donate_declaration_content">powered by Bmob</string>
 
     <string name="donate_title">Support Us</string>
     <string name="donate_content">If you like my work\n
@@ -175,7 +175,7 @@
         <item>Meizu</item>
     </string-array>
 
-    <string-array name="launchers">
+    <string-array name="launchers" translatable="false">
         <item>Action</item>
         <item>Adwex</item>
         <item>Adw</item>
@@ -204,7 +204,7 @@
         <item>Tsf</item>
     </string-array>
 
-    <string-array name="launchers_list">
+    <string-array name="launchers_list" translatable="false">
         <item>Action Launcher|com.actionlauncher.playstore</item>
         <item>ADW Launcher|org.adw.launcher</item>
         <item>ADWEX Launcher|org.adwfreak.launcher</item>
@@ -234,7 +234,7 @@
         <item>TSF Launcher|com.tsf.shell</item>
     </string-array>
 
-    <string-array name="libs_list">
+    <string-array name="libs_list" translatable="false">
         <item>DiscreteSeekBar|AnderWeb|https://github.com/AnderWeb/discreteSeekBar</item>
         <item>Universal Image Loader|nostra13|https://github.com/nostra13/Android-Universal-Image-Loader</item>
         <item>RootTools|Stericson|https://github.com/Stericson/RootTools</item>
@@ -249,7 +249,7 @@
         <item>MaterialEditText|rengwuxian|https://github.com/rengwuxian/MaterialEditText</item>
     </string-array>
 
-    <string-array name="help_list">
+    <string-array name="help_list" translatable="false">
         <item>如何判断启动器(桌面)是否支持第三方图标包?</item>
         <item>进入启动器(桌面)设置, 找到外观(appearance)或者图标(icon)之类的选项, 点击进去, 如果可以找到图标包(icon pack)选项则是支持, 否则, 可能就是不支持|著名的支持图标包的第三方启动器包括|nova launcher, tsf launcher, action launcher, apex launcher, next launcher, line launcher, aviate launcher, arrow launcher, smart launcher, z launcher, hola launcher, adw launcher, total launcher</item>
         <item>如何使用图标包?</item>
@@ -274,7 +274,7 @@
         <item>现在应用主要申请了存储和电话这两个敏感的权限, 因为应用使用bmob的sdk, 需要记录设备的imei来统计设备, 并且在捐赠和Xposed部分均需要用到本地存储</item>
     </string-array>
 
-    <string-array name="search_suggestion">
+    <string-array name="search_suggestion" translatable="false">
         <item>adobe</item>
         <item>ali</item>
         <item>baidu</item>

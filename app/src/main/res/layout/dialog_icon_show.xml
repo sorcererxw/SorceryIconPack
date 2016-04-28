@@ -42,12 +42,14 @@
             android:transitionName="dialog_icon"
             app:cardElevation="16dp">
 
-            <LinearLayout android:id="@+id/linearLayout_dialog_icon_show_root"
-                          xmlns:android="http://schemas.android.com/apk/res/android"
-                          xmlns:app="http://schemas.android.com/apk/res-auto"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/linearLayout_dialog_icon_show_root"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar_icon_dialog"
@@ -69,15 +71,23 @@
                         tools:text="sorcery"/>
                 </android.support.v7.widget.Toolbar>
 
-                <ImageView
-                    android:id="@+id/imageView_dialog_icon"
-                    android:layout_width="@dimen/dialog_icon_size"
-                    android:layout_height="@dimen/dialog_icon_size"
-                    android:layout_gravity="center_horizontal"
+                <LinearLayout
+                    android:animateLayoutChanges="true"
+                    android:id="@+id/linearLayout_dialog_icon_show"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:layout_marginTop="12dp"
-                    android:transitionName="icon"
-                    tools:src="@drawable/evernote"/>
+                    android:layout_marginTop="12dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_dialog_icon"
+                        android:layout_width="@dimen/dialog_icon_size"
+                        android:layout_height="@dimen/dialog_icon_size"
+                        android:transitionName="icon"
+                        tools:src="@drawable/evernote"/>
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/button_dialog_icon_join"
