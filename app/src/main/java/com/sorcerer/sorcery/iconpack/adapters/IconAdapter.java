@@ -34,6 +34,8 @@ import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,12 +76,23 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         public void showHeader(String s) {
             main.setClickable(false);
 
+            int cnt = 0;
+
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == '#') {
+                    cnt++;
+                } else {
+                    break;
+                }
+            }
+
             if (!isViewStubInflate) {
                 inflateHeader();
             }
             if (isViewStubInflate && header != null) {
                 header.setVisibility(View.VISIBLE);
-                header.setText(s);
+                header.setTextSize(DisplayUtil.dip2px(header.getContext(), 12-3*cnt));
+                header.setText(s.substring(cnt, s.length()));
             }
         }
 
@@ -200,7 +213,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     private boolean isLabel(String s) {
-        return s.startsWith("**");
+        return s.startsWith("**") && s.endsWith("**");
     }
 
     private String getLabel(String s) {

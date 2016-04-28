@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.w3c.dom.Text;
@@ -123,7 +124,7 @@ public class HelpAdapter extends RecyclerView.Adapter<HelpAdapter.ViewHolder> {
         if (dp == 1) {
             return 1;
         }
-        return Utility.dip2px(mContext, dp);
+        return DisplayUtil.dip2px(mContext, dp);
     }
 
     @Override

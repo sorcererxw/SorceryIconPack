@@ -18,6 +18,7 @@ import com.a.a.a.V;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.w3c.dom.Text;
@@ -78,7 +79,7 @@ public class ContributorCard extends FrameLayout {
         mDivideLine = mView.findViewById(R.id.view_contributor_divide_line);
 
         ViewGroup.LayoutParams params = mDivideLine.getLayoutParams();
-        params.height = Utility.dip2px(mContext, 0.5f);
+        params.height = DisplayUtil.dip2px(mContext, 0.5f);
         mDivideLine.setLayoutParams(params);
     }
 

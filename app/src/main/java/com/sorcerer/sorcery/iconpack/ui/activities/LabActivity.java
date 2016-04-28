@@ -9,6 +9,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.databinding.DataBindingUtil;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.databinding.ActivityLabBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
@@ -55,11 +57,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     private static final String TAG = "SIP/Lab";
     private Context mContext;
     private Boolean mActive;
-    private Toolbar mToolbar;
-    private TextView mXposedTitleTextView;
     private TextView mXposedStateTextView;
-    private TextView mXposedContentTextView;
-    private TextView mXposedAttentionTextView;
     private Button mXposedApplyButton;
     private Button mXposedCloseButton;
     private Button mXposedRefreshButton;
@@ -69,18 +67,16 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lab);
-        mXposedTitleTextView = (TextView) findViewById(R.id.textView_lab_xposed_title);
+
+        ActivityLabBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lab);
+
         mXposedStateTextView = (TextView) findViewById(R.id.textView_lab_xposed_state);
-        mXposedContentTextView = (TextView) findViewById(R.id.textView_lab_xposed_content);
-        mXposedAttentionTextView = (TextView) findViewById(R.id.textView_lab_xposed_attention);
         mXposedApplyButton = (Button) findViewById(R.id.button_lab_xposed_apply);
         mXposedCloseButton = (Button) findViewById(R.id.button_lab_xposed_close);
         mXposedRefreshButton = (Button) findViewById(R.id.button_lab_xposed_refresh);
         mXposedRebootButton = (Button) findViewById(R.id.button_lab_xposed_reboot);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_universal);
-        setSupportActionBar(mToolbar);
+        setSupportActionBar(binding.include5.toolbarUniversal);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -89,15 +85,14 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mPrefs = getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
         mActive = mPrefs.getBoolean("pref_global_load", false);
 
-        mXposedContentTextView
-                .setText(StringUtil.handleLongXmlString(getString(R.string.global_detail)));
-        mXposedAttentionTextView
-                .setText(StringUtil.handleLongXmlString(getString(R.string.global_attention)));
+        binding.setContentText(StringUtil.handleLongXmlString(getString(R.string.global_detail)));
+        binding.setAttentionText(StringUtil.handleLongXmlString(getString(R.string
+                .global_attention)));
 
-        mXposedApplyButton.setOnClickListener(this);
-        mXposedCloseButton.setOnClickListener(this);
-        mXposedRefreshButton.setOnClickListener(this);
-        mXposedRebootButton.setOnClickListener(this);
+        binding.setApplyListener(this);
+        binding.setCloseListener(this);
+        binding.setRebootListener(this);
+        binding.setRefreshListener(this);
 
         if (mActive) {
             mXposedStateTextView.setText(getString(R.string.global_state_active));
@@ -107,21 +102,6 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             mXposedCloseButton.setEnabled(true);
             mXposedRebootButton.setEnabled(true);
         } else {
-//            if (RootTools.isRootAvailable()) {
-//                mXposedStateTextView.setText(getString(R.string.global_state_not_active));
-//                mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
-//                mXposedApplyButton.setEnabled(true);
-//                mXposedRefreshButton.setEnabled(false);
-//                mXposedCloseButton.setEnabled(false);
-//                mXposedRebootButton.setEnabled(false);
-//            } else {
-//                mXposedStateTextView.setText(getString(R.string.global_state_not_root));
-//                mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
-//                mXposedApplyButton.setEnabled(false);
-//                mXposedRefreshButton.setEnabled(false);
-//                mXposedCloseButton.setEnabled(false);
-//                mXposedRebootButton.setEnabled(false);
-//            }
             mXposedStateTextView.setText(getString(R.string.global_state_not_active));
             mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
             mXposedApplyButton.setEnabled(true);

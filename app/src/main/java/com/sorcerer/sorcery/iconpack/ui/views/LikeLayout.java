@@ -1,6 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
-import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -13,26 +12,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.Interpolator;
-import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nostra13.universalimageloader.utils.L;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.databinding.LayoutLikeBinding;
 import com.sorcerer.sorcery.iconpack.util.IconBmobHelper;
-import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by Sorcerer on 2016/2/29 0029.
@@ -124,12 +113,9 @@ public class LikeLayout extends FrameLayout {
                 }
             }
         });
-
-//        handleFlag(mFlag);
     }
 
     public void bindIcon(String name) {
-        Log.d(TAG, name);
         mBind = true;
         mName = name;
         mIconBmobHelper = new IconBmobHelper(mContext);
@@ -167,52 +153,6 @@ public class LikeLayout extends FrameLayout {
             target.animate().scaleX(1.0f).scaleY(1.0f).setDuration(100)
                     .start();
         }
-    }
-
-
-    private class LikeOnTouListener implements OnTouchListener {
-        private float mStartX;
-        private float mStartY;
-
-        private AnimatorSet mBigAnim;
-
-        private ImageView mLikeImg;
-
-        public LikeOnTouListener(ImageView likeImg) {
-            mLikeImg = likeImg;
-            mBigAnim = new AnimatorSet();
-            mBigAnim.playTogether(
-                    ObjectAnimator.ofFloat(mLikeImg, "scalaX", Utility.dip2px(mContext, 34)),
-                    ObjectAnimator.ofFloat(mLikeImg, "scalaY", Utility.dip2px(mContext, 34))
-            );
-            mBigAnim.setDuration(100);
-        }
-
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            float x = event.getX();
-            float y = event.getY();
-
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    mStartX = x;
-                    mStartY = y;
-
-                    mLikeImg.animate().scaleX(1.2f).scaleY(1.2f).setDuration(100).start();
-                    break;
-
-                case MotionEvent.ACTION_UP:
-                    if (ViewUtil.isAClick(mStartX, x, mStartY, y)) {
-                        mLikeImg.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable
-                                .ic_liked));
-                    }
-                    mLikeImg.animate().scaleX(1.0f).scaleY(1.0f).setDuration(100)
-                            .start();
-                    break;
-            }
-            return true;
-        }
-
     }
 
 }

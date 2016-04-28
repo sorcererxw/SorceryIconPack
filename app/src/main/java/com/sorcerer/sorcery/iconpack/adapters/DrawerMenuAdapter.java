@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.w3c.dom.Text;
@@ -80,7 +81,7 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter<DrawerMenuAdapter.Vi
     }
 
     private int dp2px(int dp) {
-        return Utility.dip2px(mContext, dp);
+        return DisplayUtil.dip2px(mContext, dp);
     }
 
 

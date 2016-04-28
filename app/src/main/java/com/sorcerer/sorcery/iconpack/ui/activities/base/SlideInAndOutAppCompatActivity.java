@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 /**
@@ -139,7 +140,7 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
             mActivity = activity;
             screenWidth = getScreenWidth(activity);
 
-            sideWidthInDP = Utility.px2dip(activity, screenWidth / 10);
+            sideWidthInDP = DisplayUtil.px2dip(activity, screenWidth / 10);
 
             setClickable(true);
             final ViewGroup root = (ViewGroup) activity.getWindow().getDecorView();

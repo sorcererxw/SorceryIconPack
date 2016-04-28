@@ -19,6 +19,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.Collections;
@@ -214,7 +215,7 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     }
 
     private int dp2px(int dp) {
-        return Utility.dip2px(mContext, dp);
+        return DisplayUtil.dip2px(mContext, dp);
     }
 
     @Override

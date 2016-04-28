@@ -34,6 +34,7 @@ import com.sorcerer.sorcery.iconpack.databinding.ActivityDonateBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
+import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
@@ -137,6 +138,8 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
             } else {
                 showMoneySelectDialog(true);
             }
+        } else if (id == R.id.button_donate_wechat) {
+
         }
     }
 

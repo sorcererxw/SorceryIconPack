@@ -115,8 +115,8 @@
     <string name="premium_send_dialog_note_hint">Leave your message to developer</string>
     <string name="please_input_right_mail_address">please input right mail address</string>
 
-    <string name="icon_label_added">**Added**</string>
-    <string name="icon_label_updated">**Updated**</string>
+    <string name="icon_label_added">**#Added**</string>
+    <string name="icon_label_updated">**#Updated**</string>
 
     <string name="contributor">Contributor</string>
     <string name="job_developer">Developer</string>

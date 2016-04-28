@@ -32,7 +32,10 @@
         <item>microsoft_office_word</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_powerpoint</item>
+        <item>**#Google Play Awards**</item>
+        <item>**##Best Use of Material Design**</item>
     </string-array>
+
     <string-array name="icon_pack_ali">
         <item>alipay</item>
         <item>alipay_alt</item>
