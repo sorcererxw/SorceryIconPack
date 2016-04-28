@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
         android:id="@+id/discreteSeekBar_donate_money_select"
-        app:dsb_min="1"
-        app:dsb_max="50"
-        app:dsb_thumbSize="20dp"
-        app:dsb_indicatorFormatter="￥%s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:dsb_allowTrackClickToDrag="false"
         app:dsb_indicatorColor="@color/colorPrimaryDark"
-        app:dsb_progressColor="@color/colorPrimary"
+        app:dsb_indicatorFormatter="￥%s"
         app:dsb_indicatorSeparation="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        app:dsb_max="50"
+        app:dsb_min="1"
+        app:dsb_progressColor="@color/colorPrimary"
+        app:dsb_thumbSize="20dp"/>
 
     <TextView
-        android:textSize="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:text="@string/donate_declaration_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:textSize="10sp"/>
 </LinearLayout>

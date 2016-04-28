@@ -67,12 +67,12 @@
                     android:visibility="gone"/>
 
                 <com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton
-                    android:onClick="@{fabListener}"
                     android:id="@+id/fab_app_select"
                     android:layout_width="@dimen/fab_size"
                     android:layout_height="@dimen/fab_size"
                     android:layout_gravity="bottom|right"
                     android:layout_margin="16dp"
+                    android:onClick="@{fabListener}"
                     android:src="@drawable/ic_done_white_24dp"
                     android:visibility="gone"
                     app:layout_anchor="@id/recyclerView_app_select"

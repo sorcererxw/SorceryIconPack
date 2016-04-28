@@ -35,7 +35,6 @@
             android:textSize="16sp"/>
 
         <android.support.v7.widget.AppCompatButton
-            android:visibility="gone"
             android:id="@+id/button_donate_wechat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +43,8 @@
             android:backgroundTint="@color/wechat"
             android:onClick="@{wechatListener}"
             android:text="@string/wechat"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:visibility="gone"/>
 
     </LinearLayout>
 </layout>

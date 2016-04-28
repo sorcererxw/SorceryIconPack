@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.sorcerer.sorcery.iconpack.ui.activities.SettingsActivity">
 
-    <include layout="@layout/toolbar_universal"
-             android:id="@+id/include3"/>
+    <include
+        layout="@layout/toolbar_universal"
+        android:id="@+id/include3"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_settings"
