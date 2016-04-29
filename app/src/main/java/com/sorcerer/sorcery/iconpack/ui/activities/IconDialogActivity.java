@@ -127,6 +127,8 @@ public class IconDialogActivity extends AppCompatActivity {
         if (mComponent != null) {
             getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
 
+
+
             MenuItem showOrigin = menu.findItem(R.id.action_show_origin_icon);
             if (AppInfoUtil.isPackageInstalled(mContext,
                     StringUtil.componentInfoToPackageName(mComponent))) {

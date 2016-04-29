@@ -139,4 +139,5 @@
     <string name="action_show_in_store">前往商店</string>
     <string name="search_hint">搜索(仅支持英文)</string>
     <string name="action_give_permission">授权</string>
+    <string name="action_show_origin_icon">显示原图标</string>
 </resources>

@@ -3178,3 +3178,24 @@
     <item
         component="ComponentInfo{me.piebridge.forcestopgb/me.piebridge.prevent.ui.PreventActivity}"
         drawable="zuzhiyunxing"/>
+    <item
+        component="ComponentInfo{org.moegirl.moepad/org.moegirl.moepad.SplashActivity}"
+        drawable="mengniangbaike"/>
+            <item
+        component="ComponentInfo{com.springwalk.mediaconverter/com.springwalk.mediaconverter.MainActivity}"
+        drawable="media_converter"/>
+    <item
+        component="ComponentInfo{mobi.goldendict.android/mobi.goldendict.android.GoldenDict}"
+        drawable="golden_dict"/>
+    <item
+        component="ComponentInfo{com.manhuazhushou.app/com.manhuazhushou.app.LauncherAct}"
+        drawable="guaguamanhua"/>
+    <item
+        component="ComponentInfo{com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity}"
+        drawable="game_wangzherongyao"/>
+    <item
+        component="ComponentInfo{jp.co.sega.vtc/jp.co.sega.vtc.DownloadManager}"
+        drawable="game_virtua_tennis"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.wallet/com.meizu.flyme.wallet.activity.LaunchActivity}"
+        drawable="flyme_wallet"/>

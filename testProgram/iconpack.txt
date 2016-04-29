@@ -815,6 +815,7 @@
    <item>gewala_movie</item>
    <item>github</item>
    <item>gitskarios</item>
+   <item>golden_dict</item>
    <item>google_androidify</item>
    <item>google_android_auto</item>
    <item>google_arts</item>
@@ -1071,6 +1072,7 @@
    <item>meituan_waimai</item>
    <item>meituxiuxiu</item>
    <item>meiyanxiangji</item>
+   <item>mengniangbaike</item>
    <item>messaging</item>
    <item>microsoft_account</item>
    <item>microsoft_arrow_launcher</item>

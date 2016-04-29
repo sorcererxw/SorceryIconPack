@@ -10,9 +10,11 @@
 
     <item
         android:top="24dp">
+
         <shape android:shape="rectangle">
             <solid android:color="@color/colorPrimary"/>
         </shape>
+
     </item>
 
     <item

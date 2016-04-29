@@ -12,12 +12,13 @@
         <item>a360_liuliang</item>
         <item>greenify</item>
         <item>lantern</item>
+        <item>golden_dict</item>
+        <item>mengniangbaike</item>
         <item>guaguamanhua</item>
         <item>perfmon</item>
         <item>tp_link</item>
         <item>unicon</item>
         <item>haibei_music</item>
-        <item>dianping</item>
         <item>game_prune</item>
         <item>game_virtua_tennis</item>
         <item>game_wangzherongyao</item>
@@ -40,8 +41,8 @@
         <item>microsoft_office_word</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_powerpoint</item>
-        <item>**#Google Play Awards**</item>
-        <item>**##Best Use of Material Design**</item>
+        <!--<item>**#Google Play Awards**</item>-->
+        <!--<item>**##Best Use of Material Design**</item>-->
     </string-array>
 
     <string-array name="icon_pack_ali" translatable="false">
@@ -861,6 +862,7 @@
         <item>gewala_movie</item>
         <item>github</item>
         <item>gitskarios</item>
+        <item>golden_dict</item>
         <item>google_androidify</item>
         <item>google_android_auto</item>
         <item>google_arts</item>
@@ -1117,6 +1119,7 @@
         <item>meituan_waimai</item>
         <item>meituxiuxiu</item>
         <item>meiyanxiangji</item>
+        <item>mengniangbaike</item>
         <item>messaging</item>
         <item>microsoft_account</item>
         <item>microsoft_arrow_launcher</item>
