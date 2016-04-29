@@ -1,0 +1,49 @@
+Received: from m12-12.163.com (unknown [220.181.12.12])
+	by newmx100.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Tue, 08 Mar 2016 17:26:46 +0800
+X-QQ-FEAT: 9NFkmNiL4hfdozS4/KqKs0MMnmazJJ8hLPu7mkppP82nPKkgIIMG7U4FzQ63R
+	ZwpqMRUAyfbtW5ZJUSP+qleBOtlhfgkoa+ZRDT3yhWtpwYxl5jkOmJxRFHCtp6AyjEDj2iu
+	ZFwf7qcKddywY7STwTTJY6yPZg6dHzcVPdrH+aQpXXo/cyVOedlEejS6pBLtFOfI6Y+C+n6
+	S3erk6oC8UwPeMv/N7Mi5trpII9fq3tFIR597iPKQpqZfB7YctLeo
+X-QQ-MAILINFO: ObpyOLNbESSkyw+fixUhvYxox9qeEKRQ9hQsj4532E5uvBDhyqgRlvtdV
+	/Aj1NU78KXQJ+MIQBrP+Q27aLFVJLAgKVp1xt5cfYJ/gyZHCDEZbIRMj72HxiBHyzOpnQm5
+	pKflAlRs/oUgUS1TaBL/5gc=
+X-QQ-mid: mx100t1457429206t8x98br7y
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=PS81z
+	VTrLUjboSgBUFbQPAUDyoi8M2FX5k1l6f3Hnd0=; b=coue86FWtonJa7Xa5hWP9
+	Xsalt4f497rGej/MytsY3R1O2zfkAbD0gJ18Q7Xqc0bjzL0LAUdVTgUIg6m42lqy
+	fJQSiVkZkt+cHZh0Spb3lgfYjTVsQL/c0omnk2yvfwS4XN8NL9s9jOxpF3154l0h
+	XrEM33FhG/UfogoB99wudU=
+Received: from localhost (unknown [27.150.213.177])
+	by smtp8 (Coremail) with SMTP id DMCowAA3HCrOmt5WyTkIAA--.3335S2;
+	Tue, 08 Mar 2016 17:26:39 +0800 (CST)
+Date: Tue, 8 Mar 2016 17:26:37 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <658155867.0.1457429197090.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DMCowAA3HCrOmt5WyTkIAA--.3335S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU21CGUUUUU
+X-Originating-IP: [27.150.213.177]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEhAmFFZXweemqQAAsY
+
+=E5=BD=93=E5=BD=93
+com.dangdang.buy2/com.dangdang.buy2.StartupActivity
+------------------------------
+=E5=BD=93=E5=BD=93=E8=AF=BB=E4=B9=A6
+com.dangdang.reader/com.dangdang.reader.GuideActivity
+------------------------------
+=E6=B2=AA=E6=B1=9F=E5=BC=80=E5=BF=83=E8=AF=8D=E5=9C=BA
+com.hjwordgames/com.hjwordgames.Splash
+------------------------------
+=E4=B8=AD=E5=9B=BD=E9=93=B6=E8=A1=8C
+com.chinamworld.bocmbci/com.chinamworld.bocmbci.biz.GuidePageActivity
+------------------------------
+
+

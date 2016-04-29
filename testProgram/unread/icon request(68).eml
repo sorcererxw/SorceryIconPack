@@ -1,0 +1,41 @@
+Received: from m12-12.163.com (unknown [220.181.12.12])
+	by newmx62.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 22:29:50 +0800
+X-QQ-FEAT: 2iLn9KxU2vD3ZqamyfiAcVg7/0WaAMatg3dIENBGq/nC22gAgFQshnYJHhwNp
+	R+ujKr/jy6aR5lpVewibCDNqgbMVCYWk8NmkHp8VRgKG+aCq51LSt+CHXmeFDCMBbNJbmuT
+	9Ci3HJXHLop6cUJqRq/COXl/c7IxqXfUvbVvWyApbXAX/aJx/jS3yIFsO6fjKGrKUU3YKQk
+	JiwQOCpqBz45pwe3sT1MPp56dmOqW1JkJH5tOfjQIwQ==
+X-QQ-MAILINFO: ODvMQTwIxEi3mvh/zEzWeVnbF4TYdIRWS6lUltKKPGWA5YKpxuefq1635
+	6d0M/BzYta35XIx3qALA6Vabo8wvQQDTDuewF3+HXmsKiEiP9Jzzp0vh5yT6AhaWSk7OHs1
+	f8ArLRqcG7dL
+X-QQ-mid: mx62t1457879390tpa9diwwy
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=xy08L
+	ndQHngFtCJby6RpnOQfW5AsF0NuGuUq7gcDlgE=; b=FNQ85zWo3L114VwPGJqOp
+	QYagdq95363OST6yoB1HFMb+Pe2Z2K/UfkuFjBapZ6UDbb8JzA1yiinDFpxExjgN
+	9qODrZcPrLIrMGKf8NqXqeOT5o4kT7RUoWtS+CRBe7hon+CLoExKlzlY2qkIxGoy
+	XVFcpD3QZ47PySbpDjHZ3Q=
+Received: from localhost (unknown [58.217.163.116])
+	by smtp8 (Coremail) with SMTP id DMCowABHpTZTeeVWugzKAQ--.63720S2;
+	Sun, 13 Mar 2016 22:29:41 +0800 (CST)
+Date: Sun, 13 Mar 2016 22:29:40 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <178245533.0.1457879380500.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DMCowABHpTZTeeVWugzKAQ--.63720S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU7U7aUUUUU
+X-Originating-IP: [58.217.163.116]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiFhYrFFWBPmgaOQAAse
+
+=E7=82=89=E7=9F=B3=E4=BC=A0=E8=AF=B4
+com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneNati=
+veActivity
+------------------------------
+
+

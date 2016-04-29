@@ -1,0 +1,72 @@
+Received: from m12-11.163.com (unknown [220.181.12.11])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 08:48:54 +0800
+X-QQ-FEAT: wto48VEmSUEWbYVRiDJ+gjH9tkXPr9bQ90XFnBOQUHwTHILBUaTYE1X6ig0Xg
+	RKJRTlQOl668qj26V4wmV3lnCoGpOtbCt1tT6qjRKLW4oKPXJAn4bnOToWnS0tHwgnH6RDR
+	jFYkV6moJyGdzRZWa0l4ZJkinh3sZ7DCGYirabHtiNNqpoqtdw/o6iJAhraZoXOwmVzdecK
+	YXXWGJHGJdjgqPB34JNj0uVehIjXhqCbpiuftIwmT0GSBfUzpOJHe
+X-QQ-MAILINFO: MHG2h55yn1ll2/mEVujeLniTZB5YMneXfaF1u2Rc4nE/KE/3+z51+LjWt
+	JU9dhYBu98dgJEfaJXSLjXtcpUWmPh7KBaXUYS0EoJtTchEU315KfdIUiySEu7gSxpwOSl4
+	zMT9F4ghZzIaORF7hlUg2zk=
+X-QQ-mid: mx127t1457484534thxa8n4nl
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=0Qapj
+	7O6f6TU4UEv7gD3VGo6lvVMUZmGM3q6bYhX7W4=; b=C58+cI9FhaqD4Z6eMAW7L
+	tUTSMjhppuVEvPNS785B9I4Ub/Lypp352zGtEq+hzyE6Zj2OOkUrvLIlkIKX3bM3
+	hNOYJ6LPNderyS3zkMcGq2E1RDjXS2XrboKa6o3DD8Wok5cnyoCb1wNCQpr2/yBi
+	AmZt0aPINNgKwZUujjuLic=
+Received: from localhost (unknown [219.216.128.146])
+	by smtp7 (Coremail) with SMTP id C8CowACntobwct9W6yg+AA--.31681S2;
+	Wed, 09 Mar 2016 08:48:49 +0800 (CST)
+Date: Wed, 9 Mar 2016 08:48:49 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <875893035.0.1457484529290.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C8CowACntobwct9W6yg+AA--.31681S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWrKr4UGryrGFyxCr4DuFyUKFg_yoW8Jryfpr
+	13Jr17Jr18Jry5Ar4UJr1UZF1DJry5Jr45Jr18Jr1rAr1jkr4UXr1Utr1rXFyUtryUJr13
+	A3W7Jr1UJF1UJr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UEdgtUUUUU=
+X-Originating-IP: [219.216.128.146]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiTBMnFFSINyJlSgAAsK
+
+Battery Monitor Widget Pro
+ccc71.bmw.pro/ccc71.at.activities.battery.at_batt_tabs
+------------------------------
+Caynax A6W
+com.caynax.a6w/com.caynax.a6w.free.l
+------------------------------
+Forest
+cc.forestapp/cc.forestapp.activities.PlantView.PlantViewController
+------------------------------
+MX Player Pro
+com.mxtech.videoplayer.pro/com.mxtech.videoplayer.pro.ActivityMediaList
+------------------------------
+Pixive
+com.reiya.pixive/com.reiya.pixive.MainActivity
+------------------------------
+Snapseed
+com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
+------------------------------
+Township
+com.playrix.township/com.playrix.township.Launcher
+------------------------------
+Twidere
+org.mariotaku.twidere/org.mariotaku.twidere.activity.MainActivity
+------------------------------
+V2EX+
+com.czbix.v2ex/com.czbix.v2ex.ui.MainActivity
+------------------------------
+WeatherPro
+com.mg.android/com.mg.weatherpro.SplashActivity
+------------------------------
+=E6=8C=96=E8=B4=A2=E8=AE=B0=E8=B4=A6=E7=90=86=E8=B4=A2
+com.wacai365/com.wacai365.LauncherActivity
+------------------------------
+
+

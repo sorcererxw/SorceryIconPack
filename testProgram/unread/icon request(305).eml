@@ -1,0 +1,60 @@
+Received: from m50-134.163.com (unknown [123.125.50.134])
+	by newmx96.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 21:31:52 +0800
+X-QQ-FEAT: JibMalLukFa91mGpeCCJntfp5FYYtVL0xSAQ0in9YHyNlOK8arLEOsjYCJTeV
+	cjKdCBL3QRimGIo0uO+PHJkBIOa4Cm1feXiuCifQKQIiXhCoun+RZfuo8K/UysHyL8Pe7tI
+	wqlR/OnTEOXTzOrELqRMeTjRrrVx8FZ8vGVpqeJaAtSHSFp7PRdlHfYab9mp0xfUUWl9frA
+	j/jKeu/sSiTTcyoFyBeJidsE3hoGIkVQJIn5fDoUi2sr39k3Nf1NiLBhT2NNKdJ4=
+X-QQ-MAILINFO: MjJD59SVx+LnIcZGAuS2RKE1HM2nmp/LXYv+8xD3H9HSdCI5u6SB/5LFA
+	687OLW6jPHsdThTn0mnx/lTSfbxiQ+edZDtwMe0acoAJn9c8HhpLQ4n+KkO+UCLB/IMw8Z3
+	2eA6fXFGTWgz2NnrqXazuOQ=
+X-QQ-mid: mx96t1457530312tzvqhkrnq
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Rj24j
+	xCcKxh6K2nsZ7pTsmFctQFCBDhqdTb4rrfikgc=; b=WIPgyLVpxKXSrJdE1vcuG
+	Uozb5wftH3AmKRLCdWPHdCYyrv+0ldfBAyER1z21XxHXLFeeEUQ4Y+Ett6gb2UEl
+	VG2RwHmi/s3AbTOfTfOFjBky61A0uGk/EYcUVUab4zreNQjHxnuoj/V+F3NpnUdZ
+	DThta4R3o8rEwuYVn+dow4=
+Received: from localhost (unknown [36.32.18.66])
+	by smtp4 (Coremail) with SMTP id DtGowACnS1S5JeBWcyFcAA--.31029S2;
+	Wed, 09 Mar 2016 21:31:38 +0800 (CST)
+Date: Wed, 9 Mar 2016 21:31:36 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <62167414.0.1457530297462.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DtGowACnS1S5JeBWcyFcAA--.31029S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7Jry7tFyUJFWktr4rKryrtFb_yoW3Crc_JF
+	yUJF1UJry3Ar1UJF15Jr1rJw1jqw1DtrWUKr48JrW7GrnrAr1UAr1kJr45XryUZa48Jw17
+	AF1DJr15JF1DJjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU1Xdb7UUUUU==
+X-Originating-IP: [36.32.18.66]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEhwnFFZXwgBYxwAAsh
+
+=E6=B5=B7=E5=B2=9B=E5=A5=87=E5=85=B5
+com.supercell.boombeach.uc/com.supercell.boombeach.uc.GameApp
+------------------------------
+=E7=9A=87=E5=AE=A4=E6=88=98=E4=BA=89
+com.supercell.clashroyale/com.supercell.clashroyale.GameApp
+------------------------------
+=E9=A6=92=E5=A4=B4=E5=9C=B0=E7=90=83
+ooo.oxo.apps.earth/ooo.oxo.apps.earth.MainActivity
+------------------------------
+=E9=A6=92=E5=A4=B4=E5=85=88=E7=94=9F
+ooo.oxo.mr/ooo.oxo.mr.MainActivity
+------------------------------
+=E6=B7=98=E5=B0=8F=E8=AF=B4
+com.martian.ttbook/com.martian.mibook.EnterActivity
+------------------------------
+=E4=B8=80=E5=8A=A0=E7=A4=BE=E5=8C=BA
+com.oneplus.bbs/com.oneplus.bbs.ui.activity.PreStartActivity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E8=8B=B1=E9=9B=84=E8=81=94=E7=9B=9F
+com.tencent.qt.qtl/com.tencent.qt.qtl.activity.main.LauncherActivity
+------------------------------
+
+

@@ -1,0 +1,61 @@
+Received: from m50-138.163.com (unknown [123.125.50.138])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Thu, 10 Mar 2016 14:41:02 +0800
+X-QQ-FEAT: oIoGrveFQB80r23UkuYu+0JjWoQxSkNCOuXfoDDijcDH3iTWy13iaawGqZdc4
+	Bswx6Q7bbeMprOHG5HtjYsVIyxyBzTQPL5w6oG3K/QVKG8wE9uEgFpiFm6/rbegqzNdaTIE
+	V++r2WXdEDBjRRlQLFmo3fDHC7OCWfLXo0Glpg0GnZlpBU07U8LHfYrGoVR5kYaG8Lzn7wd
+	B0N5nTFjPtgqSpoqogBnueFJejJl0rQhqPO6HlmlimxzdszYxN4px
+X-QQ-MAILINFO: N5kFcZDRcyD8yaOuN/7BLOOj9JNaN1AoPyMihxp56CPurNffHdVuVZadc
+	ZvnYTIHxsVoRSrqpbexSQc3jey7vyal0l6IOSBxdYU+WnME2aDDcdeYWUbW7qsH7p+BiB5s
+	coXcuN9DuXbpkmDolFnD1a4=
+X-QQ-mid: mx115t1457592063tduphz9be
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=joxjX
+	/Q71LlaIp/WBl94sGJVgkQFbAXV+yw8JXNzsJ8=; b=mCSsSOTbnoK+JNdWUBbvd
+	mafCbrpqozbIl77vxn/dAYoxFmT1BON/BPlME3wElZkmuLJ+HYC+X6JmsmhRAbaI
+	kOu6bDD7SJdmHWQoNlvkA+asMIRR8uXkjqkk86J1PTFuIoMW1PtUXFKYBo9fReN8
+	TBZJLexEV//M1GJokM4QYg=
+Received: from localhost (unknown [39.8.78.18])
+	by smtp1 (Coremail) with SMTP id C9GowAAHJy77FuFWEY+MAA--.51550S2;
+	Thu, 10 Mar 2016 14:41:02 +0800 (CST)
+Date: Thu, 10 Mar 2016 14:41:00 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <17097586.0.1457592060110.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C9GowAAHJy77FuFWEY+MAA--.51550S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7Xry5JF4fJF1kCF1xGF47CFg_yoW3Zrc_JF
+	y7GF1UJr1UJr1UXF18GF15Zw1rtw1DJryUXw1UJr47Grn7Jw1UJF1Dtr45Xr1DZr1UJF17
+	tFs8Jr15Xr18XjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8cTmDUUUUU==
+X-Originating-IP: [39.8.78.18]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiFhkoFFWBPi3SQgABsl
+
+BlackLight
+us.shandian.blacklight/info.papdt.blacklight.ui.entry.EntryActivity
+------------------------------
+Firefox
+org.mozilla.firefox/org.mozilla.firefox.App
+------------------------------
+H5=E6=B5=8F=E8=A7=88=E5=99=A8
+org.noear.h5/org.noear.h5.controller.WebActivity
+------------------------------
+Phonograph
+com.kabouzeid.gramophone/com.kabouzeid.gramophone.ui.activities.MainActivit=
+y
+------------------------------
+Twitch
+tv.twitch.android.app/tv.twitch.android.apps.LandingActivity
+------------------------------
+=E6=BC=AB=E7=94=BB=E4=BA=BA
+com.ilike.cartoon/com.qihoo.util.StartActivity
+------------------------------
+=E6=94=AF=E6=8F=B4
+com.sonymobile.helpapp7/com.sonymobile.helpapp7.MainActivity
+------------------------------
+
+

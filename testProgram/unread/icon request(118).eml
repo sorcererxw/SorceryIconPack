@@ -1,0 +1,49 @@
+Received: from m12-14.163.com (unknown [220.181.12.14])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 09:16:15 +0800
+X-QQ-FEAT: YD46AQgehujuRLNYXBud2LL85aEFC9RcDEK5sM3MgdRBhwDsTSUWsWBqz0l7v
+	Wuu/Q7jtvy1/EyoVRyzhj2LHvDGZw2Wo9UpvyBMUQtcK8Cqacz/q/2bTbV1zzk4tiUvcX78
+	sONYpqr6RSfebVFVOZTghfUVzat5mgH23TW7xalPpKddP58SmJ1nglmQOtHQRPzKobqHywx
+	vPqCNzIfPA9pc4pfBa0mmvBcCfRT8ydBvo7dpMv47DA==
+X-QQ-MAILINFO: N5kFcZDRcyD8kTon9yywx7ya6rAJFR/vgZoq1DP3Mrx9ohbpKit683cYo
+	VbAfQiLuwUDMTZjjXqxLtREdpDTwlsObWmndrYkw9ZTNUVJXIzz3dyUGBVI1nBF61EXTIFz
+	TkILdSlaKs8RpVNB9mf+KF4=
+X-QQ-mid: mx121t1457831775tpj4epnuc
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=E1+BD
+	v+OHO1qRWcJeQAiO8+2OMSbwnP/rcSVdfp2pHo=; b=DtNROZK1zIs3luvfvn8rc
+	epcknjw6FXDJbbdAwH5LZtY882GeA7+JK/KdS+6zu1Yzh63bARK2KswmVoA4J116
+	o9BxC7WgiBb/1o44WxR77TXftCIZtIQhKjw/Dv6aLRjqES6+1JIUNXjWHR0lBOOZ
+	gaacjLhPofTM8Ta9g4LcLo=
+Received: from localhost (unknown [59.172.176.135])
+	by smtp10 (Coremail) with SMTP id DsCowABH1wRYv+RWXTSzAQ--.15455S2;
+	Sun, 13 Mar 2016 09:16:10 +0800 (CST)
+Date: Sun, 13 Mar 2016 09:16:09 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <163972751.0.1457831769771.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DsCowABH1wRYv+RWXTSzAQ--.15455S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUazBTUUUUU
+X-Originating-IP: [59.172.176.135]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMxsrFFXlfDLwxwAAse
+
+Periscope
+tv.periscope.android/tv.periscope.android.LaunchActivity
+------------------------------
+Sync
+com.bittorrent.sync/com.bittorrent.sync.ui.activity.StartActivity
+------------------------------
+=E5=A4=9A=E5=A4=9A=E7=8C=ABapp
+org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.asus.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+
+

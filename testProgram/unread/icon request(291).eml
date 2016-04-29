@@ -1,0 +1,120 @@
+Received: from m12-14.163.com (unknown [220.181.12.14])
+	by newmx10.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 17:22:23 +0800
+X-QQ-FEAT: bwgMLqpyqeKFEAJXpCqess+SZEUPuF/G6lSgRRQaPGbI9keqkb4w56W4yBQAF
+	d7atcRy2VEyskZ4el7hW9ZI/lPREz6w8ahbWCmLTt8wtjzO/qC2omI99U+q8RJru3UZsg90
+	J34/huBqv9Yh23ohasAEo3wMezulCY5mQxGbaEhMWUZi0bvVQpd7qYneyhw3sKxc88Rdt75
+	g4fDZN9+0KqVfZ885+hEOpClk+1A+IjGuD3gz6jbk0mNzFvI7KpuKzmYOJt/q2MA=
+X-QQ-MAILINFO: N5kFcZDRcyD8kTon9yywx7wxHCS0fuKQD9q7laE/zx7zycUCiGiRl77JP
+	H7FNvyL4ra2bvQLps+Cx/bryE7HQwwg8QX9Hn/oU3cGKQj5KdYxvzDA6YDW9D8OqcqiMZbJ
+	/IPYH5Z70g779qZfLn1+uAM=
+X-QQ-mid: mx10t1457515343twp9yz48v
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=lODaG
+	X8H707UCQQteOoDRY0WzK2Q1QXSNeT48KWjyF4=; b=e8rYIMZhH6NzAwSolG5e2
+	WY7V6ZhVW9j4kCbzLxbRz5YMvtmnf1XJXM2L2bVMK7AlL7NhRw8jD+/cr12a18Ad
+	nMao1oqBIzAcExpd2MSeEJIzmmAkp3ZqAN/yi5NbGav/qlnslfXvCVZ+KaMEXoCE
+	oZaivk2qzFzLDtjvaM2g4Q=
+Received: from localhost (unknown [202.101.194.209])
+	by smtp10 (Coremail) with SMTP id DsCowAB3PN4+699WcxBgAA--.51203S2;
+	Wed, 09 Mar 2016 17:22:11 +0800 (CST)
+Date: Wed, 9 Mar 2016 09:22:04 +0000 (GMT+00:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <1066417288.0.1457515324943.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DsCowAB3PN4+699WcxBgAA--.51203S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxAr1xJF45Ar4rtF43XFW8WFg_yoW5Cry8pr
+	13Jr17Jr18JF1UJryDJr17XF1DG345Jw1rJr4UJr18Ar1jk3WUJw1Utw18JrWjqr9rJr17
+	Jw17Jw1jvw17KrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jrCztUUUUU=
+X-Originating-IP: [202.101.194.209]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEAYnFFWBUFdIQAAAs+
+
+Apex Launcher
+com.anddoes.launcher/com.anddoes.launcher.Launcher
+------------------------------
+Moto
+com.motorola.moto/com.motorola.assist.ui.screens.MainActivity
+------------------------------
+QQ
+com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+Retrome
+com.daviidh.wallpaper.retrome/com.daviidh.wallpaper.retrome.ui.activity.Mai=
+nActivity
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+=E5=AE=89=E5=85=A8=E4=B8=AD=E5=BF=83
+com.lenovo.safecenter/com.lenovo.safecenter.MainTab.LiteSplashActivity
+------------------------------
+=E5=B8=AE=E5=8A=A9
+com.motorola.genie/com.motorola.genie.app.DashboardActivity
+------------------------------
+=E7=94=B5=E8=AF=9D
+com.android.dialer/com.android.dialer.DialtactsActivity
+------------------------------
+=E7=94=B5=E5=AD=90=E9=82=AE=E4=BB=B6
+com.motorola.email/com.android.email.activity.Welcome
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+=E9=85=B7=E5=B8=82=E5=9C=BA
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+=E8=81=94=E7=B3=BB=E4=BA=BA
+com.android.contacts/com.android.contacts.activities.PeopleActivity
+------------------------------
+=E7=81=B5=E7=8A=80=E8=AF=AD=E9=9F=B3=E5=8A=A9=E6=89=8B
+com.iflytek.cmcc/com.iflytek.viafly.SplashActivity
+------------------------------
+=E5=AA=92=E4=BD=93=E5=BA=93
+com.motorola.MotGallery2/com.android.gallery3d.app.GalleryActivity
+------------------------------
+=E8=BF=81=E7=A7=BB
+com.motorola.migrate/com.motorola.frictionless.writer.MigrateLaunchActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.lenovo.android.calendar/com.lenovo.android.calendar.SplashActivity
+------------------------------
+=E8=AE=BE=E7=BD=AE
+com.android.settings/com.android.settings.Settings
+------------------------------
+=E6=97=B6=E9=92=9F
+com.android.deskclock/com.android.deskclock.DeskClock
+------------------------------
+=E5=BE=AE=E4=BF=A1
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+=E4=B8=8B=E8=BD=BD
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadList
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.motorola.camera/com.motorola.camera.Camera
+------------------------------
+=E4=BF=A1=E6=81=AF
+com.android.mms/com.android.mms.ui.ConversationList
+------------------------------
+=E8=BF=85=E9=9B=B7=E5=BF=AB=E9=B8=9F
+com.xunlei.vip.swjsq/com.xunlei.vip.swjsq.StartupActivity
+------------------------------
+=E9=9F=B3=E4=B9=90
+com.lenovo.music/com.lenovo.music.ui.LeAppLoadingActivity
+------------------------------
+=E5=BA=94=E7=94=A8=E4=B8=AD=E5=BF=83
+com.lenovo.leos.appstore/com.lenovo.leos.appstore.activities.Main
+------------------------------
+=E6=B5=8F=E8=A7=88=E5=99=A8
+com.lenovo.browser/com.lenovo.browser.BrowserActivity
+------------------------------
+
+

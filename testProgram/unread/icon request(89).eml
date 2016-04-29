@@ -1,0 +1,70 @@
+Received: from m50-135.163.com (unknown [123.125.50.135])
+	by newmx12.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 21:41:21 +0800
+X-QQ-FEAT: 8YYOEVtNMVmFdnfxb9mDgqZANYWsurc7SLPYT9CxKbQehjqdBESPmwr9z42UZ
+	ogFwjHBsYnorAQYBwcBKWXiDgzlMoAskV/OyMZUIzIW00Uq6z7zzj0hadunCDCJYgKrNFB/
+	+9dUMfvSgngcdvK/i0IT5V8OLb3qtWJl1Kmh0o3so6FRPAN+4LPECddRVK9R+5bSoRIfKBX
+	FMiEpPQxyCnfuBWygo+Ps1WHiuQnOQIAnWSdx1socTSnSDHjb+Jxc
+X-QQ-MAILINFO: ODvMQTwIxEi33kPNK8FIxhrX9ruXnuEXTty1vJxlyOImN1set098WiOFe
+	zZnxKsHeIsQy5b31B+gUS+hIYNFnakmCq7ZkAdrkPJrUzh036WgiI51YOK2hytCRd5zeo/n
+	n9J4ztYb1JpWxWPwKAE3jXI=
+X-QQ-mid: mx12t1457790082txypnwisy
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=S/2Vs
+	Csgd5crUcTABIK6g1z7+bkT+ktyLq7QlC3/e3Y=; b=b7DBgic6541uBQJNBY1Q3
+	PXznEWT+ITNlSz99UGNWL6KL3ZtB1G3AX39F125yCY0uX2Q5EidlSIKPktaa0FL3
+	IBBeB97HEczSoQxokBTRF6X4mUWqp72nGVrnAeTxYTQu++7veIdKz1zfZ8cX2oYq
+	m7O1VOzRq97ixcvCUhzJ2I=
+Received: from localhost (unknown [119.186.235.147])
+	by smtp5 (Coremail) with SMTP id D9GowAD3GHOBHORWylMoAQ--.289S2;
+	Sat, 12 Mar 2016 21:41:21 +0800 (CST)
+Date: Sat, 12 Mar 2016 21:41:20 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <220763683.1.1457790080735.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:D9GowAD3GHOBHORWylMoAQ--.289S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrKFW5KFWfCFW5trWkKrWDCFg_yoWkAFg_Ja
+	48JF1UJr4UJr1UJr1UAr15Aw18Xr1DJryUJr4UJr4UJrnrJr1jqr1Dtr45Wr1DXr1UJr17
+	Jr1DJr17Jr1UZjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8N6pPUUUUU==
+X-Originating-IP: [119.186.235.147]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiFgEqFFWBPlhrUAAAsg
+
+=E8=89=BE=E5=B0=94=E6=88=98=E8=AE=B0
+com.koramgame.els.kl/game.ElswordActivity
+------------------------------
+=E8=8F=A0=E8=90=9D=E5=8C=85=E8=BD=BB=E5=B0=8F=E8=AF=B4
+com.sfacg/com.sfacg.SfnovelActivity
+------------------------------
+=E5=A4=9A=E5=A4=9A=E7=8C=ABapp
+org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
+------------------------------
+=E5=8F=A5=E5=AD=90=E8=BF=B7
+com.example.juzimi/com.example.juzimi.MainActivity
+------------------------------
+=E7=90=89=E7=92=83=E7=A5=9E=E7=A4=BE
+io.github.yueeng.hacg/io.github.yueeng.hacg.MainActivity
+------------------------------
+=E6=BC=AB=E7=94=BB=E4=BA=BA
+com.ilike.cartoon/com.qihoo.util.StartActivity
+------------------------------
+=E8=BF=B7=E7=B3=8A=E8=BD=BB=E5=B0=8F=E8=AF=B4
+org.zywx.wbpalmstar.widgetone.uex11103680/org.zywx.wbpalmstar.engine.EBrows=
+erActivity
+------------------------------
+=E5=90=8D=E4=B8=BA=E6=A2=A6=E6=A2=A6=E5=A5=88=E7=9A=84Servant
+org.alie.momona/org.alie.momona.view.activity.MainActivity
+------------------------------
+=E7=90=83=E7=90=83=E5=A4=A7=E4=BD=9C=E6=88=98
+com.ztgame.bob/com.ztgame.bob.UnityPlayerNativeActivity
+------------------------------
+=E7=8E=8B=E8=80=85=E8=8D=A3=E8=80=80
+com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity
+------------------------------
+
+

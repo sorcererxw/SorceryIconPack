@@ -1,0 +1,67 @@
+Received: from m50-134.163.com (unknown [123.125.50.134])
+	by newmx112.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 18:46:35 +0800
+X-QQ-FEAT: Tp2hW+Mew+c7b3BhjYR1TGKhsay4T8SUU+hSv+gGkQ+r/LLC0sCqdFcsLShas
+	q89CRh48tab2oIrHhCRkiAtMGIEE0b/3ur/6oLCFIjL5nbrE3O3NjtiIw5ghH1jFS5Su8uz
+	EFDHLkgnRS7GBDpdmYQXKITI+wvbyXKSUaOXGjBqRAMxc3/eCAIG4hnGJYEf1U/9iJSldN6
+	mjktwY4N1YIu8SEAGX05P44TYYr+2zxpmiJbhSD8XwHTyw5dadMlQ
+X-QQ-MAILINFO: M9mpTqh4QKvq9wbM479x3QygDHMqVnUe1XDI7JHVSDS3X5ehUGy+hu8Kq
+	6G5stKZ85pdovQtUKs4Sx10sehgAWcWf2jHZum+8dkVp3nEYm0L73f5NxrFKcVOR5Ixxl5Z
+	5fU982JasbEgnD+D/81aoPk=
+X-QQ-mid: mx112t1457779596thc1642rm
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=3b9AI
+	kPU8rxjNdZHPDQLs9wtaqyFFqJLWpylxDhta74=; b=Vu/eOaYQRalTuVehtdfK1
+	4GD4HCv7GncwoRKtP83tke1Qw4Sf8hAgzVlYHEdwx0eCsBN5xcIcGoCdgA/pQ/vw
+	MbSR7RmlOUqazBV1o17jzzOWRdkARubyIFLvhCbiZ2DlDzI7087NFZmPARWTJei5
+	XSJHpXLtybjKHafVddX9HM=
+Received: from localhost (unknown [202.99.142.206])
+	by smtp4 (Coremail) with SMTP id DtGowADn84GB8+NWhBwvAQ--.3021S2;
+	Sat, 12 Mar 2016 18:46:27 +0800 (CST)
+Date: Sat, 12 Mar 2016 18:46:20 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <855520393.0.1457779580753.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DtGowADn84GB8+NWhBwvAQ--.3021S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7Wr4fGw4rCw43Zw13GF18AFb_yoWkGrX_JF
+	yUJ3WUJrW7Ary7Wr15Jr1UZw1FqryUtryUGr4UJr43JrsrAF1DXr1Dtr4UWr1DZr10qF18
+	Jr1UJr13XF18JjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU80_MDUUUUU==
+X-Originating-IP: [202.99.142.206]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiFg4qFFWBPlZ9jAABsq
+
+360=E5=8D=AB=E5=A3=AB
+com.qihoo.antivirus/com.qihoo.antivirus.ui.index.AppEnterActivity
+------------------------------
+=C2=A0360=E6=89=8B=E6=9C=BA=E5=8A=A9=E6=89=8B
+com.qihoo.appstore/com.qihoo.appstore.home.LauncherActivity
+------------------------------
+Flash Player Settings
+com.adobe.flashplayer/com.adobe.flashplayer.SettingsManager
+------------------------------
+=E5=AE=89=E5=8D=93=E5=A3=81=E7=BA=B8
+com.androidesk/com.adesk.picasso.view.MainActivity
+------------------------------
+=E5=B8=83=E5=8D=A1=E6=BC=AB=E7=94=BB
+cn.ibuka.manga.ui/cn.ibuka.manga.ui.ActivityStartup
+------------------------------
+=E8=B6=85=E7=BA=A7=E6=96=87=E4=BB=B6=E7=AE=A1=E7=90=86=E5=99=A8
+com.qihoo.explorer/com.qihoo.explorer.HomeActivity
+------------------------------
+=E6=9D=83=E9=99=90=E7=AE=A1=E7=90=86
+com.android.settings/com.android.settings.Settings$PrivacyGuardManagerActiv=
+ity
+------------------------------
+=E6=8E=8C=E9=98=85iReader
+com.chaozh.iReaderFree/com.chaozh.iReader.ui.activity.WelcomeActivity
+------------------------------
+=E8=BF=BD=E8=BF=BD=E6=BC=AB=E7=94=BB
+com.mandongkeji.comiclover/com.mandongkeji.comiclover.SplashActivity
+------------------------------
+
+

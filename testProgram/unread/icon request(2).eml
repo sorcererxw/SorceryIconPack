@@ -1,0 +1,88 @@
+Received: from m50-133.163.com (unknown [123.125.50.133])
+	by newmx97.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Mon, 14 Mar 2016 20:00:39 +0800
+X-QQ-FEAT: VskF6WgVdDocxtBj4IgPt4Psllj4Z7RS1+Kl8mN0EnvunuVOMdhYeAryUxVt2
+	iCfZ7R0jrCnp06T3fvqccPiQ5HDH5xdYx4fKJ30ao1o2J5G6L/EkIKDFf/2j7EZCX5Dm38R
+	f5GucqqsAYDrTUfyWs5pzUvyb7tj75r0nlDVhpmC88o9C3guycqkjS4vlLvaczPlsy0gG2f
+	UMObrn7WjpFzjtMUkT26219tUUSqulS0sGqMdKmKzRw==
+X-QQ-MAILINFO: MfiUJyQXz1c0uTa/knlyUxAn5XSCTHm3OFoOtmi0ADfZTeR23HcYbZZkH
+	eQAvZixaoD1jUc+qCAkurFyCZQHKkSoh3CfCNKgiITBXthsFcsYt6oFv0x2x7vUyfUoCr3w
+	40YEhpXiIXAQ
+X-QQ-mid: mx97t1457956840tqoexa3e4
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=F7nGa
+	IKBey0iiijOes/G+vlzA7dgalCfT0XxQqxdyiU=; b=ALp9I9RVyRcaTSV9tfsjm
+	AkF8EdeTtYk54awV/ILoUxvVbtGD9IUJecVpovI7d7tQvpre6z/VGCusINskvlmI
+	WPXNcUzK8TdTVhlXJdD6cgnztmwe8Tinuef/rOm9lW+oaPPpO+Q+L/QdmNAL/tPR
+	JzLlzHHGzWk9sclCAz+poA=
+Received: from localhost (unknown [114.243.105.107])
+	by smtp3 (Coremail) with SMTP id DdGowECpqELlp+ZWmzQzAA--.17210S2;
+	Mon, 14 Mar 2016 20:00:38 +0800 (CST)
+Date: Mon, 14 Mar 2016 20:00:38 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <25221726.0.1457956838112.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DdGowECpqELlp+ZWmzQzAA--.17210S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7KrW8Xw4rArWxWw1fGr4DJwb_yoW8Cr43pr
+	13Jr17Jr18Ar15Jr1UXr1UJF1DGryUtr15Jr1UJr18Ar1jyF1xJw1UKw18XFWUtryUJr17
+	Jw17Jr1UZr1UJrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jFhFxUUUUU=
+X-Originating-IP: [114.243.105.107]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMwcsFFXlfE1jAgAAss
+
+Since
+com.socialusmarketingas.counter/com.socialusmarketingas.counter.MainActivit=
+y
+------------------------------
+=E5=8A=A8=E5=8D=A1=E7=A9=BA=E9=97=B4
+com.citiccard.mobilebank/com.citicbank.creditspace.DkkjClient
+------------------------------
+=E5=A4=9A=E5=A4=9A=E7=8C=ABapp
+org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
+------------------------------
+=E6=83=A0=E6=83=A0=E8=B4=AD=E7=89=A9=E5=8A=A9=E6=89=8B
+com.youdao.huihui.deals/com.youdao.huihui.deals.activity.StartUpActivity
+------------------------------
+=E6=83=A0=E5=96=B5
+com.liuzhuni.lzn/com.liuzhuni.lzn.core.guide.StartActivity
+------------------------------
+=E5=BF=AB=E9=80=92100
+com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceAct=
+ivity
+------------------------------
+=E4=B9=B0=E4=B8=AA=E4=BE=BF=E5=AE=9C=E8=B4=A7
+com.x.mgpyh/com.x.mgpyh.activity.MainActivity_
+------------------------------
+=E9=97=AA=E9=A3=9E
+com.cdnren.sfly/com.cdnren.sfly.ui.SplashActivity
+------------------------------
+=E8=8B=8F=E5=AE=81=E6=98=93=E8=B4=AD
+com.suning.mobile.ebuy/com.suning.mobile.ebuy.base.host.InitialActivity
+------------------------------
+=E6=B7=98=E5=AE=9D=E8=81=94=E7=9B=9F
+com.alimama.moon/com.alimama.moon.ui.MainTabActivity
+------------------------------
+=E5=A4=A9=E5=A4=A9=E5=9F=BA=E9=87=91=E7=BD=91
+com.eastmoney.android.fund/com.eastmoney.android.fund.activity.FundSplashAc=
+tivity
+------------------------------
+=E7=BD=91=E4=BF=A1=E7=90=86=E8=B4=A2
+com.ncf.firstp2p/com.ncf.firstp2p.activity.SplashActivity
+------------------------------
+=E6=88=91=E6=9F=A5=E6=9F=A5
+com.wochacha/com.wochacha.StartupActivity
+------------------------------
+=E7=8E=B0=E9=87=91=E5=AE=9D
+com.htffund.mobile.ec.ui/com.htffund.mobile.ec.ui.LoadingActivity
+------------------------------
+=E6=9C=89=E6=B0=A7=E9=87=91=E8=9E=8D
+cn.com.bsb.db.BSDigitalBank/com.yitong.mbank.bs.android.activity.SplashActi=
+vity
+------------------------------
+
+

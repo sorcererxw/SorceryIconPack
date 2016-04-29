@@ -1,0 +1,79 @@
+Received: from m50-138.163.com (unknown [123.125.50.138])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Thu, 10 Mar 2016 23:04:25 +0800
+X-QQ-FEAT: uQ7zd54tkGziYEyvF3+EHTqTcTznVZ0qgLW/UdFqZfMtnT+QyXoeDEkdQeJVM
+	uiejb83folCaLND10si3Eq7IEZGRRDMLuxguGB1t40/jNwtv0DzMXEUfYWtIaN2aj5y+Kt+
+	Jby5i1egeYrs6yfSXrOKf3Zmt/7GdMwP4oJxbk8r7+Sx00bBdu62ty6XFdQ6SUq/A0XIFZN
+	zi6NEy5cvYVpb8o7PgifBbB5tbsAcAzwDjWIEXUscAg==
+X-QQ-MAILINFO: NbUxUzKtP+7YeE5/r6rH8Irvmi1DUxc/ORrrMs18v1jYPnvSpYvzxZw3r
+	BBlFRu2r5lUI9sA4d7Sfc4JOm29d/tvcxE1MepIEmtlyV+gLt9mRITJ0JG3k3ut32lGHsx4
+	CLsjewb+ulqvqpLnQdgKZHQ=
+X-QQ-mid: mx127t1457622265t4qinf4rh
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=w44fi
+	YEClLyhzrG2e+aUjBw00aTHIhYCER49YidtS2k=; b=Vm5YwIGsqK6qi5Q6TCIBt
+	PmJcpekLSn8CiXryPxoKCy2qncEQiQInqaGWlnsFlHVjE7oqL0MKxPg/zkwQGjrn
+	ZFsjE8onBvctZqQIlNu6dPX79xKMYOvvnM11wKqq9c796ejjHxJrAvZ9MeJeqCYf
+	NGwSMWE6g4ea6fenvBbL8U=
+Received: from localhost (unknown [112.97.61.123])
+	by smtp1 (Coremail) with SMTP id C9GowACHvwf2jOFWIVSqAA--.60129S2;
+	Thu, 10 Mar 2016 23:04:24 +0800 (CST)
+Date: Thu, 10 Mar 2016 23:04:24 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <13835698.0.1457622264852.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C9GowACHvwf2jOFWIVSqAA--.60129S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7Zw1UAF47uF4xXF4rtr1DZFb_yoW8XFykpr
+	13Jr12qr1rJr1DtF17Xr1UJr1DW34Utr18Jr48Gr18XF1jkr4UJ347tw18XrWjyryUJr17
+	Aw17tr17Xr1UJr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j6byZUUUUU=
+X-Originating-IP: [112.97.61.123]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMxkoFFXlfAo6hAAAsu
+
+8684=E5=9C=B0=E9=93=81
+cn.chinabus.metro.main/cn.chinabus.metro.main.startActivity
+------------------------------
+8684=E5=85=AC=E4=BA=A4
+cn.chinabus.main/cn.chinabus.main.startActivity
+------------------------------
+GO=E5=A4=87=E4=BB=BD
+com.jiubang.go.backup.ex/com.jiubang.go.backup.pro.StartupPageActivity
+------------------------------
+LOFTER
+com.lofter.android/com.lofter.android.activity.SplashActivity
+------------------------------
+cnBeta Plus
+com.ywwxhz.cnbetareader/com.ywwxhz.activitys.MainActivity
+------------------------------
+pixiv
+jp.pxv.android/jp.pxv.android.RootActivity
+------------------------------
+=E7=A7=91=E6=8A=80=E7=BE=8E=E5=AD=A6
+com.hoge.appivihzh1g4k/com.dingdone.app.welcome.WelcomeActivity
+------------------------------
+=E5=95=AA=E5=95=AA=E6=B8=B8=E6=88=8F=E5=8E=85
+com.join.android.app.mgsim/com.join.mgps.activity.SplashActivity_
+------------------------------
+=E6=89=8B=E6=9C=BA=E4=B9=90=E5=9B=AD
+cn.com.shouji.market/cn.com.shouji.market.MainTabActivity
+------------------------------
+=E9=A1=BA=E9=A3=9E=E7=BD=91=E7=BB=9C=E5=A4=A7=E5=B8=88(sFly)
+com.cdnren.sfly/com.cdnren.sfly.ui.SplashActivity
+------------------------------
+=E5=BD=B1=E8=A7=86=E5=A4=A7=E5=85=A8
+org.keke.tv.vod/org.ysdq.welcome.WelcomeActivity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E7=94=9F=E6=B4=BB
+com.cmbchina.ccd.pluto.cmbActivity/com.cmbchina.ccd.pluto.cmbActivity.Splas=
+hActivity
+------------------------------
+=E4=B8=AD=E5=8D=8E=E5=86=9C=E5=8E=86
+com.findsdk.lunarcalendar/com.findsdk.lunarcalendar.LaunchActivity
+------------------------------
+
+

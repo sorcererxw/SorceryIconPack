@@ -1,0 +1,71 @@
+Received: from m50-134.163.com (unknown [123.125.50.134])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 10:37:59 +0800
+X-QQ-FEAT: /A5Igf99+LQgXvQ4NCpVGNPrefjPjILPn0t3CsbPLyqwTwMzCqV9e4faFDJnv
+	aiGN3hKTiztU2a5DnoVp9Ru+aQBgYKDnkc+AfuRb5wQJ89a2SHQJIqTR1uzvTHyvc8EnZcC
+	HzdqrbV2Em/ZIxvOBjl3bVRjYaTVUAv5lY4NYeWKdvRu/g3ST45Nx0Qw8PJ+UXTTJG0bxJC
+	J/uJO/lMTWCK7QaIaarOmodmuEgyqZDxutn+Uwans+qF7g6k84LD7
+X-QQ-MAILINFO: N5kFcZDRcyD8yaOuN/7BLOPAvx8JHMKmXPzFvz5nX7nH8ik0bfJyRuMQ6
+	rKMqSVO6vrWo2C65Zn/7GUi3RzHGX1Ck38bekwAGTWCXDlHO1PLBtmGSVVabc7PHBnIivjC
+	vNdd6xr1y+EXsQqfjTft1/Q=
+X-QQ-mid: mx126t1457663879t5jsf88io
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Rriqj
+	Jqpa5tH45hqR7rqY9/ETxWoh49kucqSGtoy/6E=; b=LfPbpF1KLqmgKcbDK6vLD
+	9JJ1Y/9uY4ihLRMCtftm3Ush0XXwoL98tT4b3JVll6rp7dIGJAGfoUbdiDD/u1PO
+	cemEdoxJZCDi8cGvm731csYrG8EpKb9l/K3XxmUuWC9S4M+mwnzSvk+dVPMH7LOA
+	RWaWZFo2i0TOkR9646n61k=
+Received: from localhost (unknown [221.213.42.130])
+	by smtp4 (Coremail) with SMTP id DtGowAD3dld_L+JWNeXPAA--.2614S2;
+	Fri, 11 Mar 2016 10:37:52 +0800 (CST)
+Date: Fri, 11 Mar 2016 10:37:51 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <273482710.0.1457663872089.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DtGowAD3dld_L+JWNeXPAA--.2614S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrtrWrXrWfGFy3WFy8Zw45GFg_yoWkKFX_JF
+	yUJF1UJr4UJr1Ut3W5Jr1UAw10qryUJr4UGr1rJr47GrnrJr1kJr1Dtr45Xr15Zr18JF1U
+	tr1UJw15Jr1UJjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUnIksDUUUUU==
+X-Originating-IP: [221.213.42.130]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOwIpFFXlSQ98WgAAsU
+
+Welike
+com.sxy.ui/com.sxy.ui.view.MainActivity
+------------------------------
+=E9=83=A8=E8=90=BD=E5=86=B2=E7=AA=81
+com.supercell.clashofclans.qihoo/com.supercell.clashofclans.GameAppKunlun
+------------------------------
+=E5=93=86=E7=82=B9
+com.drcom.DuoDian/com.drcom.Android.DrCOMWS.Activity.Welcome.LoadingActivit=
+y
+------------------------------
+=E7=9A=87=E5=AE=A4=E6=88=98=E4=BA=89
+com.supercell.clashroyale/com.supercell.clashroyale.GameApp
+------------------------------
+=E5=BF=AB=E5=96=B5
+com.yxnfnd9.android_fcvpn1/com.yxnfnd9.android_fcvpn1.SplashPage
+------------------------------
+=E8=85=BE=E8=AE=AF=E4=BD=93=E8=82=B2
+com.tencent.qqsports/com.tencent.qqsports.ui.SplashActivity
+------------------------------
+=E8=8B=B1=E6=B1=89=E5=AD=97=E5=85=B8
+com.bravolol.bravolang.englishchinesecdictionary/com.bravolol.bravolang.eng=
+lishchinesecdictionary.BravoDict
+------------------------------
+=E4=BA=91=E5=8D=97=E7=A7=BB=E5=8A=A8
+com.ailk.ech.woxin/com.ailk.ech.woxin.LoadingActivity
+------------------------------
+=E5=9C=A8=E7=9B=B4=E6=92=AD
+com.zbd/com.zbd.activities.SplashActivity
+------------------------------
+=E9=9D=93=E6=99=92
+ooo.oxo.apps.materialize/ooo.oxo.apps.materialize.MainActivity
+------------------------------
+
+

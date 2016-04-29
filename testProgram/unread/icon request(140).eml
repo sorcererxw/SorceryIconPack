@@ -1,0 +1,273 @@
+Received: from m50-132.163.com (unknown [123.125.50.132])
+	by newmx98.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 10:01:31 +0800
+X-QQ-FEAT: reLp7tnbwrHUuAjdrdgwUAwdAv6X+udCPW4za5DPcWntGBpk8rLmwAKQQ68jf
+	LFLOL2E2cTtl/UQJI0mwdV+kepRMrW2SVIXM82NLMBOH4s3yVXeA8uD5/cGeYZwHrvnRY26
+	EEm6vYN9xuQvM48LFdyqa0KhE/hqcaoEIZ2wkx8LnS5Y8wS6ycJGvBAT9dCF10gGverwOuM
+	bg/rb5YsGb8JZVKlulXVKoi1PzjgcoXXVvk7U/LqIAWfVTQmn0JzbKcgAe5jk8Is=
+X-QQ-MAILINFO: M9mpTqh4QKvq9wbM479x3QyH4vsNW+bG71A95nVtufAtrL8Q7Zot+eQc0
+	p7LBIB3MSf8syWE4nY3TLZDIBSlMDD/LaxvxEHiSB04xZDs60O/8hOm9C2UF9CiZiElDQ7C
+	v08W557J/wLfflM5uKCENIk=
+X-QQ-mid: mx98t1457748091tjskczkji
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=uEgmP
+	/LKas4QnnzvqYoy2c0NdPFvUpyo36GSYXjDiGQ=; b=m9q4O1L/1GClIftIMwQWh
+	Ugsid1Vrl8gz1AYucD7Kdd0odfstzECjl7Td4tXNyhRkfBgWXLv7+NOhzG/ooypu
+	VCaqwoTO1sBpjncOhBwAtKqRRui7eQa2xaMn1V3LQ6SYmWZBh9NI4c0NjEcQjIHh
+	LlcTRJM4FRqMt47IVNXIuM=
+Received: from localhost (unknown [112.96.173.70])
+	by smtp2 (Coremail) with SMTP id DNGowEBZvkFyeONWnHMbAA--.1163S2;
+	Sat, 12 Mar 2016 10:01:26 +0800 (CST)
+Date: Sat, 12 Mar 2016 10:01:21 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <894769349.0.1457748081644.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DNGowEBZvkFyeONWnHMbAA--.1163S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxuFWDAF47tFyrGrW3tr1DKFg_yoWfAFy8pr
+	13Jr17Jr18JF1UJryDJr1UXF1DG345Jr15Jr1UJr18Ar1jkF1UJw1Utw18JryUtryUJr17
+	Jw17tr1UZw17GrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j19a9UUUUU=
+X-Originating-IP: [112.96.173.70]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOxoqFFXlSSGJUQAAsf
+
+=C2=A0Amap=C2=A0
+com.autonavi.minimap/com.autonavi.map.activity.SplashActivity
+------------------------------
+Alipay
+com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin
+------------------------------
+Apex Launcher
+com.anddoes.launcher/com.anddoes.launcher.Launcher
+------------------------------
+Apex Notifier
+com.anddoes.notifier/com.anddoes.notifier.SettingsActivity
+------------------------------
+Baidu IME
+com.baidu.input/com.baidu.input.ImeAppMainActivity
+------------------------------
+Bilibili
+tv.danmaku.bili/tv.danmaku.bili.ui.splash.SplashActivity
+------------------------------
+Bonza
+air.au.com.minimega.bonza/air.au.com.minimega.bonza.AppEntry
+------------------------------
+Boo!
+com.larvalabs.boo/com.larvalabs.boo.BooActivity
+------------------------------
+BusyBox Free
+stericson.busybox/stericson.busybox.Activity.MainActivity
+------------------------------
+Calculator
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+Calendar
+com.google.android.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+CallerInfo
+org.xdty.callerinfo/org.xdty.callerinfo.activity.MainActivity
+------------------------------
+Camera
+com.google.android.GoogleCamera/com.android.camera.CameraLauncher
+------------------------------
+Cardboard Camera
+com.google.vr.cyclops/com.google.android.apps.cyclops.MainActivity
+------------------------------
+Cataclysm
+rom.cataclysm/rom.cataclysm.MainActivity
+------------------------------
+Clock
+com.google.android.deskclock/com.android.deskclock.DeskClock
+------------------------------
+Contacts
+com.google.android.contacts/com.android.contacts.activities.PeopleActivity
+------------------------------
+Cool Market
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+Docs To Go
+com.dataviz.docstogo/com.dataviz.dxtg.common.launcher.android.LauncherActiv=
+ity
+------------------------------
+Downloads
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadList
+------------------------------
+Financius
+com.code44.finance/com.code44.finance.ui.common.activities.SplashActivity
+------------------------------
+Flash Player Settings
+com.adobe.flashplayer/com.adobe.flashplayer.SettingsManager
+------------------------------
+Google
+com.google.android.googlequicksearchbox/com.google.android.googlequicksearc=
+hbox.SearchActivity
+------------------------------
+Google Settings
+com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsAc=
+tivity
+------------------------------
+IMDb
+com.imdb.mobile/com.imdb.mobile.HomeActivity
+------------------------------
+Imgur
+com.imgur.mobile/com.imgur.mobile.Launcher
+------------------------------
+JD.COM
+com.jingdong.app.mall/com.jingdong.app.mall.MainActivity
+------------------------------
+Lock screen widgets
+com.ssrdroide.lockscreenwidgets/com.ssrdroide.lockscreenwidgets.ui.activiti=
+es.MainActivity
+------------------------------
+LuckyMoney
+com.wuxianlin.luckymoney/com.wuxianlin.luckymoney.SettingsActivity
+------------------------------
+Mi Fit
+com.xiaomi.hm.health/cn.com.smartdevices.bracelet.activity.StartUpActivity
+------------------------------
+NetEase Music
+com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity
+------------------------------
+Now for Reddit
+com.phyora.apps.reddit_now/com.phyora.apps.reddit_now.activities.ActivityRe=
+dditNow
+------------------------------
+PerfectColorBar
+com.flarejune.perfectcolorbar/com.flarejune.perfectcolorbar.ui.actMain
+------------------------------
+Phone
+com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialta=
+ctsActivity
+------------------------------
+Play Store
+com.android.vending/com.android.vending.AssetBrowserActivity
+------------------------------
+Poweramp
+com.maxmpz.audioplayer/com.maxmpz.audioplayer.StartupActivity
+------------------------------
+Poweramp Material Skin
+com.ikorolkov.poweramp.skins.material/com.maxmpz.poweramp.skinlib.InfoActiv=
+ity
+------------------------------
+Prevent Running
+me.piebridge.forcestopgb/me.piebridge.prevent.ui.PreventActivity
+------------------------------
+QQLite
+com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQ=E9=82=AE=E7=AE=B1
+com.tencent.androidqqmail/com.tencent.qqmail.LaucherActivity
+------------------------------
+QuickPic
+com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity
+------------------------------
+Rewards
+com.google.android.apps.paidtasks/com.google.android.apps.paidtasks.LaunchA=
+ctivity
+------------------------------
+Root Explorer
+com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.RootExplorer
+------------------------------
+SD Maid
+eu.thedarken.sdm/eu.thedarken.sdm.SDMMainActivity
+------------------------------
+Settings
+com.android.settings/com.android.settings.Settings
+------------------------------
+Shadowsocks
+com.github.shadowsocks/com.github.shadowsocks.Shadowsocks
+------------------------------
+Sorcery Icons
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+Steam
+com.valvesoftware.android.steam.community/com.valvesoftware.android.steam.c=
+ommunity.activity.MainActivity
+------------------------------
+StickMount
+eu.chainfire.stickmount/eu.chainfire.stickmount.StickMountActivity
+------------------------------
+SuperSU
+eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Material
+------------------------------
+Textra
+com.textra/com.mplus.lib.Main_ffffb300
+------------------------------
+Titanium Backup
+com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity
+------------------------------
+Trimmer (fstrim)
+com.fifthelement.trimmer/com.fifthelement.trimmer.MainActivity
+------------------------------
+UC Browser
+com.UCMobile/com.UCMobile.main.UCMobile
+------------------------------
+Voice Search
+com.google.android.googlequicksearchbox/com.google.android.googlequicksearc=
+hbox.VoiceSearchActivity
+------------------------------
+WeChat
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+Weather Timeline
+com.samruston.weather/com.samruston.weather.MainActivity
+------------------------------
+WechatUnrecalled
+com.fkzhang.wechatunrecalled/com.fkzhang.wechatunrecalled.MainActivity-Alia=
+s
+------------------------------
+Weibo
+com.sina.weibo/com.sina.weibo.SplashActivity
+------------------------------
+XQS Background
+com.meloncookie.xqsbackground/com.meloncookie.xqsbackground.LaunchActivity
+------------------------------
+XX=E8=B4=B4=E5=90=A7
+com.baidu.xxtieba/com.baidu.tieba.LogoActivity
+------------------------------
+Xposed Installer
+de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeAc=
+tivity
+------------------------------
+Xstana
+lfprodev.xposed.xstana/lfprodev.xposed.xstana.ActivityXstana
+------------------------------
+Zhihu Preview =CE=B2
+com.zhihu.android/com.zhihu.android.app.ui.activity.MainActivity
+------------------------------
+Zooper Widget Pro
+org.zooper.zwpro/org.zooper.zwlib.Launcher
+------------------------------
+=E7=99=BE=E5=BA=A6=E4=BA=91
+com.baidu.netdisk/com.baidu.netdisk.ui.Navigate
+------------------------------
+=E7=A9=BF=E8=B6=8A=E7=81=AB=E7=BA=BF=EF=BC=9A=E6=9E=AA=E6=88=98=E7=8E=8B=E8=
+=80=85
+com.tencent.tmgp.cf/com.tencent.tmgp.cf.AFMainActivity
+------------------------------
+=E9=A5=BF=E4=BA=86=E4=B9=88
+me.ele/me.ele.Launcher
+------------------------------
+=E7=BE=8E=E5=9B=A2
+com.sankuai.meituan/com.sankuai.meituan.activity.Welcome
+------------------------------
+=E4=BB=80=E4=B9=88=E5=80=BC=E5=BE=97=E4=B9=B0
+com.smzdm.client.android/com.smzdm.client.android.activity.WelComeActivity
+------------------------------
+=E6=89=8B=E6=9C=BA=E6=B7=98=E5=AE=9D
+com.taobao.taobao/com.taobao.tao.welcome.Welcome
+------------------------------
+=E7=BD=91=E6=98=93=E6=9C=89=E9=81=93=E8=AF=8D=E5=85=B8
+com.youdao.dict/com.youdao.dict.activity.LaunchActivity
+------------------------------
+=E5=93=94=E5=93=A9=E5=87=80=E5=8C=96
+com.leon.bilineat/com.leon.bilineat.SettingActivity
+------------------------------
+
+

@@ -1,0 +1,170 @@
+Received: from m12-11.163.com (unknown [220.181.12.11])
+	by newmx19.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 00:17:31 +0800
+X-QQ-FEAT: s8DFp9gC0KdmW48hmIcOCgFGV7M6Jh0EEsId6ZHyrHRbqBZMIyz0iVHCiV8eB
+	8MEFUth9IfXsjtHM08x5GTNgKqrfmYORcMJXhei2S9146D3+imuTX+CnZ/EZFkSXN9w4Ehb
+	bQ1ryG2fvmuWZFVB3eQmboc5UwfCi2FGOAKMwA/cIzScSk9rGEE/qFDm0y4xVULw4rKYnqQ
+	tCRdcmV5MUJMg+/mNNGL8PBEjLOtwnJwO5ccFo2mF47Hnuq+ia7/w
+X-QQ-MAILINFO: NbUxUzKtP+7YfwpwF3T2wdJf/fG5O9rvEb4/x8cgWkkDvU4E+zfKwpL6U
+	UFee2zonFRaJbAIL+aSGs7wIWzW0zeRz0/q8PY44qwSM+IOYVnAvAWlU9xVxkAMWkrthCG5
+	+WLCAk0HJRdV
+X-QQ-mid: mx19t1457713051tr8dle2d6
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=uh1m+
+	gEph5JhywnkjnelvWN2DBPgGyLOSfz8W4a9pac=; b=NCXwacF6R0KRRUNDe1xXk
+	vDk5dXXE9oufvu/UxYgcZ2P7wL9KcFiutT8LJaMcXycx4ljXAiMU40lwdyFmkWy1
+	ZVdliZTkCjJp+jRfgWFxUE8j6kdU9KU0FdNbworbCsFDU40ZWMiQK9PBVkD2H2sW
+	9QJ360v3zVKAEvPVPYaV9k=
+Received: from localhost (unknown [59.32.86.144])
+	by smtp7 (Coremail) with SMTP id C8CowAC3Wm2O7+JWhxI1AQ--.15981S2;
+	Sat, 12 Mar 2016 00:17:20 +0800 (CST)
+Date: Sat, 12 Mar 2016 00:17:18 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <1158361864.0.1457713038619.JavaMail.javamailuser@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C8CowAC3Wm2O7+JWhxI1AQ--.15981S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxtFyfJFy8KrWUtry8Aw48Xrb_yoW7GF17pr
+	13Jr17Jr18JF1UJryUXr1UJF1DGryUJr1UAr1UJr18Ar1jkF18Jw1Utw18XryjyryUJr17
+	Aw1Utr1UZr17Jr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07je5l8UUUUU=
+X-Originating-IP: [59.32.86.144]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEBApFFWBUIWAiwAAs3
+
+APKPure
+com.apkpure.aegon/com.apkpure.aegon.activities.MainFrameActivity
+------------------------------
+Alto
+com.noodlecake.altosadventure/com.prime31.UnityPlayerNativeActivity
+------------------------------
+GGuardian
+com.machinezone.gw/com.machinezone.gw.Main
+------------------------------
+L Speed
+com.paget96.lspeed/com.paget96.lspeed.SplashScreen
+------------------------------
+LOFTER
+com.lofter.android/com.lofter.android.activity.SplashActivity
+------------------------------
+MIX
+com.pinguo.edit.sdk/com.pinguo.mix.MixMainActivity
+------------------------------
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+Mbooru
+com.sin3hz.android.mbooru/com.sin3hz.android.mbooru.MbooruActivity
+------------------------------
+MiNE
+cn.natdon.onscripterv2/cn.natdon.onscripterv2.start
+------------------------------
+MiXplorer
+com.mixplorer/com.mixplorer.activities.SplashActivity
+------------------------------
+MinMinGuard
+tw.fatminmin.xposed.minminguard/tw.fatminmin.xposed.minminguard.ui.MainActi=
+vity
+------------------------------
+MyAndroidTools
+cn.wq.myandroidtools/cn.wq.myandroidtools.MainActivity
+------------------------------
+Next
+com.microsoft.next/com.microsoft.next.activity.MainActivity
+------------------------------
+ONScripter-Jh
+com.jh.onscripter/com.jh.onscripter.ONScripter
+------------------------------
+PIXELS
+xyz.studiox.pixels/xyz.studiox.pixels.activity.MainActivity
+------------------------------
+Pixive
+com.reiya.pixive/com.reiya.pixive.MainActivity
+------------------------------
+ProCapture
+com.neaststudios.procapture.full/com.neaststudios.procapture.Camera
+------------------------------
+RAM Manager Pro
+com.smartprojects.RAMOptimization/com.smartprojects.RAMOptimization.StartAc=
+tivity
+------------------------------
+Simpler
+com.simpler.contacts/com.simpler.ui.activities.LaunchActivity
+------------------------------
+Snapseed
+com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
+------------------------------
+SoundCloud
+com.soundcloud.android/com.soundcloud.android.main.LauncherActivity
+------------------------------
+Textra
+com.textra/com.mplus.lib.Main_ff2196f3
+------------------------------
+wallsplash
+com.mikepenz.unsplash/com.mikepenz.unsplash.activities.MainActivity
+------------------------------
+=E5=97=B6=E5=92=94=E5=85=88=E8=A1=8C=E7=89=88
+com.picacomic.picacomicpreedition/com.picacomic.picacomicpreedition.SplashA=
+ctivity
+------------------------------
+=E5=A4=9A=E5=A4=9A=E7=8C=ABapp
+org.noear.ddcat/org.noear.ddcat.controller.HomeNavigationActivity
+------------------------------
+=E7=A6=8F=E5=88=A9=E6=BB=A1=E6=BB=A1
+cn.soloho.fuli/cn.soloho.fuli.ui.MainActivity
+------------------------------
+=E7=A6=81=E6=AD=A2=E5=94=A4=E9=86=92
+com.linangran.nowakelock/com.linangran.nowakelock.MainActivity
+------------------------------
+=E7=BB=9D=E5=AF=B9=E9=A2=86=E5=9F=9F
+kroderia.im.atfield/kroderia.im.atfield.ui.activity.SplashActivity
+------------------------------
+=E6=9D=A5=E7=94=B5=E4=BF=A1=E6=81=AF
+org.xdty.callerinfo/org.xdty.callerinfo.activity.MainActivity
+------------------------------
+=E6=B5=81=E6=B0=93=E7=BB=88=E7=BB=93=E8=80=85
+com.rexpress.xposed.malwarebuster/com.rexpress.xposed.malwarebuster.MainAct=
+ivity
+------------------------------
+=E7=82=89=E7=9F=B3=E4=BC=A0=E8=AF=B4
+com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneNati=
+veActivity
+------------------------------
+=E5=8C=BF=E5=90=8D=E7=89=88
+com.hippo.nimingban/com.hippo.nimingban.ui.ListActivity
+------------------------------
+=E6=AC=A7=E8=B7=AF=E8=AF=8D=E5=85=B8
+com.eusoft.eudic/com.eusoft.dict.activity.SplashActivity
+------------------------------
+=E6=AC=A7=E6=9C=8B=E6=B5=8F=E8=A7=88=E5=99=A8
+com.oupeng.mini.android/com.opera.android.OperaStartActivity
+------------------------------
+=E5=8C=BA=E5=9F=9F & =E8=AF=AD=E8=A8=80
+com.sightidea.locale/com.sightidea.locale.LocaleActivity
+------------------------------
+=E6=89=8B=E6=9C=BA=E4=B9=90=E5=9B=AD
+cn.com.shouji.market/cn.com.shouji.market.MainTabActivity
+------------------------------
+=E6=B7=98=E5=B0=8F=E8=AF=B4
+com.martian.ttbook/com.martian.mibook.EnterActivity
+------------------------------
+=E5=A4=A9=E6=B0=94
+com.iwoll.weather/com.iwoll.weather.activity.MainActivity
+------------------------------
+=E6=96=87=E6=9C=AC=E8=87=AA=E5=AE=9A=E4=B9=89
+liubaoyua.customtext/liubaoyua.customtext.ui.AppListActivity
+------------------------------
+=E6=98=93=E5=86=99
+co.easy4u.writer/co.easy4u.writer.ui.DirListActivity
+------------------------------
+=E7=9F=A5=E7=B1=B3=E8=83=8C=E5=8D=95=E8=AF=8D
+cn.edu.zjicm.wordsnet_d/cn.edu.zjicm.wordsnet_d.ui.activity.WelcomeActivity
+------------------------------
+=E6=9C=80=E6=9C=80=E6=97=A5=E8=AF=AD
+com.voltmemo.xz_cidao/com.voltmemo.xz_cidao.ui.ActivityLogin
+------------------------------
+
+

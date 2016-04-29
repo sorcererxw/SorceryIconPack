@@ -1,0 +1,59 @@
+Received: from m50-134.163.com (unknown [123.125.50.134])
+	by newmx70.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 11:29:26 +0800
+X-QQ-FEAT: uQ7zd54tkGywff+1pG6laKp/XboCQnzueplfPZgagZH/0GIPy1/TP0oBeWcA7
+	wuz3pxIwUmtvscHWsX2LT15UryEyuhXUklLwt5vhEVKTdbqB0SPTtkg+LgosQouVUAW3b+n
+	4SdTaWLZhwqWewbruxNqXn310EEf5xlztrZoaShcFkH3dwqZL/eL4E3zBhAcG+RLGtxxu4k
+	S7zQPevRuTP8KImSkc3Mp7n5QHO75u3Ytow0vKJUnyy30IuBw0+eD
+X-QQ-MAILINFO: NbUxUzKtP+7YeE5/r6rH8IqwR08q63/vxa1AoKWElu2/iQzFeTbGvz4YZ
+	1dv4sYF7lkiKywLFOUcUhDgQnsZIyCTaR6VdMjLy+P6NeWqxr/XeO1ZX5WEkTPrua4PFDW1
+	+neIucD5ouqF
+X-QQ-mid: mx70t1457839767traoq5pa7
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=w2mHf
+	aLBd9jgndWw/sgYN9h0jUyuboHr7XcEUHqqZDM=; b=fYqXLroVFEL8SWxgnRdqY
+	SaQ9itnF20gHdxoFP3wpmdCKYgxZnwYzqvMqziklK3z/P32ZNaSMyu1BdgAwYqok
+	ON3JBKqGGNMkbnQXGwdm179dQ+ygb3HgJC5m6fQnjCnLRV4vdSMyQ7Uz/D9Lx5bq
+	LklfSSK3jSeHBsCK1xl0Yg=
+Received: from localhost (unknown [1.59.55.59])
+	by smtp4 (Coremail) with SMTP id DtGowADH44GP3uRWSZxhAQ--.780S2;
+	Sun, 13 Mar 2016 11:29:21 +0800 (CST)
+Date: Sun, 13 Mar 2016 11:29:18 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <80241993.0.1457839758857.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DtGowADH44GP3uRWSZxhAQ--.780S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7JrWkGr48ArW5ArWfCry8Krg_yoW3Xwc_JF
+	yUJ3W5Jr4UAryUWr48Jr1UA348XF1UJrWUG3yUJr47Jrn2kF4DXr1DJrs8WrnxXr1UtFy2
+	kr1UJr1aqr4UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8wNVPUUUUU==
+X-Originating-IP: [1.59.55.59]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMxIrFFXlfDSp4wAAss
+
+ZAKER HD
+com.myzaker.ZAKER_HD/com.myzaker.ZAKER_HD.cover.CoverActivity
+------------------------------
+=E5=BF=AB=E9=80=92100
+com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceAct=
+ivity
+------------------------------
+=E6=B5=81=E9=87=8F=E9=93=B6=E8=A1=8C
+com.flowbank.wo/com.flowbank.wo.activity.WelcomeActivity
+------------------------------
+=E4=BA=9A=E9=A9=AC=E9=80=8A=E8=B4=AD=E7=89=A9HD
+com.amazon.windowshop/com.amazon.windowshop.home.HomeLauncherActivity
+------------------------------
+=E7=8C=BF=E8=BE=85=E5=AF=BC
+com.yuantiku.tutor/com.fenbi.tutor.activity.HomeActivity
+------------------------------
+=E9=92=9B=E5=AA=92=E4=BD=93
+com.businessvalue.android.app/com.businessvalue.android.activities.SplashAc=
+tivity
+------------------------------
+
+

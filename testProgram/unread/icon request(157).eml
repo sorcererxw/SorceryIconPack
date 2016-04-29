@@ -1,0 +1,486 @@
+Received: from m12-14.163.com (unknown [220.181.12.14])
+	by newmx56.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 15:13:49 +0800
+X-QQ-FEAT: 8EwnaagCsGv6FNqSm6ERGnJxqz8x9ecqII8TbyXkQJ0+rcspp70kmsjTQToBq
+	9B6N+hMWuE5+n6/AxNQNjXKIHTZuc1hdsodaTNmNucnbVrI6XRaUGmVqPs9ECw3G39DVhe3
+	7KFD6mUDKGZoiUv3iwDLbuUi3OIpHhM7d/LWFP/Qs76Lg88lqlwypuzJ4u3npJ3k0MLE6C8
+	1rG96Vk4eVibehemD4Q1r0Ul1XeVWgGKXakegXEp1XfZ8AaD5jmzx3J2EK4Zc1YY4iRge3H
+	6BFw==
+X-QQ-MAILINFO: MfiUJyQXz1c0sQ6M/Q+Jm6o0IhgFTXBNaIDV4AVVVpFnu5stCCsaHCT4W
+	7yqTbvVadoeDhnjBlLJz0xCRJj9RNfq8wEd9Bfjds+biJaiO+Z9SbHA1TB3mbE9qrcHs7E1
+	HrevWYGbFsIU
+X-QQ-mid: mx56t1457766830txd59w0mk
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=o60qZ
+	LGob+l3NMYkQSgGKRigTe+KWct3OH6A+qoyH+A=; b=Z5KzKecRrZYf2dj0O37Gz
+	kE/7PD8wLSKUNkYHFBPFdlupB1eGwnAxEXbsoECtXhvQ8/vVKa99pGLwD86oFROB
+	hOoe9oWTimkj8xggGw1qhRCLRp4c0C4OFlfJOG+EE2/N4VfVhTE7ZkkZwIZ0TTs3
+	VWoOTvIYjF3vvbbwGZmcfE=
+Received: from localhost (unknown [14.29.97.135])
+	by smtp10 (Coremail) with SMTP id DsCowACHxd6nweNWiRhwAQ--.48343S2;
+	Sat, 12 Mar 2016 15:13:44 +0800 (CST)
+Date: Sat, 12 Mar 2016 15:13:42 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <981512273.0.1457766823213.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DsCowACHxd6nweNWiRhwAQ--.48343S2
+X-Coremail-Antispam: 1Uf129KBjvAXoW3tF4rAryUCF4UZr13XFy3twb_yoW8ArWfuo
+	WUZr1UAr1UGr17Jr1UJryUJry7tr45Jr1UWr1UGr4UGF1UJa17Jr1UJw1DGr15Jw15Jr1U
+	Ar1DAw1UJryUJr1Un29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73VFW2AGmfu7bjvjm3
+	AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUczV1UUUUU
+X-Originating-IP: [14.29.97.135]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEAoqFFUL7MAU1gAAsU
+
+Agile
+com.sauce.agile/com.sauce.agile.activity.TasklerActivity
+------------------------------
+Alarm Clock Xtreme
+com.alarmclock.xtreme/com.alarmclock.xtreme.AlarmClock
+------------------------------
+Android=E9=80=9A=E8=AF=9D=E6=8C=AF=E5=8A=A8
+com.gzplanet.xposed.xperiaphonevibrator/com.gzplanet.xposed.xperiaphonevibr=
+ator.XposedSettings
+------------------------------
+Apex Launcher
+com.anddoes.launcher/com.anddoes.launcher.Launcher
+------------------------------
+Apex Notifier
+com.anddoes.notifier/com.anddoes.notifier.SettingsActivity
+------------------------------
+Asphalt Nitro
+com.gameloft.android.FVGL.GloftANIM/com.gameloft.android.FVGL.GloftANIM.Mai=
+nActivity
+------------------------------
+Audio Tuner
+net.oneplus.audiotuner/net.oneplus.audiotuner.activity.MainActivity
+------------------------------
+BallMaze
+com.oprisnik.ballmaze/com.oprisnik.ballmaze.ui.StartActivity
+------------------------------
+Browser
+org.notphenom.swe.browser/org.notphenom.swe.browser.Main
+------------------------------
+CandyCons
+com.zavukodlak.candycons/com.zavukodlak.candycons.HomeActivity
+------------------------------
+ColorShamu
+com.shiunghanching.colorshamu/com.shiunghanching.colorshamu.MainActivity
+------------------------------
+Complete Action Plus
+hk.valenta.completeactionplus/hk.valenta.completeactionplus.MainPagerActivi=
+ty-Alias
+------------------------------
+Do Now
+com.slamtastic.donow.app/com.slamtastic.donow.app.MainActivity
+------------------------------
+Doze
+com.yirgalab.dzzz/com.yirgalab.dzzz.main.MainActivity
+------------------------------
+Eye In Sky
+com.citc.weather/com.citc.weather.activities.Main
+------------------------------
+Flava
+net.greenmon.flava/net.greenmon.flava.app.activity.FlavaLauncher
+------------------------------
+Floatifications
+robj.floating.notifications/ui.main.HomeActivity
+------------------------------
+Floating Calc (Lite)
+com.ashk.minifloatingcalculator.lite/com.ashk.minifloatingcalculator.lite.F=
+loatingCalculatorActivity
+------------------------------
+Floating Notes (Lite)
+com.ashk.minifloatingnotes.lite/com.ashk.minifloatingnotes.lite.FloatingNot=
+esActivity
+------------------------------
+Flynx
+com.flynx/com.flynx.MainActivity
+------------------------------
+Glow Connect
+com.epicpixel.dots/com.epicpixel.dots.MainActivity
+------------------------------
+Google=E8=AE=BE=E7=BD=AE
+com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsAc=
+tivity
+------------------------------
+GravityBox[LP]
+com.ceco.lollipop.gravitybox/com.ceco.lollipop.gravitybox.GravityBoxSetting=
+sAlias
+------------------------------
+Habit Browser
+jp.ddo.pigsty.HabitBrowser/jp.ddo.pigsty.HabitBrowser.Features.Browser.Brow=
+serActivity
+------------------------------
+HikiPlayer Pro
+com.kazufukurou.hikiplayer.pro/com.kazufukurou.hikiplayer.ui.MainActivity
+------------------------------
+Hybrid Stopwatch and Timer
+com.hybrid.stopwatch/com.hybrid.stopwatch.HybridStopwatch
+------------------------------
+Inputting+
+com.catchingnow.undo/com.catchingnow.undo.activity.SplashScreenActivity
+------------------------------
+Iride UI
+com.Fraom.IrideUI/com.Fraom.IrideUI.LicenseActivity
+------------------------------
+Jota+
+jp.sblo.pandora.jota.plus/jp.sblo.pandora.jotaplus.Main
+------------------------------
+Kiwi UI
+com.Fraom.KiwiUI/com.Fraom.KiwiUI.LicenseActivity
+------------------------------
+Lamp'n'Vamp
+air.com.globz.lampvamp/air.com.globz.lampvamp.AppEntry
+------------------------------
+Lazors
+net.pyrosphere.lazors/net.pyrosphere.lazors.AppActivity
+------------------------------
+Lightning
+acr.browser.lightning/acr.browser.lightning.activity.MainActivity
+------------------------------
+Little Red Hood
+air.com.pandazone.littleredhood/air.com.pandazone.littleredhood.AppEntry
+------------------------------
+LockScreen
+wq.lockscreen/wq.lockscreen.MainActivity
+------------------------------
+LollyDrop
+almrdesigns.lollydrop/com.almrdesigns.lollydrop.HomeActivity
+------------------------------
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+MeteoEarth
+com.mg.meteoearth/com.mg.meteoearth.MainActivity
+------------------------------
+MinMinGuard
+tw.fatminmin.xposed.minminguard/tw.fatminmin.xposed.minminguard.ui.MainActi=
+vity
+------------------------------
+MyAndroidTools
+cn.wq.myandroidtools/cn.wq.myandroidtools.MainActivity
+------------------------------
+Nucleo UI
+com.Fraom.NucleoUI/com.Fraom.NucleoUI.LicenseActivity
+------------------------------
+Number Link
+br.com.tapps.numberlink/com.ansca.corona.CoronaActivity
+------------------------------
+Office Lens
+com.microsoft.office.officelens/com.microsoft.office.apphost.LaunchActivity
+------------------------------
+Opera
+com.opera.browser/com.opera.Opera
+------------------------------
+OriLand2
+com.Slothmachine.OriLand/com.unity3d.player.UnityPlayerProxyActivity
+------------------------------
+Outlook
+com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity
+------------------------------
+Per App Hacking
+org.t2k269.perapphacking/org.t2k269.perapphacking.TabsActivity
+------------------------------
+PerfectColorBar
+com.flarejune.perfectcolorbar/com.flarejune.perfectcolorbar.ui.actMain
+------------------------------
+Piktures
+com.diune.pictures/com.diune.pictures.ui.Bridge
+------------------------------
+Pix
+air.net.daum.pix/air.net.daum.pix.AppEntry
+------------------------------
+Pixlr
+com.pixlr.express/com.pixlr.express.StartupActivity
+------------------------------
+Pocket
+com.ideashower.readitlater.pro/com.ideashower.readitlater.activity.AppCache=
+CheckActivity
+------------------------------
+Pudding Monsters HD
+com.zeptolab.monsters.paid.google/com.zeptolab.mvsl.MVSLActivity
+------------------------------
+QQ=E8=BD=BB=E8=81=8A=E7=89=88
+com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+SD Maid
+eu.thedarken.sdm/eu.thedarken.sdm.SDMMainActivity
+------------------------------
+SMSAlarm
+com.nebkat.smsalarm/com.nebkat.smsalarm.SetupActivity
+------------------------------
+Skitch
+com.evernote.skitch/com.evernote.skitch.app.SwipeNavActivity
+------------------------------
+Smart AppLock
+com.sp.protector.free/com.sp.protector.free.StartActivity
+------------------------------
+Smart Connect=E2=84=A2
+com.sonyericsson.extras.liveware/com.sonyericsson.extras.liveware.ui.Launch=
+Activity
+------------------------------
+Snapseed
+com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+Squarge
+pl.elph.squargepro/pl.elph.squargepro.GameActivity
+------------------------------
+Study Checker PRO
+com.mjsoft.apps.sc/com.mjsoft.libs.sc.main.activity.S2MainActivity
+------------------------------
+Subway Surf
+com.kiloo.subwaysurf/com.kiloo.unityutilities.UnityPluginActivity
+------------------------------
+SuperBeam
+com.majedev.superbeam/com.liveqos.superbeam.ui.send.SendActivity
+------------------------------
+SwiftOpen
+apps.ipsofacto.swiftopen/apps.ipsofacto.swiftopen.SwiftOpenActivity
+------------------------------
+TeslaLED
+com.teslacoilsw.flashlightDonate/com.teslacoilsw.flashlight.TeslaLED
+------------------------------
+Textra
+com.textra/com.mplus.lib.Main_ff009688
+------------------------------
+Tinted Recent Panels
+com.mohammadag.tintedrecentpanels/com.mohammadag.tintedrecentpanels.MainAct=
+ivity
+------------------------------
+Tomi=E6=96=87=E4=BB=B6=E7=AE=A1=E7=90=86=E5=99=A8
+com.tomitools.filemanager/com.tomitools.filemanager.ui.activities.LaunchAct=
+ivity
+------------------------------
+Two Dots
+com.weplaydots.twodotsandroid/com.appboy.unity.prime31compatible.AppboyUnit=
+yPlayerNativeActivity
+------------------------------
+Uber
+com.ubercab/com.ubercab.UBUberActivity
+------------------------------
+WPS Office
+cn.wps.moffice_eng/cn.wps.moffice.documentmanager.PreStartActivity
+------------------------------
+Wakelock Detector Free
+com.uzumapps.wakelockdetector/com.uzumapps.wakelockdetector.activity.IntroA=
+ctivity
+------------------------------
+Wallmax
+in.alphawolf.wallmax/in.alphawolf.wallmax.MainActivity
+------------------------------
+WeChange
+bos.xposed.wechange/bos.xposed.wechange.SettingsActivityLauncher
+------------------------------
+Winter Fugitives
+com.heavyboat.stealth/com.heavyboat.stealth.StealthActivity
+------------------------------
+Wrestle Jump
+com.ottoojala.wrestlejumpfree/com.unity3d.player.UnityPlayerProxyActivity
+------------------------------
+X-plore
+com.lonelycatgames.Xplore/com.lonelycatgames.Xplore.Browser
+------------------------------
+Xposed Installer
+de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeAc=
+tivity
+------------------------------
+Xposed=E5=AE=89=E8=A3=85=E5=99=A8
+com.wuxianlin.xposedinstaller/com.wuxianlin.xposedinstaller.MainActivity
+------------------------------
+aTimeLogger
+com.aloggers.atimeloggerapp/com.aloggers.atimeloggerapp.ui.MainActivity
+------------------------------
+jetAudio Plus
+com.jetappfactory.jetaudioplus/com.jetappfactory.jetaudioplus.MusicBrowserA=
+ctivity
+------------------------------
+=E5=BF=85=E5=BA=94=E8=BE=93=E5=85=A5=E6=B3=95
+com.bingime.ime/com.bingime.wizard.SetupWizardActivity
+------------------------------
+=E5=86=B0=E7=AE=B1
+com.catchingnow.icebox/com.catchingnow.icebox.activity.MainActivity
+------------------------------
+=E8=B6=85=E7=BA=A7=E6=8E=88=E6=9D=83
+eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Material
+------------------------------
+=E8=B6=85=E5=8D=93=E6=96=87=E6=9C=AC=E7=BC=96=E8=BE=91=E5=99=A8
+com.chaozhuo.texteditor/com.chaozhuo.texteditor.activity.TextEditorMainActi=
+vity
+------------------------------
+=E8=BD=A6=E6=9D=A5=E4=BA=86
+com.ygkj.chelaile.standard/dev.xesam.chelaile.app.module.func.SplashActivit=
+y
+------------------------------
+=E5=A4=A7=E5=AE=B6=E4=B8=AD=E5=8C=BB
+com.dajiazhongyi.dajia/com.dajiazhongyi.dajia.ui.DaJiaLauncher
+------------------------------
+=E6=BB=B4=E7=AD=94=E7=95=AA=E8=8C=84
+com.ticktick.tomato/com.ticktick.tomato.activities.MainActivity
+------------------------------
+=E6=BB=B4=E7=AD=94=E6=B8=85=E5=8D=95
+cn.ticktick.task/com.ticktick.task.activity.MeTaskActivity
+------------------------------
+=E6=BB=B4=E6=BB=B4=E5=87=BA=E8=A1=8C
+com.sdu.didi.psnger/com.didi.sdk.splash.SplashActivity
+------------------------------
+=E5=9C=B0=E5=9B=BE
+com.meizu.net.map/com.meizu.net.map.MainMapActivity
+------------------------------
+=E7=94=B5=E8=AF=9D
+com.android.dialer/com.android.dialer.DialtactsActivity
+------------------------------
+=E5=AE=9A=E6=97=B6=E5=99=A8+
+com.minimasoftware.timerplus/com.minimasoftware.timerplus.activities.MainAc=
+tivity
+------------------------------
+=E4=B8=9C=E6=96=B9=E6=96=B0=E4=B8=96=E7=95=8C
+cn.ten10.games.tenw/com.unity3d.player.UnityPlayerNativeActivity
+------------------------------
+=E7=95=AA=E8=8C=84ToDo
+com.plan.kot32.tomatotime/com.plan.kot32.tomatotime.activity.SplashActivity
+------------------------------
+=E6=A0=BC=E7=9F=A5GUECHI
+com.guechi.app/com.guechi.app.view.activitys.StartActivity
+------------------------------
+=E5=B9=BF=E5=91=8A=E5=BF=AB=E8=B5=B0
+org.adawaycn/org.adawaycn.ui.BaseActivity
+------------------------------
+=E8=AE=A1=E5=88=92=E7=94=B5=E5=BD=B1
+com.lyx.doubanrener.doubanrener/com.lyx.doubanrener.doubanrener.Splash
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+=E5=89=AA=E7=BA=B8=E5=A0=86
+com.catchingnow.tinyclipboardmanager/com.catchingnow.tinyclipboardmanager.a=
+ctivity.ActivityMain
+------------------------------
+=E9=87=91=E5=B1=B1=E8=AF=8D=E9=9C=B8
+com.kingsoft/com.kingsoft.StartActivity
+------------------------------
+=E8=BF=9B=E5=8C=96=E4=B9=8B=E5=9C=B0
+air.com.shirogames.evoland12/air.com.shirogames.evoland12.AppEntry
+------------------------------
+=E9=9D=99=E8=AF=BB=E5=A4=A9=E4=B8=8B=E4=B8=93=E4=B8=9A=E7=89=88
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+=E8=81=9A=E4=BC=9A=E7=8E=A9
+com.tengchong.juhuiwan/com.tengchong.juhuiwan.Juhuiwan
+------------------------------
+=E9=85=B7=E6=9F=A5
+com.coolapk.searchbox/com.coolapk.searchbox.ui.MainActivity
+------------------------------
+=E9=85=B7=E5=B8=82=E5=9C=BA
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+=E4=B8=B4=E5=BA=8A=E6=8C=87=E5=8D=97
+cn.medlive.guideline.android/cn.medlive.guideline.activity.LoadingActivity
+------------------------------
+=E6=B5=81=E6=B0=93=E7=BB=88=E7=BB=93=E8=80=85
+com.rexpress.xposed.malwarebuster/com.rexpress.xposed.malwarebuster.MainAct=
+ivity
+------------------------------
+=E7=BB=BF=E8=89=B2=E5=AE=88=E6=8A=A4
+com.oasisfeng.greenify/com.oasisfeng.greenify.GreenifyActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.google.android.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.htc.calendar/com.htc.calendar.CalendarActivityMain
+------------------------------
+=E8=AE=BE=E7=BD=AE
+com.android.settings/com.android.settings.Settings
+------------------------------
+=E7=94=9F=E5=91=BD=E7=BA=BF
+com.threeminutegames.lifeline.google_pj/com.pujia8.Main
+------------------------------
+=E7=94=9F=E5=91=BD=E7=BA=BF 2
+com.threeminutegames.lifeline2.goog.pj/com.pujia8.logo
+------------------------------
+=E6=97=B6=E9=92=9F
+com.google.android.deskclock/com.android.deskclock.DeskClock
+------------------------------
+=E6=89=8B=E6=9C=BA=E4=B9=90=E5=9B=AD
+cn.com.shouji.market/cn.com.shouji.market.MainTabActivity
+------------------------------
+=E9=9A=8F=E7=AC=94=E8=AE=B0
+org.dayup.gnotes/org.dayup.gnotes.GNotesListActivity
+------------------------------
+=E8=B4=AA=E5=A9=AA=E6=B4=9E=E7=AA=9F
+com.avalon.cave/org.cocos2dx.cpp.AppActivity
+------------------------------
+=E9=80=9A=E8=AF=9D=E8=AE=BE=E7=BD=AE
+com.waynell.dialerbox/com.waynell.dialerbox.SettingsActivity
+------------------------------
+=E9=80=9A=E8=AE=AF=E5=BD=95
+com.android.contacts/com.android.contacts.activities.PeopleActivity
+------------------------------
+=E6=8C=96=E8=B4=A2=E8=AE=B0=E8=B4=A6=E7=90=86=E8=B4=A2
+com.wacai365/com.wacai365.LauncherActivity
+------------------------------
+=E7=BD=91=E6=98=93=E4=BA=91=E9=9F=B3=E4=B9=90
+com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+=E6=96=87=E4=BB=B6
+com.android.documentsui/com.android.documentsui.DocumentsActivity
+------------------------------
+=E4=B8=8B=E8=BD=BD
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadList
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.google.android.GoogleCamera/com.android.camera.CameraLauncher
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.oneplus.camera/com.oneplus.camera.OPCameraActivity
+------------------------------
+=E6=98=9F=E5=B0=98=E6=B5=8F=E8=A7=88=E5=99=A8
+com.chaozhuo.browser_phone/org.chromium.chrome.shell.ui.ChaoZhuoActivity
+------------------------------
+=E5=B9=B8=E8=BF=90=E7=A0=B4=E8=A7=A3=E5=99=A8
+com.android.vending.billing.InAppBillingService.LUCK/com.android.vending.bi=
+lling.InAppBillingService.LUCK.MainActivity-Original
+------------------------------
+=E5=BE=AA=E7=8E=AF=E4=B9=A0=E6=83=AF=E8=AE=B0=E5=BD=95
+org.isoron.uhabits/org.isoron.uhabits.MainActivity
+------------------------------
+=E5=BA=94=E7=94=A8=E6=B1=87
+com.yingyonghui.market/com.yingyonghui.market.activity.SplashActivity
+------------------------------
+=E4=B8=AD=E5=8C=BB=E8=AF=86=E6=96=B9
+com.sogou.shifang/com.sogou.shifang.activity.SplashActivity
+------------------------------
+=E9=98=BB=E6=AD=A2=E8=BF=90=E8=A1=8C
+me.piebridge.forcestopgb/me.piebridge.prevent.ui.PreventActivity
+------------------------------
+=E5=9D=90=E8=BD=A6=E7=BD=91
+com.ourlinc/com.ourlinc.zuoche.ui.WelcomeActivity
+------------------------------
+=E9=96=B1=E8=AE=80=E7=A9=BA=E6=B0=A3
+com.iasolution.games.kysp.zhtw/com.unity3d.player.UnityPlayerProxyActivity
+------------------------------
+=E9=96=B1=E8=AE=80=E7=A9=BA=E6=B0=A32
+net.iasolution.games.kysp2.zhtw.googleplay.paid/com.unity3d.player.UnityPla=
+yerProxyActivity
+------------------------------
+=E8=81=86=E9=9B=A8
+com.gracecode.android.rain/com.gracecode.android.rain.ui.MainActivity
+------------------------------
+=E9=9D=93=E6=99=92
+ooo.oxo.apps.materialize/ooo.oxo.apps.materialize.MainActivity
+------------------------------
+
+

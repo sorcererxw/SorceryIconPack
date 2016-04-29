@@ -1,0 +1,57 @@
+Received: from m12-14.163.com (unknown [220.181.12.14])
+	by newmx103.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 11:43:49 +0800
+X-QQ-FEAT: pQslgWCixdaRAh5tDt5tG3Anv74bG7akuLdG9rNvuuoSPKwSC+z3oVYbvkfy2
+	5rXGlar3VNQjxAxs0Iag6JzAM0L4MZyqjrmi3pMZGRnf8xvn31fM6vtokvgU7qltcc1BpW5
+	17hthbPSeDFgMjxJPRAxZN+4REGYlmkeS93jiJkGCdENvxfLx3VEdx7eB/oLabm2ldPa7gi
+	PCavsHC2De0Mgp2ffdyyC6+QSCX3gNgps6VWvyh1Wanpyyn59/0yN
+X-QQ-MAILINFO: M9mpTqh4QKvqg26X+Aw5pTX16/2b/DVIm6Fwg9uwR2rbqZnvFX2TMafh+
+	Halgyetdcd4JTM8ujAUcZn5Dmt/l9mnOpTHe6cnzKu/XxBTDBWyD2RZaN5CLY7dOkn9GrBf
+	SdCpA7aJtpHpIEMb5yCjQt0=
+X-QQ-mid: mx103t1457495029tmqa0yqs4
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=dkdIW
+	5nVe3HTI5avVWhigxZuidaoB07c3Elgm1+WgEs=; b=fnPNabdlxEJAy8vjptX/O
+	6q21PFdzC32hM/9prNNJPGS+JJvtsL+q+5i5eg4JZLZ+crcjeW05gxRSMYccJAlA
+	RWOfBWfwDfvEClSz3N2d9QCu1FYbKJNSlxgS1rcAEUIgxqFoIjMTM7vtE3uS4za6
+	vYt1tuQMA4P9jlQEmryAQY=
+Received: from localhost (unknown [222.211.175.207])
+	by smtp10 (Coremail) with SMTP id DsCowAAXtwTgm99WkZVHAA--.38368S2;
+	Wed, 09 Mar 2016 11:43:35 +0800 (CST)
+Date: Wed, 9 Mar 2016 11:43:28 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <50493367.0.1457495009256.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DsCowAAXtwTgm99WkZVHAA--.38368S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7GF1kXFWkXry3AFy3WrykZrb_yoWxurX_Ja
+	4UJF1UJr47Jr4DGr45JF1UJw4xXr1UJr1UWr4UJr47Jr92qr48tr1qyr45WrnrXr48Jr17
+	tFn8JF13Xr1UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUnxb1UUUUUU==
+X-Originating-IP: [222.211.175.207]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEgwnFFZXwfa-PQAAsZ
+
+58=E8=BF=9D=E7=AB=A0=E6=9F=A5=E8=AF=A2
+com.wuba.weizhang/com.wuba.weizhang.ui.activitys.HomeActivity
+------------------------------
+HiLink
+com.huawei.mw/com.huawei.mw.plugin.guide.activity.GuideActivity
+------------------------------
+Smooth
+com.mzba.happy.laugh/com.mzba.happy.laugh.SplashActivity
+------------------------------
+cnBeta Plus
+com.ywwxhz.cnbetareader/com.ywwxhz.activitys.MainActivity
+------------------------------
+=E5=9D=9A=E6=9E=9C=E4=BA=91
+nutstore.android/nutstore.android.SplashScreen
+------------------------------
+=E7=9F=A5=E8=B6=A3=E5=A4=A9=E6=B0=94
+com.metek.zqWeather/com.metek.zqWeather.activity.WelcomeActivity
+------------------------------
+
+

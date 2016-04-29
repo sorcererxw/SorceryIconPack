@@ -1,0 +1,69 @@
+Received: from m12-13.163.com (unknown [220.181.12.13])
+	by newmx19.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 16:10:35 +0800
+X-QQ-FEAT: JIAKDmcNCRUdgA39M7fmkOMQuZF0X/fX5W04Vjp0fz6DZY074ZvngTvt9q1GZ
+	6If9vCR1zeGNeWqfuBXncDdm8WEJQ8kYh+WcHFsqz22GUTxXyZLwjowqYYxD/IrDyLPWadn
+	vCMSs+huQBQtnMTxV7zyjEvu2WBb99z4goh+2vUv4RT/utCB+B6y1E4raRlX8iwC1ty4Iuq
+	03O8se3oaWGbxeX/WCfs6PHXRQtygbtucu5isMGqJp6A5imo9x8hN
+X-QQ-MAILINFO: ObpyOLNbESSkyw+fixUhvYwXvgWd0m48/WCBcfqIQB3Q/W/zH2hNowZ+l
+	AMg2ruI63w8zCcikm+l2CdABRH2jhISqbi4Z9zynfpRN4sjFluDziQRLLCMKSeVYMQoTu+B
+	NCgy63Lnf+D+
+X-QQ-mid: mx19t1457770236tqoalgo70
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=QUkjH
+	TamRyhvOZZ6bJBjzLm4IiQnZcr9W//kiEJ65fA=; b=abQhJtlfJvwhJ67UlYtmd
+	BiqbBeYxHCF0o6uFPISJsHuPSnFkGagsXlkFpp3WYOD742uXMVXt0L2VOPQuyG31
+	4V1gAuIRweT/8t+yMTJTbyO/E3HKxV6eVvHb72T5g4Nr5H3/LkXbYUcG/0JiUOu/
+	3U1qKnwU6jJqCds6p2jZx0=
+Received: from localhost (unknown [218.76.128.86])
+	by smtp9 (Coremail) with SMTP id DcCowAAXBkP5zuNWhv1eAQ--.78S2;
+	Sat, 12 Mar 2016 16:10:35 +0800 (CST)
+Date: Sat, 12 Mar 2016 16:10:32 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <186986451.0.1457770233225.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DcCowAAXBkP5zuNWhv1eAQ--.78S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWruw4fCrykKry8uw17tw4DCFg_yoWktrX_JF
+	yUJF1UJr4UAryDGr1UJF15Aw40qFyUJryUJr1UJr47JFnrAr1jqr1Dtr45WrnrXryUJr47
+	tF1UJF13Jr1UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU88nY7UUUUU==
+X-Originating-IP: [218.76.128.86]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEAcqFFWBUI-JXAABs2
+
+LOFTER
+com.lofter.android/com.lofter.android.activity.SplashActivity
+------------------------------
+Prune
+com.Polyculture.Prune/com.unity3d.player.UnityPlayerNativeActivity
+------------------------------
+Speedtest
+org.zwanoo.android.speedtest/com.ookla.speedtest.softfacade.MainActivity
+------------------------------
+XyKey
+com.naxy.xykey/com.naxy.xykey.activities.ActivityMain
+------------------------------
+=E5=9D=8F=E7=94=B7=E5=AD=A9
+com.mei.melkor/com.mei.melkor.ui.SplashActivity
+------------------------------
+=E9=9D=99=E8=AF=BB=E5=A4=A9=E4=B8=8B=E4=B8=93=E4=B8=9A=E7=89=88
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+=E6=9D=A5=E7=94=B5=E4=BF=A1=E6=81=AF
+org.xdty.callerinfo/org.xdty.callerinfo.activity.MainActivity
+------------------------------
+=E6=B5=81=E9=87=8F=E9=93=B6=E8=A1=8C
+com.flowbank.wo/com.flowbank.wo.activity.WelcomeActivity
+------------------------------
+=E8=90=8C=E5=A8=98=E7=99=BE=E7=A7=91 =CE=B1
+org.moegirl.moegirlview/org.moegirl.moepad.SplashActivity
+------------------------------
+=E5=95=AA=E5=95=AA=E6=B8=B8=E6=88=8F=E5=8E=85
+com.join.android.app.mgsim/com.join.mgps.activity.SplashActivity_
+------------------------------
+
+

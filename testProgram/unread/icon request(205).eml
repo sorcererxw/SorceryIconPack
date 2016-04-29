@@ -1,0 +1,70 @@
+Received: from m12-12.163.com (unknown [220.181.12.12])
+	by newmx104.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 21:39:22 +0800
+X-QQ-FEAT: 0ESs8nxzjD9HuI1ayNvZHhwLLdFkw3RkjwJUNU1nndahI3UYO8oJWniP9npL9
+	+mmlNqUuO1rZ/XO8WfbxVbUYLt1mOvFyC2rM+VF2+gKTVjszggpxaWTR0jSYplUaihphDuS
+	qYrbZVWlvmNbqPW0d+M4ijo6MfUIdrp2Zllh0E2BqQOZlQe+om7VzO3zgNIJMdS67cwJhst
+	2dDvZfq9wnTj2doUlnpHuY7dz1zuC6/XrcZfjIQVJk73y8uzDbGMV
+X-QQ-MAILINFO: M9mpTqh4QKvqg26X+Aw5pTWEPpW22zfO3hZ0ssjvZJ0DmYe7PUe/8aA5f
+	5TneSfy6Y13mIWP9OVGX4mKIK/SLjqb4LnFJywiof60vi8otVwoBO6fWC6nchtScLuKR/Z+
+	ophS6t7q1UwQ
+X-QQ-mid: mx104t1457703562te19i8bmz
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=6RUo1
+	U651+NtazePrcht9ZZzbMqpEdDkeI/JVaYEJY4=; b=JwRlWdWZv36t9dEgB8Yzg
+	Lu319PvfRJTBdqNCqoPduN+Zi1cOBMreSJymkXd9V/lcmrpPOFULAniEqgoyleKg
+	12hWLneONMuQU71sWewsxe/k0d+4h31RPYcgBWcU8xUSL189yzEGN73fkF+spuuu
+	QiIeyi90nQYhfhu3nYtGyg=
+Received: from localhost (unknown [114.222.140.21])
+	by smtp8 (Coremail) with SMTP id DMCowADH5TaFyuJWLwQiAQ--.13495S2;
+	Fri, 11 Mar 2016 21:39:19 +0800 (CST)
+Date: Fri, 11 Mar 2016 21:39:18 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <1110519952.0.1457703558624.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DMCowADH5TaFyuJWLwQiAQ--.13495S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrZF1Duw4rXryUZr43Xr4fZrb_yoWktrg_JF
+	yUJF15Jr47Ar1UJr1UJry5Aw4rXr4UJr1UJw1xJr43JrnrJ3WkXF1DtF4UZr1DXrW8GF1j
+	yF1UJr13Jr4UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8cTmDUUUUU==
+X-Originating-IP: [114.222.140.21]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEhEpFFZXwijN2wABsC
+
+Faceu
+com.lemon.faceu/com.lemon.faceu.login.LoadingPageActivity
+------------------------------
+=E5=82=B2=E6=B8=B8=E4=BA=91=E6=B5=8F=E8=A7=88=E5=99=A8
+com.mx.browser/com.mx.browser.MxBrowserActivity
+------------------------------
+=E4=B8=9C=E5=8D=97=E5=A4=A7=E5=AD=A6
+cn.edu.seu.iportal/com.sudytech.iportal.WelcomeActivity
+------------------------------
+=E6=AC=A2=E4=B9=90=E6=96=97=E5=9C=B0=E4=B8=BB
+com.qqgame.hlddz/com.qqgame.hlddz.NewHLDDZ
+------------------------------
+=E7=9A=87=E5=AE=A4=E6=88=98=E4=BA=89
+com.supercell.clashroyale/com.supercell.clashroyale.GameApp
+------------------------------
+=E5=BF=AB=E9=80=92100
+com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceAct=
+ivity
+------------------------------
+=E6=B5=A6=E5=8F=91=E4=BF=A1=E7=94=A8=E5=8D=A1
+com.spdbccc.app/com.spdbccc.app.activity.splash.SplashActivity
+------------------------------
+=E8=B5=B7=E7=82=B9=E8=AF=BB=E4=B9=A6
+com.qidian.QDReader.g/com.qidian.QDReader.SplashActivity
+------------------------------
+=E4=B8=AD=E5=9B=BD=E9=93=B6=E8=A1=8C
+com.chinamworld.bocmbci/com.chinamworld.bocmbci.biz.GuidePageActivity
+------------------------------
+=E4=B8=AD=E9=93=B6=E6=98=93=E5=95=86
+com.boc.bocop.container/com.boc.bocop.container.activity.SplashActivity
+------------------------------
+
+

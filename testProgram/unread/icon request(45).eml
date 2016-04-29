@@ -1,0 +1,63 @@
+Received: from m12-18.163.com (unknown [220.181.12.18])
+	by newmx78.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 15:51:57 +0800
+X-QQ-FEAT: QX/rXDl9P1sKxPbBbU8a1pMioBdSBbt5YqvTpPmizYsZI5TvTT7fyk3iRhrIa
+	zJutRv5C0YsEJzQpd28Paco0Pd2Qg2pZHOlyrnM+FvHKMeLvuHlzFXxArsCm8JhQ3CttenF
+	EXSbs4MxYtgLDWcEgncBu5aTUCx4v/xZwhWdjEiT9hINguSYRSqV8GMXeCOhcV6gmGQmTmf
+	23p0QsVaMRUlcakUeIa2fMn/+yqQVTslKOZUyek2ATw==
+X-QQ-MAILINFO: MjJD59SVx+LnloXR9O/7OV2c6/t4CxLWox5cG+hKi2tezMSpBlGnyu5KO
+	67dwVZl+58hkSmCvTuwO3x4hf2o2h9ZiIKsA9noUzpyKUBK4rZeVtz8+b+hDdlHrMHWWW7j
+	uj6M+SkF9xm/I9iRkaeYNBI=
+X-QQ-mid: mx78t1457855518tk1x8l3kz
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=HRiYF
+	nNAva3i5yVSyReF4/spM/x4T/EiJKCns5/6pjc=; b=oEfsJL6OWR6Lu12A7U6Eq
+	ChfMG3jD3jwy3Oxwul+UAGdlbJLFF7YQEYB1jmu2dzJmH0Sr1hmS2jWAZaMi9fe+
+	AlfoBoiLq6DSWqzk3pihipx/dVq2q4gbnc1Gvpq1dNB4B5TrvPXzj7XiGica2NMg
+	48f1/tz2M+d9Y1f8klVWGA=
+Received: from localhost (unknown [110.83.239.159])
+	by smtp14 (Coremail) with SMTP id EsCowEBp7kMaHOVWSDojAA--.23529S2;
+	Sun, 13 Mar 2016 15:51:56 +0800 (CST)
+Date: Sun, 13 Mar 2016 15:51:53 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <95326936.0.1457855514066.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:EsCowEBp7kMaHOVWSDojAA--.23529S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7GrWDXw15Xw1kuF4kWr43Awb_yoWftrg_Ja
+	4UJ3WUJrWUJr1UXr18Jw15Jw18XryDJr1UJr4UJr47Jrn7Ar1UJr1Dtr45WrnrXw1UJF12
+	yFn8Jr13JF1UKjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8y8BUUUUUU==
+X-Originating-IP: [110.83.239.159]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEhwrFFZXwkRD+gAAsP
+
+Groups
+com.zhihu.group.android/com.zhihu.group.android.ui.activity.GuideActivity
+------------------------------
+Parchi
+com.microsoft.bites/com.microsoft.ui.LandingActivity
+------------------------------
+=E9=98=BF=E9=87=8C=E9=92=B1=E7=9B=BE
+com.ali.money.shield/com.ali.money.shield.activity.WelcomeActivity
+------------------------------
+=E4=B8=8D=E6=A0=BC
+com.vbuge/com.vbuge.main.view.PrefaceActivity
+------------------------------
+=E4=BD=95=E6=97=B6
+bos.consoar.countdown/bos.consoar.countdown.ui.MainActivity
+------------------------------
+=E8=8D=A3=E8=80=80=E7=A4=BC=E5=8C=85
+com.huawei.appmarket.honorgift/com.huawei.appmarket.honorgift.MainActivity
+------------------------------
+=E8=88=92=E5=BF=83=E5=BD=95
+com.myatejx.sakernote/com.myatejx.sakernote.gui.AtyNoteMain
+------------------------------
+=E8=B0=81=E6=98=AF=E5=8D=A7=E5=BA=95
+com.wepie.wespy/com.wepie.wespy.module.login.start.StartActivity
+------------------------------
+
+

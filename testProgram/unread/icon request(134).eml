@@ -1,0 +1,43 @@
+Received: from m50-133.163.com (unknown [123.125.50.133])
+	by newmx99.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 08:42:34 +0800
+X-QQ-FEAT: 0IrakC4z2PSD1k2kiq/LlBJFQh02RMQsn5Gp6SDd0p/hfF39eUcJdb2jT0Lx8
+	USkTkRhNkvCVxSvzAfqxVgP3dr7u0uzldXoiQhVxtL7xTtOiW+YdmcjUDvoMhFA3KmjgH6T
+	N++C+O82CqwUanjBc7z1iPDkBPRvtKA9C2anN2S2CJrSLimT6tid/WWa85HVG5RA8TUVtRw
+	rOYnscs8K7KsuGeJTmBUDJ7Y4fJ/4toM=
+X-QQ-MAILINFO: MfiUJyQXz1c0uTa/knlyUxAn5XSCTHm3OHc0uWbFYYWYk4CkcoC7l/pw4
+	rnnaKjHyK4kW8W/vo+kBpuaq9de3fgJ1RzvH+KVmcOejGk4JX8FGjFMmKhLw9L0zPAq8DBs
+	ysjJivZHXUoE
+X-QQ-mid: mx99t1457743355tjva8771s
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=RR3zp
+	wUnqu6PNP6EN56+0rjBzlmmtUDYQhNW8zYYb7s=; b=A80c4+21v9YkSAcHWUSWR
+	VQV72uucmGP776Bdv6zYBF2f1W7NLHiEIFywAJi9FCGr2S+fb2A7+bk78YclO1yQ
+	J7CQ2N5tQIYLZUNIqUnboZVr69Ygj6xKp+9Y0v7LNvA9dvlLFHOyUKwQeId/hEL7
+	xXZj4fz4bIq3mmYxHW7rVw=
+Received: from localhost (unknown [163.125.35.78])
+	by smtp3 (Coremail) with SMTP id DdGowEAZyEL4ZeNWqDo_AA--.29106S2;
+	Sat, 12 Mar 2016 08:42:33 +0800 (CST)
+Date: Sat, 12 Mar 2016 08:42:24 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <582880091.0.1457743345468.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-CM-TRANSID:DdGowEAZyEL4ZeNWqDo_AA--.29106S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU2IJmUUUUU
+X-Originating-IP: [163.125.35.78]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEhoqFFZXwi-ANgAAss
+
+DkReaderHD
+com.duokan.hdreader/com.duokan.hdreader.DkReaderActivity
+------------------------------
+Stardust
+com.chaozhuo.browser/org.chromium.chrome.shell.ChaoZhuoActivity
+------------------------------
+
+

@@ -1,0 +1,52 @@
+Received: from m50-133.163.com (unknown [123.125.50.133])
+	by newmx102.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 18:07:46 +0800
+X-QQ-FEAT: tZ7SKDDlSpHtoCZ5c3yxch+JDNbKff//ylg6JxqnhfOyKOo5QGyVUG3ixB0E5
+	UdRHxqysqLGWZZPRmK2Ol3qg+EM9wchU3PMvwgzSiFmAgH0ylDFRcF3NBe4DRD7p4CuWJo1
+	aUf2TlCUpq7Mg7ehprGDrKM1WprqzfuLWr+x4b/EWdXpukXkkPCpz2BV5dDZxiH62BNZeIP
+	0usyNQ8cOelZn3tO5iE1l261D2sqt3EidvwskOpLUx2xfUadRpZCGCeyeICBzQGU=
+X-QQ-MAILINFO: ODvMQTwIxEi33kPNK8FIxhpw6G810Ol50BEPNfik9WzJNbjEU2Xrm2uNE
+	cxyvVxnpvpgLi/KRRZP0nuMbLZYIy3f9xmzX2dfb/w/xnXJGlK2n8KnYaB9bUims3V6Xi/7
+	f8NCWMiRmycCRMHM+6sT2nI=
+X-QQ-mid: mx102t1457518067t1eal0dv0
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Lr1pL
+	WaNZP+3jnC0JBhjpxdIMHpOPttzXRP9ubfNrlo=; b=P5G9ps6TpFE64kJ3IXmvS
+	sJzXsiG1qkl8NnJFuqUGaO+jgB60HAJbLRazNDx6wMl9nJJE1xHr6YoMirukUqs6
+	ILyIqK3cZIs8Su9ptZsjD+VX5QsBVeCyUh7Y4/xdCwQgqwFh7Fa/5PS1K0gzmoDJ
+	U9z+4/C5sbA7Cad74pCbXg=
+Received: from localhost (unknown [36.32.18.66])
+	by smtp3 (Coremail) with SMTP id DdGowEAppUXw9d9W6PZGAA--.31109S2;
+	Wed, 09 Mar 2016 18:07:44 +0800 (CST)
+Date: Wed, 9 Mar 2016 18:07:43 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <73363599.0.1457518064098.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DdGowEAppUXw9d9W6PZGAA--.31109S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUU8529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUc_OzDUUUU
+X-Originating-IP: [36.32.18.66]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEBEnFFUL7Ijw6AAAsQ
+
+=E7=9A=87=E5=AE=A4=E6=88=98=E4=BA=89
+com.supercell.clashroyale/com.supercell.clashroyale.GameApp
+------------------------------
+=E9=A6=92=E5=A4=B4=E5=9C=B0=E7=90=83
+ooo.oxo.apps.earth/ooo.oxo.apps.earth.MainActivity
+------------------------------
+=E9=A6=92=E5=A4=B4=E5=85=88=E7=94=9F
+ooo.oxo.mr/ooo.oxo.mr.MainActivity
+------------------------------
+=E6=B7=98=E5=B0=8F=E8=AF=B4
+com.martian.ttbook/com.martian.mibook.EnterActivity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E8=8B=B1=E9=9B=84=E8=81=94=E7=9B=9F
+com.tencent.qt.qtl/com.tencent.qt.qtl.activity.main.LauncherActivity
+------------------------------
+
+

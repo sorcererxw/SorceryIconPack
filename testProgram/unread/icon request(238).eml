@@ -1,0 +1,67 @@
+Received: from m12-16.163.com (unknown [220.181.12.16])
+	by newmx14.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Thu, 10 Mar 2016 11:27:02 +0800
+X-QQ-FEAT: r8geFCKg7nYNoynwVSeqLt7+MzDwQAyiPTa5vMKpD3YqDKNWNWUrhxB5l//+L
+	95azqVN/rUJgrQf5SQg21g5S2Gy3pihU7deKzn4ogYyi9dWrFNIC21zHrQyTyAP98sv3IG2
+	qMz+qsjWRMR8qcErm/9wvj6ZfZJVy101V9VP28mA6JEqZ8vBY1vEA5rnZubxzADI/DnHYUI
+	tjK1ojCwBWwffwad+UW3lYUFVcON35FHF7KRSj/0+pXZf4QYTjFDF
+X-QQ-MAILINFO: ODvMQTwIxEi3mvh/zEzWeVkYOnlseY4EGO5RnR7PPBZv53yVHROArrYKk
+	vH6WU3oCLbizZnellvJcw/nlxgwEuQYqQyt+jK5pxYmUJPGwKu9fMiDXwjrr3KsNRMNeCVV
+	EPIBk6Ba8VCKVTjZB+9zc5g=
+X-QQ-mid: mx14t1457580422t1uzp9l9f
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=GwSR3
+	v0MNQWX0h/POvdY+nIBDRnf/nztepB0lM9loiI=; b=etGApibkPawVy1LexujO6
+	rgWKa9wyxmK7i0sWfwB9KCZ+BorX/vAtXTNsi1C7a9WCDgnR03PuKWUVvAk21uEn
+	z1EZSSzECM+Ny5wktfCCiToarv77DMQtcCA7vlWK08xjrgT2lPw30b+VcXGld5NX
+	ay9up1KI3LF2jmRuDfrvY8=
+Received: from localhost (unknown [113.107.54.188])
+	by smtp12 (Coremail) with SMTP id EMCowEB560qB6eBWf2mhAA--.1781S2;
+	Thu, 10 Mar 2016 11:26:59 +0800 (CST)
+Date: Thu, 10 Mar 2016 11:26:58 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <1051806692.0.1457580418485.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:EMCowEB560qB6eBWf2mhAA--.1781S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7XF1xWF43KF1fGFWxXw4Utwb_yoWkGFg_JF
+	y7Ja1UJr4UJr1DXF1UJr1DJw1xXryUJrs8Jr18Jw47Gr97Ar1UKF1DXr4UXr1kX3yUJF1j
+	qFyUCr17JF15JjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8zbkUUUUUU==
+X-Originating-IP: [113.107.54.188]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiTAUoFFSINzrHUwAAsw
+
+PerfectColorBar
+com.flarejune.perfectcolorbar/com.flarejune.perfectcolorbar.ui.actMain
+------------------------------
+QQUnrecalled
+com.fkzhang.qqunrecalled/com.fkzhang.qqunrecalled.MainActivity-Alias
+------------------------------
+Translator
+com.microsoft.translator/com.microsoft.translator.activity.SplashActivity
+------------------------------
+WechatUnrecalled
+com.fkzhang.wechatunrecalled/com.fkzhang.wechatunrecalled.MainActivity-Alia=
+s
+------------------------------
+WiFi=E5=AF=86=E7=A0=81=E6=9F=A5=E7=9C=8B
+wilk.wifi.pwd/wilk.wifi.pwd.ui.MainActivity
+------------------------------
+=E9=9A=8F=E6=9C=BA=E6=B8=B8=E6=88=8F=E6=8F=92=E4=BB=B6
+com.wuxianlin.randomgame/com.wuxianlin.randomgame.SettingsActivity
+------------------------------
+=E5=BE=AE=E4=B8=8D=E4=BF=A1
+com.yitu.wbx/com.yitu.wbx.MainActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1=E8=BD=AC=E5=8F=91=E6=A8=A1=E5=9D=97
+com.fkzhang.wechatforwarder/com.fkzhang.wechatforwarder.MainActivity-Alias
+------------------------------
+=E8=A3=85B=E7=A5=9E=E5=99=A8
+com.duowan.bi/io.dcloud.PandoraEntry
+------------------------------
+
+

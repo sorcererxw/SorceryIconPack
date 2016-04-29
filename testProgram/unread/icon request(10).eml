@@ -1,0 +1,223 @@
+Received: from m50-138.163.com (unknown [123.125.50.138])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Mon, 14 Mar 2016 23:17:45 +0800
+X-QQ-FEAT: /2O7Dyku7/OIYI1Xaz7NIeSW1GPay99DgYa6ZT1x4fZPBBCNqMMDQLvOId1O6
+	WVxxmD0dRg7MNdV2Mj+U5qnPGC/JpNR2F5ttwCh1qnQe0FNj8+EX42x/Sk07pKaJVOpDlfB
+	cm8u3itXMgTGDvvF/XrI4bdtz/kXNKbd6fj4HOpvvrYY4hMb/KHHQlFoY4sbpF+pn0Gmvkm
+	63Ls5df0ikZoEJOrrDFnKTHsVyk8SqFdkn3PlZfNC3blk7udQ8o8Ge5vtP1nitNQ=
+X-QQ-MAILINFO: N5kFcZDRcyD8yaOuN/7BLOOj9JNaN1AoPz0Xo5vdyIj7Hw3fIK4ZSC7mQ
+	Dws5iETXmPiXaqXIez1Oh3QnrMxjk9Vr0R1kGJeUmEtrIYbbEW+1bK2QwQxm6ye+94z6WpH
+	dtnpoJAc4m66
+X-QQ-mid: mx120t1457968665tjinn4nup
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=FLjRK
+	YUmYME3esTNGEVG5T0kzbrSXyHv8zD/TVHO1AE=; b=CUCM7O/HJn+vgvnXvBq/0
+	kVtpr1G+3oylqgnLr77KowJCIR4+mMMXH4PZiQxBiYxa0V2herQeJWf0KhySC/4l
+	ZmzTPkoESgoWGmWsESQEKM4fptP9clK6XWSb8lrkDkmviwIIpT+iKqV1i2Ya59lo
+	2v8YLJbzhE/xEyxQxD1Ltg=
+Received: from localhost (unknown [122.13.2.168])
+	by smtp1 (Coremail) with SMTP id C9GowAA3ndUY1uZWGz+7AQ--.29575S2;
+	Mon, 14 Mar 2016 23:17:44 +0800 (CST)
+Date: Mon, 14 Mar 2016 23:17:47 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <349129849.0.1457968667593.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C9GowAA3ndUY1uZWGz+7AQ--.29575S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW3XF4rZFWrJryxGr1UWr1DAwb_yoWxtw4fpr
+	13Jr17Jr18JF1UJryUXr1UXFnrWry5Jr1rJr4xGr1rAr1jkw4UJr4Utw18Jryjqry5Jr13
+	Jw17Kr1UZr17JrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jIsjbUUUUU=
+X-Originating-IP: [122.13.2.168]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOxgsFFXlSU1LwgAAsm
+
+360=E5=85=8D=E8=B4=B9WiFi
+com.qihoo.freewifi/com.qihoo.freewifi.activity.WelcomeActivity
+------------------------------
+AcFun
+tv.acfundanmaku.video/tv.acfun.core.view.activity.SplashActivity
+------------------------------
+Flyme=E6=A1=8C=E9=9D=A2
+com.meizu.flyme.launcher/com.meizu.flyme.launcher.Launcher
+------------------------------
+Kindle=E9=98=85=E8=AF=BB
+com.amazon.kindlefc/com.amazon.kindle.KfcUpgradePage
+------------------------------
+LifeKit
+com.meizu.lifekit/com.meizu.lifekit.LoadingActivity
+------------------------------
+Nova Launcher
+com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaShortcutHandler
+------------------------------
+Nova Launcher Prime
+com.teslacoilsw.launcher.prime/com.teslacoilsw.launcher.prime.NovaLauncherP=
+rimeActivity
+------------------------------
+QQ
+com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+TeslaUnread
+com.teslacoilsw.notifier/com.teslacoilsw.notifier.NotifierSettings
+------------------------------
+WPS Office
+cn.wps.moffice_eng/cn.wps.moffice.documentmanager.PreStartActivity
+------------------------------
+WiFi=E4=B8=87=E8=83=BD=E9=92=A5=E5=8C=99
+com.snda.wifilocating/com.lantern.launcher.ui.MainActivity
+------------------------------
+ZArchiver
+ru.zdevs.zarchiver/ru.zdevs.zarchiver.ZArchiver
+------------------------------
+bong
+cn.ginshell.bong/cn.ginshell.bong.ui.activity.WelcomeActivity
+------------------------------
+=E7=99=BE=E5=BA=A6=E4=BA=91
+com.baidu.netdisk/com.baidu.netdisk.ui.Navigate
+------------------------------
+=E4=BE=BF=E7=AD=BE
+com.meizu.notepaper/com.meizu.flyme.notepaper.app.NotePaperActivity
+------------------------------
+=E6=9F=A5=E6=89=BE=E6=89=8B=E6=9C=BA
+com.meizu.flyme.find/com.meizu.flyme.find.ui.LoginActivity
+------------------------------
+=E5=9C=B0=E5=9B=BE
+com.meizu.net.map/com.meizu.net.map.MainMapActivity
+------------------------------
+=E7=94=B5=E8=AF=9D
+com.android.dialer/com.android.dialer.DialtactsActivity
+------------------------------
+=E8=AF=BB=E4=B9=A6
+com.meizu.media.ebook/com.meizu.media.ebook.EBookActivity
+------------------------------
+=E5=B7=A5=E5=85=B7=E7=AE=B1
+com.meizu.flyme.toolbox/com.meizu.flyme.toolbox.activity.ToolBoxActivity
+------------------------------
+=E7=94=BB=E6=9D=BF
+com.meizu.media.painter/com.meizu.media.painter.PainterMainActivity
+------------------------------
+=E6=9E=81=E9=80=9F=E5=AE=89=E5=85=A8=E5=8A=A0=E9=80=9F=E5=99=A8
+com.lausny.ocvpnaiofree2015/com.lausny.ocvpnaio.AioActivity
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.meizu.flyme.calculator/com.meizu.flyme.calculator.Calculator
+------------------------------
+=E9=87=91=E5=B1=B1=E8=AF=8D=E9=9C=B8
+com.kingsoft/com.kingsoft.StartActivity
+------------------------------
+=E9=85=B7=E5=B8=82=E5=9C=BA
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+=E5=BD=95=E9=9F=B3=E6=9C=BA
+com.android.soundrecorder/com.android.soundrecorder.MzRecorderActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity
+------------------------------
+=E6=89=AB=E4=B8=80=E6=89=AB
+com.meizu.flyme.scanner/com.meizu.flyme.scanner.activity.ScannerActivity
+------------------------------
+=E8=AE=BE=E7=BD=AE
+com.android.settings/com.android.settings.Settings
+------------------------------
+=E7=94=9F=E6=B4=BB=E6=9C=8D=E5=8A=A1
+com.meizu.media.life/com.meizu.media.life.ui.activity.HomeActivity
+------------------------------
+=E6=97=B6=E9=92=9F
+com.android.alarmclock/com.meizu.flyme.alarmclock.DeskClock
+------------------------------
+=E8=A7=86=E9=A2=91
+com.meizu.media.video/com.meizu.media.video.VideoMainActivity
+------------------------------
+=E6=89=8B=E6=9C=BA=E7=AE=A1=E5=AE=B6
+com.meizu.safe/com.meizu.safe.SecurityMainActivity
+------------------------------
+=E6=89=8B=E6=9C=BA=E6=B7=98=E5=AE=9D
+com.taobao.taobao/com.taobao.tao.welcome.Welcome
+------------------------------
+=E5=A4=A9=E6=B0=94
+com.meizu.flyme.weather/com.meizu.flyme.weather.WeatherMainActivity
+------------------------------
+=E5=9B=BE=E5=BA=93
+com.meizu.media.gallery/com.meizu.media.gallery.GalleryActivity
+------------------------------
+=E7=BD=91=E6=98=93=E4=BA=91=E9=9F=B3=E4=B9=90
+com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity
+------------------------------
+=E5=BE=AE=E5=8D=9A
+com.sina.weibo/com.sina.weibo.SplashActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+=E6=96=87=E4=BB=B6=E7=AE=A1=E7=90=86
+com.meizu.filemanager/com.meizu.flyme.filemanager.activity.HomeActivity
+------------------------------
+=E7=B3=BB=E7=BB=9F=E5=8D=87=E7=BA=A7
+com.meizu.flyme.update/com.meizu.flyme.update.SystemUpgradeListActivity
+------------------------------
+=E4=B8=8B=E8=BD=BD
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadActivity
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.meizu.media.camera/com.meizu.media.camera.CameraLauncher
+------------------------------
+=E5=B0=8F=E7=8C=BF=E6=90=9C=E9=A2=98
+com.fenbi.android.solar/com.fenbi.android.solar.activity.SplashActivity
+------------------------------
+=E4=BF=A1=E6=81=AF
+com.android.mms/com.android.mms.ui.ConversationList
+------------------------------
+=E9=9F=B3=E4=B9=90
+com.meizu.media.music/com.meizu.media.music.MusicActivity
+------------------------------
+=E5=BA=94=E7=94=A8=E5=95=86=E5=BA=97
+com.meizu.mstore/com.meizu.flyme.appcenter.activitys.AppMainActivity
+------------------------------
+=E7=94=A8=E6=88=B7=E5=8F=8D=E9=A6=88
+com.meizu.feedback/com.meizu.feedback.activity.MainActivity
+------------------------------
+=E7=94=A8=E6=88=B7=E4=B8=AD=E5=BF=83
+com.meizu.account/com.meizu.account.AccountCenterActivity
+------------------------------
+=E9=82=AE=E4=BB=B6
+com.android.email/com.android.email.activity.EmailActivity
+------------------------------
+=E9=82=AE=E7=AE=B1=E5=A4=A7=E5=B8=88
+com.netease.mail/com.netease.mobimail.activity.LaunchActivity
+------------------------------
+=E6=B8=B8=E6=88=8F=E4=B8=AD=E5=BF=83
+com.meizu.flyme.gamecenter/com.meizu.flyme.gamecenter.activity.GameMainActi=
+vity
+------------------------------
+=E8=AF=AD=E9=9F=B3=E5=8A=A9=E6=89=8B
+com.meizu.voiceassistant/com.meizu.voiceassistant.MainActivity
+------------------------------
+=E6=94=AF=E4=BB=98=E5=AE=9D
+com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin
+------------------------------
+=E4=B8=BB=E9=A2=98=E7=BE=8E=E5=8C=96
+com.meizu.customizecenter/com.meizu.customizecenter.CustomizeCenterActivity
+------------------------------
+=E8=B5=84=E8=AE=AF
+com.meizu.media.reader/com.meizu.media.reader.ReaderMainActivity
+------------------------------
+=E5=93=94=E5=93=A9=E5=93=94=E5=93=A9=E5=8A=A8=E7=94=BB
+tv.danmaku.bili/tv.danmaku.bili.ui.splash.SplashActivity
+------------------------------
+=E6=B5=8F=E8=A7=88=E5=99=A8
+com.android.browser/com.android.browser.BrowserActivity
+------------------------------
+=E9=AD=85=E7=8E=A9=E5=B8=AE
+com.meizu.wan/com.meizu.wan.MainActivity
+------------------------------
+
+

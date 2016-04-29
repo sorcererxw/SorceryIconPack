@@ -1,0 +1,84 @@
+Received: from m50-135.163.com (unknown [123.125.50.135])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 04:33:14 +0800
+X-QQ-FEAT: 2RQ4L63awcwz3DVKMcm3zsWoRw6qBMX3xV4fNXEZdCLBdL2YvtrgKSyODqb0o
+	mNnEZ7VAm6ApaSnz8UkZgKP2Cx9fkEpJTHz43pTx+qMPNtCAEZJ4JE+tuFIM4swsvHQUHZs
+	qHwvwUP7VzCubtVtjL5HlZJaymbx8bQJdSyWderWv+N/SiQ7YeLBUHcicAzyURfgTKEP5Ry
+	qWjyYoP8FxVqt+TdcHa2Tm1I2gjY10g8bFR+qvZs7amhQaLKtEftv
+X-QQ-MAILINFO: ODvMQTwIxEi33kPNK8FIxhrX9ruXnuEXTnLPlWCW8WhLlVaCBFk+fS3Ne
+	kwftYG6tzw9ccZqtvjtE/HBQtfDNwTBOjNy6reTf+tZBztbBbCxEKspuSiRXB7rAbbP2zXX
+	38ym6iHokpC54ivuDBNInFc=
+X-QQ-mid: mx114t1457641994txrjfv4jc
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=5/oWU
+	39jM2oNNNrHnU7lzpojlI9hDnyKg6z/a6x8DS8=; b=o7/aBXx9OfCxuIxF+z2cD
+	THKv6BUn260HgNpRrwA7GzsivdafBSm8q5Nvr+QaSTWlGYP7D3A0EZaKSZWCs+vy
+	0jO5iPuuWKi60hanGwjsZrUVVbu1wgEpXqVMxBZ9xV/uEcSp4E2rvbYMLXCgJnln
+	HVMVjwzxNi2GKDwzXZ9KU0=
+Received: from localhost (unknown [119.166.143.26])
+	by smtp5 (Coremail) with SMTP id D9GowAAnMXMI2uFW2aexAA--.25343S2;
+	Fri, 11 Mar 2016 04:33:13 +0800 (CST)
+Date: Fri, 11 Mar 2016 04:33:11 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <191552125.0.1457641992045.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:D9GowAAnMXMI2uFW2aexAA--.25343S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxJr18JF1UJrWDCFW8uFyUZFb_yoW8WFWfpr
+	13JrnrXr18JF1UtFWUGr4UXF1DGrWUJr18Jr4UJr10vr1jkr1UJry7tr18XrWUtry7Jry3
+	Jw17tr1UAw17JrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jjiihUUUUU=
+X-Originating-IP: [119.166.143.26]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOwooFFXlSQrUEAAAs6
+
+in
+com.jiuyan.infashion/com.jiuyan.infashion.login.MainActivity
+------------------------------
+=E7=99=BE=E5=BA=A6=E6=97=85=E6=B8=B8
+com.baidu.travel/com.baidu.travel.ui.SplashActivity
+------------------------------
+=E8=B1=86=E7=93=A3=E4=B8=9C=E8=A5=BF
+com.douban.dongxi/com.douban.dongxi.app.SplashActivity
+------------------------------
+=E5=A0=86=E7=B3=96
+com.duitang.main/com.duitang.main.activity.SplashActivity
+------------------------------
+=E5=BF=AB=E7=9C=8B=E6=BC=AB=E7=94=BB
+com.kuaikan.comic/com.kuaikan.comic.ui.LaunchActivity
+------------------------------
+=E7=BE=8E=E6=8B=8D
+com.meitu.meipaimv/com.meitu.meipaimv.StartupActivity
+------------------------------
+=E9=9D=A2=E5=8C=85=E6=97=85=E8=A1=8C
+com.breadtrip/com.breadtrip.view.MainActivity
+------------------------------
+=E6=8B=BC=E7=AB=8B=E5=BE=97
+com.instamag.activitywrl/com.instamag.activity.SplashScreenActivity
+------------------------------
+=E5=A4=A9=E5=A4=A9P=E5=9B=BE
+com.tencent.ttpic/com.tencent.ttpic.module.MainActivity
+------------------------------
+=E4=B8=80=E4=B8=AA
+one.hh.oneclient/one.hh.oneclient.activitys.OneClient
+------------------------------
+=E4=B8=80=E5=88=BB
+com.douban.daily/com.douban.daily.app.WelcomeActivity
+------------------------------
+=E4=B8=80=E7=A7=8D
+com.feibo.yizhong/com.feibo.yizhong.view.module.launch.LaunchActivity
+------------------------------
+=E6=9C=89=E9=81=93=E4=BA=91=E7=AC=94=E8=AE=B0
+com.youdao.note/com.youdao.note.activity2.SplashAcivity
+------------------------------
+=E7=9F=A5=E8=B6=A3=E5=A4=A9=E6=B0=94
+com.metek.zqWeather/com.metek.zqWeather.activity.WelcomeActivity
+------------------------------
+=E8=B6=B3=E8=AE=B0
+cc.fotoplace.app/cc.fotoplace.app.ui.InitActivity
+------------------------------
+
+

@@ -1,0 +1,72 @@
+Received: from m50-132.163.com (unknown [123.125.50.132])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 08:16:27 +0800
+X-QQ-FEAT: Euuz9Hb9fOHVIaPHN1x5VastBPmL8zXywHj730fDecb0N709vzI2AuLcjOeAE
+	ULpRwENqz09a5/8Me/l/jWGtiPm/EEPDGLQch9OAxGUWI2BepJO3pxaY4mbBVuBIv23x1fO
+	svtEdFgTHylGSHV3Q4wFjVfjW6Z+6fd/raN4vN94C7bpRDqurEm/6MMmHQ5+7bCQYu6H3AV
+	r2etsCoV9Obu5T/OA22QJ1Q++eex7knpVlnhsX//6xctKUZDujVjW
+X-QQ-MAILINFO: MjJD59SVx+LnIcZGAuS2RKGV0eOnmoJMSa7Wn0aHPeLhioB21ZBpqw1MK
+	c56LE4Abgg/+RERiEBgDQNVfGd4XfZQJywdt9vTwdAkqoQL/e6XDna9Cgl6ocViNRwZ+1tY
+	cj0+hd3MwKfK
+X-QQ-mid: mx127t1457741788tj4q6916s
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=sML+0
+	aHnTfMWpyPhHi26zFJt9PXaH3BrhoFdeFfx1Jc=; b=OYPw0ivUrqrq6r9AM68qR
+	zp0OqlEwb0sO14T13qW6ahYFw1Egeyr+QXsCV3BLkBZniJmoGwn/Jj9WX2lYGPzc
+	mWpSwh/gzLXgvg2d7dUZOjeRzDbLmOHWZKI5Ctj1kjZH/UbEpL4pgzHOU9rADiJH
+	8pNZHbD1HYDc2mtDQWy/x8=
+Received: from localhost (unknown [103.3.96.16])
+	by smtp2 (Coremail) with SMTP id DNGowEA53ETXX+NWt6YWAA--.10195S2;
+	Sat, 12 Mar 2016 08:16:24 +0800 (CST)
+Date: Sat, 12 Mar 2016 08:16:24 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <436466994.0.1457741784525.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DNGowEA53ETXX+NWt6YWAA--.10195S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7Wr4DuFyrJr1UJw4kZFWDurg_yoW8Jry3pr
+	nxtr17Jr18JF1UJr1UJr1UAr1DJry5Jr1UJr1kGr18Ar1ayr17Jr1Utr18XFWjqry5Jw1U
+	Aw1UJr1UXr1UJr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UEJmbUUUUU=
+X-Originating-IP: [103.3.96.16]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbB0hsqFFUL97p38gAAsh
+
+MX Player Pro
+com.mxtech.videoplayer.pro/com.mxtech.videoplayer.pro.ActivityMediaList
+------------------------------
+=E9=98=BF=E9=87=8C=E9=80=9A=E4=BF=A1
+alicom.palm.android/alicom.palm.android.activity.entry.SplashActivity
+------------------------------
+=E7=88=B1=E6=B5=81=E9=87=8F
+com.aspirecn.dcop/com.aspirecn.framework.activity.LoadingActivity
+------------------------------
+=E8=91=AB=E8=8A=A6=E4=BE=A03=E6=A5=BC
+com.huati/com.huluxia.ui.base.BBSAppStart
+------------------------------
+=E8=91=AB=E8=8A=A6=E4=BE=A0=E6=88=91=E7=9A=84=E4=B8=96=E7=95=8C
+com.huluxia.mctool/hlx.home.main.MCStartActivity
+------------------------------
+=E7=BE=8E=E6=8B=8D
+com.meitu.meipaimv/com.meitu.meipaimv.StartupActivity
+------------------------------
+=E6=8B=87=E6=8C=87=E7=8E=A9
+com.muzhiwan.market/com.muzhiwan.market.ui.Splash
+------------------------------
+=E6=B3=BC=E8=BE=A3=E4=BF=AE=E5=9B=BE
+photo.editor.polarr/photo.editor.polarr.SplashScreen
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.oppo.camera/com.oppo.camera.Camera
+------------------------------
+=E5=BA=94=E7=94=A8=E5=8F=98=E9=87=8F
+com.sollyu.xposed.hook.model/com.sollyu.xposed.hook.model.launcher
+------------------------------
+=E9=98=85=E8=AF=BB
+com.oppo.reader/com.chaozh.iReader.ui.activity.WelcomeActivity
+------------------------------
+
+

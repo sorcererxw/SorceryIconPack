@@ -1,4 +1,4 @@
-<string-array name="icon_pack_ali">
+<string-array name="icon_pack_ali" translatable="false">
    <item>alipay</item>
    <item>alipay_alt</item>
    <item>ali_dingding</item>
@@ -17,7 +17,7 @@
    <item>ali_xiaohao</item>
 </string-array>
 
-<string-array name="icon_pack_baidu">
+<string-array name="icon_pack_baidu" translatable="false">
    <item>baidu_keyboard</item>
    <item>baidu_maps</item>
    <item>baidu_nuomi</item>
@@ -26,14 +26,14 @@
    <item>baidu_waimai</item>
 </string-array>
 
-<string-array name="icon_pack_cyanogenmod">
+<string-array name="icon_pack_cyanogenmod" translatable="false">
    <item>cyanogenmod_camera</item>
    <item>cyanogenmod_explorer</item>
    <item>cyanogenmod_screencast</item>
    <item>cyanogenmod_theme_engine</item>
 </string-array>
 
-<string-array name="icon_pack_google">
+<string-array name="icon_pack_google" translatable="false">
    <item>google_androidify</item>
    <item>google_android_auto</item>
    <item>google_arts</item>
@@ -96,7 +96,7 @@
    <item>google_youtube</item>
 </string-array>
 
-<string-array name="icon_pack_htc">
+<string-array name="icon_pack_htc" translatable="false">
    <item>htc_backup</item>
    <item>htc_browser</item>
    <item>htc_calculator</item>
@@ -123,7 +123,7 @@
    <item>htc_weather</item>
 </string-array>
 
-<string-array name="icon_pack_lenovo">
+<string-array name="icon_pack_lenovo" translatable="false">
    <item>lenovo_calculator</item>
    <item>lenovo_calendar</item>
    <item>lenovo_calendar_1</item>
@@ -165,7 +165,7 @@
    <item>lenovo_syncit</item>
 </string-array>
 
-<string-array name="icon_pack_lg">
+<string-array name="icon_pack_lg" translatable="false">
    <item>lg_backup</item>
    <item>lg_browser</item>
    <item>lg_calculator</item>
@@ -198,7 +198,7 @@
    <item>lg_weather</item>
 </string-array>
 
-<string-array name="icon_pack_moto">
+<string-array name="icon_pack_moto" translatable="false">
    <item>moto_alert</item>
    <item>moto_assist</item>
    <item>moto_body</item>
@@ -213,14 +213,13 @@
    <item>moto_updater</item>
 </string-array>
 
-<string-array name="icon_pack_microsoft">
+<string-array name="icon_pack_microsoft" translatable="false">
    <item>microsoft_account</item>
    <item>microsoft_arrow_launcher</item>
    <item>microsoft_bing_dict</item>
    <item>microsoft_bing_keyboard</item>
    <item>microsoft_cortana</item>
    <item>microsoft_cortana_alt</item>
-   <item>microsoft_excel</item>
    <item>microsoft_office_excel</item>
    <item>microsoft_office_lens</item>
    <item>microsoft_office_mobile</item>
@@ -229,12 +228,10 @@
    <item>microsoft_onedrive</item>
    <item>microsoft_onenote</item>
    <item>microsoft_outlook</item>
-   <item>microsoft_powerpoint</item>
    <item>microsoft_translator</item>
-   <item>microsoft_word</item>
 </string-array>
 
-<string-array name="icon_pack_samsung">
+<string-array name="icon_pack_samsung" translatable="false">
    <item>samsung_apps</item>
    <item>samsung_browser</item>
    <item>samsung_calculator</item>
@@ -291,7 +288,7 @@
    <item>samsung_voice</item>
 </string-array>
 
-<string-array name="icon_pack_sony">
+<string-array name="icon_pack_sony" translatable="false">
    <item>sony_album</item>
    <item>sony_audio_recorder</item>
    <item>sony_background_defocus</item>
@@ -320,7 +317,7 @@
    <item>sony_whatsnew</item>
 </string-array>
 
-<string-array name="icon_pack_tencent">
+<string-array name="icon_pack_tencent" translatable="false">
    <item>tencent_file_manager</item>
    <item>tencent_lightalk</item>
    <item>tencent_map</item>
@@ -349,7 +346,7 @@
    <item>tencent_weiyun_alt</item>
 </string-array>
 
-<string-array name="icon_pack_miui">
+<string-array name="icon_pack_miui" translatable="false">
    <item>miui_account</item>
    <item>miui_authenticator</item>
    <item>miui_bug_report</item>
@@ -367,7 +364,7 @@
    <item>miui_weather</item>
 </string-array>
 
-<string-array name="icon_pack_flyme">
+<string-array name="icon_pack_flyme" translatable="false">
    <item>flyme_account</item>
    <item>flyme_appcenter</item>
    <item>flyme_browser</item>
@@ -434,7 +431,7 @@
    <item>flyme_weather</item>
 </string-array>
 
-<string-array name="icon_pack">
+<string-array name="icon_pack" translatable="false">
 <item>*****</item>
    <item>a10086</item>
    <item>a115</item>
@@ -561,8 +558,8 @@
    <item>autovoice</item>
    <item>aviary</item>
    <item>aviate_launcher</item>
-   <item>b612</item>
    <item>**B**</item>
+   <item>b612</item>
    <item>backdrops</item>
    <item>backgrounds</item>
    <item>baicizhan</item>
@@ -680,6 +677,7 @@
    <item>dgtle</item>
    <item>dialer</item>
    <item>dianping</item>
+   <item>dianping_alt</item>
    <item>dice</item>
    <item>didaqingdan</item>
    <item>didi</item>
@@ -810,6 +808,8 @@
    <item>gallery</item>
    <item>game_heartstone</item>
    <item>game_prune</item>
+   <item>game_virtua_tennis</item>
+   <item>game_wangzherongyao</item>
    <item>gaotieguanjia</item>
    <item>geometric_weather</item>
    <item>gewala_movie</item>
@@ -880,6 +880,7 @@
    <item>gravity_screen</item>
    <item>greenify</item>
    <item>green_vpn</item>
+   <item>guaguamanhua</item>
    <item>gudong</item>
    <item>guokr</item>
    <item>**H**</item>
@@ -1062,6 +1063,7 @@
    <item>**M**</item>
    <item>mangguo_tv</item>
    <item>maoyan</item>
+   <item>media_converter</item>
    <item>medium</item>
    <item>meiriyiwen</item>
    <item>meiriyujia</item>
@@ -1076,7 +1078,6 @@
    <item>microsoft_bing_keyboard</item>
    <item>microsoft_cortana</item>
    <item>microsoft_cortana_alt</item>
-   <item>microsoft_excel</item>
    <item>microsoft_office_excel</item>
    <item>microsoft_office_lens</item>
    <item>microsoft_office_mobile</item>
@@ -1085,9 +1086,7 @@
    <item>microsoft_onedrive</item>
    <item>microsoft_onenote</item>
    <item>microsoft_outlook</item>
-   <item>microsoft_powerpoint</item>
    <item>microsoft_translator</item>
-   <item>microsoft_word</item>
    <item>minecraft</item>
    <item>misfit</item>
    <item>miui_account</item>
@@ -1112,6 +1111,7 @@
    <item>momobeidanci</item>
    <item>mono</item>
    <item>monument_valley</item>
+   <item>mora</item>
    <item>moto_alert</item>
    <item>moto_assist</item>
    <item>moto_body</item>
@@ -1412,8 +1412,8 @@
    <item>uc_browser</item>
    <item>unicom</item>
    <item>unicon</item>
-   <item>v2ex</item>
    <item>**V**</item>
+   <item>v2ex</item>
    <item>versus</item>
    <item>via_browser</item>
    <item>viper4android</item>

@@ -1,0 +1,46 @@
+Received: from m12-13.163.com (unknown [220.181.12.13])
+	by newmx12.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 15:03:56 +0800
+X-QQ-FEAT: G6gHwTT0kBEebJPX48UDO7iBTWj+x4TP/eOESG5YbeMmu3GvgUO1xy9CYrZO+
+	KgIhKjivH1ABE0nAW48rvEoDf3mERhcldVjhm7LyK4m3Ml6meoiJewTo7igaAHuEyuSQDTo
+	D22zn4jwIYtnHsdDD+p2WTjbsbz/LUKrZyrmJSASrSY7vO6UwfPTIWaygxb40vmxz8ykaI9
+	eySMUR0i6DIew3Q6znRnsGUqWmhFqh/aiIg79gRM2xHO/cYBfvHcD
+X-QQ-MAILINFO: ODvMQTwIxEi3mvh/zEzWeVkCFeZyOwvZey1elbBY5MBNBNHmt6f8heIn3
+	xkWloYsdMp1/E5QVObVeUrgnCRy81n3WLHPOux78WxfyhlEavmncJZNiJO3sX48/t3NaDfM
+	dsLbiWMmbydx
+X-QQ-mid: mx12t1457766237tuh31dqfy
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=GWitB
+	krs/uZkd3X+SH5sVUwCpQhro/NL2PiZsBda6J0=; b=LZWqf4Z51xmgtZ4XOqzyM
+	7wApBPRBIAdwXPpngsSgp7atBZ/GcsM0D5pJodqrmQgADwQVUUckRAmwnCawxGA9
+	cYWxdGwhkAQooEIQv/7FFRWQoZdetBCBYiQxQ9NVh0r7NkLhkQ4jF6cma33wM/S4
+	KzKz0QW5589ybCKcUT2QdE=
+Received: from localhost (unknown [218.76.128.89])
+	by smtp9 (Coremail) with SMTP id DcCowAAXdUJbv+NWAl5bAQ--.15279S2;
+	Sat, 12 Mar 2016 15:03:56 +0800 (CST)
+Date: Sat, 12 Mar 2016 15:03:55 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <16079798.0.1457766236026.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DcCowAAXdUJbv+NWAl5bAQ--.15279S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU2f-PDUUUU
+X-Originating-IP: [218.76.128.89]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiFhwqFFWBPlPTQwAAsd
+
+GIF=E5=88=B6=E4=BD=9C=E5=99=A8
+com.youxianwubian.gifzzq/com.youxianwubian.gifzzq.MainActivity
+------------------------------
+=E9=9D=99=E8=AF=BB=E5=A4=A9=E4=B8=8B=E4=B8=93=E4=B8=9A=E7=89=88
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+=E5=B0=8F=E9=B8=A1=E6=A8=A1=E6=8B=9F=E5=99=A8
+com.xiaoji.emulator/com.xiaoji.emulator.Entry
+------------------------------
+
+

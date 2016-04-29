@@ -266,7 +266,6 @@
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
         <item>microsoft_cortana_alt</item>
-        <item>microsoft_excel</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
@@ -275,9 +274,7 @@
         <item>microsoft_onedrive</item>
         <item>microsoft_onenote</item>
         <item>microsoft_outlook</item>
-        <item>microsoft_powerpoint</item>
         <item>microsoft_translator</item>
-        <item>microsoft_word</item>
     </string-array>
 
     <string-array name="icon_pack_samsung" translatable="false">
@@ -607,8 +604,8 @@
         <item>autovoice</item>
         <item>aviary</item>
         <item>aviate_launcher</item>
-        <item>b612</item>
         <item>**B**</item>
+        <item>b612</item>
         <item>backdrops</item>
         <item>backgrounds</item>
         <item>baicizhan</item>
@@ -726,6 +723,7 @@
         <item>dgtle</item>
         <item>dialer</item>
         <item>dianping</item>
+        <item>dianping_alt</item>
         <item>dice</item>
         <item>didaqingdan</item>
         <item>didi</item>
@@ -856,6 +854,8 @@
         <item>gallery</item>
         <item>game_heartstone</item>
         <item>game_prune</item>
+        <item>game_virtua_tennis</item>
+        <item>game_wangzherongyao</item>
         <item>gaotieguanjia</item>
         <item>geometric_weather</item>
         <item>gewala_movie</item>
@@ -926,6 +926,7 @@
         <item>gravity_screen</item>
         <item>greenify</item>
         <item>green_vpn</item>
+        <item>guaguamanhua</item>
         <item>gudong</item>
         <item>guokr</item>
         <item>**H**</item>
@@ -1108,6 +1109,7 @@
         <item>**M**</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
+        <item>media_converter</item>
         <item>medium</item>
         <item>meiriyiwen</item>
         <item>meiriyujia</item>
@@ -1122,7 +1124,6 @@
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
         <item>microsoft_cortana_alt</item>
-        <item>microsoft_excel</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
@@ -1131,9 +1132,7 @@
         <item>microsoft_onedrive</item>
         <item>microsoft_onenote</item>
         <item>microsoft_outlook</item>
-        <item>microsoft_powerpoint</item>
         <item>microsoft_translator</item>
-        <item>microsoft_word</item>
         <item>minecraft</item>
         <item>misfit</item>
         <item>miui_account</item>
@@ -1158,6 +1157,7 @@
         <item>momobeidanci</item>
         <item>mono</item>
         <item>monument_valley</item>
+        <item>mora</item>
         <item>moto_alert</item>
         <item>moto_assist</item>
         <item>moto_body</item>
@@ -1458,8 +1458,8 @@
         <item>uc_browser</item>
         <item>unicom</item>
         <item>unicon</item>
-        <item>v2ex</item>
         <item>**V**</item>
+        <item>v2ex</item>
         <item>versus</item>
         <item>via_browser</item>
         <item>viper4android</item>

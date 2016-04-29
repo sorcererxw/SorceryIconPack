@@ -1,0 +1,50 @@
+Received: from m12-17.163.com (unknown [220.181.12.17])
+	by newmx13.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 17:16:26 +0800
+X-QQ-FEAT: pJiIyMrDeHvD5xy3zb/ktSPBxj68gx8JBjIt7TWL0NgJTwzgHSPjDYHuKcB2y
+	ZActMekd1SxFqs/rSVYlUgkSRQRJeuFl8P9BZTzS6N0Aa1tMmdaYCGhe/WCt6aV3E+AP8lm
+	DuYaAj9dS5QcwlwgAMu1OF/lnVIzbJQ6L7kwRE+dUqfSk8kYqMzDFBg6mJIYygspKZ4oskS
+	ml0wce5bWs3AGnn6hzBRJsQ8MEfQqap2U78Ozg8dv7Q==
+X-QQ-MAILINFO: M9mpTqh4QKvqg26X+Aw5pTWwHlCo60NwLq+UjeORgvHpwL6MXE7zTu7xC
+	pYQV8VcFwgfefQBDQzocFx9KXZMi+HeRWCDKlri7/jYQAT0dX+cEaRCkaEzB3ZKcMt2xhNb
+	ygs7FyDpWBiE
+X-QQ-mid: mx13t1457860586t5dxqcfkf
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=jlcve
+	WCcizPPngjUOymKmER3jREbGmkL8esYBjjsbMQ=; b=NxF8Tz/bOYgN6ti9F3FqN
+	oPbn10HG55KeNQtWDhN3amIA2eRDAThJUNRG9+bfcXh0GVH1074VEMsN8AoFhxCw
+	86V8+KzgKEMtMpa8hvi+LhYItG3BgdmWpP5sL7SXafjM3NopomTepae1HC1Q5lLF
+	Va767GwaSc5t5yNKPTqzqw=
+Received: from localhost (unknown [111.126.68.239])
+	by smtp13 (Coremail) with SMTP id EcCowAAH2ijjL+VWnWDbAQ--.63826S2;
+	Sun, 13 Mar 2016 17:16:21 +0800 (CST)
+Date: Sun, 13 Mar 2016 17:16:18 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <980106290.0.1457860579065.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:EcCowAAH2ijjL+VWnWDbAQ--.63826S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU2YL9UUUUU
+X-Originating-IP: [111.126.68.239]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiFgQrFFWBPmSi7wAAsu
+
+Freedom
+cc.madkite.freedom/cc.madkite.freedom.android.MainActivity
+------------------------------
+Google=E8=AE=BE=E7=BD=AE
+com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsAc=
+tivity
+------------------------------
+=E5=BF=85=E8=83=9C=E5=AE=A2
+com.ph/com.ph.ui.LauncherActivity
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.oppo.camera/com.oppo.camera.Camera
+------------------------------
+
+

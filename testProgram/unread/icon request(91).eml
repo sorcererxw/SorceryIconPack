@@ -1,0 +1,43 @@
+Received: from m50-132.163.com (unknown [123.125.50.132])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 21:47:12 +0800
+X-QQ-FEAT: /6d4zFFneQ9NXX+uuZ/ssiEJNCtlc7wj2kYtW8Aumkmpqdri05joPIQh2VZrW
+	hykrVieGKfjdD5sdvzZYsBIakzqelvtb2SqxsKhHjutEeWcBZy0z4a3KBdJ2s0o2JFcqHnK
+	IXMhMuwenM3fMGasoadmJ8lGpWHHZEkrDY+bu6AwDgAVxlDjzZ/56FUm4teW0HCGzxOEhq7
+	8oQ3JGuSYPvQO/Dp4L7MdW++AlPFEf6I9nb+1SErz5wqfrXK646Po
+X-QQ-MAILINFO: MfiUJyQXz1c0uTa/knlyUxAXG5x1cuSI//zEvoPheN4BpqbmlfEHg/oak
+	1KhOFL1Agv+fgdQebZuy/xuJ0ul8SElmiYPQW148jzNfQRxVkvnGdPxZNThdZDehuqrUjxn
+	pnpJUq9OdHRyZXMNGri0KGg=
+X-QQ-mid: mx121t1457790432tbu4gl0nx
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=TyFg/
+	QJjWZc9C8F9Uib9+eXtUo3leDK/hZI/lObNaoc=; b=fYLJnE1GjRn5CiSB/mhku
+	dzHo9hVgXGmd2EKehRMdmdmogdZQYPB4WE3aMZV6xBiR6LFB/Byu0Q4HsRoJUWEr
+	p47dt82NpCzVU2t2uahYCyEtbpx5OOpzQgXTmphYpOB42nm05X/B/CjHPd7Qwodi
+	BOZ1gXmbAxZVjnVt3Kd3Gc=
+Received: from localhost (unknown [43.224.52.34])
+	by smtp2 (Coremail) with SMTP id DNGowEC5GkTYHeRWe8Y9AA--.10684S2;
+	Sat, 12 Mar 2016 21:47:06 +0800 (CST)
+Date: Sat, 12 Mar 2016 21:47:04 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <30431449.0.1457790424854.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DNGowEC5GkTYHeRWe8Y9AA--.10684S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU2eOJUUUUU
+X-Originating-IP: [43.224.52.34]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEBsqFFUL7MSicwAAsS
+
+=E8=99=9A=E8=8D=A3 (Vainglory)
+com.superevilmegacorp.game/com.superevilmegacorp.game.NuoActivityLauncher
+------------------------------
+=E6=8E=8C=E4=B8=8A=E8=8B=B1=E9=9B=84=E8=81=94=E7=9B=9F
+com.tencent.qt.qtl/com.tencent.qt.qtl.activity.main.LauncherActivity
+------------------------------
+
+

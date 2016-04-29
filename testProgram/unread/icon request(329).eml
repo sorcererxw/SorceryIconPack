@@ -1,0 +1,60 @@
+Received: from m50-134.163.com (unknown [123.125.50.134])
+	by newmx97.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Tue, 08 Mar 2016 13:45:07 +0800
+X-QQ-FEAT: zoZpXHq7AZgU1Kcmo0Z7MyQoW/+mvdxAz7+1YXWHQnj8dV2WB+14azrTP9lKJ
+	Y1A6dB7lrnJidfRWZhFEixatpMn/MEsPQSi6+BICP8VD1o4+LcpJWw6cD9zJzLICY6ceTTW
+	8F3f0IeCqcFonfReedOKabxCZOc/KcmxBltN0+BTsYBDPvhfaQu53xUNZeCm/on3XikMlIN
+	iTRvBkPmuMhhNfiitL65HEBiUZ5vIM+cTFrjq+oyBoXko4OglA+UG
+X-QQ-MAILINFO: ODvMQTwIxEi33kPNK8FIxhpcy9X7ampoDr7ZjAu+rjXT4xAJPadV2+AHn
+	5FOtBA/PNaA8vZWvOMjrbjOqOzROeooXboE+I8BCK1pv1utxqkaE8Vi6B0HpmmVpSyjprY/
+	u8i6duBIGHnARCHuvsKcIy0=
+X-QQ-mid: mx97t1457415907tj0hgyl7z
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=xHq/e
+	xFz05xQrlk6whsXEeeNqzqIcvXnE4Ko6LgC5YY=; b=iRtsTXOqY5azTF+NY7uWl
+	RGcqzsqNAs/UDbPO0VIk10K7ljmUzv5Y6Jm6yDscj4l6SSJ4qBKIS3TOteUPcPgt
+	zUOYje+evu0bwCzapISa/SN+qnw+z0XwGiap29Tz9YcOMROO726/l7s8NN8izmv/
+	TDZC5ArdmsnwDSskOIeh/s=
+Received: from localhost (unknown [58.17.98.227])
+	by smtp4 (Coremail) with SMTP id DtGowAAnl2_bZt5WQ8hIAQ--.39813S2;
+	Tue, 08 Mar 2016 13:45:00 +0800 (CST)
+Date: Tue, 8 Mar 2016 13:44:58 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <1120430424.0.1457415898646.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DtGowAAnl2_bZt5WQ8hIAQ--.39813S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7Gw45tw4kZFW8Zw43XF1UZFb_yoWfGFg_Ja
+	4UG3WUJr1jv34UJr15JF17Ar1Utr1DJr48Jrn5Jr47Jrn7Jr18tr1DJrWUXr1kXr18Jr9F
+	yFn8Jr17Jr1UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8-18PUUUUU==
+X-Originating-IP: [58.17.98.227]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEB0mFFUL7G9RjQAAs+
+
+AquaMail
+org.kman.AquaMail/org.kman.AquaMail.ui.AccountListActivity
+------------------------------
+DroidEdit
+com.aor.droidedit.pro/com.aor.droidedit.DroidEditProActivity
+------------------------------
+JuiceSSH
+com.sonelli.juicessh/com.sonelli.juicessh.activities.MainActivity
+------------------------------
+Stack Exchange
+com.stackexchange.marvin/com.stackexchange.marvin.ui.LaunchActivity
+------------------------------
+TeslaUnread
+com.teslacoilsw.notifier/com.teslacoilsw.notifier.NotifierSettings
+------------------------------
+=E7=BC=96=E7=A8=8B=E5=8A=A9=E6=89=8B
+io.github.emanual.app/io.github.emanual.app.ui.AppStart
+------------------------------
+=E9=9D=99=E8=AF=BB=E5=A4=A9=E4=B8=8B=E4=B8=93=E4=B8=9A=E7=89=88
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+
+

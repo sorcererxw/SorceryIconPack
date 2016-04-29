@@ -1,0 +1,69 @@
+Received: from m12-12.163.com (unknown [220.181.12.12])
+	by newmx102.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 10:47:14 +0800
+X-QQ-FEAT: WluEz68a3gG3yVK3Oy03LeSTxf3G2NBFqDuDlec/LDOBhCdMOu+Yz1mydbXWa
+	CFsZygDURKhHZs1WKvH60iiVLPFhlZdwRbTGZMj/PI0dRy4Q3jop5XAVn1zPIGkurZjVFm/
+	1MaChYACvxbBv/MaOTP4K52mOMY2pASen9RXZ95UMxxjCmadIzY1f7SOVmYDVC6AEQ8VMw9
+	haS2L0vVKeRirJJr3frzochXVl3+haQpTxy5MiYKp5g==
+X-QQ-MAILINFO: NbUxUzKtP+7YfwpwF3T2wdLluKFANFEGy9uO8JIQtskTZCXrmYjGgo33Z
+	KLULnX8Mni7HYxnvKqHidRBxHHCWV7JYZkSRL8aPUeNNjmedo6L8zEyV5p1Nrw39tGj1ek/
+	mdyZXX+K6EpQX21VvXWZr18=
+X-QQ-mid: mx102t1457664434tapfmouq8
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=p0gmU
+	4WClqq89f7Q9rl2fLw9RHRS0EsydJikY5BfIFI=; b=FUoKcKbmzkajeGrYzhOts
+	EVS8uk39438Uo7KPjXfx+iNjMFrO7NEOEMDltgsYqXvpa+F5mHXfEOjAor7pVAa+
+	/XbO1+mm+gB0KX3j+ULmzw8YBsMVrwvhN56VQ0iFvqwA4TpMwZu3eQaKSP9TdAg/
+	mi4PmFsPK8+ZIK2TAm4oBo=
+Received: from localhost (unknown [117.37.134.254])
+	by smtp8 (Coremail) with SMTP id DMCowAAncfipMeJWOiL4AA--.958S2;
+	Fri, 11 Mar 2016 10:47:07 +0800 (CST)
+Date: Fri, 11 Mar 2016 10:47:05 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <317599280.0.1457664425831.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DMCowAAncfipMeJWOiL4AA--.958S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrtrWfZFyfCrWkWw1rArW8Zwb_yoWkKFc_JF
+	yUGF13JrWUCwnrX3W5Jr1UAw40qryUJr4UJr1UJr47JFnrJF45Jr1DJr45Wrn8Xr18JF1U
+	tF1DJr15Jr1UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8sjjDUUUUU==
+X-Originating-IP: [117.37.134.254]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMwwpFFXlfBJ2pgAAsM
+
+Shazam
+com.shazam.encore.android/com.shazam.android.activities.SplashActivity
+------------------------------
+Snapseed
+com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
+------------------------------
+Xmodgames
+com.xmodgame/com.xxAssistant.View.SplashActivity
+------------------------------
+=E7=94=B5=E8=A7=86=E5=AE=B62.0
+com.elinkway.tvlive2/com.elinkway.tvlive2.activity.SplashActivity
+------------------------------
+=E7=94=B5=E4=BF=A1=E8=90=A5=E4=B8=9A=E5=8E=85
+com.ct.client/com.ct.client.SplashActivity
+------------------------------
+=E5=85=89=E8=8A=92=E4=BD=93=E8=82=B2
+com.iflyor.gm.mobile/com.iflyor.ui.WelcomeActivity
+------------------------------
+=E7=9A=87=E5=AE=A4=E6=88=98=E4=BA=89
+com.supercell.clashroyale/com.supercell.clashroyale.GameApp
+------------------------------
+=E5=BC=80=E5=BF=83=E6=B6=88=E6=B6=88=E4=B9=90
+com.happyelements.AndroidAnimal/com.happyelements.hellolua.MainActivity
+------------------------------
+=E4=B9=90=E8=A7=86=E4=BD=93=E8=82=B2
+com.lesports.glivesports/com.lesports.glivesports.launcher.LauncherActivity
+------------------------------
+=E5=AD=97=E5=B9=95=E7=BB=84=E5=BD=B1=E8=A7=86
+com.yyets.zimuzu/com.yyets.zimuzu.activity.AppStartActivity
+------------------------------
+
+

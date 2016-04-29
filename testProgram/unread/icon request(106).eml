@@ -1,0 +1,64 @@
+Received: from m50-134.163.com (unknown [123.125.50.134])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 00:16:39 +0800
+X-QQ-FEAT: JN+C/NT9bLODcpaPs0g6eQKAXMxyuevbV+kmZyhMoAVM4MSk9i5iNU3Th2CPE
+	adOyvGsnl6FvZ3RvXfmRKVaFKpqDM/0tJv7b/FItG5rTIGpljEePdfCRHaTO2DZD+nMYAtt
+	uWEmT45UKEKCxXQp5UOdLxf7AuHWeQRKp+bOtG3aFdW8QaeeLYCDGxdGdNSsuSuHkHYHaFf
+	FUHHNG8xRfN509EgWAp5rHRmZ9bAPbqALBUsGyRGJhSZwtmY3Vi4m
+X-QQ-MAILINFO: Nj4k/6lmmRCSJU61HPd6SwDnDQxIvz5PVXrWnvwWNo1fOLzHHDKUA2i/C
+	ciO5S7s48J/MYQSrY/DBIIBh7TFqPVGCF5GSGO6RwLPpkjrqAKVjEBOKcgNfEN5jv/d9QnC
+	W3s61gp76O9Q
+X-QQ-mid: mx125t1457799399t9r3rqje4
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Qo+Y2
+	Bnvb69HryDPniGEzSEBo1GKiiK4aRdgfmEaIZM=; b=LZ8tPtaZ/fJLmdcYGczJL
+	2ZpSHLH7PamED3dsxn/zbw0nQ5RKWoZtk227TL7WN5PWoNz1B7CFIIkZ5KgAW1ah
+	iWWJgrtD1LWS0zKohxa4BOR7O7qjvItnvEDtfC6fxiE3ur9StutUsZ9MjBS4ugYM
+	RJ0cmnIJ3l0RhAtrHVbNU8=
+Received: from localhost (unknown [36.32.50.198])
+	by smtp4 (Coremail) with SMTP id DtGowABXr3vhQORWoIxDAQ--.8411S2;
+	Sun, 13 Mar 2016 00:16:35 +0800 (CST)
+Date: Sun, 13 Mar 2016 00:16:32 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <41504227.0.1457799393116.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DtGowABXr3vhQORWoIxDAQ--.8411S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrtw47AF1fXw45try8Cr1kGrg_yoWDWwc_JF
+	y7JF1UJrWfAr1UX3WUGF1UJ340qr1DJr4UJr45Jr47Jr92yr17Jr1ktr4UXryDX348tr15
+	tF1DJr13JryUJjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8Mv3UUUUUU==
+X-Originating-IP: [36.32.50.198]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOwQqFFXlSStLkwAAsL
+
+Boom Beach
+com.supercell.boombeach.uc/com.supercell.boombeach.uc.GameApp
+------------------------------
+Clash Royale
+com.supercell.clashroyale/com.supercell.clashroyale.GameApp
+------------------------------
+Community
+com.oneplus.bbs/com.oneplus.bbs.ui.activity.PreStartActivity
+------------------------------
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+Pool Break Pro
+com.kb.Carrom3DFull/com.kb.Carrom3DFull.GameSelection.ActivityMain
+------------------------------
+Sorcery Icons
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+=E6=B7=98=E5=B0=8F=E8=AF=B4
+com.martian.ttbook/com.martian.mibook.EnterActivity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E8=8B=B1=E9=9B=84=E8=81=94=E7=9B=9F
+com.tencent.qt.qtl/com.tencent.qt.qtl.activity.main.LauncherActivity
+------------------------------
+
+

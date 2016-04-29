@@ -1,0 +1,84 @@
+Received: from m12-12.163.com (unknown [220.181.12.12])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 23:11:32 +0800
+X-QQ-FEAT: 249HBdX3+8To3jVeaxvyA6TXp1GnPwBIPZWrWoBaYKimJzoMmNpIiyWDA3g5t
+	CmhyhiCHZvvzwfD8uJslurHE5wdVWnKu0ifRLveJfi7Va9sjmFhBcOH/OiRCP0moEclqoqu
+	qD4fEDbXza+5bqx0Rj1Rz4IyZiRbfwZB6puZEaCTBLkXKlx5xlxyqXdI2p9HsPIK4cTlzss
+	TGcR4J0G3MxxNWO26CHmiOcw6MFATVg+JpfVKqRJFhBMkCDXQ6Ed7
+X-QQ-MAILINFO: MfiUJyQXz1c0sQ6M/Q+Jm6po+lcAmQYGEqxER10XnP3iAx6TUyKdk1ACB
+	Rm+G7fmJawcFLSEN0lIJZrSVudLZ4UduNA161r1OhyIcgV7BYvH3gUbzC/AfmHeBrmk+CJW
+	KyLrLOndb3El
+X-QQ-mid: mx122t1457709092tu1y4qawn
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=4aoDV
+	RzVajo0aUCJpmVrNFQPww/toqHmd9vP0ilR72M=; b=qQcetwJu+AZmao8clpM3J
+	f3EmnfQvNvGus+5V/RpX8mU9BhwflAeEpp9dLX1bznjSIH8/UngBLSPnokBLf5Yc
+	dDvT2VrDN7oe1ZQb1an465Wk35rgByOrHBjK9ggxzxphuqpdsXiE7elNg1LeXhWr
+	mTRH2sA2ZhFu0pTinaBNB8=
+Received: from localhost (unknown [118.251.68.57])
+	by smtp8 (Coremail) with SMTP id DMCowAC32zUc4OJWsgsnAQ--.14039S2;
+	Fri, 11 Mar 2016 23:11:25 +0800 (CST)
+Date: Fri, 11 Mar 2016 23:11:24 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <182089453.0.1457709085240.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DMCowAC32zUc4OJWsgsnAQ--.14039S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7tryDJw4xArW3Xr1UKw4DArb_yoW8Ary3pr
+	13Jr17Jr18JF15Jr1UXr17JF1DG347Jr1UJr18Jr18Ar1jkr1UGr1Utw18XrWjyryUJr1U
+	A3W7Jr1UZr1UJrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jjD7fUUUUU=
+X-Originating-IP: [118.251.68.57]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbB0h8pFFUL97U28wAAsp
+
+DOSPY
+com.wanmei.dospy/com.wanmei.dospy.core.ActivityDospySplash
+------------------------------
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+MalMath
+com.malmath.apps.mm/com.malmath.apps.mm.MainActivity
+------------------------------
+Ringdroid
+com.ringdroid/com.ringdroid.RingdroidSelectActivity
+------------------------------
+Swordigo
+com.touchfoo.swordigo/com.touchfoo.swordigo.MainActivity
+------------------------------
+Total =E5=90=AF=E5=8A=A8=E5=99=A8
+com.ss.launcher2/com.ss.launcher2.MainActivity
+------------------------------
+WPS =E5=81=B7=E8=B7=91=E7=89=88
+cn.wps.moffice_tpt/cn.wps.moffice.documentmanager.PreStartActivity
+------------------------------
+WPS=E9=82=AE=E7=AE=B1
+com.kingsoft.email/com.kingsoft.email.activity.Welcome
+------------------------------
+wifi=E5=AF=86=E7=A0=81=E5=88=86=E4=BA=AB=E4=BE=A0
+com.wifishare.csl/com.uzmap.pkg.EntranceActivity
+------------------------------
+=E9=94=A4=E5=AD=90=E4=BE=BF=E7=AD=BE
+com.smartisan.notes/com.smartisan.notes.NewNotesActivity
+------------------------------
+=E5=9D=9A=E6=9E=9C=E4=BA=91
+nutstore.android/nutstore.android.SplashScreen
+------------------------------
+=E9=9D=99=E8=AF=BB=E5=A4=A9=E4=B8=8B=E4=B8=93=E4=B8=9A=E7=89=88
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+=E4=B9=90=E5=AD=A6=E9=AB=98=E8=80=83
+com.lexue.courser/com.lexue.courser.activity.main.SplashActivity
+------------------------------
+=E8=AF=AD=E9=9F=B3=E8=BE=93=E5=85=A5=E6=9D=BF
+cn.aiworks.note/cn.aiworks.note.SplashActivity
+------------------------------
+=E4=BA=91=E6=9C=B5=E6=8A=A4=E7=9C=BC
+com.yunduo.nighttools/com.yunduo.nighttools.activity.TransitActivity
+------------------------------
+
+

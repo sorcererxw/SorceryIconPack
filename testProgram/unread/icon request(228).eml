@@ -1,0 +1,41 @@
+Received: from m50-133.163.com (unknown [123.125.50.133])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Thu, 10 Mar 2016 08:14:15 +0800
+X-QQ-SPAM: true
+X-QQ-FEAT: Me8Xob1wlXKl6VIwVZX6GUVgsYtzzuNCpPOFAg1pe8GAayao4vGx3Lge2xqBs
+	5aL5hRxdLIMnT0YtWGgRapjVZvgu+Nzl5+qIXVGg5t/RiqLEFV4qBCcmJtxFpkjLNfTj6WF
+	7poaSpAN8AecrE1awFf+OSVucGdaArGQzDQBvdHmpcQt5TB8qSESsJR9yzXiozv4C+OS6Pm
+	x61rSYjP/hTA/YiwbmqNo4Je+9zGC3I1misflh87qt9sE1eBg8nL1
+X-QQ-MAILINFO: ObpyOLNbESSkEQi0o2ucj3cULHzxU4qgOQ5JVLLnjoCgLsKRTZQrOyP2e
+	8DF9Hq1CQkqoJqNVwdB4+0a1mEysTtYFLe86K/aIhpEGpdYxmlX9eoeHTXUSXhMhifu8ltM
+	Co2hTer06627pzQTbSWzawDx8WzP1Muos6dLlActO2Gr
+X-QQ-mid: mx128t1457568855tgz4xvr0k
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Z07r9
+	x00Pjnconi1WN1w2jGqFRYrhjCDDKKu2dPK63o=; b=F5/w9Sxety+4rZX2QlBxd
+	ONEZvJ2cIb6PbPYFlxg+058POEO/JngDWA+Uj8KaXNQiEjcN4LJov3WwVWUxtOqu
+	47rghSH6tmR6WKJa8ZVrxwm1kSnUWtoMqiSyucERsHVuSHcLKcl/gmp5KFGQjezQ
+	+f9mPY2D7Fo8lfr0/riQo8=
+Received: from localhost (unknown [60.208.77.32])
+	by smtp3 (Coremail) with SMTP id DdGowEAZHEVVvOBWa8VqAA--.47291S2;
+	Thu, 10 Mar 2016 08:14:14 +0800 (CST)
+Date: Thu, 10 Mar 2016 08:14:13 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <240218670.0.1457568853667.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DdGowEAZHEVVvOBWa8VqAA--.47291S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUsv38UUUUU
+X-Originating-IP: [60.208.77.32]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOxcoFFXlSPjTvgAAs9
+
+=E8=85=BE=E8=AE=AF=E4=BD=93=E8=82=B2
+com.tencent.qqsports/com.tencent.qqsports.ui.SplashActivity
+------------------------------
+
+

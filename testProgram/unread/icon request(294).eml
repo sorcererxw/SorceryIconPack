@@ -1,0 +1,41 @@
+Received: from m12-12.163.com (unknown [220.181.12.12])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 18:33:39 +0800
+X-QQ-FEAT: OthLD3hRvFHOFwawx0lL6NBJbSVkwhbgUnEobyzDjJvYoJGigxl2TQltjCC6y
+	wAt585cJbmMOPU6N9XVDKDr1Bg6aWja/BjiKfYIxydzR8NCK0dYKzxoOSfBN+liEdZHhAys
+	pRGzmI9GWTkJ90ja7LhicYKhBDHF9zQthl9ev8vn8ODn26NCWek4Us4l+4FpRW02qwZgv9V
+	hat3aqD9QL8xXrtdc6IshZynQnP/ZgEgjOTfnJSoqKQ==
+X-QQ-MAILINFO: Nj4k/6lmmRCS4jQ0rzh5uGS9tO0nV0FaFclVyVVJcLDEMEWMfrdLOz1K2
+	xFaxyJx7pTXbPZ5JjS9Nh4KmqkmUeTLLJORtKVTg0HlvYOdcxGVrmn4kVkbrjpxLi4O5LuV
+	W5nbwLCOuX8e2ITe4thwNPI=
+X-QQ-mid: mx121t1457519620tgiof8v0h
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=D/qe0
+	JsHtcDlndnz5TfZqCxCQqRswR1lICf3+eemP8s=; b=BfrOck59CmEsnViK4e+pb
+	ZqCep+4zijOxKiaea6v+cxniJJtAng80Br/mKp4zvI3cJ52cVh/Su93S0/nroDl5
+	4xc4aUu5SifSoVxKczyNpJVWPCwB9Hjjyz4lODe0EMcyM58OCKwtT1UKrhPhPyoJ
+	oXiKIPxjh+Etow1J8KqI60=
+Received: from localhost (unknown [183.10.184.9])
+	by smtp8 (Coremail) with SMTP id DMCowACXnFz0+99W8D9oAA--.36926S2;
+	Wed, 09 Mar 2016 18:33:26 +0800 (CST)
+Date: Wed, 9 Mar 2016 18:33:25 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <795630714.0.1457519605856.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DMCowACXnFz0+99W8D9oAA--.36926S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU2PrcDUUUU
+X-Originating-IP: [183.10.184.9]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiTBcnFFSINyzGwgAAsr
+
+S =E5=A4=87=E5=BF=98=E5=BD=95
+com.sec.android.widgetapp.diotek.smemo/com.sec.android.widgetapp.q1_penmemo=
+.MemoListActivity
+------------------------------
+
+

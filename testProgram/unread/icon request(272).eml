@@ -1,0 +1,40 @@
+Received: from m12-11.163.com (unknown [220.181.12.11])
+	by newmx101.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 11:19:54 +0800
+X-QQ-FEAT: oHiIVEz9/LEvYx/H6Eov3DeFripLbKspU4X9F4O9gLe6xhO4dmCLuuFlBIYyL
+	HVm3sHDDl+21AEXvOo3USKrs9n/1zy046wPh92Q+eyX1qa00cMtcIZE5M4YWUIkIBDBqqfN
+	BkB+3Xk7+Ld2OUnJL0cYsE1jo/2tsf1c7yWRsSzOe3tZ4kqt+OpTsiK9gS8U3CB4aFlDqRg
+	Ot9+4w/SEQTryqB07LHPVUpZkBkNdWI4=
+X-QQ-MAILINFO: M9mpTqh4QKvqg26X+Aw5pTUh1zJb7RLYGmc9L65e/eFDTz3olfYzrSh2f
+	TqNCPLElCE2LozYisQCn0JxSL4H+4ff34B6xTIHljfhXGUEEwjIvD9P7Boi0ohOcnqR6smn
+	KOWooJTXoX/VVwPcznXAk+Q=
+X-QQ-mid: mx101t1457666394tjoq6leb3
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=mlxHJ
+	59jKFChCQSpKTVBzhydgbI5cS9MozDeUuT3E98=; b=S/+UpKgRi9fbWNnzLBtxL
+	JJoVFLljU1QjLOm2fXZEU5wJK9mreAWPVYIUYd3KLUJLYq5GbdjtFUTJDFtkkQa8
+	TgZxXc0BxDSvBXkEz6WUDbN0dwI4nRRNZ4KVB3Hq7xRP41e1OsDwUoZLcjcLsltF
+	RI0Kn7yv6A0GzHwAsKxogo=
+Received: from localhost (unknown [36.42.50.215])
+	by smtp7 (Coremail) with SMTP id C8CowAAHBmdSOeJW38UCAQ--.1545S2;
+	Fri, 11 Mar 2016 11:19:48 +0800 (CST)
+Date: Fri, 11 Mar 2016 11:19:48 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <199878746.0.1457666388644.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C8CowAAHBmdSOeJW38UCAQ--.1545S2
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxU7_O7UUUUU
+X-Originating-IP: [36.42.50.215]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEBYpFFWBUHo0nwAAsu
+
+NGA=E5=AE=A2=E6=88=B7=E7=AB=AF
+gov.anzong.androidnga/gov.anzong.androidnga.activity.MainActivity
+------------------------------
+
+

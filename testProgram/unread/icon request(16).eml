@@ -1,0 +1,70 @@
+Received: from m50-138.163.com (unknown [123.125.50.138])
+	by newmx86.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Tue, 15 Mar 2016 07:50:44 +0800
+X-QQ-FEAT: UQzUm2uM70c190c1pndW2S+Q6fvM7mKTer9g+ML6UvGo8nX/NiS+WSDt4uVn1
+	HieLV+UCDv90c6GMJqYdvlm6D8Spz6crJrsQhmX29pEgDm5nIqeOlcgVjMNhPumEv5TQaxd
+	9gZf7RxR4S+JzOW+NNRghnlsYG4Gvxi0D7qACdb6+DkeQGkcSDTNXLg+lRcA2xxGJV5j9O/
+	9/fuT/X5cTRbisl6iGLsg4WirPMhk67KWxoZ+uwXQUi8gesggajDR
+X-QQ-MAILINFO: M9mpTqh4QKvq9wbM479x3QyY3XBz3OvSO81ifn1px0h5Qedw8gPML/GHM
+	VmmfNGoYHtEDuB+7g2u52PVrM96Zt569c+ybi+lEQDdhucYCbCkVCZpittPkHDYIRgTz030
+	WNOLCdLkC0GI
+X-QQ-mid: mx86t1457999445tbzejppdu
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Ya54B
+	T7/a11qEJ68KY//+zIX6ymzrl8jG+gcENM8aSI=; b=iz2vCJEeZmg/aszN+HlSe
+	DKs9hRtCj+9VIx0mAZkP1VNLCqEOnozqiHnrRuoZn9Xl9xabiDEH4BLSd6MWY0mr
+	avQ3zRoDVhIZD+6xC2ahs36te/NTY8LfqyHGoxuHsesIY6Ku++NPXkr+nr84aKGx
+	IY/ys1ew/ZfQSWSIuBCg84=
+Received: from localhost (unknown [119.35.184.6])
+	by smtp1 (Coremail) with SMTP id C9GowACHMMRQTudW8DjTAQ--.35138S2;
+	Tue, 15 Mar 2016 07:50:42 +0800 (CST)
+Date: Tue, 15 Mar 2016 07:50:40 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <843896992.0.1457999440095.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C9GowACHMMRQTudW8DjTAQ--.35138S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrtw4rWryfuryxKw18AFyDGFg_yoWkZwb_JF
+	yUJF1UJr47Jry7Xr1UJr4UJw10qryUJF17Jr4UJr47Arnrtr1UtF1DJr4UWr1kXr1UJr17
+	JryUJw13JF1UJjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8qLvJUUUUU==
+X-Originating-IP: [119.35.184.6]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEBQsFFUL7O19pAAAs6
+
+Cytus
+com.rayark.Cytus.full/com.prime31.UnityPlayerNativeActivity
+------------------------------
+Deemo
+com.rayark.pluto/com.prime31.UnityPlayerNativeActivity
+------------------------------
+Fate/GO
+com.aniplex.fategrandorder/jp.delightworks.Fgo.player.AndroidPlugin
+------------------------------
+Love Live!
+klb.android.lovelivecn/klb.android.GameEngine.GameEngineActivity
+------------------------------
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+pixiv
+jp.pxv.android/jp.pxv.android.RootActivity
+------------------------------
+=E7=88=B1=E6=92=95=E5=9F=BA
+com.appbyme.app147008/com.mobcent.discuz.activity.SplashActivity
+------------------------------
+=E5=B8=83=E5=8D=A1=E6=BC=AB=E7=94=BB
+cn.ibuka.manga.ui/cn.ibuka.manga.ui.ActivityStartup
+------------------------------
+=E7=82=89=E7=9F=B3=E4=BC=A0=E8=AF=B4
+com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneNati=
+veActivity
+------------------------------
+=E6=BC=AB=E7=94=BB=E4=BA=BA
+com.ilike.cartoon/com.qihoo.util.StartActivity
+------------------------------
+
+

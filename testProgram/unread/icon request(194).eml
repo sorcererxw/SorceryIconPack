@@ -1,0 +1,160 @@
+Received: from m50-132.163.com (unknown [123.125.50.132])
+	by newmx101.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 19:05:26 +0800
+X-QQ-FEAT: NviVax2pLsUNHtZRITH2Tmp5y3zSUT8j+ZY90hsWoyKMe8Yqd2U8HtgGvS9Or
+	P5e8bjiCGgtkIGUS/XLqoKiYjJHU0Ei4nnY24QbqOl7v4OrdfgpLfHB8HI/fo2Ov51c47vx
+	xzKesoruO8NLwwbnf6zqkuo8isJSkPAIcDt97YrUmp17UyIQ8NPmfawS6zJ6EMVX1K241vI
+	b+i3+gTZwqa85088TxNhyx/LGw8JA4HyL4FtQIuxJyV63NWGY/Ox+Pq1SCcmoWWs=
+X-QQ-MAILINFO: N5kFcZDRcyD8yaOuN/7BLOM6UBLij7DfJEp8N5/OdZxYrsR0yhI9uNn3H
+	zUyeVKWekix+sWa4+W1JKIPJHcQcEHmBfuUB5Mw0Cmp5VqzfLbaLlDrVA1SagLNPmx/7UjO
+	6xdS1F0jdYkItjKvCgPwDCw=
+X-QQ-mid: mx101t1457694326t0yrqy2mj
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Ta1Ld
+	XGLZfaKym5jibvruls3tPavMzTQisZctJmPsus=; b=aoLdcyMQMEIEKRvxTGiMY
+	+i1gBXpbYDrnMyrETT54RvcU/7/vR/PG7BKqmo8AyOtKFtp5Uu7jL6IjTQlI1eL9
+	eKedtr3VhgWX9cD5fe/dhwnfmuKXPNDn53GECq5kwhNuQKvZMzutvzQMH9ZttLDE
+	T5QdA4CEKIOcJ0paJglRSo=
+Received: from localhost (unknown [114.243.202.51])
+	by smtp2 (Coremail) with SMTP id DNGowEC5NUVypuJWFFnSAA--.9059S2;
+	Fri, 11 Mar 2016 19:05:23 +0800 (CST)
+Date: Fri, 11 Mar 2016 19:05:22 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <697497851.0.1457694322420.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DNGowEC5NUVypuJWFFnSAA--.9059S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxZF18Jr4Dtw1rJw13KFW3Jrb_yoWrKrW3pr
+	13Jr17Jr18Jr15trWUWr1UXF1DGryUtr1UJr18Jr18Ar1YkF1UJr1Utw18XryUtry5Jr17
+	Jr17tr1UZr17Jr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j1385UUUUU=
+X-Originating-IP: [114.243.202.51]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEBYpFFWBUIHIiQAAs-
+
+2048
+us.shandian.game.twozero/us.shandian.game.twozero.MainActivity
+------------------------------
+App Cloner
+com.applisto.appcloner/com.applisto.appcloner.MainActivity
+------------------------------
+DOGE 2048
+com.michaelcarrano.doge_2048/com.michaelcarrano.doge_2048.MainActivity
+------------------------------
+Dove
+com.tinfinite.dove/org.telegram.ui.LaunchActivity
+------------------------------
+Flappy TRex
+com.skipser.flappytrex/com.skipser.flappytrex.ActivityInitiator
+------------------------------
+Flash Player Settings
+com.adobe.flashplayer/com.adobe.flashplayer.SettingsManager
+------------------------------
+Gank.io
+com.smartalk.gank/com.smartalk.gank.ui.activity.MainActivity
+------------------------------
+H5=E6=B5=8F=E8=A7=88=E5=99=A8
+org.noear.h5/org.noear.h5.controller.WebActivity
+------------------------------
+Lollipop Land
+com.jrummyapps.lollipopland/com.jrummyapps.lollipopland.activities.GameActi=
+vity
+------------------------------
+Lollipop Launcher
+com.lollipop.launcher/com.lollipop.launcher.LL
+------------------------------
+MCPE+
+plus.mcpe.mcpe_plus/plus.mcpe.mcpe_plus.LaunchActivity
+------------------------------
+Marshmallow Game
+com.moblynx.marshmallowgame/com.moblynx.marshmallowgame.MLandActivity
+------------------------------
+MaterialWalls
+com.skvere.materialwallpapers/com.skvere.materialwallpapers.MainActivity
+------------------------------
+Musixmatch
+com.musixmatch.android.lyrify/com.designfuture.music.ui.phone.DashBoardActi=
+vity
+------------------------------
+OpenVPN Connect
+net.openvpn.openvpn/net.openvpn.openvpn.OpenVPNClient
+------------------------------
+Popcorn Chef
+com.ramsayamarin.popcornchef/com.unity3d.player.UnityPlayerActivity
+------------------------------
+Pure=E5=A4=A9=E6=B0=94
+hanjie.app.pureweather/hanjie.app.pureweather.ui.activity.HomeActivity
+------------------------------
+QQ=E7=BA=A2=E5=8C=85=E5=81=87=E5=8F=A3=E4=BB=A4
+com.tencent.falseText/com.tencent.falseText.MainActivity
+------------------------------
+QQ=E6=97=A5=E6=9C=AC=E7=89=88
+com.tencent.qq.kddi/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+Running track for fingers
+com.funxl.runningtrack/com.funxl.runningtrack.MainActivity
+------------------------------
+Tetris Blitz
+com.ea.tetrisblitz_row/com.android.libso.AndroidLoadLibActivity
+------------------------------
+VC=E6=B5=8F=E8=A7=88=E5=99=A8
+com.funnylemon.browser/com.funnylemon.browser.activity.WelcomeActivity
+------------------------------
+VIP=E8=B4=A6=E5=8F=B7=E7=A5=9E=E5=99=A8
+com.vipshare/com.vipshare.ui.activity.WelcomeActivity
+------------------------------
+WPS =E5=81=B7=E8=B7=91=E7=89=88
+cn.wps.moffice_tpt/cn.wps.moffice.documentmanager.PreStartActivity
+------------------------------
+i=E8=A1=A8=E6=83=85
+com.ifaces.ibiaoqing/sun.guang.com.ibiaoqing.views.LoadingActivity
+------------------------------
+=E2=88=9E Loop
+com.balysv.loop/com.balysv.loop.GameActivity
+------------------------------
+=E7=88=B1=E6=90=9C=E4=BA=91
+com.fanchen.aisou/com.fanchen.aisou.activity.SplashActivity
+------------------------------
+=E6=A9=99=E5=AD=90VR-3D=E6=92=AD=E6=94=BE=E5=99=A8
+com.chengzivr.android/com.chengzivr.android.GuideActivity
+------------------------------
+=E8=99=AB=E8=99=AB=E5=8A=A9=E6=89=8B
+com.lion.market/com.lion.market.app.InitiateActivity
+------------------------------
+=E7=94=B5=E8=A7=86=E5=AE=B62.0
+com.elinkway.tvlive2/com.elinkway.tvlive2.activity.SplashActivity
+------------------------------
+=E5=A4=9A=E7=8E=A9=E6=88=91=E7=9A=84=E4=B8=96=E7=95=8C=E7=9B=92=E5=AD=90
+com.duowan.groundhog.mctools/com.duowan.groundhog.mctools.activity.StarActi=
+vity
+------------------------------
+=E6=9E=81=E7=AE=80=E6=B1=87=E7=8E=87
+com.tratao.xcurrency/com.tratao.xcurrency.MainActivity
+------------------------------
+=E9=9D=99=E8=AF=BB=E5=A4=A9=E4=B8=8B=E4=B8=93=E4=B8=9A=E7=89=88
+com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain
+------------------------------
+=E6=BC=AB=E4=BA=91
+com.ch.mhy/com.ch.mhy.GuideActivity
+------------------------------
+=E6=91=A9=E6=96=AF=E7=94=B5=E7=A0=81
+com.morsecode.translator.jinh/com.morsecode.translator.jinh.MainActivity
+------------------------------
+=E8=BD=BB=E6=9D=BE=E6=8A=A4=E7=9C=BC
+com.netease.protecteyes/com.netease.protecteyes.MainActivity
+------------------------------
+=E8=A7=86=E9=A2=91=E5=8A=A0=E9=80=9F=E7=8B=97
+android.luna.net.videohelptools/android.luna.net.videohelper.Ninja.Activity=
+.BrowserActivity
+------------------------------
+=E4=B8=AD=E5=9B=BD=E8=93=9DTV
+com.chinablue.tv/com.chinablue.tv.activity.WelcomeActivity
+------------------------------
+=E8=A3=85B=E7=A5=9E=E5=99=A8
+com.duowan.bi/io.dcloud.PandoraEntry
+------------------------------
+
+

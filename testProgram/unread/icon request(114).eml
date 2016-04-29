@@ -1,0 +1,108 @@
+Received: from m50-133.163.com (unknown [123.125.50.133])
+	by newmx82.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 04:58:17 +0800
+X-QQ-FEAT: 9NFkmNiL4hdglmEUN6m9k6ZGR45NbaICsDMp+NnrDGzU0yeoNsuawhkeo5tpk
+	ZQahRtYwij5rYxBom/dgtgEKVY2Vb3os7NNPskvg/ZxLC6oB7rap7fZqvcYgowExEAn0fT3
+	91k9MAOyqWYxw/8/dQjUVbKsKthTa2fWssYJi3DDxZ+dobBWhNBcDRtLtyweYrVC+uV6yiI
+	Itl0gcfzVNJtmzffS048AcHd9S3lROuDpCwLdoFlnDw==
+X-QQ-MAILINFO: Nj4k/6lmmRCSJU61HPd6SwAM6nTDzNqUuxQ9bgFkyoh5qolj9RscZ7fLg
+	pcvm690DA+BZIp9nbIlC+lAuJ9uGapP68YYAfhdJyPxy7dq2h2Nw6jLiJ2TuoaQddSaD095
+	za66oepvBY2G
+X-QQ-mid: mx82t1457816297t58dfgdby
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=C1PU6
+	dEDPG3fuR5gWteIj8BLcBB14+3fjvBcOPo/fsY=; b=KR68j6LCBBMBz0XzUo8uP
+	SHDJjhSjFYVPiC1o+MVeuo1lbxOu4YKGFKhEKvLS/Yw/R+3h+TE/pzxVpzd+tf1H
+	6rM5dmrwpT8maSYUcFgMWVWEAlz9UlMRWjbpS24N53Rx3sE8GTtQbDr9/ROV5eQJ
+	Wp43HeacQ7TDO+fAiXlgpg=
+Received: from localhost (unknown [103.26.126.10])
+	by smtp3 (Coremail) with SMTP id DdGowEDprkvlguRWcd5zAA--.10529S2;
+	Sun, 13 Mar 2016 04:58:16 +0800 (CST)
+Date: Sun, 13 Mar 2016 04:58:11 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <61652513.0.1457816292411.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:DdGowEDprkvlguRWcd5zAA--.10529S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxWrWrJF13WFyUCw1ktry7Jrb_yoW5Xr1Dpr
+	13Jr17Jr18JF1UAF1UWr4UJF1DGryUJr13Jr17Gr18Ar1qk3W7Jw1Utr18ArWUtryUJr17
+	Aw17Jr1UZryUGr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UEdgtUUUUU=
+X-Originating-IP: [103.26.126.10]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEggqFFZXwj0UCQAAsH
+
+Autostarts
+com.elsdoerfer.android.autostarts/com.elsdoerfer.android.autostarts.ListAct=
+ivity
+------------------------------
+BlackLight
+us.shandian.blacklight/info.papdt.blacklight.ui.entry.EntryActivity
+------------------------------
+Flash Player Settings
+com.adobe.flashplayer/com.adobe.flashplayer.SettingsManager
+------------------------------
+Hyperlapse
+com.microsoft.hyperlapsemobile/hyperlapsemobile.android.startpage
+------------------------------
+KineMaster =E8=A6=96=E9=A0=BB=E7=B7=A8=E8=BC=AF=E5=99=A8
+com.nexstreaming.app.kinemasterfree/com.nextreaming.nexeditorui.MainActivit=
+y
+------------------------------
+MIX
+com.pinguo.edit.sdk/com.pinguo.mix.MixMainActivity
+------------------------------
+MiXplorer
+com.android.mifileexplorer/com.android.mifileexplorer.activities.BrowseActi=
+vity
+------------------------------
+Quick Camera
+com.kimcy929.quickcamera/com.kimcy929.quickcamera.LoginActivity
+------------------------------
+VIP=E5=88=86=E4=BA=AB=E7=BD=91
+com.vipfenxiang.app/com.vipfenxiang.app.MainActivity
+------------------------------
+=E5=87=80=E7=BD=91=E5=A4=A7=E5=B8=88
+com.adsafe/com.adsafe.ui.activity.LeadFirstActivity
+------------------------------
+=E6=B5=81=E9=87=8F=E9=93=B6=E8=A1=8C
+com.flowbank.wo/com.flowbank.wo.activity.WelcomeActivity
+------------------------------
+=E6=8B=87=E6=8C=87=E7=8E=A9
+com.muzhiwan.market/com.muzhiwan.market.activity.SplashActivity
+------------------------------
+=E5=B9=B3=E5=AE=89WiFi
+com.pingan.pinganwifi/com.pingan.pinganwifi.loading.LoadingActivity
+------------------------------
+=E9=97=AA=E9=A3=9E
+com.cdnren.sfly/com.cdnren.sfly.ui.SplashActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1=E8=BD=AC=E5=8F=91=E6=A8=A1=E5=9D=97
+com.fkzhang.wechatforwarder/com.fkzhang.wechatforwarder.MainActivity-Alias
+------------------------------
+=E6=97=A0=E7=BA=BF=E5=9F=8E=E5=B8=82=E6=8E=8C=E4=B8=8A=E5=85=AC=E4=BA=A4
+com.mygolbs.mybus/com.mygolbs.mybus.LoginActivity
+------------------------------
+=E7=A7=BB=E5=8B=95=E6=8B=8D=E6=94=9D
+com.sony.motionshot/com.sony.motionshot.record.RecordActivity
+------------------------------
+=E8=89=BA=E8=80=83=E5=9C=A8=E7=BA=BF
+com.yikaoxian.mobile/io.dcloud.PandoraEntry
+------------------------------
+=E9=93=B6=E8=81=94=E9=92=B1=E5=8C=85
+com.unionpay/com.unionpay.activity.UPActivityWelcome
+------------------------------
+=E5=BD=B1=E8=A7=86=E5=A4=A7=E5=85=A8
+com.le123.ysdq/com.elinkway.infinitemovies.ui.activity.SplashActivity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E5=A6=82=E5=AE=B6
+com.ziipin.homeinn/com.ziipin.homeinn.activity.SplashActivity
+------------------------------
+=E9=88=B4=E8=81=B2=E5=89=AA=E8=BC=AF
+com.herman.ringtone/com.herman.ringtone.MusicPicker
+------------------------------
+
+

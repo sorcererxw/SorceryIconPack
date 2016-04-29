@@ -1,0 +1,99 @@
+Received: from m12-11.163.com (unknown [220.181.12.11])
+	by newmx97.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 12:06:04 +0800
+X-QQ-FEAT: /peYvah/M2UmEwUdnMZdQNs0MQ3RKzvJv2OuSF61zr/XiCEVJlx2B1z9XEXTZ
+	vFWp6ZRGHwpqBGtrrdBcc3bzVb/bBnnsxDmWlv0MKk4Chi+CMnRG/egRiQDZRxon+WgfWBB
+	4CKrlaa++MG0QZpEIdwuxHTlpWzVlq1jI21pb/GfUW0jvoFzipIBXs756BeVfue9Wul40XW
+	QNu5tiLFCQiOydetHAgG1Yq6HbbWAlhlX3KnVgHhtR2+nKxhLic0eIQzoRJ7+Ou0=
+X-QQ-MAILINFO: MHG2h55yn1ll2/mEVujeLnhMefqFFkEbvUVv/Fzrkk9Hw0Vj0RvW+nhYK
+	wkeFd9G/nGffTMIcoVkXxLz2sjemvOK8LzPZytJgPNe3AAND+o858T5azsUNbiDfBFxjjUA
+	fnRXZTpLXaMl
+X-QQ-mid: mx97t1457496364t1hrmulpk
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=KN7U0
+	J1oawkGAVEdI6Czgg+XWyXlQsxtTQwptQUmAvQ=; b=IgBjfNkWilJvFH/GGw7Hp
+	tpXRbDI6T4HMaECNSfRYfIK65MqUauJA1igkF3KAJzHB0gMYR8BKJRrxFes2q1Cr
+	mtcZq6cXIv/kKYGc/HwWr6Hb6ac/mIe5U0VLs63jeQRSDwxlOsu9C2Q3/XtV8PFi
+	V9ZjJCMlmxiaL2bCNqgOA0=
+Received: from localhost (unknown [14.30.0.10])
+	by smtp7 (Coremail) with SMTP id C8CowAAXeYQgod9WWoxLAA--.40007S2;
+	Wed, 09 Mar 2016 12:05:52 +0800 (CST)
+Date: Wed, 9 Mar 2016 12:05:48 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <32177914.0.1457496348481.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C8CowAAXeYQgod9WWoxLAA--.40007S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7tF47Ww4kGFyDtFyrtryUtrb_yoW8tFWrpr
+	13Jr17Jr18JF15JrWUWrWUXr1DW345Jr18Jr1UJr18Zr1jkFyxJryUtw18XrWUtry5Jr13
+	Aw17tr1UXr17Jr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jyJP_UUUUU=
+X-Originating-IP: [14.30.0.10]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEAMnFFUL7IKzHAAAs-
+
+XX=E8=B4=B4=E5=90=A7
+com.baidu.xxtieba/com.baidu.tieba.LogoActivity
+------------------------------
+=E7=88=B1=E5=90=AC4G
+com.imusic.iting/com.gwsoft.imusic.controller.LoadingActivity
+------------------------------
+=E8=A2=AB=E7=AA=9D=E5=A3=B0=E6=AC=A1=E5=85=83
+com.jianut.bedworm/com.jianut.bedworm.main.view.activity.PrefaceActivity
+------------------------------
+=E9=AB=98=E8=83=BD=E8=B4=A9
+im.naodong.gaonengfun/com.gnf.activity.XKSplashActivity
+------------------------------
+=E7=85=8E=E8=9B=8B
+com.danielstudio.app.wowtu/com.danielstudio.app.wowtu.ui.activity.MainActiv=
+ity
+------------------------------
+=E5=BF=AB=E9=80=92100
+com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceAct=
+ivity
+------------------------------
+=E6=AC=A7=E6=9C=8B=E6=B5=8F=E8=A7=88=E5=99=A8
+com.oupeng.mini.android/com.opera.android.OperaStartActivity
+------------------------------
+=E6=AC=A7=E6=9C=8B=E6=B5=8F=E8=A7=88=E5=99=A8
+com.oupeng.browser/com.opera.android.OperaStartActivity
+------------------------------
+=E4=BC=81=E4=B8=9AQQ
+com.tencent.eim/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+=E4=B8=87=E8=83=BD=E9=81=A5=E6=8E=A7
+com.duokan.phone.remotecontroller/com.xiaomi.mitv.phone.remotecontroller.Ho=
+riWidgetMainActivityV2
+------------------------------
+=E5=B0=8FK=E6=99=BA=E8=83=BD
+com.kankunit.smartplugcronus/com.kankunit.smartknorns.activity.SplashActivi=
+ty
+------------------------------
+=E5=B0=8F=E7=B1=B3=E5=95=86=E5=9F=8E
+com.xiaomi.shop/com.xiaomi.shop.activity.MainTabActivity
+------------------------------
+=E5=B0=8F=E7=B1=B3=E5=BA=94=E7=94=A8=E5=95=86=E5=BA=97
+com.xiaomi.market/com.xiaomi.market.ui.MainTabActivity
+------------------------------
+=E5=B0=8F=E8=9A=81=E8=BF=90=E5=8A=A8=E7=9B=B8=E6=9C=BA
+com.xiaomi.xy.sportscamera/com.ants360.z13.activity.LogoSplashActivity
+------------------------------
+=E4=BA=91=E9=9B=86
+com.lydiabox.android/com.lydiabox.android.functions.mainPage.views.MainActi=
+vity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E7=94=9F=E6=B4=BB
+com.cmbchina.ccd.pluto.cmbActivity/com.cmbchina.ccd.pluto.cmbActivity.Splas=
+hActivity
+------------------------------
+=E6=99=BA=E8=83=BD=E5=AE=B6=E5=BA=AD
+com.xiaomi.smarthome/com.xiaomi.smarthome.StartupActivity
+------------------------------
+=E5=93=94=E5=93=A9=E5=93=94=E5=93=A9=E7=99=BD
+tv.danmaku.bilixl/tv.danmaku.bili.LauncherActivity
+------------------------------
+
+

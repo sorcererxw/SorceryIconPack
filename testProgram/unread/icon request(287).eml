@@ -1,0 +1,68 @@
+Received: from m12-11.163.com (unknown [220.181.12.11])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Wed, 09 Mar 2016 13:26:52 +0800
+X-QQ-FEAT: a8zG0QHSki+aqtXBFL5Do/T5dxz6JeVtDhm+Ui+EDq1dL0/6JjQea7slmZqQN
+	5fD/1VvwDgYpklk2XyS14X3SQJzvWwrOQaJawAc3UJhF8KXW2/4qNwMBykt676m9O1l2ZJY
+	0LLW04JFnSlViEflTmPqOVLLZ2h59kvREtzS2Xs+JdT1D2owRmdPuGiYvC/nNRCZwpb/j+h
+	ETS+VBGvvFvXI+Ey/wvZapHDS4BoW8hWW7nMeFfTrt6A1IIVjAzpz
+X-QQ-MAILINFO: ODvMQTwIxEi3mvh/zEzWeVmrqJxIV9AEu24RS6y2qzyKlwZNyyQz7PBjX
+	3baHL+DnH5g1xxF44rQ/rIKZk7V6fyRQRCr2cXPJfh7S+99MR1lWR+II1od5ZBVVgRZ1QjR
+	VokJ5qjPitgSoMLfBOJzUeA=
+X-QQ-mid: mx117t1457501213tqeyvygcg
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=w0qjG
+	TlgvQUTskUlY2kNJtWU5rxgDzzMw6q5hz1GF6U=; b=mnxQPTa7EsZx0cS1zizYg
+	7DzD37Pt/0geVRrxO5UFGN34EvZeNrIqH1V21byKhLwOx5JbS6hhF/5rtY9JIJEo
+	S92PWiVvmfrUQw7la/esw3FJlZOFTH6PNd4XYnBhQIfD18KSsDZajr3C2o5O21nJ
+	TVWmFLZ6prOKreiMlqlKTk=
+Received: from localhost (unknown [222.211.139.243])
+	by smtp7 (Coremail) with SMTP id C8CowABHkYQPtN9WfStRAA--.41762S2;
+	Wed, 09 Mar 2016 13:26:41 +0800 (CST)
+Date: Wed, 9 Mar 2016 13:26:39 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <122027111.0.1457501199565.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C8CowABHkYQPtN9WfStRAA--.41762S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrtr1DWF1rtr4UZw1rWr1fCrg_yoWkWFb_JF
+	yUJF1UJr47JwnrXF1UArn8J340qryUGr4UJr13Jr47Jrn7tw4jqr1DKr4UWr1DXryUJF17
+	JF1DJr13Xr1UGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUn-18PUUUUU==
+X-Originating-IP: [222.211.139.243]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbBEBMnFFUL7IP4mwAAsi
+
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+SegmentFault
+com.segmentfault.app/com.segmentfault.app.activity.MainActivity
+------------------------------
+=E5=AE=89=E5=85=A8=E4=BB=A4
+com.blizzard.bma/com.blizzard.bma.ui.welcome.SplashActivity
+------------------------------
+=E5=BD=93=E5=BD=93
+com.dangdang.buy2/com.dangdang.buy2.StartupActivity
+------------------------------
+=E7=82=89=E7=9F=B3=E4=BC=A0=E8=AF=B4
+com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneNati=
+veActivity
+------------------------------
+=E7=82=89=E7=9F=B3=E4=B8=8B=E8=BD=BD=E5=99=A8
+ne.lushi.lushilauncher/ne.lushi.lushilauncher.MainActivity
+------------------------------
+=E6=B7=98=E5=B0=8F=E8=AF=B4
+com.martian.ttbook/com.martian.mibook.EnterActivity
+------------------------------
+=E6=8E=8C=E4=B8=8A=E7=94=9F=E6=B4=BB
+com.cmbchina.ccd.pluto.cmbActivity/com.cmbchina.ccd.pluto.cmbActivity.Splas=
+hActivity
+------------------------------
+=E6=9C=80=E7=BE=8E=E5=A3=81=E7=BA=B8
+com.brixd.wallpager/com.zuimeia.wallpaper.ui.activity.SplashScreenActivity
+------------------------------
+
+

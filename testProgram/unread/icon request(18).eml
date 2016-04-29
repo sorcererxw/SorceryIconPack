@@ -1,0 +1,352 @@
+Received: from m50-135.163.com (unknown [123.125.50.135])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Tue, 15 Mar 2016 08:53:33 +0800
+X-QQ-FEAT: lIVMO7i1KyGXckZTUmCVqj94EMsdaDsPUgEFAssStaZfXH8+wJ50jCuoHSahh
+	OW0ImgZXgYnQxys5T337oO6UyKQ35RNmf5ZE8GczT7PbTBHoZJlSVqAQDupVYuMatE3Vlrp
+	mr22TEG5yJ4WloU9BuHytXT4nraApWZ4NLpsNCFix2luR7/HYVTZQ1Kg/kRl+hZPk0lIhsw
+	YYZ7Fu5dIMg24iQamc5TGdE3ARcobriu50TOJx9o6ygGKK5/N77Rx
+X-QQ-MAILINFO: MfiUJyQXz1c0uTa/knlyUxA9KuRHOsD1whux/63yP3i0vumcUtbfHvRKe
+	WJdslDCEYXk+0W1mjq4t9SRFHJSUGgQ3Smm5+hy8qusVJh/ksNv1P2/zN8Y9Hb55Cmao0fW
+	qrAFP6VWmb1zq3OCygl8Yyw=
+X-QQ-mid: mx128t1458003214tsgqoupga
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=Q83bu
+	TuRvuj9aSIigQpmpWKF44su4bFB3I7ehAMw13o=; b=aL6sb+jo19YO+JMeDAVVT
+	xMz+Ar6u5qXOCneL5vJVTiZamhF7TwPq9BdCPEAaE2dGctGfjpWlWsFQ9RG+/UwT
+	KviUh12++mxYGwcs9whtarL0Z2RRRnJUFnwDPQQdMdPxoX+Xkilm3FB1SZPjXMnz
+	NaoZXlfEbguTCvbr6TM4MM=
+Received: from localhost (unknown [58.246.118.133])
+	by smtp5 (Coremail) with SMTP id D9GowACHbqUKXedWXjzIAQ--.12296S2;
+	Tue, 15 Mar 2016 08:53:32 +0800 (CST)
+Date: Tue, 15 Mar 2016 08:53:31 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <273869913.0.1458003211481.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:D9GowACHbqUKXedWXjzIAQ--.12296S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW3Zw4kCr15CrWftrWrtw4kCrg_yoWkKF15pr
+	13Jr17Jr18JF1UJryDJr17XF1DG345Jr1rJr1UJr18Ar1qkr1UJr1Utw18XrWUtryUJr17
+	Aw17tr1UZr1UGrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j1NtcUUUUU=
+X-Originating-IP: [58.246.118.133]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/xtbB0g0tFFUL9+3UNQAAsD
+
+AR=E5=9B=BE=E7=89=87=E6=95=88=E6=9E=9C
+com.sonymobile.androidapp.cameraaddon.areffect/com.sonymobile.androidapp.ca=
+meraaddon.areffect.AREffectApp
+------------------------------
+Anyview=E9=98=85=E8=AF=BB
+com.anyview/com.anyview.Splash
+------------------------------
+B612
+com.linecorp.b612.android/com.linecorp.b612.android.activity.ActivityCamera
+------------------------------
+C Notice
+com.ccs.notice/com.ccs.notice.ActivityMain
+------------------------------
+Candy Crush Saga
+com.king.candycrushsaga/com.king.candycrushsaga.CandyCrushSagaActivity
+------------------------------
+Candy Crush Soda
+com.king.candycrushsodasaga/com.king.candycrushsodasaga.StritzActivity
+------------------------------
+Chrome
+com.android.chrome/com.google.android.apps.chrome.Main
+------------------------------
+Chrooma Live Wallpaper
+com.gamelounge.chrooma_lwp.android/com.gamelounge.chrooma_lwp.android.SetWa=
+llpaperActivity
+------------------------------
+Counter
+me.tsukanov.counter/me.tsukanov.counter.ui.MainActivity
+------------------------------
+File Commander
+com.mobisystems.fileman/com.mobisystems.files.FileBrowser
+------------------------------
+Foodie
+com.linecorp.foodcam.android/com.linecorp.foodcam.android.camera.CameraActi=
+vity
+------------------------------
+Google=E8=AE=BE=E7=BD=AE
+com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsAc=
+tivity
+------------------------------
+Impulse
+com.prodigyarts.iconpack.impulse/com.prodigyarts.iconpack.impulse.HomeActiv=
+ity
+------------------------------
+Iride UI
+com.Fraom.IrideUI/com.Fraom.IrideUI.LicenseActivity
+------------------------------
+MSQRD
+me.msqrd.android/me.msqrd.android.MainActivity
+------------------------------
+Merck PTE
+de.merck.pte/com.mwaysolutions.pte.MainPSEActivity
+------------------------------
+Merus
+kov.theme.merus/core.app.LauncherIconActivity
+------------------------------
+Microtrip
+com.slipcorp.microtrip/com.slipcorp.microtrip.Microtrip
+------------------------------
+MyerList
+com.juniperphoton.myerlistandroid/activity.MainActivity
+------------------------------
+Nova Launcher
+com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaShortcutHandler
+------------------------------
+Nucleo UI
+com.Fraom.NucleoUI/com.Fraom.NucleoUI.LicenseActivity
+------------------------------
+Painted Sphere
+com.paintedsphere.iconpack/com.paintedsphere.iconpack.HomeActivity
+------------------------------
+Phone Clean
+com.cyou.clean/com.cyou.security.activity.SplashActivity
+------------------------------
+Play =E5=95=86=E5=BA=97
+com.android.vending/com.android.vending.AssetBrowserActivity
+------------------------------
+PlayMemories Mobile
+com.sony.playmemories.mobile/com.sony.playmemories.mobile.splash.SplashActi=
+vity
+------------------------------
+Poto
+com.ImaginationUnlimited.Poto/com.ImaginationUnlimited.Poto.activity.LogoAc=
+tivity
+------------------------------
+QQ=E8=BD=BB=E8=81=8A=E7=89=88
+com.tencent.qqlite/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+SIM=E5=8D=A1=E5=B7=A5=E5=85=B7=E5=8C=85
+com.android.stk/com.android.stk.StkLauncherActivity
+------------------------------
+SKRWT
+accky.kreved.skrwt.skrwt/accky.kreved.skrwt.skrwt.LaunchScreenActivity
+------------------------------
+Smart Connect=E2=84=A2
+com.sonyericsson.extras.liveware/com.sonyericsson.extras.liveware.ui.Launch=
+Activity
+------------------------------
+Snapseed
+com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+Speedtest
+org.zwanoo.android.speedtest/com.ookla.speedtest.softfacade.MainActivity
+------------------------------
+Sunshine Icon Pack
+com.samymarboy.theme.sunshine.donation/com.samymarboy.theme.sunshine.donati=
+on.ThemeActivity
+------------------------------
+The Invisible Game
+angtrim.com.theinvisiblegame/angtrim.com.theinvisiblegame.activities.MainAc=
+tivity
+------------------------------
+The Room Three
+com.FireproofStudios.TheRoom3/com.FireproofStudios.TheRoom3.TheRoom3NativeA=
+ctivity
+------------------------------
+TrackID=E2=84=A2
+com.sonyericsson.trackid/com.sonyericsson.trackid.activity.WidgetHandlerAct=
+ivity
+------------------------------
+WPS Office
+cn.wps.moffice_eng/cn.wps.moffice.documentmanager.PreStartActivity
+------------------------------
+WalkMate
+com.sonymobile.androidapp.walkmate/com.sonymobile.androidapp.walkmate.view.=
+main.MainActivity
+------------------------------
+Weico
+com.eico.weico/com.eico.weico.activity.LogoActivity
+------------------------------
+What's New
+com.sonymobile.entrance/com.sonymobile.entrance.EntranceActivity
+------------------------------
+i-Shanghai
+com.windfindtech.ishanghai/com.windfindtech.ishanghai.ISHMainContentActivit=
+y
+------------------------------
+iFlat
+com.theme.mumu.flat/com.theme.mumu.flat.MainActivity
+------------------------------
+=E5=A4=87=E4=BB=BD=E5=92=8C=E6=81=A2=E5=A4=8D
+com.sonyericsson.vendor.backuprestore/com.sonyericsson.vendor.backuprestore=
+.ui.MainActivity
+------------------------------
+=E5=BF=85=E5=BA=94=E8=AF=8D=E5=85=B8
+bingdic.android.activity/bingdic.android.activity.SplashscreenActivity
+------------------------------
+=E4=BE=BF=E7=AD=BE
+com.sonymobile.notes/com.sonymobile.notes.dashboard.DashboardActivity
+------------------------------
+=E8=A7=A6=E5=AE=9D=E8=BE=93=E5=85=A5=E6=B3=95
+com.cootek.smartinputv5/com.cootek.smartinput5.GateActivity
+------------------------------
+=E9=94=A4=E5=AD=90=E4=BE=BF=E7=AD=BE
+com.smartisan.notes/com.smartisan.notes.NewNotesActivity
+------------------------------
+=E5=9C=B0=E5=9B=BE
+com.tencent.qrom.map/com.tencent.map.WelcomeActivity
+------------------------------
+=E7=94=B5=E8=AF=9D
+com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialpho=
+nebook.DialerEntryActivity
+------------------------------
+=E7=94=B5=E5=AD=90=E9=82=AE=E4=BB=B6
+com.android.email/com.android.email.activity.Welcome
+------------------------------
+=E8=B0=83=E9=A2=91=E6=94=B6=E9=9F=B3=E6=9C=BA
+com.sonyericsson.fmradio/com.sonyericsson.fmradio.ui.FmRadioActivity
+------------------------------
+=E8=B1=86=E7=93=A3
+com.douban.frodo/com.douban.frodo.activity.SplashActivity
+------------------------------
+=E8=B1=86=E7=93=A3FM
+com.douban.radio/com.douban.radio.ui.WelcomeActivity
+------------------------------
+=E9=A5=BF=E4=BA=86=E4=B9=88
+me.ele/me.ele.Launcher
+------------------------------
+=E6=9E=9C=E5=86=BB=E4=BC=A0=E5=A5=87
+com.king.candycrushjellysaga/com.king.candycrushjellysaga.StritzActivity
+------------------------------
+=E4=BD=95=E6=97=B6
+bos.consoar.countdown/bos.consoar.countdown.ui.MainActivity
+------------------------------
+=E9=9B=86=E4=BA=AB=E5=8D=A1
+com.maxxipoint.android/com.maxxipoint.android.shopping.activity.WelcomeActi=
+vity
+------------------------------
+=E5=8D=B3=E5=88=BB
+com.ruguoapp.jike/com.ruguoapp.jike.ui.activity.SplashActivity
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.android2.calculator3/com.android2.calculator3.Calculator
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+=E9=85=B7=E5=B8=82=E5=9C=BA
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+=E6=9D=A5=E7=94=B5=E4=BF=A1=E6=81=AF
+org.xdty.callerinfo/org.xdty.callerinfo.activity.MainActivity
+------------------------------
+=E5=BD=95=E9=9F=B3=E5=99=A8
+com.sonymobile.androidapp.audiorecorder/com.sonymobile.androidapp.audioreco=
+rder.activity.MainActivity
+------------------------------
+=E7=BB=BF=E8=89=B2=E5=AE=88=E6=8A=A4
+com.oasisfeng.greenify/com.oasisfeng.greenify.GreenifyActivity
+------------------------------
+=E8=9A=82=E8=9A=81=E8=81=9A=E5=AE=9D
+com.antfortune.wealth/com.alipay.mobile.quinox.LauncherActivity
+------------------------------
+=E7=BE=8E=E5=9B=A2=E5=A4=96=E5=8D=96
+com.sankuai.meituan.takeoutnew/com.sankuai.meituan.takeoutnew.ui.page.boot.=
+WelcomeActivity
+------------------------------
+=E9=97=B9=E9=92=9F=E5=92=8C=E6=97=B6=E9=92=9F
+com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer
+------------------------------
+=E5=AE=81=E6=B3=A2=E9=93=B6=E8=A1=8C
+com.nbbank/com.nbbank.ui.ActivityShow
+------------------------------
+=E6=97=A5=E5=8E=86
+com.android.calendar/com.android.calendar.LaunchActivity
+------------------------------
+=E4=B8=8A=E6=B5=B7=E7=A7=BB=E5=8A=A8=E6=8E=8C=E4=B8=8A=E8=90=A5=E4=B8=9A=E5=
+=8E=85
+com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity
+------------------------------
+=E8=AE=BE=E5=AE=9A
+com.android.settings/com.android.settings.Settings
+------------------------------
+=E8=A7=86=E9=A2=91
+com.sonyericsson.video/com.sonyericsson.video.browser.BrowserActivity
+------------------------------
+=E6=89=8B=E6=9C=BA=E4=B9=90=E5=9B=AD
+cn.com.shouji.market/cn.com.shouji.market.MainTabActivity
+------------------------------
+=E5=A4=A9=E6=B0=94
+com.iwoll.weather/com.iwoll.weather.activity.MainActivity
+------------------------------
+=E9=80=9A=E8=AE=AF=E5=BD=95
+com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialpho=
+nebook.LaunchActivity
+------------------------------
+=E6=B6=82=E7=94=BB
+com.sonymobile.sketch/com.sonymobile.sketch.dashboard.DashboardActivity
+------------------------------
+=E8=B1=8C=E8=B1=86=E8=8D=9A=E4=B8=80=E8=A7=88
+com.wandoujia/com.wandoujia.ripple.activity.HomeActivity
+------------------------------
+=E7=BD=91=E6=98=93=E8=80=83=E6=8B=89=E6=B5=B7=E8=B4=AD
+com.kaola/com.kaola.spring.ui.welcome.SplashActivity
+------------------------------
+=E7=BD=91=E6=98=93=E4=BA=91=E9=9F=B3=E4=B9=90
+com.netease.cloudmusic/com.netease.cloudmusic.activity.LoadingActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+=E4=B8=8B=E8=BD=BD=E5=86=85=E5=AE=B9
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadList
+------------------------------
+=E7=9B=B8=E5=86=8C
+com.sonyericsson.album/com.sonyericsson.album.MainActivity
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.sonyericsson.android.camera/com.sonyericsson.android.camera.CameraActiv=
+ity
+------------------------------
+=E5=B0=8F=E5=B0=8F=E6=8A=A4=E7=9B=AE=E9=95=9C
+cn.mixiaoxiao.myappscreenmask/cn.mixiaoxiao.myappscreenmask.MainActivity
+------------------------------
+=E5=B0=8F=E6=9C=88=E5=8E=86
+com.popularapp.periodcalendar/com.popularapp.periodcalendar.AdActivity
+------------------------------
+=E4=BF=A1=E6=81=AF=E5=8A=9F=E8=83=BD
+com.sonyericsson.conversations/com.sonyericsson.conversations.ui.Conversati=
+onListActivity
+------------------------------
+=E5=BE=AA=E7=8E=AF=E4=B9=A0=E6=83=AF=E8=AE=B0=E5=BD=95
+org.isoron.uhabits/org.isoron.uhabits.MainActivity
+------------------------------
+=E9=AA=8C=E8=AF=81=E7=A0=81=E5=8A=A9=E6=89=8B
+me.drakeet.inmessage/me.drakeet.inmessage.MainActivity
+------------------------------
+=E9=9F=B3=E4=B9=90
+com.sonyericsson.music/com.sonyericsson.music.MusicActivity
+------------------------------
+=E5=BD=B1=E6=A2=AD
+com.github.shadowsocks/com.github.shadowsocks.Shadowsocks
+------------------------------
+=E6=94=AF=E6=8C=81
+com.sonymobile.helpapp7/com.sonymobile.helpapp7.MainActivity
+------------------------------
+=E6=94=AF=E4=BB=98=E5=AE=9D
+com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin
+------------------------------
+=E7=9F=A5=E4=B9=8E
+com.zhihu.android/com.zhihu.android.app.ui.activity.MainActivity
+------------------------------
+=E7=9F=A5=E4=B9=8E=E6=97=A5=E6=8A=A5
+com.zhihu.daily.android/com.zhihu.daily.android.activity.SplashActivity_
+------------------------------
+=E6=9C=80=E7=BE=8E=E5=BA=94=E7=94=A8
+com.brixd.niceapp/com.brixd.niceapp.activity.SplashActivity
+------------------------------
+
+

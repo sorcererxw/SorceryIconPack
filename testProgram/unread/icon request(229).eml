@@ -1,0 +1,114 @@
+Received: from m12-13.163.com (unknown [220.181.12.13])
+	by newmx111.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Thu, 10 Mar 2016 08:57:25 +0800
+X-QQ-FEAT: 9NFkmNiL4heyulGZuOmNREz6c7aBKKxnjcqX/ImaZoR6QYDcwrOZEVwk90j5a
+	+6SomlsGausRJW3i4XiIA1ZLg5wQioqoNOjONRM3b7Gv7+gNZeocbz11F7PTqLOqzmW5qjM
+	GDIXZJVYwpM97RttZ1D6PAf+WkUiDGdBn8qvwnNUH6AFJt+f/sVSamEDw7ZujUjg6pf03Cw
+	FSXGRl4c8ySf6Fh0OCmQy8rgX4qAhnMJTFK43TBZhtg==
+X-QQ-MAILINFO: NL3WKUOj1eeIIfYp4Mgk5vpBDGFbZ37e/kt/mXuV5StxdsoC+sugOIM8H
+	dMo5itPtv6xlXDm7e+58MvjRgnpBZAH/a6ZLvDeM7NMPFhcc6WGdKJjK7KRG+l8CAPnKd3/
+	/tiFXBBPWyJlXWi9/JMoNq0=
+X-QQ-mid: mx111t1457571446tc94h4ay8
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=+QiuG
+	eYSMOtsx+1tLipBERCpnf3A4eeFGpECbtCXDUU=; b=SOYGdfbolu9WVNinKS2kc
+	cI2FUmz6ONIk7sKwaKlooo6xr6PGfj+wSv6+4stG0JAeXCaA1TSk5WtxwJ9Rinsd
+	wnmmfnGm+6le6q7zQCZxYlBsvj8t2h2rRs/I0KGfVK/yhutWwc+KOHDfNq+eKOF/
+	vlaIoe1nqsInxQl92Bkwss=
+Received: from localhost (unknown [223.104.2.22])
+	by smtp9 (Coremail) with SMTP id DcCowABXpvFzxuBWI82hAA--.17906S2;
+	Thu, 10 Mar 2016 08:57:25 +0800 (CST)
+Date: Thu, 10 Mar 2016 08:57:23 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <496487639.0.1457571444202.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-CM-TRANSID:DcCowABXpvFzxuBWI82hAA--.17906S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxWrWfWFWkJF4xCr18tFWxXrb_yoW5CF17pr
+	nxAr47Jr1UCr1UAryDJr1UX3WDG345Gr15JrWUJr18Ar12vF1UJr1Utw18XrW2vry7Jr1U
+	Jw1Utr1jq34UGrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07Uijj9UUUUU=
+X-Originating-IP: [223.104.2.22]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEBUoFFWBUGNhYwAAsc
+
+Backup
+com.huawei.KoBackup/com.huawei.KoBackup.InitializeActivity
+------------------------------
+Camera
+com.huawei.camera/com.huawei.camera
+------------------------------
+Clock
+com.android.deskclock/com.android.deskclock.AlarmsMainActivity
+------------------------------
+Driving Mode
+com.huawei.vdrive/com.huawei.vdrive.ui.VDriveActivity
+------------------------------
+FM Radio
+com.huawei.android.FMRadio/com.huawei.android.FMRadio.FMRadioMainActivity
+------------------------------
+Files
+com.huawei.hidisk/com.huawei.hidisk.filemanager.FileManager
+------------------------------
+Gallery
+com.android.gallery3d/com.huawei.gallery.app.GalleryMain
+------------------------------
+HiCare
+com.huawei.phoneservice/com.huawei.phoneservice.ui.HelpCenterActivity
+------------------------------
+HiCloud
+com.huawei.android.ds/com.huawei.android.hicloud.ui.activity.NewHiSyncSettingActivity
+------------------------------
+HiVoice
+com.huawei.vassistant/com.huawei.vassistant.ui.VAssistantActivity
+------------------------------
+Honor WLAN
+com.huawei.cloudwifi/com.huawei.cloudwifi.account.SplashActivity
+------------------------------
+Magnifier
+com.huawei.magnifier/com.huawei.magnifier.MagnifierActivity
+------------------------------
+Messaging
+com.android.contacts/com.android.mms.ui.ConversationList
+------------------------------
+Mirror
+com.android.hwmirror/com.android.hwmirror.Mirror
+------------------------------
+Music
+com.android.mediacenter/com.android.mediacenter.PageActivity
+------------------------------
+Notepad
+com.example.android.notepad/com.example.android.notepad.NotePadActivity
+------------------------------
+Phone Manager
+com.huawei.systemmanager/com.huawei.systemmanager.mainscreen.MainScreenActivity
+------------------------------
+Screen Lock
+com.android.keyguard/com.android.keyguard.keyguardplus.OneKeyLockActivity
+------------------------------
+Settings
+com.android.settings/com.android.settings.HWSettings
+------------------------------
+Themes
+com.huawei.android.thememanager/com.huawei.android.thememanager.HwThemeManagerActivity
+------------------------------
+Torch
+com.android.systemui/com.android.systemui.flashlight.FlashlightActivity
+------------------------------
+Updater
+com.huawei.android.hwouc/com.huawei.android.hwouc.ui.activities.MainEntranceActivity
+------------------------------
+Videos
+com.huawei.hwvplayer/com.huawei.hwvplayer.framework.MainActivity
+------------------------------
+Vmall
+com.vmall.client/com.vmall.client.activity.VmallWapActivity
+------------------------------
+Weather
+com.huawei.android.totemweather/com.huawei.android.totemweather.WeatherHome
+------------------------------
+
+

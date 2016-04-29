@@ -1,0 +1,180 @@
+Received: from m50-138.163.com (unknown [123.125.50.138])
+	by newmx1.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Thu, 10 Mar 2016 02:08:08 +0800
+X-QQ-SPAM: true
+X-QQ-FEAT: /A5Igf99+LSQHiTym0NzK10PUT89jFocU9dlMEcKO/4SpiOehTTM5mLtnuePA
+	WW+6sNtpqZwIammuMfL6SMpBSMdGU5v/mjOw2CWHjN+7bwGCGZkbHXkvjTqD9AkCr8lLbkq
+	KDM4vqAiyLZZ6Gxh/+II/jmISLdPvpBUbi1LiclriAogGwqIN2BHBDQzC2qxtVvo7nuRx+K
+	VoI0/paLBZNrMCeORncUeeYLwfviqFpNjg0+6EUISXX6c8VFxZmXVY/8e9NiQC7k=
+X-QQ-MAILINFO: M9mpTqh4QKvq9wbM479x3QyY3XBz3OvSO4euxzkhi4FtUYLShRaORsNEw
+	6YqU7cnKRmMwpBYFY+lbeMmbj1BYt/4L+O9+NRsUQDDLV0x9cqw3Xce70qaGgWag2dYTjz2
+	hK2vBlGgGc/OUrmgT5g1CQOnmlW+LS1/5qFvxK4OWAff
+X-QQ-mid: mx18t1457546889tf73eexpu
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=9X6t7
+	+AjwJEX66HHHZwLMYrB7A75036E0pEalSrE4Co=; b=cPNpBHRYEz1X/r85QgRWn
+	a61OBBAK9sxuYFnAHN0ja27WEbs8GbNATtnfVd3UYSmrVrsW5NPpdHEmp+RP2fL8
+	/a6c6bblCAhVOvC8XzyMkXj2dehOXnws1/rM2951rFdhe1K6AW9JfhuOTdMkaFzF
+	LnWkd3a3YkOE9oZYw52v5k=
+Received: from localhost (unknown [43.224.26.101])
+	by smtp1 (Coremail) with SMTP id C9GowACXbS2FZuBWT7VoAA--.40166S2;
+	Thu, 10 Mar 2016 02:08:07 +0800 (CST)
+Date: Thu, 10 Mar 2016 02:08:04 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <86765264.0.1457546885356.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:C9GowACXbS2FZuBWT7VoAA--.40166S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxKrW7Kw43GrW5CFyfGFWUCFg_yoW7Ar43pr
+	13Jr17Jr1rJF1UJryDJr1UXF1DG345Jr15Jr1UGr18Ar1jyF1UJr1Utw18JrWjqryUJr17
+	Jw17tr1UXw1UJrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jj385UUUUU=
+X-Originating-IP: [43.224.26.101]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMwgnFFXle-eqbwAAsx
+
+Auto Hide Soft Keys
+com.gmd.hidesoftkeys/com.gmd.hidesoftkeys.MainActivity
+------------------------------
+Flash Player Settings
+com.adobe.flashplayer/com.adobe.flashplayer.SettingsManager
+------------------------------
+GravityBox[MM]
+com.ceco.marshmallow.gravitybox/com.ceco.marshmallow.gravitybox.GravityBoxS=
+ettingsAlias
+------------------------------
+Nova Launcher
+com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaShortcutHandler
+------------------------------
+Play =E5=95=86=E5=BA=97
+com.android.vending/com.android.vending.AssetBrowserActivity
+------------------------------
+Puppy
+learn.com.example.administrator.puppy/learn.com.example.administrator.puppy=
+.FirstActivity
+------------------------------
+QQ
+com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQ=E5=AE=89=E5=85=A8=E4=B8=AD=E5=BF=83
+com.tencent.token/com.tencent.token.ui.LogoActivity
+------------------------------
+QQ=E8=BE=93=E5=85=A5=E6=B3=95
+com.tencent.qqpinyin/com.tencent.qqpinyin.activity.GuideDialogActivity
+------------------------------
+QQ=E5=90=8C=E6=AD=A5=E5=8A=A9=E6=89=8B
+com.tencent.qqpim/com.tencent.qqpim.ui.QQPimAndroid
+------------------------------
+QQ=E9=9F=B3=E4=B9=90
+com.tencent.qqmusic/com.tencent.qqmusic.activity.AppStarterActivity
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+SuperSU
+eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Material
+------------------------------
+UC=E6=B5=8F=E8=A7=88=E5=99=A8
+com.UCMobile/com.UCMobile.main.UCMobile
+------------------------------
+WiFi=E4=B8=87=E8=83=BD=E9=92=A5=E5=8C=99
+com.snda.wifilocating/com.lantern.launcher.ui.MainActivity
+------------------------------
+XQS Background
+com.meloncookie.xqsbackground/com.meloncookie.xqsbackground.LaunchActivity
+------------------------------
+Xposed Installer
+de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeAc=
+tivity
+------------------------------
+=E7=99=BE=E5=BA=A6=E5=9C=B0=E5=9B=BE
+com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen
+------------------------------
+=E7=99=BE=E5=BA=A6=E7=BF=BB=E8=AF=91
+com.baidu.baidutranslate/com.baidu.baidutranslate.activity.SplashActivity
+------------------------------
+=E9=A5=BF=E4=BA=86=E4=B9=88
+me.ele/me.ele.Launcher
+------------------------------
+=E6=9B=B4=E6=96=B0=E4=B8=AD=E5=BF=83
+com.lge.updatecenter/com.lge.updatecenter.UpdateCenterPrfActivity
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+=E4=BA=AC=E4=B8=9C
+com.jingdong.app.mall/com.jingdong.app.mall.MainActivity
+------------------------------
+=E9=85=B7=E5=B8=82=E5=9C=BA
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+=E8=81=94=E7=B3=BB=E4=BA=BA
+com.android.contacts/com.android.contacts.activities.PeopleActivity
+------------------------------
+=E7=8C=8E=E8=B1=B9=E6=B8=85=E7=90=86=E5=A4=A7=E5=B8=88
+com.cleanmaster.mguard_cn/com.keniu.security.main.MainActivity
+------------------------------
+=E5=BD=95=E9=9F=B3=E6=9C=BA
+com.lge.voicerecorder/com.lge.voicerecorder.LaunchVoiceRecorder
+------------------------------
+=E5=A2=A8=E8=BF=B9=E5=A4=A9=E6=B0=94
+com.moji.mjweather/com.moji.mjweather.CSplashScreen
+------------------------------
+=E4=BB=BB=E5=8A=A1
+com.android.calendar/com.android.calendar.LaunchTasksActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.android.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+=E8=AE=BE=E7=BD=AE
+com.android.settings/com.android.settings.Settings
+------------------------------
+=E6=97=B6=E9=92=9F
+com.lge.clock/com.lge.clock.AlarmClockActivity
+------------------------------
+=E6=89=8B=E6=9C=BA
+com.android.contacts/com.android.contacts.activities.DialtactsActivity
+------------------------------
+=E8=85=BE=E8=AE=AF=E8=A7=86=E9=A2=91
+com.tencent.qqlive/com.tencent.qqlive.ona.activity.WelcomeActivity
+------------------------------
+=E5=9B=BE=E7=89=87=E5=BA=93
+com.android.gallery3d/com.android.gallery3d.app.Gallery
+------------------------------
+=E5=BE=AE=E5=8D=9A
+com.sina.weibo/com.sina.weibo.SplashActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+=E6=96=87=E4=BB=B6=E7=AE=A1=E7=90=86=E5=99=A8
+com.lge.filemanager/com.lge.filemanager.view.LaunchActivity
+------------------------------
+=E4=B8=8B=E8=BD=BD=E5=86=85=E5=AE=B9
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadList
+------------------------------
+=E7=9B=B8=E5=86=8C=E7=AE=A1=E5=AE=B6
+com.tencent.gallerymanager/com.tencent.gallerymanager.ui.WelcomeActivity
+------------------------------
+=E4=BF=A1=E6=81=AF
+com.android.mms/com.android.mms.ui.ConversationList
+------------------------------
+=E5=A4=9C=E9=97=B4=E6=A8=A1=E5=BC=8F
+com.chenai.eyes/com.qihoo.util.StartActivity
+------------------------------
+=E9=9F=B3=E4=B9=90
+com.lge.music/com.lge.music.MusicBrowserActivity
+------------------------------
+=E7=85=A7=E7=9B=B8=E6=9C=BA
+com.lge.camera/com.lge.camera.CameraAppLauncher
+------------------------------
+=E6=94=AF=E4=BB=98=E5=AE=9D
+com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin
+------------------------------
+
+

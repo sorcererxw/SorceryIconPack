@@ -1,0 +1,64 @@
+Received: from m12-16.163.com (unknown [220.181.12.16])
+	by newmx111.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sat, 12 Mar 2016 20:50:21 +0800
+X-QQ-FEAT: 3GtnPQ8BMmbO0wI2cJWAlxvDgYBiiaqvzUYfIZt+Sa5MWtmsG6OC0EuuKYmw8
+	yv4ZBKwTLHOkohXexcQAuR5kxMyObMlM5TtFi1lolVizq9xSpk792QuT1HFfzJk5hN271RE
+	sHutB9dxCDgAxK6cN+tSbt2rBYYra/HbU4EvHoM66qLE8BDLVz0eZM/v1Cilc1DSca3KPsR
+	bkuKEB0mzQDtvHp7pco20v3sRUtW8+bVChO3UmkIg2Q==
+X-QQ-MAILINFO: ODvMQTwIxEi3mvh/zEzWeVkYOnlseY4EGPrQHKIbvgeW6+JXjT6VAYaO9
+	ppsqu8brXco8dmFl8UQDTvBG/ONm5B+5emSLUa/Tk9Q3PANbwATfPtX0kx8rTWqxbzI0z/n
+	s5eG5fADEMeG
+X-QQ-mid: mx111t1457787021twxarvc4d
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=R1WIe
+	NWO9udZ7z4MflU13ocahLHqe62zndibKwPL2Tc=; b=IDQvkZDrwukZTI1d2Xcur
+	FLDPZ/Z2usIjy6G7q2hvB+NLXk7rDP50Glx5vNUnUNlZAnjPaeUbrIaaIdBOAoaK
+	SeKWJuvEB/HPIz68JHOEF/e13u+CW3gOJpViYpaczC2A/YN7e75RCOPBq5ZqCHmf
+	3qdjQP4kyfA44ROE4fELYA=
+Received: from localhost (unknown [123.182.41.102])
+	by smtp12 (Coremail) with SMTP id EMCowEBpUkWLEORWVQ0HAA--.3032S2;
+	Sat, 12 Mar 2016 20:50:20 +0800 (CST)
+Date: Sat, 12 Mar 2016 20:50:19 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <420775497.0.1457787019872.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:EMCowEBpUkWLEORWVQ0HAA--.3032S2
+X-Coremail-Antispam: 1Uf129KBjvdXoW7Jry8WFW5Cw1UuFyrAF4Utwb_yoWDWrX_JF
+	yUJF1UJrWUAr12qr1UJr15Ja18Xry5JrWUJF48JrW7Jrn7GF1UKF1vqr4DWrnxXryUJFy7
+	KFn5Jr17JF1UJjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU8cTmDUUUUU==
+X-Originating-IP: [123.182.41.102]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiEA0qFFWBUJMTnwAAs4
+
+Flyme=E7=A4=BE=E5=8C=BA
+com.meizu.flyme.flymebbs/com.meizu.flyme.flymebbs.activity.WelcomeActivity
+------------------------------
+Hyperlapse
+com.microsoft.hyperlapsemobile/hyperlapsemobile.android.startpage
+------------------------------
+Translator
+com.microsoft.translator/com.microsoft.translator.activity.SplashActivity
+------------------------------
+Yoho!Buy=E6=9C=89=E8=B4=A7
+com.yoho/com.yoho.yohobuy.start.ui.StartActivity
+------------------------------
+=E7=8B=AC=E6=98=82
+com.duang.caicai/com.duang.caicai.activity.userguide.WelcomeActivity
+------------------------------
+=E8=AF=BB=E4=B9=A6
+com.meizu.media.ebook/com.meizu.media.ebook.EBookActivity
+------------------------------
+=E5=A4=9A=E7=8E=A9=E6=88=91=E7=9A=84=E4=B8=96=E7=95=8C=E7=9B=92=E5=AD=90
+com.duowan.groundhog.mctools/com.duowan.groundhog.mctools.activity.StarActi=
+vity
+------------------------------
+=E9=AD=85=E5=B7=A5=E5=85=B7=E7=AE=B1
+com.zhixin.flymeTools/com.zhixin.flymeTools.MainActivity
+------------------------------
+
+

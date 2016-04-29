@@ -1,0 +1,84 @@
+Received: from m12-17.163.com (unknown [220.181.12.17])
+	by newmx14.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Sun, 13 Mar 2016 23:03:17 +0800
+X-QQ-FEAT: r8geFCKg7naMCLUgw0PCFxD/ELbDrJij/nvF2+3Ywox8dfaq9wH1cd0RADiyu
+	fM/fmkSEAdWZQrX4dzkCRVfXyrpgF3zOBCCgM/ur3DXk1Nn3EKhH2NHLncOu+2x3MnNdzrS
+	nVJq/1g+AVVwWzhG+ZyJqbsdZrB8HVH56k+HELJyRuIpxJ4hRo4U+OiUXHH5G2zfTuGDABK
+	uO+BwYVSR7/W6geZ4jrPmbfs2kY1uaC8KBEiX8uS8ID2P6w+hQWmnweZrIDGhU2I=
+X-QQ-MAILINFO: ObpyOLNbESSkyw+fixUhvYxo9m3hEUndmiG9dMNU8xt6+7LaCv/k1ml7z
+	TZVgV3XeKCY/T2S0/FXVTFbuh9OUsuFQPgm9ORsMjuU7Ye53zYOeVEMfY1nEzTGvFcvkaM9
+	yMCO9zR1wUnv
+X-QQ-mid: mx14t1457881397tsucylwgq
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=27Lsm
+	VRJEfFwyCU6bRLFN4DCTLmasyaXMxlo6E8VPP0=; b=Sq54hpQ2jIxM1p3m6pGgU
+	KW47cFihFyCzVLus+/COW29zRwY6zbPEOnssbQj1tgkQWamJWSkvXf8p8OHonNS8
+	yk+Y8dEpZy+nmhrdEkpPy/z1lHGZFk8i8paP+XriqgvYQtHdEviCFJ2W2yUpntyH
+	3RIMwnlbLObr2BCH1Q1H6M=
+Received: from localhost (unknown [36.45.31.117])
+	by smtp13 (Coremail) with SMTP id EcCowACnyTgugeVWnqDuAQ--.5047S2;
+	Sun, 13 Mar 2016 23:03:12 +0800 (CST)
+Date: Sun, 13 Mar 2016 23:03:09 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <99188279.0.1457881389632.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:EcCowACnyTgugeVWnqDuAQ--.5047S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7CryDGF1kCF4kXFyfGFy7GFg_yoW8Ar4Upr
+	13Jr17Jr18AF1UJrWUXr1UXF1kG34Utr1UJr1UGr18Jrn0kF17Gry7tw18XFWUtr98Gw47
+	Jw17tr1DZry8Jr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j8hLnUUUUU=
+X-Originating-IP: [36.45.31.117]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiOxArFFXlSTnB-wAAsq
+
+DU Certified
+com.dirtyunicorns.certified/com.dirtyunicorns.certified.LauncherActivity
+------------------------------
+MX Player
+com.mxtech.videoplayer.ad/com.mxtech.videoplayer.ad.ActivityMediaList
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+VIP=E8=B4=A6=E5=8F=B7=E7=A5=9E=E5=99=A8
+com.vipshare/com.vipshare.ui.activity.WelcomeActivity
+------------------------------
+=E7=88=B1=E5=A5=87=E8=89=BAPPS
+tv.pps.mobile/tv.pps.mobile.WelcomeActivity
+------------------------------
+=E7=99=BE=E5=BA=A6=E5=AE=89=E5=85=A8=E4=B8=AD=E5=BF=83
+com.baidu.passport.securitycenter/com.baidu.passport.securitycenter.activit=
+y.SplashActivity
+------------------------------
+=E7=94=B5=E4=BF=A1=E8=90=A5=E4=B8=9A=E5=8E=85
+com.ct.client/com.ct.client.SplashActivity
+------------------------------
+=E6=AC=A2=E4=B9=90=E6=96=97=E5=9C=B0=E4=B8=BB
+com.qqgame.hlddz/com.qqgame.hlddz.NewHLDDZ
+------------------------------
+=E5=8F=AF=E5=8F=AF=E8=8B=B1=E8=AF=AD
+com.kekeclient_/com.kekeclient.activity.InitActivity
+------------------------------
+=E5=BF=AB=E9=80=92100
+com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceAct=
+ivity
+------------------------------
+=E8=81=94=E6=83=B3=E6=97=A5=E5=8E=86
+com.lenovo.calendar/com.lenovo.calendar.splashpic.SplashActivity
+------------------------------
+=E9=97=AA=E4=BC=A0
+cn.andouya/cn.xender.ui.activity.SplashActivity
+------------------------------
+=E8=85=BE=E8=AE=AF=E5=8A=A8=E6=BC=AB
+com.qq.ac.android/com.qq.ac.android.ui.SplashActivity
+------------------------------
+=E5=BD=B1=E8=A7=86=E5=A4=A7=E5=85=A8
+com.le123.ysdq/com.elinkway.infinitemovies.ui.activity.SplashActivity
+------------------------------
+
+

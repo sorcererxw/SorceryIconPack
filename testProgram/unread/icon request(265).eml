@@ -1,0 +1,198 @@
+Received: from m12-15.163.com (unknown [220.181.12.15])
+	by newmx.qq.com (NewMx) with SMTP id 
+	for <feedback@sorcererxw.com>; Fri, 11 Mar 2016 10:23:33 +0800
+X-QQ-FEAT: CtF7S1VT99ryRwRFKdDN9IEQeW49YH1ClibQNHdrpqLNwVyYLhuKsiSdgLL68
+	gbI9i82HS5SG2cSfDdbga3ikwrb5taHLBIvIMDUPLTVtIz5yy/v4ObAug08eoj9VwbhkKQb
+	atGgxE8XbahyXkjuq5HY/bi+OwLCBgQlrMLVU/sfWYp+5n00PwpgPB/UGURNOg0JhDZm4Li
+	s0OAA3QXfSYsBilnHiVysIs7yajdN6wm168pznMb2zr1X3OK5rQvFMoyHmG5/D9Q=
+X-QQ-MAILINFO: NbUxUzKtP+7YfwpwF3T2wdK94JalaukwrcQ15s/EUR+X433RxmgW7J487
+	Ih6Ymr7gQcMfQcf8HUcAmY4jACb7E9lCSVGDY9S3ik596G992KPzFNDzfCCi5CUFdndtxJv
+	+8DZ4un8kQmrxYgEjrdtgN8=
+X-QQ-mid: mx128t1457663014tsnasbboc
+X-QQ-ORGSender: feedback_sorcerer@163.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Message-ID:Subject:MIME-Version; bh=u5iAW
+	qPc/1g9Dg8QINlRivvQt6Q4cIvFA6zzeCZ/T58=; b=BvYXz3ZSECqh4VRoqKp2a
+	9+np83xMOt7BwpgqHL0tskB2S8XYIdePCP+tHOmmnBk8JHBmq9/v1qkIscgdWqqM
+	VAvB6gqqserGsp9zw6/5608KRQGtDlWHM6wrJhSJUep1BECjfxCsiA5OvVN00r7F
+	urLgi+4FPR/+bsBgX1qLU4=
+Received: from localhost (unknown [218.94.115.45])
+	by smtp11 (Coremail) with SMTP id D8CowEBpDUYeLOJW57tIAA--.32761S2;
+	Fri, 11 Mar 2016 10:23:28 +0800 (CST)
+Date: Fri, 11 Mar 2016 10:23:27 +0800 (GMT+08:00)
+From: feedback_sorcerer@163.com
+To: feedback@sorcererxw.com
+Message-ID: <988787300.0.1457663007270.JavaMail.root@localhost>
+Subject: icon request
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-CM-TRANSID:D8CowEBpDUYeLOJW57tIAA--.32761S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW3Xry8Jw4DWw1kKF1rXr1DKFg_yoWxJF4xpr
+	13Jr17Jr18JFyUJryDJr17ZF1DG345Jr15Jr17Jr18Ar1jyF1UJr1Utw18JrWjqry5Jr1U
+	Aw1Utr1jqw17GrUanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UEJmbUUUUU=
+X-Originating-IP: [218.94.115.45]
+X-CM-SenderInfo: hihhvu5dfns2prufv2lhu6il2tof0z/1tbiMwUpFFXlfBH9cgAAsZ
+
+115
+com.ylmf.androidclient/com.ylmf.androidclient.UI.LogActivity
+------------------------------
+Android Wear
+com.google.android.wearable.app.cn/com.google.android.clockwork.companion.S=
+tatusActivity
+------------------------------
+AudioFX
+org.cyanogenmod.audiofx/org.cyanogenmod.audiofx.ActivityMusic
+------------------------------
+Chrome
+com.android.chrome/com.google.android.apps.chrome.Main
+------------------------------
+Gmail
+com.google.android.gm/com.google.android.gm.ConversationListActivityGmail
+------------------------------
+Google
+com.google.android.googlequicksearchbox/com.google.android.googlequicksearc=
+hbox.SearchActivity
+------------------------------
+Google=E8=AE=BE=E7=BD=AE
+com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsAc=
+tivity
+------------------------------
+Nova Launcher
+com.teslacoilsw.launcher/com.teslacoilsw.launcher.NovaShortcutHandler
+------------------------------
+Play =E5=95=86=E5=BA=97
+com.android.vending/com.android.vending.AssetBrowserActivity
+------------------------------
+QQ
+com.tencent.mobileqq/com.tencent.mobileqq.activity.SplashActivity
+------------------------------
+QQ=E9=9F=B3=E4=B9=90
+com.tencent.qqmusic/com.tencent.qqmusic.activity.AppStarterActivity
+------------------------------
+SIM =E5=8D=A1=E5=B7=A5=E5=85=B7=E5=8C=85
+com.android.stk/com.android.stk.StkLauncherActivity
+------------------------------
+Sorcery=E5=9B=BE=E6=A0=87=E5=8C=85
+com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.M=
+ainActivity
+------------------------------
+Ticwear=E5=8A=A9=E6=89=8B
+com.mobvoi.companion/com.mobvoi.companion.StartEntry
+------------------------------
+Xposed Installer
+de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeAc=
+tivity
+------------------------------
+e=E5=90=88=E4=BD=9C=E7=A4=BE
+com.milai.ecoop/com.milai.ecoop.activity.SplashActivity
+------------------------------
+=E7=99=BE=E5=BA=A6=E5=9C=B0=E5=9B=BE
+com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen
+------------------------------
+=E7=99=BE=E5=BA=A6=E8=B4=B4=E5=90=A7
+com.baidu.tieba/com.baidu.tieba.LogoActivity
+------------------------------
+=E7=99=BE=E5=BA=A6=E5=A4=96=E5=8D=96
+com.baidu.lbs.waimai/com.baidu.lbs.waimai.SplashActivity
+------------------------------
+=E7=94=B5=E8=AF=9D
+com.android.dialer/com.android.dialer.DialtactsActivity
+------------------------------
+=E7=94=B5=E5=AD=90=E9=82=AE=E4=BB=B6
+com.android.email/com.android.email.activity.Welcome
+------------------------------
+=E7=9F=AD=E4=BF=A1
+com.android.mms/com.android.mms.ui.ConversationList
+------------------------------
+=E9=A3=9E=E9=B1=BC=E5=9C=B0=E9=9D=A2=E7=AB=99
+org.jelsoon.android/org.jelsoon.android.activities.MainActivity
+------------------------------
+=E8=AE=A1=E7=AE=97=E5=99=A8
+com.android.calculator2/com.android.calculator2.Calculator
+------------------------------
+=E6=8E=98=E9=87=91
+com.daimajia.gold/com.daimajia.gold.LogoActivity
+------------------------------
+=E5=BC=80=E5=8F=91=E8=80=85=E5=A4=B4=E6=9D=A1
+io.manong.developerdaily/io.toutiao.android.ui.activity.LaunchActivity
+------------------------------
+=E9=85=B7=E5=B8=82=E5=9C=BA
+com.coolapk.market/com.coolapk.market.activity.MainActivity
+------------------------------
+=E5=BD=95=E9=9F=B3=E6=9C=BA
+com.android.soundrecorder/com.android.soundrecorder.SoundRecorder
+------------------------------
+=E7=BB=BF=E8=89=B2=E5=AE=88=E6=8A=A4
+com.oasisfeng.greenify/com.oasisfeng.greenify.GreenifyActivity
+------------------------------
+=E7=BE=8E=E5=9B=A2=E5=A4=96=E5=8D=96
+com.sankuai.meituan.takeoutnew/com.sankuai.meituan.takeoutnew.ui.page.boot.=
+WelcomeActivity
+------------------------------
+=E7=B1=B3=E6=9D=A5=E5=95=86=E6=88=B7
+com.meishipintu.assistant/com.meishipintu.assistant.ui.ActStartPage
+------------------------------
+=E5=89=8D=E7=A8=8B=E6=97=A0=E5=BF=A7
+com.job.android/com.job.android.pages.common.OpenImageActivity
+------------------------------
+=E6=97=A5=E5=8E=86
+com.google.android.calendar/com.android.calendar.AllInOneActivity
+------------------------------
+=E8=AE=BE=E7=BD=AE
+com.android.settings/com.android.settings.Settings
+------------------------------
+=E6=97=B6=E9=92=9F
+com.android.deskclock/com.android.deskclock.DeskClock
+------------------------------
+=E6=89=8B=E6=9C=BA=E6=B7=98=E5=AE=9D
+com.taobao.taobao/com.taobao.tao.welcome.Welcome
+------------------------------
+=E9=80=9A=E8=AE=AF=E5=BD=95
+com.android.contacts/com.android.contacts.activities.PeopleActivity
+------------------------------
+=E5=9B=BE=E5=BA=93
+com.android.gallery3d/com.android.gallery3d.app.GalleryActivity
+------------------------------
+=E5=BE=AE=E5=8D=9A
+com.sina.weibo/com.sina.weibo.SplashActivity
+------------------------------
+=E5=BE=AE=E4=BF=A1
+com.tencent.mm/com.tencent.mm.ui.LauncherUI
+------------------------------
+=E6=96=87=E4=BB=B6=E7=AE=A1=E7=90=86=E5=99=A8
+com.cyanogenmod.filemanager/com.cyanogenmod.filemanager.activities.Navigati=
+onActivity
+------------------------------
+=E9=97=AE=E9=97=AE=E5=BA=94=E7=94=A8=E5=95=86=E5=BA=97
+com.mobvoi.appstore/com.mobvoi.appstore.activity.WelcomeActivity
+------------------------------
+=E4=B8=8B=E8=BD=BD
+com.android.providers.downloads.ui/com.android.providers.downloads.ui.Downl=
+oadList
+------------------------------
+=E9=97=B2=E9=B1=BC
+com.taobao.fleamarket/com.taobao.fleamarket.activity.InitActivity
+------------------------------
+=E7=9B=B8=E6=9C=BA
+com.android.camera2/com.android.camera.CameraLauncher
+------------------------------
+=E9=9F=B3=E4=B9=90
+com.cyanogenmod.eleven/com.cyanogenmod.eleven.ui.activities.HomeActivity
+------------------------------
+=E8=AF=AD=E9=9F=B3=E6=90=9C=E7=B4=A2
+com.google.android.googlequicksearchbox/com.google.android.googlequicksearc=
+hbox.VoiceSearchActivity
+------------------------------
+=E6=94=AF=E4=BB=98=E5=AE=9D
+com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin
+------------------------------
+=E7=9F=A5=E4=B9=8E
+com.zhihu.android/com.zhihu.android.app.ui.activity.MainActivity
+------------------------------
+=E4=B8=BB=E9=A2=98
+org.cyanogenmod.theme.chooser/org.cyanogenmod.theme.chooser.ChooserActivity
+------------------------------
+
+
