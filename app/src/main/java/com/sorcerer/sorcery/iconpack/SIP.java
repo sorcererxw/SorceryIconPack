@@ -14,6 +14,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import c.b.BP;
 import cn.bmob.v3.Bmob;
 import im.fir.sdk.FIR;
 
@@ -38,6 +39,10 @@ public class SIP extends Application {
                 initImageLoader(mApplication);
             }
         }).start();
+
+
+        BP.init(this, getString(R.string.bmob_app_id));
+
     }
 
     /**

@@ -44,7 +44,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     private static final String TAG = "DonateActivity";
     private Activity mActivity;
     private int mAmount;
-    private boolean mLoadOK = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,18 +51,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
 
         ActivityDonateBinding binding = DataBindingUtil.setContentView(this, R.layout
                 .activity_donate);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    BP.init(getApplication(), getString(R.string.bmob_app_id));
-                    mLoadOK = true;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
 
         mActivity = this;
 
@@ -123,7 +110,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         int id = v.getId();
         if (id == R.id.button_donate_alipay) {
 
-            if (!mLoadOK) {
+            if (false) {
                 Intent intent = new Intent("android.intent.action.VIEW",
                         Uri.parse(
                                 "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F" +

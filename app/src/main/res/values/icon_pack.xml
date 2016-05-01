@@ -2,45 +2,21 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>fangdai_calculator</item>
-        <item>dialer</item>
-        <item>evernote</item>
-        <item>tianshidongman</item>
-        <item>snapchat</item>
-        <item>sougou_wallpaper</item>
-        <item>a3dmark</item>
-        <item>a360_liuliang</item>
-        <item>greenify</item>
-        <item>lantern</item>
-        <item>golden_dict</item>
-        <item>mengniangbaike</item>
-        <item>guaguamanhua</item>
-        <item>perfmon</item>
-        <item>tp_link</item>
-        <item>unicon</item>
-        <item>haibei_music</item>
-        <item>game_prune</item>
-        <item>game_virtua_tennis</item>
-        <item>game_wangzherongyao</item>
-        <item>flyme_wallet</item>
-        <item>media_converter</item>
-        <item>abchina_bank</item>
-        <item>pixiv</item>
-        <item>careland</item>
+        <item>a17</item>
+        <item>google_messenger</item>
+        <item>google_messenger_alt</item>
+        <item>blacklight</item>
+        <item>microsoft_office_outlook</item>
+        <item>kaixiaohao</item>
+        <item>ifanr</item>
+        <item>ali_cainiao_guoguo</item>
+        <item>tencent_qie_fm</item>
         <item>@string/icon_label_updated</item>
-        <item>press</item>
-        <item>messaging</item>
-        <item>feedly</item>
-        <item>blued</item>
-        <item>google_plus</item>
-        <item>zhuishushenqi</item>
-        <item>shuqi</item>
-        <item>a5sing</item>
-        <item>starbucks</item>
-        <item>google_play_games</item>
-        <item>microsoft_office_word</item>
-        <item>microsoft_office_excel</item>
-        <item>microsoft_office_powerpoint</item>
+        <item>download</item>
+        <item>it_home</item>
+        <item>haici_dict</item>
+
+
         <!--<item>**#Google Play Awards**</item>-->
         <!--<item>**##Best Use of Material Design**</item>-->
     </string-array>
