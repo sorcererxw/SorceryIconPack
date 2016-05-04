@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.util;
 
 import android.content.Context;
+import android.util.TypedValue;
 
 /**
  * Created by Sorcerer on 2016/4/28.
@@ -16,14 +17,13 @@ public class DisplayUtil {
         return (int) (pxValue / scale + 0.5f);
     }
 
-    public static int px2sp(Context context, float pxValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (pxValue / fontScale + 0.5f);
-    }
-
-    public static int sp2px(Context context, float spValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (spValue * fontScale + 0.5f);
+    public static int sp2px(Context context, float sp) {
+        int px = (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP,
+                sp,
+                context.getResources().getDisplayMetrics()
+        );
+        return px;
     }
 
 }

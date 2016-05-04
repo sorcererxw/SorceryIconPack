@@ -20,6 +20,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.Collections;
@@ -34,8 +35,6 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
     private List<LauncherInfo> mLauncherList;
     private Context mContext;
     private OnItemClickListener mListener;
-    private ColorMatrixColorFilter mGrayScaleFilter;
-
 
     public ApplyAdapter(Context context, List<LauncherInfo> launcherList) {
         mContext = context;
@@ -47,9 +46,6 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
             }
         });
 
-        ColorMatrix matrix = new ColorMatrix();
-        matrix.setSaturation(0);
-        mGrayScaleFilter = new ColorMatrixColorFilter(matrix);
     }
 
     public interface OnItemClickListener {
@@ -134,12 +130,12 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.LauncherView
 
         if (mLauncherList.get(position).isInstalled()) {
             holder.isInstalled.setText(mContext.getString(R.string.installed));
-            holder.icon.setColorFilter(null);
+            ImageUtil.resetScale(holder.icon);
             holder.label.setTextColor(ContextCompat.getColor(mContext, R.color.primary_text));
             holder.isInstalled.setTextColor(ContextCompat.getColor(mContext, R.color.primary_text));
         } else {
             holder.isInstalled.setText(mContext.getString(R.string.not_installed));
-            holder.icon.setColorFilter(mGrayScaleFilter);
+            ImageUtil.grayScale(holder.icon);
             holder.label.setTextColor(ContextCompat.getColor(mContext, R.color.secondary_text));
             holder.isInstalled
                     .setTextColor(ContextCompat.getColor(mContext, R.color.secondary_text));

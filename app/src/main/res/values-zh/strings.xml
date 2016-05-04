@@ -140,4 +140,5 @@
     <string name="search_hint">搜索(仅支持英文)</string>
     <string name="action_give_permission">授权</string>
     <string name="action_show_origin_icon">显示原图标</string>
+    <string name="icon_label_please_leave_baidu">**#请远离百度**</string>
 </resources>

@@ -118,6 +118,7 @@
 
     <string name="icon_label_added">**#Added**</string>
     <string name="icon_label_updated">**#Updated**</string>
+    <string name="icon_label_please_leave_baidu">**#please leave Baidu**</string>
 
     <string name="contributor">Contributor</string>
     <string name="job_developer">Developer</string>

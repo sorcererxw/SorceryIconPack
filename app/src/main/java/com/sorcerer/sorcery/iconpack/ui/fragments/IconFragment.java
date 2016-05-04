@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.databinding.DataBindingUtil;
 import android.graphics.Point;
 import android.graphics.drawable.Icon;
 import android.os.AsyncTask;
@@ -13,6 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -34,9 +36,11 @@ import com.nostra13.universalimageloader.utils.L;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
 import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
+import com.sorcerer.sorcery.iconpack.databinding.FragmentIconBinding;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.lang.reflect.Field;
@@ -68,6 +72,8 @@ public class IconFragment extends Fragment {
     public static final int FLAG_MIUI = 4;
     public static final int FLAG_FLYME = 15;
 
+    private int mArg;
+
     private List<IconBean> mIconBeanList;
 
     private AutoLoadRecyclerView mGridView;
@@ -97,14 +103,17 @@ public class IconFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
+        mArg = getArguments().getInt("flag", 0);
         if (mIconBeanList == null) {
             mIconBeanList = getIconBeanList(getResources(),
                     getContext().getPackageName(),
-                    getArguments().getInt("flag", 0));
+                    mArg);
         }
 
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
-        mGridView = (AutoLoadRecyclerView) view.findViewById(R.id.recyclerView_icon_gird);
+        FragmentIconBinding binding = DataBindingUtil.bind(view);
+
+        mGridView = binding.recyclerViewIconGird;
         mGridLayoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
         mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -118,7 +127,7 @@ public class IconFragment extends Fragment {
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
 
-        mSearchLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout_icon_search);
+        mSearchLayout = binding.swipeRefreshLayoutIconSearch;
         try {
             Field f = mSearchLayout.getClass().getDeclaredField("mCircleView");
             f.setAccessible(true);
@@ -145,7 +154,7 @@ public class IconFragment extends Fragment {
         mIconAdapter =
                 new IconAdapter(getActivity(),
                         getContext(),
-                        mIconBeanList);
+                        mIconBeanList, mGridView);
 
         if (mCustomPicker) {
             mIconAdapter.setCustomPicker(mParentActivity, mCustomPicker);

@@ -1,27 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/linearLayout_drawer_menu_root"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
-    android:orientation="horizontal">
+<layout>
 
-    <ImageView
-        android:id="@+id/imageView_drawer_menu_item_icon"
-        android:layout_width="wrap_content"
+    <data class="ItemDrawerMenuBinding">
+
+        <import type="android.view.View"/>
+
+        <import type="com.sorcerer.sorcery.iconpack.adapters.DrawerMenuAdapter.MenuItemViewModel"/>
+
+        <variable
+            name="item"
+            type="MenuItemViewModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_drawer_menu_root"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
-        android:alpha="0.6"/>
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="@{item.type==2?false:true}"
+        android:onClick="@{item.listener}"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView_drawer_menu_item_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="32dp"
-        android:textColor="@color/primary_text"
-        android:textSize="14sp"/>
+        <LinearLayout
+            android:id="@+id/linearLayout_drawer_menu_item"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:visibility="@{item.type==2? View.GONE:View.VISIBLE}">
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/imageView_drawer_menu_item_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:alpha="0.6"
+                android:visibility="@{item.type==0? View.VISIBLE:View.GONE}"/>
+
+            <TextView
+                android:id="@+id/textView_drawer_menu_item_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:alpha="0.87"
+                android:text="@{item.label}"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey_300"
+            android:visibility="@{item.type==2?View.VISIBLE:View.GONE}"/>
+    </LinearLayout>
+</layout>

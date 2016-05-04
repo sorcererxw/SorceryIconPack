@@ -6,13 +6,13 @@
     </data>
 
     <android.support.v4.widget.DrawerLayout
-        android:background="@color/white"
         android:id="@+id/drawerLayout_main"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
         tools:context=".ui.activities.MainActivity">
 
@@ -49,12 +49,18 @@
                             app:layout_scrollFlags="scroll|enterAlways"
                             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
-                        <com.miguelcatalan.materialsearchview.MaterialSearchView
+                        <!--<com.miguelcatalan.materialsearchview.MaterialSearchView-->
+                        <!--android:id="@+id/searchBox_main_icon"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:hint="@string/search_hint"-->
+                        <!--android:textColorHint="@color/content"-->
+                        <!--android:visibility="gone"/>-->
+
+                        <com.sorcerer.sorcery.iconpack.ui.views.SearchBox
                             android:id="@+id/searchBox_main_icon"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/search_hint"
-                            android:textColorHint="@color/content"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
 
                     </RelativeLayout>
 

@@ -27,6 +27,7 @@ import com.sorcerer.sorcery.iconpack.databinding.ActivityIconDialogBinding;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
@@ -81,6 +82,9 @@ public class IconDialogActivity extends AppCompatActivity {
         mBinding.setIconSrc(mRes);
 
         mBinding.imageViewDialogIcon.setImageResource(mRes);
+        if (mName.contains("baidu")) {
+            ImageUtil.grayScale(mBinding.imageViewDialogIcon);
+        }
 
         mBinding.likeLayout.bindIcon(mName);
 
@@ -126,7 +130,6 @@ public class IconDialogActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         if (mComponent != null) {
             getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
-
 
 
             MenuItem showOrigin = menu.findItem(R.id.action_show_origin_icon);

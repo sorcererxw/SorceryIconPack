@@ -1,37 +1,57 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment">
+<layout>
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout_icon_search"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <data class="FragmentIconBinding">
 
-        <com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView
-            android:id="@+id/recyclerView_icon_gird"
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context="com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout_icon_search"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical">
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/frameLayout_icon_fragment_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView
+                    android:layout_below="@+id/frameLayout_icon_fragment_head"
+                    android:id="@+id/recyclerView_icon_gird"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical">
+
+                </com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView>
+            </RelativeLayout>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <!--<com.wang.avi.AVLoadingIndicatorView-->
+        <!--android:id="@+id/avLoadingIndicatorView_icon_fragment"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--app:indicator_color="@color/accent"-->
+        <!--app:indicator="LineScale"/>-->
 
 
-        </com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView>
-    </android.support.v4.widget.SwipeRefreshLayout>
-    <!--<com.wang.avi.AVLoadingIndicatorView-->
-    <!--android:id="@+id/avLoadingIndicatorView_icon_fragment"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--app:indicator_color="@color/accent"-->
-    <!--app:indicator="LineScale"/>-->
+        <!--<ViewStub-->
+        <!--android:id="@+id/viewStub_icon_fragment_list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout="@layout/layout_icon_fragment_list"/>-->
 
+    </RelativeLayout>
 
-    <!--<ViewStub-->
-    <!--android:id="@+id/viewStub_icon_fragment_list"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout="@layout/layout_icon_fragment_list"/>-->
-
-</RelativeLayout>
+</layout>

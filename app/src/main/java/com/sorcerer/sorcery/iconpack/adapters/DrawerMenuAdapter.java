@@ -1,21 +1,23 @@
 package com.sorcerer.sorcery.iconpack.adapters;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
+import android.databinding.ObservableField;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.databinding.ItemDrawerMenuBinding;
 import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.Utility;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -24,9 +26,21 @@ import java.util.List;
  */
 public class DrawerMenuAdapter extends RecyclerView.Adapter<DrawerMenuAdapter.ViewHolder> {
 
+    private static final String TAG = "DrawerMenuAdapter";
+
+    public static class MenuItemViewModel {
+        public final ObservableField<Integer> type = new ObservableField<>();
+        public final ObservableField<String> label = new ObservableField<>();
+        public final ObservableField<View.OnClickListener> listener = new ObservableField<>();
+//        public final ObservableField<Integer> textMarginLeft = new ObservableField<>();
+    }
+
+    private static final int VIEW_TYPE_FULL = 0x0;
+    private static final int VIEW_TYPE_MINI = 0x1;
+    private static final int VIEW_TYPE_LINE = 0x2;
+
     private Context mContext;
     private List<SorceryMenuItem> mData;
-    private View mHelp;
 
     public DrawerMenuAdapter(Context context, List<SorceryMenuItem> data) {
         mContext = context;
@@ -39,14 +53,32 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter<DrawerMenuAdapter.Vi
         public ImageView icon;
         public TextView label;
         public LinearLayout root;
+        public LinearLayout item;
+        public ItemDrawerMenuBinding binding;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
+            binding = DataBindingUtil.bind(itemView);
+
             main = itemView;
-            root = (LinearLayout) itemView.findViewById(R.id.linearLayout_drawer_menu_root);
-            icon = (ImageView) itemView.findViewById(R.id.imageView_drawer_menu_item_icon);
-            label = (TextView) itemView.findViewById(R.id.textView_drawer_menu_item_label);
+            root = binding.linearLayoutDrawerMenuRoot;
+            icon = binding.imageViewDrawerMenuItemIcon;
+            label = binding.textViewDrawerMenuItemLabel;
+            item = binding.linearLayoutDrawerMenuItem;
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        SorceryMenuItem item = mData.get(position);
+        if (item.getIconRes() == 0 && item.getLabel() == null &&
+                item.getOnSelectListener() == null) {
+            return VIEW_TYPE_LINE;
+        } else if (item.getIconRes() == 0) {
+            return VIEW_TYPE_MINI;
+        } else {
+            return VIEW_TYPE_FULL;
         }
     }
 
@@ -58,26 +90,28 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter<DrawerMenuAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        if (position == 4) {
-            mHelp = holder.main;
-        }
+        MenuItemViewModel viewModel = new MenuItemViewModel();
 
-        holder.label.setText(mData.get(position).getLabel());
-        holder.icon.setImageResource(mData.get(position).getIconRes());
-        holder.main.setOnClickListener(new View.OnClickListener() {
+        viewModel.type.set(getItemViewType(position));
+
+        viewModel.label.set(mData.get(position).getLabel());
+        viewModel.listener.set(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mData.get(position).getOnSelectListener() != null) {
                     mData.get(position).getOnSelectListener().onSelect();
                 }
+                Log.d(TAG, "" + getItemViewType(position));
             }
         });
 
-        if (position == 0) {
-            holder.root.setPadding(0, dp2px(12), 0, dp2px(12));
-        } else {
-            holder.root.setPadding(0, dp2px(12), 0, dp2px(12));
-        }
+        holder.binding.setItem(viewModel);
+
+        holder.label.setPadding(getItemViewType(position) == VIEW_TYPE_FULL ?
+                DisplayUtil.dip2px(mContext, 32f) : DisplayUtil.dip2px(mContext, 16f), 0, 0, 0);
+
+        holder.icon.setImageResource(mData.get(position).getIconRes());
+
     }
 
     private int dp2px(int dp) {
@@ -90,7 +124,5 @@ public class DrawerMenuAdapter extends RecyclerView.Adapter<DrawerMenuAdapter.Vi
         return mData.size();
     }
 
-    public View getHelp() {
-        return mHelp;
-    }
+
 }

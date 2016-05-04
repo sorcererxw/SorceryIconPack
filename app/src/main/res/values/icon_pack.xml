@@ -11,9 +11,19 @@
         <item>ifanr</item>
         <item>ali_cainiao_guoguo</item>
         <item>tencent_qie_fm</item>
+        <item>**##oneplus weather**</item>
+        <item>oneplus_weather_sunny</item>
+        <item>oneplus_weather_cloudy</item>
+        <item>oneplus_weather_cloudy_dark</item>
+
         <item>@string/icon_label_updated</item>
         <item>download</item>
+        <item>coolapk</item>
+        <item>ali_dingding</item>
+        <item>google_translate</item>
         <item>it_home</item>
+        <item>tencent_wechat</item>
+        <item>netease_youdao_note</item>
         <item>haici_dict</item>
 
 
@@ -41,6 +51,7 @@
     </string-array>
 
     <string-array name="icon_pack_baidu" translatable="false">
+        <item>@string/icon_label_please_leave_baidu</item>
         <item>baidu_keyboard</item>
         <item>baidu_maps</item>
         <item>baidu_nuomi</item>

@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,6 +21,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +38,7 @@ import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import java.util.ArrayList;
@@ -53,6 +57,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private List<IconBean> mIconBeanList = new ArrayList<>();
     private List<IconBean> mShowIconList = new ArrayList<>();
     private boolean mClicked = false;
+    private RecyclerView mParent;
 
     public final static class IconItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
@@ -91,7 +96,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             }
             if (isViewStubInflate && header != null) {
                 header.setVisibility(View.VISIBLE);
-                header.setTextSize(DisplayUtil.dip2px(header.getContext(), 12-3*cnt));
+                header.setTextSize(DisplayUtil.sp2px(header.getContext(), 16 - 4 * cnt));
                 header.setText(s.substring(cnt, s.length()));
             }
         }
@@ -113,7 +118,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     public IconAdapter(Activity activity, Context context,
-                       List<IconBean> iconBeanList) {
+                       List<IconBean> iconBeanList, RecyclerView parent) {
+        mParent = parent;
+
         mActivity = activity;
         mContext = context;
         mIconBeanList = iconBeanList;
@@ -123,12 +130,17 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     public IconItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_icon_grid, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_icon_grid, mParent, false);
         return new IconItemViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final IconItemViewHolder holder, final int position) {
+        if (mShowIconList.get(position).getName().contains("baidu")) {
+            ImageUtil.grayScale(holder.icon);
+        } else {
+            ImageUtil.resetScale(holder.icon);
+        }
         if (isLabel(mShowIconList.get(position).getName())) {
             holder.hideIcon();
             holder.showHeader(getLabel(mShowIconList.get(position).getName()));
@@ -156,9 +168,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 });
             }
             ImageLoader.getInstance()
-                    .displayImage("drawable://" + mShowIconList.get(position).getRes(), holder.icon,
+                    .displayImage("drawable://" + mShowIconList.get(position).getRes(),
+                            holder.icon,
                             SIP.mOptions);
             setAnimation(holder.icon);
+
         }
     }
 
