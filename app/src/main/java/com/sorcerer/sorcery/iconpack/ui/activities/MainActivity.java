@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,13 +21,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
@@ -63,10 +63,8 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext = this;
     private Activity mActivity = this;
     private RecyclerView mMenuView;
-    private boolean mCloseEnable = true;
     private AppBarLayout mAppBarLayout;
     private ViewPager.OnPageChangeListener mPageChangeListener =
-
             new ViewPager.OnPageChangeListener() {
 
                 private int times = 0;
@@ -89,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onPageSelected(int position) {}
+                public void onPageSelected(int position) {
+                }
 
                 @Override
                 public void onPageScrollStateChanged(int state) {
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
@@ -204,9 +203,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
                 MODE_PRIVATE);
         int launchTimes = sharedPreferences.getInt("launch times", 0);
-        Log.d("sip", "launch time " + launchTimes);
         if (launchTimes == 0) {
-
+            mDrawerLayout.openDrawer(mNavigationView);
         } else {
             if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
                 sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
@@ -214,18 +212,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (!sharedPreferences.getBoolean("know help", false)) {
-//            showWelcomeDialog();
             sharedPreferences.edit().putBoolean("know help", true).apply();
         }
 
-//        if (!sharedPreferences.getBoolean("showed permission dialog", false)) {
-//            showPermissionDialog();
-//        }
 
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
-
-//        getWindow().setBackgroundDrawable(
-//                new ColorDrawable(ContextCompat.getColor(mContext, R.color.white)));
     }
 
     @Override
@@ -258,12 +249,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initSearchBox() {
         mSearchBox = mBinding.searchBoxMainIcon;
-//        assert mSearchBox != null;
-//        mSearchBox.setOnSearchViewListener(mSearchViewListener);
-//        mSearchBox.setOnQueryTextListener(mSearchQueryTextListener);
-//        String[] suggestions = getResources().getStringArray(R.array.search_suggestion);
-//        mSearchBox.setSuggestions(suggestions);
-        mSearchBox.setLogoText("Sorcery");
+        mSearchBox.setLogoText("Sorcery Icons");
+        mSearchBox.setHint("search in current page");
         mSearchBox.setSearchListener(mSearchListener);
         mSearchBox.setSearchWithoutSuggestions(true);
         mSearchBox.setMenuListener(new SearchBox.MenuListener() {
@@ -272,6 +259,8 @@ public class MainActivity extends AppCompatActivity {
                 mDrawerLayout.openDrawer(mNavigationView);
             }
         });
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "RockwellStd.otf");
+        mSearchBox.setLogoTypeface(typeface);
     }
 
     private void initDrawerView() {
@@ -335,14 +324,6 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayoutManager.VERTICAL,
                 false));
         mMenuView.setHasFixedSize(true);
-    }
-
-    private void showWelcomeDialog() {
-        new MaterialDialog.Builder(this)
-                .title(getString(R.string.welcome_title))
-                .content(getString(R.string.welcome_body))
-                .positiveText(getString(R.string.welcome_close))
-                .build().show();
     }
 
     private void setToolbarDoubleTap(Toolbar toolbar) {
@@ -438,11 +419,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if(mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            return;
+        }
         super.onBackPressed();
     }
 
     private void closeSearch() {
         mSearchBox.closeSearch();
     }
+
 
 }

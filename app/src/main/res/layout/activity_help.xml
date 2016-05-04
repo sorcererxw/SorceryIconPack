@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <data>
+    <data class="ActivityHelpBinding">
 
         <import type="android.support.v7.widget.RecyclerView.LayoutManager"/>
 

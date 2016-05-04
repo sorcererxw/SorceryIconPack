@@ -96,7 +96,14 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             }
             if (isViewStubInflate && header != null) {
                 header.setVisibility(View.VISIBLE);
-                header.setTextSize(DisplayUtil.sp2px(header.getContext(), 16 - 4 * cnt));
+//                header.setTextSize(DisplayUtil.dip2px(header.getContext(), 12- 2 * cnt));
+                if (cnt == 1) {
+                    header.setTextSize(header.getContext().getResources().getDimension(R.dimen
+                            .icon_header_first_level));
+                } else {
+                    header.setTextSize(header.getContext().getResources().getDimension(R.dimen
+                            .icon_header_second_level));
+                }
                 header.setText(s.substring(cnt, s.length()));
             }
         }

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.speech.RecognizerIntent;
@@ -15,6 +16,7 @@ import android.support.annotation.MenuRes;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -1034,6 +1036,10 @@ public class SearchBox extends RelativeLayout {
          * Called against each Searchable to determine if it should be filtered out of the results
          */
         boolean onFilter(SearchResult searchResult, String searchTerm);
+    }
+
+    public void setLogoTypeface(Typeface tf) {
+        mLogoTextView.setTypeface(tf);
     }
 
 }

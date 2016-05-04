@@ -30,4 +30,8 @@
 
     <dimen name="drawer_nav_text_margin_left_full">32dp</dimen>
     <dimen name="drawer_nav_text_margin_left_min">16dp</dimen>
+
+    <dimen name="icon_header_first_level">10sp</dimen>
+    <dimen name="icon_header_second_level">8sp</dimen>
+
 </resources>
