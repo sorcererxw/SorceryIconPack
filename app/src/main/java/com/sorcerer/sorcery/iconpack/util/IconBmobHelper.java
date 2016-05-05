@@ -42,6 +42,7 @@ public class IconBmobHelper {
 
                 @Override
                 public void onFailure(int i, String s) {
+                    Log.d(TAG, i + " " + s);
                 }
             });
         } else {

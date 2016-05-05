@@ -93,6 +93,7 @@
     Thank you!</string>
 
     <string name="open_alipay">opening alipay</string>
+    <string name="open_wechat">opening wechat</string>
 
     <string name="donate_success">donate success</string>
     <string name="donate_fail">donate fail</string>

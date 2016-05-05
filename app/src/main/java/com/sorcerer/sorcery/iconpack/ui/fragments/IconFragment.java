@@ -72,8 +72,6 @@ public class IconFragment extends Fragment {
     public static final int FLAG_MIUI = 4;
     public static final int FLAG_FLYME = 15;
 
-    private int mArg;
-
     private List<IconBean> mIconBeanList;
 
     private AutoLoadRecyclerView mGridView;
@@ -81,9 +79,6 @@ public class IconFragment extends Fragment {
     private SwipeRefreshLayout mSearchLayout;
     private SearchListener mSearchListener;
     private GridLayoutManager mGridLayoutManager;
-    private View mMainView;
-    private boolean mShow;
-    private View mRecycler = null;
 
     public interface SearchListener {
         void onSearch();
@@ -103,11 +98,11 @@ public class IconFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
-        mArg = getArguments().getInt("flag", 0);
+        int arg = getArguments().getInt("flag", 0);
         if (mIconBeanList == null) {
             mIconBeanList = getIconBeanList(getResources(),
                     getContext().getPackageName(),
-                    mArg);
+                    arg);
         }
 
         View view = inflater.inflate(R.layout.fragment_icon, container, false);
@@ -230,9 +225,7 @@ public class IconFragment extends Fragment {
 
 
     private void resize() {
-        if (mShow) {
-            mGridLayoutManager.setSpanCount(calcNumOfRows());
-        }
+        mGridLayoutManager.setSpanCount(calcNumOfRows());
     }
 
     private List<IconBean> getIconBeanList(Resources resources, String packageName, int flag) {

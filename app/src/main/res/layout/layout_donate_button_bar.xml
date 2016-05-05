@@ -39,8 +39,7 @@
             android:layout_marginTop="8dp"
             android:background="@color/white"
             android:onClick="@{wechatListener}"
-            android:text="@string/wechat"
-            android:visibility="gone"/>
+            android:text="@string/wechat"/>
 
     </LinearLayout>
 </layout>

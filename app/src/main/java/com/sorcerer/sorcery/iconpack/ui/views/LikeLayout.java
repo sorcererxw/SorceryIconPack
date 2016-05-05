@@ -1,27 +1,20 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.databinding.LayoutLikeBinding;
 import com.sorcerer.sorcery.iconpack.util.IconBmobHelper;
-import com.sorcerer.sorcery.iconpack.util.Utility;
-import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 /**
  * Created by Sorcerer on 2016/2/29 0029.
@@ -96,7 +89,7 @@ public class LikeLayout extends FrameLayout {
                 mFlag = 1;
                 handleFlag(mFlag, true);
                 if (mBind) {
-                    mSharedPreferences.edit().putInt(mName, mFlag).commit();
+                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
                     mIconBmobHelper.like(mName, true);
                 }
             }
@@ -108,7 +101,7 @@ public class LikeLayout extends FrameLayout {
                 mFlag = -1;
                 handleFlag(mFlag, true);
                 if (mBind) {
-                    mSharedPreferences.edit().putInt(mName, mFlag).commit();
+                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
                     mIconBmobHelper.like(mName, false);
                 }
             }

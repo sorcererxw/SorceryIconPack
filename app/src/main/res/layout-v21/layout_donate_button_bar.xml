@@ -26,9 +26,11 @@
             android:id="@+id/button_donate_alipay"
             android:layout_width="@dimen/medium_button_width"
             android:layout_height="@dimen/medium_button_height"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/alipay"
+            android:gravity="center"
             android:onClick="@{alipayListener}"
             android:text="@string/alipay"
             android:textColor="@color/white"
@@ -36,15 +38,19 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/button_donate_wechat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/medium_button_width"
+            android:layout_height="@dimen/medium_button_height"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/wechat"
+            android:gravity="center"
             android:onClick="@{wechatListener}"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:text="@string/wechat"
             android:textColor="@color/white"
-            android:visibility="gone"/>
+            android:textSize="16sp"/>
 
     </LinearLayout>
 </layout>

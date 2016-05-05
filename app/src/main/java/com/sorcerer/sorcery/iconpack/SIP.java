@@ -2,8 +2,6 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
@@ -15,8 +13,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import c.b.BP;
-import cn.bmob.v3.Bmob;
-import im.fir.sdk.FIR;
 
 /**
  * Created by Sorcerer on 2016/1/26 0026.
@@ -26,23 +22,19 @@ public class SIP extends Application {
     public static final String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
     public static DisplayImageOptions mOptions;
     public static String LOGTAG = "[SIP]";
-    private Application mApplication = this;
+    public boolean BPLoaded = false;
 
     @Override
     public void onCreate() {
         super.onCreate();
         initImageLoader(this);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                initImageLoader(mApplication);
-            }
-        }).start();
-
-
-        BP.init(this, getString(R.string.bmob_app_id));
-
+        try {
+            BP.init(this, getString(R.string.bmob_app_id));
+            BPLoaded = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            BPLoaded = false;
+        }
     }
 
     /**
