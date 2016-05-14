@@ -59,7 +59,7 @@
                 android:background="@null"
                 android:digits="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm 1234567890_."
                 android:ems="10"
-                android:imeOptions="actionSearch"
+                android:imeOptions="flagNoExtractUi"
                 android:singleLine="true"
                 android:textColor="#212121"
                 android:textColorHint="@color/grey_500"

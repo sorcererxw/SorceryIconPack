@@ -53,7 +53,7 @@ public class LauncherApplier {
                 applyLauncher(context, TYPE_APEX);
                 break;
             case "adw":
-                switch (label.toLowerCase().split(" ")[1]){
+                switch (label.toLowerCase().split(" ")[1]) {
                     case "ex":
                         applyLauncher(context, TYPE_ADWEX);
                         break;
@@ -133,7 +133,7 @@ public class LauncherApplier {
     }
 
     public static void applyLauncher(Context context, int launcherType) {
-        switch (launcherType){
+        switch (launcherType) {
             case TYPE_ACTION:
                 actionLauncher(context);
                 break;
@@ -427,6 +427,30 @@ public class LauncherApplier {
         tsf.setComponent(new ComponentName("com.tsf.shell", "com.tsf.shell.ShellActivity"));
         context.sendBroadcast(tsf);
         context.startActivity(tsfApply);
+    }
+
+    // TODO: ADD LAUNCHERS
+
+    public void Layers(Context context) {
+        try {
+            Intent layers = new Intent("android.intent.action.MAIN");
+            layers.setComponent(new ComponentName("com.lovejoy777.rroandlayersmanager",
+                    "com.lovejoy777.rroandlayersmanager.menu"));
+            layers.putExtra("pkgName", context.getPackageName());
+            context.startActivity(layers);
+        } catch (Exception e) {
+            Intent layers = new Intent("android.intent.action.MAIN");
+            layers.setComponent(new ComponentName("com.lovejoy777.rroandlayersmanager",
+                    "com.lovejoy777.rroandlayersmanager.MainActivity"));
+            layers.putExtra("pkgName", context.getPackageName());
+            context.startActivity(layers);
+        }
+    }
+
+    private void LgHomeLauncher(Context context) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setComponent(new ComponentName("com.lge.launcher2", "com.lge.launcher2.homesettings.HomeSettingsPrefActivity"));
+        context.startActivity(intent);
     }
 
 }

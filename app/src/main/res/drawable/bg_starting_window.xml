@@ -19,7 +19,7 @@
 
     <item
         android:gravity="bottom"
-        android:top="128dp">
+        android:top="144dp">
         <shape android:shape="rectangle">
             <solid android:color="@color/white"/>
         </shape>

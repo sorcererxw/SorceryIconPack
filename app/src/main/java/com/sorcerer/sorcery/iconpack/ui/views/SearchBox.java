@@ -167,29 +167,33 @@ public class SearchBox extends RelativeLayout {
             searchRoot.setLayoutTransition(lt);
         }
         mSearchableList = new ArrayList<>();
-//        mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-//            public boolean onEditorAction(TextView v, int actionId,
-//                                          KeyEvent event) {
-//                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+
+        mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId,
+                                          KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 //                    search(getSearchText());
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
-//        mSearchEditText.setOnKeyListener(new OnKeyListener() {
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    mSearchEditText.setSelection(mSearchEditText.getSelectionStart());
+                    return true;
+                }
+                return false;
+            }
+        });
+        mSearchEditText.setOnKeyListener(new OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
 //                    if (TextUtils.isEmpty(getSearchText())) {
 //                        toggleSearch();
 //                    } else {
 //                        search(getSearchText());
 //                    }
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
+                    mSearchEditText.setSelection(mSearchEditText.getSelectionStart());
+                    return true;
+                }
+                return false;
+            }
+        });
+
         mLogoText = "";
         micStateChanged();
         mMic.setOnClickListener(new OnClickListener() {

@@ -17,8 +17,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -159,6 +161,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 holder.main.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        closeKeyboard();
+
                         if (mClicked) {
                             return;
                         }
@@ -170,6 +174,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 holder.main.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        closeKeyboard();
                         returnIconResource(position);
                     }
                 });
@@ -311,5 +316,20 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             mActivity.setResult(Activity.RESULT_CANCELED, intent);
         }
         mActivity.finish();
+    }
+
+    private void closeKeyboard(){
+        closeKeyboard((Activity)mParent.getContext());
+    }
+
+    private void closeKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }
