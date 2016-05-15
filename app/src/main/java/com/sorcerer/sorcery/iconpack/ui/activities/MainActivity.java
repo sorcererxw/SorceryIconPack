@@ -21,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -48,6 +49,8 @@ import cn.bmob.v3.Bmob;
 import im.fir.sdk.FIR;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "TAG_MAIN_ACTIVITY";
 
     public static final int REQUEST_ICON_DIALOG = 100;
 
@@ -134,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG, "create main activity");
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 

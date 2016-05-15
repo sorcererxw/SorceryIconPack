@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -136,9 +137,13 @@ public class IconDialogActivity extends AppCompatActivity {
             if (AppInfoUtil.isPackageInstalled(mContext,
                     StringUtil.componentInfoToPackageName(mComponent))) {
                 showOrigin.setVisible(true);
+                Drawable icon = showOrigin.getIcon();
+                icon.setAlpha((int) (255 * 0.5));
+                showOrigin.setIcon(icon);
             } else {
                 showOrigin.setVisible(false);
             }
+
         }
         return super.onCreateOptionsMenu(menu);
     }

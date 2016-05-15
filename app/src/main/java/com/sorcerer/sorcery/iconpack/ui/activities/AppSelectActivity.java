@@ -35,6 +35,7 @@ import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.MailUtil;
+import com.sorcerer.sorcery.iconpack.util.PayHelper;
 import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
@@ -113,17 +114,20 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                     .inflate(R.layout.layout_premium_custom_info_input, null);
             TextView text = (TextView) view.findViewById(R.id.textView_premium_info_text);
             text.setText(Html.fromHtml(
-                    "<p>" + getString(R.string.premium_send_content).replace("|","<br>") +
+                    "<p>" + getString(R.string.premium_send_content).replace("|", "<br>") +
                             "</p><ul>" +
                             s +
-                            "</ul>"));
+                            "</ul>" + "<br><b>" + amount + getString(R.string.RMB) + "</b>")
+            );
             final EditText email =
                     (EditText) view.findViewById(R.id.materialEditText_premium_info_email);
             final EditText note =
                     (EditText) view.findViewById(R.id.materialEditText_premium_info_note);
 
-            builder.positiveText(amount + getString(R.string.RMB));
-            builder.negativeText(getString(R.string.cancel));
+            builder.positiveText(getString(R.string.alipay));
+            builder.positiveColor(ContextCompat.getColor(mContext, R.color.alipay));
+            builder.negativeText(getString(R.string.wechat));
+            builder.negativeColor(ContextCompat.getColor(mContext, R.color.wechat));
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -141,7 +145,30 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             builder.onNegative(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    dialog.dismiss();
+                    if (AppInfoUtil.isPackageInstalled(mContext, "com.bmob.app.sport")) {
+                        if (!StringUtil.isMail(email.getText().toString())) {
+                            Toast.makeText(mContext,
+                                    getString(R.string.please_input_right_mail_address),
+                                    Toast.LENGTH_SHORT)
+                                    .show();
+                            return;
+                        }
+                        pay(false, amount,
+                                email.getText().toString() + "\n" + note.getText().toString(), dialog);
+                    } else {
+                        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                        builder.content("need install a plugin");
+                        builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog,
+                                                @NonNull DialogAction which) {
+                                Utility.installApkFromAssets(dialog.getContext(), "BmobPayPlugin.apk");
+                            }
+                        });
+                        builder.positiveText("install");
+                        builder.negativeText("cancel");
+                        builder.show();
+                    }
                 }
             });
             builder.autoDismiss(false);
@@ -152,50 +179,65 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    private void pay(boolean isAlipay, int amount, final String sendAfterPay, final MaterialDialog
+    private void pay(final boolean isAlipay, int amount, final String sendAfterPay, final MaterialDialog
             payDialog) {
-        BP.pay(
-                mActivity,
-                getString(R.string.premium_alipay_title),
-                getString(R.string
-                        .premium_alipay_descript),
-                amount,
-                isAlipay,
-                new c.b.PListener() {
+        PayHelper payHelper = new PayHelper(mActivity);
+        payHelper.setPayCallback(new PayHelper.PayCallback() {
+            @Override
+            public void onSuccess(String orderId) {
+                Toast.makeText(mContext,
+                        getString(R.string.pay_success),
+                        Toast.LENGTH_SHORT)
+                        .show();
+                payDialog.dismiss();
+                SendMailAsyncTask asyncTask = new SendMailAsyncTask(mContext);
+                asyncTask.setStringToSend(sendAfterPay + "\norderid: " + orderId);
+                asyncTask.execute();
+            }
 
-                    private String mOrderid;
-
-                    @Override
-                    public void orderId(String s) {
-                        Toast.makeText(mActivity,
-                                getString(R.string.open_alipay) + s,
-                                Toast.LENGTH_LONG)
-                                .show();
-                        mOrderid = s;
-                    }
-
-                    @Override
-                    public void succeed() {
-                        Toast.makeText(mContext,
-                                getString(R.string.pay_success),
-                                Toast.LENGTH_SHORT)
-                                .show();
-                        payDialog.dismiss();
-                        SendMailAsyncTask asyncTask = new SendMailAsyncTask(mContext);
-                        asyncTask.setStringToSend(sendAfterPay + "\norderid: " + mOrderid);
-                        asyncTask.execute();
-                    }
-
-                    @Override
-                    public void fail(int i, String s) {
-                        getString(R.string.pay_fail);
-                    }
-
-                    @Override
-                    public void unknow() {
-                        Log.d("sip premium", "unknow");
-                    }
-                });
+            @Override
+            public void onFail() {
+            }
+        });
+        payHelper.pay(isAlipay, amount, getString(R.string.premium_alipay_title), getString(R.string
+                .premium_alipay_descript));
+//
+//        BP.pay(
+//                mActivity,
+//                getString(R.string.premium_alipay_title),
+//                getString(R.string
+//                        .premium_alipay_descript),
+//                amount,
+//                isAlipay,
+//                new c.b.PListener() {
+//
+//                    private String mOrderid;
+//
+//                    @Override
+//                    public void orderId(String s) {
+//
+//                        Toast.makeText(mActivity,
+//                                getString(isAlipay ? R.string.open_alipay : R.string.open_wechat) + s,
+//                                Toast.LENGTH_LONG)
+//                                .show();
+//                        mOrderid = s;
+//                    }
+//
+//                    @Override
+//                    public void succeed() {
+//
+//                    }
+//
+//                    @Override
+//                    public void fail(int i, String s) {
+//
+//                    }
+//
+//                    @Override
+//                    public void unknow() {
+//                        Log.d("sip premium", "unknow");
+//                    }
+//                });
     }
 
     private class LoadAppsAsyncTask extends AsyncTask {

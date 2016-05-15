@@ -14,17 +14,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.a.a.a.V;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.Utility;
-
-import org.w3c.dom.Text;
-
-import java.net.URL;
-import java.util.List;
 
 /**
  * Created by Sorcerer on 2016/2/25 0025.

@@ -35,6 +35,7 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatAc
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 import com.sorcerer.sorcery.iconpack.util.ApkUtil;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.util.PayHelper;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
@@ -128,22 +129,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
                 showMoneySelectDialog(true);
             }
         } else if (id == R.id.button_donate_wechat) {
-            if (AppInfoUtil.isPackageInstalled(this, "com.bmob.app.sport")) {
-                showMoneySelectDialog(false);
-            } else {
-                MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-                builder.content("need install a plugin");
-                builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog,
-                                        @NonNull DialogAction which) {
-                        Utility.installApkFromAssets(dialog.getContext(), "BmobPayPlugin.apk");
-                    }
-                });
-                builder.positiveText("install");
-                builder.negativeText("cancel");
-                builder.show();
-            }
+            showMoneySelectDialog(false);
         }
     }
 
@@ -166,7 +152,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
                     } else {
                         pay(isAlipay);
                     }
-                } else if (which == DialogAction.NEGATIVE) {
                 }
             }
         });
@@ -176,20 +161,10 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     }
 
     private void pay(final boolean isAlipay) {
-        BP.pay(mActivity, "捐赠", "感谢捐赠", mAmount, isAlipay, new c.b.PListener() {
-
+        PayHelper payHelper = new PayHelper(mActivity);
+        payHelper.setPayCallback(new PayHelper.PayCallback() {
             @Override
-            public void orderId(String s) {
-                Toast.makeText(
-                        mActivity,
-                        isAlipay ? getString(R.string.open_alipay) :
-                                getString(R.string.open_wechat),
-                        Toast.LENGTH_LONG).show();
-                Log.d("sip donate", "order" + "\n" + s);
-            }
-
-            @Override
-            public void succeed() {
+            public void onSuccess(String orderId) {
                 Snackbar.make(findViewById(R.id.recyclerView_donate_root), getString(R.string
                         .donate_success), Snackbar
                         .LENGTH_SHORT);
@@ -200,18 +175,10 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
             }
 
             @Override
-            public void fail(int i, String s) {
-                Snackbar.make(findViewById(R.id.recyclerView_donate_root), getString(R.string
-                        .donate_fail), Snackbar
-                        .LENGTH_LONG);
-                Log.d("sip donate", "fail\n " + i + "\n" + s);
-            }
-
-            @Override
-            public void unknow() {
-                Log.d("sip donate", "unknow");
+            public void onFail() {
             }
         });
+        payHelper.pay(isAlipay, mAmount, "捐赠", "感谢捐赠");
     }
 
     private void showThanksCard() {
