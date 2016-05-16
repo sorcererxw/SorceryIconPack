@@ -21,19 +21,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <FrameLayout
-                        android:id="@+id/frameLayout_icon_fragment_head"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
 
-                    <com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView
+                    <com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView
                         android:id="@+id/recyclerView_icon_gird"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@+id/frameLayout_icon_fragment_head"
                         android:scrollbars="vertical">
 
-                    </com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView>
+                    </com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView>
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:textSize="200dp"
+                        android:alpha="0.5"
+                        android:textColor="@color/black"
+                        android:text="&#xe6ac;"
+                        android:id="@+id/textView_icon_list_empty_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
                 </RelativeLayout>
 
             </android.support.v4.widget.SwipeRefreshLayout>

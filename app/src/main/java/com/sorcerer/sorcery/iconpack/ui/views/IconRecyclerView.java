@@ -7,27 +7,47 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.a.a.V;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * Created by Sorcerer on 2016/2/5 0005.
  */
-public class AutoLoadRecyclerView extends RecyclerView implements LoadFinishCallBack{
+public class IconRecyclerView extends RecyclerView implements LoadFinishCallBack{
+
+    private View mEmptyView;
 
     private OnLoadMoreListener mOnLoadMoreListener;
 
+    private AdapterDataObserver mAdapterDataObserver = new AdapterDataObserver() {
+
+        @Override
+        public void onChanged() {
+            Adapter adapter = getAdapter();
+            if(adapter!=null && mEmptyView!=null){
+                if(adapter.getItemCount()==0){
+                    setVisibility(GONE);
+                    mEmptyView.setVisibility(VISIBLE);
+                }else{
+                    setVisibility(VISIBLE);
+                    mEmptyView.setVisibility(GONE);
+                }
+            }
+        }
+    };
+
     private boolean isLoadingMore;
 
-    public AutoLoadRecyclerView(Context context) {
+    public IconRecyclerView(Context context) {
         super(context);
     }
 
-    public AutoLoadRecyclerView(Context context,
-                                @Nullable AttributeSet attrs) {
+    public IconRecyclerView(Context context,
+                            @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public AutoLoadRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public IconRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
@@ -69,7 +89,7 @@ public class AutoLoadRecyclerView extends RecyclerView implements LoadFinishCall
             if (getLayoutManager() instanceof LinearLayoutManager) {
                 int lastVisibleItem = ((LinearLayoutManager) getLayoutManager())
                         .findLastVisibleItemPosition();
-                int totalItemCount = AutoLoadRecyclerView.this.getAdapter().getItemCount();
+                int totalItemCount = IconRecyclerView.this.getAdapter().getItemCount();
 
                 if (mOnLoadMoreListener != null && !isLoadingMore &&
                         lastVisibleItem >= totalItemCount - 2 && dy > 0) {
@@ -104,5 +124,25 @@ public class AutoLoadRecyclerView extends RecyclerView implements LoadFinishCall
                 }
             }
         }
+    }
+
+
+    public void setEmptyView(View view){
+        mEmptyView = view;
+    }
+
+    public void removeEmptyView(){
+        mEmptyView = null;
+    }
+
+    @Override
+    public void setAdapter(Adapter adapter) {
+        super.setAdapter(adapter);
+
+        if(adapter!=null){
+            adapter.registerAdapterDataObserver(mAdapterDataObserver);
+        }
+
+        mAdapterDataObserver.onChanged();
     }
 }

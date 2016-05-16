@@ -60,7 +60,6 @@
                 android:digits="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm 1234567890_."
                 android:ems="10"
                 android:imeOptions="flagNoExtractUi"
-                android:singleLine="true"
                 android:textColor="#212121"
                 android:textColorHint="@color/grey_500"
                 android:visibility="gone">

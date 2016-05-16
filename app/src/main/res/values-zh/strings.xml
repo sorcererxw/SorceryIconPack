@@ -125,7 +125,6 @@
     <string name="premium_alipay_title">Sorcery 付费申请图标</string>
     <string name="premium_alipay_descript">Sorcery 付费申请图标</string>
     <string name="premium_send_title">确认付费</string>
-    <string name="premium_send_content">由于您开启了付费模式,  以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认并留下您的邮箱地址</string>
     <string name="pay_fail">付款失败</string>
     <string name="pay_success">付款成功</string>
     <string name="fail_open_premium">无法开启付费模式</string>
@@ -137,9 +136,10 @@
     <string name="icon_label_added">**#最近添加**</string>
     <string name="icon_label_updated">**#调整更新**</string>
     <string name="action_show_in_store">前往商店</string>
-    <string name="search_hint">搜索(仅支持英文)</string>
+    <string name="search_hint">在当前图标页搜索</string>
     <string name="action_give_permission">授权</string>
     <string name="action_show_origin_icon">显示原图标</string>
     <string name="icon_label_please_leave_baidu">**#请远离百度**</string>
     <string name="open_wechat">正在打开微信支付</string>
+    <string name="action_install">安装</string>
 </resources>

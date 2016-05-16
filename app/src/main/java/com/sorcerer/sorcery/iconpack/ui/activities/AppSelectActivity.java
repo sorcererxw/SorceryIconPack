@@ -98,7 +98,6 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
-
     public void onClick(View v) {
         if (mPremium) {
             MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
@@ -124,11 +123,11 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             final EditText note =
                     (EditText) view.findViewById(R.id.materialEditText_premium_info_note);
 
-            builder.positiveText(getString(R.string.alipay));
-            builder.positiveColor(ContextCompat.getColor(mContext, R.color.alipay));
-            builder.negativeText(getString(R.string.wechat));
-            builder.negativeColor(ContextCompat.getColor(mContext, R.color.wechat));
-            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+            builder.negativeText(getString(R.string.alipay));
+            builder.negativeColor(ContextCompat.getColor(mContext, R.color.alipay));
+            builder.positiveText(getString(R.string.wechat));
+            builder.positiveColor(ContextCompat.getColor(mContext, R.color.wechat));
+            builder.onNegative(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                     if (!StringUtil.isMail(email.getText().toString())) {
@@ -142,7 +141,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                             email.getText().toString() + "\n" + note.getText().toString(), dialog);
                 }
             });
-            builder.onNegative(new MaterialDialog.SingleButtonCallback() {
+            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                     if (AppInfoUtil.isPackageInstalled(mContext, "com.bmob.app.sport")) {

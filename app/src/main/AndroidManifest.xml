@@ -185,11 +185,11 @@
         </activity>
         <activity
             android:name=".ui.activities.FeedbackActivity"
-            android:label="@string/action_feedback"
+            android:label="@string/nav_item_feedback"
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.ApplyActivity"
-            android:label="@string/action_apply"
+            android:label="@string/nav_item_apply"
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.DonateActivity"

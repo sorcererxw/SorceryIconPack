@@ -37,7 +37,7 @@ public class PayHelper {
 
         if (!isAlipay && !AppInfoUtil.isPackageInstalled(mContext, "com.bmob.app.sport")) {
             MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-            builder.content("need install a plugin");
+            builder.content(ResourceHelper.getString(mContext,R.string.wechat_pay_plugin_content));
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog,
@@ -45,8 +45,8 @@ public class PayHelper {
                     Utility.installApkFromAssets(dialog.getContext(), "BmobPayPlugin.apk");
                 }
             });
-            builder.positiveText("install");
-            builder.negativeText("cancel");
+            builder.positiveText(ResourceHelper.getString(mContext, R.string.action_install) );
+            builder.negativeText(ResourceHelper.getString(mContext,R.string.cancel));
             builder.show();
         } else {
             BP.pay(mContext, title, describe, amount, isAlipay, new PListener() {

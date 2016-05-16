@@ -17,16 +17,25 @@
         <item>notify_clean</item>
         <item>lightning_wall</item>
         <item>fulimanman</item>
+        <item>google</item>
+        <item>google_voice_search</item>
         <item>quanneng_toolbox</item>
         <item>floatify</item>
+        <item>minminguard</item>
         <item>**##oneplus weather**</item>
         <item>oneplus_weather_sunny</item>
         <item>oneplus_weather_cloudy</item>
         <item>oneplus_weather_cloudy_dark</item>
 
         <item>@string/icon_label_updated</item>
+        <item>instagram</item>
+        <item>boomerang</item>
+        <item>layout</item>
+        <item>polarr</item>
+        <item>weibo</item>
         <item>download</item>
         <item>coolapk</item>
+        <item>pomotodo</item>
         <item>ali_dingding</item>
         <item>google_translate</item>
         <item>it_home</item>
@@ -35,6 +44,7 @@
         <item>tencent_wechat</item>
         <item>netease_youdao_note</item>
         <item>haici_dict</item>
+        <item>gravity_box</item>
 
 
         <!--<item>**#Google Play Awards**</item>-->

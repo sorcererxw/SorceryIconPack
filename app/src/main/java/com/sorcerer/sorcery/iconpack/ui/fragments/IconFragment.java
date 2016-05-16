@@ -1,47 +1,33 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.graphics.Point;
-import android.graphics.drawable.Icon;
-import android.os.AsyncTask;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.ViewStub;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.utils.L;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.adapters.IconAdapter;
-import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.databinding.FragmentIconBinding;
-import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
-import com.sorcerer.sorcery.iconpack.ui.views.AutoLoadRecyclerView;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.Utility;
+import com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -74,7 +60,7 @@ public class IconFragment extends Fragment {
 
     private List<IconBean> mIconBeanList;
 
-    private AutoLoadRecyclerView mGridView;
+    private IconRecyclerView mGridView;
     private IconAdapter mIconAdapter;
     private SwipeRefreshLayout mSearchLayout;
     private SearchListener mSearchListener;
@@ -121,6 +107,9 @@ public class IconFragment extends Fragment {
         mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
+        TextView emptyView = binding.textViewIconListEmptyView;
+        emptyView.setTypeface(Typeface.createFromAsset(getContext().getAssets(),"empty_icon_list.ttf"));
+        mGridView.setEmptyView(emptyView);
 
         mSearchLayout = binding.swipeRefreshLayoutIconSearch;
         try {

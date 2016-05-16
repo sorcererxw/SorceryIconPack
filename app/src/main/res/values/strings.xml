@@ -21,10 +21,11 @@
     <string name="action_show_in_store">show in store</string>
     <string name="action_show_origin_icon">show origin icon</string>
     <string name="action_give_permission">authorize</string>
+    <string name="action_install">install</string>
 
     <string name="select_an_icon">select an icon</string>
 
-    <string name="search_hint">Search...</string>
+    <string name="search_hint">Search in current icon page</string>
 
     <string name="pay_success">pay successfully</string>
     <string name="pay_fail">fail</string>
@@ -83,6 +84,7 @@
 
     <string name="donate_dialog_title">select amount</string>
     <string name="donate_declaration_content">powered by Bmob</string>
+    <string name="wechat_pay_plugin_content" translatable="false">由于使用Bmob的支付渠道, 启用微信支付需要安装安全插件, 插件只会在调用的时候运作, 不会留驻后台</string>
 
     <string name="donate_title">Support Us</string>
     <string name="donate_content">If you like my work\n
@@ -103,14 +105,14 @@
 
     <string name="select_all">select all</string>
     <string name="just_show_without_custom">just show without custom icon</string>
-    <string name="select_app">select app</string>
+    <string name="select_app">Select Apps</string>
     <string name="cancel_request">cancel request?</string>
 
     <string name="fail_open_premium">unable to open premium mode</string>
     <string name="premium_request_title">Premium Request</string>
     <string name="premium_request_content">Pay some money(2￥/icon) to make sure this icon included in the next version.</string>
     <string name="premium_send_title">confirm order</string>
-    <string name="premium_send_content"></string>
+    <string name="premium_send_content" translatable="false">由于您开启了付费模式,  以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认并留下您的邮箱地址</string>
     <string name="premium_alipay_title">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_label">Email</string>
     <string name="premium_send_dialog_note_label">Notes</string>
