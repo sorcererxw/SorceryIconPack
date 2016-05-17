@@ -2,11 +2,14 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>google_io</item>
+        <item>google_io</item>
+        <item>google_io</item>
+        <item>google_io</item>
         <item>a17</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
         <item>blacklight</item>
-        <item>microsoft_office_outlook</item>
         <item>kaixiaohao</item>
         <item>ifanr</item>
         <item>ali_cainiao_guoguo</item>
@@ -21,6 +24,7 @@
         <item>google_voice_search</item>
         <item>quanneng_toolbox</item>
         <item>floatify</item>
+        <item>powertoggle</item>
         <item>minminguard</item>
         <item>**##oneplus weather**</item>
         <item>oneplus_weather_sunny</item>
@@ -36,10 +40,13 @@
         <item>download</item>
         <item>coolapk</item>
         <item>pomotodo</item>
+        <item>douban</item>
+        <item>zhiqu_weather</item>
         <item>ali_dingding</item>
         <item>google_translate</item>
         <item>it_home</item>
         <item>zhihu</item>
+        <item>microsoft_office_outlook</item>
         <item>a360_free_wifi</item>
         <item>tencent_wechat</item>
         <item>netease_youdao_note</item>
@@ -72,7 +79,6 @@
     </string-array>
 
     <string-array name="icon_pack_baidu" translatable="false">
-        <item>@string/icon_label_please_leave_baidu</item>
         <item>baidu_keyboard</item>
         <item>baidu_maps</item>
         <item>baidu_nuomi</item>
@@ -89,6 +95,7 @@
     </string-array>
 
     <string-array name="icon_pack_google" translatable="false">
+        <item>google</item>
         <item>google_androidify</item>
         <item>google_android_auto</item>
         <item>google_arts</item>
@@ -132,6 +139,7 @@
         <item>google_goggles</item>
         <item>google_hangout</item>
         <item>google_inbox</item>
+        <item>google_io</item>
         <item>google_keep</item>
         <item>google_keyboard</item>
         <item>google_maps</item>
@@ -149,6 +157,7 @@
         <item>google_plus</item>
         <item>google_snapseed</item>
         <item>google_translate</item>
+        <item>google_voice_search</item>
         <item>google_youtube</item>
     </string-array>
 
@@ -387,14 +396,13 @@
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
         <item>tencent_qq_international</item>
+        <item>tencent_qq_japan</item>
         <item>tencent_qq_keyboard</item>
         <item>tencent_qq_lite</item>
         <item>tencent_qq_mail</item>
         <item>tencent_qq_music</item>
         <item>tencent_qq_music_alt</item>
-        <item>tencent_qq_read</item>
         <item>tencent_qq_secure</item>
-        <item>tencent_qq_sync</item>
         <item>tencent_qzone</item>
         <item>tencent_video</item>
         <item>tencent_webank</item>
@@ -648,6 +656,7 @@
         <item>boomerang</item>
         <item>boom_beach</item>
         <item>bootmanager</item>
+        <item>bootmanager_alt</item>
         <item>boxer</item>
         <item>boxer_calendar</item>
         <item>boxer_calendar_1</item>
@@ -715,12 +724,14 @@
         <item>cookpad</item>
         <item>coolapk</item>
         <item>coolapk_alt</item>
+        <item>coolapk_alt_2</item>
         <item>coolify</item>
         <item>couplete</item>
         <item>cpu_z</item>
         <item>crossyroad</item>
         <item>ctrip</item>
         <item>ctrip_alt</item>
+        <item>custom_share</item>
         <item>cyanogenmod_camera</item>
         <item>cyanogenmod_explorer</item>
         <item>cyanogenmod_screencast</item>
@@ -795,6 +806,7 @@
         <item>flava</item>
         <item>flickr</item>
         <item>flipboard</item>
+        <item>floatify</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
         <item>flyme_browser</item>
@@ -865,6 +877,7 @@
         <item>forest</item>
         <item>fotor</item>
         <item>franco_kernel</item>
+        <item>fulimanman</item>
         <item>**#G**</item>
         <item>gallery</item>
         <item>game_heartstone</item>
@@ -877,6 +890,7 @@
         <item>github</item>
         <item>gitskarios</item>
         <item>golden_dict</item>
+        <item>google</item>
         <item>google_androidify</item>
         <item>google_android_auto</item>
         <item>google_arts</item>
@@ -920,6 +934,7 @@
         <item>google_goggles</item>
         <item>google_hangout</item>
         <item>google_inbox</item>
+        <item>google_io</item>
         <item>google_keep</item>
         <item>google_keyboard</item>
         <item>google_maps</item>
@@ -937,6 +952,7 @@
         <item>google_plus</item>
         <item>google_snapseed</item>
         <item>google_translate</item>
+        <item>google_voice_search</item>
         <item>google_youtube</item>
         <item>go_launcher</item>
         <item>gravity_box</item>
@@ -950,6 +966,7 @@
         <item>hai360</item>
         <item>haibei_music</item>
         <item>haici_dict</item>
+        <item>handle_external_storage</item>
         <item>hanglvzongheng</item>
         <item>hiwifi</item>
         <item>holo_launcher</item>
@@ -995,6 +1012,8 @@
         <item>ingress</item>
         <item>inspire_launcher</item>
         <item>instagram</item>
+        <item>instagram_alt</item>
+        <item>instagram_alt_2</item>
         <item>instapaper</item>
         <item>iqiyi</item>
         <item>it_home</item>
@@ -1111,6 +1130,7 @@
         <item>lg_voice_recorder</item>
         <item>lg_weather</item>
         <item>lightning_browser</item>
+        <item>lightning_wall</item>
         <item>line</item>
         <item>line_at</item>
         <item>line_camera</item>
@@ -1155,6 +1175,7 @@
         <item>microsoft_outlook</item>
         <item>microsoft_translator</item>
         <item>minecraft</item>
+        <item>minminguard</item>
         <item>misfit</item>
         <item>miui_account</item>
         <item>miui_authenticator</item>
@@ -1212,6 +1233,7 @@
         <item>next_launcher</item>
         <item>nice</item>
         <item>nine_launcher</item>
+        <item>notify_clean</item>
         <item>nova_launcher</item>
         <item>**#O**</item>
         <item>officesuite</item>
@@ -1246,6 +1268,7 @@
         <item>polarr</item>
         <item>pomotodo</item>
         <item>poweramp</item>
+        <item>powertoggle</item>
         <item>power_clean</item>
         <item>ppiicc</item>
         <item>pptv</item>
@@ -1255,6 +1278,7 @@
         <item>qdaily</item>
         <item>qingting_fm</item>
         <item>quanminkge</item>
+        <item>quanneng_toolbox</item>
         <item>qufenqi</item>
         <item>quickpic</item>
         <item>quickshortcutmaker</item>
@@ -1443,14 +1467,13 @@
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
         <item>tencent_qq_international</item>
+        <item>tencent_qq_japan</item>
         <item>tencent_qq_keyboard</item>
         <item>tencent_qq_lite</item>
         <item>tencent_qq_mail</item>
         <item>tencent_qq_music</item>
         <item>tencent_qq_music_alt</item>
-        <item>tencent_qq_read</item>
         <item>tencent_qq_secure</item>
-        <item>tencent_qq_sync</item>
         <item>tencent_qzone</item>
         <item>tencent_video</item>
         <item>tencent_webank</item>
@@ -1577,6 +1600,5 @@
         <item>zuimeizipai</item>
         <item>zuzhiyunxing</item>
     </string-array>
-
 
 </resources>

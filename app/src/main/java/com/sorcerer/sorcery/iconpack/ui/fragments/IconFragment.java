@@ -107,9 +107,10 @@ public class IconFragment extends Fragment {
         mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
-        TextView emptyView = binding.textViewIconListEmptyView;
-        emptyView.setTypeface(Typeface.createFromAsset(getContext().getAssets(),"empty_icon_list.ttf"));
-        mGridView.setEmptyView(emptyView);
+
+        TextView emptyView = binding.textViewIconListEmptyViewIcon;
+        emptyView.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "empty_icon_list.ttf"));
+        mGridView.setEmptyView(binding.linearLayoutIconListEmptyView);
 
         mSearchLayout = binding.swipeRefreshLayoutIconSearch;
         try {

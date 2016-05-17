@@ -183,7 +183,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     .displayImage("drawable://" + mShowIconList.get(position).getRes(),
                             holder.icon,
                             SIP.mOptions);
-            setAnimation(holder.icon);
+//            setAnimation(holder.icon);
 
         }
     }

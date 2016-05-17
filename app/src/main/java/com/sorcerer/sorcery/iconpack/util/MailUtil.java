@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.util;
 
+import android.util.Log;
+
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 
 /**
@@ -22,14 +24,14 @@ public class MailUtil {
     }
 
     public static MailSenderInfo generateMailSenderInfo(String content,
-                                                 String mailServerHost,
-                                                 String mailServerPort,
-                                                 Boolean validate,
-                                                 String userName,
-                                                 String password,
-                                                 String fromAddress,
-                                                 String toAddress,
-                                                 String subject) {
+                                                        String mailServerHost,
+                                                        String mailServerPort,
+                                                        Boolean validate,
+                                                        String userName,
+                                                        String password,
+                                                        String fromAddress,
+                                                        String toAddress,
+                                                        String subject) {
         MailSenderInfo mailSenderInfo = new MailSenderInfo();
         mailSenderInfo.setContent(content);
         mailSenderInfo.setMailServerHost(mailServerHost);
@@ -44,10 +46,11 @@ public class MailUtil {
     }
 
     public static void send(MailSenderInfo mailSenderInfo,
-                     SendMailCallback callback) {
+                            SendMailCallback callback) {
         try {
             SimpleMailSender sms = new SimpleMailSender();
             sms.sendTextMail(mailSenderInfo);
+            Log.d("mail content", mailSenderInfo.getContent());
             if (callback != null) {
                 callback.onSuccess();
             }

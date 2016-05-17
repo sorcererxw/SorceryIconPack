@@ -54,11 +54,9 @@ public class SIP extends Application {
         ImageLoader.getInstance().init(config);
 
         mOptions = new DisplayImageOptions.Builder()
-                .showImageOnLoading(
-                        new ColorDrawable(ContextCompat.getColor(this, R.color.transparent))
-                )   //加载过程中
-//                .showImageForEmptyUri(R.mipmap.ic_launcher) //uri&#x4e3a;&#x7a7a;&#x65f6;
-//                .showImageOnFail(R.mipmap.ic_launcher)      //加载失败时
+                .showImageOnLoading(R.drawable.icon_loading)
+//                .showImageForEmptyUri(R.drawable.icon_loading)
+//                .showImageOnFail(R.mipmap.ic_launcher)
                 .cacheOnDisk(true)
                 .cacheInMemory(true)                             //允许cache在内存和磁盘中
                 .bitmapConfig(Bitmap.Config.RGB_565)             //图片压缩质量参数

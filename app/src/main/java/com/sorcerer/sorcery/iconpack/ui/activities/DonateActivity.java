@@ -113,7 +113,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         int id = v.getId();
         if (id == R.id.button_donate_alipay) {
 
-            if (false) {
+            if (true) {
                 Intent intent = new Intent("android.intent.action.VIEW",
                         Uri.parse(
                                 "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F" +
