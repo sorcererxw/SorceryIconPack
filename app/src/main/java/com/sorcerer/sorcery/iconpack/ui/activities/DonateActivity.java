@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.animation.Animator;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -37,6 +38,7 @@ import com.sorcerer.sorcery.iconpack.util.ApkUtil;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.PayHelper;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
+import com.sorcerer.sorcery.iconpack.util.ResourceHelper;
 import com.sorcerer.sorcery.iconpack.util.Utility;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
@@ -47,6 +49,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     private static final String TAG = "DonateActivity";
     private Activity mActivity;
     private int mAmount;
+    private final Context mContext =this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,9 +168,12 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         payHelper.setPayCallback(new PayHelper.PayCallback() {
             @Override
             public void onSuccess(String orderId) {
-                Snackbar.make(findViewById(R.id.recyclerView_donate_root), getString(R.string
-                        .donate_success), Snackbar
-                        .LENGTH_SHORT);
+//                Snackbar.make(findViewById(R.id.recyclerView_donate_root), getString(R.string
+//                        .donate_success), Snackbar
+//                        .LENGTH_SHORT);
+
+                Toast.makeText(mContext,ResourceHelper.getString(mContext,R.string.donate_success),Toast.LENGTH_LONG).show();
+
                 showThanksCard();
                 SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
                         MODE_PRIVATE);

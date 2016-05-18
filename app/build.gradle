@@ -16,18 +16,19 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "3.3.0 (" + code + ")"
+        versionName "3.3.1 (" + code + ")"
         minSdkVersion 15
         targetSdkVersion 23
     }
 
     buildTypes {
         debug {
+
         }
         release {
-            minifyEnabled true
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            minifyEnabled true
+//            shrinkResources false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 

@@ -3,9 +3,10 @@
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
         <item>google_io</item>
-        <item>google_io</item>
-        <item>google_io</item>
-        <item>google_io</item>
+        <item>baidu_hi</item>
+        <item>netease_yixin</item>
+        <item>app_drawer</item>
+        <item>app_drawer_alt</item>
         <item>a17</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
@@ -22,11 +23,12 @@
         <item>fulimanman</item>
         <item>google</item>
         <item>google_voice_search</item>
+        <item>tencent_qq_japan</item>
         <item>quanneng_toolbox</item>
         <item>floatify</item>
         <item>powertoggle</item>
         <item>minminguard</item>
-        <item>**##oneplus weather**</item>
+        <!--<item>**##oneplus weather**</item>-->
         <item>oneplus_weather_sunny</item>
         <item>oneplus_weather_cloudy</item>
         <item>oneplus_weather_cloudy_dark</item>
@@ -39,13 +41,18 @@
         <item>weibo</item>
         <item>download</item>
         <item>coolapk</item>
+        <item>a360_cloud</item>
         <item>pomotodo</item>
+        <item>guokr</item>
         <item>douban</item>
         <item>zhiqu_weather</item>
         <item>ali_dingding</item>
         <item>google_translate</item>
         <item>it_home</item>
         <item>zhihu</item>
+        <item>tencent_qq_international</item>
+        <item>tencent_qq_hd</item>
+        <item>tencent_qq_lite</item>
         <item>microsoft_office_outlook</item>
         <item>a360_free_wifi</item>
         <item>tencent_wechat</item>
@@ -79,6 +86,7 @@
     </string-array>
 
     <string-array name="icon_pack_baidu" translatable="false">
+        <item>baidu_hi</item>
         <item>baidu_keyboard</item>
         <item>baidu_maps</item>
         <item>baidu_nuomi</item>
@@ -293,7 +301,6 @@
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
         <item>microsoft_onenote</item>
-        <item>microsoft_outlook</item>
         <item>microsoft_translator</item>
     </string-array>
 
@@ -392,7 +399,6 @@
         <item>tencent_qie_fm</item>
         <item>tencent_qpaint</item>
         <item>tencent_qq</item>
-        <item>tencent_qq_alt</item>
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
         <item>tencent_qq_international</item>
@@ -577,6 +583,7 @@
         <item>apkpure</item>
         <item>apple_music</item>
         <item>app_drawer</item>
+        <item>app_drawer_alt</item>
         <item>app_sales</item>
         <item>app_settings</item>
         <item>asus_backup</item>
@@ -631,6 +638,7 @@
         <item>backdrops</item>
         <item>backgrounds</item>
         <item>baicizhan</item>
+        <item>baidu_hi</item>
         <item>baidu_keyboard</item>
         <item>baidu_maps</item>
         <item>baidu_nuomi</item>
@@ -749,11 +757,9 @@
         <item>dgtle</item>
         <item>dialer</item>
         <item>dianping</item>
-        <item>dianping_alt</item>
         <item>dice</item>
         <item>didaqingdan</item>
         <item>didi</item>
-        <item>didi_alt</item>
         <item>digg</item>
         <item>dingxiangyisheng</item>
         <item>documents</item>
@@ -1172,7 +1178,6 @@
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
         <item>microsoft_onenote</item>
-        <item>microsoft_outlook</item>
         <item>microsoft_translator</item>
         <item>minecraft</item>
         <item>minminguard</item>
@@ -1224,6 +1229,7 @@
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
+        <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_note</item>
         <item>netease_youdao_translator</item>
@@ -1463,7 +1469,6 @@
         <item>tencent_qie_fm</item>
         <item>tencent_qpaint</item>
         <item>tencent_qq</item>
-        <item>tencent_qq_alt</item>
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
         <item>tencent_qq_international</item>

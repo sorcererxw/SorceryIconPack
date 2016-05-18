@@ -39,6 +39,7 @@ import com.sorcerer.sorcery.iconpack.models.SorceryMenuItem;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
+import com.sorcerer.sorcery.iconpack.util.ResourceHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
@@ -255,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
     private void initSearchBox() {
         mSearchBox = mBinding.searchBoxMainIcon;
         mSearchBox.setLogoText("Sorcery Icons");
-        mSearchBox.setHint("search in current page");
+        mSearchBox.setHint(ResourceHelper.getString(mContext,R.string.search_hint));
         mSearchBox.setSearchListener(mSearchListener);
         mSearchBox.setSearchWithoutSuggestions(true);
         mSearchBox.setMenuListener(new SearchBox.MenuListener() {

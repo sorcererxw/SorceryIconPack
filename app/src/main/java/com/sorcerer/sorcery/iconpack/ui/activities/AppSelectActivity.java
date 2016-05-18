@@ -131,15 +131,16 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
             builder.onNegative(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    if (!StringUtil.isMail(email.getText().toString())) {
-                        Toast.makeText(mContext,
-                                getString(R.string.please_input_right_mail_address),
-                                Toast.LENGTH_SHORT)
-                                .show();
-                        return;
-                    }
-                    pay(true, amount,
-                            email.getText().toString() + "\n" + note.getText().toString(), dialog);
+//                    if (!StringUtil.isMail(email.getText().toString())) {
+//                        Toast.makeText(mContext,
+//                                getString(R.string.please_input_right_mail_address),
+//                                Toast.LENGTH_SHORT)
+//                                .show();
+//                        return;
+//                    }
+//                    pay(true, amount,
+//                            email.getText().toString() + "\n" + note.getText().toString(), dialog);
+                    Toast.makeText(mContext, "支付宝暂时不可用\n请选择微信支付", Toast.LENGTH_SHORT).show();
                 }
             });
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
@@ -201,43 +202,6 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         });
         payHelper.pay(isAlipay, amount, getString(R.string.premium_alipay_title), getString(R.string
                 .premium_alipay_descript));
-//
-//        BP.pay(
-//                mActivity,
-//                getString(R.string.premium_alipay_title),
-//                getString(R.string
-//                        .premium_alipay_descript),
-//                amount,
-//                isAlipay,
-//                new c.b.PListener() {
-//
-//                    private String mOrderid;
-//
-//                    @Override
-//                    public void orderId(String s) {
-//
-//                        Toast.makeText(mActivity,
-//                                getString(isAlipay ? R.string.open_alipay : R.string.open_wechat) + s,
-//                                Toast.LENGTH_LONG)
-//                                .show();
-//                        mOrderid = s;
-//                    }
-//
-//                    @Override
-//                    public void succeed() {
-//
-//                    }
-//
-//                    @Override
-//                    public void fail(int i, String s) {
-//
-//                    }
-//
-//                    @Override
-//                    public void unknow() {
-//                        Log.d("sip premium", "unknow");
-//                    }
-//                });
     }
 
     private class LoadAppsAsyncTask extends AsyncTask {

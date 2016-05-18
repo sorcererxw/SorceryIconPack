@@ -25,7 +25,7 @@
 
     <string name="select_an_icon">select an icon</string>
 
-    <string name="search_hint">Search in current icon page</string>
+    <string name="search_hint">Search in current page</string>
 
     <string name="pay_success">pay successfully</string>
     <string name="pay_fail">fail</string>
@@ -39,7 +39,7 @@
     <string name="please_give_permission">please give it permission</string>
 
     <string name="request">Request icon</string>
-    <string name="suggest">Suggest</string>
+    <string name="suggest"><![CDATA[Suggest & Contribute]]></string>
 
     <string name="choose_mail_app">please choose a mail app</string>
 
@@ -129,7 +129,7 @@
     <string name="open_source_lib">Open Source Libs</string>
 
     <string name="changelog">changelog</string>
-    <string name="changelog_content" translatable="false">1. 更新签名，请卸载旧版然后安装新版！！！|2. 38个新图标|3. 图标详情页可以对比已安装图标以及跳转到商店|4. 优化细节|5. 缩减应用体积</string>
+    <string name="changelog_content" translatable="false">1. 50个新图标|2. 修复开启优先申请失败问题|3. 加入Persistent搜索条|4. 修复部分launcher不支持问题|5. 界面细节调整</string>
     <string name="about_main">let 「material」\n
         colorful your phone</string>
 

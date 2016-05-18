@@ -62,7 +62,6 @@ public class IconFragment extends Fragment {
 
     private IconRecyclerView mGridView;
     private IconAdapter mIconAdapter;
-    private SwipeRefreshLayout mSearchLayout;
     private SearchListener mSearchListener;
     private GridLayoutManager mGridLayoutManager;
 
@@ -111,30 +110,6 @@ public class IconFragment extends Fragment {
         TextView emptyView = binding.textViewIconListEmptyViewIcon;
         emptyView.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "empty_icon_list.ttf"));
         mGridView.setEmptyView(binding.linearLayoutIconListEmptyView);
-
-        mSearchLayout = binding.swipeRefreshLayoutIconSearch;
-        try {
-            Field f = mSearchLayout.getClass().getDeclaredField("mCircleView");
-            f.setAccessible(true);
-            ImageView img = (ImageView) f.get(mSearchLayout);
-            img.setImageResource(R.drawable.ic_action_search_icon_inner);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        if (mSearchListener != null) {
-            mSearchLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                @Override
-                public void onRefresh() {
-                    mSearchLayout.setRefreshing(true);
-                    mSearchListener.onSearch();
-                    mSearchLayout.setRefreshing(false);
-                }
-            });
-        } else {
-            mSearchLayout.setEnabled(false);
-        }
 
         mIconAdapter =
                 new IconAdapter(getActivity(),

@@ -86,6 +86,6 @@ public class PayHelper {
     }
 
     public void setPayCallback(PayCallback payCallback) {
-
+        mPayCallback = payCallback;
     }
 }

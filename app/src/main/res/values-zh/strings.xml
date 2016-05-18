@@ -5,7 +5,7 @@
     <string name="action_welcome">感谢使用</string>
 
     <string name="request">申请图标</string>
-    <string name="suggest">建议</string>
+    <string name="suggest">建议与投稿</string>
 
     <string name="choose_mail_app">请选择邮箱</string>
 
@@ -64,7 +64,7 @@
     <string name="nav_item_donate">捐赠</string>
     <string name="donate_dialog_title">选择金额</string>
     <string name="thanks">感  谢</string>
-    <string name="donate_success">捐赠成功 \^o^/</string>
+    <string name="donate_success">捐赠成功</string>
     <string name="donate_fail">捐赠失败, 不过我还是很感动</string>
     <string name="open_alipay">正在打开支付宝</string>
     <string name="nav_item_settings">设置</string>
@@ -119,7 +119,7 @@
     <string name="action_copy_to_clipboard">复制剪贴板</string>
     <string name="action_premium_request">付费申请</string>
     <string name="action_select_all">全选</string>
-    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现, 以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配|拒绝适配游戏图标|拒绝适配游戏图标|拒绝适配游戏图标</string>
+    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现, 以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配|**拒绝适配游戏图标**|**拒绝适配游戏图标**|**拒绝适配游戏图标**</string>
     <string name="premium_request_title">付费申请</string>
     <string name="RMB">元</string>
     <string name="premium_alipay_title">Sorcery 付费申请图标</string>

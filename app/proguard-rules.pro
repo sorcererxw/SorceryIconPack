@@ -36,6 +36,8 @@
 # 不混淆BmobSDK
 -keep class cn.bmob.v3.** {*;}
 
+-keep class c.b.** {*;}
+
 # 保证继承自BmobObject、BmobUser类的JavaBean不被混淆
 -keep class * extends cn.bmob.v3.BmobObject {
     *;
