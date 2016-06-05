@@ -12,7 +12,6 @@ import android.util.TypedValue;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.xposed.theme.IconMaskItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 
 import java.io.BufferedInputStream;
@@ -64,9 +63,9 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
 
     public void initZygote(StartupParam startupParam) throws Throwable {
         this.MODULE_PATH = startupParam.modulePath;
-        XposedBridge.log("[" + TAG + "] Version " +
-                XModuleResources.createInstance(this.MODULE_PATH, null)
-                        .getString(R.string.version_name));
+        XposedBridge.log("[" + TAG + "] Version " + XModuleResources
+                .createInstance(this.MODULE_PATH, null)
+                .getString(R.string.version_name));
         loadThemeDetails();
         markPrefFileChanged();
         try {
@@ -106,8 +105,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
 //                                        it.getPackageName());
 //                            }
 //                        }
-                        if (!it.hasNoCustomIcon() &&
-                                new File(this.mThemePackagePath).exists()) {
+                        if (!it.hasNoCustomIcon()
+                                && new File(this.mThemePackagePath).exists()) {
                             try {
                                 XposedUtils.cacheDrawable(it.getPackageName(),
                                         it.getOrigRes(),
@@ -116,8 +115,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                                                         this.mDisplayDpi,
                                                         it.getReplacementRes())));
                             } catch (Exception e2) {
-                                XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
-                                        it.getPackageName());
+                                XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): "
+                                        + it.getPackageName());
                             }
                         }
                     }
@@ -189,7 +188,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                         protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                             param.setResult(Boolean.valueOf(true));
                         }
-                    }});
+                    }
+                    });
         }
         if (this.mThemePackage != null) {
             if (lpparam.packageName.equals("com.teslacoilsw.launcher")) {
@@ -202,8 +202,9 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                 appWorkaroundThree(lpparam, "com.abcOrganizer", "icon");
             }
         }
-        if (lpparam.packageName.equals("com.tsf.shell") && this.mThemePackage != null &&
-                new File(this.mThemePackagePath).exists()) {
+        if (lpparam.packageName.equals("com.tsf.shell")
+                && this.mThemePackage != null
+                && new File(this.mThemePackagePath).exists()) {
             appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
         }
     }
@@ -216,8 +217,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                         new XC_MethodHook() {
                             protected void afterHookedMethod(MethodHookParam param)
                                     throws Throwable {
-                                XposedBridge.log("[" + Mod.TAG + "] [" + Mod.this.mThemePackage +
-                                        "] Overriding Nova Asset Manager call");
+                                XposedBridge.log("[" + Mod.TAG + "] [" + Mod.this.mThemePackage
+                                        + "] Overriding Nova Asset Manager call");
                                 Resources res = (Resources) param.thisObject;
                                 int resId = ((Integer) param.args[0]).intValue();
                                 String resName = res.getResourceName(resId);
@@ -228,7 +229,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                                     value.string = "replaceWithIconThemer";
                                 }
                             }
-                        }});
+                        }
+                });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
@@ -238,7 +240,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                             param.setResult(null);
                         }
                     }
-                }});
+                }
+                });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
@@ -248,12 +251,13 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                             param.setResult(null);
                         }
                     }
-                }});
+                }
+                });
     }
 
     private void appWorkaroundTwo(XC_LoadPackage.LoadPackageParam lpparam,
-                                  final String packageNameToIgnore,
-                                  final String resNameToIgnore) {
+            final String packageNameToIgnore,
+            final String resNameToIgnore) {
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "openRawResource",
@@ -263,9 +267,9 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                         int resId = ((Integer) param.args[0]).intValue();
                         String resName = res.getResourceName(resId);
                         String packageName = res.getResourcePackageName(resId);
-                        if ((!packageName.equals(packageNameToIgnore) ||
-                                resName.equals(resNameToIgnore)) &&
-                                Mod.this.mIconReplacementsHashMap.get(packageName) != null) {
+                        if ((!packageName.equals(packageNameToIgnore) || resName
+                                .equals(resNameToIgnore))
+                                && Mod.this.mIconReplacementsHashMap.get(packageName) != null) {
                             Resources themeRes = XModuleResources
                                     .createInstance(Mod.this.mThemePackagePath, null);
                             Iterator i$ =
@@ -276,8 +280,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                                 if (it.getOrigResName().equals(resName)) {
                                     File file = new File(XposedUtils
                                             .getCacheFilePath(packageName, it.getOrigRes()));
-                                    if (!(file.exists() || Mod.this.mThemePackagePath == null ||
-                                            !new File(Mod.this.mThemePackagePath).exists())) {
+                                    if (!(file.exists() || Mod.this.mThemePackagePath == null
+                                            || !new File(Mod.this.mThemePackagePath).exists())) {
 //                                        IconMaskItem im = Mod.this.getIconMask();
 //                                        if (it.hasNoCustomIcon() && im != null) {
 //                                            XposedUtils.cacheDrawable(packageName,
@@ -312,12 +316,13 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                             }
                         }
                     }
-                }});
+                }
+                });
     }
 
     private void appWorkaroundThree(XC_LoadPackage.LoadPackageParam lpparam,
-                                    final String packageNameToIgnore,
-                                    final String resNameToIgnore) {
+            final String packageNameToIgnore,
+            final String resNameToIgnore) {
         XC_MethodHook methodHook = new XC_MethodHook() {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Resources res = (Resources) param.args[0];
@@ -328,8 +333,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                 if (param.args[2] != null) {
                     bmOpts = (BitmapFactory.Options) param.args[2];
                 }
-                if ((!packageName.equals(packageNameToIgnore) || resName.equals(resNameToIgnore)) &&
-                        Mod.this.mIconReplacementsHashMap.get(packageName) != null) {
+                if ((!packageName.equals(packageNameToIgnore) || resName.equals(resNameToIgnore))
+                        && Mod.this.mIconReplacementsHashMap.get(packageName) != null) {
                     Resources themeRes =
                             XModuleResources.createInstance(Mod.this.mThemePackagePath, null);
                     Iterator i$ = ((ArrayList) Mod.this.mIconReplacementsHashMap.get(packageName))
@@ -339,8 +344,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                         if (it.getOrigResName().equals(resName)) {
                             File file = new File(XposedUtils
                                     .getCacheFilePath(packageName, it.getOrigRes()));
-                            if (!(file.exists() || Mod.this.mThemePackage == null ||
-                                    !new File(Mod.this.mThemePackagePath).exists())) {
+                            if (!(file.exists() || Mod.this.mThemePackage == null
+                                    || !new File(Mod.this.mThemePackagePath).exists())) {
 //                                IconMaskItem im = Mod.this.getIconMask();
 //                                if (it.hasNoCustomIcon() && im != null) {
 //                                    XposedUtils.cacheDrawable(packageName,
@@ -397,8 +402,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                     (ArrayList) this.gson.fromJson(app_themed_icon_packed,
                             new TypeToken<ArrayList<IconReplacementItem>>() {
                             }.getType()));
-            XposedBridge.log("[" + TAG + "] [" + this.mThemePackage +
-                    "] Loading replacements for package " + packageName);
+            XposedBridge.log("[" + TAG + "] [" + this.mThemePackage
+                    + "] Loading replacements for package " + packageName);
             return;
         }
         this.mIconReplacementsHashMap.remove(packageName);
@@ -411,8 +416,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
             markPrefFileChanged();
             loadReplacementsForPackage(resparam.packageName);
         }
-        if (this.mThemePackage != null && this.mThemePackagePath != null &&
-                this.mIconReplacementsHashMap.get(resparam.packageName) != null) {
+        if (this.mThemePackage != null && this.mThemePackagePath != null
+                && this.mIconReplacementsHashMap.get(resparam.packageName) != null) {
             processIconReplacements(resparam.res,
                     (ArrayList) this.mIconReplacementsHashMap.get(resparam.packageName));
         }
@@ -458,11 +463,11 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                                             it.getReplacementRes()));
                             XposedUtils.cacheDrawable(it.getPackageName(), it.getOrigRes(), icon);
                             icon.getBitmap().recycle();
-                            XposedBridge.log("[" + TAG + "] \tSUCCESS Generated cache for " +
-                                    it.getOrigResName());
+                            XposedBridge.log("[" + TAG + "] \tSUCCESS Generated cache for "
+                                    + it.getOrigResName());
                         } catch (Exception e2) {
-                            XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
-                                    it.getOrigResName());
+                            XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): "
+                                    + it.getOrigResName());
                         }
                     }
                 } else {
@@ -477,8 +482,7 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
 
     public boolean hasPrefFileChanged() {
         File mFile = new File(Environment.getDataDirectory(),
-                "data/" + PACKAGE_NAME + "/shared_prefs/" +
-                        SHARED_PREFERENCE_NAME + ".xml");
+                "data/" + PACKAGE_NAME + "/shared_prefs/" + SHARED_PREFERENCE_NAME + ".xml");
         if (!mFile.canRead()) {
             return true;
         }
@@ -492,8 +496,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
 
     public void markPrefFileChanged() {
         if (!new File(Environment.getDataDirectory(),
-                "data/" + PACKAGE_NAME + "/shared_prefs/" +
-                        SHARED_PREFERENCE_NAME + ".xml").canRead()) {
+                "data/" + PACKAGE_NAME + "/shared_prefs/" + SHARED_PREFERENCE_NAME + ".xml")
+                .canRead()) {
         }
     }
 }

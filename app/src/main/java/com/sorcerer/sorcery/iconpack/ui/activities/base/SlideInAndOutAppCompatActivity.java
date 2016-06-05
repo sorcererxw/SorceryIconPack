@@ -4,12 +4,10 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -18,69 +16,55 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.Utility;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 /**
  * Created by Sorcerer on 2016/2/5 0005.
  */
-public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
+public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarActivity {
 
     @Override
     protected void onStart() {
         super.onStart();
     }
 
-//    @Override
-//    public void finish() {
-//        super.finish();
-//        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_right_out);
-//    }
-
-    private SwipeLayout swipeLayout;
+    protected SwipeLayout mSwipeLayout;
 
     /**
      * 是否可以滑动关闭页面
      */
-    protected boolean swipeEnabled = true;
+    private boolean mSwipeEnabled = true;
 
     /**
      * 是否可以在页面任意位置右滑关闭页面，如果是false则从左边滑才可以关闭。
      */
-    protected boolean swipeAnyWhere = false;
-
-    public SlideInAndOutAppCompatActivity() {
-
-    }
+    private boolean mSwipeAnyWhere = true;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        swipeLayout = new SwipeLayout(this);
+    protected void init() {
+        super.init();
+        mSwipeLayout = new SwipeLayout(this);
     }
 
     public void setSwipeAnyWhere(boolean swipeAnyWhere) {
-        this.swipeAnyWhere = swipeAnyWhere;
+        this.mSwipeAnyWhere = swipeAnyWhere;
     }
 
     public boolean isSwipeAnyWhere() {
-        return swipeAnyWhere;
+        return mSwipeAnyWhere;
     }
 
     public void setSwipeEnabled(boolean swipeEnabled) {
-        this.swipeEnabled = swipeEnabled;
+        this.mSwipeEnabled = swipeEnabled;
     }
 
     public boolean isSwipeEnabled() {
-        return swipeEnabled;
+        return mSwipeEnabled;
     }
-
 
     @Override
     protected void onResume() {
@@ -90,9 +74,11 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        swipeLayout.replaceLayer(this);
+        mSwipeLayout.replaceLayer(this);
         View view = findViewById(android.R.id.content);
-        view.setBackgroundColor(getResources().getColor(R.color.root_background));
+        if (view != null) {
+            view.setBackgroundColor(ResourceUtil.getColor(mContext, R.color.root_background));
+        }
     }
 
     public static int getScreenWidth(Context context) {
@@ -110,7 +96,7 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
             super.finish();
             overridePendingTransition(0, 0);
         } else {
-            swipeLayout.cancelPotentialAnimation();
+            mSwipeLayout.cancelPotentialAnimation();
             super.finish();
             overridePendingTransition(0, R.anim.slide_right_out);
         }
@@ -185,8 +171,8 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
 
         @Override
         public boolean dispatchTouchEvent(@NonNull MotionEvent ev) {
-            if (swipeEnabled && !canSwipe && !ignoreSwipe) {
-                if (swipeAnyWhere) {
+            if (mSwipeEnabled && !canSwipe && !ignoreSwipe) {
+                if (mSwipeAnyWhere) {
                     switch (ev.getAction()) {
                         case MotionEvent.ACTION_DOWN:
                             downX = ev.getX();
@@ -220,8 +206,8 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
                     return true;
                 }
             }
-            if (ev.getAction() == MotionEvent.ACTION_UP ||
-                    ev.getAction() == MotionEvent.ACTION_CANCEL) {
+            if (ev.getAction() == MotionEvent.ACTION_UP
+                    || ev.getAction() == MotionEvent.ACTION_CANCEL) {
                 ignoreSwipe = false;
             }
             return super.dispatchTouchEvent(ev);
@@ -328,8 +314,8 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
             cancelPotentialAnimation();
             animator = ObjectAnimator.ofFloat(this, "contentX", getContentX(), screenWidth);
             int tmpDuration =
-                    withVel ? ((int) (duration * (screenWidth - getContentX()) / screenWidth)) :
-                            duration;
+                    withVel ? ((int) (duration * (screenWidth - getContentX()) / screenWidth))
+                            : duration;
             if (tmpDuration < 100) {
                 tmpDuration = 100;
             }
@@ -367,15 +353,15 @@ public abstract class SlideInAndOutAppCompatActivity extends AppCompatActivity {
 
         private void animateFromVelocity(float v) {
             if (v > 0) {
-                if (getContentX() < screenWidth / 3 &&
-                        v * duration / 1000 + getContentX() < screenWidth / 3) {
+                if (getContentX() < screenWidth / 3
+                        && v * duration / 1000 + getContentX() < screenWidth / 3) {
                     animateBack(false);
                 } else {
                     animateFinish(true);
                 }
             } else {
-                if (getContentX() > screenWidth / 3 &&
-                        v * duration / 1000 + getContentX() > screenWidth / 3) {
+                if (getContentX() > screenWidth / 3
+                        && v * duration / 1000 + getContentX() > screenWidth / 3) {
                     animateFinish(false);
                 } else {
                     animateBack(true);

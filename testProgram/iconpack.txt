@@ -1,6 +1,5 @@
 <string-array name="icon_pack_ali" translatable="false">
    <item>alipay</item>
-   <item>alipay_alt</item>
    <item>ali_cainiao_guoguo</item>
    <item>ali_dingding</item>
    <item>ali_koubei_waimai</item>
@@ -19,6 +18,7 @@
 </string-array>
 
 <string-array name="icon_pack_baidu" translatable="false">
+   <item>baidu</item>
    <item>baidu_hi</item>
    <item>baidu_keyboard</item>
    <item>baidu_maps</item>
@@ -76,6 +76,7 @@
    <item>google_calendar_9</item>
    <item>google_camera</item>
    <item>google_device_manager</item>
+   <item>google_docs</item>
    <item>google_earth</item>
    <item>google_goggles</item>
    <item>google_hangout</item>
@@ -96,6 +97,8 @@
    <item>google_play_newsstand</item>
    <item>google_play_store</item>
    <item>google_plus</item>
+   <item>google_sheets</item>
+   <item>google_slides</item>
    <item>google_snapseed</item>
    <item>google_translate</item>
    <item>google_voice_search</item>
@@ -429,6 +432,7 @@
    <item>flyme_sms</item>
    <item>flyme_soundrecorder</item>
    <item>flyme_toolbox</item>
+   <item>flyme_tools</item>
    <item>flyme_update</item>
    <item>flyme_video</item>
    <item>flyme_voice_assistant</item>
@@ -451,7 +455,7 @@
    <item>a500px</item>
    <item>a5sing</item>
    <item>a94_percent</item>
-   <item>**#A**</item>
+   <item>**A**</item>
    <item>abchina_bank</item>
    <item>accuweather</item>
    <item>accuweather_plus</item>
@@ -484,7 +488,6 @@
    <item>airbnb</item>
    <item>airdroid</item>
    <item>alipay</item>
-   <item>alipay_alt</item>
    <item>ali_cainiao_guoguo</item>
    <item>ali_dingding</item>
    <item>ali_koubei_waimai</item>
@@ -566,11 +569,12 @@
    <item>autovoice</item>
    <item>aviary</item>
    <item>aviate_launcher</item>
-   <item>**#B**</item>
+   <item>**B**</item>
    <item>b612</item>
    <item>backdrops</item>
    <item>backgrounds</item>
    <item>baicizhan</item>
+   <item>baidu</item>
    <item>baidu_hi</item>
    <item>baidu_keyboard</item>
    <item>baidu_maps</item>
@@ -582,6 +586,7 @@
    <item>banciyuan</item>
    <item>bank_of_communications</item>
    <item>barcode_scanner</item>
+   <item>battery_taskmaster</item>
    <item>battery_widget_reborn</item>
    <item>bbc_news</item>
    <item>behance</item>
@@ -638,7 +643,7 @@
    <item>busybox</item>
    <item>butter_camera</item>
    <item>buzz_launcher</item>
-   <item>**#C**</item>
+   <item>**C**</item>
    <item>cabinet</item>
    <item>calculator</item>
    <item>calc_plus</item>
@@ -677,7 +682,7 @@
    <item>cyanogenmod_explorer</item>
    <item>cyanogenmod_screencast</item>
    <item>cyanogenmod_theme_engine</item>
-   <item>**#D**</item>
+   <item>**D**</item>
    <item>dailycost</item>
    <item>dandu</item>
    <item>dangle</item>
@@ -695,6 +700,7 @@
    <item>didi</item>
    <item>digg</item>
    <item>dingxiangyisheng</item>
+   <item>ditietong</item>
    <item>documents</item>
    <item>doggcatcher</item>
    <item>dolphin_browser</item>
@@ -716,7 +722,7 @@
    <item>duitang</item>
    <item>duokan</item>
    <item>duolingo</item>
-   <item>**#E**</item>
+   <item>**E**</item>
    <item>echo</item>
    <item>eleme</item>
    <item>eleme_alt</item>
@@ -729,7 +735,7 @@
    <item>evernote_alt_2</item>
    <item>evolve_wallpapers</item>
    <item>ex_kernel_manager</item>
-   <item>**#F**</item>
+   <item>**F**</item>
    <item>facebook</item>
    <item>facebook_messenger</item>
    <item>fangdai_calculator</item>
@@ -805,6 +811,7 @@
    <item>flyme_sms</item>
    <item>flyme_soundrecorder</item>
    <item>flyme_toolbox</item>
+   <item>flyme_tools</item>
    <item>flyme_update</item>
    <item>flyme_video</item>
    <item>flyme_voice_assistant</item>
@@ -817,15 +824,20 @@
    <item>fotor</item>
    <item>franco_kernel</item>
    <item>fulimanman</item>
-   <item>**#G**</item>
+   <item>**G**</item>
    <item>gallery</item>
+   <item>game_dots_out</item>
    <item>game_heartstone</item>
+   <item>game_maestria</item>
+   <item>game_mekorama</item>
    <item>game_prune</item>
+   <item>game_the_last_banacat</item>
    <item>game_virtua_tennis</item>
    <item>game_wangzherongyao</item>
    <item>gaotieguanjia</item>
    <item>geometric_weather</item>
    <item>gewala_movie</item>
+   <item>gg_assistant</item>
    <item>github</item>
    <item>gitskarios</item>
    <item>golden_dict</item>
@@ -869,6 +881,7 @@
    <item>google_calendar_9</item>
    <item>google_camera</item>
    <item>google_device_manager</item>
+   <item>google_docs</item>
    <item>google_earth</item>
    <item>google_goggles</item>
    <item>google_hangout</item>
@@ -889,6 +902,8 @@
    <item>google_play_newsstand</item>
    <item>google_play_store</item>
    <item>google_plus</item>
+   <item>google_sheets</item>
+   <item>google_slides</item>
    <item>google_snapseed</item>
    <item>google_translate</item>
    <item>google_voice_search</item>
@@ -901,7 +916,7 @@
    <item>guaguamanhua</item>
    <item>gudong</item>
    <item>guokr</item>
-   <item>**#H**</item>
+   <item>**H**</item>
    <item>hai360</item>
    <item>haibei_music</item>
    <item>haici_dict</item>
@@ -938,7 +953,7 @@
    <item>hupo_weather</item>
    <item>huputiyu</item>
    <item>huya</item>
-   <item>**#I**</item>
+   <item>**I**</item>
    <item>ia_writer</item>
    <item>icbc</item>
    <item>icebox</item>
@@ -952,11 +967,10 @@
    <item>inspire_launcher</item>
    <item>instagram</item>
    <item>instagram_alt</item>
-   <item>instagram_alt_2</item>
    <item>instapaper</item>
    <item>iqiyi</item>
    <item>it_home</item>
-   <item>**#J**</item>
+   <item>**J**</item>
    <item>jd</item>
    <item>jd_jinrong</item>
    <item>jd_wallet</item>
@@ -968,9 +982,10 @@
    <item>jinsanciba</item>
    <item>jotterpad</item>
    <item>juejin</item>
-   <item>**#K**</item>
+   <item>**K**</item>
    <item>kaifazhetoutiao</item>
    <item>kaixiaohao</item>
+   <item>kaomanfen_tuofu</item>
    <item>kaoyanbang</item>
    <item>kechenggezi</item>
    <item>keep_health</item>
@@ -986,7 +1001,7 @@
    <item>kuaipan</item>
    <item>kuaiya</item>
    <item>kugou</item>
-   <item>**#L**</item>
+   <item>**L**</item>
    <item>lanrenzhoumo</item>
    <item>lantern</item>
    <item>lastpass</item>
@@ -1084,7 +1099,7 @@
    <item>luckymoney</item>
    <item>lucky_patcher</item>
    <item>luyinbao</item>
-   <item>**#M**</item>
+   <item>**M**</item>
    <item>mangguo_tv</item>
    <item>maoyan</item>
    <item>media_converter</item>
@@ -1154,7 +1169,7 @@
    <item>muzei</item>
    <item>myandroidtools</item>
    <item>myboy_gba</item>
-   <item>**#N**</item>
+   <item>**N**</item>
    <item>netease_cloudclass</item>
    <item>netease_cloudclass_alt</item>
    <item>netease_huochepiao</item>
@@ -1174,7 +1189,7 @@
    <item>nine_launcher</item>
    <item>notify_clean</item>
    <item>nova_launcher</item>
-   <item>**#O**</item>
+   <item>**O**</item>
    <item>officesuite</item>
    <item>olo</item>
    <item>olympus_image_share</item>
@@ -1185,7 +1200,7 @@
    <item>oneplus_weather_cloudy_dark</item>
    <item>oneplus_weather_sunny</item>
    <item>ookla_speedtest</item>
-   <item>**#P**</item>
+   <item>**P**</item>
    <item>panda_tv</item>
    <item>paypal</item>
    <item>peel_smart_remote</item>
@@ -1213,8 +1228,9 @@
    <item>pptv</item>
    <item>press</item>
    <item>psiphon</item>
-   <item>**#Q**</item>
+   <item>**Q**</item>
    <item>qdaily</item>
+   <item>qidian_reader</item>
    <item>qingting_fm</item>
    <item>quanminkge</item>
    <item>quanneng_toolbox</item>
@@ -1223,7 +1239,8 @@
    <item>quickshortcutmaker</item>
    <item>qunar</item>
    <item>qunidaye_browser</item>
-   <item>**#R**</item>
+   <item>quote</item>
+   <item>**R**</item>
    <item>rar</item>
    <item>reaper</item>
    <item>renrenmeiju</item>
@@ -1231,7 +1248,7 @@
    <item>root_explorer</item>
    <item>ruler</item>
    <item>runtastic_six_pack</item>
-   <item>**#S**</item>
+   <item>**S**</item>
    <item>same</item>
    <item>samsung_apps</item>
    <item>samsung_browser</item>
@@ -1312,6 +1329,7 @@
    <item>smzdm</item>
    <item>snapchat</item>
    <item>snaptube</item>
+   <item>sogou_chat</item>
    <item>sohu_video</item>
    <item>solid_explorer</item>
    <item>solo_launcher</item>
@@ -1345,6 +1363,7 @@
    <item>sougou_wallpaper</item>
    <item>sound_recorder</item>
    <item>spendee</item>
+   <item>spotify</item>
    <item>sspai</item>
    <item>stack_exchange</item>
    <item>starbucks</item>
@@ -1389,7 +1408,7 @@
    <item>sunrise_9</item>
    <item>supersu</item>
    <item>swiftkey_keyboard</item>
-   <item>**#T**</item>
+   <item>**T**</item>
    <item>tapet</item>
    <item>tasker</item>
    <item>ted</item>
@@ -1438,20 +1457,21 @@
    <item>tujiedianying</item>
    <item>tumblr</item>
    <item>twitter</item>
-   <item>**#U**</item>
+   <item>**U**</item>
    <item>uber</item>
    <item>uber_partner</item>
    <item>uc_browser</item>
    <item>unicom</item>
    <item>unicon</item>
-   <item>**#V**</item>
+   <item>unionpay_wallet</item>
+   <item>**V**</item>
    <item>v2ex</item>
    <item>versus</item>
    <item>via_browser</item>
    <item>viper4android</item>
    <item>vsco</item>
    <item>vst</item>
-   <item>**#W**</item>
+   <item>**W**</item>
    <item>wakelock_detector</item>
    <item>wandoujia</item>
    <item>wandoujia_alt</item>
@@ -1476,12 +1496,13 @@
    <item>wps</item>
    <item>wuba</item>
    <item>wunderlist</item>
-   <item>**#X**</item>
+   <item>**X**</item>
    <item>xiachufang</item>
    <item>xiami</item>
    <item>xiaoenai</item>
    <item>xiaohongshu</item>
    <item>xiaokaxiu</item>
+   <item>xiaomi_mijia</item>
    <item>xiaowo_weather</item>
    <item>ximalayating</item>
    <item>xinstaller</item>
@@ -1493,7 +1514,7 @@
    <item>xunlei</item>
    <item>xunlei_kuainiao</item>
    <item>x_browser</item>
-   <item>**#Y**</item>
+   <item>**Y**</item>
    <item>yahoo_weather</item>
    <item>yangqi</item>
    <item>yaokongjingling</item>
@@ -1509,7 +1530,7 @@
    <item>yuantiku_sikao</item>
    <item>yuantiku_souti</item>
    <item>yuelaiyuehao</item>
-   <item>**#Z**</item>
+   <item>**Z**</item>
    <item>zaker</item>
    <item>zank</item>
    <item>zarchiver</item>

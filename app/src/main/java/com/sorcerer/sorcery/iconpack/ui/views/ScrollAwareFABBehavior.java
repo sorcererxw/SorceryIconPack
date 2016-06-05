@@ -1,22 +1,13 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
-import android.os.Build;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPropertyAnimatorListener;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 
-import com.sorcerer.sorcery.iconpack.R;
-
-/**
- * Created by Sorcerer on 2016/2/7 0007.
- */
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
 
     public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
@@ -45,14 +36,14 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
      */
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout,
-                                       FloatingActionButton child, View directTargetChild,
-                                       View target, int nestedScrollAxes) {
-        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL ||
-                super.onStartNestedScroll(coordinatorLayout,
-                        child,
-                        directTargetChild,
-                        target,
-                        nestedScrollAxes);
+            FloatingActionButton child, View directTargetChild,
+            View target, int nestedScrollAxes) {
+        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
+                || super.onStartNestedScroll(coordinatorLayout,
+                child,
+                directTargetChild,
+                target,
+                nestedScrollAxes);
     }
 
     /**
@@ -84,8 +75,8 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
      */
     @Override
     public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child,
-                               View target, int dxConsumed, int dyConsumed, int dxUnconsumed,
-                               int dyUnconsumed) {
+            View target, int dxConsumed, int dyConsumed, int dxUnconsumed,
+            int dyUnconsumed) {
         super.onNestedScroll(coordinatorLayout,
                 child,
                 target,

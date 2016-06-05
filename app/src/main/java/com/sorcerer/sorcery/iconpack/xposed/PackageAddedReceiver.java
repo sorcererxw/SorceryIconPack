@@ -9,22 +9,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.v4.media.TransportMediator;
-import android.util.Log;
 import android.support.v4.app.NotificationCompat.Builder;
+import android.util.Log;
 
 import com.google.gson.Gson;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.LabActivity;
-import com.sorcerer.sorcery.iconpack.xposed.theme.IconMaskItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
-import com.sorcerer.sorcery.iconpack.xposed.theme.IconShader;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -33,7 +27,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -67,8 +60,8 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                 int displayDpi = prefs.getInt("display_dpi", 320);
                 String themePackageName = prefs.getString("theme_package_name", null);
                 String themePackagePath = prefs.getString("theme_package_path", null);
-                if (themePackageName != null && themePackagePath != null &&
-                        new File(themePackagePath).exists()) {
+                if (themePackageName != null && themePackagePath != null
+                        && new File(themePackagePath).exists()) {
                     Intent intent2;
 //                    if (themePackageName.equals(installedPkgName)) {
 //                        if (prefs.getBoolean("restartNotification", true)) {
@@ -127,7 +120,8 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                             xrp.setInput(istr, "UTF-8");
                         } else {
                             xrp = r.getXml(r
-                                    .getIdentifier("appfilter", "xml", themePackage.packageName));
+                                    .getIdentifier("appfilter", "xml",
+                                            themePackage.packageName));
                         }
                         ArrayList<IconReplacementItem> themeIconsForApp = new ArrayList();
                         Iterator i$ = Util.ParseIconReplacements(themePackage.packageName, r, xrp)
@@ -138,7 +132,8 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                 try {
                                     ActivityInfo activityInfo =
                                             pm.getActivityInfo(new ComponentName(item
-                                                            .getPackageName(), item.getActivityName()),
+                                                            .getPackageName(),
+                                                            item.getActivityName()),
                                                     PackageManager.GET_META_DATA);
                                     if (activityInfo != null) {
                                         items = themeIconsForApp;
@@ -146,7 +141,8 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                                 .getPackageName());
                                         item.setOrigRes(activityInfo.getIconResource());
                                         item.setOrigResName(origPkgRes
-                                                .getResourceName(activityInfo.getIconResource()));
+                                                .getResourceName(activityInfo
+                                                        .getIconResource()));
                                         if (items.contains(item)) {
                                             items.remove(item);
                                         }
@@ -163,10 +159,13 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                         }
                                         XposedUtils.cacheDrawable(item.getPackageName(),
                                                 item.getOrigRes(),
-                                                (BitmapDrawable) new BitmapDrawable(origPkgRes,
-                                                        XposedUtils.getBitmapForDensity(r,
-                                                                displayDpi,
-                                                                item.getReplacementRes())));
+                                                (BitmapDrawable) new BitmapDrawable(
+                                                        origPkgRes,
+                                                        XposedUtils
+                                                                .getBitmapForDensity(
+                                                                        r,
+                                                                        displayDpi,
+                                                                        item.getReplacementRes())));
                                     }
                                 } catch (Exception e3) {
                                 }
@@ -250,7 +249,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
     }
 
     private void showNotification(Context context) {
-        if(true){
+        if (true) {
             return;
         }
         Intent intent2 = new Intent(context, LabActivity.class);
@@ -267,11 +266,10 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                 context.getString(R.string.global_load_package_add_notify))
 //                                            .setTicker("Sorcery needs to restart your launcher")
 //                                            .setPriority(Notification.PRIORITY_MIN)
-                        .setContentIntent
-                                (PendingIntent.getActivity(context,
-                                        0,
-                                        intent2,
-                                        PendingIntent.FLAG_CANCEL_CURRENT))
+                        .setContentIntent(PendingIntent.getActivity(context,
+                                0,
+                                intent2,
+                                PendingIntent.FLAG_CANCEL_CURRENT))
                         .setAutoCancel(true)
                         .build());
     }

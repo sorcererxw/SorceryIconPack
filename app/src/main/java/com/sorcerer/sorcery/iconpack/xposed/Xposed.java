@@ -104,34 +104,44 @@ public class Xposed
                         while (i$.hasNext()) {
                             IconReplacementItem it = (IconReplacementItem) i$.next();
                             if (new File(XposedUtils
-                                    .getCacheFilePath(it.getPackageName(), it.getOrigRes()))
+                                    .getCacheFilePath(it.getPackageName(),
+                                            it.getOrigRes()))
                                     .exists()) {
                                 XResources.setSystemWideReplacement(it.getOrigRes(),
                                         new XResources.DrawableLoader() {
-                                            public Drawable newDrawable(XResources res, int id)
+                                            public Drawable newDrawable(
+                                                    XResources res,
+                                                    int id)
                                                     throws Throwable {
-                                                return XposedUtils.getCachedIcon(res,
-                                                        res.getResourcePackageName(id),
-                                                        id);
+                                                return XposedUtils
+                                                        .getCachedIcon(
+                                                                res,
+                                                                res.getResourcePackageName(
+                                                                        id),
+                                                                id);
                                             }
                                         });
                             } else if (!it.hasNoCustomIcon()) {
                                 try {
                                     final Drawable icon = new BitmapDrawable(XResources.getSystem(),
-                                            XposedUtils.getBitmapForDensity(themeRes,
-                                                    mDisplayDpi,
-                                                    it.getReplacementRes()));
+                                            XposedUtils
+                                                    .getBitmapForDensity(
+                                                            themeRes,
+                                                            mDisplayDpi,
+                                                            it.getReplacementRes()));
                                     XResources.setSystemWideReplacement(it.getOrigRes(),
                                             new XResources.DrawableLoader() {
-                                                public Drawable newDrawable(XResources res, int id)
-                                                        throws Throwable {
+                                                public Drawable newDrawable(
+                                                        XResources res,
+                                                        int id)
+                                                        throws
+                                                        Throwable {
                                                     return icon;
                                                 }
                                             });
                                 } catch (Exception e2) {
-                                    XposedBridge
-                                            .log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
-                                                    it.getPackageName());
+                                    XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): "
+                                            + it.getPackageName());
                                 }
                             } else {
 //                            try {
@@ -182,8 +192,9 @@ public class Xposed
                     appWorkaroundThree(lpparam, "com.abcOrganizer", "icon");
                 }
             }
-            if (lpparam.packageName.equals("com.tsf.shell") && mThemePackage != null &&
-                    new File(mThemePackagePath).exists()) {
+            if (lpparam.packageName.equals("com.tsf.shell")
+                    && mThemePackage != null
+                    && new File(mThemePackagePath).exists()) {
                 appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
             }
             if (lpparam.packageName.equals(PACKAGE_NAME)) {
@@ -191,13 +202,14 @@ public class Xposed
                         lpparam.classLoader,
                         "reloadResource",
                         new Object[]{new XC_MethodHook() {
-                            protected void afterHookedMethod(MethodHookParam param)
+                            protected void afterHookedMethod(
+                                    MethodHookParam param)
                                     throws Throwable {
-                                XposedBridge.log("[" + TAG + "] [" + mThemePackage +
-                                        "] Overriding Nova Asset Manager call");
-
+                                XposedBridge.log("[" + TAG + "] [" + mThemePackage
+                                        + "] Overriding Nova Asset Manager call");
                             }
-                        }});
+                        }
+                        });
             }
         }
     }
@@ -248,90 +260,115 @@ public class Xposed
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "getValueForDensity",
-                new Object[]{Integer.TYPE, Integer.TYPE, TypedValue.class, Boolean.TYPE,
+                new Object[]{Integer.TYPE, Integer.TYPE, TypedValue.class,
+                        Boolean.TYPE,
                         new XC_MethodHook() {
-                            protected void afterHookedMethod(MethodHookParam param)
+                            protected void afterHookedMethod(
+                                    MethodHookParam param)
                                     throws Throwable {
-                                XposedBridge.log("[" + TAG + "] [" + mThemePackage +
-                                        "] Overriding Nova Asset Manager call");
+                                XposedBridge.log("[" + TAG + "] [" + mThemePackage
+                                        + "] Overriding Nova Asset Manager call");
                                 Resources res = (Resources) param.thisObject;
                                 int resId = ((Integer) param.args[0]).intValue();
                                 String resName = res.getResourceName(resId);
                                 TypedValue value = (TypedValue) param.args[2];
                                 if (new File(XposedUtils
-                                        .getCacheFilePath(res.getResourcePackageName(resId),
-                                                resId)).exists()) {
+                                        .getCacheFilePath(res.getResourcePackageName(resId), resId))
+                                        .exists()) {
                                     value.string = "replaceWithSIP";
                                 }
                             }
-                        }});
+                        }
+                });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
-                new Object[]{Integer.TYPE, String.class, new XC_MethodHook() {
-                    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                        if (param.args[1].equals("replaceWithSIP")) {
-                            param.setResult(null);
+                new Object[]{Integer.TYPE, String.class,
+                        new XC_MethodHook() {
+                            protected void beforeHookedMethod(
+                                    MethodHookParam param)
+                                    throws Throwable {
+                                if (param.args[1]
+                                        .equals("replaceWithSIP")) {
+                                    param.setResult(null);
+                                }
+                            }
                         }
-                    }
-                }});
+                });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
                 new Object[]{String.class, new XC_MethodHook() {
-                    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                    protected void beforeHookedMethod(MethodHookParam param)
+                            throws Throwable {
                         if (param.args[0].equals("replaceWithSIP")) {
                             param.setResult(null);
                         }
                     }
-                }});
+                }
+                });
     }
 
 
     private void appWorkaroundTwo(XC_LoadPackage.LoadPackageParam lpparam,
-                                  final String packageNameToIgnore, final String resNameToIgnore) {
+            final String packageNameToIgnore, final String resNameToIgnore) {
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "openRawResource",
                 new Object[]{Integer.TYPE, new XC_MethodHook() {
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                    protected void afterHookedMethod(MethodHookParam param)
+                            throws Throwable {
                         Resources res = (Resources) param.thisObject;
                         int resId = ((Integer) param.args[0]).intValue();
                         String resName = res.getResourceName(resId);
-                        String packageName = res.getResourcePackageName(resId);
-                        if ((!packageName.equals(packageNameToIgnore) ||
-                                resName.equals(resNameToIgnore)) &&
-                                mIconReplacementsHashMap.get(packageName) != null) {
+                        String packageName =
+                                res.getResourcePackageName(resId);
+                        if ((!packageName.equals(packageNameToIgnore)
+                                || resName.equals(resNameToIgnore))
+                                && mIconReplacementsHashMap.get(packageName) != null) {
                             Resources themeRes =
-                                    XModuleResources.createInstance(mThemePackagePath, null);
-                            Iterator i$ = ((ArrayList) mIconReplacementsHashMap.get(packageName))
-                                    .iterator();
+                                    XModuleResources.createInstance(
+                                            mThemePackagePath, null);
+                            Iterator i$ =
+                                    ((ArrayList) mIconReplacementsHashMap
+                                            .get(packageName))
+                                            .iterator();
                             while (i$.hasNext()) {
-                                IconReplacementItem it = (IconReplacementItem) i$.next();
+                                IconReplacementItem it =
+                                        (IconReplacementItem) i$.next();
                                 if (it.getOrigResName().equals(resName)) {
                                     File file = new File(XposedUtils
                                             .getCacheFilePath(packageName, it.getOrigRes()));
-                                    if (!(file.exists() || mThemePackagePath == null ||
-                                            !new File(mThemePackagePath).exists())) {
+                                    if (!(file.exists() || mThemePackagePath == null
+                                            || !new File(mThemePackagePath)
+                                            .exists())) {
 //                                IconMaskItem im = getIconMask();
                                         if (it.hasNoCustomIcon() && false) {
 //                                    Utils.cacheDrawable(packageName, it.getOrigResName(), Utils.themeIconWithShader(res, themeRes, mDisplayDpi, resId, im, getIconShaders()));
-                                        } else if (it.getReplacementResName() != null) {
-                                            XposedUtils.cacheDrawable(it.getPackageName(),
+                                        } else if (
+                                                it.getReplacementResName()
+                                                        != null) {
+                                            XposedUtils.cacheDrawable(
+                                                    it.getPackageName(),
                                                     it.getOrigRes(),
-                                                    (BitmapDrawable) new BitmapDrawable(res,
+                                                    (BitmapDrawable) new BitmapDrawable(
+                                                            res,
                                                             XposedUtils
-                                                                    .getBitmapForDensity(themeRes,
+                                                                    .getBitmapForDensity(
+                                                                            themeRes,
                                                                             mDisplayDpi,
                                                                             it.getReplacementRes())));
                                         }
                                     }
                                     if (file.exists()) {
                                         if (param.getResult() != null) {
-                                            ((InputStream) param.getResult()).close();
+                                            ((InputStream) param
+                                                    .getResult()).close();
                                         }
-                                        param.setResult(new BufferedInputStream(new FileInputStream(
-                                                file)));
+                                        param.setResult(
+                                                new BufferedInputStream(
+                                                        new FileInputStream(
+                                                                file)));
                                         return;
                                     }
                                     return;
@@ -339,13 +376,14 @@ public class Xposed
                             }
                         }
                     }
-                }});
+                }
+                });
     }
 
 
     private void appWorkaroundThree(XC_LoadPackage.LoadPackageParam lpparam,
-                                    final String packageNameToIgnore,
-                                    final String resNameToIgnore) {
+            final String packageNameToIgnore,
+            final String resNameToIgnore) {
         XC_MethodHook methodHook = new XC_MethodHook() {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Resources res = (Resources) param.args[0];
@@ -356,8 +394,8 @@ public class Xposed
                 if (param.args[2] != null) {
                     bmOpts = (BitmapFactory.Options) param.args[2];
                 }
-                if ((!packageName.equals(packageNameToIgnore) || resName.equals(resNameToIgnore)) &&
-                        mIconReplacementsHashMap.get(packageName) != null) {
+                if ((!packageName.equals(packageNameToIgnore) || resName.equals(resNameToIgnore))
+                        && mIconReplacementsHashMap.get(packageName) != null) {
                     Resources themeRes =
                             XModuleResources.createInstance(mThemePackagePath, null);
                     Iterator i$ = ((ArrayList) mIconReplacementsHashMap.get(packageName))
@@ -366,9 +404,10 @@ public class Xposed
                         IconReplacementItem it = (IconReplacementItem) i$.next();
                         if (it.getOrigResName().equals(resName)) {
                             File file = new File(XposedUtils
-                                    .getCacheFilePath(packageName, it.getOrigRes()));
-                            if (!(file.exists() || mThemePackage == null ||
-                                    !new File(mThemePackagePath).exists())) {
+                                    .getCacheFilePath(packageName,
+                                            it.getOrigRes()));
+                            if (!(file.exists() || mThemePackage == null
+                                    || !new File(mThemePackagePath).exists())) {
 //                                IconMaskItem im = getIconMask();
                                 if (it.hasNoCustomIcon() && false) {
 //                                    Utils.cacheDrawable(packageName,
@@ -382,15 +421,19 @@ public class Xposed
                                 } else if (it.getReplacementResName() != null) {
                                     XposedUtils.cacheDrawable(it.getPackageName(),
                                             it.getOrigRes(),
-                                            (BitmapDrawable) new BitmapDrawable(res,
-                                                    XposedUtils.getBitmapForDensity(themeRes,
-                                                            mDisplayDpi,
-                                                            it.getReplacementRes())));
+                                            (BitmapDrawable) new BitmapDrawable(
+                                                    res,
+                                                    XposedUtils
+                                                            .getBitmapForDensity(
+                                                                    themeRes,
+                                                                    mDisplayDpi,
+                                                                    it.getReplacementRes())));
                                 }
                             }
                             if (file.exists()) {
                                 param.setResult(XposedUtils
-                                        .getCachedIcon(res, packageName, resId, bmOpts)
+                                        .getCachedIcon(res, packageName, resId,
+                                                bmOpts)
                                         .getBitmap());
                                 return;
                             }
@@ -403,7 +446,8 @@ public class Xposed
         XposedHelpers.findAndHookMethod("android.graphics.BitmapFactory",
                 lpparam.classLoader,
                 "decodeResource",
-                new Object[]{Resources.class, Integer.TYPE, BitmapFactory.Options.class,
+                new Object[]{Resources.class, Integer.TYPE,
+                        BitmapFactory.Options.class,
                         methodHook});
         XposedHelpers.findAndHookMethod("android.graphics.BitmapFactory",
                 lpparam.classLoader,
@@ -459,25 +503,30 @@ public class Xposed
                         try {
                             XposedUtils.cacheDrawable(it.getPackageName(),
                                     it.getOrigRes(),
-                                    (BitmapDrawable) new BitmapDrawable(resparam.res,
-                                            XposedUtils.getBitmapForDensity(XModuleResources
-                                                            .createInstance(mThemePackagePath,
+                                    (BitmapDrawable) new BitmapDrawable(
+                                            resparam.res,
+                                            XposedUtils.getBitmapForDensity(
+                                                    XModuleResources
+                                                            .createInstance(
+                                                                    mThemePackagePath,
                                                                     resparam.res),
                                                     mDisplayDpi,
                                                     it.getReplacementRes())));
                             resparam.res
                                     .setReplacement(it.getOrigRes(),
                                             new XResources.DrawableLoader() {
-                                                public Drawable newDrawable(XResources res, int id)
+                                                public Drawable newDrawable(XResources res,
+                                                        int id)
                                                         throws Throwable {
                                                     return XposedUtils.getCachedIcon(res,
-                                                            res.getResourcePackageName(id),
+                                                            res.getResourcePackageName(
+                                                                    id),
                                                             id);
                                                 }
                                             });
                         } catch (Exception e2) {
-                            XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): " +
-                                    it.getPackageName());
+                            XposedBridge.log("[" + TAG + "] \tFAILED (Orig Res Not Found): "
+                                    + it.getPackageName());
                         }
                     }
                 }

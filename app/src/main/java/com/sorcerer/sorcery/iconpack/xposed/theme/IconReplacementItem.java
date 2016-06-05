@@ -109,6 +109,10 @@ public class IconReplacementItem {
     }
 
     public String toString() {
-        return "IconReplacementItem{component='" + this.component + '\'' + ", packageName='" + this.packageName + '\'' + ", activityName='" + this.activityName + '\'' + ", replacementRes=" + this.replacementRes + ", replacementResName=" + this.replacementResName + ", origRes=" + this.origRes + ", origResName=" + this.origResName + '}';
+        return "IconReplacementItem{component='" + this.component + '\'' + ", packageName='"
+                + this.packageName + '\'' + ", activityName='" + this.activityName + '\''
+                + ", replacementRes=" + this.replacementRes + ", replacementResName="
+                + this.replacementResName + ", origRes=" + this.origRes + ", origResName="
+                + this.origResName + '}';
     }
 }

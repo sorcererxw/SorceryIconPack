@@ -16,24 +16,16 @@ import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.graphics.Canvas;
-import android.graphics.ComposeShader;
 import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
 import android.util.TypedValue;
-import android.widget.Toast;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
-import com.sorcerer.sorcery.iconpack.xposed.theme.IconMaskItem;
-import com.sorcerer.sorcery.iconpack.xposed.theme.IconShader;
 import com.stericson.RootTools.RootTools;
-import com.stericson.RootTools.exceptions.RootDeniedException;
-import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
 
 import java.io.BufferedReader;
@@ -47,9 +39,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 public class XposedUtils {
 
@@ -117,7 +106,8 @@ public class XposedUtils {
         try {
             BufferedReader bufferedReader =
                     new BufferedReader(new InputStreamReader(Runtime.getRuntime()
-                            .exec("logcat -v -d time IconThemer *:S").getInputStream()));
+                            .exec("logcat -v -d time IconThemer *:S")
+                            .getInputStream()));
             while (true) {
                 String line = bufferedReader.readLine();
                 if (line == null) {
@@ -149,7 +139,8 @@ public class XposedUtils {
     public static boolean checkIfModuleIsActivated(String modulePackageName) {
         try {
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(Runtime.getRuntime()
-                    .exec("cat /data/xposed/modules.whitelist").getInputStream()));
+                    .exec("cat /data/xposed/modules.whitelist")
+                    .getInputStream()));
             String s;
             do {
                 s = stdInput.readLine();
@@ -165,7 +156,7 @@ public class XposedUtils {
     }
 
     public static Bitmap themeIcon(Resources srcRes, Resources themeRes, int displayDpi,
-                                   int iconRes, int backRes, int maskRes, int upRes, float scale) {
+            int iconRes, int backRes, int maskRes, int upRes, float scale) {
         Bitmap sourceImage = getBitmapForDensity(srcRes, displayDpi, iconRes);
         Bitmap iconBack = null;
         if (backRes != 0) {
@@ -262,7 +253,7 @@ public class XposedUtils {
     }
 
     public static BitmapDrawable getCachedIcon(Resources res, String packageName, int resId,
-                                               Options opts) {
+            Options opts) {
         int displayDpi = res.getDisplayMetrics().densityDpi;
         Bitmap bitmap = BitmapFactory.decodeFile(getCacheFilePath(packageName, resId), opts);
         if (bitmap == null) {
@@ -318,8 +309,8 @@ public class XposedUtils {
                     .contains("teslacoilsw.launcher")) {
                 clearNovaCache();
             }
-            RootTools.getShell(true).add(new CommandCapture(0, "am force-stop " + getCurrentHome
-                    (pm)))
+            RootTools.getShell(true)
+                    .add(new CommandCapture(0, "am force-stop " + getCurrentHome(pm)))
                     .waitForFinish();
         } catch (Exception e) {
             e.printStackTrace();
@@ -330,9 +321,9 @@ public class XposedUtils {
         try {
             String forceStops = "";
             for (RunningTaskInfo rti : am.getRunningTasks(1000)) {
-                if (!(rti.baseActivity.getPackageName().equals(PACKAGE_NAME) ||
-                        rti.baseActivity.getPackageName().equals("com.android.systemui") ||
-                        rti.numRunning <= 0)) {
+                if (!(rti.baseActivity.getPackageName().equals(PACKAGE_NAME)
+                        || rti.baseActivity.getPackageName().equals("com.android.systemui")
+                        || rti.numRunning <= 0)) {
                     if (forceStops.length() > 0) {
                         forceStops = forceStops + " & ";
                     }
@@ -344,8 +335,8 @@ public class XposedUtils {
             }
             Log.d(TAG, "forceStops: " + forceStops);
             RootTools.getShell(true).add(new CommandCapture(0,
-                    forceStops +
-                            " & am force-stop " + PACKAGE_NAME + " && am start " + PACKAGE_NAME))
+                    forceStops + " & am force-stop " + PACKAGE_NAME + " && am start "
+                            + PACKAGE_NAME))
                     .waitForFinish();
         } catch (Exception e) {
             e.printStackTrace();

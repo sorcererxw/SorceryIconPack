@@ -1,16 +1,5 @@
 package com.sorcerer.sorcery.iconpack.xposed.theme;
 
-import android.content.res.XmlResourceParser;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 public class IconShader {
 /*
     static class CHANNEL {

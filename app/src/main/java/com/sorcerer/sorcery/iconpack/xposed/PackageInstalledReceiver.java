@@ -1,6 +1,5 @@
 package com.sorcerer.sorcery.iconpack.xposed;
 
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,30 +11,12 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
-import android.nfc.Tag;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.SettingsAdapter;
-import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
-import com.sorcerer.sorcery.iconpack.models.SettingsItem;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconMaskItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
-import com.stericson.RootTools.RootTools;
-import com.stericson.RootTools.execution.Command;
-import com.stericson.RootTools.execution.CommandCapture;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -45,7 +26,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 public class PackageInstalledReceiver extends BroadcastReceiver {
@@ -79,8 +59,8 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
                     String themePackagePath = prefs.getString("theme_package_path", null);
                     Log.d(TAG, themePackageName);
                     Log.d(TAG, themePackagePath);
-                    if (themePackageName != null && themePackagePath != null &&
-                            new File(themePackagePath).exists()) {
+                    if (themePackageName != null && themePackagePath != null
+                            && new File(themePackagePath).exists()) {
                         Log.d(TAG, "start");
                         Intent intent2;
                         if (themePackageName.equals(installedPkgName)) {
@@ -123,8 +103,8 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
 //                                    .fromJson(prefs.getString("theme_icon_mask", null),
 //                                            IconMaskItem.class);
 //                        }
-                            if (r.getIdentifier("appfilter", "xml", themePackage.packageName) ==
-                                    0) {
+                            if (r.getIdentifier("appfilter", "xml", themePackage.packageName)
+                                    == 0) {
                                 InputStream istr = r.getAssets().open("appfilter.xml");
                                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                                 factory.setNamespaceAware(true);
@@ -271,8 +251,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
                             Log.d(TAG, "replacement res name: " + item.getReplacementResName());
                             Log.d(TAG, "package: " + item.getPackageName());
                             if (activityInfo != null) {
-                                if (mIconReplacementsHashMap.get(item.getPackageName()) ==
-                                        null) {
+                                if (mIconReplacementsHashMap.get(item.getPackageName()) == null) {
                                     mIconReplacementsHashMap
                                             .put(item.getPackageName(), new ArrayList());
                                 }

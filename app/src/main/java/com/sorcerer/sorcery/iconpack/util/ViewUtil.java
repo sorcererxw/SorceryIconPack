@@ -12,8 +12,8 @@ public class ViewUtil {
         int viewX = location[0];
         int viewY = location[1];
 
-        if ((x > viewX && x < (viewX + view.getWidth())) &&
-                (y > viewY && y < (viewY + view.getHeight()))) {
+        if ((x > viewX && x < (viewX + view.getWidth()))
+                && (y > viewY && y < (viewY + view.getHeight()))) {
             return true;
         } else {
             return false;

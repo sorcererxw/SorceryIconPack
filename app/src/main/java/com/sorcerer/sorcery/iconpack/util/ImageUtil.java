@@ -14,7 +14,7 @@ public class ImageUtil {
         imageView.setColorFilter(new ColorMatrixColorFilter(matrix));
     }
 
-    public static void resetScale(ImageView imageView){
+    public static void resetScale(ImageView imageView) {
         imageView.setColorFilter(null);
     }
 }

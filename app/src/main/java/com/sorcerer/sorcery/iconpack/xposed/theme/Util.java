@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class Util {
     public static String TAG = "SIP/Util";
 
-    public static ArrayList<IconReplacementItem> ParseIconReplacements(String packageName, Resources r, XmlPullParser xrp) throws XmlPullParserException, IOException {
+    public static ArrayList<IconReplacementItem> ParseIconReplacements(String packageName,
+            Resources r, XmlPullParser xrp) throws XmlPullParserException, IOException {
         ArrayList<IconReplacementItem> iconReplacementItemArrayList = new ArrayList();
         xrp.next();
         int eventType = xrp.getEventType();
@@ -26,7 +27,8 @@ public class Util {
                     if (resId == 0) {
                         eventType = xrp.next();
                     } else {
-                        IconReplacementItem irt = new IconReplacementItem(component, resId, r.getResourceName(resId));
+                        IconReplacementItem irt =
+                                new IconReplacementItem(component, resId, r.getResourceName(resId));
                         if (irt.getPackageName() == null) {
                             eventType = xrp.next();
                         } else {
@@ -40,7 +42,8 @@ public class Util {
         return iconReplacementItemArrayList;
     }
 
-    public static IconMaskItem ParseIconMask(String packageName, Resources r, XmlPullParser xrp) throws XmlPullParserException, IOException {
+    public static IconMaskItem ParseIconMask(String packageName, Resources r, XmlPullParser xrp)
+            throws XmlPullParserException, IOException {
         IconMaskItem iconMaskItem = new IconMaskItem(packageName);
         xrp.next();
         int eventType = xrp.getEventType();

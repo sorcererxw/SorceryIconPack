@@ -1,25 +1,17 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.util.Log;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,78 +20,38 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.RequestAdapter;
-import com.sorcerer.sorcery.iconpack.databinding.ActivityAppSelectBinding;
-import com.sorcerer.sorcery.iconpack.databinding.ActivityDonateBinding;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
+import com.sorcerer.sorcery.iconpack.util.ApkUtil;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.MailUtil;
 import com.sorcerer.sorcery.iconpack.util.PayHelper;
-import com.sorcerer.sorcery.iconpack.util.SimpleMailSender;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
-import com.sorcerer.sorcery.iconpack.util.Utility;
+import com.sorcerer.sorcery.iconpack.util.mail.MailUtil;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import c.b.BP;
 
-public class AppSelectActivity extends AppCompatActivity implements View.OnClickListener {
+public class AppSelectActivity extends UniversalToolbarActivity {
 
-    private Context mContext = this;
-    private RecyclerView mRecyclerView;
-    private RequestAdapter mAdapter;
-    private AVLoadingIndicatorView mIndicatorView;
-    private boolean mCheckAll = false;
-    private boolean menuEnable;
-    private Menu mMenu;
-    private boolean mPremium = false;
-    private Activity mActivity = this;
-    private boolean mLoadOk;
-    private ActivityAppSelectBinding mBinding;
+    @BindView(R.id.recyclerView_app_select)
+    RecyclerView mRecyclerView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @BindView(R.id.avLoadingIndicatorView_icon_select)
+    AVLoadingIndicatorView mIndicatorView;
 
-        mBinding = DataBindingUtil.setContentView(this, R.layout
-                .activity_app_select);
+    @BindView(R.id.fab_app_select)
+    MyFloatingActionButton mFAB;
 
-        setSupportActionBar(mBinding.toolbarUniversal);
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        }
-
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white_24dp);
-
-        setToolbarDoubleTap(mBinding.toolbarUniversal);
-
-
-        try {
-            BP.init(mContext, getString(R.string.bmob_app_id));
-            mLoadOk = true;
-        } catch (Exception e) {
-            mLoadOk = false;
-        }
-
-
-        mRecyclerView = mBinding.recyclerViewAppSelect;
-
-        mIndicatorView = mBinding.avLoadingIndicatorViewIconSelect;
-
-        mBinding.setFabListener(this);
-
-        menuEnable = false;
-        new LoadAppsAsyncTask(this).execute();
-    }
-
-    @Override
-    public void onClick(View v) {
+    @OnClick(R.id.fab_app_select)
+    void onFABClick() {
         if (mPremium) {
             MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
             builder.title(getString(R.string.premium_send_title));
@@ -114,10 +66,10 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                     .inflate(R.layout.layout_premium_custom_info_input, null);
             TextView text = (TextView) view.findViewById(R.id.textView_premium_info_text);
             text.setText(Html.fromHtml(
-                    "<p>" + getString(R.string.premium_send_content).replace("|", "<br>") +
-                            "</p><ul>" +
-                            s +
-                            "</ul>" + "<br><b>" + amount + getString(R.string.RMB) + "</b>")
+                    "<p>" + getString(R.string.premium_send_content).replace("|", "<br>")
+                            + "</p><ul>" + s + "</ul>" + "<br>" + "<b>"
+                            + amount + getString(R.string.RMB)
+                            + "</b>")
             );
             final EditText email =
                     (EditText) view.findViewById(R.id.materialEditText_premium_info_email);
@@ -155,15 +107,17 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                             return;
                         }
                         pay(false, amount,
-                                email.getText().toString() + "\n" + note.getText().toString(), dialog);
+                                email.getText().toString() + "\n" + note.getText().toString(),
+                                dialog);
                     } else {
                         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
                         builder.content("need install a plugin");
                         builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog,
-                                                @NonNull DialogAction which) {
-                                Utility.installApkFromAssets(dialog.getContext(), "BmobPayPlugin.apk");
+                                    @NonNull DialogAction which) {
+                                ApkUtil.installApkFromAssets(dialog.getContext(),
+                                        "BmobPayPlugin.apk");
                             }
                         });
                         builder.positiveText("install");
@@ -180,8 +134,53 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    private void pay(final boolean isAlipay, int amount, final String sendAfterPay, final MaterialDialog
-            payDialog) {
+    private RequestAdapter mAdapter;
+    private boolean mCheckAll = false;
+    private boolean menuEnable;
+    private Menu mMenu;
+    private boolean mPremium = false;
+    private boolean mLoadOk;
+
+    @Override
+    protected int provideLayoutId() {
+        return R.layout.activity_app_select;
+    }
+
+    @Override
+    protected void hookBeforeSetContentView() {
+        super.hookBeforeSetContentView();
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        }
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+
+        setToolbarCloseIndicator();
+
+        setToolbarDoubleTapListener(new ToolbarOnGestureListener.DoubleTapListener() {
+            @Override
+            public void onDoubleTap() {
+                mRecyclerView.smoothScrollToPosition(0);
+            }
+        });
+
+        try {
+            BP.init(mContext, getString(R.string.bmob_app_id));
+            mLoadOk = true;
+        } catch (Exception e) {
+            mLoadOk = false;
+        }
+
+        menuEnable = false;
+        new LoadAppsAsyncTask(this).execute();
+    }
+
+    private void pay(final boolean isAlipay, int amount, final String sendAfterPay,
+            final MaterialDialog
+                    payDialog) {
         PayHelper payHelper = new PayHelper(mActivity);
         payHelper.setPayCallback(new PayHelper.PayCallback() {
             @Override
@@ -269,11 +268,11 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void showFab(boolean show) {
-        mBinding.fabAppSelect.setShow(show);
+        mFAB.setShow(show);
         if (show) {
-            mBinding.fabAppSelect.show();
+            mFAB.show();
         } else {
-            mBinding.fabAppSelect.hide();
+            mFAB.hide();
         }
     }
 
@@ -317,23 +316,6 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
         protected Boolean doInBackground(MailSenderInfo... params) {
             return send(stringToSend);
         }
-    }
-
-    private void setToolbarDoubleTap(Toolbar toolbar) {
-        final GestureDetector detector = new GestureDetector(this,
-                new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
-                    @Override
-                    public void onDoubleTap() {
-                        mRecyclerView.smoothScrollToPosition(0);
-                    }
-                }));
-        toolbar.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                detector.onTouchEvent(event);
-                return true;
-            }
-        });
     }
 
     private boolean send(String sendString) {
@@ -443,7 +425,7 @@ public class AppSelectActivity extends AppCompatActivity implements View.OnClick
                 builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog,
-                                        @NonNull DialogAction which) {
+                            @NonNull DialogAction which) {
                         if (!mLoadOk) {
                             Toast.makeText(mContext,
                                     getString(R.string.fail_open_premium),

@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.databinding.DataBindingUtil;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -13,8 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.databinding.LayoutLikeBinding;
 import com.sorcerer.sorcery.iconpack.util.IconBmobHelper;
+
+import butterknife.BindView;
+import butterknife.BindViews;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.OnLongClick;
 
 /**
  * Created by Sorcerer on 2016/2/29 0029.
@@ -32,10 +36,49 @@ public class LikeLayout extends FrameLayout {
 
     private int mFlag = 0;
 
-    private LayoutLikeBinding mBinding;
+    @BindView(R.id.textView_label_like)
+    TextView mLikeText;
+    @BindView(R.id.textView_label_dislike)
+    TextView mDislikeText;
 
-    private TextView mLikeText;
-    private TextView mDislikeText;
+    @OnClick({R.id.textView_label_like, R.id.textView_label_dislike})
+    void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.textView_label_like) {
+            mFlag = 1;
+            handleFlag(mFlag, true);
+            if (mBind) {
+                mSharedPreferences.edit().putInt(mName, mFlag).apply();
+                mIconBmobHelper.like(mName, true);
+            }
+        } else {
+            mFlag = -1;
+            handleFlag(mFlag, true);
+            if (mBind) {
+                mSharedPreferences.edit().putInt(mName, mFlag).apply();
+                mIconBmobHelper.like(mName, false);
+            }
+        }
+    }
+
+    @OnLongClick({R.id.textView_label_like, R.id.textView_label_dislike})
+    boolean onLongClick(View v) {
+        int id = v.getId();
+        if (id == R.id.textView_label_like) {
+            Toast.makeText(mContext,
+                    mContext.getString(R.string.action_like),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        } else {
+            Toast.makeText(mContext,
+                    mContext.getString(R.string.action_dislike),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    @BindViews({R.id.textView_label_like, R.id.textView_label_dislike})
+    TextView[] mTextViews;
 
     public LikeLayout(Context context) {
         super(context);
@@ -56,56 +99,54 @@ public class LikeLayout extends FrameLayout {
         mContext = context;
         View view = LayoutInflater.from(context).inflate(R.layout.layout_like, null);
         this.addView(view);
-        mBinding = DataBindingUtil.bind(view);
+        ButterKnife.bind(this, view);
 
-        mLikeText = mBinding.textViewLabelLike;
-        mDislikeText = mBinding.textViewLabelDislike;
+        for (TextView t : mTextViews) {
+            t.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "like.ttf"));
+        }
+//        mLikeText.setOnLongClickListener(new OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                Toast.makeText(mContext,
+//                        mContext.getString(R.string.action_like),
+//                        Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
+//
+//        mDislikeText.setOnLongClickListener(new OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                Toast.makeText(mContext,
+//                        mContext.getString(R.string.action_dislike),
+//                        Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
 
-        mBinding.setLikeTypeface(Typeface.createFromAsset(mContext.getAssets(), "like.ttf"));
-
-        mLikeText.setOnLongClickListener(new OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(mContext,
-                        mContext.getString(R.string.action_like),
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        mDislikeText.setOnLongClickListener(new OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(mContext,
-                        mContext.getString(R.string.action_dislike),
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        mBinding.setLikeListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mFlag = 1;
-                handleFlag(mFlag, true);
-                if (mBind) {
-                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
-                    mIconBmobHelper.like(mName, true);
-                }
-            }
-        });
-
-        mBinding.setDislikeListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mFlag = -1;
-                handleFlag(mFlag, true);
-                if (mBind) {
-                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
-                    mIconBmobHelper.like(mName, false);
-                }
-            }
-        });
+//        mBinding.setLikeListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mFlag = 1;
+//                handleFlag(mFlag, true);
+//                if (mBind) {
+//                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
+//                    mIconBmobHelper.like(mName, true);
+//                }
+//            }
+//        });
+//
+//        mBinding.setDislikeListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mFlag = -1;
+//                handleFlag(mFlag, true);
+//                if (mBind) {
+//                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
+//                    mIconBmobHelper.like(mName, false);
+//                }
+//            }
+//        });
     }
 
     public void bindIcon(String name) {
@@ -119,18 +160,18 @@ public class LikeLayout extends FrameLayout {
 
     private void handleFlag(int flag, boolean scale) {
         if (flag == 0) {
-            mBinding.setLikeColor(ContextCompat.getColor(mContext, R.color.grey_500));
-            mBinding.setDislikeColor(ContextCompat.getColor(mContext, R.color.grey_500));
+            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
+            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
         } else if (flag == 1) {
-            mBinding.setLikeColor(ContextCompat.getColor(mContext, R.color.pink_500));
-            mBinding.setDislikeColor(ContextCompat.getColor(mContext, R.color.grey_500));
+            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.pink_500));
+            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
             if (scale) {
                 scale(mLikeText, true);
                 scale(mDislikeText, false);
             }
         } else if (flag == -1) {
-            mBinding.setLikeColor(ContextCompat.getColor(mContext, R.color.grey_500));
-            mBinding.setDislikeColor(ContextCompat.getColor(mContext, R.color.blue_grey_500));
+            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
+            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.blue_grey_500));
             if (scale) {
                 scale(mDislikeText, true);
                 scale(mLikeText, false);

@@ -1,45 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="1dp"
-    android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="0dp">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView_apply_item"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:minHeight="78dp"
-        android:minWidth="78dp"
-        android:orientation="vertical">
+        app:cardElevation="2dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="2dp">
 
-        <ImageView
-            android:id="@+id/imageView_item_apply_icon"
-            android:layout_width="88dp"
-            android:layout_height="88dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/sorcery_icon_pack"/>
-
-        <TextView
-            android:id="@+id/textView_item_apply_label"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            tools:text="1"/>
+            android:layout_margin="8dp"
+            android:minHeight="78dp"
+            android:minWidth="78dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView_is_installed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:gravity="bottom|center"
-            tools:text="111"/>
+            <ImageView
+                android:id="@+id/imageView_item_apply_icon"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/sorcery_icon_pack"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView_item_apply_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                tools:text="1"/>
 
-</android.support.v7.widget.CardView>
+            <TextView
+                android:id="@+id/textView_is_installed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="bottom|center"
+                tools:text="111"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

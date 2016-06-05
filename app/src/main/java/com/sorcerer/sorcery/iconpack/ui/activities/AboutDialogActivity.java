@@ -1,12 +1,8 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -19,47 +15,105 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.LibListAdapter;
-import com.sorcerer.sorcery.iconpack.databinding.ActivityAboutDialogBinding;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
+import com.sorcerer.sorcery.iconpack.ui.adapters.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AboutDialogActivity extends AppCompatActivity implements View.OnClickListener {
+import butterknife.BindView;
+import butterknife.OnClick;
 
-    private Context mContext = this;
+public class AboutDialogActivity extends BaseActivity {
+
+    @BindView(R.id.textView_about_dialog_version)
+    TextView mVersionTextView;
+
+    @OnClick(R.id.textView_about_dialog_version)
+    void showChangeLog() {
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+        builder.title(getString(R.string.changelog));
+        builder.content(getString(R.string.changelog_content)
+                .replace("|", "\n")
+                .replace("#", "" + "    "));
+        builder.positiveText(getString(R.string.action_dismiss));
+        builder.show();
+    }
+
+    @BindView(R.id.textView_about_dialog_open_source)
+    TextView mOpenSourceTextView;
+
+    @OnClick(R.id.textView_about_dialog_open_source)
+    void showOpenSourceLibs() {
+        final List<LibraryInfo> list = new ArrayList<LibraryInfo>();
+        String[] libs = getResources().getStringArray(R.array.libs_list);
+        for (String lib : libs) {
+            String[] tmp = lib.split("\\|");
+            list.add(new LibraryInfo(tmp[0], tmp[1], tmp[2]));
+        }
+
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+        builder.adapter(new LibListAdapter(mContext, list),
+                new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog dialog, View itemView, int which,
+                            CharSequence text) {
+                        Intent browserIntent =
+                                new Intent(Intent.ACTION_VIEW,
+                                        Uri.parse(list.get(which).getLink()));
+                        mContext.startActivity(browserIntent);
+                    }
+                });
+        builder.title(getString(R.string.open_source_lib));
+        builder.positiveText(getString(R.string.action_close));
+        builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+            @Override
+            public void onClick(@NonNull MaterialDialog dialog,
+                    @NonNull DialogAction which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    @BindView(R.id.textView_about_dialog_credits)
+    TextView mCreditsTextView;
+
+    @BindView(R.id.relativeLayout_about_dialog_background)
+    View mBackground;
+
+    @BindView(R.id.cardView_about_dialog_card)
+    View mCard;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int provideLayoutId() {
+        return R.layout.activity_about_dialog;
+    }
 
-        final ActivityAboutDialogBinding binding = DataBindingUtil.setContentView(this, R.layout
-                .activity_about_dialog);
-
-        binding.setVersionText("Version " + BuildConfig.VERSION_NAME);
-        binding.setVersionListener(this);
+    @Override
+    protected void init() {
+        mVersionTextView.setText(
+                "Version " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")");
 
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);
-        binding.textViewAboutDialogOpenSource.setText(openSource);
-        binding.setOpenSourceListener(this);
+        mOpenSourceTextView.setText(openSource);
 
         StringBuilder htmlBuilder = new StringBuilder("");
         htmlBuilder.append("<a>By</a><br>");
         htmlBuilder.append("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
         htmlBuilder.append("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a>");
-        binding.setCredits(Html.fromHtml(htmlBuilder.toString()));
-        binding.textViewAboutDialogCredits.setMovementMethod(LinkMovementMethod.getInstance());
+        mCreditsTextView.setText(Html.fromHtml(htmlBuilder.toString()));
+        mCreditsTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
-        binding.relativeLayoutAboutDialogBackground.setOnTouchListener(new View
+        mBackground.setOnTouchListener(new View
                 .OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (ViewUtil.isPointInsideView(event.getX(),
-                        event.getY(),
-                        binding.cardViewAboutDialogCard)) {
+                if (ViewUtil.isPointInsideView(event.getX(), event.getY(), mCard)) {
+
                 } else {
                     onBackPressed();
                 }
@@ -74,54 +128,4 @@ public class AboutDialogActivity extends AppCompatActivity implements View.OnCli
         overridePendingTransition(0, R.anim.fade_out);
     }
 
-    private void showChangeLog() {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-        builder.title(getString(R.string.changelog));
-        builder.content(getString(R.string.changelog_content).replace("|", "\n")
-                .replace("#", "" +
-                        "    "));
-        builder.positiveText(getString(R.string.action_dismiss));
-        builder.show();
-    }
-
-    private void showOpenSourceLibs() {
-        final List<LibraryInfo> list = new ArrayList<LibraryInfo>();
-        String[] libs = getResources().getStringArray(R.array.libs_list);
-        for (String lib : libs) {
-            String[] tmp = lib.split("\\|");
-            list.add(new LibraryInfo(tmp[0], tmp[1], tmp[2]));
-        }
-
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-        builder.adapter(new LibListAdapter(mContext, list),
-                new MaterialDialog.ListCallback() {
-                    @Override
-                    public void onSelection(MaterialDialog dialog, View itemView, int which,
-                                            CharSequence text) {
-                        Intent browserIntent =
-                                new Intent(Intent.ACTION_VIEW,
-                                        Uri.parse(list.get(which).getLink()));
-                        mContext.startActivity(browserIntent);
-                    }
-                });
-        builder.title(getString(R.string.open_source_lib));
-        builder.positiveText(getString(R.string.action_close));
-        builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-            @Override
-            public void onClick(@NonNull MaterialDialog dialog,
-                                @NonNull DialogAction which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
-
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.textView_about_dialog_open_source) {
-            showOpenSourceLibs();
-        } else if (v.getId() == R.id.textView_about_dialog_version) {
-            showChangeLog();
-        }
-    }
 }

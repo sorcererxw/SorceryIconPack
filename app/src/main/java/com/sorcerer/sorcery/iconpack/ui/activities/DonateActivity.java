@@ -1,22 +1,15 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.animation.Animator;
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,61 +19,72 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SIP;
-import com.sorcerer.sorcery.iconpack.databinding.ActivityDonateBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
-import com.sorcerer.sorcery.iconpack.util.ApkUtil;
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.PayHelper;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
-import com.sorcerer.sorcery.iconpack.util.ResourceHelper;
-import com.sorcerer.sorcery.iconpack.util.Utility;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
-import c.b.BP;
+import butterknife.BindView;
+import butterknife.OnClick;
 
-public class DonateActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
-    private static final String TAG = "DonateActivity";
-    private Activity mActivity;
+public class DonateActivity extends SlideInAndOutAppCompatActivity {
+
     private int mAmount;
-    private final Context mContext =this;
+
+    @OnClick(R.id.button_donate_alipay)
+    void onAlipayClick() {
+        if (false) {
+            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(
+                    "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F"
+                            + "%2Fqr.alipay.com%2F"
+                            + "apx04314ky3hnfqt9xuaze3"));
+            intent.setPackage("com.eg.android.AlipayGphone");
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+        } else {
+            showMoneySelectDialog(true);
+        }
+    }
+
+    @OnClick(R.id.button_donate_wechat)
+    void onWechatClick() {
+        showMoneySelectDialog(false);
+    }
+
+    @BindView(R.id.scrollView_donate)
+    ScrollView mScrollView;
+
+    @BindView(R.id.cardView_donate_thank)
+    QCardView mThankCard;
+
+    @BindView(R.id.imageView_donate_heart)
+    ImageView mHeart;
+
+    @BindView(R.id.imageView_donate_card)
+    ImageView mCardImage;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int provideLayoutId() {
+        return R.layout.activity_donate;
+    }
 
-        ActivityDonateBinding binding = DataBindingUtil.setContentView(this, R.layout
-                .activity_donate);
+    @Override
+    protected void init() {
+        super.init();
 
-        mActivity = this;
-
-        setSupportActionBar(binding.include.toolbarUniversal);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
-        binding.layoutButtonDonates.setAlipayListener(this);
-        binding.layoutButtonDonates.setWechatListener(this);
-
-        final ScrollView scrollView = binding.scrollViewDonate;
-
-        binding.cardViewDonateThank.setTouchCallBack(new QCardView.TouchCallBack() {
-            @Override
-            public void onDown() {
-                scrollView.requestDisallowInterceptTouchEvent(true);
-            }
-
-            @Override
-            public void onUp() {
-                scrollView.requestDisallowInterceptTouchEvent(false);
-            }
-        });
+        setToolbarBackIndicator();
     }
 
     @Override
@@ -91,8 +95,13 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
                 MODE_PRIVATE);
 
         boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
-        if (isDonated) {
-            showThanksCard();
+        if (isDonated || SIP.DEBUG) {
+            mThankCard.post(new Runnable() {
+                @Override
+                public void run() {
+                    showThanksCard();
+                }
+            });
         }
     }
 
@@ -111,31 +120,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         return false;
     }
 
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.button_donate_alipay) {
-
-            if (true) {
-                Intent intent = new Intent("android.intent.action.VIEW",
-                        Uri.parse(
-                                "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F" +
-                                        "%2Fqr.alipay.com%2F" + "apx04314ky3hnfqt9xuaze3"));
-                intent.setPackage("com.eg.android.AlipayGphone");
-                try {
-                    startActivity(intent);
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                }
-            } else {
-                showMoneySelectDialog(true);
-            }
-        } else if (id == R.id.button_donate_wechat) {
-            showMoneySelectDialog(false);
-        }
-    }
-
     private void showMoneySelectDialog(final boolean isAlipay) {
         final MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
         builder.title(getString(R.string.donate_dialog_title));
@@ -149,8 +133,8 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                 if (which == DialogAction.POSITIVE) {
                     mAmount = seekBar.getProgress();
-                    if (Build.VERSION.SDK_INT >= 23 && !PermissionsHelper.hasPermission
-                            (mActivity, PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
+                    if (Build.VERSION.SDK_INT >= 23 && !PermissionsHelper.hasPermission(mActivity,
+                            PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
                         PermissionsHelper.requestReadPhoneState(mActivity);
                     } else {
                         pay(isAlipay);
@@ -168,11 +152,10 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
         payHelper.setPayCallback(new PayHelper.PayCallback() {
             @Override
             public void onSuccess(String orderId) {
-//                Snackbar.make(findViewById(R.id.recyclerView_donate_root), getString(R.string
-//                        .donate_success), Snackbar
-//                        .LENGTH_SHORT);
 
-                Toast.makeText(mContext,ResourceHelper.getString(mContext,R.string.donate_success),Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext,
+                        ResourceUtil.getString(mContext, R.string.donate_success),
+                        Toast.LENGTH_LONG).show();
 
                 showThanksCard();
                 SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
@@ -188,73 +171,67 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity implements Vi
     }
 
     private void showThanksCard() {
-        final QCardView cardView = (QCardView) findViewById(R.id.cardView_donate_thank);
-        assert cardView != null;
-        if (cardView.getVisibility() == View.VISIBLE) {
+        if (mThankCard.getVisibility() == View.VISIBLE) {
             return;
         }
         DisplayMetrics dm = getResources().getDisplayMetrics();
         int w_screen = dm.widthPixels;
-        cardView.setTranslationX(w_screen);
+        mThankCard.setTranslationX(w_screen);
 
-        ImageLoader.getInstance().displayImage(
-                "drawable://" +
-                        getResources()
-                                .getIdentifier("gnarly_90s", "drawable", getPackageName()),
-                (ImageView) findViewById(R.id.imageView_donate_card),
-                SIP.mOptions, new ImageLoadingListener() {
+        mThankCard.setTouchCallBack(new QCardView.TouchCallBack() {
+            @Override
+            public void onDown() {
+                mScrollView.requestDisallowInterceptTouchEvent(true);
+            }
+
+            @Override
+            public void onUp() {
+                mScrollView.requestDisallowInterceptTouchEvent(false);
+            }
+        });
+
+
+        Glide.with(mContext).load(R.drawable.gnarly_90s)
+                .asBitmap()
+                .dontAnimate()
+                .into(new SimpleTarget<Bitmap>() {
                     @Override
-                    public void onLoadingStarted(String imageUri, View view) {
+                    public void onResourceReady(Bitmap resource,
+                            GlideAnimation<? super Bitmap> glideAnimation) {
+                        mCardImage.setImageBitmap(resource);
 
-                    }
+                        mThankCard.animate()
+                                .setListener(new Animator.AnimatorListener() {
+                                    @Override
+                                    public void onAnimationStart(Animator animation) {
+                                        mThankCard.setVisibility(View.VISIBLE);
+                                        mThankCard.setTouchable(false);
+                                    }
 
-                    @Override
-                    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        mHeart.setVisibility(View.VISIBLE);
+                                        mThankCard.setTouchable(true);
+                                    }
 
-                    }
+                                    @Override
+                                    public void onAnimationCancel(Animator animation) {
+                                    }
 
-                    @Override
-                    public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                        cardView.animate().setListener(new Animator.AnimatorListener() {
-                            @Override
-                            public void onAnimationStart(Animator animation) {
-                                cardView.setVisibility(View.VISIBLE);
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-
-                                ImageView heart =
-                                        (ImageView) findViewById(R.id.imageView_donate_heart);
-                                heart.setVisibility(View.VISIBLE);
-                                ImageLoader.getInstance().displayImage(
-                                        "drawable://" + getResources().getIdentifier("heart",
-                                                "drawable",
-                                                getPackageName()), heart);
-                            }
-
-                            @Override
-                            public void onAnimationCancel(Animator animation) {
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animator animation) {
-
-                            }
-                        }).setDuration(1000).translationX(0).start();
-                    }
-
-                    @Override
-                    public void onLoadingCancelled(String imageUri, View view) {
-
+                                    @Override
+                                    public void onAnimationRepeat(Animator animation) {
+                                    }
+                                })
+                                .setDuration(1000)
+                                .translationX(0)
+                                .start();
                     }
                 });
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         doNext(requestCode, grantResults);
     }

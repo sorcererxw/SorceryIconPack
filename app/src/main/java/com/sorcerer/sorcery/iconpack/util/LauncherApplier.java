@@ -449,7 +449,8 @@ public class LauncherApplier {
 
     private void LgHomeLauncher(Context context) {
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setComponent(new ComponentName("com.lge.launcher2", "com.lge.launcher2.homesettings.HomeSettingsPrefActivity"));
+        intent.setComponent(new ComponentName("com.lge.launcher2",
+                "com.lge.launcher2.homesettings.HomeSettingsPrefActivity"));
         context.startActivity(intent);
     }
 

@@ -1,86 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="end"
+    android:orientation="horizontal">
 
-    <data class="LayoutLikeBinding">
 
-        <import type="android.view.View.OnClickListener"/>
+    <TextView
+        android:id="@+id/textView_label_dislike"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="6dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="&#x3432;"
+        android:textSize="@dimen/dialog_like_text_size"/>
 
-        <import type="android.graphics.Typeface"/>
+    <TextView
+        android:id="@+id/textView_label_like"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="6dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="&#xe60b;"
+        android:textSize="@dimen/dialog_like_text_size"/>
 
-        <variable
-            name="likeColor"
-            type="int"/>
-
-        <variable
-            name="dislikeColor"
-            type="int"/>
-
-        <variable
-            name="likeTypeface"
-            type="Typeface"/>
-
-        <variable
-            name="likeListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="dislikeListener"
-            type="OnClickListener"/>
-    </data>
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="end"
-        android:orientation="horizontal">
-
-        <!--<LinearLayout-->
-        <!--android:id="@+id/linerLayout_icon_dislike"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="?android:attr/selectableItemBackground"-->
-        <!--android:onClick="@{dislikeListener}"-->
-        <!--android:orientation="horizontal">-->
-
-        <TextView
-            android:id="@+id/textView_label_dislike"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="6dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:onClick="@{dislikeListener}"
-            android:text="&#x3432;"
-            android:textColor="@{dislikeColor}"
-            android:textSize="@dimen/dialog_like_text_size"
-            android:typeface="@{likeTypeface}"/>
-        <!--</LinearLayout>-->
-
-        <!--<LinearLayout-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--android:id="@+id/linerLayout_icon_like"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="?android:attr/selectableItemBackground"-->
-        <!--android:onClick="@{likeListener}"-->
-        <!--android:orientation="horizontal">-->
-
-        <TextView
-            android:id="@+id/textView_label_like"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="6dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:onClick="@{likeListener}"
-            android:text="&#xe60b;"
-            android:textColor="@{likeColor}"
-            android:textSize="@dimen/dialog_like_text_size"
-            android:typeface="@{likeTypeface}"/>
-        <!--</LinearLayout>-->
-
-    </LinearLayout>
-</layout>
+</LinearLayout>

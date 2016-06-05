@@ -1,10 +1,8 @@
 package com.sorcerer.sorcery.iconpack.util;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.AbsListView;
-import android.widget.ListView;
 
 /**
  * Created by Sorcerer on 2016/1/31 0031.

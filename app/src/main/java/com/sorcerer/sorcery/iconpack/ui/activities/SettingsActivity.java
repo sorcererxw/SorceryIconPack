@@ -9,7 +9,6 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -20,10 +19,10 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.SettingsAdapter;
 import com.sorcerer.sorcery.iconpack.models.CheckSettingsItem;
 import com.sorcerer.sorcery.iconpack.models.SettingsItem;
-import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.SettingsAdapter;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
@@ -43,7 +42,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class SettingsActivity extends SlideInAndOutAppCompatActivity {
+public class SettingsActivity extends BaseActivity {
 
     private static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private RecyclerView mRecyclerView;
@@ -53,9 +52,12 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
     private CheckSettingsItem global;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+    protected int provideLayoutId() {
+        return R.layout.activity_settings;
+    }
+
+    @Override
+    protected void init() {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_universal);
         setSupportActionBar(toolbar);
@@ -228,10 +230,9 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                     String themePackagePath = themePackage.sourceDir;
                     if (themePackage.sourceDir.contains("/data/app/")) {
                         Command tmp = RootTools.getShell(true).add(new CommandCapture(0,
-                                "rm /data/data/" + getPackageName() +
-                                        "/cache/icons/*",
-                                "rm " + getExternalCacheDir()
-                                        .getAbsolutePath() + "/current_theme.apk"));
+                                "rm /data/data/" + getPackageName() + "/cache/icons/*",
+                                "rm " + getExternalCacheDir().getAbsolutePath()
+                                        + "/current_theme.apk"));
                         Log.d(TAG, "contains");
 //                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
 //                        synchronized (tmp) {
@@ -244,13 +245,12 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                                 "Original Theme APK is at " + themePackage.sourceDir);
                         Command commandCapture = new CommandCapture(0,
                                 "rm /data/data/" + getPackageName() + "/cache/icons/*",
-                                "rm " + getExternalCacheDir().getAbsolutePath() +
-                                        "/current_theme.apk",
-                                "cat \"" + themePackage.sourceDir + "\" > " +
-                                        getExternalCacheDir().getAbsolutePath() +
-                                        "/current_theme.apk",
-                                "chmod 644 " + getExternalCacheDir()
-                                        .getAbsolutePath() + "/current_theme.apk");
+                                "rm " + getExternalCacheDir().getAbsolutePath()
+                                        + "/current_theme.apk",
+                                "cat \"" + themePackage.sourceDir + "\" > " + getExternalCacheDir()
+                                        .getAbsolutePath() + "/current_theme.apk",
+                                "chmod 644 " + getExternalCacheDir().getAbsolutePath()
+                                        + "/current_theme.apk");
                         Command tmp = RootTools.getShell(true).add(commandCapture);
 
 //                        synchronized (tmp) {
@@ -261,10 +261,8 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                         Log.d(TAG, "not contains");
 //                        Log.d(TAG, String.valueOf(tmp.isExecuting()));
 
-                        themePackagePath = getExternalCacheDir() +
-                                "/current_theme.apk";
-                        Log.d(TAG,
-                                "Copied Theme APK is at " + themePackagePath);
+                        themePackagePath = getExternalCacheDir() + "/current_theme.apk";
+                        Log.d(TAG, "Copied Theme APK is at " + themePackagePath);
                     }
                     PackageManager pm = getPackageManager();
                     Resources r = getPackageManager()
@@ -317,8 +315,7 @@ public class SettingsActivity extends SlideInAndOutAppCompatActivity {
                             Log.d(TAG, "replacement res name: " + item.getReplacementResName());
                             Log.d(TAG, "package: " + item.getPackageName());
                             if (activityInfo != null) {
-                                if (mIconReplacementsHashMap.get(item.getPackageName()) ==
-                                        null) {
+                                if (mIconReplacementsHashMap.get(item.getPackageName()) == null) {
                                     mIconReplacementsHashMap
                                             .put(item.getPackageName(), new ArrayList());
                                 }

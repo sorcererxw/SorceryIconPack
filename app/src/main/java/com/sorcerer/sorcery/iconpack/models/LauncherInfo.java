@@ -1,18 +1,16 @@
 package com.sorcerer.sorcery.iconpack.models;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.util.Log;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.Utility;
 
 /**
  * Created by Sorcerer on 2016/1/24 0024.
  */
-public class LauncherInfo implements Comparable {
+public class LauncherInfo implements Comparable, BaseModel {
     private boolean mIsInstalled;
     private String mLabel;
     private int mIcon;

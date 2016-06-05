@@ -1,68 +1,54 @@
-<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment">
 
-    <data class="FragmentIconBinding">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="0dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </data>
+            <com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView
+                android:id="@+id/recyclerView_icon_gird"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"/>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:context="com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment">
+            <LinearLayout
+                android:id="@+id/linearLayout_icon_list_empty_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
 
-
-                <com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView
-                    android:id="@+id/recyclerView_icon_gird"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbars="none"/>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout_icon_list_empty_view"
+                <TextView
+                    android:id="@+id/textView_icon_list_empty_view_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical">
+                    android:layout_gravity="center_horizontal"
+                    android:alpha="0.2"
+                    android:gravity="center"
+                    android:text="&#xe616;"
+                    android:textColor="@color/black"
+                    android:textSize="200dp"/>
 
-                    <TextView
-                        android:id="@+id/textView_icon_list_empty_view_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:alpha="0.2"
-                        android:gravity="center"
-                        android:text="&#xe616;"
-                        android:textColor="@color/black"
-                        android:textSize="200dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:alpha="0.2"
+                    android:gravity="center"
+                    android:text="oops...nothing"
+                    android:textColor="@color/black"
+                    android:textSize="28dp"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:alpha="0.2"
-                        android:gravity="center"
-                        android:text="oops...nothing"
-                        android:textColor="@color/black"
-                        android:textSize="28dp"/>
-
-                </LinearLayout>
-
-        <!--<com.wang.avi.AVLoadingIndicatorView-->
-        <!--android:id="@+id/avLoadingIndicatorView_icon_fragment"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--app:indicator_color="@color/accent"-->
-        <!--app:indicator="LineScale"/>-->
-
-
-        <!--<ViewStub-->
-        <!--android:id="@+id/viewStub_icon_fragment_list"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout="@layout/layout_icon_fragment_list"/>-->
-    </RelativeLayout>
-
-</layout>
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

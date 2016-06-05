@@ -9,7 +9,7 @@ public class LibraryInfo {
     private String mLink;
     private String Developer;
 
-    public LibraryInfo(String name, String developer,String link) {
+    public LibraryInfo(String name, String developer, String link) {
         mName = name;
         mLink = link;
         Developer = developer;

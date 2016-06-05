@@ -16,7 +16,6 @@ import android.support.annotation.MenuRes;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -150,8 +149,8 @@ public class SearchBox extends RelativeLayout {
         mResultList = new ArrayList<>();
         setAdapter(new SearchAdapter(context, mResultList, mSearchEditText));
         mAnimate = true;
-        mIsVoiceRecognitionIntentSupported = isIntentAvailable(context, new Intent
-                (RecognizerIntent.ACTION_RECOGNIZE_SPEECH));
+        mIsVoiceRecognitionIntentSupported =
+                isIntentAvailable(context, new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH));
         mLogoTextView.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -170,7 +169,7 @@ public class SearchBox extends RelativeLayout {
 
         mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId,
-                                          KeyEvent event) {
+                    KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 //                    search(getSearchText());
                     mSearchEditText.setSelection(mSearchEditText.getSelectionStart());
@@ -242,12 +241,12 @@ public class SearchBox extends RelativeLayout {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
+                    int after) {
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
-                                      int count) {
+                    int count) {
 
             }
         });
@@ -434,9 +433,10 @@ public class SearchBox extends RelativeLayout {
     }
 
     private boolean isMicEnabled() {
-        return mIsVoiceRecognitionIntentSupported &&
-                (mContainerActivity != null || mContainerSupportFragment != null ||
-                        mContainerFragment != null);
+        return mIsVoiceRecognitionIntentSupported
+                && (mContainerActivity != null
+                || mContainerSupportFragment != null
+                || mContainerFragment != null);
     }
 
     private void micStateChanged() {
@@ -840,7 +840,7 @@ public class SearchBox extends RelativeLayout {
 
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                    long arg3) {
+                    long arg3) {
                 SearchResult result = mResultList.get(arg2);
                 search(result, true);
             }

@@ -1,192 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
 
-    <data class="ActivityLabBinding">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.LabActivity">
 
-        <import type="android.view.View.OnClickListener"/>
+    <include layout="@layout/toolbar_universal"/>
 
-        <variable
-            name="applyListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="closeListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="refreshListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="rebootListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="contentText"
-            type="String"/>
-
-        <variable
-            name="attentionText"
-            type="String"/>
-    </data>
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ui.activities.LabActivity">
+        android:layout_below="@+id/include5"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <include
-            android:id="@+id/include5"
-            layout="@layout/toolbar_universal"/>
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/include5"
-            android:fillViewport="true"
-            android:scrollbars="none">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="0dp">
 
-                <android.support.v7.widget.CardView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_marginTop="8dp"
-                    app:cardCornerRadius="0dp">
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp">
 
-                    <RelativeLayout
+
+                    <TextView
+                        android:id="@+id/textView_lab_xposed_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pref_global_load_title"
+                        android:textColor="@color/title"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+
+                    <View
+                        android:id="@+id/view_lab_xposed_line"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="16dp">
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_lab_xposed_title"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/grey_300"/>
 
+                    <LinearLayout
+                        android:id="@+id/linearLayout_lab_xposed_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view_lab_xposed_line"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView_lab_xposed_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/pref_global_load_title"
-                            android:textColor="@color/title"
-                            android:textSize="24sp"
+                            android:text="@string/global_state_label"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/textView_lab_xposed_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="4dp"
+                            android:textSize="14sp"
                             android:textStyle="bold"/>
+                    </LinearLayout>
 
-                        <View
-                            android:id="@+id/view_lab_xposed_line"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_below="@id/textView_lab_xposed_title"
-                            android:layout_marginRight="32dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@color/grey_300"/>
+                    <TextView
+                        android:id="@+id/textView_lab_xposed_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearLayout_lab_xposed_state"
+                        android:paddingTop="16dp"
+                        android:textColor="@color/content"
+                        android:textSize="16sp"/>
 
-                        <LinearLayout
-                            android:id="@+id/linearLayout_lab_xposed_state"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/view_lab_xposed_line"
-                            android:layout_marginTop="8dp"
-                            android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textView_lab_xposed_attention"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_lab_xposed_content"
+                        android:paddingTop="16dp"
+                        android:textColor="@color/content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/global_state_label"
-                                android:textSize="14sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_lab_xposed_attention"
+                        android:layout_marginTop="16dp"
+                        android:gravity="right"
+                        android:orientation="horizontal">
 
-                            <TextView
-                                android:id="@+id/textView_lab_xposed_state"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="4dp"
-                                android:textSize="14sp"
-                                android:textStyle="bold"/>
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/textView_lab_xposed_content"
+                        <Button
+                            android:id="@+id/button_lab_xposed_reboot"
+                            style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/linearLayout_lab_xposed_state"
-                            android:paddingTop="16dp"
-                            android:text="@{contentText}"
-                            android:textColor="@color/content"
-                            android:textSize="16sp"/>
+                            android:enabled="false"
+                            android:minWidth="0dp"
+                            android:text="@string/action_reboot"
+                            android:textSize="14sp"/>
 
-                        <TextView
-                            android:id="@+id/textView_lab_xposed_attention"
+
+                        <Button
+                            android:id="@+id/button_lab_xposed_refresh"
+                            style="?attr/borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/textView_lab_xposed_content"
-                            android:paddingTop="16dp"
-                            android:text="@{attentionText}"
-                            android:textColor="@color/content"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:enabled="false"
+                            android:minWidth="0dp"
+                            android:text="@string/action_refresh"
+                            android:textSize="14sp"/>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
+                        <Button
+                            android:id="@+id/button_lab_xposed_close"
+                            style="?attr/borderlessButtonStyle"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/textView_lab_xposed_attention"
-                            android:layout_marginTop="16dp"
-                            android:gravity="right"
-                            android:orientation="horizontal">
+                            android:enabled="false"
+                            android:minWidth="0dp"
+                            android:text="@string/action_close"
+                            android:textSize="14sp"/>
 
-                            <Button
-                                android:id="@+id/button_lab_xposed_reboot"
-                                style="?attr/borderlessButtonStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:minWidth="0dp"
-                                android:onClick="@{rebootListener}"
-                                android:text="@string/action_reboot"
-                                android:textSize="14sp"/>
+                        <Button
+                            android:id="@+id/button_lab_xposed_apply"
+                            style="?attr/borderlessButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="0dp"
+                            android:text="@string/action_apply"
+                            android:textSize="14sp"/>
 
-
-                            <Button
-                                android:id="@+id/button_lab_xposed_refresh"
-                                style="?attr/borderlessButtonStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:minWidth="0dp"
-                                android:onClick="@{refreshListener}"
-                                android:text="@string/action_refresh"
-                                android:textSize="14sp"/>
-
-                            <Button
-                                android:id="@+id/button_lab_xposed_close"
-                                style="?attr/borderlessButtonStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:minWidth="0dp"
-                                android:onClick="@{closeListener}"
-                                android:text="@string/action_close"
-                                android:textSize="14sp"/>
-
-                            <Button
-                                android:id="@+id/button_lab_xposed_apply"
-                                style="?attr/borderlessButtonStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:minWidth="0dp"
-                                android:onClick="@{applyListener}"
-                                android:text="@string/action_apply"
-                                android:textSize="14sp"/>
-
-                        </LinearLayout>
-                    </RelativeLayout>
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-</layout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

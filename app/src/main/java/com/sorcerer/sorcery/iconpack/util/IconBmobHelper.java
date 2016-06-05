@@ -3,7 +3,6 @@ package com.sorcerer.sorcery.iconpack.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.models.IconBmob;
 

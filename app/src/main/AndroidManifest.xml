@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <uses-feature
@@ -31,6 +30,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.SplashActivity">
 
+
         </activity>
 
         <activity
@@ -44,7 +44,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES"/>
 
@@ -175,9 +174,9 @@
             </intent-filter>
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="home.solo.launcher.free.THEMES" />
-                <action android:name="home.solo.launcher.free.ACTION_ICON" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="home.solo.launcher.free.THEMES"/>
+                <action android:name="home.solo.launcher.free.ACTION_ICON"/>
             </intent-filter>
 
             <intent-filter>
@@ -194,11 +193,13 @@
             </intent-filter>
 
             <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-                <action android:name="android.intent.action.GET_CONTENT" />
-                <category android:name="android.intent.category.OPENABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="image/*" />
+                <action android:name="android.intent.action.PICK"/>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+
+                <category android:name="android.intent.category.OPENABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
             </intent-filter>
 
             <intent-filter>
@@ -212,7 +213,8 @@
         <activity
             android:name=".ui.activities.FeedbackActivity"
             android:label="@string/nav_item_feedback"
-            android:theme="@style/SubActivity"/>
+            android:theme="@style/SubActivity">
+        </activity>
         <activity
             android:name=".ui.activities.ApplyActivity"
             android:label="@string/nav_item_apply"
@@ -220,10 +222,6 @@
         <activity
             android:name=".ui.activities.DonateActivity"
             android:label="@string/nav_item_donate"
-            android:theme="@style/SubActivity"/>
-        <activity
-            android:name=".ui.activities.AboutActivity"
-            android:label="@string/nav_item_about"
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.SettingsActivity"
@@ -235,7 +233,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activities.TestActivity"
-            android:theme="@style/SubActivity"/>
+            android:theme="@style/AppTheme.MainActivity"/>
         <activity
             android:name=".ui.activities.LabActivity"
             android:label="@string/nav_item_lab"
@@ -309,14 +307,14 @@
 
 
         <!--<receiver-->
-            <!--android:name="com.sorcerer.sorcery.iconpack.widget.WeatherIconProvider">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>-->
-            <!--</intent-filter>-->
+        <!--android:name="com.sorcerer.sorcery.iconpack.widget.WeatherIconProvider">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>-->
+        <!--</intent-filter>-->
 
-            <!--<meta-data-->
-                <!--android:name="android.appwidget.provider"-->
-                <!--android:resource="@xml/weather_icon_widget_config"/>-->
+        <!--<meta-data-->
+        <!--android:name="android.appwidget.provider"-->
+        <!--android:resource="@xml/weather_icon_widget_config"/>-->
         <!--</receiver>-->
 
     </application>

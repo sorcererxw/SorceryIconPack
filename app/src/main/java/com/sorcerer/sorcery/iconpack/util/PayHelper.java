@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack.util;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
@@ -37,25 +36,26 @@ public class PayHelper {
 
         if (!isAlipay && !AppInfoUtil.isPackageInstalled(mContext, "com.bmob.app.sport")) {
             MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-            builder.content(ResourceHelper.getString(mContext,R.string.wechat_pay_plugin_content));
+            builder.content(ResourceUtil.getString(mContext, R.string.wechat_pay_plugin_content));
             builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                 @Override
                 public void onClick(@NonNull MaterialDialog dialog,
-                                    @NonNull DialogAction which) {
-                    Utility.installApkFromAssets(dialog.getContext(), "BmobPayPlugin.apk");
+                        @NonNull DialogAction which) {
+                    ApkUtil.installApkFromAssets(dialog.getContext(), "BmobPayPlugin.apk");
                 }
             });
-            builder.positiveText(ResourceHelper.getString(mContext, R.string.action_install) );
-            builder.negativeText(ResourceHelper.getString(mContext,R.string.cancel));
+            builder.positiveText(ResourceUtil.getString(mContext, R.string.action_install));
+            builder.negativeText(ResourceUtil.getString(mContext, R.string.cancel));
             builder.show();
         } else {
-            BP.pay(mContext, title, describe, amount, isAlipay, new PListener() {
+            BP.pay(title, describe, amount, isAlipay, new PListener() {
                 private String mOrderid;
 
                 @Override
                 public void orderId(String s) {
                     Toast.makeText(mContext,
-                            mContext.getString(isAlipay ? R.string.open_alipay : R.string.open_wechat),
+                            mContext.getString(
+                                    isAlipay ? R.string.open_alipay : R.string.open_wechat),
                             Toast.LENGTH_LONG)
                             .show();
                     mOrderid = s;

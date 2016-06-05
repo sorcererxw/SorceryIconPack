@@ -118,25 +118,26 @@ public class AnimationUtil {
     }
 
     public static void fadeOutView(View view, int duration, final AnimationListener listener) {
-        ViewCompat.animate(view).alpha(0f).setDuration(duration).setListener(new ViewPropertyAnimatorListener() {
-            @Override
-            public void onAnimationStart(View view) {
-                if (listener == null || !listener.onAnimationStart(view)) {
-                    view.setDrawingCacheEnabled(true);
-                }
-            }
+        ViewCompat.animate(view).alpha(0f).setDuration(duration)
+                .setListener(new ViewPropertyAnimatorListener() {
+                    @Override
+                    public void onAnimationStart(View view) {
+                        if (listener == null || !listener.onAnimationStart(view)) {
+                            view.setDrawingCacheEnabled(true);
+                        }
+                    }
 
-            @Override
-            public void onAnimationEnd(View view) {
-                if (listener == null || !listener.onAnimationEnd(view)) {
-                    view.setVisibility(View.GONE);
-                    view.setDrawingCacheEnabled(false);
-                }
-            }
+                    @Override
+                    public void onAnimationEnd(View view) {
+                        if (listener == null || !listener.onAnimationEnd(view)) {
+                            view.setVisibility(View.GONE);
+                            view.setDrawingCacheEnabled(false);
+                        }
+                    }
 
-            @Override
-            public void onAnimationCancel(View view) {
-            }
-        });
+                    @Override
+                    public void onAnimationCancel(View view) {
+                    }
+                });
     }
 }

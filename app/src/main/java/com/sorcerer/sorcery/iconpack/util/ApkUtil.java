@@ -1,9 +1,10 @@
 package com.sorcerer.sorcery.iconpack.util;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.net.Uri;
 import android.util.Log;
-
-import com.sorcerer.sorcery.iconpack.R;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -12,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -85,6 +87,44 @@ public class ApkUtil {
             }
         } catch (Exception e) {
             Log.e(TAG, "Unzip exception", e);
+        }
+    }
+
+    public static boolean installApkFromAssets(Context context, String apkName) {
+        AssetManager assetManager = context.getAssets();
+        InputStream in = null;
+        OutputStream out = null;
+
+        try {
+            in = assetManager.open(apkName);
+            out = new FileOutputStream("/sdcard/" + apkName);
+
+            byte[] buffer = new byte[1024];
+
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+
+                out.write(buffer, 0, read);
+
+            }
+
+            in.close();
+            in = null;
+
+            out.flush();
+            out.close();
+            out = null;
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+
+            intent.setDataAndType(Uri.fromFile(new File("/sdcard/" + apkName)),
+                    "application/vnd.android.package-archive");
+
+            context.startActivity(intent);
+
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 }

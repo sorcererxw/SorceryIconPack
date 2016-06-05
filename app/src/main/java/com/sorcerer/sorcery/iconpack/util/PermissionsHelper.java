@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.util;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -13,8 +12,8 @@ import android.support.v4.content.ContextCompat;
 public class PermissionsHelper {
     public static final int WRITE_EXTERNAL_STORAGE_CODE = 10;
     public static final int READ_PHONE_STATE_CODE = 16;
-    public static final String WRITE_EXTERNAL_STORAGE_MANIFEST = "android.permission" +
-            ".WRITE_EXTERNAL_STORAGE";
+    public static final String WRITE_EXTERNAL_STORAGE_MANIFEST =
+            "android.permission" + ".WRITE_EXTERNAL_STORAGE";
     public static final String READ_PHONE_STATE_MANIFEST = "android.permission.READ_PHONE_STATE";
 
 

@@ -7,7 +7,9 @@ import android.content.pm.ResolveInfo;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
+import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -115,6 +117,11 @@ public class AppInfoUtil {
         }
     }
 
+    /**
+     * @param context context
+     * @param name    drawable name in appfilter
+     * @return "ComponentInfo{packageName/activity}"
+     */
     public static String getComponentByName(Context context, String name) {
         int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
         XmlResourceParser parser = context.getResources().getXml(i);
@@ -127,7 +134,7 @@ public class AppInfoUtil {
                         break;
                     case XmlPullParser.START_TAG:
                         if (parser.getName().equals("item")) {
-                            if (parser.getAttributeValue(1).matches("^"+name+"$")) {
+                            if (parser.getAttributeValue(1).matches("^" + name + "$")) {
                                 return parser.getAttributeValue(0);
                             }
                         }
@@ -142,4 +149,15 @@ public class AppInfoUtil {
         }
         return null;
     }
+
+    public static List<LauncherInfo> generateLauncherInfo(Context context) {
+        List<LauncherInfo> list = new ArrayList<>();
+        String[] launchers = context.getResources().getStringArray(R.array.launchers_list);
+        for (String launcher : launchers) {
+            String[] tmp = launcher.split("\\|");
+            list.add(new LauncherInfo(context, tmp[1], tmp[0]));
+        }
+        return list;
+    }
+
 }

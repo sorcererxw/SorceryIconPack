@@ -9,12 +9,9 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.databinding.DataBindingUtil;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
@@ -27,11 +24,9 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.databinding.ActivityLabBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
-import com.sorcerer.sorcery.iconpack.util.Utility;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
@@ -50,49 +45,105 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 public class LabActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
     public static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private SharedPreferences mPrefs;
-    private static final String TAG = "SIP/Lab";
-    private Context mContext;
     private Boolean mActive;
-    private TextView mXposedStateTextView;
-    private Button mXposedApplyButton;
-    private Button mXposedCloseButton;
-    private Button mXposedRefreshButton;
-    private Button mXposedRebootButton;
     private ProgressDialog mProgressDialog;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @BindView(R.id.textView_lab_xposed_state)
+    TextView mXposedStateTextView;
 
-        ActivityLabBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lab);
+    @BindView(R.id.textView_lab_xposed_content)
+    TextView mContentTextView;
 
-        mXposedStateTextView = (TextView) findViewById(R.id.textView_lab_xposed_state);
-        mXposedApplyButton = (Button) findViewById(R.id.button_lab_xposed_apply);
-        mXposedCloseButton = (Button) findViewById(R.id.button_lab_xposed_close);
-        mXposedRefreshButton = (Button) findViewById(R.id.button_lab_xposed_refresh);
-        mXposedRebootButton = (Button) findViewById(R.id.button_lab_xposed_reboot);
+    @BindView(R.id.textView_lab_xposed_attention)
+    TextView mAttentionTextView;
 
-        setSupportActionBar(binding.include5.toolbarUniversal);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    @BindView(R.id.button_lab_xposed_apply)
+    Button mXposedApplyButton;
+
+    @BindView(R.id.button_lab_xposed_close)
+    Button mXposedCloseButton;
+
+    @BindView(R.id.button_lab_xposed_refresh)
+    Button mXposedRefreshButton;
+
+    @BindView(R.id.button_lab_xposed_reboot)
+    Button mXposedRebootButton;
+
+    @OnClick({R.id.button_lab_xposed_apply, R.id.button_lab_xposed_close, R.id
+            .button_lab_xposed_reboot, R.id.button_lab_xposed_refresh})
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.button_lab_xposed_apply) {
+            try {
+                Process root = Runtime.getRuntime().exec("su");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (!RootTools.isAccessGiven()) {
+                Toast.makeText(mContext,
+                        getString(R.string.global_state_not_root),
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setMessage("opening...");
+            mProgressDialog.setCanceledOnTouchOutside(false);
+            mProgressDialog.show();
+            tryAndApplyIcon(getApplicationInfo());
+        } else if (id == R.id.button_lab_xposed_close) {
+            mActive = false;
+            mPrefs.edit().putBoolean("pref_global_load", false).commit();
+            mXposedStateTextView.setText(getString(R.string.global_state_not_active));
+            mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
+            mXposedApplyButton.setEnabled(true);
+            mXposedCloseButton.setEnabled(false);
+            mXposedRefreshButton.setEnabled(false);
+            mXposedRebootButton.setEnabled(false);
+        } else if (id == R.id.button_lab_xposed_refresh) {
+//            XposedUtils.killLauncher();
+//            XposedUtils.clearNovaCache2(getPackageManager());
+            XposedUtils.killAll(
+                    (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
+        } else if (id == R.id.button_lab_xposed_reboot) {
+            MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+            builder.title(getString(R.string.action_reboot) + "?");
+            builder.positiveText(getString(R.string.yes));
+            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+                @Override
+                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                    XposedUtils.reboot();
+                }
+            });
+            builder.negativeText(getString(R.string.no));
+            builder.show();
         }
+    }
+
+    @Override
+    protected int provideLayoutId() {
+        return R.layout.activity_lab;
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+
+        setToolbarBackIndicator();
 
         mContext = this;
         mPrefs = getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
         mActive = mPrefs.getBoolean("pref_global_load", false);
 
-        binding.setContentText(StringUtil.handleLongXmlString(getString(R.string.global_detail)));
-        binding.setAttentionText(StringUtil.handleLongXmlString(getString(R.string
+        mContentTextView.setText(StringUtil.handleLongXmlString(getString(R.string.global_detail)));
+        mAttentionTextView.setText(StringUtil.handleLongXmlString(getString(R.string
                 .global_attention)));
-
-        binding.setApplyListener(this);
-        binding.setCloseListener(this);
-        binding.setRebootListener(this);
-        binding.setRefreshListener(this);
 
         if (mActive) {
             mXposedStateTextView.setText(getString(R.string.global_state_active));
@@ -204,59 +255,6 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     }
 */
 
-    /**
-     * Called when a view has been clicked.
-     *
-     * @param v The view that was clicked.
-     */
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.button_lab_xposed_apply) {
-            try {
-                Process root = Runtime.getRuntime().exec("su");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if (!RootTools.isAccessGiven()) {
-                Toast.makeText(mContext,
-                        getString(R.string.global_state_not_root),
-                        Toast.LENGTH_SHORT).show();
-                return;
-            }
-            mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setMessage("opening...");
-            mProgressDialog.setCanceledOnTouchOutside(false);
-            mProgressDialog.show();
-            tryAndApplyIcon(getApplicationInfo());
-        } else if (id == R.id.button_lab_xposed_close) {
-            mActive = false;
-            mPrefs.edit().putBoolean("pref_global_load", false).commit();
-            mXposedStateTextView.setText(getString(R.string.global_state_not_active));
-            mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
-            mXposedApplyButton.setEnabled(true);
-            mXposedCloseButton.setEnabled(false);
-            mXposedRefreshButton.setEnabled(false);
-            mXposedRebootButton.setEnabled(false);
-        } else if (id == R.id.button_lab_xposed_refresh) {
-//            XposedUtils.killLauncher();
-//            XposedUtils.clearNovaCache2(getPackageManager());
-            XposedUtils.killAll(
-                    (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
-        } else if (id == R.id.button_lab_xposed_reboot) {
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-            builder.title(getString(R.string.action_reboot) + "?");
-            builder.positiveText(getString(R.string.yes));
-            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                @Override
-                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    XposedUtils.reboot();
-                }
-            });
-            builder.negativeText(getString(R.string.no));
-            builder.show();
-        }
-    }
 
     private void runAfterSuccess() {
         mActive = false;
@@ -348,29 +346,25 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                     String themePackagePath = themePackage.sourceDir;
                     if (themePackage.sourceDir.contains("/data/app/")) {
                         Command tmp = RootTools.getShell(true).add(new CommandCapture(0,
-                                "rm /data/data/" + getPackageName() +
-                                        "/cache/icons/*",
-                                "rm " + getExternalCacheDir()
-                                        .getAbsolutePath() + "/current_theme.apk"));
+                                "rm /data/data/" + getPackageName() + "/cache/icons/*",
+                                "rm " + getExternalCacheDir().getAbsolutePath()
+                                        + "/current_theme.apk"));
 
                     } else {
                         Log.d(TAG,
                                 "Original Theme APK is at " + themePackage.sourceDir);
                         Command commandCapture = new CommandCapture(0,
                                 "rm /data/data/" + getPackageName() + "/cache/icons/*",
-                                "rm " + getExternalCacheDir().getAbsolutePath() +
-                                        "/current_theme.apk",
-                                "cat \"" + themePackage.sourceDir + "\" > " +
-                                        getExternalCacheDir().getAbsolutePath() +
-                                        "/current_theme.apk",
-                                "chmod 644 " + getExternalCacheDir()
-                                        .getAbsolutePath() + "/current_theme.apk");
+                                "rm " + getExternalCacheDir().getAbsolutePath()
+                                        + "/current_theme.apk",
+                                "cat \"" + themePackage.sourceDir + "\" > " + getExternalCacheDir()
+                                        .getAbsolutePath() + "/current_theme.apk",
+                                "chmod 644 " + getExternalCacheDir().getAbsolutePath()
+                                        + "/current_theme.apk");
                         Command tmp = RootTools.getShell(true).add(commandCapture);
 
-                        themePackagePath = getExternalCacheDir() +
-                                "/current_theme.apk";
-                        Log.d(TAG,
-                                "Copied Theme APK is at " + themePackagePath);
+                        themePackagePath = getExternalCacheDir() + "/current_theme.apk";
+                        Log.d(TAG, "Copied Theme APK is at " + themePackagePath);
                     }
                     PackageManager pm = getPackageManager();
                     Resources r = getPackageManager()
@@ -413,7 +407,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                         try {
                             ActivityInfo activityInfo = pm.getActivityInfo(new ComponentName(
                                     item.getPackageName(),
-                                    item.getActivityName()), 128);
+                                    item.getActivityName()), PackageManager.GET_META_DATA);
                             Log.d(TAG, "activity: " + item.getActivityName());
                             Log.d(TAG, "orig res name: " + item.getOrigResName());
                             Log.d(TAG, "component: " + item.getComponent());
@@ -422,8 +416,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                             Log.d(TAG, "replacement res name: " + item.getReplacementResName());
                             Log.d(TAG, "package: " + item.getPackageName());
                             if (activityInfo != null) {
-                                if (mIconReplacementsHashMap.get(item.getPackageName()) ==
-                                        null) {
+                                if (mIconReplacementsHashMap.get(item.getPackageName()) == null) {
                                     mIconReplacementsHashMap
                                             .put(item.getPackageName(), new ArrayList());
                                 }

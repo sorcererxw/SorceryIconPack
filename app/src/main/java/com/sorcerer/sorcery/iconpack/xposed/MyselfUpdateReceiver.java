@@ -57,8 +57,8 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                 String themePackagePath = prefs.getString("theme_package_path", null);
                 Log.d(TAG, themePackageName);
                 Log.d(TAG, themePackagePath);
-                if (themePackageName != null && themePackagePath != null &&
-                        new File(themePackagePath).exists()) {
+                if (themePackageName != null && themePackagePath != null
+                        && new File(themePackagePath).exists()) {
                     Log.d(TAG, "start");
                     try {
                         XmlPullParser xrp;
@@ -69,8 +69,7 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                                 pm.getApplicationInfo(themePackageName, 128);
                         Resources r = pm.getResourcesForApplication(themePackage.packageName);
 
-                        if (r.getIdentifier("appfilter", "xml", themePackage.packageName) ==
-                                0) {
+                        if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {
                             InputStream istr = r.getAssets().open("appfilter.xml");
                             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                             factory.setNamespaceAware(true);
@@ -216,8 +215,7 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                             Log.d(TAG, "replacement res name: " + item.getReplacementResName());
                             Log.d(TAG, "package: " + item.getPackageName());
                             if (activityInfo != null) {
-                                if (mIconReplacementsHashMap.get(item.getPackageName()) ==
-                                        null) {
+                                if (mIconReplacementsHashMap.get(item.getPackageName()) == null) {
                                     mIconReplacementsHashMap
                                             .put(item.getPackageName(), new ArrayList());
                                 }

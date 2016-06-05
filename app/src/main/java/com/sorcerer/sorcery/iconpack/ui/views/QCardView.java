@@ -3,9 +3,7 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Scroller;
 
 /**
@@ -13,14 +11,18 @@ import android.widget.Scroller;
  */
 public class QCardView extends CardView {
 
-    private float orginX;
-    private float orginY;
+    private float mOrginX;
+    private float mOrginY;
     private float sumX;
     private float sumY;
     private int lastX;
     private int lastY;
     private Scroller mScroller;
     private TouchCallBack mTouchCallBack;
+    private float mDx;
+    private float mDy;
+
+    private boolean mTouchable = false;
 
     public void setTouchCallBack(TouchCallBack touchCallBack) {
         mTouchCallBack = touchCallBack;
@@ -39,6 +41,14 @@ public class QCardView extends CardView {
         mScroller = new Scroller(context);
     }
 
+    public boolean isTouchable() {
+        return mTouchable;
+    }
+
+    public void setTouchable(boolean touchable) {
+        mTouchable = touchable;
+    }
+
     public interface TouchCallBack {
         void onDown();
 
@@ -49,17 +59,18 @@ public class QCardView extends CardView {
     public void computeScroll() {
         super.computeScroll();
         if (mScroller.computeScrollOffset()) {
-            ((View) getParent()).scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+            scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
             invalidate();
         }
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (!mTouchable) {
+            return false;
+        }
         int x = (int) event.getX();
         int y = (int) event.getY();
-
-        View view = ((View) getParent());
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -68,22 +79,32 @@ public class QCardView extends CardView {
                 }
                 lastX = x;
                 lastY = y;
+                mDx = 0;
+                mDy = 0;
+                mOrginX = getX();
+                mOrginY = getY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 int offsetX = x - lastX;
                 int offsetY = y - lastY;
-                // 通过layout方法来重新设置view的坐标
-                ((View) getParent()).scrollBy(-offsetX, -offsetY);
+
+                layout((int) getX() + offsetX,
+                        (int) getY() + offsetY,
+                        (int) getX() + getWidth() + offsetX,
+                        (int) getY() + getHeight() + offsetY);
+
+                mDx += offsetX;
+                mDy += offsetY;
                 break;
             case MotionEvent.ACTION_UP:
                 if (mTouchCallBack != null) {
                     mTouchCallBack.onUp();
                 }
-                mScroller.startScroll(
-                        view.getScrollX(),
-                        view.getScrollY(),
-                        -view.getScrollX(),
-                        -view.getScrollY());
+                layout((int) mOrginX,
+                        (int) mOrginY,
+                        (int) mOrginX + getWidth(),
+                        (int) mOrginY + getHeight());
+
                 invalidate();
                 break;
         }

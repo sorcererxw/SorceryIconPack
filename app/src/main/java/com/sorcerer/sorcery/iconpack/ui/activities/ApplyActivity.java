@@ -1,66 +1,79 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import android.graphics.Point;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.adapters.ApplyAdapter;
-import com.sorcerer.sorcery.iconpack.databinding.ActivityApplyBinding;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter;
+import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.LauncherApplier;
-import com.sorcerer.sorcery.iconpack.util.Utility;
+
+import butterknife.BindView;
 
 public class ApplyActivity extends SlideInAndOutAppCompatActivity {
+    @BindView(R.id.recyclerView_apply)
+    RecyclerView mRecyclerView;
+
+    private GridLayoutManager mGridLayoutManager;
+
+    private ApplyAdapter mAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ActivityApplyBinding binding = DataBindingUtil.setContentView(this, R.layout
-                .activity_apply);
+    protected int provideLayoutId() {
+        return R.layout.activity_apply;
+    }
 
-        setSupportActionBar(binding.toolbarApply.toolbarUniversal);
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    @Override
+    protected void init() {
+        super.init();
 
-        RecyclerView applyRecyclerView = binding.recyclerViewApply;
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        layoutManager.setOrientation(GridLayoutManager.VERTICAL);
-        layoutManager.scrollToPosition(0);
-        assert applyRecyclerView != null;
-        applyRecyclerView.setLayoutManager(layoutManager);
-        applyRecyclerView.setHasFixedSize(false);
+        setToolbarBackIndicator();
 
-        final ApplyAdapter applyAdapter = new ApplyAdapter(this, Utility.generateLauncherInfo
-                (this));
-        applyAdapter.setOnItemClickListener(new ApplyAdapter.OnItemClickListener() {
+        mGridLayoutManager = new GridLayoutManager(this, 2);
+        mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
+        mGridLayoutManager.scrollToPosition(0);
+        mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return 1;
+            }
+        });
+
+        mRecyclerView.setLayoutManager(mGridLayoutManager);
+        mRecyclerView.setHasFixedSize(false);
+
+        mAdapter =
+                new ApplyAdapter(this, AppInfoUtil.generateLauncherInfo(this), calcNumOfRows());
+        mAdapter.setOnItemClickListener(new ApplyAdapter.OnItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                if (applyAdapter.getItem(position).isInstalled()) {
+                if (mAdapter.getItem(position).isInstalled()) {
                     LauncherApplier
                             .applyLauncher(view.getContext(),
-                                    applyAdapter.getItem(position).getLabel()
+                                    mAdapter.getItem(position).getLabel()
                                             .split(" ")[0]);
                 } else {
                     final String appPackageName =
-                            applyAdapter.getItem(position).getPackageName();
+                            mAdapter.getItem(position).getPackageName();
                     try {
                         startActivity(new Intent(Intent.ACTION_VIEW,
                                 Uri.parse("market://details?id=" + appPackageName)));
                     } catch (android.content.ActivityNotFoundException anfe) {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri
-                                .parse("https://play.google.com/store/apps/details?id=" +
-                                        appPackageName)));
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://play.google.com/store/apps/details?id="
+                                        + appPackageName)));
                     }
                 }
             }
         });
-        applyRecyclerView.setAdapter(applyAdapter);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
@@ -71,6 +84,27 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
             super.onBackPressed();
         }
         return false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        resize();
+    }
+
+    private void resize() {
+        mGridLayoutManager.setSpanCount(calcNumOfRows());
+        mGridLayoutManager.requestLayout();
+        mAdapter.changeSpan(calcNumOfRows());
+    }
+
+    private int calcNumOfRows() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        float s = getResources().getDimension(R.dimen.apply_item_size);
+//                + 2 * getResources().getDimension(R.dimen.icon_grid_item_margin);
+        return Math.max(1, (int) (size.x / s));
     }
 
 }

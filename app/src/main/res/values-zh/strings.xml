@@ -133,13 +133,13 @@
     <string name="premium_send_dialog_note_hint">捎句话...</string>
     <string name="premium_send_dialog_note_label">备注</string>
     <string name="please_input_right_mail_address">请输入正确的邮箱地址</string>
-    <string name="icon_label_added">**#最近添加**</string>
-    <string name="icon_label_updated">**#调整更新**</string>
+    <string name="icon_label_added">**最近添加**</string>
+    <string name="icon_label_updated">**调整更新**</string>
     <string name="action_show_in_store">前往商店</string>
     <string name="search_hint">在当前图标页搜索</string>
     <string name="action_give_permission">授权</string>
     <string name="action_show_origin_icon">显示原图标</string>
-    <string name="icon_label_please_leave_baidu">**#请远离百度**</string>
+    <string name="icon_label_please_leave_baidu">**请远离百度**</string>
     <string name="open_wechat">正在打开微信支付</string>
     <string name="action_install">安装</string>
 </resources>

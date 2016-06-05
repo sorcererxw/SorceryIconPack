@@ -3277,3 +3277,6 @@
         <item 
             component="ComponentInfo{com.tencent.qq.kddi/com.tencent.mobileqq.activity.SplashActivity}"
             drawable="tencent_qq_japan"/>
+        <item
+			component="ComponentInfo{jp.pxv.android/jp.pxv.android.activity.RoutingActivity}"
+			drawable="pixiv"/>

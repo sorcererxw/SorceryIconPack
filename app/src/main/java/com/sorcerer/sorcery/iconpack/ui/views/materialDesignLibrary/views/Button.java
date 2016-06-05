@@ -2,11 +2,11 @@ package com.sorcerer.sorcery.iconpack.ui.views.materialDesignLibrary.views;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Bitmap.Config;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
@@ -103,7 +103,7 @@ public abstract class Button extends CustomView {
 
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction,
-                                  Rect previouslyFocusedRect) {
+            Rect previouslyFocusedRect) {
         if (!gainFocus) {
             x = -1;
             y = -1;

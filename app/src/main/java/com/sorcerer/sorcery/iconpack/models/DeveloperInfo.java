@@ -9,7 +9,7 @@ public class DeveloperInfo {
     private String mName;
 
     public DeveloperInfo(String name, String job, String email,
-                         Drawable avatar) {
+            Drawable avatar) {
         mName = name;
         mJob = job;
         mEmail = email;

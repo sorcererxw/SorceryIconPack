@@ -1,13 +1,9 @@
 package com.sorcerer.sorcery.iconpack.models;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Icon;
-import android.os.Build;
+import android.telephony.TelephonyManager;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
-
-import android.telephony.TelephonyManager;
 
 import cn.bmob.v3.BmobObject;
 

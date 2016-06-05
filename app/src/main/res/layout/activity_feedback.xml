@@ -1,77 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
 
-    <data>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout_feedback_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/root_background"
+    tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
 
-        <import type="android.view.View.OnClickListener"/>
+    <include layout="@layout/toolbar_universal"/>
 
-        <variable
-            name="requestListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="suggestListener"
-            type="OnClickListener"/>
-
-        <variable
-            name="joinListener"
-            type="OnClickListener"/>
-    </data>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout_feedback_root"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/root_background"
-        tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
-
-        <include
-            android:id="@+id/toolbar_feedback"
-            layout="@layout/toolbar_universal"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar_feedback"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button_request"
-                style="@style/FeedbackRaisedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="32dp"
-                android:onClick="@{requestListener}"
-                android:text="@string/request"/>
-
-            <Button
-                android:id="@+id/button_suggest"
-                style="@style/FeedbackRaisedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="32dp"
-                android:onClick="@{suggestListener}"
-                android:text="@string/suggest"/>
-
-        </LinearLayout>
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/button_feedback_join"
-            style="?android:attr/buttonBarStyle"
-            android:layout_width="match_parent"
+            android:id="@+id/button_request"
+            style="@style/FeedbackRaisedButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="right"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:onClick="@{joinListener}"
-            android:text="@string/action_join_google_plus"
-            android:textColor="@color/google_plus"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="32dp"
+            android:text="@string/request"/>
 
-    </RelativeLayout>
-</layout>
+        <Button
+            android:id="@+id/button_suggest"
+            style="@style/FeedbackRaisedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="32dp"
+            android:text="@string/suggest"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_feedback_join"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/action_join_google_plus"
+        android:textColor="@color/google_plus"/>
+
+</RelativeLayout>

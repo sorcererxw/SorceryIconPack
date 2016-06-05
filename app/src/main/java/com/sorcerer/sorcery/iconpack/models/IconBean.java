@@ -46,12 +46,12 @@ public class IconBean {
         mRes = res;
     }
 
-    public static String handleIconName(String orgin) {
+    public static String handleIconName(String origin) {
         String res;
-        if (Character.isDigit(orgin.charAt(1)) && orgin.charAt(0)=='a') {
-            res = orgin.substring(1, orgin.length());
+        if (Character.isDigit(origin.charAt(1)) && origin.charAt(0) == 'a') {
+            res = origin.substring(1, origin.length());
         } else {
-            res = orgin.substring(0, orgin.length());
+            res = origin.substring(0, origin.length());
         }
         return res.replaceAll("_", " ");
     }
@@ -63,4 +63,5 @@ public class IconBean {
     public void setShown(boolean shown) {
         mShown = shown;
     }
+
 }

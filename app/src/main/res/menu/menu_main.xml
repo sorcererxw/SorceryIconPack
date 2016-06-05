@@ -10,26 +10,26 @@
         app:showAsAction="always"/>
 
     <!--<item-->
-        <!--android:id="@+id/action_feedback"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="@string/action_feedback"-->
-        <!--app:showAsAction="never"/>-->
+    <!--android:id="@+id/action_feedback"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/action_feedback"-->
+    <!--app:showAsAction="never"/>-->
 
     <!--<item-->
-        <!--android:id="@+id/action_apply"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="@string/action_apply"-->
-        <!--app:showAsAction="never"/>-->
+    <!--android:id="@+id/action_apply"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/action_apply"-->
+    <!--app:showAsAction="never"/>-->
 
     <!--<item-->
-        <!--android:id="@+id/action_update"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="@string/action_update"-->
-        <!--app:showAsAction="never"/>-->
+    <!--android:id="@+id/action_update"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/action_update"-->
+    <!--app:showAsAction="never"/>-->
 
     <!--<item-->
-        <!--android:id="@+id/action_welcome"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="@string/action_welcome"-->
-        <!--app:showAsAction="never"/>-->
+    <!--android:id="@+id/action_welcome"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/action_welcome"-->
+    <!--app:showAsAction="never"/>-->
 </menu>
