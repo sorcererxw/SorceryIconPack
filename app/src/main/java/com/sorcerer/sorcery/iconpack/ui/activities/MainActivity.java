@@ -27,7 +27,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SIP;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
@@ -41,7 +41,6 @@ import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 import java.util.Arrays;
 
 import butterknife.BindView;
-import c.b.BP;
 import im.fir.sdk.FIR;
 
 /**
@@ -175,13 +174,9 @@ public class MainActivity extends BaseActivity {
 
             FIR.init(getApplicationContext());
 
-//            Bmob.initialize(this, getString(R.string.bmob_app_id));
             UpdateHelper updateHelper =
                     new UpdateHelper(this);
             updateHelper.update();
-
-            BP.init(this, getString(R.string.bmob_app_id));
-//            Bmob.initialize(this, getString(R.string.bmob_app_id));
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
@@ -305,7 +300,7 @@ public class MainActivity extends BaseActivity {
                         .withTag("about")
                         .withName(R.string.nav_item_about)
         );
-        if (SIP.DEBUG) {
+        if (SorceryIcons.DEBUG) {
             mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
                     .withName("DEBUG"));
         }

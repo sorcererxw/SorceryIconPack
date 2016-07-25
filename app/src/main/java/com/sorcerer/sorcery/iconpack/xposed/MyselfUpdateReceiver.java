@@ -30,7 +30,7 @@ import java.util.Map;
  * Created by Sorcerer on 2016/2/23 0023.
  */
 public class MyselfUpdateReceiver extends BroadcastReceiver {
-    private static String TAG = "SIP/MyselfUpdateReceiver";
+    private static String TAG = "MyselfUpdateReceiver";
     private static String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private boolean mActive;
     private SharedPreferences mPrefs;

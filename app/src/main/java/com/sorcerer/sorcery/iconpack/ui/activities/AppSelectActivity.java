@@ -8,27 +8,23 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
-import android.view.LayoutInflater;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.avos.avoscloud.AVException;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
+import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
-import com.sorcerer.sorcery.iconpack.util.ApkUtil;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.PayHelper;
-import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.sorcerer.sorcery.iconpack.util.mail.MailUtil;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -37,7 +33,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import c.b.BP;
 
 public class AppSelectActivity extends UniversalToolbarActivity {
 
@@ -52,94 +47,14 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
-        if (mPremium) {
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-            builder.title(getString(R.string.premium_send_title));
-            String s = "";
-            final List<String> list = mAdapter.getSelectedAppsNameList();
-            for (int i = 0; i < list.size(); i++) {
-                s += "<li>" + list.get(i) + "</li><br/>";
-            }
-            final int amount = list.size() * 2;
-
-            View view = LayoutInflater.from(mContext)
-                    .inflate(R.layout.layout_premium_custom_info_input, null);
-            TextView text = (TextView) view.findViewById(R.id.textView_premium_info_text);
-            text.setText(Html.fromHtml(
-                    "<p>" + getString(R.string.premium_send_content).replace("|", "<br>")
-                            + "</p><ul>" + s + "</ul>" + "<br>" + "<b>"
-                            + amount + getString(R.string.RMB)
-                            + "</b>")
-            );
-            final EditText email =
-                    (EditText) view.findViewById(R.id.materialEditText_premium_info_email);
-            final EditText note =
-                    (EditText) view.findViewById(R.id.materialEditText_premium_info_note);
-
-            builder.negativeText(getString(R.string.alipay));
-            builder.negativeColor(ContextCompat.getColor(mContext, R.color.alipay));
-            builder.positiveText(getString(R.string.wechat));
-            builder.positiveColor(ContextCompat.getColor(mContext, R.color.wechat));
-            builder.onNegative(new MaterialDialog.SingleButtonCallback() {
-                @Override
-                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-//                    if (!StringUtil.isMail(email.getText().toString())) {
-//                        Toast.makeText(mContext,
-//                                getString(R.string.please_input_right_mail_address),
-//                                Toast.LENGTH_SHORT)
-//                                .show();
-//                        return;
-//                    }
-//                    pay(true, amount,
-//                            email.getText().toString() + "\n" + note.getText().toString(), dialog);
-                    Toast.makeText(mContext, "支付宝暂时不可用\n请选择微信支付", Toast.LENGTH_SHORT).show();
-                }
-            });
-            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                @Override
-                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    if (AppInfoUtil.isPackageInstalled(mContext, "com.bmob.app.sport")) {
-                        if (!StringUtil.isMail(email.getText().toString())) {
-                            Toast.makeText(mContext,
-                                    getString(R.string.please_input_right_mail_address),
-                                    Toast.LENGTH_SHORT)
-                                    .show();
-                            return;
-                        }
-                        pay(false, amount,
-                                email.getText().toString() + "\n" + note.getText().toString(),
-                                dialog);
-                    } else {
-                        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                        builder.content("need install a plugin");
-                        builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                            @Override
-                            public void onClick(@NonNull MaterialDialog dialog,
-                                    @NonNull DialogAction which) {
-                                ApkUtil.installApkFromAssets(dialog.getContext(),
-                                        "BmobPayPlugin.apk");
-                            }
-                        });
-                        builder.positiveText("install");
-                        builder.negativeText("cancel");
-                        builder.show();
-                    }
-                }
-            });
-            builder.autoDismiss(false);
-            builder.customView(view, true);
-            builder.show();
-        } else {
-            new SendMailAsyncTask(mContext).execute();
-        }
+//        saveToLeancloud(this);
+        new SaveRequestAsyncTask(this, mAdapter.getCheckedAppsList()).execute();
     }
 
     private RequestAdapter mAdapter;
     private boolean mCheckAll = false;
     private boolean menuEnable;
     private Menu mMenu;
-    private boolean mPremium = false;
-    private boolean mLoadOk;
 
     @Override
     protected int provideLayoutId() {
@@ -167,40 +82,10 @@ public class AppSelectActivity extends UniversalToolbarActivity {
             }
         });
 
-        try {
-            BP.init(mContext, getString(R.string.bmob_app_id));
-            mLoadOk = true;
-        } catch (Exception e) {
-            mLoadOk = false;
-        }
-
         menuEnable = false;
+
         new LoadAppsAsyncTask(this).execute();
-    }
 
-    private void pay(final boolean isAlipay, int amount, final String sendAfterPay,
-            final MaterialDialog
-                    payDialog) {
-        PayHelper payHelper = new PayHelper(mActivity);
-        payHelper.setPayCallback(new PayHelper.PayCallback() {
-            @Override
-            public void onSuccess(String orderId) {
-                Toast.makeText(mContext,
-                        getString(R.string.pay_success),
-                        Toast.LENGTH_SHORT)
-                        .show();
-                payDialog.dismiss();
-                SendMailAsyncTask asyncTask = new SendMailAsyncTask(mContext);
-                asyncTask.setStringToSend(sendAfterPay + "\norderid: " + orderId);
-                asyncTask.execute();
-            }
-
-            @Override
-            public void onFail() {
-            }
-        });
-        payHelper.pay(isAlipay, amount, getString(R.string.premium_alipay_title), getString(R.string
-                .premium_alipay_descript));
     }
 
     private class LoadAppsAsyncTask extends AsyncTask {
@@ -276,6 +161,67 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         }
     }
 
+    private class SaveRequestAsyncTask extends AsyncTask<Void, Void, Void> {
+        private ProgressDialog mProgressDialog;
+        private Context mContext;
+        private List<AppInfo> mAppInfoList;
+        private String mDeviceId = null;
+
+        public SaveRequestAsyncTask(Context context, List<AppInfo> appInfoList) {
+            mContext = context;
+            mAppInfoList = appInfoList;
+            mProgressDialog = new ProgressDialog(context);
+            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            mProgressDialog.setCanceledOnTouchOutside(false);
+
+            try {
+                TelephonyManager tm =
+                        (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
+                mDeviceId = tm.getDeviceId();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog.setMessage(getString(R.string.icon_request_sending));
+            mProgressDialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            for (int i = 0; i < mAppInfoList.size(); i++) {
+                RequestBean request = new RequestBean();
+                AppInfo app = mAppInfoList.get(i);
+                request.setAppPackage(app.getPackage());
+                request.setComponent(app.getCode());
+                request.setEnName(AppInfoUtil.getAppEnglishName(
+                        AppSelectActivity.this, app.getPackage()));
+                request.setZhName(AppInfoUtil.getAppChineseName(
+                        AppSelectActivity.this, app.getPackage()));
+                if (mDeviceId != null) {
+                    request.setDeviceId(mDeviceId);
+                    try {
+                        request.save();
+                    } catch (AVException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            mProgressDialog.dismiss();
+            Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
+            AppSelectActivity.this.finish();
+
+        }
+    }
+
     private class SendMailAsyncTask extends AsyncTask<MailSenderInfo, Integer, Boolean> {
         private ProgressDialog mProgressDialog;
         private Context mContext;
@@ -286,10 +232,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
             mProgressDialog = new ProgressDialog(context);
             mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             mProgressDialog.setCanceledOnTouchOutside(false);
-        }
-
-        public void setStringToSend(String s) {
-            stringToSend = s;
         }
 
         protected void onPreExecute() {
@@ -321,29 +263,17 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     private boolean send(String sendString) {
 
         MailSenderInfo mailInfo;
-        if (mPremium) {
-            mailInfo = MailUtil.generateMailSenderInfo(
-                    getStringToSend(sendString + "\n"),
-                    "smtp.163.com",
-                    "25",
-                    true,
-                    getString(R.string.feedback_mailbox),
-                    getString(R.string.feedback_mail_password),
-                    getString(R.string.feedback_mailbox),
-                    getString(R.string.feedback_receive_mailbox_premium),
-                    "premium icon request");
-        } else {
-            mailInfo = MailUtil.generateMailSenderInfo(
-                    getStringToSend(""),
-                    "smtp.163.com",
-                    "25",
-                    true,
-                    getString(R.string.feedback_mailbox),
-                    getString(R.string.feedback_mail_password),
-                    getString(R.string.feedback_mailbox),
-                    getString(R.string.feedback_receive_mailbox),
-                    "icon request");
-        }
+        mailInfo = MailUtil.generateMailSenderInfo(
+                getStringToSend(""),
+                "smtp.163.com",
+                "25",
+                true,
+                getString(R.string.feedback_mailbox),
+                getString(R.string.feedback_mail_password),
+                getString(R.string.feedback_mailbox),
+                getString(R.string.feedback_receive_mailbox),
+                "icon request");
+
 
         final boolean[] res = new boolean[1];
 
@@ -363,13 +293,36 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     private String getStringToSend(String head) {
         String s = "";
-        List list = mAdapter.getCheckedAppsList();
+        List<AppInfo> list = mAdapter.getCheckedAppsList();
         for (int i = 0; i < list.size(); i++) {
             s += list.get(i).toString();
             s += "------------------------------\n";
         }
         return head + s;
     }
+
+//    private void saveToLeancloud(Activity activity) {
+//
+//        RequestManager manager = new RequestManager();
+//        List<AppInfo> list = mAdapter.getCheckedAppsList();
+//        List<RequestBean> requestBeanList = new ArrayList<>();
+//        for (int i = 0; i < list.size(); i++) {
+//            RequestBean requestBean = new RequestBean();
+//            requestBean.setAppPackage(list.get(i).getPackage());
+//            requestBean.setAppDefaultName(AppInfoUtil.getAppDefaultName(activity, list.get(i)
+//                    .getPackage()));
+//            requestBean.setComponent(list.get(i).getCode());
+//            requestBeanList.add(requestBean);
+//        }
+//        manager.saveRequest(requestBeanList);
+////        for (int i = 0; i < list.size(); i++) {
+////            RequestManager.RequestBean bean =
+////                    new RequestManager.RequestBean(
+////                            list.get(i).getPackage(),
+////                            AppInfoUtil.getAppDefaultName(activity, list.get(i).getPackage()));
+////            manager.saveRequest(bean);
+////        }
+//    }
 
     @Override
     public void onBackPressed() {
@@ -412,32 +365,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         } else if (id == android.R.id.home) {
             onBackPressed();
         } else if (id == R.id.action_premium_request) {
-            if (mPremium) {
-                mPremium = false;
-                item.setIcon(R.drawable.ic_attach_money_white_24dp);
-            } else {
-                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                builder.title(R.string.premium_request_title);
-                builder.content(StringUtil.handleLongXmlString(getString(R.string
-                        .premium_request_content)));
-                builder.negativeText(R.string.cancel);
-                builder.positiveText(R.string.ok);
-                builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog,
-                            @NonNull DialogAction which) {
-                        if (!mLoadOk) {
-                            Toast.makeText(mContext,
-                                    getString(R.string.fail_open_premium),
-                                    Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        mPremium = true;
-                        item.setIcon(R.drawable.ic_money_off_white_24dp);
-                    }
-                });
-                builder.show();
-            }
+
         } else if (id == R.id.action_select_all) {
             mCheckAll = !mCheckAll;
             mAdapter.checkAll(mCheckAll);

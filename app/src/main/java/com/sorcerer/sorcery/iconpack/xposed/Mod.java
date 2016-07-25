@@ -41,7 +41,7 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         IXposedHookInitPackageResources {
     private static final String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
     private static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
-    public static String TAG = "SIP/Mod";
+    public static String TAG = "Mod";
     public static long mFileSize;
     public static long mLastModified;
     private String MODULE_PATH;

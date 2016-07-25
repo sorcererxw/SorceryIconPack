@@ -40,7 +40,7 @@ public class Xposed
     private static final String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private static final String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
     private static String MODULE_PATH;
-    public static String TAG = "SIP/Xposed";
+    public static String TAG = "Xposed";
     public static XSharedPreferences XSharedPrefs;
     private static int mDisplayDpi;
     private static ArrayList<String> mIconPackages = new ArrayList();

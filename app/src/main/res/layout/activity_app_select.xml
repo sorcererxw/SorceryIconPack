@@ -40,13 +40,13 @@
                 android:id="@+id/fab_app_select"
                 android:layout_width="@dimen/fab_size"
                 android:layout_height="@dimen/fab_size"
-                android:layout_gravity="bottom|right"
+                android:layout_gravity="bottom|end"
                 android:layout_margin="16dp"
                 android:src="@drawable/ic_done_white_24dp"
+                android:visibility="gone"
                 app:layout_anchor="@id/recyclerView_app_select"
-                app:layout_behavior="com.sorcerer.sorcery.iconpack.ui.views.ScrollAwareFABBehavior"
                 app:layout_anchorGravity="bottom|right|end"
-                android:visibility="gone"/>
+                app:layout_behavior="com.sorcerer.sorcery.iconpack.ui.views.ScrollAwareFABBehavior"/>
         </android.support.design.widget.CoordinatorLayout>
 
     </RelativeLayout>

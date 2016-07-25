@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.avos.avoscloud.AVAnalytics;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
 import butterknife.ButterKnife;
@@ -44,10 +45,28 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void init();
 
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mHoldingActivity = (BaseActivity) activity;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        AVAnalytics.onFragmentEnd(TAG);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        AVAnalytics.onFragmentStart(TAG);
     }
 
     @Override

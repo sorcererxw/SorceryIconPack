@@ -4,6 +4,7 @@
 
 
     <item
+        android:visible="false"
         android:id="@+id/action_premium_request"
         android:icon="@drawable/ic_attach_money_white_24dp"
         android:title="@string/action_premium_request"

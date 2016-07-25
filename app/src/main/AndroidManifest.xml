@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <uses-feature
         android:name="org.cyanogenmod.theme"
@@ -21,193 +22,142 @@
         android:value="Sorcerer"/>
 
     <application
-        android:name=".SIP"
+        android:name=".SorceryIcons"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.SplashActivity">
-
-
-        </activity>
 
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name="com.sorcerer.sorcery.iconpack.ui.activities.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.MainActivity">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                <action android:name="org.adw.launcher.THEMES"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="org.adw.launcher.THEMES" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="com.anddoes.launcher.THEME"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.anddoes.launcher.THEME" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.dlto.atom.launcher.THEME"/>
+                <action android:name="com.dlto.atom.launcher.THEME" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="com.teslacoilsw.launcher.THEME"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.teslacoilsw.launcher.THEME" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.novalauncher.THEME"/>
-
-                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER"/>
+                <action android:name="com.novalauncher.THEME" />
+                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="com.fede.launcher.THEME_ICONPACK"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.fede.launcher.THEME_ICONPACK" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.gtp.nextlauncher.MAIN"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.gtp.nextlauncher.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.gtp.nextlauncher.MAIN"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.gtp.nextlauncher.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.gtp.nextlauncher.trial.theme"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.gtp.nextlauncher.trial.theme" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="com.tsf.shell.themes"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.tsf.shell.themes" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="ginlemon.smartlauncher.THEMES"/>
-                <action android:name="ginlemon.smartlauncher.BUBBLESTYLE"/>
-                <action android:name="ginlemon.smartlauncher.BUBBLEICONS"/>
-                <action android:name="ginlemon.smartlauncher.CLOCKS"/>
-                <action android:name="ginlemon.smartlauncher.CLOCKFONTS"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="ginlemon.smartlauncher.THEMES" />
+                <action android:name="ginlemon.smartlauncher.BUBBLESTYLE" />
+                <action android:name="ginlemon.smartlauncher.BUBBLEICONS" />
+                <action android:name="ginlemon.smartlauncher.CLOCKS" />
+                <action android:name="ginlemon.smartlauncher.CLOCKFONTS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.gridappsinc.launcher.theme.apk_action"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.gridappsinc.launcher.theme.apk_action" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <!-- Random launchers -->
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="org.adw.launcher.THEMES"/>
-                <action android:name="mobi.bbase.ahome.THEME"/>
-                <action android:name="com.rogro.GDE.THEME.1"/>
-                <action android:name="com.android.dxtop.launcher.THEME"/>
-
-                <category android:name="com.fede.launcher.THEME_ICONPACK"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="org.adw.launcher.THEMES" />
+                <action android:name="mobi.bbase.ahome.THEME" />
+                <action android:name="com.rogro.GDE.THEME.1" />
+                <action android:name="com.android.dxtop.launcher.THEME" />
+                <category android:name="com.fede.launcher.THEME_ICONPACK" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
-                <action android:name="mobi.bbase.ahome.THEME"/>
-                <action android:name="com.rogro.GDE.THEME.1"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+                <action android:name="mobi.bbase.ahome.THEME" />
+                <action android:name="com.rogro.GDE.THEME.1" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="cdproductions.crazyicons.TWO"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="cdproductions.crazyicons.TWO" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.daeva112.manager.MAIN"/>
-
-                <category android:name="com.daeva112.manager.THEME"/>
+                <action android:name="com.daeva112.manager.MAIN" />
+                <category android:name="com.daeva112.manager.THEME" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.gau.go.launcherex.theme"/>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.THEME_SCENE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.gau.go.launcherex.theme" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.THEME_SCENE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <category android:name="android.intent.category.INFO"/>
+                <category android:name="android.intent.category.INFO" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="home.solo.launcher.free.THEMES"/>
-                <action android:name="home.solo.launcher.free.ACTION_ICON"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="home.solo.launcher.free.THEMES" />
+                <action android:name="home.solo.launcher.free.ACTION_ICON" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="home.solo.launcher.free.THEMES"/>
-                <action android:name="home.solo.launcher.free.ACTION_ICON"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="home.solo.launcher.free.THEMES" />
+                <action android:name="home.solo.launcher.free.ACTION_ICON" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="com.lge.launcher2.THEME"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.lge.launcher2.THEME" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.PICK"/>
-                <action android:name="android.intent.action.GET_CONTENT"/>
-
-                <category android:name="android.intent.category.OPENABLE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-
-                <data android:mimeType="image/*"/>
+                <action android:name="android.intent.action.PICK" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="com.sonymobile.home.ICON_PACK"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.sonymobile.home.ICON_PACK" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
 
         </activity>
         <activity
@@ -222,10 +172,6 @@
         <activity
             android:name=".ui.activities.DonateActivity"
             android:label="@string/nav_item_donate"
-            android:theme="@style/SubActivity"/>
-        <activity
-            android:name=".ui.activities.SettingsActivity"
-            android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.AppSelectActivity"
@@ -281,17 +227,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name="c.b.a.A"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:exported="false"
-            android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity
-            android:name="c.b.a.B"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent"/>
-
         <meta-data
             android:name="BUG_HD_SDK_GENERAL_KEY"
             android:value="@string/bug_hd_sdk_general_key"/>
@@ -305,18 +240,186 @@
             android:name="xposedminversion"
             android:value="30"/>
 
-
-        <!--<receiver-->
-        <!--android:name="com.sorcerer.sorcery.iconpack.widget.WeatherIconProvider">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>-->
-        <!--</intent-filter>-->
-
-        <!--<meta-data-->
-        <!--android:name="android.appwidget.provider"-->
-        <!--android:resource="@xml/weather_icon_widget_config"/>-->
-        <!--</receiver>-->
-
     </application>
 
 </manifest>
+
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+
+    <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="org.adw.launcher.THEMES"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+    <!--<intent-filter>-->
+    <!--<action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+
+    <!--<category android:name="com.anddoes.launcher.THEME"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.dlto.atom.launcher.THEME"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+
+    <!--<category android:name="com.teslacoilsw.launcher.THEME"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.novalauncher.THEME"/>-->
+
+    <!--<category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+
+    <!--<category android:name="com.fede.launcher.THEME_ICONPACK"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.gtp.nextlauncher.MAIN"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.gtp.nextlauncher.trial.theme"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+    <!--<action android:name="com.tsf.shell.themes"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="ginlemon.smartlauncher.THEMES"/>-->
+    <!--<action android:name="ginlemon.smartlauncher.BUBBLESTYLE"/>-->
+    <!--<action android:name="ginlemon.smartlauncher.BUBBLEICONS"/>-->
+    <!--<action android:name="ginlemon.smartlauncher.CLOCKS"/>-->
+    <!--<action android:name="ginlemon.smartlauncher.CLOCKFONTS"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.gridappsinc.launcher.theme.apk_action"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+    <!--&lt;!&ndash; Random launchers &ndash;&gt;-->
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+    <!--<action android:name="org.adw.launcher.THEMES"/>-->
+    <!--<action android:name="mobi.bbase.ahome.THEME"/>-->
+    <!--<action android:name="com.rogro.GDE.THEME.1"/>-->
+    <!--<action android:name="com.android.dxtop.launcher.THEME"/>-->
+
+    <!--<category android:name="com.fede.launcher.THEME_ICONPACK"/>-->
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>-->
+    <!--<action android:name="mobi.bbase.ahome.THEME"/>-->
+    <!--<action android:name="com.rogro.GDE.THEME.1"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="cdproductions.crazyicons.TWO"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.daeva112.manager.MAIN"/>-->
+
+    <!--<category android:name="com.daeva112.manager.THEME"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.gau.go.launcherex.theme"/>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+
+    <!--<category android:name="android.intent.category.THEME_SCENE"/>-->
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<category android:name="android.intent.category.INFO"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+    <!--<action android:name="home.solo.launcher.free.THEMES"/>-->
+    <!--<action android:name="home.solo.launcher.free.ACTION_ICON"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+    <!--<action android:name="home.solo.launcher.free.THEMES"/>-->
+    <!--<action android:name="home.solo.launcher.free.ACTION_ICON"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.MAIN"/>-->
+    <!--<action android:name="com.lge.launcher2.THEME"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.GET_CONTENT" />-->
+    <!--<category android:name="android.intent.category.DEFAULT" />-->
+    <!--<category android:name="android.intent.category.OPENABLE" />-->
+    <!--<data android:mimeType="image/*" />-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.PICK" />-->
+    <!--<category android:name="android.intent.category.DEFAULT" />-->
+    <!--<data android:mimeType="image/*" />-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.PICK" />-->
+    <!--<category android:name="android.intent.category.DEFAULT" />-->
+    <!--<category android:name="android.intent.category.OPENABLE" />-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="com.sonymobile.home.ICON_PACK"/>-->
+
+    <!--<category android:name="android.intent.category.DEFAULT"/>-->
+    <!--</intent-filter>-->
+
+    <!--<intent-filter>-->
+    <!--<action android:name="android.intent.action.VIEW" />-->
+    <!--<category android:name="android.intent.category.DEFAULT" />-->
+    <!--<category android:name="android.intent.category.BROWSABLE" />-->
+    <!--</intent-filter>-->

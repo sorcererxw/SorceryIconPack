@@ -43,7 +43,7 @@ import java.nio.channels.FileChannel;
 public class XposedUtils {
 
     private static String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
-    private static String TAG = "SIP/XposedUtils";
+    private static String TAG = "XposedUtils";
 
     public static void copyFdToFile(FileDescriptor src, File dst) throws IOException {
         FileChannel inChannel = new FileInputStream(src).getChannel();

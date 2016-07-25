@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Util {
-    public static String TAG = "SIP/Util";
+    public static String TAG = "Util";
 
     public static ArrayList<IconReplacementItem> ParseIconReplacements(String packageName,
             Resources r, XmlPullParser xrp) throws XmlPullParserException, IOException {

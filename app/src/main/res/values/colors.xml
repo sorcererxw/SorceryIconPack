@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/primary</color>
-    <color name="colorPrimaryDark">@color/primary_dark</color>
-    <color name="colorAccent">@color/accent</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#795548</color>
 
-    <color name="title">@color/primary_text</color>
-    <color name="content">@color/secondary_text</color>
+    <color name="title">#212121</color>
+    <color name="content">#727272</color>
 
     <color name="primary">#4CAF50</color>
     <color name="primary_dark">#388E3C</color>
@@ -19,6 +19,7 @@
     <color name="google_plus">#dc493c</color>
     <color name="wechat">#09b83e</color>
     <color name="alipay">#00a0e9</color>
+    <color name="google_play">#689f38</color>
 
     <color name="dialog_background_scrim">#99000000</color>
 

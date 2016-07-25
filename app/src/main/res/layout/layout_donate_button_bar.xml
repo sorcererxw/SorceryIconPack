@@ -22,6 +22,17 @@
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
         android:background="@color/wechat"
-        android:text="@string/wechat"/>
+        android:text="@string/wechat"
+        android:visibility="gone"/>
+
+    <com.sorcerer.sorcery.iconpack.ui.views.materialDesignLibrary.views.ButtonRectangle
+        android:visibility="gone"
+        android:id="@+id/button_donate_play"
+        android:layout_width="@dimen/medium_button_width"
+        android:layout_height="@dimen/medium_button_height"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/google_play"
+        android:text="Google Play"/>
 
 </LinearLayout>

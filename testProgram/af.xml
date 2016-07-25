@@ -3280,3 +3280,9 @@
         <item
 			component="ComponentInfo{jp.pxv.android/jp.pxv.android.activity.RoutingActivity}"
 			drawable="pixiv"/>
+		<item
+			component="ComponentInfo{com.aspire.g3wlan.client/com.aspire.g3wlan.client.ui.ReminderActivity}"
+			drawable="cmcc_wifi"/>
+		<item
+			component="ComponentInfo{com.oneplus.camera/com.oneplus.camera.OPCameraActivity}"
+			drawable="oneplus_camera"/>

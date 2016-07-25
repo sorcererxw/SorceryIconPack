@@ -33,7 +33,7 @@ import java.util.Iterator;
  * Created by Sorcerer on 2016/2/26 0026.
  */
 public class PackageAddedReceiver extends BroadcastReceiver {
-    private static final String TAG = "SIP/PAReceiver";
+    private static final String TAG = "PAReceiver";
 
     private static String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private boolean mActive;

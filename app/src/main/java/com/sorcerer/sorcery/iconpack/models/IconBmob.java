@@ -5,12 +5,10 @@ import android.telephony.TelephonyManager;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 
-import cn.bmob.v3.BmobObject;
-
 /**
  * Created by Sorcerer on 2016/2/29 0029.
  */
-public class IconBmob extends BmobObject {
+public class IconBmob {
 
     private String name;
     private Boolean like;

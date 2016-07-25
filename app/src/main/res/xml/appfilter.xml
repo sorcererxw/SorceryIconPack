@@ -637,6 +637,9 @@
         component="ComponentInfo{cmb.pb/cmb.pb.ui.PBInitActivity}"
         drawable="cmbchina"/>
     <item
+        component="ComponentInfo{com.aspire.g3wlan.client/com.aspire.g3wlan.client.ui.ReminderActivity}"
+        drawable="cmcc_wifi"/>
+    <item
         component="ComponentInfo{hk.valenta.completeactionplus/hk.valenta.completeactionplus.MainPagerActivity}"
         drawable="complete_action_plus"/>
     <item
@@ -2320,6 +2323,9 @@
         component="ComponentInfo{de.motain.iliga/de.motain.iliga.activity.SplashScreenActivity}"
         drawable="onefootball"/>
     <item
+        component="ComponentInfo{com.oneplus.camera/com.oneplus.camera.OPCameraActivity}"
+        drawable="oneplus_camera"/>
+    <item
         component="ComponentInfo{com.oneplus.bbs/com.oneplus.bbs.ui.activity.TutorialActivity}"
         drawable="oneplus_community"/>
     <item
@@ -2378,6 +2384,9 @@
         drawable="pinglide"/>
     <item
         component="ComponentInfo{jp.pxv.android/jp.pxv.android.RootActivity}"
+        drawable="pixiv"/>
+    <item
+        component="ComponentInfo{jp.pxv.android/jp.pxv.android.activity.RoutingActivity}"
         drawable="pixiv"/>
     <item
         component="ComponentInfo{com.embermitre.pixolor.app/com.embermitre.pixolor.app.StartProjectionManagerActivity}"
@@ -3339,12 +3348,4 @@
     <item
         component="ComponentInfo{me.piebridge.forcestopgb/me.piebridge.prevent.ui.PreventActivity}"
         drawable="zuzhiyunxing"/>
-    <item
-        component="ComponentInfo{it.mvilla.android.quote/it.mvilla.android.quote.ui.activity.WelcomeActivity}"
-        drawable="quote"/>
-    <item
-        component="ComponentInfo{com.unionpay/com.unionpay.activity.UPActivityWelcome}"
-        drawable="unionpay_wallet"/>
-
-
 </resources>

@@ -22,8 +22,10 @@
         app:viewpager_headerHeight="200dp"
         app:viewpager_hideLogoWithFade="false"
         app:viewpager_hideToolbarAndTitle="true"
+        app:viewpager_logo="@layout/header_logo"
         app:viewpager_logoMarginTop="100dp"
         app:viewpager_parallaxHeaderFactor="1.5"
         app:viewpager_transparentToolbar="true"/>
+
 
 </RelativeLayout>

@@ -29,7 +29,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class PackageInstalledReceiver extends BroadcastReceiver {
-    private static String TAG = "SIP/PackageInstalledReceiver";
+    private static String TAG = "PackageInstalledReceiver";
     private static String SHARED_PREFERENCE_NAME = "SIP_XPOSED";
     private boolean mActive;
     private SharedPreferences mPrefs;

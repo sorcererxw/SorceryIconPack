@@ -18,6 +18,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.LibListAdapter;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 import java.util.ArrayList;
@@ -30,6 +31,12 @@ public class AboutDialogActivity extends BaseActivity {
 
     @BindView(R.id.textView_about_dialog_version)
     TextView mVersionTextView;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, R.anim.fade_out);
+    }
 
     @OnClick(R.id.textView_about_dialog_version)
     void showChangeLog() {
@@ -94,17 +101,17 @@ public class AboutDialogActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        mVersionTextView.setText(
-                "Version " + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")");
+        mVersionTextView.setText("Version " + BuildConfig.VERSION_NAME);
 
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);
         mOpenSourceTextView.setText(openSource);
 
         StringBuilder htmlBuilder = new StringBuilder("");
-        htmlBuilder.append("<a>By</a><br>");
+        htmlBuilder.append("<a>" + ResourceUtil.getString(this, R.string.contributor) + "</a><br>");
         htmlBuilder.append("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
-        htmlBuilder.append("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a>");
+        htmlBuilder.append("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a><br>");
+        htmlBuilder.append("<a>nako liu</a>");
         mCreditsTextView.setText(Html.fromHtml(htmlBuilder.toString()));
         mCreditsTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -120,12 +127,6 @@ public class AboutDialogActivity extends BaseActivity {
                 return false;
             }
         });
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, R.anim.fade_out);
     }
 
 }

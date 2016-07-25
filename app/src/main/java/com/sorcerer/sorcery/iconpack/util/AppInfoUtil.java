@@ -1,9 +1,13 @@
 package com.sorcerer.sorcery.iconpack.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
@@ -19,12 +23,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Sorcerer on 2016/4/26.
  */
 public class AppInfoUtil {
-    private static final String TAG = "SIP/AppInfoUtil";
+    private static final String TAG = "AppInfoUtil";
 
     public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon) {
         List<AppInfo> appInfoList = new ArrayList<>();
@@ -158,6 +163,63 @@ public class AppInfoUtil {
             list.add(new LauncherInfo(context, tmp[1], tmp[0]));
         }
         return list;
+    }
+
+    public static String getAppEnglishName(Activity context, String packageName) {
+        return getAppLocaleName(context, packageName, Locale.ENGLISH);
+    }
+
+    public static String getAppChineseName(Activity context, String packageName) {
+        return getAppLocaleName(context, packageName, Locale.CHINA);
+    }
+
+    public static String getAppLocaleName(Activity context, String packageName, Locale locale) {
+        PackageManager pm = context.getPackageManager();
+        try {
+            ApplicationInfo appInfo
+                    = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+
+            if (appInfo != null) {
+                final String label = String.valueOf(pm.getApplicationLabel(appInfo));
+
+                Log.w(TAG, "Current app label is " + label);
+
+                final Configuration config = new Configuration();
+
+                config.locale = locale;
+
+                final Resources appRes = pm.getResourcesForApplication(packageName);
+
+                appRes.updateConfiguration(config, context.getBaseContext().getResources()
+                        .getDisplayMetrics());
+
+                final String localizedLabel = appRes.getString(appInfo.labelRes);
+
+                Log.w(TAG, "Localized app label is " + localizedLabel);
+
+                return localizedLabel;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, "Failed to obtain app info!");
+            e.printStackTrace();
+        } catch (Exception e) {
+            Log.e(TAG, "Other exception");
+            e.printStackTrace();
+        }
+        return getAppSystemName(context, packageName);
+    }
+
+    public static String getAppSystemName(Context context, String packageName) {
+        PackageManager packageManager = context.getPackageManager();
+        ApplicationInfo applicationInfo = null;
+        try {
+            applicationInfo = packageManager.getApplicationInfo(packageName, 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return applicationInfo == null ?
+                ""
+                : packageManager.getApplicationLabel(applicationInfo).toString();
     }
 
 }

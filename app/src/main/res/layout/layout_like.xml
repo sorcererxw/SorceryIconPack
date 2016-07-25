@@ -6,7 +6,6 @@
     android:gravity="end"
     android:orientation="horizontal">
 
-
     <TextView
         android:id="@+id/textView_label_dislike"
         android:layout_width="56dp"

@@ -2,7 +2,47 @@
 <resources>
     <array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>quote</item>
+        <item>gamecores</item>
+        <item>bilibili_live</item>
+        <item>xiami_alt</item>
+        <item>fetion</item>
+        <item>flat_style_bar_indicators</item>
+        <item>android_nify</item>
+        <item>vlc</item>
+        <item>settings_editor</item>
+        <item>google_chrome</item>
+        <item>google_chrome_beta</item>
+        <item>google_chrome_dev</item>
+        <item>udacity</item>
+        <item>lvmamalvyou</item>
+        <item>moon_phase</item>
+        <item>youyaoqimanhua</item>
+        <item>moonreader</item>
+        <item>moonreader_pro</item>
+        <item>scientific_calculator</item>
+        <item>dealmoon</item>
+        <item>zcamera</item>
+        <item>wolfram_alpha</item>
+        <item>duckduckgo</item>
+        <item>pokemon_go</item>
+        <item>pokemon_go_alt</item>
+        <item>play_memories_mobile</item>
+        <item>youku_alt</item>
+        <item>chufaba</item>
+        <item>pebble</item>
+        <item>nissan</item>
+        <item>pizzahut</item>
+        <item>burgerking</item>
+        <item>mcdonald</item>
+        <item>ikea</item>
+        <item>smartisan_reader</item>
+        <item>fifth_third_bank</item>
+        <item>path</item>
+        <item>vine</item>
+        <item>vine_alt</item>
+        <item>fancy</item>
+        <item>dangdang</item>
+        <item>alipay_alt</item>
         <item>unionpay_wallet</item>
         <item>game_maestria</item>
         <item>game_the_last_banacat</item>
@@ -10,6 +50,7 @@
         <item>game_dots_out</item>
         <item>gg_assistant</item>
         <item>baidu</item>
+        <item>almalence_camera</item>
         <item>flyme_tools</item>
         <item>battery_taskmaster</item>
         <item>xiaomi_mijia</item>
@@ -21,13 +62,37 @@
         <item>qidian_reader</item>
         <item>sogou_chat</item>
         <item>kaomanfen_tuofu</item>
+        <item>oneplus_camera_oxygen</item>
         <item>gg_assistant</item>
-        <item>@string/icon_label_updated</item>
-        <item>pixiv</item>
-        <item>steam</item>
+        <item>guokr_fenda</item>
+        <item>cmcc_wifi</item>
+        <item>uniqlooks</item>
+        <item>uniqlo_recipe</item>
+        <item>uniqlo_calendar</item>
+        <item>uniqlo_wakeup</item>
+        <item>uniqlock</item>
+        <item>uniqlo</item>
 
-        <!--<item>**#Google Play Awards**</item>-->
-        <!--<item>**##Best Use of Material Design**</item>-->
+        <item>@string/icon_label_updated</item>
+        <item>google_snapseed</item>
+        <item>qdaily</item>
+        <item>bilibili</item>
+        <item>bilibili_alt</item>
+        <item>skype</item>
+        <item>vsco</item>
+        <item>ali_dingding</item>
+        <item>pixiv</item>
+        <item>zuzhiyunxing</item>
+        <item>netease_music</item>
+        <item>haibei_music</item>
+        <item>steam</item>
+        <item>meituan</item>
+        <item>dianping</item>
+        <item>microsoft_office_lens</item>
+        <item>es_explorer</item>
+        <item>evernote</item>
+        <item>tencent_ps_play</item>
+        <item>tencent_qq_mail</item>
     </array>
 
     <string-array name="icon_pack_ali" translatable="false">

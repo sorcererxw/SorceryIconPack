@@ -23,12 +23,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SIP;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
-import com.sorcerer.sorcery.iconpack.util.PayHelper;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
@@ -41,26 +39,27 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
 
     @OnClick(R.id.button_donate_alipay)
     void onAlipayClick() {
-        if (false) {
-            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(
-                    "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F"
-                            + "%2Fqr.alipay.com%2F"
-                            + "apx04314ky3hnfqt9xuaze3"));
-            intent.setPackage("com.eg.android.AlipayGphone");
-            try {
-                startActivity(intent);
-            } catch (ActivityNotFoundException e) {
-                Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-        } else {
-            showMoneySelectDialog(true);
+        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(
+                "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F"
+                        + "%2Fqr.alipay.com%2F"
+                        + "apx04314ky3hnfqt9xuaze3"));
+        intent.setPackage("com.eg.android.AlipayGphone");
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
+    }
+
+    @OnClick(R.id.button_donate_play)
+    void onPlayClick() {
+
     }
 
     @OnClick(R.id.button_donate_wechat)
     void onWechatClick() {
-        showMoneySelectDialog(false);
+        showMoneySelectDialog();
     }
 
     @BindView(R.id.scrollView_donate)
@@ -95,7 +94,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
                 MODE_PRIVATE);
 
         boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
-        if (isDonated || SIP.DEBUG) {
+        if (isDonated || SorceryIcons.DEBUG) {
             mThankCard.post(new Runnable() {
                 @Override
                 public void run() {
@@ -120,7 +119,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         return false;
     }
 
-    private void showMoneySelectDialog(final boolean isAlipay) {
+    private void showMoneySelectDialog() {
         final MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
         builder.title(getString(R.string.donate_dialog_title));
         View view = LayoutInflater.from(this).inflate(R.layout.layout_donate_money_select, null);
@@ -137,7 +136,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
                             PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
                         PermissionsHelper.requestReadPhoneState(mActivity);
                     } else {
-                        pay(isAlipay);
+                        pay();
                     }
                 }
             }
@@ -145,29 +144,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         builder.positiveText(getString(R.string.ok));
         builder.negativeText(getString(R.string.cancel));
         builder.show();
-    }
-
-    private void pay(final boolean isAlipay) {
-        PayHelper payHelper = new PayHelper(mActivity);
-        payHelper.setPayCallback(new PayHelper.PayCallback() {
-            @Override
-            public void onSuccess(String orderId) {
-
-                Toast.makeText(mContext,
-                        ResourceUtil.getString(mContext, R.string.donate_success),
-                        Toast.LENGTH_LONG).show();
-
-                showThanksCard();
-                SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
-                        MODE_PRIVATE);
-                sharedPreferences.edit().putBoolean("is_donated", true).apply();
-            }
-
-            @Override
-            public void onFail() {
-            }
-        });
-        payHelper.pay(isAlipay, mAmount, "捐赠", "感谢捐赠");
     }
 
     private void showThanksCard() {
@@ -239,10 +215,14 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
     private void doNext(int requestCode, int[] grantResults) {
         if (requestCode == PermissionsHelper.READ_PHONE_STATE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                pay(true);
+                pay();
             } else {
                 Toast.makeText(mActivity, "no permission", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void pay() {
+
     }
 }

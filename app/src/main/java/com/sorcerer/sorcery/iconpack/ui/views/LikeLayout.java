@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.util.IconBmobHelper;
+import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
 
 import butterknife.BindView;
 import butterknife.BindViews;
@@ -27,7 +27,6 @@ public class LikeLayout extends FrameLayout {
     private static final String TAG = "LikeLayout";
     public static final String PREF_NAME = "ICON_LIKE";
     private SharedPreferences mSharedPreferences;
-    private IconBmobHelper mIconBmobHelper;
     private String mName;
     private Context mContext;
     private boolean mBind;
@@ -49,14 +48,14 @@ public class LikeLayout extends FrameLayout {
             handleFlag(mFlag, true);
             if (mBind) {
                 mSharedPreferences.edit().putInt(mName, mFlag).apply();
-                mIconBmobHelper.like(mName, true);
+//                mIconBmobHelper.like(mName, true);
             }
         } else {
             mFlag = -1;
             handleFlag(mFlag, true);
             if (mBind) {
                 mSharedPreferences.edit().putInt(mName, mFlag).apply();
-                mIconBmobHelper.like(mName, false);
+//                mIconBmobHelper.like(mName, false);
             }
         }
     }
@@ -104,39 +103,40 @@ public class LikeLayout extends FrameLayout {
         for (TextView t : mTextViews) {
             t.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "like.ttf"));
         }
-//        mLikeText.setOnLongClickListener(new OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                Toast.makeText(mContext,
-//                        mContext.getString(R.string.action_like),
-//                        Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//        });
-//
-//        mDislikeText.setOnLongClickListener(new OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                Toast.makeText(mContext,
-//                        mContext.getString(R.string.action_dislike),
-//                        Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//        });
+        mLikeText.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(mContext,
+                        mContext.getString(R.string.action_like),
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
 
-//        mBinding.setLikeListener(new OnClickListener() {
+        mDislikeText.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(mContext,
+                        mContext.getString(R.string.action_dislike),
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+//
+//        mLikeText.setOnClickListener(new OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                mFlag = 1;
 //                handleFlag(mFlag, true);
 //                if (mBind) {
 //                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
-//                    mIconBmobHelper.like(mName, true);
+////                    mIconBmobHelper.like(mName, true);
+////                    LikeBean likeBean = new LikeBean();
 //                }
 //            }
 //        });
 //
-//        mBinding.setDislikeListener(new OnClickListener() {
+//        mDislikeText.setOnClickListener(new OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                mFlag = -1;
@@ -152,7 +152,7 @@ public class LikeLayout extends FrameLayout {
     public void bindIcon(String name) {
         mBind = true;
         mName = name;
-        mIconBmobHelper = new IconBmobHelper(mContext);
+//        mIconBmobHelper = new IconBmobHelper(mContext);
         mSharedPreferences = mContext.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         mFlag = mSharedPreferences.getInt(name, 0);
         handleFlag(mFlag, false);

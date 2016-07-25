@@ -1,55 +1,75 @@
 package com.sorcerer.sorcery.iconpack.models;
 
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
+
+import com.code19.library.AppUtils;
+import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
+
+import java.util.Locale;
 
 /**
  * Created by Sorcerer on 2016/1/21 0021.
  */
 public class AppInfo {
-    String code = null;
-    String name = null;
-    Drawable icon = null;
-    boolean hasCustomIcon = false;
+    String mCode = null;
+    String mName = null;
+    Drawable mIcon = null;
+    String mPackage;
+    boolean mHasCustomIcon = false;
 
-    public AppInfo(String paramString1, String paramString2, Drawable paramDrawable) {
-        code = paramString1;
-        name = paramString2;
-        icon = paramDrawable;
-    }
-
-    public void setHasCustomIcon(boolean paramBoolean) {
-        hasCustomIcon = paramBoolean;
-    }
-
-    public boolean isHasCustomIcon() {
-        return hasCustomIcon;
+    public AppInfo(String code, String name, Drawable icon) {
+        mCode = code;
+        mName = name;
+        mIcon = icon;
+        mPackage = code.split("/")[0];
     }
 
     public String getCode() {
-        return code;
+        return mCode;
+    }
+
+    public void setCode(String code) {
+        mCode = code;
+        mPackage = code.split("/")[0];
     }
 
     public String getName() {
-        return name;
+        return mName;
     }
 
-    public void setCode(String paramString) {
-        code = paramString;
-    }
-
-    public void setName(String paramString) {
-        name = paramString;
-    }
-
-    public String toString() {
-        return name + "\n" + code + "\n";
+    public void setName(String name) {
+        mName = name;
     }
 
     public Drawable getIcon() {
-        return icon;
+        return mIcon;
     }
 
     public void setIcon(Drawable icon) {
-        this.icon = icon;
+        mIcon = icon;
+    }
+
+    public String getPackage() {
+        return mPackage;
+    }
+
+    public boolean isHasCustomIcon() {
+        return mHasCustomIcon;
+    }
+
+    public void setHasCustomIcon(boolean hasCustomIcon) {
+        mHasCustomIcon = hasCustomIcon;
+    }
+
+    @Override
+    public String toString() {
+        return "AppInfo{" +
+                "mCode='" + mCode + '\'' +
+                ", mName='" + mName + '\'' +
+                ", mIcon=" + mIcon +
+                ", mPackage='" + mPackage + '\'' +
+                ", mHasCustomIcon=" + mHasCustomIcon +
+                '}';
     }
 }

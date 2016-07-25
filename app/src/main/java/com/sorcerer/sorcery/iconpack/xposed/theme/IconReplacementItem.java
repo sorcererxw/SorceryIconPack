@@ -1,7 +1,7 @@
 package com.sorcerer.sorcery.iconpack.xposed.theme;
 
 public class IconReplacementItem {
-    public static String TAG = "SIP/IconReplacementItem";
+    public static String TAG = "IconReplacementItem";
     private String activityName;
     private String component;
     private boolean noCustomIcon = true;

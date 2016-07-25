@@ -504,6 +504,7 @@
    <item>ali_xianyu</item>
    <item>ali_xiaohao</item>
    <item>allcast</item>
+   <item>almalence_camera</item>
    <item>amap</item>
    <item>amazon</item>
    <item>amplify</item>
@@ -605,37 +606,6 @@
    <item>bootmanager_alt</item>
    <item>boxer</item>
    <item>boxer_calendar</item>
-   <item>boxer_calendar_1</item>
-   <item>boxer_calendar_10</item>
-   <item>boxer_calendar_11</item>
-   <item>boxer_calendar_12</item>
-   <item>boxer_calendar_13</item>
-   <item>boxer_calendar_14</item>
-   <item>boxer_calendar_15</item>
-   <item>boxer_calendar_16</item>
-   <item>boxer_calendar_17</item>
-   <item>boxer_calendar_18</item>
-   <item>boxer_calendar_19</item>
-   <item>boxer_calendar_2</item>
-   <item>boxer_calendar_20</item>
-   <item>boxer_calendar_21</item>
-   <item>boxer_calendar_22</item>
-   <item>boxer_calendar_23</item>
-   <item>boxer_calendar_24</item>
-   <item>boxer_calendar_25</item>
-   <item>boxer_calendar_26</item>
-   <item>boxer_calendar_27</item>
-   <item>boxer_calendar_28</item>
-   <item>boxer_calendar_29</item>
-   <item>boxer_calendar_3</item>
-   <item>boxer_calendar_30</item>
-   <item>boxer_calendar_31</item>
-   <item>boxer_calendar_4</item>
-   <item>boxer_calendar_5</item>
-   <item>boxer_calendar_6</item>
-   <item>boxer_calendar_7</item>
-   <item>boxer_calendar_8</item>
-   <item>boxer_calendar_9</item>
    <item>browser</item>
    <item>budingdonghua</item>
    <item>bughd</item>
@@ -663,6 +633,7 @@
    <item>cleanmaster</item>
    <item>cloudmagic</item>
    <item>cmbchina</item>
+   <item>cmcc_wifi</item>
    <item>cm_browser</item>
    <item>complete_action_plus</item>
    <item>contacts</item>
@@ -916,6 +887,7 @@
    <item>guaguamanhua</item>
    <item>gudong</item>
    <item>guokr</item>
+   <item>guokr_fenda</item>
    <item>**H**</item>
    <item>hai360</item>
    <item>haibei_music</item>
@@ -1194,6 +1166,7 @@
    <item>olo</item>
    <item>olympus_image_share</item>
    <item>onefootball</item>
+   <item>oneplus_camera_oxygen</item>
    <item>oneplus_community</item>
    <item>oneplus_weather</item>
    <item>oneplus_weather_cloudy</item>
@@ -1239,7 +1212,6 @@
    <item>quickshortcutmaker</item>
    <item>qunar</item>
    <item>qunidaye_browser</item>
-   <item>quote</item>
    <item>**R**</item>
    <item>rar</item>
    <item>reaper</item>

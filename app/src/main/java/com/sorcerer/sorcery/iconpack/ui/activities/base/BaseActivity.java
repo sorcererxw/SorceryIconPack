@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.avos.avoscloud.AVAnalytics;
+
 import butterknife.ButterKnife;
 
 /**
@@ -18,19 +20,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Activity mActivity = this;
 
     protected final String TAG = getClass().getSimpleName();
-
-    protected abstract int provideLayoutId();
-
-    protected abstract void init();
-
-    protected void hookBeforeSetContentView() {
-
-    }
-
-//    @Override
-//    protected void attachBaseContext(Context newBase) {
-//        super.attachBaseContext(IconicsContextWrapper.wrap(newBase));
-//    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,9 +34,27 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        AVAnalytics.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AVAnalytics.onResume(this);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
-//        RefWatcher refWatcher = SIP.getRefWatcher(this);
-//        refWatcher.watch(this);
+    }
+
+    protected abstract int provideLayoutId();
+
+    protected abstract void init();
+
+    protected void hookBeforeSetContentView() {
+
     }
 }
