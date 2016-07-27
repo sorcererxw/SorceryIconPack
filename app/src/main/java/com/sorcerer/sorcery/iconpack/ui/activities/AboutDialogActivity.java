@@ -54,7 +54,7 @@ public class AboutDialogActivity extends BaseActivity {
 
     @OnClick(R.id.textView_about_dialog_open_source)
     void showOpenSourceLibs() {
-        final List<LibraryInfo> list = new ArrayList<LibraryInfo>();
+        final List<LibraryInfo> list = new ArrayList<>();
         String[] libs = getResources().getStringArray(R.array.libs_list);
         for (String lib : libs) {
             String[] tmp = lib.split("\\|");
@@ -107,21 +107,19 @@ public class AboutDialogActivity extends BaseActivity {
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);
         mOpenSourceTextView.setText(openSource);
 
-        StringBuilder htmlBuilder = new StringBuilder("");
-        htmlBuilder.append("<a>" + ResourceUtil.getString(this, R.string.contributor) + "</a><br>");
-        htmlBuilder.append("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
-        htmlBuilder.append("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a><br>");
-        htmlBuilder.append("<a>nako liu</a>");
-        mCreditsTextView.setText(Html.fromHtml(htmlBuilder.toString()));
+        String htmlBuilder = "";
+        htmlBuilder += ("<a>" + ResourceUtil.getString(this, R.string.contributor) + "</a><br>");
+        htmlBuilder += ("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
+        htmlBuilder += ("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a><br>");
+        htmlBuilder += ("<a>nako liu</a>");
+        mCreditsTextView.setText(Html.fromHtml(htmlBuilder));
         mCreditsTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         mBackground.setOnTouchListener(new View
                 .OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (ViewUtil.isPointInsideView(event.getX(), event.getY(), mCard)) {
-
-                } else {
+                if (!ViewUtil.isPointInsideView(event.getX(), event.getY(), mCard)) {
                     onBackPressed();
                 }
                 return false;

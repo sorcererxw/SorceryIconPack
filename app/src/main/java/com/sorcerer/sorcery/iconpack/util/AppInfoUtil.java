@@ -9,6 +9,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.os.Build;
 import android.util.Log;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -184,9 +185,13 @@ public class AppInfoUtil {
 
                 Log.w(TAG, "Current app label is " + label);
 
-                final Configuration config = new Configuration();
+                Configuration config = new Configuration();
 
-                config.locale = locale;
+                if (Build.VERSION.SDK_INT >= 17) {
+                    config.setLocale(locale);
+                } else {
+                    config.locale = locale;
+                }
 
                 final Resources appRes = pm.getResourcesForApplication(packageName);
 

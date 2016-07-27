@@ -120,7 +120,7 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
         }
 
         public void replaceLayer(Activity activity) {
-            leftShadow = activity.getResources().getDrawable(R.drawable.left_shadow);
+            leftShadow = ResourceUtil.getDrawable(activity, R.drawable.left_shadow);
             touchSlop = (int) (touchSlopDP * activity.getResources().getDisplayMetrics().density);
             sideWidth = (int) (sideWidthInDP * activity.getResources().getDisplayMetrics().density);
             mActivity = activity;

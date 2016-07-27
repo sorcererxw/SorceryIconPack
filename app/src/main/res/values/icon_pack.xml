@@ -34,6 +34,7 @@
         <item>pizzahut</item>
         <item>burgerking</item>
         <item>mcdonald</item>
+        <item>prisma</item>
         <item>ikea</item>
         <item>smartisan_reader</item>
         <item>fifth_third_bank</item>
@@ -72,6 +73,7 @@
         <item>uniqlo_wakeup</item>
         <item>uniqlock</item>
         <item>uniqlo</item>
+        <item>sony_weather</item>
 
         <item>@string/icon_label_updated</item>
         <item>google_snapseed</item>
@@ -91,6 +93,10 @@
         <item>microsoft_office_lens</item>
         <item>es_explorer</item>
         <item>evernote</item>
+        <item>dice</item>
+        <item>fitbit</item>
+        <item>misfit</item>
+        <item>sony_calendar</item>
         <item>tencent_ps_play</item>
         <item>tencent_qq_mail</item>
     </array>

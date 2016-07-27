@@ -241,6 +241,7 @@ public class MainActivity extends BaseActivity {
         });
         Typeface typeface = Typeface.createFromAsset(getAssets(), "RockwellStd.otf");
         mSearchBox.setLogoTypeface(typeface);
+        mSearchBox.setAnimateDrawerLogo(true);
     }
 
     private void initDrawer() {

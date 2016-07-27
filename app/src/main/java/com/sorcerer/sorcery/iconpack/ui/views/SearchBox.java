@@ -44,6 +44,8 @@ import com.balysv.materialmenu.ps.MaterialMenuDrawable;
 import com.balysv.materialmenu.ps.MaterialMenuView;
 import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -126,6 +128,10 @@ public class SearchBox extends RelativeLayout {
         mMaterialMenu = (MaterialMenuView) findViewById(R.id.material_menu_button);
         mLogoTextView = (TextView) findViewById(R.id.logo);
         mSearchEditText = (EditText) findViewById(R.id.search);
+        if (Build.VERSION.SDK_INT < 21) {
+            mLogoTextView.setPadding(0, DisplayUtil.dip2px(getContext(), 8), 0, 0);
+            mSearchEditText.setPadding(0, DisplayUtil.dip2px(getContext(), 8), 0, 0);
+        }
         mResultsListView = (ListView) findViewById(R.id.results);
         mContext = context;
         mProgressBar = (ProgressBar) findViewById(R.id.pb);
@@ -220,13 +226,13 @@ public class SearchBox extends RelativeLayout {
             public void afterTextChanged(Editable s) {
                 if (s.length() > 0) {
                     micStateChanged(false);
-                    mMic.setImageDrawable(getContext().getResources().getDrawable(
-                            R.drawable.ic_clear));
+                    mMic.setImageDrawable(
+                            ResourceUtil.getDrawable(getContext(), R.drawable.ic_clear));
                     updateResults();
                 } else {
                     micStateChanged(true);
-                    mMic.setImageDrawable(getContext().getResources().getDrawable(
-                            R.drawable.ic_action_mic));
+                    mMic.setImageDrawable(
+                            ResourceUtil.getDrawable(getContext(), R.drawable.ic_action_mic));
                     if (mInitialResults != null) {
                         setInitialResults();
                     } else {

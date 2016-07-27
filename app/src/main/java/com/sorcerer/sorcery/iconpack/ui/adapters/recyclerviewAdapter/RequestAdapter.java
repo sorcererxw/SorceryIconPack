@@ -150,7 +150,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     }
 
     public List<String> getSelectedAppsNameList() {
-        List list = new ArrayList();
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < mCheckedList.size(); i++) {
             if (mCheckedList.get(i)) {
                 list.add(mAppInfoList.get(i).getName());
@@ -162,7 +162,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     public void checkAll(boolean check) {
         for (int i = 0; i < mCheckedList.size(); i++) {
             if (!check) {
-                mCheckedList.set(i, check);
+                mCheckedList.set(i, false);
                 continue;
             }
 
@@ -170,7 +170,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
                 continue;
             }
 
-            mCheckedList.set(i, check);
+            mCheckedList.set(i, true);
         }
         if (check) {
             cnt = mCheckedList.size();
@@ -183,7 +183,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
 
     public void setShowAll(boolean isShowAll) {
         mShowAll = isShowAll;
-        List tmp = new ArrayList();
+        List<AppInfo> tmp = new ArrayList<>();
         for (int i = 0; i < mAppInfoList.size(); i++) {
             tmp.add(mAppInfoList.get(i));
         }

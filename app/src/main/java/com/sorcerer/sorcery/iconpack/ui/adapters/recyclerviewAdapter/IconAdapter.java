@@ -21,14 +21,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 
 import java.util.ArrayList;
@@ -226,39 +224,27 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         return s.substring(2, s.length() - 2);
     }
 
-    private void showIconDialog(final IconViewHolder holder, final int position) {
-        if (Build.VERSION.SDK_INT < 21 && false) {
-            View iconDialog = View.inflate(mContext, R.layout.dialog_icon_show, null);
-            ((ImageView) iconDialog.findViewById(R.id.imageView_dialog_icon))
-                    .setImageResource(mShowIconList.get(position).getRes());
-            ((LikeLayout) iconDialog.findViewById(R.id.likeLayout))
-                    .bindIcon(mShowIconList.get(position).getName());
-            new MaterialDialog.Builder(mContext)
-                    .customView(iconDialog, false)
-                    .title(mShowIconList.get(position).getLabel())
-                    .show();
+    private void showIconDialog(IconViewHolder holder, final int position) {
+        Intent intent = new Intent(mContext, IconDialogActivity.class);
+        intent.putExtra(IconDialogActivity.EXTRA_RES,
+                mShowIconList.get(position).getRes());
+        intent.putExtra(IconDialogActivity.EXTRA_NAME,
+                mShowIconList.get(position).getName());
+        intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowIconList.get(position).getLabel());
+        if (Build.VERSION.SDK_INT >= 21) {
+            mActivity.startActivityForResult(
+                    intent,
+                    MainActivity.REQUEST_ICON_DIALOG,
+                    ActivityOptions.makeSceneTransitionAnimation(
+                            mActivity,
+                            holder.mIcon,
+                            "icon"
+                    ).toBundle()
+            );
         } else {
-            Intent intent = new Intent(mContext, IconDialogActivity.class);
-            intent.putExtra(IconDialogActivity.EXTRA_RES,
-                    mShowIconList.get(position).getRes());
-            intent.putExtra(IconDialogActivity.EXTRA_NAME,
-                    mShowIconList.get(position).getName());
-            intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowIconList.get(position).getLabel());
-            if (Build.VERSION.SDK_INT >= 21) {
-                mActivity.startActivityForResult(
-                        intent,
-                        MainActivity.REQUEST_ICON_DIALOG,
-                        ActivityOptions.makeSceneTransitionAnimation(
-                                mActivity,
-                                holder.mIcon,
-                                "icon"
-                        ).toBundle()
-                );
-            } else {
-                mActivity.startActivityForResult(intent,
-                        MainActivity.REQUEST_ICON_DIALOG);
-                mActivity.overridePendingTransition(android.R.anim.fade_in, 0);
-            }
+            mActivity.startActivityForResult(intent,
+                    MainActivity.REQUEST_ICON_DIALOG);
+            mActivity.overridePendingTransition(R.anim.fast_fade_in, 0);
         }
     }
 

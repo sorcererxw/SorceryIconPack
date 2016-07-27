@@ -123,7 +123,7 @@ public class IconDialogActivity extends ToolbarActivity {
     protected void onPause() {
         super.onPause();
         if (Build.VERSION.SDK_INT < 21) {
-            overridePendingTransition(0, android.R.anim.fade_out);
+            overridePendingTransition(0, R.anim.fast_fade_out);
         }
     }
 

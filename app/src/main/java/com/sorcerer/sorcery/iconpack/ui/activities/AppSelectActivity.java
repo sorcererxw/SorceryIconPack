@@ -19,14 +19,12 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.avos.avoscloud.AVException;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
-import com.sorcerer.sorcery.iconpack.models.MailSenderInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
-import com.sorcerer.sorcery.iconpack.util.mail.MailUtil;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.List;
@@ -47,7 +45,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
-//        saveToLeancloud(this);
         new SaveRequestAsyncTask(this, mAdapter.getCheckedAppsList()).execute();
     }
 
@@ -218,111 +215,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
             mProgressDialog.dismiss();
             Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
             AppSelectActivity.this.finish();
-
         }
     }
-
-    private class SendMailAsyncTask extends AsyncTask<MailSenderInfo, Integer, Boolean> {
-        private ProgressDialog mProgressDialog;
-        private Context mContext;
-        private String stringToSend = "";
-
-        public SendMailAsyncTask(Context context) {
-            mContext = context;
-            mProgressDialog = new ProgressDialog(context);
-            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            mProgressDialog.setCanceledOnTouchOutside(false);
-        }
-
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressDialog.setMessage(getString(R.string.icon_request_sending));
-            mProgressDialog.show();
-        }
-
-        @Override
-        protected void onPostExecute(final Boolean success) {
-            super.onPostExecute(success);
-            if (mProgressDialog.isShowing()) {
-                mProgressDialog.dismiss();
-            }
-            if (success) {
-                Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
-                AppSelectActivity.this.finish();
-            } else {
-                Toast.makeText(mContext, "fail", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        @Override
-        protected Boolean doInBackground(MailSenderInfo... params) {
-            return send(stringToSend);
-        }
-    }
-
-    private boolean send(String sendString) {
-
-        MailSenderInfo mailInfo;
-        mailInfo = MailUtil.generateMailSenderInfo(
-                getStringToSend(""),
-                "smtp.163.com",
-                "25",
-                true,
-                getString(R.string.feedback_mailbox),
-                getString(R.string.feedback_mail_password),
-                getString(R.string.feedback_mailbox),
-                getString(R.string.feedback_receive_mailbox),
-                "icon request");
-
-
-        final boolean[] res = new boolean[1];
-
-        MailUtil.send(mailInfo, new MailUtil.SendMailCallback() {
-            @Override
-            public void onSuccess() {
-                res[0] = true;
-            }
-
-            @Override
-            public void onFail() {
-                res[0] = false;
-            }
-        });
-        return res[0];
-    }
-
-    private String getStringToSend(String head) {
-        String s = "";
-        List<AppInfo> list = mAdapter.getCheckedAppsList();
-        for (int i = 0; i < list.size(); i++) {
-            s += list.get(i).toString();
-            s += "------------------------------\n";
-        }
-        return head + s;
-    }
-
-//    private void saveToLeancloud(Activity activity) {
-//
-//        RequestManager manager = new RequestManager();
-//        List<AppInfo> list = mAdapter.getCheckedAppsList();
-//        List<RequestBean> requestBeanList = new ArrayList<>();
-//        for (int i = 0; i < list.size(); i++) {
-//            RequestBean requestBean = new RequestBean();
-//            requestBean.setAppPackage(list.get(i).getPackage());
-//            requestBean.setAppDefaultName(AppInfoUtil.getAppDefaultName(activity, list.get(i)
-//                    .getPackage()));
-//            requestBean.setComponent(list.get(i).getCode());
-//            requestBeanList.add(requestBean);
-//        }
-//        manager.saveRequest(requestBeanList);
-////        for (int i = 0; i < list.size(); i++) {
-////            RequestManager.RequestBean bean =
-////                    new RequestManager.RequestBean(
-////                            list.get(i).getPackage(),
-////                            AppInfoUtil.getAppDefaultName(activity, list.get(i).getPackage()));
-////            manager.saveRequest(bean);
-////        }
-//    }
 
     @Override
     public void onBackPressed() {

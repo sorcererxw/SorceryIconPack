@@ -37,6 +37,29 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
 
     private int mAmount;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
+                MODE_PRIVATE);
+
+        boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
+        if (isDonated || SorceryIcons.DEBUG) {
+            mThankCard.post(new Runnable() {
+                @Override
+                public void run() {
+                    showThanksCard();
+                }
+            });
+        }
+    }
+
     @OnClick(R.id.button_donate_alipay)
     void onAlipayClick() {
         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(
@@ -84,29 +107,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         super.init();
 
         setToolbarBackIndicator();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
-                MODE_PRIVATE);
-
-        boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
-        if (isDonated || SorceryIcons.DEBUG) {
-            mThankCard.post(new Runnable() {
-                @Override
-                public void run() {
-                    showThanksCard();
-                }
-            });
-        }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
 
     @Override

@@ -101,11 +101,6 @@ public class DrawerMenuAdapter extends
         holder.line.setVisibility(type == 2 ? View.VISIBLE : View.GONE);
     }
 
-    private int dp2px(int dp) {
-        return DisplayUtil.dip2px(mContext, dp);
-    }
-
-
     @Override
     public int getItemCount() {
         return mDataList.size();

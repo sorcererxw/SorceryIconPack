@@ -23,8 +23,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        LayoutInflaterCompat
-//                .setFactory(getLayoutInflater(), new IconicsLayoutInflater(getDelegate()));
         super.onCreate(savedInstanceState);
         hookBeforeSetContentView();
         Log.i(TAG, "onCreate");
