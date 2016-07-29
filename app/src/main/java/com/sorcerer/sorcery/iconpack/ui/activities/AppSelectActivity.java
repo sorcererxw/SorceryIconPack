@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.avos.avoscloud.AVException;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
@@ -27,6 +26,7 @@ import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -188,6 +188,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
         @Override
         protected Void doInBackground(Void... params) {
+            List<RequestBean> requestBeanList = new ArrayList<>();
             for (int i = 0; i < mAppInfoList.size(); i++) {
                 RequestBean request = new RequestBean();
                 AppInfo app = mAppInfoList.get(i);
@@ -199,13 +200,11 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         AppSelectActivity.this, app.getPackage()));
                 if (mDeviceId != null) {
                     request.setDeviceId(mDeviceId);
-                    try {
-                        request.save();
-                    } catch (AVException e) {
-                        e.printStackTrace();
-                    }
+                    requestBeanList.add(request);
                 }
             }
+            RequestBean.saveAllInBackground(requestBeanList);
+//            requestBeanList.
             return null;
         }
 

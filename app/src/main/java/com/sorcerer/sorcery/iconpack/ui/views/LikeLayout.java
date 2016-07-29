@@ -3,7 +3,9 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
+import android.telephony.TelephonyManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +13,16 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.avos.avoscloud.AVCloudQueryResult;
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.CloudQueryCallback;
+import com.avos.avoscloud.FindCallback;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.BindViews;
@@ -49,6 +59,7 @@ public class LikeLayout extends FrameLayout {
             if (mBind) {
                 mSharedPreferences.edit().putInt(mName, mFlag).apply();
 //                mIconBmobHelper.like(mName, true);
+                like(mName, true);
             }
         } else {
             mFlag = -1;
@@ -56,9 +67,11 @@ public class LikeLayout extends FrameLayout {
             if (mBind) {
                 mSharedPreferences.edit().putInt(mName, mFlag).apply();
 //                mIconBmobHelper.like(mName, false);
+                like(mName, false);
             }
         }
     }
+
 
     @OnLongClick({R.id.textView_label_like, R.id.textView_label_dislike})
     boolean onLongClick(View v) {
@@ -122,31 +135,6 @@ public class LikeLayout extends FrameLayout {
                 return false;
             }
         });
-//
-//        mLikeText.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mFlag = 1;
-//                handleFlag(mFlag, true);
-//                if (mBind) {
-//                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
-////                    mIconBmobHelper.like(mName, true);
-////                    LikeBean likeBean = new LikeBean();
-//                }
-//            }
-//        });
-//
-//        mDislikeText.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mFlag = -1;
-//                handleFlag(mFlag, true);
-//                if (mBind) {
-//                    mSharedPreferences.edit().putInt(mName, mFlag).apply();
-//                    mIconBmobHelper.like(mName, false);
-//                }
-//            }
-//        });
     }
 
     public void bindIcon(String name) {
@@ -188,5 +176,76 @@ public class LikeLayout extends FrameLayout {
                     .start();
         }
     }
+
+    private void like(String name, boolean like) {
+        String deviceId;
+        try {
+            TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService
+                    (Context.TELEPHONY_SERVICE);
+            deviceId = telephonyManager.getDeviceId();
+        } catch (Exception e) {
+            return;
+        }
+
+
+        LikeBean likeBean = new LikeBean();
+        likeBean.setLike(like);
+        likeBean.setBuild(BuildConfig.VERSION_CODE + "");
+        likeBean.setDeviceId(deviceId);
+        likeBean.setIconName(name);
+        likeBean.saveInBackground();
+
+
+    }
+
+    private class LikeTask extends AsyncTask {
+
+        private String mName;
+        private boolean mLike;
+        private String mDeviceId;
+
+        LikeTask(String deviceId, String name, boolean like) {
+            mName = name;
+            mLike = like;
+            mDeviceId = deviceId;
+        }
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            AVQuery<LikeBean> query = new AVQuery<>(LikeBean.LIKE_TABLE);
+            query.whereEqualTo(LikeBean.COLUMN_DEVICE_ID, mDeviceId);
+            query.whereEqualTo(LikeBean.COLUMN_ICON_NAME, mName);
+            query.findInBackground(new FindCallback<LikeBean>() {
+                @Override
+                public void done(List<LikeBean> list, AVException e) {
+                    if (list.isEmpty()) {
+                        LikeBean likeBean = new LikeBean();
+                        likeBean.setDeviceId(mDeviceId);
+                        likeBean.setLike(mLike);
+                        likeBean.setBuild(BuildConfig.VERSION_CODE + "");
+                        likeBean.setIconName(mName);
+                        likeBean.saveInBackground();
+                    } else {
+//                        AVObject likeBean = LikeBean.createWithoutData(LikeBean.LIKE_TABLE,
+//                                list.get(0).getObjectId());
+//                        likeBean.put(LikeBean.COLUMN_ICON_NAME, "update");
+//                        likeBean.saveInBackground();
+                        AVQuery.doCloudQueryInBackground(
+                                "update TodoFolder set iconName='update' "
+                                        + "where objectId='" + list.get(0).getObjectId() + "'",
+                                new CloudQueryCallback<AVCloudQueryResult>() {
+                                    @Override
+                                    public void done(AVCloudQueryResult avCloudQueryResult,
+                                            AVException e) {
+
+                                    }
+                                });
+                    }
+                }
+            });
+            return null;
+        }
+    }
+
 
 }

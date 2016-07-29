@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
+import android.telephony.TelephonyManager;
 
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
 
@@ -11,9 +12,11 @@ public class SorceryIcons extends Application {
 
     public static boolean DEBUG = false;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
         AVService.init(this);
+
     }
 }

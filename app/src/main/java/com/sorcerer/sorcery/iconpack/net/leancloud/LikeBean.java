@@ -9,7 +9,7 @@ import com.avos.avoscloud.AVObject;
 
 @AVClassName(LikeBean.LIKE_TABLE)
 public class LikeBean extends AVObject {
-    static final String LIKE_TABLE = "LikeTable";
+    public static final String LIKE_TABLE = "LikeTable";
     public static final String COLUMN_LIKE = "like";
     public static final String COLUMN_DEVICE_ID = "deviceId";
     public static final String COLUMN_BUILD = "build";
@@ -45,5 +45,16 @@ public class LikeBean extends AVObject {
 
     public String getIconName() {
         return getString(COLUMN_ICON_NAME);
+    }
+
+    @Override
+    public String toString() {
+        return "LikeBean{"
+                + "ObjectId: " + getObjectId() + "\n"
+                + "IconName: " + getIconName() + "\n"
+                + "Like: " + getLike() + "\n"
+                + "Build: " + getBuild() + "\n"
+                + "DeviceId: " + getDeviceID() + "\n"
+                + "}";
     }
 }

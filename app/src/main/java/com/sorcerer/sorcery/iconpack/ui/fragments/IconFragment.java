@@ -33,8 +33,8 @@ public class IconFragment extends BaseFragment {
         NEW,
         ALL,
         ALI,
-        CYANOGENMOD,
         BAIDU,
+        CYANOGENMOD,
         GOOGLE,
         HTC,
         LENOVO,
@@ -210,7 +210,11 @@ public class IconFragment extends BaseFragment {
         return list;
     }
 
+
     private String[] getIconNames(Context context, Flag flag) {
+        if (flag == Flag.ALL) {
+            return ResourceUtil.getStringArray(context, "icon_pack");
+        }
         String[] iconNames;
         iconNames =
                 ResourceUtil.getStringArray(

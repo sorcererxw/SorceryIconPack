@@ -45,7 +45,7 @@ import im.fir.sdk.FIR;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
- * <p/>
+ * <p>
  * MainActivity
  * The first activity with drawer and icon viewpager.
  */
@@ -168,10 +168,8 @@ public class MainActivity extends BaseActivity {
 
         initSearchBox();
 
-        initDrawer();
-
         if (!mCustomPicker) {
-
+            initDrawer();
             FIR.init(getApplicationContext());
 
             UpdateHelper updateHelper =

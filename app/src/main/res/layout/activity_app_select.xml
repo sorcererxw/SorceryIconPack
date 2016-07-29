@@ -9,11 +9,13 @@
     android:animateLayoutChanges="true"
     tools:context=".ui.activities.AppSelectActivity">
 
-    <include layout="@layout/toolbar_universal"/>
+    <include layout="@layout/toolbar_universal"
+             android:id="@+id/include"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include">
 
         <com.wang.avi.AVLoadingIndicatorView
             android:id="@+id/avLoadingIndicatorView_icon_select"

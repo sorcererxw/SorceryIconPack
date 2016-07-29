@@ -40,13 +40,13 @@ public class AboutDialogActivity extends BaseActivity {
 
     @OnClick(R.id.textView_about_dialog_version)
     void showChangeLog() {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-        builder.title(getString(R.string.changelog));
-        builder.content(getString(R.string.changelog_content)
-                .replace("|", "\n")
-                .replace("#", "" + "    "));
-        builder.positiveText(getString(R.string.action_dismiss));
-        builder.show();
+//        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+//        builder.title(getString(R.string.changelog));
+//        builder.content(getString(R.string.changelog_content)
+//                .replace("|", "\n")
+//                .replace("#", "" + "    "));
+//        builder.positiveText(getString(R.string.action_dismiss));
+//        builder.show();
     }
 
     @BindView(R.id.textView_about_dialog_open_source)
