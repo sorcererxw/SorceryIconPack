@@ -222,8 +222,8 @@ public class AppInfoUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return applicationInfo == null ?
-                ""
+        return applicationInfo == null
+                ? ""
                 : packageManager.getApplicationLabel(applicationInfo).toString();
     }
 

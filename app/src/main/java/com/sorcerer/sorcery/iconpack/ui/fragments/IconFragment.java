@@ -29,7 +29,7 @@ public class IconFragment extends BaseFragment {
 
     private int maxCol = 100;
 
-    public enum Flag {
+    public static enum Flag {
         NEW,
         ALL,
         ALI,
@@ -216,11 +216,10 @@ public class IconFragment extends BaseFragment {
             return ResourceUtil.getStringArray(context, "icon_pack");
         }
         String[] iconNames;
-        iconNames =
-                ResourceUtil.getStringArray(
-                        context,
-                        "icon_pack_" + flag.toString().toLowerCase()
-                );
+        iconNames = ResourceUtil.getStringArray(
+                context,
+                "icon_pack_" + flag.toString().toLowerCase()
+        );
         return iconNames;
     }
 }

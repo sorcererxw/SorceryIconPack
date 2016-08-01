@@ -79,7 +79,7 @@ dependencies {
     // discrete seekbar
     compile 'org.adw.library:discrete-seekbar:1.0.1'
     // fir.im
-    compile 'im.fir:fir-sdk:latest.integration@aar'
+//    compile 'im.fir:fir-sdk:latest.integration@aar'
     // indicator
     compile 'com.wang.avi:library:1.0.2'
     compile 'com.nineoldandroids:library:2.4.0'
@@ -100,9 +100,8 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
     compile 'com.github.paolorotolo:appintro:4.0.0'
-
     // leancloud
-    compile('cn.leancloud.android:avoscloud-sdk:v3.+')
-    compile('cn.leancloud.android:avoscloud-statistics:v3.+')
-    compile('cn.leancloud.android:avoscloud-feedback:v3.+@aar')
+    compile 'cn.leancloud.android:avoscloud-sdk:v3.+'
+    compile 'cn.leancloud.android:avoscloud-statistics:v3.+'
+    compile 'cn.leancloud.android:avoscloud-feedback:v3.+@aar'
 }

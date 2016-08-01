@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
-import android.telephony.TelephonyManager;
 
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
 

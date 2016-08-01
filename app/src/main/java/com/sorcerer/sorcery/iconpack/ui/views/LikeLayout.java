@@ -180,8 +180,8 @@ public class LikeLayout extends FrameLayout {
     private void like(String name, boolean like) {
         String deviceId;
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService
-                    (Context.TELEPHONY_SERVICE);
+            TelephonyManager telephonyManager =
+                    (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
             deviceId = telephonyManager.getDeviceId();
         } catch (Exception e) {
             return;

@@ -15,6 +15,14 @@
         android:required="false"/>
 
     <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false"/>
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false"/>
+
+    <uses-feature
         android:name="org.cyanogenmod.theme"
         android:required="false"/>
 
@@ -230,6 +238,9 @@
         <activity
             android:name=".ui.activities.AboutDialogActivity"
             android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:name=".ui.activities.TestIconDialogActivity"
+            android:theme="@style/AppTheme.Dialog"/>
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"
@@ -261,9 +272,6 @@
             </intent-filter>
         </receiver>
 
-        <meta-data
-            android:name="BUG_HD_SDK_GENERAL_KEY"
-            android:value="@string/bug_hd_sdk_general_key"/>
         <meta-data
             android:name="xposedmodule"
             android:value="true"/>

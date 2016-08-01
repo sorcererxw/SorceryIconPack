@@ -36,12 +36,10 @@ import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
-import com.sorcerer.sorcery.iconpack.util.UpdateHelper;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
-import im.fir.sdk.FIR;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
@@ -170,11 +168,11 @@ public class MainActivity extends BaseActivity {
 
         if (!mCustomPicker) {
             initDrawer();
-            FIR.init(getApplicationContext());
+//            FIR.init(getApplicationContext());
 
-            UpdateHelper updateHelper =
-                    new UpdateHelper(this);
-            updateHelper.update();
+//            UpdateHelper updateHelper =
+//                    new UpdateHelper(this);
+//            updateHelper.update();
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
@@ -290,10 +288,10 @@ public class MainActivity extends BaseActivity {
                                 .ic_attach_money_black_24dp, 128))
                         .withName(R.string.nav_item_donate),
                 new DividerDrawerItem(),
-                new PrimaryDrawerItem()
-                        .withSelectable(false)
-                        .withTag("update")
-                        .withName(R.string.nav_item_update),
+//                new PrimaryDrawerItem()
+//                        .withSelectable(false)
+//                        .withTag("update")
+//                        .withName(R.string.nav_item_update),
                 new PrimaryDrawerItem()
                         .withSelectable(false)
                         .withTag("about")
@@ -323,16 +321,16 @@ public class MainActivity extends BaseActivity {
                     case "donate":
                         activityShift(DonateActivity.class);
                         break;
-                    case "update":
-                        UpdateHelper updateHelper =
-                                new UpdateHelper(mContext,
-                                        mCoordinatorLayout);
-                        updateHelper.update();
-                        break;
+//                    case "update":
+//                        UpdateHelper updateHelper =
+//                                new UpdateHelper(mContext,
+//                                        mCoordinatorLayout);
+//                        updateHelper.update();
+//                        break;
                     case "about":
                         Intent intent = new Intent(mContext, AboutDialogActivity.class);
                         mContext.startActivity(intent);
-                        mActivity.overridePendingTransition(R.anim.fade_in, 0);
+                        mActivity.overridePendingTransition(R.anim.fast_fade_in, 0);
                         break;
                     case "DEBUG":
                         activityShift(TestActivity.class);
@@ -404,7 +402,7 @@ public class MainActivity extends BaseActivity {
     private void doNext(int requestCode, int[] grantResults) {
         if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                new UpdateHelper(this).update();
+//                new UpdateHelper(this).update();
             } else {
                 Toast.makeText(this, getString(R.string.please_give_permission), Toast.LENGTH_SHORT)
                         .show();

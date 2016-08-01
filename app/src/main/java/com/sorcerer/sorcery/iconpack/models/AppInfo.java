@@ -1,12 +1,6 @@
 package com.sorcerer.sorcery.iconpack.models;
 
-import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
-
-import com.code19.library.AppUtils;
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-
-import java.util.Locale;
 
 /**
  * Created by Sorcerer on 2016/1/21 0021.
@@ -64,12 +58,12 @@ public class AppInfo {
 
     @Override
     public String toString() {
-        return "AppInfo{" +
-                "mCode='" + mCode + '\'' +
-                ", mName='" + mName + '\'' +
-                ", mIcon=" + mIcon +
-                ", mPackage='" + mPackage + '\'' +
-                ", mHasCustomIcon=" + mHasCustomIcon +
-                '}';
+        return "AppInfo{"
+                + "mCode='" + mCode + '\''
+                + ", mName='" + mName + '\''
+                + ", mIcon=" + mIcon
+                + ", mPackage='" + mPackage + '\''
+                + ", mHasCustomIcon=" + mHasCustomIcon
+                + '}';
     }
 }

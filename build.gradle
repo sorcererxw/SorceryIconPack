@@ -18,14 +18,12 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
         maven {
-            url "http://maven.bughd.com/public"
-        }
-        maven {
             url "https://oss.sonatype.org/content/repositories/snapshots"
         }
         maven {
             url "http://mvn.leancloud.cn/nexus/content/repositories/releases"
         }
+        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
     }
     apply plugin: 'checkstyle'
     task checkstyle(type: Checkstyle) {
