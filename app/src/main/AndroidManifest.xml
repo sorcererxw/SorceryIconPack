@@ -13,15 +13,12 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false"/>
-
     <uses-feature
         android:name="android.hardware.bluetooth"
         android:required="false"/>
-
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="false"/>
-
     <uses-feature
         android:name="org.cyanogenmod.theme"
         android:required="false"/>
@@ -45,7 +42,6 @@
         <meta-data
             android:name="org.cyanogenmod.theme.name"
             android:value="Sorcery"/>
-
         <meta-data
             android:name="org.cyanogenmod.theme.author"
             android:value="Sorcerer"/>
@@ -55,21 +51,24 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="com.anddoes.launcher.THEME"/>
             </intent-filter>
             <intent-filter>
@@ -77,22 +76,27 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="com.teslacoilsw.launcher.THEME"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="com.novalauncher.THEME"/>
+
                 <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="com.fede.launcher.THEME_ICONPACK"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="com.gtp.nextlauncher.MAIN"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="com.gtp.nextlauncher.trial.theme"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
@@ -103,6 +107,7 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
@@ -116,6 +121,7 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="com.gridappsinc.launcher.theme.apk_action"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <!-- Random launchers -->
@@ -138,10 +144,12 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="cdproductions.crazyicons.TWO"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="com.daeva112.manager.MAIN"/>
+
                 <category android:name="com.daeva112.manager.THEME"/>
             </intent-filter>
             <intent-filter>
@@ -180,7 +188,9 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PICK"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
+
                 <data android:mimeType="image/*"/>
             </intent-filter>
             <intent-filter>
@@ -191,6 +201,7 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="com.sonymobile.home.ICON_PACK"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <intent-filter>
@@ -200,12 +211,10 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.activities.FeedbackActivity"
             android:label="@string/nav_item_feedback"
             android:theme="@style/SubActivity">
-
         </activity>
         <activity
             android:name=".ui.activities.ApplyActivity"
@@ -281,6 +290,9 @@
         <meta-data
             android:name="xposedminversion"
             android:value="30"/>
+
+        <activity android:name=".ui.activities.Test2Activity">
+        </activity>
     </application>
 
 </manifest>

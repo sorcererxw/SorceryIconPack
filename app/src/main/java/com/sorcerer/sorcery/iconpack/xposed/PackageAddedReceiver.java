@@ -113,7 +113,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
 //                                            IconMaskItem.class);
 //                        }
                         if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {
-                            InputStream istr = r.getAssets().open("appfilter.xml");
+                            InputStream istr = r.getAssets().open("values/appfilter.xml");
                             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                             factory.setNamespaceAware(true);
                             xrp = factory.newPullParser();

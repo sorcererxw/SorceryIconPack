@@ -9,7 +9,7 @@ import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
  */
 public class SorceryIcons extends Application {
 
-    public static boolean DEBUG = false;
+    public static boolean DEBUG = true;
 
 
     @Override

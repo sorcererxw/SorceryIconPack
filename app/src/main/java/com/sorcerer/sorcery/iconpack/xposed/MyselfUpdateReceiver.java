@@ -70,7 +70,7 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                         Resources r = pm.getResourcesForApplication(themePackage.packageName);
 
                         if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {
-                            InputStream istr = r.getAssets().open("appfilter.xml");
+                            InputStream istr = r.getAssets().open("values/appfilter.xml");
                             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                             factory.setNamespaceAware(true);
                             xrp = factory.newPullParser();
@@ -175,12 +175,12 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                     Resources r = mContext.getPackageManager()
                             .getResourcesForApplication(themePackage.packageName);
                     if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {
-                        InputStream istr = r.getAssets().open("appfilter.xml");
+                        InputStream istr = r.getAssets().open("values/appfilter.xml");
                         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                         factory.setNamespaceAware(true);
                         xrp = factory.newPullParser();
                         xrp.setInput(istr, "UTF-8");
-                        InputStream istr2 = r.getAssets().open("appfilter.xml");
+                        InputStream istr2 = r.getAssets().open("values/appfilter.xml");
                         XmlPullParserFactory factory2 = XmlPullParserFactory.newInstance();
                         factory2.setNamespaceAware(true);
                         xrp2 = factory2.newPullParser();

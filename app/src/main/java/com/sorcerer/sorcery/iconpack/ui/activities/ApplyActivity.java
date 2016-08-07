@@ -55,17 +55,15 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 if (mAdapter.getItem(position).isInstalled()) {
-                    LauncherApplier
-                            .applyLauncher(view.getContext(),
-                                    mAdapter.getItem(position).getLabel()
-                                            .split(" ")[0]);
+                    LauncherApplier.applyLauncher(view.getContext(),
+                            mAdapter.getItem(position).getLabel().split(" ")[0]);
                 } else {
                     final String appPackageName =
                             mAdapter.getItem(position).getPackageName();
                     try {
                         startActivity(new Intent(Intent.ACTION_VIEW,
                                 Uri.parse("market://details?id=" + appPackageName)));
-                    } catch (android.content.ActivityNotFoundException anfe) {
+                    } catch (android.content.ActivityNotFoundException e) {
                         startActivity(new Intent(Intent.ACTION_VIEW,
                                 Uri.parse("https://play.google.com/store/apps/details?id="
                                         + appPackageName)));

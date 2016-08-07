@@ -13,6 +13,8 @@ import com.sorcerer.sorcery.iconpack.R;
  * Created by Sorcerer on 2016/1/24 0024.
  */
 public class LauncherApplier {
+    private static final String TAG = LauncherApplier.class.getSimpleName();
+
     public static final int TYPE_ACTION = 0x0;
     public static final int TYPE_ADWEX = 0x1;
     public static final int TYPE_ADW = 0x2;
@@ -42,6 +44,7 @@ public class LauncherApplier {
 
     public static void applyLauncher(Context context, String label) {
         label = label.toLowerCase();
+//        Log.d(TAG, label);
         switch (label) {
             case "action":
                 applyLauncher(context, TYPE_ACTION);
@@ -53,13 +56,13 @@ public class LauncherApplier {
                 applyLauncher(context, TYPE_APEX);
                 break;
             case "adw":
-                switch (label.toLowerCase().split(" ")[1]) {
-                    case "ex":
-                        applyLauncher(context, TYPE_ADWEX);
-                        break;
-                    default:
-                        applyLauncher(context, TYPE_ADW);
-                }
+//                switch (label.toLowerCase().split(" ")[1]) {
+//                    case "ex":
+//                        applyLauncher(context, TYPE_ADWEX);
+//                        break;
+//                    default:
+                applyLauncher(context, TYPE_ADW);
+//                }
                 break;
             case "atom":
                 applyLauncher(context, TYPE_ATOM);
