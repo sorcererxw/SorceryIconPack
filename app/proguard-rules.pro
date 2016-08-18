@@ -1,80 +1,69 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in C:\Users\Sorcerer\AppData\Local\Android\Sdk/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
-
-# Add any project specific keep options here:
-
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-#-libraryjars libs/activation.jar
-#-libraryjars libs/additionnal.jar
-
-#-dontwarn okio.**
-#-dontwarn org.apache.**
-#-dontwarn com.sun.mail.**
-#-dontwarn cn.bmob.**
-#-dontwarn c.b.Unity
-#-dontwarn javax.**
-
--ignorewarnings
-
-# 这里根据具体的SDK版本修改
-#-libraryjars libs/bmobSDK_V3.4.6.jar
+# proguard.cfg
 
 -keepattributes Signature
+-dontwarn com.jcraft.jzlib.**
+-keep class com.jcraft.jzlib.**  { *;}
 
-# 不混淆BmobSDK
--keep class cn.bmob.v3.** {*;}
+-dontwarn sun.misc.**
+-keep class sun.misc.** { *;}
 
--keep class c.b.** {*;}
+-dontwarn com.alibaba.fastjson.**
+-keep class com.alibaba.fastjson.** { *;}
 
-# 保证继承自BmobObject、BmobUser类的JavaBean不被混淆
--keep class * extends cn.bmob.v3.BmobObject {
-    *;
-}
-# 也可逐个填写
--keep class com.example.bmobexample.bean.BankCard{*;}
--keep class com.example.bmobexample.bean.GameScore{*;}
--keep class com.example.bmobexample.bean.MyUser{*;}
--keep class com.example.bmobexample.bean.Person{*;}
+-dontwarn sun.security.**
+-keep class sun.security.** { *; }
 
--keep class com.example.bmobexample.file.Movie{*;}
--keep class com.example.bmobexample.file.Song{*;}
+-dontwarn com.google.**
+-keep class com.google.** { *;}
 
--keep class com.example.bmobexample.relation.Post{*;}
--keep class com.example.bmobexample.relation.Comment{*;}
+-dontwarn com.avos.**
+-keep class com.avos.** { *;}
 
-# 如果你使用了okhttp、okio的包，请添加以下混淆代码
+-keep public class android.net.http.SslError
+-keep public class android.webkit.WebViewClient
+
+-dontwarn android.webkit.WebView
+-dontwarn android.net.http.SslError
+-dontwarn android.webkit.WebViewClient
+
+-dontwarn android.support.**
+
+-dontwarn org.apache.**
+-keep class org.apache.** { *;}
+
+-dontwarn org.jivesoftware.smack.**
+-keep class org.jivesoftware.smack.** { *;}
+
+-dontwarn com.loopj.**
+-keep class com.loopj.** { *;}
+
 -dontwarn com.squareup.okhttp.**
 -keep class com.squareup.okhttp.** { *;}
 -keep interface com.squareup.okhttp.** { *; }
+
 -dontwarn okio.**
 
-# 如果你使用了support v4包，请添加如下混淆代码
--dontwarn android.support.v4.**
--keep class android.support.v4.** { *; }
--keep interface android.support.v4.app.** { *; }
--keep public class * extends android.support.v4.**
--keep public class * extends android.app.Fragment
+-dontwarn org.xbill.**
+-keep class org.xbill.** { *;}
 
-# 如果你需要兼容6.0系统，请不要混淆org.apache.http.legacy.jar
- -dontwarn android.net.compatibility.**
- -dontwarn android.net.http.**
- -dontwarn com.android.internal.http.multipart.**
- -dontwarn org.apache.commons.**
- -dontwarn org.apache.http.**
- -keep class android.net.compatibility.**{*;}
- -keep class android.net.http.**{*;}
- -keep class com.android.internal.http.multipart.**{*;}
- -keep class org.apache.commons.**{*;}
- -keep class org.apache.http.**{*;}
+-keepattributes *Annotation*
+
+# butter knife
+# Retain generated class which implement ViewBinder.
+-keep public class * implements butterknife.internal.ViewBinder { public <init>(); }
+
+# Prevent obfuscation of types which use ButterKnife annotations since the simple name
+# is used to reflectively look up the generated ViewBinder.
+-keep class butterknife.*
+-keepclasseswithmembernames class * { @butterknife.* <methods>; }
+-keepclasseswithmembernames class * { @butterknife.* <fields>; }
+
+# glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+-keep class com.sorcerer.sorcery.iconpack.xposed.*

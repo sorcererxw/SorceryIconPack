@@ -110,11 +110,7 @@ public class ApplyAdapter
         holder.label.setText(mDataList.get(position).getLabel());
 
         Glide.with(mContext)
-                .load(mContext.getResources().getIdentifier(
-                        mDataList.get(position).getLabel().replace(" ", "_").toLowerCase(),
-                        "drawable",
-                        mContext.getPackageName())
-                )
+                .load(mDataList.get(position).getIcon())
                 .into(holder.icon);
 
         setViewMargin(holder.card, position, 2);

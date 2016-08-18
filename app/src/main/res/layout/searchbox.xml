@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <io.codetailps.widget.RevealFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/searchbox_rfl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -62,7 +63,8 @@
                 android:imeOptions="flagNoExtractUi"
                 android:textColor="#212121"
                 android:textColorHint="@color/grey_500"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:inputType="text">
 
                 <requestFocus/>
             </EditText>

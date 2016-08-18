@@ -22,6 +22,15 @@
     <string name="action_show_origin_icon">show origin icon</string>
     <string name="action_give_permission">authorize</string>
     <string name="action_install">install</string>
+    <string name="action_refuse">refuse</string>
+    <string name="action_grant_permission">grant</string>
+
+    <string name="permission_request_title">Need Permission</string>
+    <string name="permission_request_content">For better experience with the app, please grant permissions to this app. Or you may can\'t use some function normally, such as icon request, icon like. I also need some permission to collect bug in the app, please support me, thanks.</string>
+    <string name="permission_write_external_storage">Write External Storage</string>
+    <string name="permission_request_describe_write_external_storage">To cache log and data.</string>
+    <string name="permission_read_phone_state">Read Phone State</string>
+    <string name="permission_request_read_phone_state">Get device id to distinguish different users in cloud engine.</string>
 
     <string name="select_an_icon">select an icon</string>
 
@@ -47,15 +56,13 @@
     <string name="welcome_body">If there is any problem, search answer in FAQ</string>
     <string name="welcome_close">OK</string>
 
-    <string name="permission_request_title" translatable="false">申请授权</string>
-    <string name="permission_request_content" translatable="false">由于需要收集应用的崩溃信息并且接入了Bmob的接口, 所以请您提供网络存储权限和电话权限, 否则无法保证使用中不会出现崩溃</string>
 
     <string name="installed">installed</string>
     <string name="not_installed">not installed</string>
 
     <string name="find_new_version">found a new version</string>
     <string name="download">download</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
 
     <string name="version_name">version name</string>
     <string name="update_start">finding new version</string>
@@ -65,6 +72,7 @@
     <string name="icon_request_sending">icon request sending</string>
     <string name="icon_request_send_success">send success</string>
     <string name="icon_request_send_fail">send fail</string>
+    <string name="icon_request_times">Requested # times</string>
 
     <string name="nav_open" translatable="false">open</string>
     <string name="nav_close" translatable="false">close</string>
@@ -81,6 +89,7 @@
     <string name="nav_item_donate">Donate</string>
     <string name="nav_item_about">About</string>
     <string name="nav_item_help">FAQ</string>
+    <string name="nav_item_wallpapers">Wallpapers</string>
 
     <string name="donate_dialog_title">select amount</string>
     <string name="donate_declaration_content">powered by Bmob</string>
@@ -180,65 +189,6 @@
         <item>Meizu</item>
     </string-array>
 
-    <string-array name="launchers" translatable="false">
-        <item>Action</item>
-        <item>Adwex</item>
-        <item>Adw</item>
-        <item>Apex</item>
-        <item>Atom</item>
-        <item>Acviate</item>
-        <item>Cmthemeengine</item>
-        <item>Epic</item>
-        <item>Go</item>
-        <item>Holo</item>
-        <item>Inspire</item>
-        <item>Kk</item>
-        <item>Lghome</item>
-        <item>L</item>
-        <item>Lucid</item>
-        <item>Mini</item>
-        <item>Nemus</item>
-        <item>Nine</item>
-        <item>Next</item>
-        <item>Nine</item>
-        <item>Nova</item>
-        <item>S</item>
-        <item>Smart</item>
-        <item>Smartpro</item>
-        <item>Solo</item>
-        <item>Tsf</item>
-    </string-array>
-
-    <string-array name="launchers_list" translatable="false">
-        <item>Action Launcher|com.actionlauncher.playstore</item>
-        <item>ADW Launcher|org.adw.launcher</item>
-        <item>ADWEX Launcher|org.adwfreak.launcher</item>
-        <item>Apex Launcher|com.anddoes.launcher</item>
-        <item>Atom Launcher|com.dlto.atom.launcher</item>
-        <item>Aviate Launcher|com.tul.aviate</item>
-        <!--<item>CM Theme Engine|org.cyanogenmod.theme.chooser</item>-->
-        <!--<item>Epic Launcher|com.epic.launcher</item>-->
-        <item>Go Launcher|com.gau.go.launcherex</item>
-        <!--<item>Google Now Launcher|com.google.android.launcher</item>-->
-        <item>Holo Launcher|com.mobint.hololauncher</item>
-        <!--<item>Holo Launcher HD|com.mobint.hololauncher.hd</item>-->
-        <item>Inspire Launcher|com.bam.android.inspirelauncher</item>
-        <item>KK Launcher|com.kk.launcher</item>
-        <!--<item>L Launcher|com.l.launcher</item>-->
-        <!--<item>LG Home|com.lge.launcher2</item>-->
-        <item>Lucid Launcher|com.powerpoint45.launcher</item>
-        <!--<item>Mini Launcher|com.jiubang.go.mini.launcher</item>-->
-        <!--<item>Nemus Launcher|com.nemustech.launcher</item>-->
-        <item>Next Launcher|com.gtp.nextlauncher</item>
-        <item>Nine Launcher|com.gridappsinc.launcher.free</item>
-        <item>Nova Launcher|com.teslacoilsw.launcher</item>
-        <!--<item>S Launcher|com.s.launcher</item>-->
-        <item>Smart Launcher|ginlemon.flowerfree</item>
-        <!--<item>Smart Launcher Pro|ginlemon.flowerpro</item>-->
-        <!--<item>Solo Launcher|home.solo.launcher.free</item>-->
-        <item>TSF Launcher|com.tsf.shell</item>
-    </string-array>
-
     <string-array name="libs_list" translatable="false">
         <item>DiscreteSeekBar|AnderWeb|https://github.com/AnderWeb/discreteSeekBar</item>
         <item>Universal Image Loader|nostra13|https://github.com/nostra13/Android-Universal-Image-Loader</item>
@@ -252,31 +202,6 @@
         <item>NineOldAndroids|JakeWharton|https://github.com/JakeWharton/NineOldAndroids</item>
         <item>MaterialSearchView|MiguelCatalan|https://github.com/MiguelCatalan/MaterialSearchView</item>
         <item>MaterialEditText|rengwuxian|https://github.com/rengwuxian/MaterialEditText</item>
-    </string-array>
-
-    <string-array name="help_list" translatable="false">
-        <item>如何判断启动器(桌面)是否支持第三方图标包?</item>
-        <item>进入启动器(桌面)设置, 找到外观(appearance)或者图标(icon)之类的选项, 点击进去, 如果可以找到图标包(icon pack)选项则是支持, 否则, 可能就是不支持|著名的支持图标包的第三方启动器包括|nova launcher, tsf launcher, action launcher, apex launcher, next launcher, line launcher, aviate launcher, arrow launcher, smart launcher, z launcher, hola launcher, adw launcher, total launcher</item>
-        <item>如何使用图标包?</item>
-        <item>1. 你的启动器(桌面)支持第三方图标包?|#A. 支持 --> 方法一|#B. 不支持 --> 2|2. 你的手机有root并且安装Xposed?|#A. 是的 --> 方法二|#B. 没有 --> 方法三||方法一: 在启动器(桌面)设置中更改图标包为Sorcery图标包|方法二: 使用Xposed进行更换, 详见下方|方法三: 换用支持的启动器</item>
-        <item>如何单独定义某个图标?</item>
-        <item>如果启动器支持单独定义某个图标, 现在以nova启动器为例, 其他启动器都是异曲同工|在启动器内长按对应应用, 会出现应用详情, 点击图标, 会跳到图标设定界面, 单击Sorcery图标包, 然后会看到图标包的所有图标, 但是这个并不好寻找, 点击右上角, 会跳转到图标包内, 配合搜索可以快速找到图标, 点击即可更换</item>
-        <item>为何搜索不到某个图标?</item>
-        <item>因为为每个应用加上中文, 这是巨大的工作量, 暂时没有这个计划(如果愿意帮助我做这件事, 可以联系我), 你只能使用英文来搜索, 比如网易, 可以我是使用netease来命名, 如果使用wangyi则无法找到, 建议同时使用英文和拼音尝试</item>
-        <item>为何不支持Cyanogenmod主题引擎(包括mokee在内的基于cm的rom)?</item>
-        <item>因为Cyanogenmod主题引擎存在一定问题, 至今尚未修复, 导致在其中应用图标包会出现各类问题</item>
-        <item>如何进行图标申请?</item>
-        <item>在左侧抽屉菜单中选择反馈, 然后点击申请图标, 等待稍许, 即可看到所有暂时没有适配的应用, 勾选然后点击右下角的按钮进行发送</item>
-        <item>如何进行反馈?</item>
-        <item>在左侧抽屉菜单中选择反馈, 然后点击反馈, 如果你的手机上有安装邮箱应用(内置的也可以)并且登陆了一个邮箱, 就会跳转到邮件编辑界面, 写下的建议并发送即可</item>
-        <item>什么是Xposed全局替换?</item>
-        <item>通过Xposed, 可以系统级别地更换系统内的图标成为图标包适配的图标, 包括但不限于桌面图标, 多任务界面每个应用的图标, 设置->应用界面的图标</item>
-        <item>如何使用Xposed全局替换?</item>
-        <item>使用Xposed全局替换的前提是你的手机已经root并且刷入Xposed框架, 然后在Xposed Installer中勾选「Sorcery图标包」, 然后到应用内的实验室界面, 点击应用, 等开启完成, 然后重启即可</item>
-        <item>为何Xposed全局替换无效?</item>
-        <item>由于Xposed模块尚未得到完善, 无法保证能够在你的设备上成功应用</item>
-        <item>为何要申请这些权限?</item>
-        <item>现在应用主要申请了存储和电话这两个敏感的权限, 因为应用使用bmob的sdk, 需要记录设备的imei来统计设备, 并且在捐赠和Xposed部分均需要用到本地存储</item>
     </string-array>
 
     <string-array name="search_suggestion" translatable="false">
@@ -302,5 +227,5 @@
     <bool name="config_iconpack">true</bool>
     <string name="action_soft_reboot">soft reboot</string>
     <string name="premium_alipay_descript">Sorcery Premium Request</string>
-    <string name="premium_send_dialog_mail_hint">Please leave your mail adress(must)</string>
+    <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
 </resources>

@@ -10,6 +10,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -18,6 +19,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -28,16 +31,21 @@ import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SorceryIcons;
+import com.sorcerer.sorcery.iconpack.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
-import com.sorcerer.sorcery.iconpack.ui.fragments.IconFragment;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
+import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
+import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -62,7 +70,7 @@ public class MainActivity extends BaseActivity {
     SearchBox mSearchBox;
 
     @BindView(R.id.tabLayout_icon)
-    TabLayout mTabLayout;
+    DoubleTapTabLayout mTabLayout;
 
     @BindView(R.id.coordinatorLayout_main)
     CoordinatorLayout mCoordinatorLayout;
@@ -83,7 +91,7 @@ public class MainActivity extends BaseActivity {
 
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
-                        int positionOffsetPixels) {
+                                           int positionOffsetPixels) {
 
 
                     if (position != mViewPager.getCurrentItem()) {
@@ -128,7 +136,7 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onSearchTermChanged(String term) {
-            ((IconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
+            ((LazyIconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
                     .showWithString(term.toLowerCase());
         }
 
@@ -157,7 +165,6 @@ public class MainActivity extends BaseActivity {
         mCustomPicker = action.equals("com.novalauncher.THEME");
 
         setSupportActionBar(mMainToolbar);
-        setToolbarDoubleTap(mMainToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -168,11 +175,6 @@ public class MainActivity extends BaseActivity {
 
         if (!mCustomPicker) {
             initDrawer();
-//            FIR.init(getApplicationContext());
-
-//            UpdateHelper updateHelper =
-//                    new UpdateHelper(this);
-//            updateHelper.update();
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
@@ -198,14 +200,51 @@ public class MainActivity extends BaseActivity {
         }
 
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
-    }
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
         if (Build.VERSION.SDK_INT >= 23) {
-            PermissionsHelper.requestWriteExternalStorage(this);
-            PermissionsHelper.requestReadPhoneState(this);
+            if (!PermissionsHelper.hasPermissions(this,
+                    new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
+                            PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST})) {
+                MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+                builder.title(ResourceUtil.getString(this, R.string.permission_request_title));
+                List<PermissionBean> list = new ArrayList<>();
+                list.add(new PermissionBean(null,
+                        ResourceUtil.getString(this, R.string.permission_request_content), 0));
+                if (!PermissionsHelper
+                        .hasPermission(this, PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
+                    list.add(new PermissionBean(
+                            ResourceUtil.getString(this, R.string.permission_read_phone_state),
+                            ResourceUtil
+                                    .getString(this, R.string.permission_request_read_phone_state),
+                            R.drawable.ic_smartphone_black_24dp));
+                }
+                if (!PermissionsHelper
+                        .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+                    list.add(new PermissionBean(
+                            ResourceUtil
+                                    .getString(this, R.string.permission_write_external_storage),
+                            ResourceUtil.getString(this,
+                                    R.string.permission_request_describe_write_external_storage),
+                            R.drawable.ic_folder_black_24dp));
+                }
+                builder.adapter(new PermissionAdapter(this, list),
+                        new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+                builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog materialDialog,
+                                        @NonNull DialogAction dialogAction) {
+                        PermissionsHelper.requestPermissions(mActivity,
+                                new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
+                                        PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST});
+                        materialDialog.dismiss();
+                    }
+                });
+                builder.positiveText(
+                        ResourceUtil.getString(this, R.string.action_grant_permission));
+                builder.negativeText(ResourceUtil.getString(this, R.string.action_refuse));
+                builder.canceledOnTouchOutside(false);
+                builder.build().show();
+            }
         }
     }
 
@@ -222,6 +261,17 @@ public class MainActivity extends BaseActivity {
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
+
+        mTabLayout.setOnTabDoubleTapListener(new DoubleTapTabLayout.OnTabDoubleTapListener() {
+            @Override
+            public void onDoubleTap() {
+                int index = mViewPager.getCurrentItem();
+                ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
+                LazyIconFragment fragment = (LazyIconFragment) adapter.getItem(index);
+                fragment.getRecyclerView().smoothScrollToPosition(0);
+            }
+        });
+
     }
 
     private void initSearchBox() {
@@ -271,6 +321,12 @@ public class MainActivity extends BaseActivity {
                         .withName(R.string.nav_item_feedback),
                 new PrimaryDrawerItem()
                         .withSelectable(false)
+                        .withTag("wallpapers")
+                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                                .ic_image_black_24dp, 128))
+                        .withName(R.string.nav_item_wallpapers),
+                new PrimaryDrawerItem()
+                        .withSelectable(false)
                         .withTag("lab")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_settings_black_24dp, 128))
@@ -297,7 +353,7 @@ public class MainActivity extends BaseActivity {
                         .withTag("about")
                         .withName(R.string.nav_item_about)
         );
-        if (SorceryIcons.DEBUG) {
+        if (BuildConfig.DEBUG) {
             mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
                     .withName("DEBUG"));
         }
@@ -339,45 +395,17 @@ public class MainActivity extends BaseActivity {
                 return false;
             }
         });
-
-//        ViewGroup.LayoutParams params = mDrawer.getDrawerLayout().getLayoutParams();
-//        params.width
-
-//        mDrawer.getDrawerLayout().setLayoutParams(mDrawer.getDrawerLayout());
-//        ViewGroup.LayoutParams params = mDrawer.getSlider().getLayoutParams();
-//        params.width = 100;
-//        mDrawer.getSlider().setLayoutParams(params);
-    }
-
-    private void setToolbarDoubleTap(Toolbar toolbar) {
-        final GestureDetector detector = new GestureDetector(this,
-                new ToolbarOnGestureListener(new ToolbarOnGestureListener.DoubleTapListener() {
-                    @Override
-                    public void onDoubleTap() {
-                        int index = mViewPager.getCurrentItem();
-                        ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
-                        IconFragment fragment = (IconFragment) adapter.getItem(index);
-                        fragment.getRecyclerView().smoothScrollToPosition(0);
-                    }
-                }));
-        toolbar.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                detector.onTouchEvent(event);
-                return true;
-            }
-        });
     }
 
     private void generateFragments(ViewPageAdapter adapter) {
 
         String[] name = getResources().getStringArray(R.array.tab_name);
-        IconFragment.Flag[] flag = IconFragment.Flag.values();
+        LazyIconFragment.Flag[] flag = LazyIconFragment.Flag.values();
 
         Log.d(TAG, Arrays.toString(flag));
 
         for (int i = 0; i < flag.length; i++) {
-            adapter.addFragment(IconFragment.newInstance(flag[i], mCustomPicker), name[i]);
+            adapter.addFragment(LazyIconFragment.newInstance(flag[i], mCustomPicker), name[i]);
         }
     }
 
@@ -392,23 +420,25 @@ public class MainActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-            @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        doNext(requestCode, grantResults);
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+//                                           @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-    private void doNext(int requestCode, int[] grantResults) {
-        if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                new UpdateHelper(this).update();
-            } else {
-                Toast.makeText(this, getString(R.string.please_give_permission), Toast.LENGTH_SHORT)
-                        .show();
-            }
-        }
-    }
+//        PermissionsHelper.requestReadPhoneState(mActivity);
+//        PermissionsHelper.requestWriteExternalStorage(mActivity);
+//        doNext(requestCode, grantResults);
+//    }
+
+//    private void doNext(int requestCode, int[] grantResults) {
+//        if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
+//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//            } else {
+//                Toast.makeText(this, getString(R.string.please_give_permission), Toast.LENGTH_SHORT)
+//                        .show();
+//            }
+//        }
+//    }
 
     @Override
     public void onBackPressed() {

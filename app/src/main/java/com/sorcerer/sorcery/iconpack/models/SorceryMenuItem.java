@@ -9,7 +9,7 @@ public class SorceryMenuItem implements BaseModel {
     private String mLabel;
 
     public interface OnSelectListener {
-        public void onSelect();
+        void onSelect();
     }
 
     public SorceryMenuItem(

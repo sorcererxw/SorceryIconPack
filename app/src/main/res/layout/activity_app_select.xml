@@ -35,7 +35,7 @@
                 android:id="@+id/recyclerView_app_select"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="vertical"
+                android:scrollbars="none"
                 android:visibility="gone"/>
 
             <com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton

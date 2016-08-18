@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sorcery图标包</string>
+    <string name="app_name">Sorcery 图标包</string>
 
     <string name="action_feedback">反馈</string>
     <string name="action_welcome">感谢使用</string>
@@ -142,4 +142,14 @@
     <string name="icon_label_please_leave_baidu">**请远离百度**</string>
     <string name="open_wechat">正在打开微信支付</string>
     <string name="action_install">安装</string>
+    <string name="action_grant_permission">授权</string>
+    <string name="action_refuse">拒绝</string>
+    <string name="permission_request_title">申请权限</string>
+    <string name="permission_write_external_storage">存储空间</string>
+    <string name="permission_request_describe_write_external_storage">保存离线报告的缓存数据。</string>
+    <string name="permission_request_content">感谢使用。为了您更好的使用体验, 请授予应用权限。否则, 你可能无法正常使用一些功能。同时, 我还需要这些权限来获取分析应用运行状况, 谢谢您的支持。</string>
+    <string name="permission_request_read_phone_state">获取用户设备的ID，用来唯一的标识用户,  便于在服务器里面区分。</string>
+    <string name="permission_read_phone_state">电话</string>
+    <string name="icon_request_times">共被申请 # 次</string>
+    <string name="nav_item_wallpapers">壁纸</string>
 </resources>

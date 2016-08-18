@@ -10,7 +10,6 @@
         android:id="@+id/imageView_item_icon_grid"
         android:layout_width="@dimen/icon_grid_item_size"
         android:layout_height="@dimen/icon_grid_item_size"
-        android:layout_centerInParent="true"
         android:layout_margin="@dimen/icon_grid_item_margin"
         android:transitionName="icon"/>
 
@@ -18,7 +17,6 @@
         android:id="@+id/viewStub_item_icon_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="20dp"

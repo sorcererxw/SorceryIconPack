@@ -1,6 +1,7 @@
 <string-array name="icon_pack_ali" translatable="false">
    <item>alipay</item>
    <item>alipay_alt</item>
+   <item>ali_antfortune</item>
    <item>ali_cainiao_guoguo</item>
    <item>ali_dingding</item>
    <item>ali_koubei_waimai</item>
@@ -33,7 +34,6 @@
    <item>cyanogenmod_camera</item>
    <item>cyanogenmod_explorer</item>
    <item>cyanogenmod_screencast</item>
-   <item>cyanogenmod_theme_engine</item>
 </string-array>
 
 <string-array name="icon_pack_google" translatable="false">
@@ -81,6 +81,7 @@
    <item>google_chrome_dev</item>
    <item>google_device_manager</item>
    <item>google_docs</item>
+   <item>google_drive</item>
    <item>google_earth</item>
    <item>google_goggles</item>
    <item>google_hangout</item>
@@ -138,38 +139,6 @@
 
 <string-array name="icon_pack_lenovo" translatable="false">
    <item>lenovo_calculator</item>
-   <item>lenovo_calendar</item>
-   <item>lenovo_calendar_1</item>
-   <item>lenovo_calendar_10</item>
-   <item>lenovo_calendar_11</item>
-   <item>lenovo_calendar_12</item>
-   <item>lenovo_calendar_13</item>
-   <item>lenovo_calendar_14</item>
-   <item>lenovo_calendar_15</item>
-   <item>lenovo_calendar_16</item>
-   <item>lenovo_calendar_17</item>
-   <item>lenovo_calendar_18</item>
-   <item>lenovo_calendar_19</item>
-   <item>lenovo_calendar_2</item>
-   <item>lenovo_calendar_20</item>
-   <item>lenovo_calendar_21</item>
-   <item>lenovo_calendar_22</item>
-   <item>lenovo_calendar_23</item>
-   <item>lenovo_calendar_24</item>
-   <item>lenovo_calendar_25</item>
-   <item>lenovo_calendar_26</item>
-   <item>lenovo_calendar_27</item>
-   <item>lenovo_calendar_28</item>
-   <item>lenovo_calendar_29</item>
-   <item>lenovo_calendar_3</item>
-   <item>lenovo_calendar_30</item>
-   <item>lenovo_calendar_31</item>
-   <item>lenovo_calendar_4</item>
-   <item>lenovo_calendar_5</item>
-   <item>lenovo_calendar_6</item>
-   <item>lenovo_calendar_7</item>
-   <item>lenovo_calendar_8</item>
-   <item>lenovo_calendar_9</item>
    <item>lenovo_file_browser</item>
    <item>lenovo_music</item>
    <item>lenovo_radio</item>
@@ -232,13 +201,13 @@
    <item>microsoft_bing_dict</item>
    <item>microsoft_bing_keyboard</item>
    <item>microsoft_cortana</item>
-   <item>microsoft_cortana_alt</item>
    <item>microsoft_office_excel</item>
    <item>microsoft_office_mobile</item>
    <item>microsoft_office_outlook</item>
    <item>microsoft_office_powerpoint</item>
    <item>microsoft_office_word</item>
    <item>microsoft_onedrive</item>
+   <item>microsoft_onenote</item>
    <item>microsoft_translator</item>
 </string-array>
 
@@ -316,6 +285,7 @@
    <item>sony_music</item>
    <item>sony_notes</item>
    <item>sony_phone</item>
+   <item>sony_play_memories_mobile</item>
    <item>sony_radio</item>
    <item>sony_select</item>
    <item>sony_settings</item>
@@ -347,6 +317,7 @@
    <item>tencent_qq_mail</item>
    <item>tencent_qq_music</item>
    <item>tencent_qq_music_alt</item>
+   <item>tencent_qq_music_local_player</item>
    <item>tencent_qq_secure</item>
    <item>tencent_qzone</item>
    <item>tencent_video</item>
@@ -355,6 +326,7 @@
    <item>tencent_wechat_alt</item>
    <item>tencent_weiyun</item>
    <item>tencent_weiyun_alt</item>
+   <item>tencent_weread</item>
 </string-array>
 
 <string-array name="icon_pack_miui" translatable="false">
@@ -362,7 +334,6 @@
    <item>miui_authenticator</item>
    <item>miui_bug_report</item>
    <item>miui_compass</item>
-   <item>miui_controller</item>
    <item>miui_fm_radio</item>
    <item>miui_forum</item>
    <item>miui_gallery</item>
@@ -452,10 +423,12 @@
    <item>a360</item>
    <item>a360_cloud</item>
    <item>a360_free_wifi</item>
+   <item>a360_geek</item>
    <item>a360_liuliang</item>
    <item>a3c_toolbox</item>
    <item>a3dmark</item>
    <item>a500px</item>
+   <item>a51offer</item>
    <item>a5sing</item>
    <item>a94_percent</item>
    <item>**A**</item>
@@ -490,8 +463,10 @@
    <item>aide</item>
    <item>airbnb</item>
    <item>airdroid</item>
+   <item>airfrozen</item>
    <item>alipay</item>
    <item>alipay_alt</item>
+   <item>ali_antfortune</item>
    <item>ali_cainiao_guoguo</item>
    <item>ali_dingding</item>
    <item>ali_koubei_waimai</item>
@@ -531,38 +506,6 @@
    <item>asus_backup</item>
    <item>asus_browser</item>
    <item>asus_calculator</item>
-   <item>asus_calendar</item>
-   <item>asus_calendar_1</item>
-   <item>asus_calendar_10</item>
-   <item>asus_calendar_11</item>
-   <item>asus_calendar_12</item>
-   <item>asus_calendar_13</item>
-   <item>asus_calendar_14</item>
-   <item>asus_calendar_15</item>
-   <item>asus_calendar_16</item>
-   <item>asus_calendar_17</item>
-   <item>asus_calendar_18</item>
-   <item>asus_calendar_19</item>
-   <item>asus_calendar_2</item>
-   <item>asus_calendar_20</item>
-   <item>asus_calendar_21</item>
-   <item>asus_calendar_22</item>
-   <item>asus_calendar_23</item>
-   <item>asus_calendar_24</item>
-   <item>asus_calendar_25</item>
-   <item>asus_calendar_26</item>
-   <item>asus_calendar_27</item>
-   <item>asus_calendar_28</item>
-   <item>asus_calendar_29</item>
-   <item>asus_calendar_3</item>
-   <item>asus_calendar_30</item>
-   <item>asus_calendar_31</item>
-   <item>asus_calendar_4</item>
-   <item>asus_calendar_5</item>
-   <item>asus_calendar_6</item>
-   <item>asus_calendar_7</item>
-   <item>asus_calendar_8</item>
-   <item>asus_calendar_9</item>
    <item>asus_camera</item>
    <item>asus_clock</item>
    <item>asus_remote_link</item>
@@ -610,7 +553,6 @@
    <item>bootmanager</item>
    <item>bootmanager_alt</item>
    <item>boxer</item>
-   <item>boxer_calendar</item>
    <item>browser</item>
    <item>budingdonghua</item>
    <item>bughd</item>
@@ -639,6 +581,7 @@
    <item>cleanmaster</item>
    <item>clock</item>
    <item>cloudmagic</item>
+   <item>cloud_vpn</item>
    <item>cmbchina</item>
    <item>cmcc_wifi</item>
    <item>cm_browser</item>
@@ -659,7 +602,6 @@
    <item>cyanogenmod_camera</item>
    <item>cyanogenmod_explorer</item>
    <item>cyanogenmod_screencast</item>
-   <item>cyanogenmod_theme_engine</item>
    <item>**D**</item>
    <item>dailycost</item>
    <item>dandu</item>
@@ -684,6 +626,8 @@
    <item>documents</item>
    <item>doggcatcher</item>
    <item>dolphin_browser</item>
+   <item>domino_pizza</item>
+   <item>domino_pizza_alt</item>
    <item>dongdong</item>
    <item>dongqiudi</item>
    <item>dots</item>
@@ -813,6 +757,8 @@
    <item>**G**</item>
    <item>gallery</item>
    <item>gamecores</item>
+   <item>game_clash_of_clans</item>
+   <item>game_clash_royale</item>
    <item>game_dots_out</item>
    <item>game_heartstone</item>
    <item>game_maestria</item>
@@ -825,8 +771,8 @@
    <item>geometric_weather</item>
    <item>gewala_movie</item>
    <item>gg_assistant</item>
-   <item>github</item>
    <item>gitskarios</item>
+   <item>globalcash</item>
    <item>golden_dict</item>
    <item>google</item>
    <item>google_androidify</item>
@@ -872,6 +818,7 @@
    <item>google_chrome_dev</item>
    <item>google_device_manager</item>
    <item>google_docs</item>
+   <item>google_drive</item>
    <item>google_earth</item>
    <item>google_goggles</item>
    <item>google_hangout</item>
@@ -950,6 +897,7 @@
    <item>icebox</item>
    <item>icourse163</item>
    <item>ifanr</item>
+   <item>iflat</item>
    <item>ifttt</item>
    <item>ikea</item>
    <item>imagine</item>
@@ -973,6 +921,7 @@
    <item>jinritoutiao</item>
    <item>jinsanciba</item>
    <item>jotterpad</item>
+   <item>jswarts_browser</item>
    <item>juejin</item>
    <item>**K**</item>
    <item>kaifazhetoutiao</item>
@@ -1005,38 +954,6 @@
    <item>ledongli</item>
    <item>ledongli_run</item>
    <item>lenovo_calculator</item>
-   <item>lenovo_calendar</item>
-   <item>lenovo_calendar_1</item>
-   <item>lenovo_calendar_10</item>
-   <item>lenovo_calendar_11</item>
-   <item>lenovo_calendar_12</item>
-   <item>lenovo_calendar_13</item>
-   <item>lenovo_calendar_14</item>
-   <item>lenovo_calendar_15</item>
-   <item>lenovo_calendar_16</item>
-   <item>lenovo_calendar_17</item>
-   <item>lenovo_calendar_18</item>
-   <item>lenovo_calendar_19</item>
-   <item>lenovo_calendar_2</item>
-   <item>lenovo_calendar_20</item>
-   <item>lenovo_calendar_21</item>
-   <item>lenovo_calendar_22</item>
-   <item>lenovo_calendar_23</item>
-   <item>lenovo_calendar_24</item>
-   <item>lenovo_calendar_25</item>
-   <item>lenovo_calendar_26</item>
-   <item>lenovo_calendar_27</item>
-   <item>lenovo_calendar_28</item>
-   <item>lenovo_calendar_29</item>
-   <item>lenovo_calendar_3</item>
-   <item>lenovo_calendar_30</item>
-   <item>lenovo_calendar_31</item>
-   <item>lenovo_calendar_4</item>
-   <item>lenovo_calendar_5</item>
-   <item>lenovo_calendar_6</item>
-   <item>lenovo_calendar_7</item>
-   <item>lenovo_calendar_8</item>
-   <item>lenovo_calendar_9</item>
    <item>lenovo_file_browser</item>
    <item>lenovo_music</item>
    <item>lenovo_radio</item>
@@ -1098,6 +1015,7 @@
    <item>mcdonald</item>
    <item>media_converter</item>
    <item>medium</item>
+   <item>mega</item>
    <item>meiriyiwen</item>
    <item>meiriyujia</item>
    <item>meituan</item>
@@ -1111,13 +1029,13 @@
    <item>microsoft_bing_dict</item>
    <item>microsoft_bing_keyboard</item>
    <item>microsoft_cortana</item>
-   <item>microsoft_cortana_alt</item>
    <item>microsoft_office_excel</item>
    <item>microsoft_office_mobile</item>
    <item>microsoft_office_outlook</item>
    <item>microsoft_office_powerpoint</item>
    <item>microsoft_office_word</item>
    <item>microsoft_onedrive</item>
+   <item>microsoft_onenote</item>
    <item>microsoft_translator</item>
    <item>minecraft</item>
    <item>minminguard</item>
@@ -1126,7 +1044,6 @@
    <item>miui_authenticator</item>
    <item>miui_bug_report</item>
    <item>miui_compass</item>
-   <item>miui_controller</item>
    <item>miui_fm_radio</item>
    <item>miui_forum</item>
    <item>miui_gallery</item>
@@ -1139,6 +1056,7 @@
    <item>miui_weather</item>
    <item>miwifi</item>
    <item>mi_fit</item>
+   <item>mi_remote</item>
    <item>moji_weather</item>
    <item>momo</item>
    <item>momobeidanci</item>
@@ -1162,6 +1080,7 @@
    <item>moto_updater</item>
    <item>music</item>
    <item>muzei</item>
+   <item>mxplayer</item>
    <item>myandroidtools</item>
    <item>myboy_gba</item>
    <item>**N**</item>
@@ -1172,6 +1091,7 @@
    <item>netease_music</item>
    <item>netease_music_alt</item>
    <item>netease_news</item>
+   <item>netease_open_class</item>
    <item>netease_yixin</item>
    <item>netease_youdao_dict</item>
    <item>netease_youdao_note</item>
@@ -1183,6 +1103,7 @@
    <item>nice</item>
    <item>nine_launcher</item>
    <item>nissan</item>
+   <item>noisyfox</item>
    <item>notify_clean</item>
    <item>nova_launcher</item>
    <item>**O**</item>
@@ -1216,7 +1137,6 @@
    <item>pixolor</item>
    <item>pizzahut</item>
    <item>playstation</item>
-   <item>play_memories_mobile</item>
    <item>pocket</item>
    <item>pocket_casts</item>
    <item>pokemon_go</item>
@@ -1229,9 +1149,11 @@
    <item>power_clean</item>
    <item>ppiicc</item>
    <item>pptv</item>
+   <item>pp_assistant</item>
    <item>press</item>
    <item>prisma</item>
    <item>psiphon</item>
+   <item>pure_weather</item>
    <item>**Q**</item>
    <item>qdaily</item>
    <item>qidian_reader</item>
@@ -1243,6 +1165,7 @@
    <item>quickshortcutmaker</item>
    <item>qunar</item>
    <item>qunidaye_browser</item>
+   <item>quora</item>
    <item>**R**</item>
    <item>rar</item>
    <item>reaper</item>
@@ -1250,7 +1173,6 @@
    <item>romow_fluxo</item>
    <item>root_explorer</item>
    <item>ruler</item>
-   <item>runtastic_six_pack</item>
    <item>**S**</item>
    <item>same</item>
    <item>samsung_apps</item>
@@ -1328,6 +1250,7 @@
    <item>skitch</item>
    <item>skype</item>
    <item>slack</item>
+   <item>smartisan_note</item>
    <item>smartisan_reader</item>
    <item>smart_launcher</item>
    <item>smooth</item>
@@ -1355,6 +1278,7 @@
    <item>sony_music</item>
    <item>sony_notes</item>
    <item>sony_phone</item>
+   <item>sony_play_memories_mobile</item>
    <item>sony_radio</item>
    <item>sony_select</item>
    <item>sony_settings</item>
@@ -1374,6 +1298,7 @@
    <item>sspai</item>
    <item>stack_exchange</item>
    <item>starbucks</item>
+   <item>star_walk_2</item>
    <item>steam</item>
    <item>stocard</item>
    <item>suibiji</item>
@@ -1415,8 +1340,11 @@
    <item>supersu</item>
    <item>swiftkey_keyboard</item>
    <item>**T**</item>
+   <item>t66y</item>
    <item>tapet</item>
+   <item>taptap</item>
    <item>tasker</item>
+   <item>taskman</item>
    <item>ted</item>
    <item>telegram</item>
    <item>tencent_file_manager</item>
@@ -1436,6 +1364,7 @@
    <item>tencent_qq_mail</item>
    <item>tencent_qq_music</item>
    <item>tencent_qq_music_alt</item>
+   <item>tencent_qq_music_local_player</item>
    <item>tencent_qq_secure</item>
    <item>tencent_qzone</item>
    <item>tencent_video</item>
@@ -1444,6 +1373,7 @@
    <item>tencent_wechat_alt</item>
    <item>tencent_weiyun</item>
    <item>tencent_weiyun_alt</item>
+   <item>tencent_weread</item>
    <item>terminal</item>
    <item>terminal_emulator</item>
    <item>texpand</item>
@@ -1454,6 +1384,7 @@
    <item>titanium_backup</item>
    <item>tonghuashun</item>
    <item>touchpal_keyboard</item>
+   <item>toughwo</item>
    <item>tp_link</item>
    <item>tsf_launcher</item>
    <item>ttpod</item>
@@ -1487,6 +1418,7 @@
    <item>vlc</item>
    <item>vsco</item>
    <item>vst</item>
+   <item>vue</item>
    <item>**W**</item>
    <item>wakelock_detector</item>
    <item>wandoujia</item>
@@ -1498,6 +1430,7 @@
    <item>wandoujia_yilan</item>
    <item>wandoujia_youxiribao</item>
    <item>weather_timeline</item>
+   <item>wechatui</item>
    <item>weibo</item>
    <item>weico</item>
    <item>welike</item>
@@ -1550,6 +1483,7 @@
    <item>yuantiku_sikao</item>
    <item>yuantiku_souti</item>
    <item>yuelaiyuehao</item>
+   <item>yunduo_nighttools</item>
    <item>**Z**</item>
    <item>zaker</item>
    <item>zank</item>

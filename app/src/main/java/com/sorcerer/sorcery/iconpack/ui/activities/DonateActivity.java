@@ -7,35 +7,30 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 
-import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 
 public class DonateActivity extends SlideInAndOutAppCompatActivity {
 
-    private int mAmount;
+    private boolean mJumped = false;
 
     @Override
     protected void onStart() {
@@ -50,7 +45,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
                 MODE_PRIVATE);
 
         boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
-        if (isDonated || SorceryIcons.DEBUG) {
+        if (isDonated || BuildConfig.DEBUG || mJumped) {
             mThankCard.post(new Runnable() {
                 @Override
                 public void run() {
@@ -68,20 +63,18 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         intent.setPackage("com.eg.android.AlipayGphone");
         try {
             startActivity(intent);
+            mJumped = true;
         } catch (ActivityNotFoundException e) {
             Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
+            if (BuildConfig.DEBUG) {
+                e.printStackTrace();
+            }
         }
     }
 
     @OnClick(R.id.button_donate_play)
     void onPlayClick() {
 
-    }
-
-    @OnClick(R.id.button_donate_wechat)
-    void onWechatClick() {
-        showMoneySelectDialog();
     }
 
     @BindView(R.id.scrollView_donate)
@@ -118,33 +111,6 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         return false;
     }
 
-    private void showMoneySelectDialog() {
-        final MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-        builder.title(getString(R.string.donate_dialog_title));
-        View view = LayoutInflater.from(this).inflate(R.layout.layout_donate_money_select, null);
-        final DiscreteSeekBar seekBar = (DiscreteSeekBar) view.findViewById(R.id
-                .discreteSeekBar_donate_money_select);
-        seekBar.setProgress(6);
-        builder.customView(view, true);
-        builder.onAny(new MaterialDialog.SingleButtonCallback() {
-            @Override
-            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                if (which == DialogAction.POSITIVE) {
-                    mAmount = seekBar.getProgress();
-                    if (Build.VERSION.SDK_INT >= 23 && !PermissionsHelper.hasPermission(mActivity,
-                            PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
-                        PermissionsHelper.requestReadPhoneState(mActivity);
-                    } else {
-                        pay();
-                    }
-                }
-            }
-        });
-        builder.positiveText(getString(R.string.ok));
-        builder.negativeText(getString(R.string.cancel));
-        builder.show();
-    }
-
     private void showThanksCard() {
         if (mThankCard.getVisibility() == View.VISIBLE) {
             return;
@@ -172,7 +138,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap resource,
-                            GlideAnimation<? super Bitmap> glideAnimation) {
+                                                GlideAnimation<? super Bitmap> glideAnimation) {
                         mCardImage.setImageBitmap(resource);
 
                         mThankCard.animate()
@@ -204,24 +170,4 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
                 });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-            @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        doNext(requestCode, grantResults);
-    }
-
-    private void doNext(int requestCode, int[] grantResults) {
-        if (requestCode == PermissionsHelper.READ_PHONE_STATE_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                pay();
-            } else {
-                Toast.makeText(mActivity, "no permission", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    private void pay() {
-
-    }
 }

@@ -45,17 +45,8 @@
         component="ComponentInfo{am.sunrise.android.calendar/am.sunrise.android.calendar.ui.HomeActivity}"
         prefix="sunrise_"/>
     <calendar
-        component="ComponentInfo{com.lenovo.calendar/com.lenovo.calendar.SplashActivity}"
-        prefix="lenovo_calendar_"/>
-    <calendar
-        component="ComponentInfo{com.lenovo.android.calendar/com.lenovo.android.calendar.SplashActivity}"
-        prefix="lenovo_calendar_"/>
-    <calendar
-        component="ComponentInfo{com.anydo.cal/com.anydo.cal.activities.OnBoardActivity}"
-        prefix="anydo_calendar_"/>
-    <calendar
         component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}"
         prefix="flyme_calendar_"/>
     <calendar
-        component="ComponentInfo{com.boxer.calendar/com.android.calendar.AllInOneActivity}"
-        prefix="boxer_calendar_"/>
+        component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
+        prefix="google_calendar_"/>

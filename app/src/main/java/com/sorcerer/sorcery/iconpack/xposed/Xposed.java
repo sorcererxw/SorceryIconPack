@@ -19,6 +19,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -93,9 +94,7 @@ public class Xposed
                                 .fromJson(XSharedPrefs.getString("theme_icon_for_" + pkg, null),
                                         IconReplacementItem[].class);
                         ArrayList<IconReplacementItem> items = new ArrayList();
-                        for (IconReplacementItem item : iconReplacementItems) {
-                            items.add(item);
-                        }
+                        Collections.addAll(items, iconReplacementItems);
                         mIconReplacementsHashMap.put(pkg, items);
                     }
                     if (mIconPackages.contains("android")) {
@@ -260,25 +259,24 @@ public class Xposed
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "getValueForDensity",
-                new Object[]{Integer.TYPE, Integer.TYPE, TypedValue.class,
-                        Boolean.TYPE,
-                        new XC_MethodHook() {
-                            protected void afterHookedMethod(
-                                    MethodHookParam param)
-                                    throws Throwable {
-                                XposedBridge.log("[" + TAG + "] [" + mThemePackage
-                                        + "] Overriding Nova Asset Manager call");
-                                Resources res = (Resources) param.thisObject;
-                                int resId = ((Integer) param.args[0]).intValue();
-                                String resName = res.getResourceName(resId);
-                                TypedValue value = (TypedValue) param.args[2];
-                                if (new File(XposedUtils
-                                        .getCacheFilePath(res.getResourcePackageName(resId), resId))
-                                        .exists()) {
-                                    value.string = "replaceWithSIP";
-                                }
-                            }
+                Integer.TYPE, Integer.TYPE, TypedValue.class,
+                Boolean.TYPE,
+                new XC_MethodHook() {
+                    protected void afterHookedMethod(
+                            MethodHookParam param)
+                            throws Throwable {
+                        XposedBridge.log("[" + TAG + "] [" + mThemePackage
+                                + "] Overriding Nova Asset Manager call");
+                        Resources res = (Resources) param.thisObject;
+                        int resId = (Integer) param.args[0];
+                        String resName = res.getResourceName(resId);
+                        TypedValue value = (TypedValue) param.args[2];
+                        if (new File(XposedUtils
+                                .getCacheFilePath(res.getResourcePackageName(resId), resId))
+                                .exists()) {
+                            value.string = "replaceWithSIP";
                         }
+                    }
                 });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
@@ -315,11 +313,11 @@ public class Xposed
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "openRawResource",
-                new Object[]{Integer.TYPE, new XC_MethodHook() {
+                Integer.TYPE, new XC_MethodHook() {
                     protected void afterHookedMethod(MethodHookParam param)
                             throws Throwable {
                         Resources res = (Resources) param.thisObject;
-                        int resId = ((Integer) param.args[0]).intValue();
+                        int resId = (Integer) param.args[0];
                         String resName = res.getResourceName(resId);
                         String packageName =
                                 res.getResourcePackageName(resId);
@@ -376,7 +374,6 @@ public class Xposed
                             }
                         }
                     }
-                }
                 });
     }
 
@@ -387,7 +384,7 @@ public class Xposed
         XC_MethodHook methodHook = new XC_MethodHook() {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Resources res = (Resources) param.args[0];
-                int resId = ((Integer) param.args[1]).intValue();
+                int resId = (Integer) param.args[1];
                 String resName = res.getResourceName(resId);
                 String packageName = res.getResourcePackageName(resId);
                 BitmapFactory.Options bmOpts = null;

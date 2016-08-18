@@ -3,9 +3,12 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url "http://mvn.leancloud.cn/nexus/content/repositories/releases"
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -23,7 +26,6 @@ allprojects {
         maven {
             url "http://mvn.leancloud.cn/nexus/content/repositories/releases"
         }
-        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
     }
     apply plugin: 'checkstyle'
     task checkstyle(type: Checkstyle) {

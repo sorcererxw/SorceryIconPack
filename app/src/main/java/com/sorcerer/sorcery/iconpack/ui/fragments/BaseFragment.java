@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.avos.avoscloud.AVAnalytics;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
 import butterknife.ButterKnife;
@@ -30,6 +31,7 @@ public abstract class BaseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        SorceryIcons.getRefWatcher(getContext()).watch(this);
     }
 
     @Nullable

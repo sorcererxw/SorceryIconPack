@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -21,6 +22,7 @@ import com.avos.avoscloud.FindCallback;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
+import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 
 import java.util.List;
 
@@ -52,6 +54,16 @@ public class LikeLayout extends FrameLayout {
 
     @OnClick({R.id.textView_label_like, R.id.textView_label_dislike})
     void onClick(View v) {
+        if (!PermissionsHelper.hasPermission((Activity) getContext(),
+                PermissionsHelper.READ_PHONE_STATE_MANIFEST)
+                || !PermissionsHelper.hasPermission((Activity) getContext(),
+                PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+            PermissionsHelper.requestPermissions((Activity) getContext(),
+                    new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
+                            PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST});
+            return;
+        }
+
         int id = v.getId();
         if (id == R.id.textView_label_like) {
             mFlag = 1;
@@ -236,7 +248,7 @@ public class LikeLayout extends FrameLayout {
                                 new CloudQueryCallback<AVCloudQueryResult>() {
                                     @Override
                                     public void done(AVCloudQueryResult avCloudQueryResult,
-                                            AVException e) {
+                                                     AVException e) {
 
                                     }
                                 });

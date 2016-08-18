@@ -26,7 +26,7 @@ public class IconMaskItem {
         if (list.size() <= 0) {
             return 0;
         }
-        return ((Integer) list.get(generateRandomBetween(0, list.size()))).intValue();
+        return (Integer) list.get(generateRandomBetween(0, list.size()));
     }
 
     public ArrayList<Integer> getIconback() {
@@ -35,8 +35,7 @@ public class IconMaskItem {
 
     public void addIconback(String iconback, Resources res) {
         if (res.getIdentifier(iconback, "drawable", this.packageName) != 0) {
-            this.iconback.add(Integer
-                    .valueOf(res.getIdentifier(iconback, "drawable", this.packageName)));
+            this.iconback.add(res.getIdentifier(iconback, "drawable", this.packageName));
         }
     }
 
@@ -46,8 +45,7 @@ public class IconMaskItem {
 
     public void setIconmask(String iconmask, Resources res) {
         if (res.getIdentifier(iconmask, "drawable", this.packageName) != 0) {
-            this.iconmask.add(Integer
-                    .valueOf(res.getIdentifier(iconmask, "drawable", this.packageName)));
+            this.iconmask.add(res.getIdentifier(iconmask, "drawable", this.packageName));
         }
     }
 
@@ -57,8 +55,7 @@ public class IconMaskItem {
 
     public void setIconupon(String iconupon, Resources res) {
         if (res.getIdentifier(iconupon, "drawable", this.packageName) != 0) {
-            this.iconupon.add(Integer
-                    .valueOf(res.getIdentifier(iconupon, "drawable", this.packageName)));
+            this.iconupon.add(res.getIdentifier(iconupon, "drawable", this.packageName));
         }
     }
 

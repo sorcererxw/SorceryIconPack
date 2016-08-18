@@ -1,8 +1,11 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.shapes.Shape;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
@@ -15,7 +18,9 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
@@ -85,8 +90,18 @@ public class IconDialogActivity extends ToolbarActivity {
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
         mName = getIntent().getStringExtra(EXTRA_NAME);
         mRes = getIntent().getIntExtra(EXTRA_RES, 0);
-        mComponent = AppInfoUtil.getComponentByName(mContext, mName);
-        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+//        mComponent = AppInfoUtil.getComponentByName(mContext, mName);
+//        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+        new ComponentGetter(this, mName, new ComponentGetter.OnFinishCallback() {
+            @Override
+            public void onFinish(String component) {
+                mComponent = component;
+                mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                if (mMenu != null) {
+                    onCreateOptionsMenu(mMenu);
+                }
+            }
+        }).execute();
 
         if (mRes == 0) {
             this.finish();
@@ -127,11 +142,13 @@ public class IconDialogActivity extends ToolbarActivity {
         }
     }
 
+    private Menu mMenu;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        mMenu = menu;
         if (mComponent != null) {
             getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
-
 
             MenuItem showOrigin = menu.findItem(R.id.action_show_origin_icon);
             if (AppInfoUtil.isPackageInstalled(mContext,
@@ -184,9 +201,41 @@ public class IconDialogActivity extends ToolbarActivity {
                     mRoot.addView(mOriginImage);
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                if (BuildConfig.DEBUG) {
+                    e.printStackTrace();
+                }
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private static class ComponentGetter extends AsyncTask<Void, Void, String> {
+
+        interface OnFinishCallback {
+            void onFinish(String component);
+        }
+
+        private Context mContext;
+        private OnFinishCallback mCallback;
+        private String mName;
+
+        public ComponentGetter(Context context, String name, OnFinishCallback callback) {
+            mContext = context;
+            mName = name;
+            mCallback = callback;
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            return AppInfoUtil.getComponentByName(mContext, mName);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (mCallback != null) {
+                mCallback.onFinish(s);
+            }
+        }
     }
 }

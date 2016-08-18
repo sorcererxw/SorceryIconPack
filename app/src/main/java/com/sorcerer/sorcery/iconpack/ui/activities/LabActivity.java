@@ -79,6 +79,11 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     @OnClick({R.id.button_lab_xposed_apply, R.id.button_lab_xposed_close, R.id
             .button_lab_xposed_reboot, R.id.button_lab_xposed_refresh})
     public void onClick(View v) {
+        if (!PermissionsHelper
+                .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+            PermissionsHelper.requestWriteExternalStorage(this);
+            return;
+        }
         int id = v.getId();
         if (id == R.id.button_lab_xposed_apply) {
             try {
@@ -160,9 +165,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             mXposedCloseButton.setEnabled(false);
             mXposedRebootButton.setEnabled(false);
         }
-        if (Build.VERSION.SDK_INT >= 23) {
-            PermissionsHelper.requestWriteExternalStorage(this);
-        }
+
     }
 /*
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -267,13 +270,6 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedRebootButton.setEnabled(true);
         mProgressDialog.dismiss();
         MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-    }
-
-    public void onResume() {
-        super.onResume();
-        if (Build.VERSION.SDK_INT >= 23) {
-            PermissionsHelper.requestWriteExternalStorage(this);
-        }
     }
 
     private boolean appIsInstalledInMountASEC() {

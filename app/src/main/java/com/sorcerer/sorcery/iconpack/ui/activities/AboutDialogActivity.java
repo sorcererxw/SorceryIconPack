@@ -1,8 +1,8 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -17,7 +17,7 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.LibraryInfo;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.LibListAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.LibListAdapter;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
@@ -35,7 +35,7 @@ public class AboutDialogActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        overridePendingTransition(0, R.anim.fade_out);
+        overridePendingTransition(0, R.anim.fast_fade_out);
     }
 
     @OnClick(R.id.textView_about_dialog_version)
@@ -63,22 +63,13 @@ public class AboutDialogActivity extends BaseActivity {
 
         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
         builder.adapter(new LibListAdapter(mContext, list),
-                new MaterialDialog.ListCallback() {
-                    @Override
-                    public void onSelection(MaterialDialog dialog, View itemView, int which,
-                            CharSequence text) {
-                        Intent browserIntent =
-                                new Intent(Intent.ACTION_VIEW,
-                                        Uri.parse(list.get(which).getLink()));
-                        mContext.startActivity(browserIntent);
-                    }
-                });
+                new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         builder.title(getString(R.string.open_source_lib));
         builder.positiveText(getString(R.string.action_close));
         builder.onPositive(new MaterialDialog.SingleButtonCallback() {
             @Override
             public void onClick(@NonNull MaterialDialog dialog,
-                    @NonNull DialogAction which) {
+                                @NonNull DialogAction which) {
                 dialog.dismiss();
             }
         });
@@ -112,7 +103,11 @@ public class AboutDialogActivity extends BaseActivity {
         htmlBuilder += ("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
         htmlBuilder += ("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a><br>");
         htmlBuilder += ("<a>nako liu</a>");
-        mCreditsTextView.setText(Html.fromHtml(htmlBuilder));
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            mCreditsTextView.setText(Html.fromHtml(htmlBuilder));
+        } else {
+            mCreditsTextView.setText(Html.fromHtml(htmlBuilder, Html.FROM_HTML_MODE_LEGACY));
+        }
         mCreditsTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         mBackground.setOnTouchListener(new View

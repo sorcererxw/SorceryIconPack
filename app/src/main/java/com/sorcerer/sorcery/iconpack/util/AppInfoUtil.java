@@ -12,6 +12,7 @@ import android.content.res.XmlResourceParser;
 import android.os.Build;
 import android.util.Log;
 
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
@@ -45,7 +46,9 @@ public class AppInfoUtil {
         if (withHasCustomIcon) {
             xmlString = getAppfilterToString(context);
         }
-        Log.d(TAG, xmlString);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, xmlString);
+        }
 
         for (int i = 0; i < list.size(); i++) {
             ResolveInfo resolveInfo = (ResolveInfo) iterator.next();
@@ -54,7 +57,9 @@ public class AppInfoUtil {
                     resolveInfo.loadLabel(pm).toString(),
                     resolveInfo.loadIcon(pm));
             if (withHasCustomIcon) {
-                Log.d(TAG, tempAppInfo.getCode());
+                if (BuildConfig.DEBUG) {
+                    Log.d(TAG, tempAppInfo.getCode());
+                }
                 if (xmlString.contains(tempAppInfo.getCode())) {
                     tempAppInfo.setHasCustomIcon(true);
                 }
@@ -69,7 +74,9 @@ public class AppInfoUtil {
                     String s2 = new String(rhs.getName().getBytes("GB2312"), "ISO-8859-1");
                     return s1.compareTo(s2);
                 } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                    if (BuildConfig.DEBUG) {
+                        e.printStackTrace();
+                    }
                     return lhs.getName().compareTo(rhs.getName());
                 }
             }
@@ -158,9 +165,12 @@ public class AppInfoUtil {
 
     public static List<LauncherInfo> generateLauncherInfo(Context context) {
         List<LauncherInfo> list = new ArrayList<>();
-        String[] launchers = context.getResources().getStringArray(R.array.launchers_list);
+        String[] launchers = context.getResources().getStringArray(R.array.launchers);
         for (String launcher : launchers) {
             String[] tmp = launcher.split("\\|");
+            if (BuildConfig.DEBUG) {
+                Log.d(TAG, launcher + "\n" + tmp[1] + "\n" + tmp[0] + "\n---------");
+            }
             list.add(new LauncherInfo(context, tmp[1], tmp[0]));
         }
         return list;
@@ -183,7 +193,9 @@ public class AppInfoUtil {
             if (appInfo != null) {
                 final String label = String.valueOf(pm.getApplicationLabel(appInfo));
 
-                Log.w(TAG, "Current app label is " + label);
+                if (BuildConfig.DEBUG) {
+                    Log.w(TAG, "Current app label is " + label);
+                }
 
                 Configuration config = new Configuration();
 
@@ -200,16 +212,22 @@ public class AppInfoUtil {
 
                 final String localizedLabel = appRes.getString(appInfo.labelRes);
 
-                Log.w(TAG, "Localized app label is " + localizedLabel);
+                if (BuildConfig.DEBUG) {
+                    Log.w(TAG, "Localized app label is " + localizedLabel);
+                }
 
                 return localizedLabel;
             }
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(TAG, "Failed to obtain app info!");
-            e.printStackTrace();
+            if (BuildConfig.DEBUG) {
+                Log.e(TAG, "Failed to obtain app info!");
+                e.printStackTrace();
+            }
         } catch (Exception e) {
-            Log.e(TAG, "Other exception");
-            e.printStackTrace();
+            if (BuildConfig.DEBUG) {
+                Log.e(TAG, "Other exception");
+                e.printStackTrace();
+            }
         }
         return getAppSystemName(context, packageName);
     }
@@ -220,7 +238,9 @@ public class AppInfoUtil {
         try {
             applicationInfo = packageManager.getApplicationInfo(packageName, 0);
         } catch (Exception e) {
-            e.printStackTrace();
+            if (BuildConfig.DEBUG) {
+                e.printStackTrace();
+            }
         }
         return applicationInfo == null
                 ? ""

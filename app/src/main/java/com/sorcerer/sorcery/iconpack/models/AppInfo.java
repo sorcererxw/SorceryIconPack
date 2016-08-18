@@ -6,6 +6,15 @@ import android.graphics.drawable.Drawable;
  * Created by Sorcerer on 2016/1/21 0021.
  */
 public class AppInfo {
+    public int getRequestedTimes() {
+        return mRequestedTimes;
+    }
+
+    public void setRequestedTimes(int requestedTimes) {
+        mRequestedTimes = requestedTimes;
+    }
+
+    int mRequestedTimes = -1;
     String mCode = null;
     String mName = null;
     Drawable mIcon = null;

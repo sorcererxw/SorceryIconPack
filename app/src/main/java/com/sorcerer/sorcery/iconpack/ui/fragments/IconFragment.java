@@ -29,7 +29,7 @@ public class IconFragment extends BaseFragment {
 
     private int maxCol = 100;
 
-    public static enum Flag {
+    public enum Flag {
         NEW,
         ALL,
         ALI,
@@ -112,6 +112,7 @@ public class IconFragment extends BaseFragment {
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
 
+
         mEmptyIconTextView.setTypeface(
                 Typeface.createFromAsset(getContext().getAssets(), "empty_icon_list.ttf"));
         mGridView.setEmptyView(mEmptyView);
@@ -119,10 +120,17 @@ public class IconFragment extends BaseFragment {
         mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mGridView);
 
         if (customPicker) {
-            mIconAdapter.setCustomPicker(mHoldingActivity, customPicker);
+            mIconAdapter.setCustomPicker(mHoldingActivity, true);
         }
         mGridView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
         mGridView.setAdapter(mIconAdapter);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+        }
     }
 
     @Override

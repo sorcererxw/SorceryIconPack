@@ -184,11 +184,10 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
             XposedHelpers.findAndHookMethod("com.sorcerer.sorcery.xposed.XposedUtils",
                     lpparam.classLoader,
                     "isModuleActive",
-                    new Object[]{new XC_MethodHook() {
+                    new XC_MethodHook() {
                         protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                            param.setResult(Boolean.valueOf(true));
+                            param.setResult(true);
                         }
-                    }
                     });
         }
         if (this.mThemePackage != null) {
@@ -213,23 +212,22 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "getValueForDensity",
-                new Object[]{Integer.TYPE, Integer.TYPE, TypedValue.class, Boolean.TYPE,
-                        new XC_MethodHook() {
-                            protected void afterHookedMethod(MethodHookParam param)
-                                    throws Throwable {
-                                XposedBridge.log("[" + Mod.TAG + "] [" + Mod.this.mThemePackage
-                                        + "] Overriding Nova Asset Manager call");
-                                Resources res = (Resources) param.thisObject;
-                                int resId = ((Integer) param.args[0]).intValue();
-                                String resName = res.getResourceName(resId);
-                                TypedValue value = (TypedValue) param.args[2];
-                                if (new File(XposedUtils
-                                        .getCacheFilePath(res.getResourcePackageName(resId),
-                                                resId)).exists()) {
-                                    value.string = "replaceWithIconThemer";
-                                }
-                            }
+                Integer.TYPE, Integer.TYPE, TypedValue.class, Boolean.TYPE,
+                new XC_MethodHook() {
+                    protected void afterHookedMethod(MethodHookParam param)
+                            throws Throwable {
+                        XposedBridge.log("[" + Mod.TAG + "] [" + Mod.this.mThemePackage
+                                + "] Overriding Nova Asset Manager call");
+                        Resources res = (Resources) param.thisObject;
+                        int resId = (Integer) param.args[0];
+                        String resName = res.getResourceName(resId);
+                        TypedValue value = (TypedValue) param.args[2];
+                        if (new File(XposedUtils
+                                .getCacheFilePath(res.getResourcePackageName(resId),
+                                        resId)).exists()) {
+                            value.string = "replaceWithIconThemer";
                         }
+                    }
                 });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
@@ -261,10 +259,10 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "openRawResource",
-                new Object[]{Integer.TYPE, new XC_MethodHook() {
+                Integer.TYPE, new XC_MethodHook() {
                     protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                         Resources res = (Resources) param.thisObject;
-                        int resId = ((Integer) param.args[0]).intValue();
+                        int resId = (Integer) param.args[0];
                         String resName = res.getResourceName(resId);
                         String packageName = res.getResourcePackageName(resId);
                         if ((!packageName.equals(packageNameToIgnore) || resName
@@ -316,7 +314,6 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                             }
                         }
                     }
-                }
                 });
     }
 
@@ -326,7 +323,7 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         XC_MethodHook methodHook = new XC_MethodHook() {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Resources res = (Resources) param.args[0];
-                int resId = ((Integer) param.args[1]).intValue();
+                int resId = (Integer) param.args[1];
                 String resName = res.getResourceName(resId);
                 String packageName = res.getResourcePackageName(resId);
                 BitmapFactory.Options bmOpts = null;

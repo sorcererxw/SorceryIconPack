@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="help_list" translatable="false">
+        <item>如何判断启动器(桌面)是否支持第三方图标包?</item>
+        <item>进入启动器(桌面)设置, 找到外观(appearance)或者图标(icon)之类的选项, 点击进去, 如果可以找到图标包(icon pack)选项则是支持, 否则, 可能就是不支持|著名的支持图标包的第三方启动器包括|nova launcher, tsf launcher, action launcher, apex launcher, next launcher, line launcher, aviate launcher, arrow launcher, smart launcher, z launcher, hola launcher, adw launcher, total launcher</item>
+        <item>如何使用图标包?</item>
+        <item>1. 你的启动器(桌面)支持第三方图标包?|#A. 支持 --> 方法一|#B. 不支持 --> 2|2. 你的手机有root并且安装Xposed?|#A. 是的 --> 方法二|#B. 没有 --> 方法三||方法一: 在启动器(桌面)设置中更改图标包为Sorcery图标包|方法二: 使用Xposed进行更换, 详见下方|方法三: 换用支持的启动器</item>
+        <item>如何单独定义某个图标?</item>
+        <item>如果启动器支持单独定义某个图标, 现在以nova启动器为例, 其他启动器都是异曲同工|在启动器内长按对应应用, 会出现应用详情, 点击图标, 会跳到图标设定界面, 单击Sorcery图标包, 然后会看到图标包的所有图标, 但是这个并不好寻找, 点击右上角, 会跳转到图标包内, 配合搜索可以快速找到图标, 点击即可更换</item>
+        <item>为何搜索不到某个图标?</item>
+        <item>因为为每个应用加上中文, 这是巨大的工作量, 暂时没有这个计划(如果愿意帮助我做这件事, 可以联系我), 你只能使用英文来搜索, 比如网易, 可以我是使用netease来命名, 如果使用wangyi则无法找到, 建议同时使用英文和拼音尝试</item>
+        <item>为何不支持Cyanogenmod主题引擎(包括mokee在内的基于cm的rom)?</item>
+        <item>因为Cyanogenmod主题引擎存在一定问题, 至今尚未修复, 导致在其中应用图标包会出现各类问题</item>
+        <item>如何进行图标申请?</item>
+        <item>在左侧抽屉菜单中选择反馈, 然后点击申请图标, 等待稍许, 即可看到所有暂时没有适配的应用, 勾选然后点击右下角的按钮进行发送</item>
+        <item>如何进行反馈?</item>
+        <item>在左侧抽屉菜单中选择反馈, 然后点击反馈, 如果你的手机上有安装邮箱应用(内置的也可以)并且登陆了一个邮箱, 就会跳转到邮件编辑界面, 写下的建议并发送即可</item>
+        <item>什么是Xposed全局替换?</item>
+        <item>通过Xposed, 可以系统级别地更换系统内的图标成为图标包适配的图标, 包括但不限于桌面图标, 多任务界面每个应用的图标, 设置->应用界面的图标</item>
+        <item>如何使用Xposed全局替换?</item>
+        <item>使用Xposed全局替换的前提是你的手机已经root并且刷入Xposed框架, 然后在Xposed Installer中勾选「Sorcery图标包」, 然后到应用内的实验室界面, 点击应用, 等开启完成, 然后重启即可</item>
+        <item>为何Xposed全局替换无效?</item>
+        <item>由于Xposed模块尚未得到完善, 无法保证能够在你的设备上成功应用</item>
+        <item>为何要申请这些权限?</item>
+        <item>现在应用主要申请了存储和电话这两个敏感的权限, 因为应用使用bmob的sdk, 需要记录设备的imei来统计设备, 并且在捐赠和Xposed部分均需要用到本地存储</item>
+    </string-array>
+
+</resources>

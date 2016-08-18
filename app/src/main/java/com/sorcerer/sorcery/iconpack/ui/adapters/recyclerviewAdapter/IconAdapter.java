@@ -23,14 +23,18 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,6 +68,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     class IconViewHolder extends IconItemViewHolder {
         @BindView(R.id.imageView_icon_content_new)
         ImageView mIcon;
+
         boolean mGrayed = false;
 
         public IconViewHolder(View itemView) {
@@ -71,9 +76,15 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }
     }
 
+    private Map<Integer, Boolean> mHeadVisibleMap = new HashMap<>();
+
     class HeaderViewHolder extends IconItemViewHolder {
         @BindView(R.id.textView_icon_header_new)
         TextView mHeader;
+
+        @BindView(R.id.textView_icon_header_count)
+        TextView mCount;
+
 
         public HeaderViewHolder(View itemView) {
             super(itemView);
@@ -81,7 +92,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     public IconAdapter(Activity activity, Context context,
-            List<IconBean> iconBeanList, RecyclerView parent) {
+                       List<IconBean> iconBeanList, RecyclerView parent) {
         mParent = parent;
 
         mActivity = activity;
@@ -113,13 +124,47 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         return null;
     }
 
-    @Override
-    public void onBindViewHolder(final IconItemViewHolder holder, int position) {
-        if (holder instanceof HeaderViewHolder) {
-            HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
-            headerHolder.mHeader.setText(getLabel(mShowIconList.get(position).getName()));
-        } else if (holder instanceof IconViewHolder) {
+    private String getGroupLength(int index) {
+        int cnt = 0;
+        for (int i = index + 1; i < mShowIconList.size(); i++) {
+            if (isLabel(mShowIconList.get(i).getLabel())) {
+                break;
+            } else {
+                cnt++;
+            }
+        }
+        StringBuilder builder = new StringBuilder(cnt + "");
+        while (builder.length() < 5) {
+            builder.append(" ");
+            builder.insert(0, " ");
+        }
+        return builder.toString();
+    }
 
+    @Override
+    public void onBindViewHolder(final IconItemViewHolder holder, final int position) {
+        if (holder instanceof HeaderViewHolder) {
+            final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
+            headerHolder.mHeader.setText(getLabel(mShowIconList.get(position).getName()));
+            headerHolder.mCount.setText(getGroupLength(position));
+            headerHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mHeadVisibleMap.get(position) != null && mHeadVisibleMap.get(position)) {
+                        mHeadVisibleMap.put(position, false);
+                        headerHolder.mCount.setVisibility(View.GONE);
+                    } else {
+                        mHeadVisibleMap.put(position, true);
+                        headerHolder.mCount.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+            if (mHeadVisibleMap.get(position) != null && mHeadVisibleMap.get(position)) {
+                headerHolder.mCount.setVisibility(View.VISIBLE);
+            } else {
+                headerHolder.mCount.setVisibility(View.GONE);
+            }
+        } else if (holder instanceof IconViewHolder) {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
             if (mShowIconList.get(position).getName().contains("baidu")) {
                 ImageUtil.grayScale(iconHolder.mIcon);
@@ -256,7 +301,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             bitmap = BitmapFactory.decodeResource(mContext.getResources(),
                     mShowIconList.get(position).getRes());
         } catch (Exception e) {
-            e.printStackTrace();
+            if (BuildConfig.DEBUG) {
+                e.printStackTrace();
+            }
         }
         if (bitmap != null) {
             intent.putExtra("icon", bitmap);
@@ -279,9 +326,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private void closeKeyboard(Activity activity) {
         InputMethodManager imm =
                 (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
         View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
         if (view == null) {
             view = new View(activity);
         }

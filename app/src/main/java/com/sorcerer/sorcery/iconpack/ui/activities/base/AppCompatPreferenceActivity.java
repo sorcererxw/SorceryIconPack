@@ -109,11 +109,5 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
         return mDelegate;
     }
 
-//    @Override
-//    public void finish() {
-//        super.finish();
-//        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_right_out);
-//    }
-
 
 }

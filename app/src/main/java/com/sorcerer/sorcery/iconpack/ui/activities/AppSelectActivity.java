@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -9,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
@@ -23,6 +26,7 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -45,7 +49,15 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
-        new SaveRequestAsyncTask(this, mAdapter.getCheckedAppsList()).execute();
+        if (PermissionsHelper.hasPermission(this, PermissionsHelper.READ_PHONE_STATE_MANIFEST)
+                && PermissionsHelper
+                .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+            new SaveRequestAsyncTask(this, mAdapter.getCheckedAppsList()).execute();
+        } else {
+            PermissionsHelper.requestPermissions(this,
+                    new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
+                            PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST});
+        }
     }
 
     private RequestAdapter mAdapter;
@@ -81,16 +93,35 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
         menuEnable = false;
 
-        new LoadAppsAsyncTask(this).execute();
+        new LoadAppsAsyncTask(this, new LoadAppsAsyncTask.OnFinishCallback() {
+            @Override
+            public void onFinish(List<AppInfo> list) {
+                setupRecyclerView(list);
+
+                dismissIndicator();
+                showRecyclerView();
+
+                menuEnable = true;
+                if (mMenu != null) {
+                    onCreateOptionsMenu(mMenu);
+                }
+            }
+        }).execute();
 
     }
 
-    private class LoadAppsAsyncTask extends AsyncTask {
+    private static class LoadAppsAsyncTask extends AsyncTask<Void, Void, List<AppInfo>> {
 
         private Context mContext;
+        private OnFinishCallback mCallback;
 
-        public LoadAppsAsyncTask(Context context) {
+        public LoadAppsAsyncTask(Context context, OnFinishCallback callback) {
             mContext = context;
+            mCallback = callback;
+        }
+
+        interface OnFinishCallback {
+            void onFinish(List<AppInfo> list);
         }
 
         @Override
@@ -99,46 +130,37 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         }
 
         @Override
-        protected Object doInBackground(Object[] params) {
+        protected List<AppInfo> doInBackground(Void... voids) {
             return AppInfoUtil.getComponentInfo(mContext, true);
         }
 
         @Override
-        protected void onPostExecute(Object o) {
-            super.onPostExecute(o);
-            List<AppInfo> appInfoList = (List<AppInfo>) o;
-            setupRecyclerView(appInfoList);
+        protected void onPostExecute(List<AppInfo> appInfoList) {
+            super.onPostExecute(appInfoList);
+            mCallback.onFinish(appInfoList);
+        }
+    }
 
-            dismissIndicator();
-            showRecyclerView();
-
-            menuEnable = true;
-            if (mMenu != null) {
-                onCreateOptionsMenu(mMenu);
+    private void setupRecyclerView(List<AppInfo> appInfoList) {
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(
+                new LinearLayoutManager(mContext,
+                        LinearLayoutManager.VERTICAL,
+                        false)
+        );
+        mAdapter = new RequestAdapter(mContext, appInfoList);
+        mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
+            @Override
+            public void OnEmpty() {
+                showFab(false);
             }
-        }
 
-        private void setupRecyclerView(List<AppInfo> appInfoList) {
-            mRecyclerView.setHasFixedSize(true);
-            mRecyclerView.setLayoutManager(
-                    new LinearLayoutManager(mContext,
-                            LinearLayoutManager.VERTICAL,
-                            false)
-            );
-            mAdapter = new RequestAdapter(mContext, appInfoList);
-            mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
-                @Override
-                public void OnEmpty() {
-                    showFab(false);
-                }
-
-                @Override
-                public void OnUnEmpty() {
-                    showFab(true);
-                }
-            });
-            mRecyclerView.setAdapter(mAdapter);
-        }
+            @Override
+            public void OnUnEmpty() {
+                showFab(true);
+            }
+        });
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     private void dismissIndicator() {
@@ -176,7 +198,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
                 mDeviceId = tm.getDeviceId();
             } catch (Exception e) {
-                e.printStackTrace();
+                if (BuildConfig.DEBUG) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -189,6 +213,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         @Override
         protected Void doInBackground(Void... params) {
             List<RequestBean> requestBeanList = new ArrayList<>();
+            SharedPreferences sharedPreferences = getSharedPreferences("request package",
+                    MODE_PRIVATE);
+
             for (int i = 0; i < mAppInfoList.size(); i++) {
                 RequestBean request = new RequestBean();
                 AppInfo app = mAppInfoList.get(i);
@@ -198,13 +225,13 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         AppSelectActivity.this, app.getPackage()));
                 request.setZhName(AppInfoUtil.getAppChineseName(
                         AppSelectActivity.this, app.getPackage()));
-                if (mDeviceId != null) {
+                if (mDeviceId != null && sharedPreferences.getInt(app.getCode(), 0) == 0) {
                     request.setDeviceId(mDeviceId);
                     requestBeanList.add(request);
+                    sharedPreferences.edit().putInt(app.getCode(), 1).apply();
                 }
             }
             RequestBean.saveAllInBackground(requestBeanList);
-//            requestBeanList.
             return null;
         }
 

@@ -12,18 +12,28 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.FindCallback;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Sorcerer on 2016/2/6 0006.
  */
 
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHolder> {
+    private final static String TAG = "RequestAdapter";
+
     private int cnt;
     private Context mContext;
     private List<AppInfo> mAppInfoList;
@@ -40,38 +50,52 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         void OnUnEmpty();
     }
 
-    public class AppItemViewHolder extends RecyclerView.ViewHolder {
+    public static class AppItemViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView icon;
-        public TextView label;
-        public CheckBox check;
-        public View main;
+        @BindView(R.id.imageVIew_icon_request_icon)
+        ImageView icon;
 
+        @BindView(R.id.textView_icon_request_label)
+        TextView label;
+
+        @BindView(R.id.textView_icon_request_times)
+        TextView times;
+
+        @BindView(R.id.checkBox_icon_request_check)
+        CheckBox check;
+
+        private static String mPrefixTimes;
+        private static String mSuffixTimes;
 
         public AppItemViewHolder(View itemView) {
             super(itemView);
-            main = itemView;
-            icon = (ImageView) itemView.findViewById(R.id.imageVIew_icon_request_icon);
-            label = (TextView) itemView.findViewById(R.id.textView_icon_request_label);
-            check = (CheckBox) itemView.findViewById(R.id.checkBox_icon_request_check);
+            ButterKnife.bind(this, itemView);
+            String t = ResourceUtil.getString(itemView.getContext(), R.string.icon_request_times);
+            mPrefixTimes = t.split("#")[0];
+            mSuffixTimes = t.split("#")[1];
+        }
+
+        public void setTimes(int count) {
+            String t = mPrefixTimes + count + mSuffixTimes;
+            times.setText(t);
         }
 
         public void show() {
-            RecyclerView.LayoutParams param = (RecyclerView.LayoutParams) main
-                    .getLayoutParams();
+            RecyclerView.LayoutParams param =
+                    (RecyclerView.LayoutParams) itemView.getLayoutParams();
             param.height = LinearLayout.LayoutParams.WRAP_CONTENT;
             param.width = LinearLayout.LayoutParams.MATCH_PARENT;
             itemView.setVisibility(View.VISIBLE);
-            main.setLayoutParams(param);
+            itemView.setLayoutParams(param);
         }
 
         public void hide() {
-            RecyclerView.LayoutParams param = (RecyclerView.LayoutParams) main
-                    .getLayoutParams();
-            main.setVisibility(View.GONE);
+            RecyclerView.LayoutParams param =
+                    (RecyclerView.LayoutParams) itemView.getLayoutParams();
+            itemView.setVisibility(View.GONE);
             param.height = 0;
             param.width = 0;
-            main.setLayoutParams(param);
+            itemView.setLayoutParams(param);
         }
     }
 
@@ -100,7 +124,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
             holder.check.setVisibility(View.VISIBLE);
             holder.show();
         }
-        holder.main.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 holder.check.setChecked(!holder.check.isChecked());
@@ -128,6 +152,25 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         });
         holder.label.setText(mAppInfoList.get(position).getName());
         holder.icon.setImageDrawable(mAppInfoList.get(position).getIcon());
+        if (mAppInfoList.get(position).getRequestedTimes() == -1) {
+            AVQuery<AVObject> query = new AVQuery<>("RequestStatistic");
+            query.whereEqualTo("package", mAppInfoList.get(position).getPackage());
+            query.findInBackground(new FindCallback<AVObject>() {
+                @Override
+                public void done(List<AVObject> list, AVException e) {
+                    if (list.size() > 0) {
+                        int t = list.get(0).getInt("count");
+                        mAppInfoList.get(position).setRequestedTimes(t);
+                        holder.setTimes(t);
+                    } else {
+                        mAppInfoList.get(position).setRequestedTimes(0);
+                        holder.setTimes(0);
+                    }
+                }
+            });
+        } else {
+            holder.setTimes(mAppInfoList.get(position).getRequestedTimes());
+        }
     }
 
     @Override
