@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.avos.avoscloud.AVAnalytics;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
@@ -31,13 +32,15 @@ public abstract class BaseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        SorceryIcons.getRefWatcher(getContext()).watch(this);
+        if (BuildConfig.DEBUG && SorceryIcons.ENABLE_LEAKCARRY) {
+            SorceryIcons.getRefWatcher(getContext()).watch(this);
+        }
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(provideLayoutId(), container, false);
         mContext = getContext();
         ButterKnife.bind(this, view);

@@ -24,12 +24,18 @@ import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Observable;
+import rx.Scheduler;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
+
 /**
  * Created by Sorcerer on 2016/8/10.
  */
 public class LazyIconFragment extends LazyFragment {
-
-    private int maxCol = 100;
 
     public enum Flag {
         NEW,
@@ -77,8 +83,7 @@ public class LazyIconFragment extends LazyFragment {
         setContentView(R.layout.fragment_icon);
 
         if (mIconBeanList == null) {
-            getIconBeanList(getContext(),
-                    (Flag) getArguments().get(mArgFlagKey));
+            getIconBeanList((Flag) getArguments().get(mArgFlagKey));
         } else {
             init();
         }
@@ -139,9 +144,7 @@ public class LazyIconFragment extends LazyFragment {
         Point size = new Point();
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.icon_grid_item_size);
-
-        int res = (int) (size.x / s);
-        return res > maxCol ? maxCol : res;
+        return (int) (size.x / s);
     }
 
     public RecyclerView getRecyclerView() {
@@ -180,79 +183,53 @@ public class LazyIconFragment extends LazyFragment {
         resize();
     }
 
-
-    private void getIconBeanList(Context context, Flag flag) {
-        IconBeanListGetter getter = new IconBeanListGetter(context, flag,
-                new IconBeanListGetter.OnFinishCallback() {
+    private void getIconBeanList(Flag flag) {
+        Observable.just(flag)
+                .subscribeOn(Schedulers.newThread())
+                .map(new Func1<Flag, List<IconBean>>() {
                     @Override
-                    public void onFinish(List<IconBean> list) {
+                    public List<IconBean> call(Flag flag) {
+                        List<IconBean> list = new ArrayList<>();
+                        for (String name : getIconNames(getContext(), flag)) {
+                            IconBean iconBean = new IconBean(name);
+                            int res = getResources()
+                                    .getIdentifier(name, "drawable", getContext().getPackageName());
+                            if (res != 0) {
+                                final int thumbRes =
+                                        getResources().getIdentifier(name, "drawable",
+                                                getContext().getPackageName());
+                                if (thumbRes != 0) {
+                                    iconBean.setRes(thumbRes);
+                                } else {
+                                    Log.d(TAG, "thumb = 0: " + name);
+                                }
+                            } else {
+                                Log.d(TAG, "res = 0: " + name);
+                            }
+                            list.add(iconBean);
+                        }
+                        return list;
+                    }
+
+                    private String[] getIconNames(Context context, Flag flag) {
+                        if (flag == Flag.ALL) {
+                            return ResourceUtil.getStringArray(context, "icon_pack");
+                        }
+                        String[] iconNames;
+                        iconNames = ResourceUtil.getStringArray(
+                                context,
+                                "icon_pack_" + flag.toString().toLowerCase()
+                        );
+                        return iconNames;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<List<IconBean>>() {
+                    @Override
+                    public void call(List<IconBean> list) {
                         mIconBeanList = list;
                         init();
                     }
                 });
-        getter.execute();
-    }
-
-    private static class IconBeanListGetter extends AsyncTask<Void, Void, Void> {
-
-        interface OnFinishCallback {
-            void onFinish(List<IconBean> list);
-        }
-
-        private final String TAG = "IconBeanListGetter";
-
-        private Context mContext;
-        private Flag mFlag;
-        private List<IconBean> mList = new ArrayList<>();
-        private OnFinishCallback mCallback;
-
-        public IconBeanListGetter(Context context, Flag flag, OnFinishCallback callback) {
-            mContext = context;
-            mFlag = flag;
-            mCallback = callback;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            for (String name : getIconNames(mContext, mFlag)) {
-                IconBean iconBean = new IconBean(name);
-                int res = mContext.getResources()
-                        .getIdentifier(name, "drawable", mContext.getPackageName());
-                if (res != 0) {
-                    final int thumbRes = mContext.getResources().getIdentifier(name, "drawable",
-                            mContext.getPackageName());
-                    if (thumbRes != 0) {
-                        iconBean.setRes(thumbRes);
-                    } else {
-                        Log.d(TAG, "thumb = 0: " + name);
-                    }
-                } else {
-                    Log.d(TAG, "res = 0: " + name);
-                }
-                mList.add(iconBean);
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void o) {
-            super.onPostExecute(o);
-            if (mCallback != null) {
-                mCallback.onFinish(mList);
-            }
-        }
-
-        private String[] getIconNames(Context context, Flag flag) {
-            if (flag == Flag.ALL) {
-                return ResourceUtil.getStringArray(context, "icon_pack");
-            }
-            String[] iconNames;
-            iconNames = ResourceUtil.getStringArray(
-                    context,
-                    "icon_pack_" + flag.toString().toLowerCase()
-            );
-            return iconNames;
-        }
     }
 }

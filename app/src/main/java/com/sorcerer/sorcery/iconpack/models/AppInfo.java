@@ -21,6 +21,8 @@ public class AppInfo {
     String mPackage;
     boolean mHasCustomIcon = false;
 
+    public AppInfo(){};
+
     public AppInfo(String code, String name, Drawable icon) {
         mCode = code;
         mName = name;

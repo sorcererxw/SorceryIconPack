@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
@@ -18,30 +20,48 @@ import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.FindCallback;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Sorcerer on 2016/2/6 0006.
+ * Created by Sorcerer on 2016/8/18.
  */
-
-public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHolder> {
-    private final static String TAG = "RequestAdapter";
+public class NewRequestAdapter extends RecyclerView.Adapter<NewRequestAdapter.AppItemViewHolder> {
+    private final static String TAG = "NewRequestAdapter";
 
     private Context mContext;
-    private List<AppInfo> mAppInfoList;
+    private List<CheckAppInfo> mAppInfoList;
 
-    private int cnt;
+    static class CheckAppInfo extends AppInfo {
 
-    private List<Boolean> mCheckedList;
+        private boolean mChecked = false;
+
+        public CheckAppInfo(AppInfo appInfo, Boolean check) {
+            setRequestedTimes(appInfo.getRequestedTimes());
+            setCode(appInfo.getCode());
+            setHasCustomIcon(appInfo.isHasCustomIcon());
+            setRequestedTimes(appInfo.getRequestedTimes());
+            setName(appInfo.getName());
+            setIcon(appInfo.getIcon());
+
+            mChecked = check;
+        }
+
+        public boolean isChecked() {
+            return mChecked;
+        }
+
+        public void setChecked(boolean checked) {
+            mChecked = checked;
+        }
+    }
 
     private boolean mShowAll = false;
 
@@ -79,8 +99,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         }
 
         public void setTimes(int count) {
-            String t = mPrefixTimes + count + mSuffixTimes;
-            times.setText(t);
+            if (count >= 0) {
+                String t = mPrefixTimes + count + mSuffixTimes;
+                times.setText(t);
+            } else {
+                times.setText("......");
+            }
         }
 
         public void show() {
@@ -102,13 +126,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         }
     }
 
-    public RequestAdapter(Context context, List<AppInfo> appInfoList) {
+    public NewRequestAdapter(Context context, List<AppInfo> appInfoList) {
         mContext = context;
-        mAppInfoList = appInfoList;
-        Boolean[] checkArr = new Boolean[mAppInfoList.size()];
-        Arrays.fill(checkArr, false);
-        mCheckedList = Arrays.asList(checkArr);
-        cnt = 0;
+        mAppInfoList = new ArrayList<>();
+        for (int i = 0; i < appInfoList.size(); i++) {
+            mAppInfoList.add(new CheckAppInfo(appInfoList.get(i), false));
+        }
     }
 
     @Override
@@ -119,14 +142,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     }
 
     @Override
-    public void onBindViewHolder(final AppItemViewHolder holder, final int position) {
-        if (mAppInfoList.get(position).isHasCustomIcon() && !mShowAll) {
-            holder.check.setVisibility(View.GONE);
-            holder.hide();
-        } else {
-            holder.check.setVisibility(View.VISIBLE);
-            holder.show();
-        }
+    public void onBindViewHolder(final AppItemViewHolder holder, int position) {
+        final int realPos = getItem(position);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,49 +152,95 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
             }
         });
         holder.check.setOnCheckedChangeListener(null);
-        holder.check.setChecked(mCheckedList.get(position));
+        holder.check.setChecked(mAppInfoList.get(realPos).isChecked());
         holder.check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mAppInfoList.get(realPos).setChecked(isChecked);
                 if (isChecked) {
-                    cnt++;
-                    if (cnt == 1 && mOnCheckListener != null) {
+                    if (getCheckedCount() >= 1 && mOnCheckListener != null) {
                         mOnCheckListener.OnUnEmpty();
                     }
                 } else {
-                    cnt--;
-                    if (cnt == 0 && mOnCheckListener != null) {
+                    if (getCheckedCount() == 0 && mOnCheckListener != null) {
                         mOnCheckListener.OnEmpty();
                     }
                 }
             }
         });
-        holder.label.setText(mAppInfoList.get(position).getName());
-        holder.icon.setImageDrawable(mAppInfoList.get(position).getIcon());
-        if (mAppInfoList.get(position).getRequestedTimes() == -1) {
+        holder.label.setText(mAppInfoList.get(realPos).getName());
+        holder.icon.setImageDrawable(mAppInfoList.get(realPos).getIcon());
+        if (mAppInfoList.get(realPos).getRequestedTimes() == -1) {
+            holder.setTimes(-1);
             AVQuery<AVObject> query = new AVQuery<>("RequestStatistic");
-            query.whereEqualTo("package", mAppInfoList.get(position).getPackage());
+            query.whereEqualTo("package", mAppInfoList.get(realPos).getPackage());
             query.findInBackground(new FindCallback<AVObject>() {
                 @Override
                 public void done(List<AVObject> list, AVException e) {
+                    if (list == null) {
+                        return;
+                    }
                     if (list.size() > 0) {
                         int t = list.get(0).getInt("count");
-                        mAppInfoList.get(position).setRequestedTimes(t);
+                        mAppInfoList.get(realPos).setRequestedTimes(t);
                         holder.setTimes(t);
                     } else {
-                        mAppInfoList.get(position).setRequestedTimes(0);
+                        mAppInfoList.get(realPos).setRequestedTimes(0);
                         holder.setTimes(0);
                     }
                 }
             });
         } else {
-            holder.setTimes(mAppInfoList.get(position).getRequestedTimes());
+            holder.setTimes(mAppInfoList.get(realPos).getRequestedTimes());
         }
     }
 
     @Override
     public int getItemCount() {
-        return mAppInfoList.size();
+        if (mShowAll) {
+            return mAppInfoList.size();
+        } else {
+            int cnt = 0;
+            for (AppInfo appInfo : mAppInfoList) {
+                if (!appInfo.isHasCustomIcon()) {
+                    cnt++;
+                }
+            }
+            return cnt;
+        }
+    }
+
+    private int getCheckedCount() {
+        int cnt = 0;
+        for (CheckAppInfo cai : mAppInfoList) {
+            if (cai.isChecked()) {
+                if (cai.isHasCustomIcon() && mShowAll) {
+                    cnt++;
+                }
+                if (!cai.isHasCustomIcon()) {
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+
+    private int getItem(int pos) {
+        if (mShowAll) {
+            return pos;
+        } else {
+            int tmp = 0;
+            for (int i = 0; i < mAppInfoList.size(); i++) {
+                if (!mAppInfoList.get(i).isHasCustomIcon()) {
+                    if (tmp == pos) {
+                        return i;
+                    } else {
+                        tmp++;
+                    }
+                }
+            }
+        }
+        return pos;
     }
 
     public void setOnCheckListener(OnCheckListener onCheckListener) {
@@ -185,33 +249,34 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
 
     public List<AppInfo> getCheckedAppsList() {
         List<AppInfo> list = new ArrayList<>();
-        for (int i = 0; i < mAppInfoList.size(); i++) {
-            if (mCheckedList.get(i)) {
-                list.add(mAppInfoList.get(i));
+        for (CheckAppInfo cai : mAppInfoList) {
+            if (cai.isChecked()) {
+                list.add(cai);
             }
         }
         return list;
     }
 
     public void checkAll(boolean check) {
-        for (int i = 0; i < mCheckedList.size(); i++) {
-            if (!check) {
-                mCheckedList.set(i, false);
-                continue;
-            }
-        }
         if (check) {
-            cnt = mCheckedList.size();
+            for (CheckAppInfo cai : mAppInfoList) {
+                if (mShowAll) {
+                    cai.setChecked(true);
+                } else if (!cai.isHasCustomIcon()) {
+                    cai.setChecked(true);
+                }
+            }
         } else {
-            cnt = 0;
+            for (CheckAppInfo cai : mAppInfoList) {
+                cai.setChecked(false);
+            }
         }
         notifyDataSetChanged();
     }
 
-
     public void setShowAll(boolean isShowAll) {
         mShowAll = isShowAll;
-        List<AppInfo> tmp = new ArrayList<>();
+        List<CheckAppInfo> tmp = new ArrayList<>();
         for (int i = 0; i < mAppInfoList.size(); i++) {
             tmp.add(mAppInfoList.get(i));
         }
@@ -219,27 +284,13 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         mAppInfoList.addAll(tmp);
         notifyDataSetChanged();
         if (!isShowAll) {
-            for (int i = 0; i < mCheckedList.size(); i++) {
-                if (mCheckedList.get(i)) {
-                    if (mAppInfoList.get(i).isHasCustomIcon()) {
-                        cnt--;
-                        mCheckedList.set(i, false);
-                        if (cnt == 0 && mOnCheckListener != null) {
-                            mOnCheckListener.OnEmpty();
-                        }
-                    }
+            for (CheckAppInfo cai : mAppInfoList) {
+                if (cai.isChecked() && cai.isHasCustomIcon()) {
+                    cai.setChecked(false);
                 }
             }
-            return;
-        }
-        for (int i = 0; i < mCheckedList.size(); i++) {
-            if (mCheckedList.get(i)) {
-                if (mAppInfoList.get(i).isHasCustomIcon()) {
-                    cnt++;
-                    if (cnt == 1 && mOnCheckListener != null) {
-                        mOnCheckListener.OnUnEmpty();
-                    }
-                }
+            if (getCheckedCount() == 0) {
+                mOnCheckListener.OnEmpty();
             }
         }
     }

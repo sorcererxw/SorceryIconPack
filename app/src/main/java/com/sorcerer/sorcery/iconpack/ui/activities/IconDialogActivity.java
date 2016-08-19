@@ -30,6 +30,13 @@ import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 import butterknife.BindView;
+import rx.Observable;
+import rx.Scheduler;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Sorcerer on 2016/3/22 0022.
@@ -90,18 +97,6 @@ public class IconDialogActivity extends ToolbarActivity {
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
         mName = getIntent().getStringExtra(EXTRA_NAME);
         mRes = getIntent().getIntExtra(EXTRA_RES, 0);
-//        mComponent = AppInfoUtil.getComponentByName(mContext, mName);
-//        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-        new ComponentGetter(this, mName, new ComponentGetter.OnFinishCallback() {
-            @Override
-            public void onFinish(String component) {
-                mComponent = component;
-                mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-                if (mMenu != null) {
-                    onCreateOptionsMenu(mMenu);
-                }
-            }
-        }).execute();
 
         if (mRes == 0) {
             this.finish();
@@ -132,6 +127,31 @@ public class IconDialogActivity extends ToolbarActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Observable.just(mName)
+                .subscribeOn(Schedulers.newThread())
+                .map(new Func1<String, String>() {
+                    @Override
+                    public String call(String s) {
+                        return AppInfoUtil.getComponentByName(IconDialogActivity.this, mName);
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String component) {
+                        mComponent = component;
+                        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                        if (mMenu != null) {
+                            onCreateOptionsMenu(mMenu);
+                        }
+                    }
+                });
     }
 
     @Override
@@ -207,35 +227,5 @@ public class IconDialogActivity extends ToolbarActivity {
             }
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private static class ComponentGetter extends AsyncTask<Void, Void, String> {
-
-        interface OnFinishCallback {
-            void onFinish(String component);
-        }
-
-        private Context mContext;
-        private OnFinishCallback mCallback;
-        private String mName;
-
-        public ComponentGetter(Context context, String name, OnFinishCallback callback) {
-            mContext = context;
-            mName = name;
-            mCallback = callback;
-        }
-
-        @Override
-        protected String doInBackground(Void... voids) {
-            return AppInfoUtil.getComponentByName(mContext, mName);
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            if (mCallback != null) {
-                mCallback.onFinish(s);
-            }
-        }
     }
 }

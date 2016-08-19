@@ -12,13 +12,15 @@ import com.squareup.leakcanary.RefWatcher;
  */
 public class SorceryIcons extends Application {
 
+    public static final boolean ENABLE_LEAKCARRY = false;
+
     private RefWatcher mRefWatcher;
 
     @Override
     public void onCreate() {
         super.onCreate();
         AVService.init(this);
-        if (BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG && ENABLE_LEAKCARRY) {
             mRefWatcher = LeakCanary.install(this);
         }
     }

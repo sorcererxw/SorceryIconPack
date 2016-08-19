@@ -18,12 +18,14 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.SaveCallback;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.NewRequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
@@ -35,6 +37,11 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import rx.Observable;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class AppSelectActivity extends UniversalToolbarActivity {
 
@@ -52,7 +59,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         if (PermissionsHelper.hasPermission(this, PermissionsHelper.READ_PHONE_STATE_MANIFEST)
                 && PermissionsHelper
                 .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
-            new SaveRequestAsyncTask(this, mAdapter.getCheckedAppsList()).execute();
+            save(mAdapter.getCheckedAppsList());
         } else {
             PermissionsHelper.requestPermissions(this,
                     new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
@@ -60,7 +67,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         }
     }
 
-    private RequestAdapter mAdapter;
+    private NewRequestAdapter mAdapter;
     private boolean mCheckAll = false;
     private boolean menuEnable;
     private Menu mMenu;
@@ -93,52 +100,29 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
         menuEnable = false;
 
-        new LoadAppsAsyncTask(this, new LoadAppsAsyncTask.OnFinishCallback() {
+        Observable.create(new Observable.OnSubscribe<List<AppInfo>>() {
             @Override
-            public void onFinish(List<AppInfo> list) {
-                setupRecyclerView(list);
-
-                dismissIndicator();
-                showRecyclerView();
-
-                menuEnable = true;
-                if (mMenu != null) {
-                    onCreateOptionsMenu(mMenu);
-                }
+            public void call(Subscriber<? super List<AppInfo>> subscriber) {
+                subscriber.onNext(AppInfoUtil.getComponentInfo(AppSelectActivity.this, true));
             }
-        }).execute();
+        })
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<List<AppInfo>>() {
+                    @Override
+                    public void call(List<AppInfo> list) {
+                        setupRecyclerView(list);
 
-    }
+                        dismissIndicator();
+                        showRecyclerView();
 
-    private static class LoadAppsAsyncTask extends AsyncTask<Void, Void, List<AppInfo>> {
+                        menuEnable = true;
+                        if (mMenu != null) {
+                            onCreateOptionsMenu(mMenu);
+                        }
+                    }
+                });
 
-        private Context mContext;
-        private OnFinishCallback mCallback;
-
-        public LoadAppsAsyncTask(Context context, OnFinishCallback callback) {
-            mContext = context;
-            mCallback = callback;
-        }
-
-        interface OnFinishCallback {
-            void onFinish(List<AppInfo> list);
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected List<AppInfo> doInBackground(Void... voids) {
-            return AppInfoUtil.getComponentInfo(mContext, true);
-        }
-
-        @Override
-        protected void onPostExecute(List<AppInfo> appInfoList) {
-            super.onPostExecute(appInfoList);
-            mCallback.onFinish(appInfoList);
-        }
     }
 
     private void setupRecyclerView(List<AppInfo> appInfoList) {
@@ -148,8 +132,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         LinearLayoutManager.VERTICAL,
                         false)
         );
-        mAdapter = new RequestAdapter(mContext, appInfoList);
-        mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
+        mAdapter = new NewRequestAdapter(mContext, appInfoList);
+        mAdapter.setOnCheckListener(new NewRequestAdapter.OnCheckListener() {
             @Override
             public void OnEmpty() {
                 showFab(false);
@@ -177,70 +161,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
             mFAB.show();
         } else {
             mFAB.hide();
-        }
-    }
-
-    private class SaveRequestAsyncTask extends AsyncTask<Void, Void, Void> {
-        private ProgressDialog mProgressDialog;
-        private Context mContext;
-        private List<AppInfo> mAppInfoList;
-        private String mDeviceId = null;
-
-        public SaveRequestAsyncTask(Context context, List<AppInfo> appInfoList) {
-            mContext = context;
-            mAppInfoList = appInfoList;
-            mProgressDialog = new ProgressDialog(context);
-            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            mProgressDialog.setCanceledOnTouchOutside(false);
-
-            try {
-                TelephonyManager tm =
-                        (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
-                mDeviceId = tm.getDeviceId();
-            } catch (Exception e) {
-                if (BuildConfig.DEBUG) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressDialog.setMessage(getString(R.string.icon_request_sending));
-            mProgressDialog.show();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            List<RequestBean> requestBeanList = new ArrayList<>();
-            SharedPreferences sharedPreferences = getSharedPreferences("request package",
-                    MODE_PRIVATE);
-
-            for (int i = 0; i < mAppInfoList.size(); i++) {
-                RequestBean request = new RequestBean();
-                AppInfo app = mAppInfoList.get(i);
-                request.setAppPackage(app.getPackage());
-                request.setComponent(app.getCode());
-                request.setEnName(AppInfoUtil.getAppEnglishName(
-                        AppSelectActivity.this, app.getPackage()));
-                request.setZhName(AppInfoUtil.getAppChineseName(
-                        AppSelectActivity.this, app.getPackage()));
-                if (mDeviceId != null && sharedPreferences.getInt(app.getCode(), 0) == 0) {
-                    request.setDeviceId(mDeviceId);
-                    requestBeanList.add(request);
-                    sharedPreferences.edit().putInt(app.getCode(), 1).apply();
-                }
-            }
-            RequestBean.saveAllInBackground(requestBeanList);
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            mProgressDialog.dismiss();
-            Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
-            AppSelectActivity.this.finish();
         }
     }
 
@@ -297,5 +217,83 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void save(final List<AppInfo> list) {
+        Observable.create(new Observable.OnSubscribe<List<AppInfo>>() {
+            @Override
+            public void call(final Subscriber<? super List<AppInfo>> subscriber) {
+                String deviceId = null;
+                try {
+                    TelephonyManager tm =
+                            (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+                    deviceId = tm.getDeviceId();
+                } catch (Exception e) {
+                    if (BuildConfig.DEBUG) {
+                        e.printStackTrace();
+                    }
+                }
+
+                List<RequestBean> requestBeanList = new ArrayList<>();
+                SharedPreferences sharedPreferences = getSharedPreferences("request package",
+                        MODE_PRIVATE);
+
+                for (int i = 0; i < list.size(); i++) {
+                    RequestBean request = new RequestBean();
+                    AppInfo app = list.get(i);
+                    request.setAppPackage(app.getPackage());
+                    request.setComponent(app.getCode());
+                    request.setEnName(AppInfoUtil.getAppEnglishName(
+                            AppSelectActivity.this, app.getPackage()));
+                    request.setZhName(AppInfoUtil.getAppChineseName(
+                            AppSelectActivity.this, app.getPackage()));
+                    if (deviceId != null && sharedPreferences.getInt(app.getCode(), 0) == 0) {
+                        request.setDeviceId(deviceId);
+                        requestBeanList.add(request);
+                        sharedPreferences.edit().putInt(app.getCode(), 1).apply();
+                    }
+                }
+                RequestBean.saveAllInBackground(requestBeanList, new SaveCallback() {
+                    @Override
+                    public void done(AVException e) {
+                        subscriber.onNext(null);
+                    }
+                });
+            }
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<List<AppInfo>>() {
+                    ProgressDialog mProgressDialog;
+
+                    @Override
+                    public void onStart() {
+                        super.onStart();
+                        if (mProgressDialog == null) {
+                            mProgressDialog = new ProgressDialog(AppSelectActivity.this);
+                            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                            mProgressDialog.setCanceledOnTouchOutside(false);
+                        }
+                        mProgressDialog.setMessage(getString(R.string.icon_request_sending));
+                        mProgressDialog.show();
+                    }
+
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(List<AppInfo> list) {
+                        mProgressDialog.dismiss();
+                        Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
+                        AppSelectActivity.this.finish();
+                    }
+                });
     }
 }

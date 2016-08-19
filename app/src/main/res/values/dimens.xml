@@ -11,7 +11,7 @@
     <dimen name="icon_grid_item_margin">2dp</dimen>
     <dimen name="dialog_like_size">32dp</dimen>
     <dimen name="dialog_like_text_size">40sp</dimen>
-    <dimen name="dialog_icon_size">96dp</dimen>
+    <dimen name="dialog_icon_size">112dp</dimen>
     <dimen name="app_select_icon_size">56dp</dimen>
 
     <dimen name="fab_size">56dp</dimen>
