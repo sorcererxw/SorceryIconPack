@@ -39,15 +39,18 @@ public class DoubleTapTabLayout extends TabLayout {
 
     private void init() {
         addOnTabSelectedListener(new OnTabSelectedListener() {
-            @Override public void onTabSelected(Tab tab) {
+            @Override
+            public void onTabSelected(Tab tab) {
                 mTaped = false;
             }
 
-            @Override public void onTabUnselected(Tab tab) {
+            @Override
+            public void onTabUnselected(Tab tab) {
                 mTaped = false;
             }
 
-            @Override public void onTabReselected(Tab tab) {
+            @Override
+            public void onTabReselected(Tab tab) {
                 if (mTaped) {
                     if (mOnTabDoubleTapListener != null) {
                         mOnTabDoubleTapListener.onDoubleTap();
@@ -56,7 +59,8 @@ public class DoubleTapTabLayout extends TabLayout {
                 } else {
                     mTaped = true;
                     postDelayed(new Runnable() {
-                        @Override public void run() {
+                        @Override
+                        public void run() {
                             mTaped = false;
                         }
                     }, 300);

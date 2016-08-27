@@ -103,7 +103,6 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
         Point size = new Point();
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.apply_item_size);
-//                + 2 * getResources().getDimension(R.dimen.icon_grid_item_margin);
         return Math.max(1, (int) (size.x / s));
     }
 

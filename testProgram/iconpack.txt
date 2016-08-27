@@ -39,10 +39,8 @@
 <string-array name="icon_pack_google" translatable="false">
    <item>google</item>
    <item>google_androidify</item>
-   <item>google_android_auto</item>
    <item>google_arts</item>
    <item>google_authenticator</item>
-   <item>google_blogger</item>
    <item>google_calendar</item>
    <item>google_calendar_1</item>
    <item>google_calendar_10</item>
@@ -79,6 +77,7 @@
    <item>google_chrome</item>
    <item>google_chrome_beta</item>
    <item>google_chrome_dev</item>
+   <item>google_chromium</item>
    <item>google_device_manager</item>
    <item>google_docs</item>
    <item>google_drive</item>
@@ -92,6 +91,7 @@
    <item>google_maps</item>
    <item>google_messenger</item>
    <item>google_messenger_alt</item>
+   <item>google_now_enabler</item>
    <item>google_now_launcher</item>
    <item>google_opinion_rewards</item>
    <item>google_pinyin_keyboard</item>
@@ -280,6 +280,7 @@
    <item>sony_clock</item>
    <item>sony_contacts</item>
    <item>sony_email</item>
+   <item>sony_lifelog</item>
    <item>sony_movies</item>
    <item>sony_movie_creator</item>
    <item>sony_music</item>
@@ -292,6 +293,7 @@
    <item>sony_sketch</item>
    <item>sony_smart_connect</item>
    <item>sony_sms</item>
+   <item>sony_support</item>
    <item>sony_themes</item>
    <item>sony_trackid</item>
    <item>sony_video</item>
@@ -318,6 +320,7 @@
    <item>tencent_qq_music</item>
    <item>tencent_qq_music_alt</item>
    <item>tencent_qq_music_local_player</item>
+   <item>tencent_qq_player</item>
    <item>tencent_qq_secure</item>
    <item>tencent_qzone</item>
    <item>tencent_video</item>
@@ -327,6 +330,7 @@
    <item>tencent_weiyun</item>
    <item>tencent_weiyun_alt</item>
    <item>tencent_weread</item>
+   <item>tencent_wesync</item>
 </string-array>
 
 <string-array name="icon_pack_miui" translatable="false">
@@ -425,7 +429,6 @@
    <item>a360_free_wifi</item>
    <item>a360_geek</item>
    <item>a360_liuliang</item>
-   <item>a3c_toolbox</item>
    <item>a3dmark</item>
    <item>a500px</item>
    <item>a51offer</item>
@@ -460,10 +463,10 @@
    <item>adwex_launcher</item>
    <item>adw_launcher</item>
    <item>aibizhi</item>
-   <item>aide</item>
    <item>airbnb</item>
    <item>airdroid</item>
    <item>airfrozen</item>
+   <item>aisen</item>
    <item>alipay</item>
    <item>alipay_alt</item>
    <item>ali_antfortune</item>
@@ -490,8 +493,6 @@
    <item>android_nify</item>
    <item>android_pay</item>
    <item>anime_taste</item>
-   <item>ankidroid</item>
-   <item>antennapod</item>
    <item>antutu</item>
    <item>anydo</item>
    <item>anydo_calendar</item>
@@ -499,9 +500,9 @@
    <item>apex_launcher</item>
    <item>apkpure</item>
    <item>apple_music</item>
+   <item>appso</item>
    <item>app_drawer</item>
    <item>app_drawer_alt</item>
-   <item>app_sales</item>
    <item>app_settings</item>
    <item>asus_backup</item>
    <item>asus_browser</item>
@@ -521,7 +522,6 @@
    <item>**B**</item>
    <item>b612</item>
    <item>backdrops</item>
-   <item>backgrounds</item>
    <item>baicizhan</item>
    <item>baidu</item>
    <item>baidu_hi</item>
@@ -533,6 +533,7 @@
    <item>baidu_waimai</item>
    <item>baixingwang</item>
    <item>banciyuan</item>
+   <item>bank_of_china</item>
    <item>bank_of_communications</item>
    <item>barcode_scanner</item>
    <item>battery_taskmaster</item>
@@ -631,6 +632,7 @@
    <item>dongdong</item>
    <item>dongqiudi</item>
    <item>dots</item>
+   <item>dots_and_co</item>
    <item>douban</item>
    <item>douban_fm</item>
    <item>douban_read</item>
@@ -641,7 +643,6 @@
    <item>dreamdays</item>
    <item>drippler</item>
    <item>dropbox</item>
-   <item>dropsync</item>
    <item>duckduckgo</item>
    <item>duduribao</item>
    <item>duitang</item>
@@ -678,7 +679,6 @@
    <item>fitbit</item>
    <item>fit_time</item>
    <item>flat_style_bar_indicators</item>
-   <item>flava</item>
    <item>flickr</item>
    <item>flipboard</item>
    <item>floatify</item>
@@ -747,7 +747,6 @@
    <item>flyme_voice_assistant</item>
    <item>flyme_wallet</item>
    <item>flyme_weather</item>
-   <item>flynx</item>
    <item>fmradio</item>
    <item>foodie</item>
    <item>forest</item>
@@ -776,10 +775,8 @@
    <item>golden_dict</item>
    <item>google</item>
    <item>google_androidify</item>
-   <item>google_android_auto</item>
    <item>google_arts</item>
    <item>google_authenticator</item>
-   <item>google_blogger</item>
    <item>google_calendar</item>
    <item>google_calendar_1</item>
    <item>google_calendar_10</item>
@@ -816,6 +813,7 @@
    <item>google_chrome</item>
    <item>google_chrome_beta</item>
    <item>google_chrome_dev</item>
+   <item>google_chromium</item>
    <item>google_device_manager</item>
    <item>google_docs</item>
    <item>google_drive</item>
@@ -829,6 +827,7 @@
    <item>google_maps</item>
    <item>google_messenger</item>
    <item>google_messenger_alt</item>
+   <item>google_now_enabler</item>
    <item>google_now_launcher</item>
    <item>google_opinion_rewards</item>
    <item>google_pinyin_keyboard</item>
@@ -887,10 +886,12 @@
    <item>htc_stock</item>
    <item>htc_tasks</item>
    <item>htc_weather</item>
+   <item>huaxia_bank</item>
    <item>huaxiong</item>
    <item>hupo_weather</item>
    <item>huputiyu</item>
    <item>huya</item>
+   <item>hydrogen_wallpager</item>
    <item>**I**</item>
    <item>ia_writer</item>
    <item>icbc</item>
@@ -938,6 +939,7 @@
    <item>kitchen_stories</item>
    <item>kk_launcher</item>
    <item>koudaijizhang</item>
+   <item>kuaikan_comic</item>
    <item>kuaikuaicha_xinhuazidian</item>
    <item>kuaipan</item>
    <item>kuaiya</item>
@@ -950,7 +952,6 @@
    <item>layers_manager</item>
    <item>layout</item>
    <item>lbe</item>
-   <item>lbe_pingxingkongjian</item>
    <item>ledongli</item>
    <item>ledongli_run</item>
    <item>lenovo_calculator</item>
@@ -1058,6 +1059,7 @@
    <item>mi_fit</item>
    <item>mi_remote</item>
    <item>moji_weather</item>
+   <item>mokee_aegis</item>
    <item>momo</item>
    <item>momobeidanci</item>
    <item>mono</item>
@@ -1110,6 +1112,7 @@
    <item>officesuite</item>
    <item>olo</item>
    <item>olympus_image_share</item>
+   <item>one</item>
    <item>onefootball</item>
    <item>oneplus_camera_oxygen</item>
    <item>oneplus_community</item>
@@ -1236,7 +1239,6 @@
    <item>sd_maid</item>
    <item>seed</item>
    <item>settings_editor</item>
-   <item>sevenminute</item>
    <item>sfly</item>
    <item>shadowsocks</item>
    <item>shanbay</item>
@@ -1273,6 +1275,7 @@
    <item>sony_clock</item>
    <item>sony_contacts</item>
    <item>sony_email</item>
+   <item>sony_lifelog</item>
    <item>sony_movies</item>
    <item>sony_movie_creator</item>
    <item>sony_music</item>
@@ -1285,6 +1288,7 @@
    <item>sony_sketch</item>
    <item>sony_smart_connect</item>
    <item>sony_sms</item>
+   <item>sony_support</item>
    <item>sony_themes</item>
    <item>sony_trackid</item>
    <item>sony_video</item>
@@ -1365,6 +1369,7 @@
    <item>tencent_qq_music</item>
    <item>tencent_qq_music_alt</item>
    <item>tencent_qq_music_local_player</item>
+   <item>tencent_qq_player</item>
    <item>tencent_qq_secure</item>
    <item>tencent_qzone</item>
    <item>tencent_video</item>
@@ -1374,9 +1379,11 @@
    <item>tencent_weiyun</item>
    <item>tencent_weiyun_alt</item>
    <item>tencent_weread</item>
+   <item>tencent_wesync</item>
    <item>terminal</item>
    <item>terminal_emulator</item>
    <item>texpand</item>
+   <item>theinitium</item>
    <item>tianshidongman</item>
    <item>tianyashequ</item>
    <item>ticktick</item>
@@ -1415,12 +1422,12 @@
    <item>vine</item>
    <item>vine_alt</item>
    <item>viper4android</item>
+   <item>vipshop</item>
    <item>vlc</item>
    <item>vsco</item>
    <item>vst</item>
    <item>vue</item>
    <item>**W**</item>
-   <item>wakelock_detector</item>
    <item>wandoujia</item>
    <item>wandoujia_alt</item>
    <item>wandoujia_eyepetizer</item>
@@ -1429,6 +1436,7 @@
    <item>wandoujia_wechat_helper</item>
    <item>wandoujia_yilan</item>
    <item>wandoujia_youxiribao</item>
+   <item>wannengyingshi</item>
    <item>weather_timeline</item>
    <item>wechatui</item>
    <item>weibo</item>
@@ -1499,6 +1507,7 @@
    <item>zhiboba</item>
    <item>zhihu</item>
    <item>zhihu_ribao</item>
+   <item>zhimibeidanci</item>
    <item>zhiqu_weather</item>
    <item>zhixing</item>
    <item>zhixinghuochepiao</item>
@@ -1512,6 +1521,7 @@
    <item>zuimeishiguang</item>
    <item>zuimeiyingyong</item>
    <item>zuimeizipai</item>
+   <item>zuiworld</item>
    <item>zuzhiyunxing</item>
 </string-array>
 

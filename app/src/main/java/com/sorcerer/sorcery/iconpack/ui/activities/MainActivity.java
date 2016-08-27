@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -13,11 +12,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -30,7 +26,6 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
@@ -41,7 +36,6 @@ import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
-import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -86,14 +80,11 @@ public class MainActivity extends BaseActivity {
     private boolean mCustomPicker = false;
     private ViewPager.OnPageChangeListener mPageChangeListener =
             new ViewPager.OnPageChangeListener() {
-
                 private int times = 0;
 
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
                                            int positionOffsetPixels) {
-
-
                     if (position != mViewPager.getCurrentItem()) {
                         closeSearch();
                     }
@@ -126,7 +117,6 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onSearchCleared() {
-
         }
 
         @Override
@@ -184,6 +174,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        long startTime = System.currentTimeMillis();
+
         SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
                 MODE_PRIVATE);
 
@@ -198,6 +190,7 @@ public class MainActivity extends BaseActivity {
         if (!sharedPreferences.getBoolean("know help", false)) {
             sharedPreferences.edit().putBoolean("know help", true).apply();
         }
+        Log.d("timer", "startTime: " + (System.currentTimeMillis() - startTime));
 
         sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
 
@@ -302,6 +295,7 @@ public class MainActivity extends BaseActivity {
                         .withResetDrawerOnProfileListClick(false)
                         .withSelectionListEnabled(false)
                         .withSelectionListEnabledForSingleProfile(false)
+                        .withDividerBelowHeader(false)
                         .build())
                 .withActivity(mActivity)
                 .build();
@@ -321,12 +315,6 @@ public class MainActivity extends BaseActivity {
                         .withName(R.string.nav_item_feedback),
                 new PrimaryDrawerItem()
                         .withSelectable(false)
-                        .withTag("wallpapers")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_image_black_24dp, 128))
-                        .withName(R.string.nav_item_wallpapers),
-                new PrimaryDrawerItem()
-                        .withSelectable(false)
                         .withTag("lab")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_settings_black_24dp, 128))
@@ -344,10 +332,6 @@ public class MainActivity extends BaseActivity {
                                 .ic_attach_money_black_24dp, 128))
                         .withName(R.string.nav_item_donate),
                 new DividerDrawerItem(),
-//                new PrimaryDrawerItem()
-//                        .withSelectable(false)
-//                        .withTag("update")
-//                        .withName(R.string.nav_item_update),
                 new PrimaryDrawerItem()
                         .withSelectable(false)
                         .withTag("about")
@@ -377,19 +361,10 @@ public class MainActivity extends BaseActivity {
                     case "donate":
                         activityShift(DonateActivity.class);
                         break;
-//                    case "update":
-//                        UpdateHelper updateHelper =
-//                                new UpdateHelper(mContext,
-//                                        mCoordinatorLayout);
-//                        updateHelper.update();
-//                        break;
                     case "about":
                         Intent intent = new Intent(mContext, AboutDialogActivity.class);
                         mContext.startActivity(intent);
                         mActivity.overridePendingTransition(R.anim.fast_fade_in, 0);
-                        break;
-                    case "DEBUG":
-                        activityShift(TestActivity.class);
                         break;
                 }
                 return false;
@@ -419,26 +394,6 @@ public class MainActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-//                                           @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-//        PermissionsHelper.requestReadPhoneState(mActivity);
-//        PermissionsHelper.requestWriteExternalStorage(mActivity);
-//        doNext(requestCode, grantResults);
-//    }
-
-//    private void doNext(int requestCode, int[] grantResults) {
-//        if (requestCode == PermissionsHelper.WRITE_EXTERNAL_STORAGE_CODE) {
-//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//            } else {
-//                Toast.makeText(this, getString(R.string.please_give_permission), Toast.LENGTH_SHORT)
-//                        .show();
-//            }
-//        }
-//    }
 
     @Override
     public void onBackPressed() {

@@ -189,21 +189,6 @@
         <item>Meizu</item>
     </string-array>
 
-    <string-array name="libs_list" translatable="false">
-        <item>DiscreteSeekBar|AnderWeb|https://github.com/AnderWeb/discreteSeekBar</item>
-        <item>Universal Image Loader|nostra13|https://github.com/nostra13/Android-Universal-Image-Loader</item>
-        <item>RootTools|Stericson|https://github.com/Stericson/RootTools</item>
-        <item>XposedBridge|rovo89|https://github.com/rovo89/XposedBridge</item>
-        <!--<item>Okhttp|square|https://github.com/square/okhttp</item>-->
-        <!--<item>Okio|square|https://github.com/square/okio</item>-->
-        <item>Gson|google|https://github.com/google/gson</item>
-        <item>Material Dialogs|afollestad|https://github.com/afollestad/material-dialogs</item>
-        <item>AVLoadingIndicatorView|81813780|https://github.com/81813780/AVLoadingIndicatorView</item>
-        <item>NineOldAndroids|JakeWharton|https://github.com/JakeWharton/NineOldAndroids</item>
-        <item>MaterialSearchView|MiguelCatalan|https://github.com/MiguelCatalan/MaterialSearchView</item>
-        <item>MaterialEditText|rengwuxian|https://github.com/rengwuxian/MaterialEditText</item>
-    </string-array>
-
     <string-array name="search_suggestion" translatable="false">
         <item>adobe</item>
         <item>ali</item>

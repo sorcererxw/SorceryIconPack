@@ -71,11 +71,6 @@ dependencies {
     compile('com.mikepenz:materialdrawer:5.3.6@aar') {
         transitive = true
     }
-    // material viewpager
-    compile('com.github.florent37:materialviewpager:1.2.0@aar') {
-        transitive = true
-    }
-    compile 'com.code19.library:library:0.0.7'
     // indicator
     compile 'com.wang.avi:library:1.0.2'
     compile 'com.nineoldandroids:library:2.4.0'
@@ -101,6 +96,7 @@ dependencies {
     compile 'cn.leancloud.android:avoscloud-statistics:v3.+'
     // retrofit
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     // rxjava & rxandroid
     compile 'io.reactivex:rxjava:1.1.9'
     compile 'io.reactivex:rxandroid:1.2.1'

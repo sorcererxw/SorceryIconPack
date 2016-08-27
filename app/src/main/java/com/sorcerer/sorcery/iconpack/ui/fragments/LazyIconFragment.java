@@ -14,7 +14,6 @@ import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
-import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
@@ -117,7 +116,7 @@ public class LazyIconFragment extends LazyFragment {
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
         }
-        mGridView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
+//        mGridView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
         mGridView.setAdapter(mIconAdapter);
         if (mNeedResize) {
             resize();

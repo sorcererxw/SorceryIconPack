@@ -7,10 +7,8 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.code19.library.AppUtils;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 
 /**
  * Created by Sorcerer on 2016/8/11.

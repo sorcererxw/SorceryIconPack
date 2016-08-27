@@ -14,6 +14,7 @@ import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 
 import java.util.ArrayList;
@@ -141,19 +143,20 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     @Override
-    public void onBindViewHolder(final IconItemViewHolder holder, final int position) {
-        if (holder instanceof HeaderViewHolder) {
+    public void onBindViewHolder(final IconItemViewHolder holder, int position) {
+        if (getItemViewType(position) == ITEM_TYPE_HEADER) {
             final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(mShowIconList.get(position).getName()));
             headerHolder.mCount.setText(getGroupLength(position));
             headerHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (mHeadVisibleMap.get(position) != null && mHeadVisibleMap.get(position)) {
-                        mHeadVisibleMap.put(position, false);
+                    if (mHeadVisibleMap.get(headerHolder.getAdapterPosition()) != null
+                            && mHeadVisibleMap.get(headerHolder.getAdapterPosition())) {
+                        mHeadVisibleMap.put(headerHolder.getAdapterPosition(), false);
                         headerHolder.mCount.setVisibility(View.GONE);
                     } else {
-                        mHeadVisibleMap.put(position, true);
+                        mHeadVisibleMap.put(headerHolder.getAdapterPosition(), true);
                         headerHolder.mCount.setVisibility(View.VISIBLE);
                     }
                 }
@@ -163,17 +166,17 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             } else {
                 headerHolder.mCount.setVisibility(View.GONE);
             }
-        } else if (holder instanceof IconViewHolder) {
+        } else if (getItemViewType(position) == ITEM_TYPE_ICON) {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
-            if (mShowIconList.get(position).getName().contains("baidu")) {
-                ImageUtil.grayScale(iconHolder.mIcon);
-                iconHolder.mGrayed = true;
-            } else {
-                if (iconHolder.mGrayed) {
-                    ImageUtil.resetScale(iconHolder.mIcon);
-                    iconHolder.mGrayed = false;
-                }
-            }
+//            if (mShowIconList.get(position).getName().contains("baidu")) {
+//                ImageUtil.grayScale(iconHolder.mIcon);
+//                iconHolder.mGrayed = true;
+//            } else {
+//                if (iconHolder.mGrayed) {
+//                    ImageUtil.resetScale(iconHolder.mIcon);
+//                    iconHolder.mGrayed = false;
+//                }
+//            }
             if (!mCustomPicker) {
                 iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -197,23 +200,27 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 });
             }
 
+//            Glide.with(mContext)
+//                    .load(mShowIconList.get(position).getRes())
+//                    .into(iconHolder.mIcon);
+
             Glide.with(mContext)
                     .load(mShowIconList.get(position).getRes())
                     .asBitmap()
                     .into(new BitmapImageViewTarget(iconHolder.mIcon) {
                         @Override
                         protected void setResource(Bitmap resource) {
-                            TransitionDrawable td = new TransitionDrawable(
-                                    new Drawable[]{
-                                            new ColorDrawable(Color.TRANSPARENT),
-                                            new BitmapDrawable(mContext.getResources(),
-                                                    resource)
-                                    });
-                            iconHolder.mIcon.setImageDrawable(td);
-                            td.startTransition(250);
+                            iconHolder.mIcon.setImageBitmap(resource);
+//                            TransitionDrawable td = new TransitionDrawable(
+//                                    new Drawable[]{
+//                                            new ColorDrawable(Color.TRANSPARENT),
+//                                            new BitmapDrawable(mContext.getResources(),
+//                                                    resource)
+//                                    });
+//                            iconHolder.mIcon.setImageDrawable(td);
+//                            td.startTransition(250);
                         }
                     });
-
         }
     }
 

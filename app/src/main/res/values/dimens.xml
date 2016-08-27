@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="wallpaper_item_size">180dp</dimen>
     <dimen name="apply_item_size">160dp</dimen>
     <dimen name="help_item_size">320dp</dimen>
 

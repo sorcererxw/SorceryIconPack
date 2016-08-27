@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
@@ -133,6 +134,7 @@ public class IconDialogActivity extends ToolbarActivity {
     protected void onResume() {
         super.onResume();
 
+
         Observable.just(mName)
                 .subscribeOn(Schedulers.newThread())
                 .map(new Func1<String, String>() {
@@ -192,6 +194,7 @@ public class IconDialogActivity extends ToolbarActivity {
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("market://details?id=" + appPackageName)));
+               onBackPressed();
             } catch (android.content.ActivityNotFoundException anfe) {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://play.google.com/store/apps/details?id="
