@@ -213,4 +213,5 @@
     <string name="action_soft_reboot">soft reboot</string>
     <string name="premium_alipay_descript">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
+
 </resources>

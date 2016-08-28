@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorLayout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/palette_grey_200">
+    android:background="#fafafa">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout_main"

@@ -89,13 +89,13 @@ public class LazyIconFragment extends LazyFragment {
     }
 
     private void init() {
+        calcNumOfRows();
         boolean customPicker = getArguments().getBoolean(mArgCustomPickerKey, false);
-
-        mGridLayoutManager = new GridLayoutManager(getContext(), calcNumOfRows());
+        mGridLayoutManager = new GridLayoutManager(getContext(), mNumOfRows);
         mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                return mIconBeanList.get(position).getName().charAt(0) == '*' ? calcNumOfRows() : 1;
+                return mIconBeanList.get(position).getName().charAt(0) == '*' ? mNumOfRows : 1;
             }
         });
         mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
@@ -116,7 +116,6 @@ public class LazyIconFragment extends LazyFragment {
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
         }
-//        mGridView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
         mGridView.setAdapter(mIconAdapter);
         if (mNeedResize) {
             resize();
@@ -132,18 +131,21 @@ public class LazyIconFragment extends LazyFragment {
     private void resize() {
         if (mIconBeanList != null) {
             mNeedResize = false;
-            mGridLayoutManager.setSpanCount(calcNumOfRows());
+            calcNumOfRows();
+            mGridLayoutManager.setSpanCount(mNumOfRows);
         } else {
             mNeedResize = true;
         }
     }
 
-    private int calcNumOfRows() {
+    private int mNumOfRows;
+
+    private void calcNumOfRows() {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.icon_grid_item_size);
-        return (int) (size.x / s);
+        mNumOfRows = (int) (size.x / s);
     }
 
     public RecyclerView getRecyclerView() {
@@ -158,7 +160,7 @@ public class LazyIconFragment extends LazyFragment {
                     @Override
                     public int getSpanSize(int position) {
                         return mIconBeanList.get(position).getName().charAt(0) == '*'
-                                ? calcNumOfRows() : 1;
+                                ? mNumOfRows : 1;
                     }
                 });
             } else {
@@ -184,7 +186,6 @@ public class LazyIconFragment extends LazyFragment {
 
     private void getIconBeanList(Flag flag) {
         Observable.just(flag)
-                .subscribeOn(Schedulers.newThread())
                 .map(new Func1<Flag, List<IconBean>>() {
                     @Override
                     public List<IconBean> call(Flag flag) {
@@ -222,6 +223,7 @@ public class LazyIconFragment extends LazyFragment {
                         return iconNames;
                     }
                 })
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<List<IconBean>>() {
                     @Override

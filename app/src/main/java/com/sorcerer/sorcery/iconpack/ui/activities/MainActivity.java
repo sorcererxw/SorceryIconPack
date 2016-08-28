@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -45,7 +44,7 @@ import butterknife.BindView;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
- * <p>
+ * <p/>
  * MainActivity
  * The first activity with drawer and icon viewpager.
  */
@@ -165,35 +164,14 @@ public class MainActivity extends BaseActivity {
 
         if (!mCustomPicker) {
             initDrawer();
+            showPermissionDialog();
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle(getString(R.string.select_an_icon));
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        long startTime = System.currentTimeMillis();
-
-        SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
-                MODE_PRIVATE);
-
-        int launchTimes = sharedPreferences.getInt("launch times", 0);
-        if (launchTimes == 0) {
-            openDrawer();
-        } else {
-            if (sharedPreferences.getInt("ver", 0) < BuildConfig.VERSION_CODE) {
-                sharedPreferences.edit().putInt("ver", BuildConfig.VERSION_CODE).apply();
-            }
-        }
-        if (!sharedPreferences.getBoolean("know help", false)) {
-            sharedPreferences.edit().putBoolean("know help", true).apply();
-        }
-        Log.d("timer", "startTime: " + (System.currentTimeMillis() - startTime));
-
-        sharedPreferences.edit().putInt("launch times", launchTimes + 1).apply();
-
+    private void showPermissionDialog() {
         if (Build.VERSION.SDK_INT >= 23) {
             if (!PermissionsHelper.hasPermissions(this,
                     new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
@@ -208,14 +186,17 @@ public class MainActivity extends BaseActivity {
                     list.add(new PermissionBean(
                             ResourceUtil.getString(this, R.string.permission_read_phone_state),
                             ResourceUtil
-                                    .getString(this, R.string.permission_request_read_phone_state),
+                                    .getString(this,
+                                            R.string.permission_request_read_phone_state),
                             R.drawable.ic_smartphone_black_24dp));
                 }
                 if (!PermissionsHelper
-                        .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+                        .hasPermission(this,
+                                PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
                     list.add(new PermissionBean(
                             ResourceUtil
-                                    .getString(this, R.string.permission_write_external_storage),
+                                    .getString(this,
+                                            R.string.permission_write_external_storage),
                             ResourceUtil.getString(this,
                                     R.string.permission_request_describe_write_external_storage),
                             R.drawable.ic_folder_black_24dp));
@@ -239,6 +220,11 @@ public class MainActivity extends BaseActivity {
                 builder.build().show();
             }
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     private void initTabAndPager() {
@@ -299,33 +285,37 @@ public class MainActivity extends BaseActivity {
                         .build())
                 .withActivity(mActivity)
                 .build();
-
         mDrawer.addItems(
                 new PrimaryDrawerItem()
+                        .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("apply")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_input_black_24dp, 128))
                         .withName(R.string.nav_item_apply),
                 new PrimaryDrawerItem()
+                        .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("feedback")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_mail_black_24dp, 128))
                         .withName(R.string.nav_item_feedback),
                 new PrimaryDrawerItem()
+                        .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("lab")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_settings_black_24dp, 128))
                         .withName(R.string.nav_item_lab),
                 new PrimaryDrawerItem()
+                        .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("help")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_help_black_24dp, 128))
                         .withName(R.string.nav_item_help),
                 new PrimaryDrawerItem()
+                        .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("donate")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
@@ -333,6 +323,7 @@ public class MainActivity extends BaseActivity {
                         .withName(R.string.nav_item_donate),
                 new DividerDrawerItem(),
                 new PrimaryDrawerItem()
+                        .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("about")
                         .withName(R.string.nav_item_about)
@@ -373,7 +364,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private void generateFragments(ViewPageAdapter adapter) {
-
         String[] name = getResources().getStringArray(R.array.tab_name);
         LazyIconFragment.Flag[] flag = LazyIconFragment.Flag.values();
 

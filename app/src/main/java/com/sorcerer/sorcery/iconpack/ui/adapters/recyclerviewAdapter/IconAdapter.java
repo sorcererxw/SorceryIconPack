@@ -23,14 +23,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.bumptech.glide.request.target.ImageViewTarget;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
+import com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.ImageUtil;
+import com.sorcerer.sorcery.iconpack.util.KeyboradUtil;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,6 +45,9 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.Observable;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Sorcerer on 2016/1/19 0019.
@@ -69,8 +78,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     class IconViewHolder extends IconItemViewHolder {
         @BindView(R.id.imageView_icon_content_new)
         ImageView mIcon;
-
-        boolean mGrayed = false;
 
         public IconViewHolder(View itemView) {
             super(itemView);
@@ -143,7 +150,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     @Override
-    public void onBindViewHolder(final IconItemViewHolder holder, int position) {
+    public void onBindViewHolder(IconItemViewHolder holder, int position) {
         if (getItemViewType(position) == ITEM_TYPE_HEADER) {
             final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(mShowIconList.get(position).getName()));
@@ -154,7 +161,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     if (mHeadVisibleMap.get(headerHolder.getAdapterPosition()) != null
                             && mHeadVisibleMap.get(headerHolder.getAdapterPosition())) {
                         mHeadVisibleMap.put(headerHolder.getAdapterPosition(), false);
-                        headerHolder.mCount.setVisibility(View.GONE);
+                        headerHolder.mCount.setVisibility(View.INVISIBLE);
                     } else {
                         mHeadVisibleMap.put(headerHolder.getAdapterPosition(), true);
                         headerHolder.mCount.setVisibility(View.VISIBLE);
@@ -164,19 +171,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             if (mHeadVisibleMap.get(position) != null && mHeadVisibleMap.get(position)) {
                 headerHolder.mCount.setVisibility(View.VISIBLE);
             } else {
-                headerHolder.mCount.setVisibility(View.GONE);
+                headerHolder.mCount.setVisibility(View.INVISIBLE);
             }
         } else if (getItemViewType(position) == ITEM_TYPE_ICON) {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
-//            if (mShowIconList.get(position).getName().contains("baidu")) {
-//                ImageUtil.grayScale(iconHolder.mIcon);
-//                iconHolder.mGrayed = true;
-//            } else {
-//                if (iconHolder.mGrayed) {
-//                    ImageUtil.resetScale(iconHolder.mIcon);
-//                    iconHolder.mGrayed = false;
-//                }
-//            }
             if (!mCustomPicker) {
                 iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -187,7 +185,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                             return;
                         }
                         lock(v);
-                        showIconDialog(iconHolder, holder.getAdapterPosition());
+                        showIconDialog(iconHolder, iconHolder.getAdapterPosition());
                     }
                 });
             } else {
@@ -195,30 +193,25 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     @Override
                     public void onClick(View v) {
                         closeKeyboard();
-                        returnIconResource(holder.getAdapterPosition());
+                        returnIconResource(iconHolder.getAdapterPosition());
                     }
                 });
             }
 
-//            Glide.with(mContext)
-//                    .load(mShowIconList.get(position).getRes())
-//                    .into(iconHolder.mIcon);
-
             Glide.with(mContext)
                     .load(mShowIconList.get(position).getRes())
                     .asBitmap()
+                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
+//                    .into(iconHolder.mIcon);
                     .into(new BitmapImageViewTarget(iconHolder.mIcon) {
                         @Override
                         protected void setResource(Bitmap resource) {
-                            iconHolder.mIcon.setImageBitmap(resource);
-//                            TransitionDrawable td = new TransitionDrawable(
-//                                    new Drawable[]{
-//                                            new ColorDrawable(Color.TRANSPARENT),
-//                                            new BitmapDrawable(mContext.getResources(),
-//                                                    resource)
-//                                    });
-//                            iconHolder.mIcon.setImageDrawable(td);
-//                            td.startTransition(250);
+                            TransitionDrawable drawable = new TransitionDrawable(new Drawable[]{
+                                    new ColorDrawable(Color.TRANSPARENT),
+                                    new BitmapDrawable(mContext.getResources(), resource)
+                            });
+                            iconHolder.mIcon.setImageDrawable(drawable);
+                            drawable.startTransition(200);
                         }
                     });
         }
@@ -326,17 +319,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     private void closeKeyboard() {
-        closeKeyboard((Activity) mParent.getContext());
-    }
-
-    private void closeKeyboard(Activity activity) {
-        InputMethodManager imm =
-                (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        View view = activity.getCurrentFocus();
-        if (view == null) {
-            view = new View(activity);
-        }
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        KeyboradUtil.closeKeyboard((Activity) mParent.getContext());
     }
 
 }

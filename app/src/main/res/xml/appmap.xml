@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appmap>
+
+    <!-- Contacts App -->
+    <item
+        name="people"
+        class="com.android.contacts.DialtactsContactsEntryActivity"/>
+
+</appmap>

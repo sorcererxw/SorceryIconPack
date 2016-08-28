@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by Sorcerer on 2016/2/5 0005.
@@ -20,11 +21,11 @@ public class IconRecyclerView extends RecyclerView {
             Adapter adapter = getAdapter();
             if (adapter != null && mEmptyView != null) {
                 if (adapter.getItemCount() == 0) {
-                    setVisibility(GONE);
+                    setVisibility(INVISIBLE);
                     mEmptyView.setVisibility(VISIBLE);
                 } else {
                     setVisibility(VISIBLE);
-                    mEmptyView.setVisibility(GONE);
+                    mEmptyView.setVisibility(INVISIBLE);
                 }
             }
         }
@@ -35,7 +36,7 @@ public class IconRecyclerView extends RecyclerView {
     }
 
     public IconRecyclerView(Context context,
-            @Nullable AttributeSet attrs) {
+                            @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -61,4 +62,17 @@ public class IconRecyclerView extends RecyclerView {
 
         mAdapterDataObserver.onChanged();
     }
+
+
+
+    @Override
+    public void onScrollStateChanged(int state) {
+        super.onScrollStateChanged(state);
+
+//        if (mLastState != state) {
+//            Toast.makeText(getContext(), state + "", Toast.LENGTH_SHORT).show();
+//            mLastState = state;
+//        }
+    }
+
 }

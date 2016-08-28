@@ -119,7 +119,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     }
 
     @Override
-    public void onBindViewHolder(final AppItemViewHolder holder, final int position) {
+    public void onBindViewHolder(final AppItemViewHolder holder, int position) {
         if (mAppInfoList.get(position).isHasCustomIcon() && !mShowAll) {
             holder.check.setVisibility(View.GONE);
             holder.hide();
@@ -161,10 +161,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
                 public void done(List<AVObject> list, AVException e) {
                     if (list.size() > 0) {
                         int t = list.get(0).getInt("count");
-                        mAppInfoList.get(position).setRequestedTimes(t);
+                        mAppInfoList.get(holder.getAdapterPosition()).setRequestedTimes(t);
                         holder.setTimes(t);
                     } else {
-                        mAppInfoList.get(position).setRequestedTimes(0);
+                        mAppInfoList.get(holder.getAdapterPosition()).setRequestedTimes(0);
                         holder.setTimes(0);
                     }
                 }
