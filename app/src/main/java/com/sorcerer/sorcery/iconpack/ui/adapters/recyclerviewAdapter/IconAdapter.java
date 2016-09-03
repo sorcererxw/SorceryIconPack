@@ -14,29 +14,21 @@ import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.bumptech.glide.request.target.ImageViewTarget;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 import com.sorcerer.sorcery.iconpack.util.KeyboradUtil;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,12 +37,11 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Observable;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
- * Created by Sorcerer on 2016/1/19 0019.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/19 0019
  */
 public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHolder> {
 
@@ -65,7 +56,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private List<IconBean> mIconBeanList = new ArrayList<>();
     private List<IconBean> mShowIconList = new ArrayList<>();
     private boolean mClicked = false;
-    private RecyclerView mParent;
 
     class IconItemViewHolder extends RecyclerView.ViewHolder {
 
@@ -100,8 +90,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     public IconAdapter(Activity activity, Context context,
-                       List<IconBean> iconBeanList, RecyclerView parent) {
-        mParent = parent;
+                       List<IconBean> iconBeanList) {
 
         mActivity = activity;
         mContext = context;
@@ -122,11 +111,11 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     public IconItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_TYPE_HEADER) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.layout_icon_header_new, mParent, false);
+                    .inflate(R.layout.layout_icon_header_new, parent, false);
             return new HeaderViewHolder(view);
         } else if (viewType == ITEM_TYPE_ICON) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.layout_icon_content_new, mParent, false);
+                    .inflate(R.layout.layout_icon_content_new, parent, false);
             return new IconViewHolder(view);
         }
         return null;
@@ -202,7 +191,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     .load(mShowIconList.get(position).getRes())
                     .asBitmap()
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
-//                    .into(iconHolder.mIcon);
                     .into(new BitmapImageViewTarget(iconHolder.mIcon) {
                         @Override
                         protected void setResource(Bitmap resource) {
@@ -276,7 +264,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 mShowIconList.get(position).getName());
         intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowIconList.get(position).getLabel());
         if (Build.VERSION.SDK_INT >= 21) {
-            mActivity.startActivityForResult(
+            ((Activity) mContext).startActivityForResult(
                     intent,
                     MainActivity.REQUEST_ICON_DIALOG,
                     ActivityOptions.makeSceneTransitionAnimation(
@@ -286,9 +274,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     ).toBundle()
             );
         } else {
-            mActivity.startActivityForResult(intent,
+            ((Activity) mContext).startActivityForResult(intent,
                     MainActivity.REQUEST_ICON_DIALOG);
-            mActivity.overridePendingTransition(R.anim.fast_fade_in, 0);
+            ((Activity) mContext).overridePendingTransition(R.anim.fast_fade_in, 0);
         }
     }
 
@@ -319,7 +307,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     private void closeKeyboard() {
-        KeyboradUtil.closeKeyboard((Activity) mParent.getContext());
+        KeyboradUtil.closeKeyboard((Activity) mContext);
     }
 
 }

@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Sorcerer on 2016/7/29.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/7/29
  */
 public class IconDialogPagerAdapter extends FragmentPagerAdapter {
 

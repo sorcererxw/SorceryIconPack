@@ -66,4 +66,4 @@
 }
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 
--keep class com.sorcerer.sorcery.iconpack.xposed.*
+-keep class com.sorcerer.sorcery.iconpack.*

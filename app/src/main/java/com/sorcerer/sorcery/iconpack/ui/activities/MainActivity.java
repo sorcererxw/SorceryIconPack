@@ -79,7 +79,6 @@ public class MainActivity extends BaseActivity {
     private boolean mCustomPicker = false;
     private ViewPager.OnPageChangeListener mPageChangeListener =
             new ViewPager.OnPageChangeListener() {
-                private int times = 0;
 
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
@@ -87,8 +86,7 @@ public class MainActivity extends BaseActivity {
                     if (position != mViewPager.getCurrentItem()) {
                         closeSearch();
                     }
-
-                    if (position == 0 && positionOffset == 0 && positionOffsetPixels == 0) {
+                    if (position == 0 && positionOffsetPixels == 0) {
                         times++;
                         if (times >= 3) {
                             openDrawer();
@@ -96,15 +94,15 @@ public class MainActivity extends BaseActivity {
                     }
                 }
 
+                int times = 0;
+
                 @Override
                 public void onPageSelected(int position) {
                 }
 
                 @Override
                 public void onPageScrollStateChanged(int state) {
-                    if (state == ViewPager.SCROLL_STATE_IDLE) {
-                        times = 0;
-                    }
+                    times = 0;
                 }
             };
 
@@ -148,6 +146,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void init() {
         Log.d(TAG, "onCreate");
+        getWindow().setBackgroundDrawable(null);
+
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
 
@@ -225,6 +225,11 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void initTabAndPager() {

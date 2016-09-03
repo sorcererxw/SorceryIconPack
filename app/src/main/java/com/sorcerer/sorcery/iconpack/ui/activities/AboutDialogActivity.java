@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.Html;
@@ -85,7 +86,9 @@ public class AboutDialogActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        mVersionTextView.setText("Version " + BuildConfig.VERSION_NAME);
+        mVersionTextView
+                .setText(String.format("%s: %s", ResourceUtil.getString(this, R.string.version),
+                        BuildConfig.VERSION_NAME));
 
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);
@@ -96,7 +99,12 @@ public class AboutDialogActivity extends BaseActivity {
         htmlBuilder += ("<a href=\"https://github.com/sorcererxw\">Sorcerer</a><br>");
         htmlBuilder += ("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a><br>");
         htmlBuilder += ("<a>nako liu</a>");
-        mCreditsTextView.setText(Html.fromHtml(htmlBuilder));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            mCreditsTextView.setText(Html.fromHtml(htmlBuilder, Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            mCreditsTextView.setText(Html.fromHtml(htmlBuilder));
+        }
+
 
         mCreditsTextView.setMovementMethod(LinkMovementMethod.getInstance());
 

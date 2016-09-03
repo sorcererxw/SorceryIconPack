@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Toast;
 
 /**
- * Created by Sorcerer on 2016/2/5 0005.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/5 0005
  */
 public class IconRecyclerView extends RecyclerView {
 
@@ -62,7 +64,6 @@ public class IconRecyclerView extends RecyclerView {
 
         mAdapterDataObserver.onChanged();
     }
-
 
 
     @Override

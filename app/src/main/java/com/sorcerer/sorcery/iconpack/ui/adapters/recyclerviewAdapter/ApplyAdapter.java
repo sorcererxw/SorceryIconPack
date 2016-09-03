@@ -26,7 +26,9 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by Sorcerer on 2016/1/24 0024.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/24 0024
  */
 public class ApplyAdapter
         extends GridRecyclerAdapter<ApplyAdapter.LauncherViewHolder, LauncherInfo> {

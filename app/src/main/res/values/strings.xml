@@ -79,6 +79,8 @@
 
     <string name="thanks">Thanks</string>
 
+    <string name="version">Version</string>
+
     <string name="nav_item_icon">Icons</string>
     <string name="nav_item_apply">Apply</string>
     <string name="nav_item_feedback">Feedback</string>
@@ -157,16 +159,6 @@
     <string name="global_load_package_add_notify">reboot to display sorcery icon of new app</string>
 
     <string name="global_attention">you need to reboot phone after a new app installed and it do not supports nova launcher, you need to set icon pack by yourself in nova</string>
-    <!--Loading this icon pack by xposed\n-->
-    <!--to make icons changed anywhere in your phone\n-->
-    <!--you need to reboot phone after a new app installed\n-->
-    <!--and it don't supports nova launcher, you need to set icon pack by yourself in nova\n-->
-    <!--what is this most important is that this xposed module may make your phone boot loop\n-->
-    <!--leaving a flash pack in your sdcard before apply xposed</string>-->
-    <!--<string name="global_detail">loading this icon pack by xposed to make icons changed anywhere in your phone\n-->
-    <!--you need to reboot phone after a new app installed\n-->
-    <!--and it don't supports nova launcher, you need to set icon pack by yourself in nova\n-->
-    <!--what is this most important is that this xposed module may make your phone boot loop, leaving a flash pack in your sdcard before apply xposed</string>-->
 
     <string name="xposed_tag">load sorcery icon pack globally</string>
 

@@ -9,7 +9,9 @@ import com.sorcerer.sorcery.iconpack.ui.adapters.IconDialogPagerAdapter;
 import butterknife.BindView;
 
 /**
- * Created by Sorcerer on 2016/7/29.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/7/29
  */
 public class TestIconDialogActivity extends BaseActivity {
     @BindView(R.id.viewPager_test_icon)

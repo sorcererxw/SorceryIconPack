@@ -1,20 +1,18 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -25,7 +23,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.NewRequestAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
@@ -44,6 +42,9 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class AppSelectActivity extends UniversalToolbarActivity {
+
+    @BindView(R.id.coordinatorLayout_app_select)
+    CoordinatorLayout mCoordinatorLayout;
 
     @BindView(R.id.recyclerView_app_select)
     RecyclerView mRecyclerView;
@@ -67,7 +68,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         }
     }
 
-    private NewRequestAdapter mAdapter;
+    private RequestAdapter mAdapter;
     private boolean mCheckAll = false;
     private boolean menuEnable;
     private Menu mMenu;
@@ -132,8 +133,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         LinearLayoutManager.VERTICAL,
                         false)
         );
-        mAdapter = new NewRequestAdapter(mContext, appInfoList);
-        mAdapter.setOnCheckListener(new NewRequestAdapter.OnCheckListener() {
+        mAdapter = new RequestAdapter(mContext, appInfoList);
+        mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
             @Override
             public void OnEmpty() {
                 showFab(false);
@@ -285,14 +286,17 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        Snackbar.make(mCoordinatorLayout,"Error",Snackbar.LENGTH_LONG)
+                                .show();
                     }
 
                     @Override
                     public void onNext(List<AppInfo> list) {
                         mProgressDialog.dismiss();
-                        Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
-                        AppSelectActivity.this.finish();
+                        mAdapter.uncheckAfterSend();
+                        showFab(false);
+                        Snackbar.make(mCoordinatorLayout,"Success",Snackbar.LENGTH_LONG)
+                                .show();
                     }
                 });
     }

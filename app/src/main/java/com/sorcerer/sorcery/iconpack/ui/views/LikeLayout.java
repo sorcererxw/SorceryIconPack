@@ -33,7 +33,9 @@ import butterknife.OnClick;
 import butterknife.OnLongClick;
 
 /**
- * Created by Sorcerer on 2016/2/29 0029.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/29 0029
  */
 public class LikeLayout extends FrameLayout {
     private static final String TAG = "LikeLayout";
@@ -121,7 +123,7 @@ public class LikeLayout extends FrameLayout {
 
     private void init(Context context) {
         mContext = context;
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_like, null);
+        View view = View.inflate(context,R.layout.layout_like, null);
         this.addView(view);
         ButterKnife.bind(this, view);
 
@@ -152,7 +154,6 @@ public class LikeLayout extends FrameLayout {
     public void bindIcon(String name) {
         mBind = true;
         mName = name;
-//        mIconBmobHelper = new IconBmobHelper(mContext);
         mSharedPreferences = mContext.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         mFlag = mSharedPreferences.getInt(name, 0);
         handleFlag(mFlag, false);
@@ -206,57 +207,6 @@ public class LikeLayout extends FrameLayout {
         likeBean.setDeviceId(deviceId);
         likeBean.setIconName(name);
         likeBean.saveInBackground();
-
-
-    }
-
-    private class LikeTask extends AsyncTask {
-
-        private String mName;
-        private boolean mLike;
-        private String mDeviceId;
-
-        LikeTask(String deviceId, String name, boolean like) {
-            mName = name;
-            mLike = like;
-            mDeviceId = deviceId;
-        }
-
-        @Override
-        protected Object doInBackground(Object[] objects) {
-            AVQuery<LikeBean> query = new AVQuery<>(LikeBean.LIKE_TABLE);
-            query.whereEqualTo(LikeBean.COLUMN_DEVICE_ID, mDeviceId);
-            query.whereEqualTo(LikeBean.COLUMN_ICON_NAME, mName);
-            query.findInBackground(new FindCallback<LikeBean>() {
-                @Override
-                public void done(List<LikeBean> list, AVException e) {
-                    if (list.isEmpty()) {
-                        LikeBean likeBean = new LikeBean();
-                        likeBean.setDeviceId(mDeviceId);
-                        likeBean.setLike(mLike);
-                        likeBean.setBuild(BuildConfig.VERSION_CODE + "");
-                        likeBean.setIconName(mName);
-                        likeBean.saveInBackground();
-                    } else {
-//                        AVObject likeBean = LikeBean.createWithoutData(LikeBean.LIKE_TABLE,
-//                                list.get(0).getObjectId());
-//                        likeBean.put(LikeBean.COLUMN_ICON_NAME, "update");
-//                        likeBean.saveInBackground();
-                        AVQuery.doCloudQueryInBackground(
-                                "update TodoFolder set iconName='update' "
-                                        + "where objectId='" + list.get(0).getObjectId() + "'",
-                                new CloudQueryCallback<AVCloudQueryResult>() {
-                                    @Override
-                                    public void done(AVCloudQueryResult avCloudQueryResult,
-                                                     AVException e) {
-
-                                    }
-                                });
-                    }
-                }
-            });
-            return null;
-        }
     }
 
 

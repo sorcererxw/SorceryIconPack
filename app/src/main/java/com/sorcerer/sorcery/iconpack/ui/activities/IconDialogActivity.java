@@ -1,11 +1,8 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.shapes.Shape;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
@@ -17,30 +14,27 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.ImageUtil;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 import butterknife.BindView;
 import rx.Observable;
-import rx.Scheduler;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Sorcerer on 2016/3/22 0022.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/3/22 0022
  */
 
 public class IconDialogActivity extends ToolbarActivity {
@@ -111,10 +105,6 @@ public class IconDialogActivity extends ToolbarActivity {
         mTitleTextView.setText(mLabel);
         mIconImageView.setImageResource(mRes);
 
-        if (mName.contains("baidu")) {
-            ImageUtil.grayScale(mIconImageView);
-        }
-
         mLikeLayout.bindIcon(mName);
 
         mBackground.setOnTouchListener(new View.OnTouchListener() {
@@ -166,10 +156,13 @@ public class IconDialogActivity extends ToolbarActivity {
 
     private Menu mMenu;
 
+    private boolean hasInitMenu = false;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         mMenu = menu;
-        if (mComponent != null) {
+        if (mComponent != null && !hasInitMenu) {
+            hasInitMenu = true;
             getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
 
             MenuItem showOrigin = menu.findItem(R.id.action_show_origin_icon);
@@ -194,7 +187,7 @@ public class IconDialogActivity extends ToolbarActivity {
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("market://details?id=" + appPackageName)));
-               onBackPressed();
+                onBackPressed();
             } catch (android.content.ActivityNotFoundException anfe) {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://play.google.com/store/apps/details?id="

@@ -9,7 +9,9 @@ import java.util.List;
 import butterknife.ButterKnife;
 
 /**
- * Created by Sorcerer on 2016/5/29 0029.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/5/29 0029
  */
 public abstract class BaseRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseViewHolder, M>
         extends RecyclerView.Adapter<VH> {

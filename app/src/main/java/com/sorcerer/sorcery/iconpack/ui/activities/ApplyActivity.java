@@ -13,7 +13,6 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.LauncherApplier;
 import com.sorcerer.sorcery.iconpack.util.LauncherIntents;
 
 import butterknife.BindView;
@@ -56,9 +55,8 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 if (mAdapter.getItem(position).isInstalled()) {
-//                    LauncherApplier.applyLauncher(view.getContext(),
-//                            mAdapter.getItem(position).getLabel().split(" ")[0]);
-                    LauncherIntents intents = new LauncherIntents(mContext, mAdapter.getItem(position).getLabel());
+                    LauncherIntents intents =
+                            new LauncherIntents(mContext, mAdapter.getItem(position).getLabel());
                 } else {
                     final String appPackageName =
                             mAdapter.getItem(position).getPackageName();

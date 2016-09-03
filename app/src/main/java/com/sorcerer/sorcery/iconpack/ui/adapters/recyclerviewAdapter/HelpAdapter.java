@@ -21,7 +21,9 @@ import java.util.Arrays;
 import butterknife.BindView;
 
 /**
- * Created by Sorcerer on 2016/3/8 0008.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/3/8 0008
  */
 public class HelpAdapter extends GridRecyclerAdapter<HelpAdapter.ViewHolder, String> {
 

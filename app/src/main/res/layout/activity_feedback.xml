@@ -7,14 +7,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/root_background"
+    android:orientation="vertical"
     tools:context="com.sorcerer.sorcery.iconpack.ui.activities.FeedbackActivity">
 
     <include layout="@layout/toolbar_universal"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <Button
@@ -22,8 +23,8 @@
             style="@style/FeedbackRaisedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_margin="32dp"
+            android:gravity="center"
             android:text="@string/request"/>
 
         <Button
@@ -31,10 +32,9 @@
             style="@style/FeedbackRaisedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_margin="32dp"
+            android:gravity="center"
             android:text="@string/suggest"/>
-
     </LinearLayout>
 
     <Button
@@ -43,11 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="right"
         android:background="?android:attr/selectableItemBackground"
-        android:gravity="center"
         android:text="@string/action_join_google_plus"
         android:textColor="@color/google_plus"/>
 

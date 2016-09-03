@@ -9,7 +9,9 @@ import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import java.util.List;
 
 /**
- * Created by Sorcerer on 2016/6/4 0004.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/6/4 0004
  */
 public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseViewHolder, M>
         extends BaseRecyclerAdapter<VH, M> {

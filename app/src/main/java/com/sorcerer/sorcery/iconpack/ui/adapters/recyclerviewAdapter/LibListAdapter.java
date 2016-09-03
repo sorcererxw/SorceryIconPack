@@ -18,7 +18,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Sorcerer on 2016/2/25 0025.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/25 0025
  */
 public class LibListAdapter extends RecyclerView.Adapter<LibListAdapter.LibViewHolder> {
 
@@ -50,7 +52,7 @@ public class LibListAdapter extends RecyclerView.Adapter<LibListAdapter.LibViewH
     }
 
     @Override
-    public void onBindViewHolder(LibViewHolder holder, final int position) {
+    public void onBindViewHolder(final LibViewHolder holder, int position) {
         holder.name.setText(mLibList.get(position).getName());
         holder.author.setText(mLibList.get(position).getDeveloper());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +60,7 @@ public class LibListAdapter extends RecyclerView.Adapter<LibListAdapter.LibViewH
             public void onClick(View view) {
                 Intent browserIntent =
                         new Intent(Intent.ACTION_VIEW,
-                                Uri.parse(mLibList.get(position).getLink()));
+                                Uri.parse(mLibList.get(holder.getAdapterPosition()).getLink()));
                 mContext.startActivity(browserIntent);
             }
         });

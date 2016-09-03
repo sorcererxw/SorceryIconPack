@@ -2,37 +2,39 @@ package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Point;
-import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView;
+import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
-import rx.Scheduler;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Sorcerer on 2016/8/10.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/8/10
  */
 public class LazyIconFragment extends LazyFragment {
 
@@ -77,6 +79,7 @@ public class LazyIconFragment extends LazyFragment {
 
     private boolean mNeedResize = false;
 
+
     @Override
     protected void onCreateViewLazy(Bundle savedInstance) {
         setContentView(R.layout.fragment_icon);
@@ -106,12 +109,24 @@ public class LazyIconFragment extends LazyFragment {
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
 
-        ((TextView) findViewById(R.id.textView_icon_list_empty_view_icon)).setTypeface(
-                Typeface.createFromAsset(getContext().getAssets(), "empty_icon_list.ttf"));
-        findViewById(R.id.linearLayout_icon_list_empty_view).setVisibility(View.VISIBLE);
-        mGridView.setEmptyView(findViewById(R.id.linearLayout_icon_list_empty_view));
+        int iconSize = 120;
+        TextView emptyText = (TextView) findViewById(R.id.textView_icon_list_empty_view);
+        emptyText.setCompoundDrawables(null,
+                new IconicsDrawable(getContext())
+                        .color(Color.BLACK)
+                        .icon(GoogleMaterial.Icon.gmd_sentiment_very_dissatisfied)
+                        .sizeDp(iconSize),
+                null, null
+        );
+        emptyText.setPadding(emptyText.getPaddingLeft(),
+                emptyText.getPaddingTop(),
+                emptyText.getPaddingRight(),
+                DisplayUtil.dip2px(getContext(), (int) (emptyText.getTextSize() + iconSize) / 2)
+        );
+        emptyText.setVisibility(View.VISIBLE);
+        mGridView.setEmptyView(emptyText);
 
-        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mGridView);
+        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList);
 
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
@@ -201,10 +216,8 @@ public class LazyIconFragment extends LazyFragment {
                                 if (thumbRes != 0) {
                                     iconBean.setRes(thumbRes);
                                 } else {
-                                    Log.d(TAG, "thumb = 0: " + name);
+                                    KLog.d(TAG, "thumb = 0: " + name);
                                 }
-                            } else {
-                                Log.d(TAG, "res = 0: " + name);
                             }
                             list.add(iconBean);
                         }
