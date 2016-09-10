@@ -4,7 +4,9 @@ import android.content.Context;
 import android.util.TypedValue;
 
 /**
- * Created by Sorcerer on 2016/4/28.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/4/28
  */
 public class DisplayUtil {
     public static int dip2px(Context context, float dipValue) {

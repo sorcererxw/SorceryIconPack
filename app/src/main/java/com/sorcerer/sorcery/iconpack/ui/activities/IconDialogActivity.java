@@ -15,13 +15,16 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
+import com.sorcerer.sorcery.iconpack.util.TimeWatch;
 import com.sorcerer.sorcery.iconpack.util.ViewUtil;
 
 import butterknife.BindView;
@@ -82,6 +85,9 @@ public class IconDialogActivity extends ToolbarActivity {
         }
     }
 
+    TimeWatch mTimeWatch = new TimeWatch();
+
+
     @Override
     protected Toolbar provideToolbar() {
         return mToolbar;
@@ -89,9 +95,18 @@ public class IconDialogActivity extends ToolbarActivity {
 
     @Override
     protected void init() {
+
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
         mName = getIntent().getStringExtra(EXTRA_NAME);
         mRes = getIntent().getIntExtra(EXTRA_RES, 0);
+
+        mTimeWatch.resetTime();
+
+//        mLabel = SorceryIcons.sTmpIconBean.getLabel();
+//        mName = SorceryIcons.sTmpIconBean.getName();
+//        mRes = SorceryIcons.sTmpIconBean.getRes();
+
+        KLog.d(mTimeWatch.consumeTime(true));
 
         if (mRes == 0) {
             this.finish();
@@ -103,9 +118,15 @@ public class IconDialogActivity extends ToolbarActivity {
         }
 
         mTitleTextView.setText(mLabel);
+
         mIconImageView.setImageResource(mRes);
 
+        KLog.d(mTimeWatch.consumeTime(true));
+
         mLikeLayout.bindIcon(mName);
+
+        KLog.d(mTimeWatch.consumeTime(true));
+
 
         mBackground.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -124,6 +145,7 @@ public class IconDialogActivity extends ToolbarActivity {
     protected void onResume() {
         super.onResume();
 
+        mTimeWatch.resetTime();
 
         Observable.just(mName)
                 .subscribeOn(Schedulers.newThread())
@@ -144,6 +166,8 @@ public class IconDialogActivity extends ToolbarActivity {
                         }
                     }
                 });
+
+        KLog.d(mTimeWatch.consumeTime(true));
     }
 
     @Override

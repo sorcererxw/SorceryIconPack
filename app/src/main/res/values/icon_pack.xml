@@ -2,33 +2,26 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>hydrogen_wallpager</item>
-        <item>huaxia_bank</item>
-        <item>aisen</item>
-        <item>tencent_qq_player</item>
-        <item>wannengyingshi</item>
-        <item>zuiworld</item>
-        <item>tencent_wesync</item>
-        <item>vipshop</item>
-        <item>theinitium</item>
-        <item>bank_of_china</item>
-        <item>one</item>
-        <item>appso</item>
-        <item>kuaikan_comic</item>
-        <item>google_now_enabler</item>
-        <item>sony_support</item>
-        <item>google_chromium</item>
-        <item>mokee_aegis</item>
-        <item>zhimibeidanci</item>
-        <item>sony_lifelog</item>
-        <item>dots_and_co</item>
-        <item>anyview</item>
+        <item>myscript_calculator</item>
+        <item>current_activity</item>
+        <item>microsoft_office_lens</item>
+        <item>netease_super_calculator</item>
+        <item>icbc_bank_im</item>
+        <item>flow_bank</item>
+        <item>cib_bank</item>
+        <item>abcchina_bank</item>
+        <item>minecraft_toolbox</item>
+        <item>block_launcher_pro</item>
+        <item>game_vainglory</item>
+        <item>ecitic_bank</item>
+        <item>cmbc_bank</item>
+        <item>spd_bank</item>
 
         <item>@string/icon_label_updated</item>
-        <item>kindle</item>
-        <item>versus</item>
-        <item>sony_music</item>
-        <item>xposed</item>
+        <item>microsoft_office_onenote</item>
+        <item>dianping</item>
+        <item>bank_of_communications</item>
+        <item>wps</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
         <item>alipay</item>
@@ -152,7 +145,6 @@
         <item>htc_clock</item>
         <item>htc_contacts</item>
         <item>htc_dot_view</item>
-        <item>htc_drawer</item>
         <item>htc_email</item>
         <item>htc_files</item>
         <item>htc_gallery</item>
@@ -234,12 +226,13 @@
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
         <item>microsoft_office_excel</item>
+        <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
+        <item>microsoft_office_onenote</item>
         <item>microsoft_office_outlook</item>
         <item>microsoft_office_powerpoint</item>
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
-        <item>microsoft_onenote</item>
         <item>microsoft_translator</item>
     </string-array>
 
@@ -282,7 +275,6 @@
         <item>samsung_camera</item>
         <item>samsung_clock</item>
         <item>samsung_contacts</item>
-        <item>samsung_drawer</item>
         <item>samsung_email</item>
         <item>samsung_files</item>
         <item>samsung_gallery</item>
@@ -467,7 +459,7 @@
         <item>a5sing</item>
         <item>a94_percent</item>
         <item>**A**</item>
-        <item>abchina_bank</item>
+        <item>abcchina_bank</item>
         <item>accuweather</item>
         <item>accuweather_plus</item>
         <item>acdisplay</item>
@@ -544,7 +536,6 @@
         <item>asus_remote_link</item>
         <item>atom_launcher</item>
         <item>audiofx</item>
-        <item>authy</item>
         <item>autodesk_pixlr</item>
         <item>autodesk_sketchbook</item>
         <item>automate</item>
@@ -580,6 +571,7 @@
         <item>bilibili_live</item>
         <item>bittorrent_sync</item>
         <item>blacklight</item>
+        <item>block_launcher_pro</item>
         <item>blued</item>
         <item>bluenote</item>
         <item>boomerang</item>
@@ -610,12 +602,14 @@
         <item>chromer</item>
         <item>chronus</item>
         <item>chufaba</item>
+        <item>cib_bank</item>
         <item>cinnamon</item>
         <item>cleanmaster</item>
         <item>clock</item>
         <item>cloudmagic</item>
         <item>cloud_vpn</item>
         <item>cmbchina</item>
+        <item>cmbc_bank</item>
         <item>cmcc_wifi</item>
         <item>cm_browser</item>
         <item>complete_action_plus</item>
@@ -631,6 +625,7 @@
         <item>crossyroad</item>
         <item>ctrip</item>
         <item>ctrip_alt</item>
+        <item>current_activity</item>
         <item>custom_share</item>
         <item>cyanogenmod_camera</item>
         <item>cyanogenmod_explorer</item>
@@ -663,8 +658,6 @@
         <item>domino_pizza_alt</item>
         <item>dongdong</item>
         <item>dongqiudi</item>
-        <item>dots</item>
-        <item>dots_and_co</item>
         <item>douban</item>
         <item>douban_fm</item>
         <item>douban_read</item>
@@ -682,6 +675,7 @@
         <item>duolingo</item>
         <item>**E**</item>
         <item>echo</item>
+        <item>ecitic_bank</item>
         <item>edx</item>
         <item>eleme</item>
         <item>eleme_alt</item>
@@ -714,6 +708,7 @@
         <item>flickr</item>
         <item>flipboard</item>
         <item>floatify</item>
+        <item>flow_bank</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
         <item>flyme_browser</item>
@@ -790,12 +785,14 @@
         <item>gamecores</item>
         <item>game_clash_of_clans</item>
         <item>game_clash_royale</item>
+        <item>game_dots_and_co</item>
         <item>game_dots_out</item>
         <item>game_heartstone</item>
         <item>game_maestria</item>
         <item>game_mekorama</item>
         <item>game_prune</item>
         <item>game_the_last_banacat</item>
+        <item>game_vainglory</item>
         <item>game_virtua_tennis</item>
         <item>game_wangzherongyao</item>
         <item>gaotieguanjia</item>
@@ -903,7 +900,6 @@
         <item>htc_clock</item>
         <item>htc_contacts</item>
         <item>htc_dot_view</item>
-        <item>htc_drawer</item>
         <item>htc_email</item>
         <item>htc_files</item>
         <item>htc_gallery</item>
@@ -927,6 +923,7 @@
         <item>**I**</item>
         <item>ia_writer</item>
         <item>icbc</item>
+        <item>icbc_bank_im</item>
         <item>icebox</item>
         <item>icourse163</item>
         <item>ifanr</item>
@@ -1063,14 +1060,16 @@
         <item>microsoft_bing_keyboard</item>
         <item>microsoft_cortana</item>
         <item>microsoft_office_excel</item>
+        <item>microsoft_office_lens</item>
         <item>microsoft_office_mobile</item>
+        <item>microsoft_office_onenote</item>
         <item>microsoft_office_outlook</item>
         <item>microsoft_office_powerpoint</item>
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
-        <item>microsoft_onenote</item>
         <item>microsoft_translator</item>
         <item>minecraft</item>
+        <item>minecraft_toolbox</item>
         <item>minminguard</item>
         <item>misfit</item>
         <item>miui_account</item>
@@ -1117,6 +1116,7 @@
         <item>mxplayer</item>
         <item>myandroidtools</item>
         <item>myboy_gba</item>
+        <item>myscript_calculator</item>
         <item>**N**</item>
         <item>netease_cloudclass</item>
         <item>netease_cloudclass_alt</item>
@@ -1126,6 +1126,7 @@
         <item>netease_music_alt</item>
         <item>netease_news</item>
         <item>netease_open_class</item>
+        <item>netease_super_calculator</item>
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_note</item>
@@ -1248,7 +1249,6 @@
         <item>samsung_camera</item>
         <item>samsung_clock</item>
         <item>samsung_contacts</item>
-        <item>samsung_drawer</item>
         <item>samsung_email</item>
         <item>samsung_files</item>
         <item>samsung_gallery</item>
@@ -1283,7 +1283,6 @@
         <item>simplenote</item>
         <item>skitch</item>
         <item>skype</item>
-        <item>slack</item>
         <item>smartisan_note</item>
         <item>smartisan_reader</item>
         <item>smart_launcher</item>
@@ -1326,13 +1325,14 @@
         <item>sony_video</item>
         <item>sony_weather</item>
         <item>sony_whatsnew</item>
+        <item>sorcery_icons</item>
         <item>sougou_keyboard</item>
         <item>sougou_wallpaper</item>
         <item>sound_recorder</item>
+        <item>spd_bank</item>
         <item>spendee</item>
         <item>spotify</item>
         <item>sspai</item>
-        <item>stack_exchange</item>
         <item>starbucks</item>
         <item>star_walk_2</item>
         <item>steam</item>
@@ -1556,6 +1556,4 @@
         <item>zuiworld</item>
         <item>zuzhiyunxing</item>
     </string-array>
-
-
 </resources>

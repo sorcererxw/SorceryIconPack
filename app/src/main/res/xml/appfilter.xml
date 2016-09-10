@@ -50,7 +50,6 @@
     <calendar
         component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
         prefix="google_calendar_"/>
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -369,9 +368,6 @@
     <item
         component="ComponentInfo{com.asus.remotelink.full/com.asus.remotelink.AsusMainActivity}"
         drawable="asus_remote_link"/>
-    <item
-        component="ComponentInfo{com.authy.authy/com.authy.authy.activities.InitializationActivity}"
-        drawable="authy"/>
     <item
         component="ComponentInfo{com.adsk.sketchbookhd.galaxy.oem/com.adsk.sketchbook.SketchBook}"
         drawable="autodesk_sketchbook"/>
@@ -958,9 +954,6 @@
         component="ComponentInfo{com.mandian.android.dongdong/cc.pacer.androidapp.ui.splash.SplashActivity}"
         drawable="dongdong"/>
     <item
-        component="ComponentInfo{com.nerdyoctopus.gamedots/com.prime31.UnityPlayerNativeActivity}"
-        drawable="dots"/>
-    <item
         component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockTabActivity}"
         drawable="clock"/>
     <item
@@ -1331,7 +1324,22 @@
         drawable="sony_support"/>
     <item
         component="ComponentInfo{com.weplaydots.plus/com.appboy.unity.prime31compatible.AppboyUnityPlayerNativeActivity}"
-        drawable="dots_and_co"/>
+        drawable="game_dots_and_co"/>
+    <item
+        component="ComponentInfo{com.ecitic.bank.mobile/com.citicbank.newmobilebank.ui.SplashActivity}"
+        drawable="ecitic_bank"/>
+    <item
+        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity}"
+        drawable="sorcery_icons"/>
+    <item
+        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity}"
+        drawable="sorcery_icons"/>
+    <item
+        component="ComponentInfo{com.youdao.calculator/com.youdao.calculator.activities.SplashActivity}"
+        drawable="netease_super_calculator"/>
+    <item
+        component="ComponentInfo{com.youdao.calculator/com.youdao.calculator.activities.MainActivity}"
+        drawable="netease_super_calculator"/>
     <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
@@ -2309,10 +2317,10 @@
         drawable="microsoft_translator"/>
     <item
         component="ComponentInfo{com.microsoft.office.onenote/com.microsoft.office.onenote.ui.ONMLauncherActivity}"
-        drawable="microsoft_onenote"/>
+        drawable="microsoft_office_onenote"/>
     <item
         component="ComponentInfo{com.microsoft.office.onenote/com.microsoft.office.onenote.ui.ONMSplashActivity}"
-        drawable="microsoft_onenote"/>
+        drawable="microsoft_office_onenote"/>
     <item
         component="ComponentInfo{com.misfitwearables.prometheus/com.misfitwearables.prometheus.ui.MainActivity}"
         drawable="misfit"/>
@@ -2968,9 +2976,6 @@
         component="ComponentInfo{com.automattic.simplenote/com.automattic.simplenote.NotesActivity}"
         drawable="simplenote"/>
     <item
-        component="ComponentInfo{com.Slack/com.Slack.ui.HomeActivity}"
-        drawable="slack"/>
-    <item
         component="ComponentInfo{ginlemon.flowerpro/ginlemon.flower.HomeScreen}"
         drawable="smart_launcher"/>
     <item
@@ -3090,9 +3095,6 @@
     <item
         component="ComponentInfo{com.sogou.wallpaper/com.sogou.wallpaper.LaunchActivity}"
         drawable="sougou_wallpaper"/>
-    <item
-        component="ComponentInfo{com.stackexchange.marvin/com.stackexchange.marvin.ui.LaunchActivity}"
-        drawable="stack_exchange"/>
     <item
         component="ComponentInfo{com.cleevio.spendee/com.cleevio.spendee.ui.MainActivity}"
         drawable="spendee"/>
@@ -4098,5 +4100,44 @@
     <item
         component="ComponentInfo{com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}"
         drawable="google_keyboard"/>
+    <item
+        component="ComponentInfo{cn.com.spdb.mobilebank.per/cn.com.spdb.mobilebank.per.activity.SplashActivity}"
+        drawable="spd_bank"/>
+    <item
+        component="ComponentInfo{cn.com.cmbc.newmbank/cn.com.cmbc.newmbank.activity.WelComeActivity}"
+        drawable="cmbc_bank"/>
+    <item
+        component="ComponentInfo{com.bankcomm.Bankcomm/com.bankcomm.config.ConfigActivity}"
+        drawable="bank_of_communications"/>
+    <item
+        component="ComponentInfo{com.superevilmegacorp.game/com.superevilmegacorp.game.NuoActivityLauncher}"
+        drawable="game_vainglory"/>
+    <item
+        component="ComponentInfo{net.zhuoweizhang.mcpelauncher.pro/net.zhuoweizhang.mcpelauncher.pro.LauncherProActivity}"
+        drawable="block_launcher_pro"/>
+    <item
+        component="ComponentInfo{com.duowan.groundhog.mctools/com.duowan.groundhog.mctools.activity.StarActivity}"
+        drawable="minecraft_toolbox"/>
+    <item
+        component="ComponentInfo{com.forms/com.forms.start.ActStart}"
+        drawable="bank_of_china"/>
+    <item
+        component="ComponentInfo{com.cib.cibmb/com.cib.cibmb.LPSplashScreen}"
+        drawable="cib_bank"/>
+    <item
+        component="ComponentInfo{com.flowbank.wo/com.flowbank.wo.activity.WelcomeActivity}"
+        drawable="flow_bank"/>
+    <item
+        component="ComponentInfo{com.icbc.im/com.icbc.im.ui.activity.LauncherActivity}"
+        drawable="icbc_bank_im"/>
+    <item
+        component="ComponentInfo{com.willme.topactivity/com.willme.topactivity.MainActivity}"
+        drawable="current_activity"/>
+    <item
+        component="ComponentInfo{com.microsoft.office.officelens/com.microsoft.office.apphost.LaunchActivity}"
+        drawable="microsoft_office_lens"/>
+    <item
+        component="ComponentInfo{com.visionobjects.calculator/com.visionobjects.calculator.activity.MainActivity}"
+        drawable="myscript_calculator"/>
 
 </resources>

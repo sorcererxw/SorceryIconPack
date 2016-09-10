@@ -2,16 +2,19 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.StrictMode;
 
+import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
-import com.sorcerer.sorcery.iconpack.util.IconKeeper;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 /**
- * Created by Sorcerer on 2016/1/26 0026.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/26 0026
  */
 public class SorceryIcons extends Application {
 
@@ -32,7 +35,6 @@ public class SorceryIcons extends Application {
         if (BuildConfig.DEBUG && ENABLE_LEAKCARRY) {
             mRefWatcher = LeakCanary.install(this);
         }
-        IconKeeper iconKeeper = new IconKeeper();
     }
 
     public static RefWatcher getRefWatcher(Context context) {

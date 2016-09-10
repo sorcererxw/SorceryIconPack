@@ -13,6 +13,7 @@ import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -286,7 +287,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        Snackbar.make(mCoordinatorLayout,"Error",Snackbar.LENGTH_LONG)
+                        Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG)
                                 .show();
                     }
 
@@ -295,8 +296,11 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         mProgressDialog.dismiss();
                         mAdapter.uncheckAfterSend();
                         showFab(false);
-                        Snackbar.make(mCoordinatorLayout,"Success",Snackbar.LENGTH_LONG)
+                        Toast.makeText(AppSelectActivity.this, "success", Toast.LENGTH_SHORT)
                                 .show();
+                        AppSelectActivity.this.finish();
+//                        Snackbar.make(mCoordinatorLayout,"Success",Snackbar.LENGTH_LONG)
+//                                .show();
                     }
                 });
     }

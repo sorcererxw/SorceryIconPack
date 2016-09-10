@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "3.6.1." + code
+        versionName "3.7." + code
         minSdkVersion 16
         targetSdkVersion 24
     }
