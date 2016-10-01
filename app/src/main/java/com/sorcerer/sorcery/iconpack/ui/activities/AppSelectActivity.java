@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -41,6 +42,8 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
+
+import static android.provider.Settings.Secure.ANDROID_ID;
 
 public class AppSelectActivity extends UniversalToolbarActivity {
 
@@ -235,6 +238,10 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         e.printStackTrace();
                     }
                 }
+                if(deviceId==null){
+                    deviceId = Settings.Secure
+                            .getString(AppSelectActivity.this.getContentResolver(), ANDROID_ID);
+                }
 
                 List<RequestBean> requestBeanList = new ArrayList<>();
                 SharedPreferences sharedPreferences = getSharedPreferences("request package",
@@ -299,8 +306,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         Toast.makeText(AppSelectActivity.this, "success", Toast.LENGTH_SHORT)
                                 .show();
                         AppSelectActivity.this.finish();
-//                        Snackbar.make(mCoordinatorLayout,"Success",Snackbar.LENGTH_LONG)
-//                                .show();
                     }
                 });
     }

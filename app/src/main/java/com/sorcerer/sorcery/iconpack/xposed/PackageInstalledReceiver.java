@@ -39,7 +39,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         mContext = context;
-        mPrefs = context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_WORLD_READABLE);
+        mPrefs = context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);
         mActive = mPrefs.getBoolean("pref_global_load", false);
         if (mActive) {
             if (action.equals(Intent.ACTION_PACKAGE_ADDED)) {
@@ -52,7 +52,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
                     PackageManager pm = context.getPackageManager();
                     SharedPreferences prefs =
                             context.getSharedPreferences(SHARED_PREFERENCE_NAME,
-                                    Context.MODE_WORLD_READABLE);
+                                    Context.MODE_PRIVATE);
                     Editor editor = prefs.edit();
                     int displayDpi = prefs.getInt("display_dpi", 320);
                     String themePackageName = prefs.getString("theme_package_name", null);
@@ -87,7 +87,8 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
                             Resources origPkgRes;
                             Gson gson = new Gson();
                             ApplicationInfo themePackage =
-                                    pm.getApplicationInfo(themePackageName, 128);
+                                    pm.getApplicationInfo(themePackageName,
+                                            PackageManager.GET_META_DATA);
                             Resources r = pm.getResourcesForApplication(themePackage.packageName);
                             IconMaskItem mThemeIconMask = null;
 //                        try {
@@ -128,7 +129,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
                                         ActivityInfo activityInfo =
                                                 pm.getActivityInfo(new ComponentName(item
                                                                 .getPackageName(), item.getActivityName()),
-                                                        128);
+                                                        PackageManager.GET_META_DATA);
                                         if (activityInfo != null) {
                                             items = themeIconsForApp;
                                             origPkgRes = pm.getResourcesForApplication(item
@@ -242,7 +243,7 @@ public class PackageInstalledReceiver extends BroadcastReceiver {
                         try {
                             ActivityInfo activityInfo = pm.getActivityInfo(new ComponentName(
                                     item.getPackageName(),
-                                    item.getActivityName()), 128);
+                                    item.getActivityName()), PackageManager.GET_META_DATA);
                             Log.d(TAG, "activity: " + item.getActivityName());
                             Log.d(TAG, "orig res name: " + item.getOrigResName());
                             Log.d(TAG, "component: " + item.getComponent());

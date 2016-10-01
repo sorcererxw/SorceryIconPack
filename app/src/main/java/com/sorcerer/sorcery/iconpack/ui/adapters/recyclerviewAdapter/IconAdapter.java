@@ -14,9 +14,11 @@ import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,19 +27,17 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.util.KeyboradUtil;
+import com.sorcerer.sorcery.iconpack.util.KeyboardUtil;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.github.mthli.slice.Slice;
 
 /**
  * @description:
@@ -51,6 +51,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private static final int ITEM_TYPE_ICON = 0x1;
     private static final int ITEM_TYPE_HEADER = 0x10;
 
+
     private Activity mActivity;
     private boolean mCustomPicker = false;
     private Context mContext;
@@ -58,24 +59,40 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private List<IconBean> mShowIconList = new ArrayList<>();
     private boolean mClicked = false;
 
+    private int mColumnCount;
+
+    public void setColumnCount(int columnCount) {
+        mColumnCount = columnCount;
+    }
+
+    private int mScreenWidth;
+
+    public void setScreenWidth(int screenWidth) {
+        mScreenWidth = screenWidth;
+    }
+
     class IconItemViewHolder extends RecyclerView.ViewHolder {
 
-        public IconItemViewHolder(View itemView) {
+        IconItemViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
     }
 
     class IconViewHolder extends IconItemViewHolder {
+
+        @BindView(R.id.frameLayout_item_icon)
+        FrameLayout mFrame;
+
         @BindView(R.id.imageView_icon_content_new)
         ImageView mIcon;
 
-        public IconViewHolder(View itemView) {
+        IconViewHolder(View itemView) {
             super(itemView);
         }
     }
 
-    private Map<Integer, Boolean> mHeadVisibleMap = new HashMap<>();
+    private SparseBooleanArray mHeadVisibleArray = new SparseBooleanArray();
 
     class HeaderViewHolder extends IconItemViewHolder {
         @BindView(R.id.textView_icon_header_new)
@@ -85,7 +102,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         TextView mCount;
 
 
-        public HeaderViewHolder(View itemView) {
+        HeaderViewHolder(View itemView) {
             super(itemView);
         }
     }
@@ -148,28 +165,64 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             headerHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (mHeadVisibleMap.get(headerHolder.getAdapterPosition()) != null
-                            && mHeadVisibleMap.get(headerHolder.getAdapterPosition())) {
-                        mHeadVisibleMap.put(headerHolder.getAdapterPosition(), false);
+                    if (mHeadVisibleArray.get(headerHolder.getAdapterPosition())) {
+                        mHeadVisibleArray.put(headerHolder.getAdapterPosition(), false);
                         headerHolder.mCount.setVisibility(View.INVISIBLE);
                     } else {
-                        mHeadVisibleMap.put(headerHolder.getAdapterPosition(), true);
+                        mHeadVisibleArray.put(headerHolder.getAdapterPosition(), true);
                         headerHolder.mCount.setVisibility(View.VISIBLE);
                     }
                 }
             });
-            if (mHeadVisibleMap.get(position) != null && mHeadVisibleMap.get(position)) {
+            if (mHeadVisibleArray.get(position)) {
                 headerHolder.mCount.setVisibility(View.VISIBLE);
             } else {
                 headerHolder.mCount.setVisibility(View.INVISIBLE);
             }
         } else if (getItemViewType(position) == ITEM_TYPE_ICON) {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
+
+            Slice slice = new Slice(iconHolder.mFrame);
+            slice.setRadius(0f);
+            slice.showLeftTopRect(false);
+            slice.showLeftBottomRect(false);
+            slice.showRightBottomRect(false);
+            slice.showRightTopRect(false);
+//            switch (getIconPosition(position, mColumnCount, getItemCount())) {
+//                case LeftTop:
+//                    handleSlice(iconHolder, true, false, false, false);
+//                    break;
+//                case LeftBottom:
+//                    handleSlice(iconHolder, false, false, false, true);
+//                    break;
+//                case RightTop:
+//                    handleSlice(iconHolder, false, true, false, false);
+//                    break;
+//                case RightBottom:
+//                    handleSlice(iconHolder, false, false, true, false);
+//                    break;
+//                case LeftEdge:
+//                    handleSlice(iconHolder, false, false, false, false);
+//                    break;
+//                case RightEdge:
+//                    handleSlice(iconHolder, false, false, false, false);
+//                    break;
+//                case TopEdge:
+//                    handleSlice(iconHolder, false, false, false, false);
+//                    break;
+//                case BottomEdge:
+//                    handleSlice(iconHolder, false, false, false, false);
+//                    break;
+//                case Center:
+//                    handleSlice(iconHolder, false, false, false, false);
+//                    break;
+//            }
+
             if (!mCustomPicker) {
                 iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        closeKeyboard();
+                        KeyboardUtil.closeKeyboard((Activity) mContext);
 
                         if (mClicked) {
                             return;
@@ -182,7 +235,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        closeKeyboard();
+                        KeyboardUtil.closeKeyboard((Activity) mContext);
                         returnIconResource(iconHolder.getAdapterPosition());
                     }
                 });
@@ -200,7 +253,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                                     new BitmapDrawable(mContext.getResources(), resource)
                             });
                             iconHolder.mIcon.setImageDrawable(drawable);
-                            drawable.startTransition(200);
+                            drawable.startTransition(100);
                         }
                     });
         }
@@ -307,8 +360,56 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         mActivity.finish();
     }
 
-    private void closeKeyboard() {
-        KeyboradUtil.closeKeyboard((Activity) mContext);
+    private enum IconPosition {
+        LeftTop,
+        LeftBottom,
+        RightTop,
+        RightBottom,
+        LeftEdge,
+        RightEdge,
+        TopEdge,
+        BottomEdge,
+        Center
+    }
+
+    private void handleSlice(IconViewHolder iconViewHolder,
+                             boolean leftTop,
+                             boolean rightTop,
+                             boolean rightBottom,
+                             boolean leftBottom) {
+        Slice slice = new Slice(iconViewHolder.mFrame);
+        slice.showLeftTopRect(!leftTop);
+        slice.showLeftBottomRect(!leftBottom);
+        slice.showRightBottomRect(!rightBottom);
+        slice.showRightTopRect(!rightTop);
+    }
+
+    private IconPosition getIconPosition(int pos, int column, int all) {
+        if (pos < column) {
+            if (pos % column == 0) {
+                return IconPosition.LeftTop;
+            } else if ((pos + 1) % column == 0) {
+                return IconPosition.RightTop;
+            } else {
+                return IconPosition.TopEdge;
+            }
+        } else if (all - column >= pos) {
+            if (pos % column == 0) {
+                return IconPosition.LeftBottom;
+            } else if ((pos + 1) % column == 0) {
+                return IconPosition.RightBottom;
+            } else {
+                return IconPosition.BottomEdge;
+            }
+        } else {
+            if (pos % column == 0) {
+                return IconPosition.LeftEdge;
+            } else if ((pos + 1) % column == 0) {
+                return IconPosition.RightEdge;
+            } else {
+                return IconPosition.Center;
+            }
+        }
     }
 
 }

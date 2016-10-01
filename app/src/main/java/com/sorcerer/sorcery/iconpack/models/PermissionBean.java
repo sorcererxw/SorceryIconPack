@@ -1,7 +1,9 @@
 package com.sorcerer.sorcery.iconpack.models;
 
 /**
- * Created by Sorcerer on 2016/8/12.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/8/12
  */
 public class PermissionBean {
     private String mTitle;

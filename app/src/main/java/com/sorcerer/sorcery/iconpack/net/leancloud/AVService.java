@@ -11,7 +11,9 @@ import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 /**
- * Created by Sorcerer on 2016/7/22.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/7/22
  */
 public class AVService {
     public static void init(Context context) {
@@ -27,10 +29,5 @@ public class AVService {
         AVAnalytics.enableCrashReport(context, true);
         AVOSCloud.useAVCloudCN();
 
-
-        AVAnalytics.enableCrashReport(context, !BuildConfig.DEBUG);
-        // 启用崩溃错误报告
-//        AVAnalytics.enableCrashReport(ctx, true);
-//        AVOSCloud.setLastModifyEnabled(true);
     }
 }

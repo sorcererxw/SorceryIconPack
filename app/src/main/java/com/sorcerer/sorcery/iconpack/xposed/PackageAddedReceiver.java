@@ -41,7 +41,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
 
-        mPrefs = context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_WORLD_READABLE);
+        mPrefs = context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);
         mActive = mPrefs.getBoolean("pref_global_load", false);
         if (mActive == false) {
             return;
@@ -55,7 +55,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                 PackageManager pm = context.getPackageManager();
                 SharedPreferences prefs =
                         context.getSharedPreferences(LabActivity.SHARED_PREFERENCE_NAME,
-                                Context.MODE_WORLD_READABLE);
+                                Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 int displayDpi = prefs.getInt("display_dpi", 320);
                 String themePackageName = prefs.getString("theme_package_name", null);
@@ -95,7 +95,8 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                         ArrayList<IconReplacementItem> items;
                         Resources origPkgRes;
                         Gson gson = new Gson();
-                        ApplicationInfo themePackage = pm.getApplicationInfo(themePackageName, 128);
+                        ApplicationInfo themePackage = pm.getApplicationInfo(themePackageName,
+                                PackageManager.GET_META_DATA);
                         Resources r = pm.getResourcesForApplication(themePackage.packageName);
 //                        CompiledIconShader mThemeIconShader = null;
 //                        IconMaskItem mThemeIconMask = null;

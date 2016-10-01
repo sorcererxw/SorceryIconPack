@@ -28,7 +28,9 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by Sorcerer on 2016/4/26.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/4/26
  */
 public class AppInfoUtil {
     private static final String TAG = "AppInfoUtil";

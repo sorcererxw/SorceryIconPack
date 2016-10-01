@@ -11,7 +11,9 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 
 /**
- * Created by Sorcerer on 2016/8/11.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/8/11
  */
 public class LauncherIntents {
 

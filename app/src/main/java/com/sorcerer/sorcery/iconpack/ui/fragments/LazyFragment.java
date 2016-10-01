@@ -10,7 +10,9 @@ import android.widget.FrameLayout;
 import com.sorcerer.sorcery.iconpack.R;
 
 /**
- * Created by Sorcerer on 2016/6/3 0003.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/6/3 0003
  */
 public class LazyFragment extends LazyBaseFragment {
     private boolean isInit = false;//真正要显示的View是否已经被初始化（正常加载）

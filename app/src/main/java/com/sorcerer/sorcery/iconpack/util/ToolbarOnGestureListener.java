@@ -5,7 +5,9 @@ import android.view.MotionEvent;
 import android.widget.AbsListView;
 
 /**
- * Created by Sorcerer on 2016/1/31 0031.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/31 0031
  */
 public class ToolbarOnGestureListener extends GestureDetector.SimpleOnGestureListener {
     private AbsListView mScrollTarget;

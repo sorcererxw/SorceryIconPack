@@ -3,7 +3,9 @@ package com.sorcerer.sorcery.iconpack.util;
 import android.view.View;
 
 /**
- * Created by Sorcerer on 2016/4/27.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/4/27
  */
 public class ViewUtil {
     public static boolean isPointInsideView(float x, float y, View view) {
@@ -16,13 +18,10 @@ public class ViewUtil {
                 && (y > viewY && y < (viewY + view.getHeight()));
     }
 
-    public static boolean isAClick(float startX, float endX, float startY, float endY) {
+    public static boolean isClick(float startX, float endX, float startY, float endY) {
         float differenceX = Math.abs(startX - endX);
         float differenceY = Math.abs(startY - endY);
-        if (differenceX > 5/* =5 */ || differenceY > 5) {
-            return false;
-        }
-        return true;
+        return !(differenceX > 5 || differenceY > 5);
     }
 
 }

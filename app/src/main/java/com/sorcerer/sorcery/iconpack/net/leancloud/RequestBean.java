@@ -4,7 +4,9 @@ import com.avos.avoscloud.AVClassName;
 import com.avos.avoscloud.AVObject;
 
 /**
- * Created by Sorcerer on 2016/7/22.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/7/22
  */
 
 @AVClassName(RequestBean.REQUEST_TABLE)

@@ -1,20 +1,32 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.Interpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.socks.library.KLog;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
@@ -31,6 +43,8 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
+import static android.view.View.VISIBLE;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -43,7 +57,7 @@ public class LazyIconFragment extends LazyFragment {
         ALL,
         ALI,
         BAIDU,
-        CYANOGENMOD,
+        NETEASE,
         GOOGLE,
         HTC,
         LENOVO,
@@ -92,7 +106,9 @@ public class LazyIconFragment extends LazyFragment {
     }
 
     private void init() {
+        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList);
         calcNumOfRows();
+
         boolean customPicker = getArguments().getBoolean(mArgCustomPickerKey, false);
         mGridLayoutManager = new GridLayoutManager(getContext(), mNumOfRows);
         mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -108,6 +124,13 @@ public class LazyIconFragment extends LazyFragment {
         mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
+        mGridView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
+                                       RecyclerView.State state) {
+                outRect.set(0, 0, 0, 0);
+            }
+        });
 
         int iconSize = 120;
         TextView emptyText = (TextView) findViewById(R.id.textView_icon_list_empty_view);
@@ -123,10 +146,8 @@ public class LazyIconFragment extends LazyFragment {
                 emptyText.getPaddingRight(),
                 DisplayUtil.dip2px(getContext(), (int) (emptyText.getTextSize() + iconSize) / 2)
         );
-        emptyText.setVisibility(View.VISIBLE);
+        emptyText.setVisibility(VISIBLE);
         mGridView.setEmptyView(emptyText);
-
-        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList);
 
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
@@ -135,6 +156,16 @@ public class LazyIconFragment extends LazyFragment {
         if (mNeedResize) {
             resize();
         }
+//        mCardView = (CardView) findViewById(R.id.cardView_fragment_icon_container);
+//        DisplayMetrics dm = getResources().getDisplayMetrics();
+//        int h_screen = dm.heightPixels;
+//        mCardView.setTranslationY(h_screen);
+//        mCardView.animate()
+//                .alpha(1)
+//                .translationY(0)
+//                .setInterpolator(new AccelerateDecelerateInterpolator())
+//                .setDuration(500)
+//                .start();
     }
 
     @Override
@@ -161,6 +192,10 @@ public class LazyIconFragment extends LazyFragment {
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.icon_grid_item_size);
         mNumOfRows = (int) (size.x / s);
+        if (mIconAdapter != null) {
+            mIconAdapter.setColumnCount(mNumOfRows);
+            mIconAdapter.setScreenWidth(size.x);
+        }
     }
 
     public RecyclerView getRecyclerView() {
@@ -243,6 +278,13 @@ public class LazyIconFragment extends LazyFragment {
                     public void call(List<IconBean> list) {
                         mIconBeanList = list;
                         init();
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        if (BuildConfig.DEBUG) {
+                            throwable.printStackTrace();
+                        }
                     }
                 });
     }

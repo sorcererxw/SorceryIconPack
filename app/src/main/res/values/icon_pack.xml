@@ -2,26 +2,17 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>myscript_calculator</item>
-        <item>current_activity</item>
-        <item>microsoft_office_lens</item>
-        <item>netease_super_calculator</item>
-        <item>icbc_bank_im</item>
-        <item>flow_bank</item>
-        <item>cib_bank</item>
-        <item>abcchina_bank</item>
-        <item>minecraft_toolbox</item>
-        <item>block_launcher_pro</item>
-        <item>game_vainglory</item>
-        <item>ecitic_bank</item>
-        <item>cmbc_bank</item>
-        <item>spd_bank</item>
-
+        <item>ct_client</item>
+        <item>autohome</item>
+        <item>samsung_s_health</item>
+        <item>xiaomi_shop</item>
+        <item>ifont</item>
+        <item>a360_clean_master</item>
+        <item>a360_super_root</item>
+        <item>love_best_wallpapers</item>
+        <item>game_tencent_xiangqi</item>
         <item>@string/icon_label_updated</item>
-        <item>microsoft_office_onenote</item>
-        <item>dianping</item>
-        <item>bank_of_communications</item>
-        <item>wps</item>
+        <item>ccb_bank</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
         <item>alipay</item>
@@ -55,10 +46,23 @@
         <item>baidu_waimai</item>
     </string-array>
 
-    <string-array name="icon_pack_cyanogenmod" translatable="false">
-        <item>cyanogenmod_camera</item>
-        <item>cyanogenmod_explorer</item>
-        <item>cyanogenmod_screencast</item>
+    <string-array name="icon_pack_netease" translatable="false">
+        <item>netease_cloudclass</item>
+        <item>netease_cloudclass_alt</item>
+        <item>netease_huochepiao</item>
+        <item>netease_lofter</item>
+        <item>netease_music</item>
+        <item>netease_music_alt</item>
+        <item>netease_news</item>
+        <item>netease_open_class</item>
+        <item>netease_super_calculator</item>
+        <item>netease_yanxuan</item>
+        <item>netease_yixin</item>
+        <item>netease_youdao_dict</item>
+        <item>netease_youdao_note</item>
+        <item>netease_youdao_translator</item>
+        <item>netease_youqian</item>
+        <item>netease_youxiangdashi</item>
     </string-array>
 
     <string-array name="icon_pack_google" translatable="false">
@@ -555,6 +559,7 @@
         <item>baidu_tieba</item>
         <item>baidu_waimai</item>
         <item>baixingwang</item>
+        <item>bamboo_paper</item>
         <item>banciyuan</item>
         <item>bank_of_china</item>
         <item>bank_of_communications</item>
@@ -612,6 +617,7 @@
         <item>cmbc_bank</item>
         <item>cmcc_wifi</item>
         <item>cm_browser</item>
+        <item>cntv</item>
         <item>complete_action_plus</item>
         <item>contacts</item>
         <item>cookbook</item>
@@ -640,6 +646,7 @@
         <item>dashlane_browser</item>
         <item>daxianggonghui</item>
         <item>dayima</item>
+        <item>days_matter</item>
         <item>dealmoon</item>
         <item>deviantart</item>
         <item>dgtle</item>
@@ -705,6 +712,7 @@
         <item>fitbit</item>
         <item>fit_time</item>
         <item>flat_style_bar_indicators</item>
+        <item>flat_style_colored_bars</item>
         <item>flickr</item>
         <item>flipboard</item>
         <item>floatify</item>
@@ -883,6 +891,7 @@
         <item>guokr</item>
         <item>guokr_fenda</item>
         <item>**H**</item>
+        <item>h5_browser</item>
         <item>hai360</item>
         <item>haibei_music</item>
         <item>haici_dict</item>
@@ -922,7 +931,7 @@
         <item>hydrogen_wallpager</item>
         <item>**I**</item>
         <item>ia_writer</item>
-        <item>icbc</item>
+        <item>icbc_bank</item>
         <item>icbc_bank_im</item>
         <item>icebox</item>
         <item>icourse163</item>
@@ -964,6 +973,7 @@
         <item>kernel_adiutor</item>
         <item>kfc</item>
         <item>kindle</item>
+        <item>kingmaster</item>
         <item>kingroot</item>
         <item>kitchen_stories</item>
         <item>kk_launcher</item>
@@ -1042,6 +1052,7 @@
         <item>**M**</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
+        <item>max_plus</item>
         <item>mcdonald</item>
         <item>media_converter</item>
         <item>medium</item>
@@ -1127,6 +1138,7 @@
         <item>netease_news</item>
         <item>netease_open_class</item>
         <item>netease_super_calculator</item>
+        <item>netease_yanxuan</item>
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_note</item>
@@ -1180,6 +1192,7 @@
         <item>polaris_office</item>
         <item>polarr</item>
         <item>pomotodo</item>
+        <item>pornhub</item>
         <item>poweramp</item>
         <item>powertoggle</item>
         <item>power_clean</item>
@@ -1206,6 +1219,7 @@
         <item>rar</item>
         <item>reaper</item>
         <item>renrenmeiju</item>
+        <item>ringtone_maker</item>
         <item>romow_fluxo</item>
         <item>root_explorer</item>
         <item>ruler</item>
@@ -1275,6 +1289,8 @@
         <item>shadowsocks</item>
         <item>shanbay</item>
         <item>shanbay_listen</item>
+        <item>shanbay_news</item>
+        <item>shihuo</item>
         <item>shoujileyuan</item>
         <item>shouxin_keyboard</item>
         <item>shuqi</item>
@@ -1331,6 +1347,7 @@
         <item>sound_recorder</item>
         <item>spd_bank</item>
         <item>spendee</item>
+        <item>spoon</item>
         <item>spotify</item>
         <item>sspai</item>
         <item>starbucks</item>

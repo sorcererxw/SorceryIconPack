@@ -8,7 +8,9 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 
 /**
- * Created by Sorcerer on 2016/1/24 0024.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/24 0024
  */
 public class LauncherInfo implements Comparable, BaseModel {
     private boolean mIsInstalled;

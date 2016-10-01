@@ -17,7 +17,7 @@
     <item drawable="a5sing"/>
     <item drawable="a94_percent"/>
     <category title="A"/>
-    <item drawable="abchina_bank"/>
+    <item drawable="abcchina_bank"/>
     <item drawable="accuweather"/>
     <item drawable="accuweather_plus"/>
     <item drawable="acdisplay"/>
@@ -94,7 +94,6 @@
     <item drawable="asus_remote_link"/>
     <item drawable="atom_launcher"/>
     <item drawable="audiofx"/>
-    <item drawable="authy"/>
     <item drawable="autodesk_pixlr"/>
     <item drawable="autodesk_sketchbook"/>
     <item drawable="automate"/>
@@ -114,6 +113,7 @@
     <item drawable="baidu_tieba"/>
     <item drawable="baidu_waimai"/>
     <item drawable="baixingwang"/>
+    <item drawable="bamboo_paper"/>
     <item drawable="banciyuan"/>
     <item drawable="bank_of_china"/>
     <item drawable="bank_of_communications"/>
@@ -130,6 +130,7 @@
     <item drawable="bilibili_live"/>
     <item drawable="bittorrent_sync"/>
     <item drawable="blacklight"/>
+    <item drawable="block_launcher_pro"/>
     <item drawable="blued"/>
     <item drawable="bluenote"/>
     <item drawable="boomerang"/>
@@ -160,14 +161,17 @@
     <item drawable="chromer"/>
     <item drawable="chronus"/>
     <item drawable="chufaba"/>
+    <item drawable="cib_bank"/>
     <item drawable="cinnamon"/>
     <item drawable="cleanmaster"/>
     <item drawable="clock"/>
     <item drawable="cloudmagic"/>
     <item drawable="cloud_vpn"/>
     <item drawable="cmbchina"/>
+    <item drawable="cmbc_bank"/>
     <item drawable="cmcc_wifi"/>
     <item drawable="cm_browser"/>
+    <item drawable="cntv"/>
     <item drawable="complete_action_plus"/>
     <item drawable="contacts"/>
     <item drawable="cookbook"/>
@@ -181,6 +185,7 @@
     <item drawable="crossyroad"/>
     <item drawable="ctrip"/>
     <item drawable="ctrip_alt"/>
+    <item drawable="current_activity"/>
     <item drawable="custom_share"/>
     <item drawable="cyanogenmod_camera"/>
     <item drawable="cyanogenmod_explorer"/>
@@ -195,6 +200,7 @@
     <item drawable="dashlane_browser"/>
     <item drawable="daxianggonghui"/>
     <item drawable="dayima"/>
+    <item drawable="days_matter"/>
     <item drawable="dealmoon"/>
     <item drawable="deviantart"/>
     <item drawable="dgtle"/>
@@ -213,8 +219,6 @@
     <item drawable="domino_pizza_alt"/>
     <item drawable="dongdong"/>
     <item drawable="dongqiudi"/>
-    <item drawable="dots"/>
-    <item drawable="dots_and_co"/>
     <item drawable="douban"/>
     <item drawable="douban_fm"/>
     <item drawable="douban_read"/>
@@ -232,6 +236,7 @@
     <item drawable="duolingo"/>
     <category title="E"/>
     <item drawable="echo"/>
+    <item drawable="ecitic_bank"/>
     <item drawable="edx"/>
     <item drawable="eleme"/>
     <item drawable="eleme_alt"/>
@@ -261,9 +266,11 @@
     <item drawable="fitbit"/>
     <item drawable="fit_time"/>
     <item drawable="flat_style_bar_indicators"/>
+    <item drawable="flat_style_colored_bars"/>
     <item drawable="flickr"/>
     <item drawable="flipboard"/>
     <item drawable="floatify"/>
+    <item drawable="flow_bank"/>
     <item drawable="flyme_account"/>
     <item drawable="flyme_appcenter"/>
     <item drawable="flyme_browser"/>
@@ -340,12 +347,14 @@
     <item drawable="gamecores"/>
     <item drawable="game_clash_of_clans"/>
     <item drawable="game_clash_royale"/>
+    <item drawable="game_dots_and_co"/>
     <item drawable="game_dots_out"/>
     <item drawable="game_heartstone"/>
     <item drawable="game_maestria"/>
     <item drawable="game_mekorama"/>
     <item drawable="game_prune"/>
     <item drawable="game_the_last_banacat"/>
+    <item drawable="game_vainglory"/>
     <item drawable="game_virtua_tennis"/>
     <item drawable="game_wangzherongyao"/>
     <item drawable="gaotieguanjia"/>
@@ -436,6 +445,7 @@
     <item drawable="guokr"/>
     <item drawable="guokr_fenda"/>
     <category title="H"/>
+    <item drawable="h5_browser"/>
     <item drawable="hai360"/>
     <item drawable="haibei_music"/>
     <item drawable="haici_dict"/>
@@ -453,7 +463,6 @@
     <item drawable="htc_clock"/>
     <item drawable="htc_contacts"/>
     <item drawable="htc_dot_view"/>
-    <item drawable="htc_drawer"/>
     <item drawable="htc_email"/>
     <item drawable="htc_files"/>
     <item drawable="htc_gallery"/>
@@ -476,7 +485,8 @@
     <item drawable="hydrogen_wallpager"/>
     <category title="I"/>
     <item drawable="ia_writer"/>
-    <item drawable="icbc"/>
+    <item drawable="icbc_bank"/>
+    <item drawable="icbc_bank_im"/>
     <item drawable="icebox"/>
     <item drawable="icourse163"/>
     <item drawable="ifanr"/>
@@ -517,6 +527,7 @@
     <item drawable="kernel_adiutor"/>
     <item drawable="kfc"/>
     <item drawable="kindle"/>
+    <item drawable="kingmaster"/>
     <item drawable="kingroot"/>
     <item drawable="kitchen_stories"/>
     <item drawable="kk_launcher"/>
@@ -595,6 +606,7 @@
     <category title="M"/>
     <item drawable="mangguo_tv"/>
     <item drawable="maoyan"/>
+    <item drawable="max_plus"/>
     <item drawable="mcdonald"/>
     <item drawable="media_converter"/>
     <item drawable="medium"/>
@@ -613,14 +625,16 @@
     <item drawable="microsoft_bing_keyboard"/>
     <item drawable="microsoft_cortana"/>
     <item drawable="microsoft_office_excel"/>
+    <item drawable="microsoft_office_lens"/>
     <item drawable="microsoft_office_mobile"/>
+    <item drawable="microsoft_office_onenote"/>
     <item drawable="microsoft_office_outlook"/>
     <item drawable="microsoft_office_powerpoint"/>
     <item drawable="microsoft_office_word"/>
     <item drawable="microsoft_onedrive"/>
-    <item drawable="microsoft_onenote"/>
     <item drawable="microsoft_translator"/>
     <item drawable="minecraft"/>
+    <item drawable="minecraft_toolbox"/>
     <item drawable="minminguard"/>
     <item drawable="misfit"/>
     <item drawable="miui_account"/>
@@ -667,6 +681,7 @@
     <item drawable="mxplayer"/>
     <item drawable="myandroidtools"/>
     <item drawable="myboy_gba"/>
+    <item drawable="myscript_calculator"/>
     <category title="N"/>
     <item drawable="netease_cloudclass"/>
     <item drawable="netease_cloudclass_alt"/>
@@ -676,6 +691,8 @@
     <item drawable="netease_music_alt"/>
     <item drawable="netease_news"/>
     <item drawable="netease_open_class"/>
+    <item drawable="netease_super_calculator"/>
+    <item drawable="netease_yanxuan"/>
     <item drawable="netease_yixin"/>
     <item drawable="netease_youdao_dict"/>
     <item drawable="netease_youdao_note"/>
@@ -729,6 +746,7 @@
     <item drawable="polaris_office"/>
     <item drawable="polarr"/>
     <item drawable="pomotodo"/>
+    <item drawable="pornhub"/>
     <item drawable="poweramp"/>
     <item drawable="powertoggle"/>
     <item drawable="power_clean"/>
@@ -755,6 +773,7 @@
     <item drawable="rar"/>
     <item drawable="reaper"/>
     <item drawable="renrenmeiju"/>
+    <item drawable="ringtone_maker"/>
     <item drawable="romow_fluxo"/>
     <item drawable="root_explorer"/>
     <item drawable="ruler"/>
@@ -798,7 +817,6 @@
     <item drawable="samsung_camera"/>
     <item drawable="samsung_clock"/>
     <item drawable="samsung_contacts"/>
-    <item drawable="samsung_drawer"/>
     <item drawable="samsung_email"/>
     <item drawable="samsung_files"/>
     <item drawable="samsung_gallery"/>
@@ -825,6 +843,8 @@
     <item drawable="shadowsocks"/>
     <item drawable="shanbay"/>
     <item drawable="shanbay_listen"/>
+    <item drawable="shanbay_news"/>
+    <item drawable="shihuo"/>
     <item drawable="shoujileyuan"/>
     <item drawable="shouxin_keyboard"/>
     <item drawable="shuqi"/>
@@ -833,7 +853,6 @@
     <item drawable="simplenote"/>
     <item drawable="skitch"/>
     <item drawable="skype"/>
-    <item drawable="slack"/>
     <item drawable="smartisan_note"/>
     <item drawable="smartisan_reader"/>
     <item drawable="smart_launcher"/>
@@ -876,13 +895,15 @@
     <item drawable="sony_video"/>
     <item drawable="sony_weather"/>
     <item drawable="sony_whatsnew"/>
+    <item drawable="sorcery_icons"/>
     <item drawable="sougou_keyboard"/>
     <item drawable="sougou_wallpaper"/>
     <item drawable="sound_recorder"/>
+    <item drawable="spd_bank"/>
     <item drawable="spendee"/>
+    <item drawable="spoon"/>
     <item drawable="spotify"/>
     <item drawable="sspai"/>
-    <item drawable="stack_exchange"/>
     <item drawable="starbucks"/>
     <item drawable="star_walk_2"/>
     <item drawable="steam"/>

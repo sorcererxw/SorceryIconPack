@@ -11,7 +11,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by Sorcerer on 2016/2/9 0009.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/9 0009
  */
 public class PermissionsHelper {
     public static final int WRITE_EXTERNAL_STORAGE_CODE = 10;

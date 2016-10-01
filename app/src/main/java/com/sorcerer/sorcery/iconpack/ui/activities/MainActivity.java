@@ -252,7 +252,9 @@ public class MainActivity extends BaseActivity {
                 int index = mViewPager.getCurrentItem();
                 ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
                 LazyIconFragment fragment = (LazyIconFragment) adapter.getItem(index);
-                fragment.getRecyclerView().smoothScrollToPosition(0);
+                if (fragment.getRecyclerView() != null) {
+                    fragment.getRecyclerView().smoothScrollToPosition(0);
+                }
             }
         });
 
