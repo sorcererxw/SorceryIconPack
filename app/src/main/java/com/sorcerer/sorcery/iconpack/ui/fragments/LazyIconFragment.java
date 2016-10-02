@@ -156,16 +156,16 @@ public class LazyIconFragment extends LazyFragment {
         if (mNeedResize) {
             resize();
         }
-//        mCardView = (CardView) findViewById(R.id.cardView_fragment_icon_container);
-//        DisplayMetrics dm = getResources().getDisplayMetrics();
-//        int h_screen = dm.heightPixels;
-//        mCardView.setTranslationY(h_screen);
-//        mCardView.animate()
-//                .alpha(1)
-//                .translationY(0)
-//                .setInterpolator(new AccelerateDecelerateInterpolator())
-//                .setDuration(500)
-//                .start();
+        CardView cardView = (CardView) findViewById(R.id.cardView_fragment_icon_container);
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int h_screen = dm.heightPixels;
+        cardView.setTranslationY(h_screen);
+        cardView.animate()
+                .alpha(1)
+                .translationY(0)
+                .setInterpolator(new AccelerateDecelerateInterpolator())
+                .setDuration(500)
+                .start();
     }
 
     @Override

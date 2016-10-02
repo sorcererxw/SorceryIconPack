@@ -12,6 +12,8 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.tencent.bugly.crashreport.CrashReport;
 
+import rx_activity_result.RxActivityResult;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -39,6 +41,7 @@ public class SorceryIcons extends Application {
         if (BuildConfig.DEBUG && ENABLE_LEAKCARRY) {
             mRefWatcher = LeakCanary.install(this);
         }
+        RxActivityResult.register(this);
     }
 
     public static RefWatcher getRefWatcher(Context context) {

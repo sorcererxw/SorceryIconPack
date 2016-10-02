@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<android.support.v7.widget.CardView-->
-        <!--android:id="@+id/cardView_fragment_icon_container"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:alpha="0"-->
-        <!--android:layout_margin="8dp">-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView_fragment_icon_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:layout_margin="8dp">
 
         <com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView
             android:id="@+id/recyclerView_icon_gird"
@@ -35,5 +35,5 @@
             android:textColor="@color/black"
             android:textSize="28sp"
             android:visibility="gone"/>
-    <!--</android.support.v7.widget.CardView>-->
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

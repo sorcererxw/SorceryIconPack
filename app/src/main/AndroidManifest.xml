@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
-    <!--<uses-permission android:name="com.android.vending.BILLING"/>-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
@@ -186,8 +185,13 @@
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.AppSelectActivity"
-            android:label="@string/select_app"
+            android:label="@string/request"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.activities.FeedbackChatActivity"
+            android:label="@string/suggest"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".ui.activities.LabActivity"
             android:label="@string/nav_item_lab"
@@ -207,6 +211,10 @@
         <activity
             android:name=".ui.activities.TestIconDialogActivity"
             android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:label="big image"
+            android:theme="@style/AppTheme.PhotoView"
+            android:name=".ui.activities.base.PhotoViewActivity"/>
 
         <receiver
             android:name=".xposed.PackageInstalledReceiver"

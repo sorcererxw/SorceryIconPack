@@ -1,9 +1,11 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.animation.OvershootInterpolator;
 import android.widget.Scroller;
 
 /**
@@ -13,16 +15,10 @@ import android.widget.Scroller;
  */
 public class QCardView extends CardView {
 
-    private float mOrginX;
-    private float mOrginY;
-    private float sumX;
-    private float sumY;
     private int lastX;
     private int lastY;
     private Scroller mScroller;
     private TouchCallBack mTouchCallBack;
-    private float mDx;
-    private float mDy;
 
     private boolean mTouchable = false;
 
@@ -81,33 +77,23 @@ public class QCardView extends CardView {
                 }
                 lastX = x;
                 lastY = y;
-                mDx = 0;
-                mDy = 0;
-                mOrginX = getX();
-                mOrginY = getY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 int offsetX = x - lastX;
                 int offsetY = y - lastY;
 
-                layout((int) getX() + offsetX,
-                        (int) getY() + offsetY,
-                        (int) getX() + getWidth() + offsetX,
-                        (int) getY() + getHeight() + offsetY);
-
-                mDx += offsetX;
-                mDy += offsetY;
+                setTranslationY(getTranslationY() + offsetY);
+                setTranslationX(getTranslationX() + offsetX);
                 break;
             case MotionEvent.ACTION_UP:
                 if (mTouchCallBack != null) {
                     mTouchCallBack.onUp();
                 }
-                layout((int) mOrginX,
-                        (int) mOrginY,
-                        (int) mOrginX + getWidth(),
-                        (int) mOrginY + getHeight());
-
-                invalidate();
+                animate().translationX(0)
+                        .translationY(0)
+                        .setDuration(500)
+                        .setInterpolator(new OvershootInterpolator())
+                        .start();
                 break;
         }
         return true;

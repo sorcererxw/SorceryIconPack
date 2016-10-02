@@ -16,6 +16,7 @@ import android.widget.ImageView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -41,6 +42,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
+
+import static com.tencent.bugly.crashreport.inner.InnerAPI.context;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
@@ -257,6 +260,8 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
+
+
 
     }
 

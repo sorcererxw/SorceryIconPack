@@ -182,12 +182,12 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         } else if (getItemViewType(position) == ITEM_TYPE_ICON) {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
 
-            Slice slice = new Slice(iconHolder.mFrame);
-            slice.setRadius(0f);
-            slice.showLeftTopRect(false);
-            slice.showLeftBottomRect(false);
-            slice.showRightBottomRect(false);
-            slice.showRightTopRect(false);
+//            Slice slice = new Slice(iconHolder.mFrame);
+//            slice.setRadius(0f);
+//            slice.showLeftTopRect(false);
+//            slice.showLeftBottomRect(false);
+//            slice.showRightBottomRect(false);
+//            slice.showRightTopRect(false);
 //            switch (getIconPosition(position, mColumnCount, getItemCount())) {
 //                case LeftTop:
 //                    handleSlice(iconHolder, true, false, false, false);

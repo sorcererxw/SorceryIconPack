@@ -6,10 +6,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.feedback.Comment;
+import com.avos.avoscloud.feedback.FeedbackAgent;
+import com.avos.avoscloud.feedback.FeedbackThread;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.util.NetUtil;
+
+import java.util.List;
 
 import butterknife.OnClick;
 
@@ -26,19 +33,8 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity {
             Intent intent = new Intent(this, AppSelectActivity.class);
             startActivity(intent);
         } else if (id == R.id.button_suggest) {
-            try {
-                Intent i = new Intent();
-                i.setAction(Intent.ACTION_SENDTO);
-                i.setData(Uri.parse("mailto:" + getString(R.string.feedback_receive_mailbox)));
-                i.putExtra(Intent.EXTRA_SUBJECT, "Sorcery icon pack: suggest");
-                i.putExtra(Intent.EXTRA_TEXT,
-                        "Version: " + BuildConfig.VERSION_NAME + "\nwrite " + "down your "
-                                + "suggestion:\n");
-                startActivity(i);
-            } catch (Exception e) {
-                Toast.makeText(this, "please login in your email app first", Toast.LENGTH_SHORT)
-                        .show();
-            }
+            Intent intent = new Intent(this, FeedbackChatActivity.class);
+            startActivity(intent);
         } else if (id == R.id.button_feedback_join) {
             Intent intent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse("https://plus.google.com/communities/115317471515103046699"));
@@ -66,6 +62,5 @@ public class FeedbackActivity extends SlideInAndOutAppCompatActivity {
         }
         return false;
     }
-
 }
 
