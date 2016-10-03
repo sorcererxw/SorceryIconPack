@@ -215,7 +215,9 @@
             android:label="big image"
             android:theme="@style/AppTheme.PhotoView"
             android:name=".ui.activities.base.PhotoViewActivity"/>
-
+        <activity
+            android:name="com.avos.avoscloud.feedback.ThreadActivity" >
+        </activity>
         <receiver
             android:name=".xposed.PackageInstalledReceiver"
             android:enabled="false">

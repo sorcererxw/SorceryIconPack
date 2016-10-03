@@ -20,12 +20,11 @@ public class DisplayUtil {
     }
 
     public static int sp2px(Context context, float sp) {
-        int px = (int) TypedValue.applyDimension(
+        return (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_SP,
                 sp,
                 context.getResources().getDisplayMetrics()
         );
-        return px;
     }
 
 }

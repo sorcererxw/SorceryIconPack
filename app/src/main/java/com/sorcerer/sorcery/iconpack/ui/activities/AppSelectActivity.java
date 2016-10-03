@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -28,8 +29,8 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
+import com.tbruyelle.rxpermissions.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
@@ -61,15 +62,17 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
-        if (PermissionsHelper.hasPermission(this, PermissionsHelper.READ_PHONE_STATE_MANIFEST)
-                && PermissionsHelper
-                .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
-            save(mAdapter.getCheckedAppsList());
-        } else {
-            PermissionsHelper.requestPermissions(this,
-                    new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
-                            PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST});
-        }
+        RxPermissions.getInstance(this)
+                .request(Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(new Action1<Boolean>() {
+                    @Override
+                    public void call(Boolean aBoolean) {
+                        if (aBoolean) {
+                            save(mAdapter.getCheckedAppsList());
+                        }
+                    }
+                });
     }
 
     private RequestAdapter mAdapter;
@@ -238,7 +241,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         e.printStackTrace();
                     }
                 }
-                if(deviceId==null){
+                if (deviceId == null) {
                     deviceId = Settings.Secure
                             .getString(AppSelectActivity.this.getContentResolver(), ANDROID_ID);
                 }

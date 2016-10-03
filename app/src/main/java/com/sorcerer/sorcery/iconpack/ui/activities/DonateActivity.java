@@ -3,7 +3,6 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.animation.Animator;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.DisplayMetrics;
@@ -18,6 +17,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 
@@ -25,8 +25,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class DonateActivity extends SlideInAndOutAppCompatActivity {
-
-    private boolean mJumped = false;
 
     @Override
     protected void onStart() {
@@ -37,11 +35,9 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("sorcery icon pack",
-                MODE_PRIVATE);
+        boolean isDonated = SorceryIcons.getPrefs().donated().getValue();
 
-        boolean isDonated = sharedPreferences.getBoolean("is_donated", false);
-        if (isDonated || BuildConfig.DEBUG || mJumped) {
+        if (isDonated) {
             mThankCard.post(new Runnable() {
                 @Override
                 public void run() {
@@ -59,7 +55,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         intent.setPackage("com.eg.android.AlipayGphone");
         try {
             startActivity(intent);
-            mJumped = true;
+            SorceryIcons.getPrefs().donated().setValue(true);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
             if (BuildConfig.DEBUG) {

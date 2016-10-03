@@ -13,10 +13,12 @@ import android.os.Environment;
 import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -27,6 +29,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.feedback.Comment;
 import com.avos.avoscloud.feedback.Comment.CommentType;
@@ -44,9 +48,11 @@ import java.io.File;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import rx.Observable;
 import rx.functions.Action1;
 import rx_activity_result.Result;
 import rx_activity_result.RxActivityResult;
@@ -151,6 +157,197 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
         }
     }
 
+    private void send(String s, CommentType type) {
+        mFeedbackThread.add(new Comment(s, type));
+        mFeedbackThread.sync(mSyncCallback);
+    }
+
+    private void send() {
+        send(mEditText.getText().toString(), CommentType.USER);
+        mEditText.setText("");
+    }
+
+    @Override
+    protected int provideLayoutId() {
+        return R.layout.activity_feedback_chat;
+    }
+
+    @Override
+    protected void hookBeforeSetContentView() {
+        super.hookBeforeSetContentView();
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        }
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        setToolbarCloseIndicator();
+        mFeedbackAgent = new FeedbackAgent(this);
+        mFeedbackThread = mFeedbackAgent.getDefaultThread();
+        mAdapter = new FeedbackChatAdapter(this, mFeedbackThread);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, VERTICAL, false));
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setAdapter(mAdapter);
+
+        mRecyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v,
+                                       int left, int top, int right, int bottom,
+                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                if (bottom < oldBottom) {
+                    mRecyclerView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            scrollToBottom();
+                        }
+                    }, 100);
+                }
+            }
+        });
+
+        mEditText.addTextChangedListener(new TextWatcher() {
+            private int mLastLength = 0;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (mLastLength == 0 && s.length() > 0) {
+                    showSendButton();
+                } else if (mLastLength > 0 && s.length() == 0) {
+                    showFileButton();
+                }
+                mLastLength = s.length();
+            }
+        });
+
+        scrollToBottom();
+        showFileButton();
+
+        mFeedbackThread.setContact(BuildConfig.VERSION_NAME);
+
+        if (mAdapter.getItemCount() == 0) {
+            welcome();
+        }
+
+        Observable.interval(10, TimeUnit.SECONDS)
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        mFeedbackThread.sync(mSyncCallback);
+                    }
+                });
+    }
+
+    private void welcome() {
+        new MaterialDialog.Builder(this)
+                // // TODO: 2016/10/3 sting "name hint"
+                .title("起个昵称")
+                .content("为了方便辨识")
+                .input("hint", "", new MaterialDialog.InputCallback() {
+                    @Override
+                    public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
+
+                    }
+                })
+                .positiveText("ok")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog,
+                                        @NonNull DialogAction which) {
+                        if (dialog.getInputEditText() != null) {
+                            String name = dialog.getInputEditText().getText().toString();
+                            if (checkName(name)) {
+                                send(name, CommentType.USER);
+                                send("welcome", CommentType.DEV);
+                                dialog.dismiss();
+                            }
+                        }
+                    }
+
+                    private boolean checkName(String name) {
+                        if (name == null || name.length() < 3) {
+                            // // TODO: 2016/10/3 string "name error hint"
+                            Toast.makeText(mContext, "至少长度为3", Toast.LENGTH_SHORT).show();
+                            return false;
+                        }
+                        return true;
+                    }
+                })
+                .negativeText("leave")
+                .onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog,
+                                        @NonNull DialogAction which) {
+                        FeedbackChatActivity.this.finish();
+                    }
+                })
+                .autoDismiss(false)
+                .canceledOnTouchOutside(false)
+                .build()
+                .show();
+    }
+
+    private void scrollToBottom() {
+        mRecyclerView.post(new Runnable() {
+            @Override
+            public void run() {
+                mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount());
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_feedback_chat, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        final int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+        }
+        if (id == R.id.action_refresh) {
+            mFeedbackThread.sync(mSyncCallback);
+        }
+        if (id == R.id.action_report_info) {
+            reportInformation();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void reportInformation() {
+        String builder = "App Version: " + BuildConfig.VERSION_NAME + "\n\n" +
+                "Device Info: " + "\n" +
+                "   Device: " + Build.PRODUCT + "\n" +
+                "   SDK: " + Build.VERSION.SDK_INT + "\n";
+        send(builder, CommentType.USER);
+    }
+
+    private void showFileButton() {
+        showButton(mFileButton, mSendButton);
+    }
+
+    private void showSendButton() {
+        showButton(mSendButton, mFileButton);
+    }
+
+    private void showButton(final View show, View hide) {
+        show.setVisibility(View.VISIBLE);
+        hide.setVisibility(View.GONE);
+    }
+
     private static String getPath(Context context, Uri uri) {
         if (Build.VERSION.SDK_INT >= 19 && DocumentsContract.isDocumentUri(context, uri)) {
             String docId;
@@ -240,128 +437,4 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     private static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
-
-    private void send(String s, CommentType type) {
-        mFeedbackThread.add(new Comment(s, type));
-        mFeedbackThread.sync(mSyncCallback);
-    }
-
-    private void send() {
-        send(mEditText.getText().toString(), CommentType.USER);
-        mEditText.setText("");
-    }
-
-    @Override
-    protected int provideLayoutId() {
-        return R.layout.activity_feedback_chat;
-    }
-
-    @Override
-    protected void hookBeforeSetContentView() {
-        super.hookBeforeSetContentView();
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        }
-    }
-
-    @Override
-    protected void init() {
-        super.init();
-        setToolbarCloseIndicator();
-        mFeedbackAgent = new FeedbackAgent(this);
-        mFeedbackThread = mFeedbackAgent.getDefaultThread();
-        mAdapter = new FeedbackChatAdapter(this, mFeedbackThread);
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, VERTICAL, false));
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setAdapter(mAdapter);
-
-        mRecyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-            @Override
-            public void onLayoutChange(View v,
-                                       int left, int top, int right, int bottom,
-                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                if (bottom < oldBottom) {
-                    mRecyclerView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            scrollToBottom();
-                        }
-                    }, 100);
-                }
-            }
-        });
-
-        mEditText.addTextChangedListener(new TextWatcher() {
-            private int mLastLength = 0;
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (mLastLength == 0 && s.length() > 0) {
-                    showSendButton();
-                } else if (mLastLength > 0 && s.length() == 0) {
-                    showFileButton();
-                }
-                mLastLength = s.length();
-            }
-        });
-
-        scrollToBottom();
-        showFileButton();
-
-        mFeedbackThread.setContact(BuildConfig.VERSION_NAME);
-
-        if (mAdapter.getItemCount() == 0) {
-            send("Welcome", CommentType.DEV);
-        }
-    }
-
-    private void scrollToBottom() {
-        mRecyclerView.post(new Runnable() {
-            @Override
-            public void run() {
-                mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount());
-            }
-        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_feedback_chat, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(final MenuItem item) {
-        final int id = item.getItemId();
-        if (id == android.R.id.home) {
-            onBackPressed();
-        }
-        if (id == R.id.action_refresh) {
-            mFeedbackThread.sync(mSyncCallback);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void showFileButton() {
-        showButton(mFileButton, mSendButton);
-    }
-
-    private void showSendButton() {
-        showButton(mSendButton, mFileButton);
-    }
-
-    private void showButton(final View show, View hide) {
-        show.setVisibility(View.VISIBLE);
-        hide.setVisibility(View.GONE);
-    }
-
 }

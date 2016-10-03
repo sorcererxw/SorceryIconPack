@@ -1,36 +1,28 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
-import android.app.Activity;
+import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.avos.avoscloud.AVCloudQueryResult;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.CloudQueryCallback;
-import com.avos.avoscloud.FindCallback;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
-import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
-
-import java.util.List;
+import com.tbruyelle.rxpermissions.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
+import rx.functions.Action1;
 
 /**
  * @description:
@@ -55,35 +47,34 @@ public class LikeLayout extends FrameLayout {
     TextView mDislikeText;
 
     @OnClick({R.id.textView_label_like, R.id.textView_label_dislike})
-    void onClick(View v) {
-        if (!PermissionsHelper.hasPermission((Activity) getContext(),
-                PermissionsHelper.READ_PHONE_STATE_MANIFEST)
-                || !PermissionsHelper.hasPermission((Activity) getContext(),
-                PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
-            PermissionsHelper.requestPermissions((Activity) getContext(),
-                    new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
-                            PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST});
-            return;
-        }
-
-        int id = v.getId();
-        if (id == R.id.textView_label_like) {
-            mFlag = 1;
-            handleFlag(mFlag, true);
-            if (mBind) {
-                mSharedPreferences.edit().putInt(mName, mFlag).apply();
-//                mIconBmobHelper.like(mName, true);
-                like(mName, true);
-            }
-        } else {
-            mFlag = -1;
-            handleFlag(mFlag, true);
-            if (mBind) {
-                mSharedPreferences.edit().putInt(mName, mFlag).apply();
-//                mIconBmobHelper.like(mName, false);
-                like(mName, false);
-            }
-        }
+    void onClick(final View v) {
+        RxPermissions.getInstance(mContext)
+                .request(Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(new Action1<Boolean>() {
+                    @Override
+                    public void call(Boolean aBoolean) {
+                        if(!aBoolean){
+                            return;
+                        }
+                        int id = v.getId();
+                        if (id == R.id.textView_label_like) {
+                            mFlag = 1;
+                            handleFlag(mFlag, true);
+                            if (mBind) {
+                                mSharedPreferences.edit().putInt(mName, mFlag).apply();
+                                like(mName, true);
+                            }
+                        } else {
+                            mFlag = -1;
+                            handleFlag(mFlag, true);
+                            if (mBind) {
+                                mSharedPreferences.edit().putInt(mName, mFlag).apply();
+                                like(mName, false);
+                            }
+                        }
+                    }
+                });
     }
 
 
@@ -123,7 +114,7 @@ public class LikeLayout extends FrameLayout {
 
     private void init(Context context) {
         mContext = context;
-        View view = View.inflate(context,R.layout.layout_like, null);
+        View view = View.inflate(context, R.layout.layout_like, null);
         this.addView(view);
         ButterKnife.bind(this, view);
 
@@ -199,7 +190,6 @@ public class LikeLayout extends FrameLayout {
         } catch (Exception e) {
             return;
         }
-
 
         LikeBean likeBean = new LikeBean();
         likeBean.setLike(like);

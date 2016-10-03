@@ -16,7 +16,9 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import java.lang.reflect.Field;
 
 /**
- * Created by Sorcerer on 2016/8/10.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/8/10
  */
 public class LazyBaseFragment extends Fragment {
     protected final String TAG = getClass().getSimpleName();

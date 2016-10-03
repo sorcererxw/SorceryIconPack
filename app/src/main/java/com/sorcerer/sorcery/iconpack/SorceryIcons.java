@@ -8,6 +8,7 @@ import android.os.StrictMode;
 
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
+import com.sorcerer.sorcery.iconpack.util.Prefs;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -42,10 +43,18 @@ public class SorceryIcons extends Application {
             mRefWatcher = LeakCanary.install(this);
         }
         RxActivityResult.register(this);
+
+        mPrefs = new Prefs(this);
     }
 
     public static RefWatcher getRefWatcher(Context context) {
         SorceryIcons app = (SorceryIcons) context.getApplicationContext();
         return app.mRefWatcher;
+    }
+
+    private static Prefs mPrefs;
+
+    public static Prefs getPrefs() {
+        return mPrefs;
     }
 }

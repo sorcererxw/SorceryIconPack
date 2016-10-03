@@ -11,8 +11,16 @@
         <item>a360_super_root</item>
         <item>love_best_wallpapers</item>
         <item>game_tencent_xiangqi</item>
+        <item>baidu_wallet</item>
         <item>@string/icon_label_updated</item>
         <item>ccb_bank</item>
+        <item>aibizhi</item>
+        <item>ali_taobao</item>
+        <item>ali_tmall</item>
+        <item>lantern</item>
+        <item>microsoft_bing_dict</item>
+        <item>root_explorer</item>
+        <item>shanbay_news</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
         <item>alipay</item>

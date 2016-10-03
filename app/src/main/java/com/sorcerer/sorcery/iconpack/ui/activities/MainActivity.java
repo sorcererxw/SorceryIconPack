@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -16,7 +17,6 @@ import android.widget.ImageView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -34,16 +34,15 @@ import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
-
-import static com.tencent.bugly.crashreport.inner.InnerAPI.context;
+import rx.functions.Action1;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
@@ -176,26 +175,22 @@ public class MainActivity extends BaseActivity {
 
     private void showPermissionDialog() {
         if (Build.VERSION.SDK_INT >= 23) {
-            if (!PermissionsHelper.hasPermissions(this,
-                    new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
-                            PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST})) {
+            final RxPermissions rxPermissions = RxPermissions.getInstance(this);
+            if (!rxPermissions.isGranted(Manifest.permission.READ_PHONE_STATE)
+                    || !rxPermissions.isGranted(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
                 builder.title(ResourceUtil.getString(this, R.string.permission_request_title));
                 List<PermissionBean> list = new ArrayList<>();
                 list.add(new PermissionBean(null,
                         ResourceUtil.getString(this, R.string.permission_request_content), 0));
-                if (!PermissionsHelper
-                        .hasPermission(this, PermissionsHelper.READ_PHONE_STATE_MANIFEST)) {
+                if (!rxPermissions.isGranted(Manifest.permission.READ_PHONE_STATE)) {
                     list.add(new PermissionBean(
                             ResourceUtil.getString(this, R.string.permission_read_phone_state),
-                            ResourceUtil
-                                    .getString(this,
-                                            R.string.permission_request_read_phone_state),
+                            ResourceUtil.getString(this,
+                                    R.string.permission_request_read_phone_state),
                             R.drawable.ic_smartphone_black_24dp));
                 }
-                if (!PermissionsHelper
-                        .hasPermission(this,
-                                PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
+                if (!rxPermissions.isGranted(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                     list.add(new PermissionBean(
                             ResourceUtil
                                     .getString(this,
@@ -210,9 +205,16 @@ public class MainActivity extends BaseActivity {
                     @Override
                     public void onClick(@NonNull MaterialDialog materialDialog,
                                         @NonNull DialogAction dialogAction) {
-                        PermissionsHelper.requestPermissions(mActivity,
-                                new String[]{PermissionsHelper.READ_PHONE_STATE_MANIFEST,
-                                        PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST});
+                        rxPermissions.request(Manifest.permission.READ_PHONE_STATE,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                .subscribe(new Action1<Boolean>() {
+                                    @Override
+                                    public void call(Boolean aBoolean) {
+                                        if (!aBoolean) {
+                                            showPermissionDialog();
+                                        }
+                                    }
+                                });
                         materialDialog.dismiss();
                     }
                 });
@@ -260,7 +262,6 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
-
 
 
     }
@@ -390,11 +391,6 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this, cls);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

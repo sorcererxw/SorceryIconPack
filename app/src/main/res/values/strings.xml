@@ -206,4 +206,5 @@
     <string name="premium_alipay_descript">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
 
+    <string name="feedback_chat_welcome">Welcome to communicate with the developer, you can send the user experience and pictures to the developer. Click the upper right corner to refresh the data to get the developer\'s reply.</string>
 </resources>

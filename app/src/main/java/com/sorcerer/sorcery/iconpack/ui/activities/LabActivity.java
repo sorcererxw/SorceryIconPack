@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.Manifest;
 import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -10,7 +11,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -25,7 +25,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
-import com.sorcerer.sorcery.iconpack.util.PermissionsHelper;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
@@ -33,6 +32,7 @@ import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 import com.stericson.RootTools.RootTools;
 import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
+import com.tbruyelle.rxpermissions.RxPermissions;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -47,6 +47,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import rx.functions.Action1;
 
 public class LabActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
@@ -78,57 +79,64 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
 
     @OnClick({R.id.button_lab_xposed_apply, R.id.button_lab_xposed_close, R.id
             .button_lab_xposed_reboot, R.id.button_lab_xposed_refresh})
-    public void onClick(View v) {
-        if (!PermissionsHelper
-                .hasPermission(this, PermissionsHelper.WRITE_EXTERNAL_STORAGE_MANIFEST)) {
-            PermissionsHelper.requestWriteExternalStorage(this);
-            return;
-        }
-        int id = v.getId();
-        if (id == R.id.button_lab_xposed_apply) {
-            try {
-                Process root = Runtime.getRuntime().exec("su");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if (!RootTools.isAccessGiven()) {
-                Toast.makeText(mContext,
-                        getString(R.string.global_state_not_root),
-                        Toast.LENGTH_SHORT).show();
-                return;
-            }
-            mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setMessage("opening...");
-            mProgressDialog.setCanceledOnTouchOutside(false);
-            mProgressDialog.show();
-            tryAndApplyIcon(getApplicationInfo());
-        } else if (id == R.id.button_lab_xposed_close) {
-            mActive = false;
-            mPrefs.edit().putBoolean("pref_global_load", false).commit();
-            mXposedStateTextView.setText(getString(R.string.global_state_not_active));
-            mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
-            mXposedApplyButton.setEnabled(true);
-            mXposedCloseButton.setEnabled(false);
-            mXposedRefreshButton.setEnabled(false);
-            mXposedRebootButton.setEnabled(false);
-        } else if (id == R.id.button_lab_xposed_refresh) {
-//            XposedUtils.killLauncher();
-//            XposedUtils.clearNovaCache2(getPackageManager());
-            XposedUtils.killAll(
-                    (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
-        } else if (id == R.id.button_lab_xposed_reboot) {
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-            builder.title(getString(R.string.action_reboot) + "?");
-            builder.positiveText(getString(R.string.yes));
-            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                @Override
-                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    XposedUtils.reboot();
-                }
-            });
-            builder.negativeText(getString(R.string.no));
-            builder.show();
-        }
+    public void onClick(final View v) {
+        RxPermissions.getInstance(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(new Action1<Boolean>() {
+                    @Override
+                    public void call(Boolean aBoolean) {
+                        if (!aBoolean) {
+                            return;
+                        }
+                        int id = v.getId();
+                        if (id == R.id.button_lab_xposed_apply) {
+                            try {
+                                Process root = Runtime.getRuntime().exec("su");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            if (!RootTools.isAccessGiven()) {
+                                Toast.makeText(mContext,
+                                        getString(R.string.global_state_not_root),
+                                        Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            mProgressDialog = new ProgressDialog(mContext);
+                            mProgressDialog.setMessage("opening...");
+                            mProgressDialog.setCanceledOnTouchOutside(false);
+                            mProgressDialog.show();
+                            tryAndApplyIcon(getApplicationInfo());
+                        } else if (id == R.id.button_lab_xposed_close) {
+                            mActive = false;
+                            mPrefs.edit().putBoolean("pref_global_load", false).commit();
+                            mXposedStateTextView
+                                    .setText(getString(R.string.global_state_not_active));
+                            mXposedStateTextView
+                                    .setTextColor(getResources().getColor(R.color.red_500));
+                            mXposedApplyButton.setEnabled(true);
+                            mXposedCloseButton.setEnabled(false);
+                            mXposedRefreshButton.setEnabled(false);
+                            mXposedRebootButton.setEnabled(false);
+                        } else if (id == R.id.button_lab_xposed_refresh) {
+                            //            XposedUtils.killLauncher();
+                            //            XposedUtils.clearNovaCache2(getPackageManager());
+                            XposedUtils.killAll(
+                                    (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
+                        } else if (id == R.id.button_lab_xposed_reboot) {
+                            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                            builder.title(getString(R.string.action_reboot) + "?");
+                            builder.positiveText(getString(R.string.yes));
+                            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(@NonNull MaterialDialog dialog,
+                                                    @NonNull DialogAction which) {
+                                    XposedUtils.reboot();
+                                }
+                            });
+                            builder.negativeText(getString(R.string.no));
+                            builder.show();
+                        }
+                    }
+                });
     }
 
     @Override

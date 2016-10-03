@@ -1,26 +1,18 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
-import android.animation.Animator;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.Interpolator;
-import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -156,11 +148,21 @@ public class LazyIconFragment extends LazyFragment {
         if (mNeedResize) {
             resize();
         }
-        CardView cardView = (CardView) findViewById(R.id.cardView_fragment_icon_container);
+//        CardView cardView = (CardView) findViewById(R.id.cardView_fragment_icon_container);
+//        DisplayMetrics dm = getResources().getDisplayMetrics();
+//        int h_screen = dm.heightPixels;
+//        cardView.setTranslationY(h_screen);
+//        cardView.animate()
+//                .alpha(1)
+//                .translationY(0)
+//                .setInterpolator(new AccelerateDecelerateInterpolator())
+//                .setDuration(500)
+//                .start();
         DisplayMetrics dm = getResources().getDisplayMetrics();
         int h_screen = dm.heightPixels;
-        cardView.setTranslationY(h_screen);
-        cardView.animate()
+        mGridView.setTranslationY(h_screen);
+        mGridView.setAlpha(0);
+        mGridView.animate()
                 .alpha(1)
                 .translationY(0)
                 .setInterpolator(new AccelerateDecelerateInterpolator())
