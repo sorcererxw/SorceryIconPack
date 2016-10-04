@@ -21,6 +21,8 @@ import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 
+import java.net.URISyntaxException;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -50,10 +52,12 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
     @OnClick(R.id.button_donate_alipay)
     void onAlipayClick() {
         Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(
-                "alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F"
-                        + "%2Fqr.alipay.com%2F" + "apx04314ky3hnfqt9xuaze3"));
+                "alipayqr://platformapi/startapp?"
+                        + "saId=10000007"
+                        + "&qrcode=https%3A%2F%2Fqr.alipay.com%2Fapx04314ky3hnfqt9xuaze3"));
         intent.setPackage("com.eg.android.AlipayGphone");
         try {
+
             startActivity(intent);
             SorceryIcons.getPrefs().donated().setValue(true);
         } catch (ActivityNotFoundException e) {

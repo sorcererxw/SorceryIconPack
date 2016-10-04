@@ -2,6 +2,9 @@ package com.sorcerer.sorcery.iconpack.util;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
@@ -225,15 +228,15 @@ public class ResourceUtil {
             R.color.grey_900,
     };
 
-    public static String getString(Context context, int resId) {
+    public static String getString(Context context,@StringRes int resId) {
         return context.getString(resId);
     }
 
-    public static int getColor(Context context, int resId) {
+    public static int getColor(Context context,@ColorRes int resId) {
         return ContextCompat.getColor(context, resId);
     }
 
-    public static Drawable getDrawable(Context context, int resId) {
+    public static Drawable getDrawable(Context context,@DrawableRes int resId) {
         return ContextCompat.getDrawable(context, resId);
     }
 

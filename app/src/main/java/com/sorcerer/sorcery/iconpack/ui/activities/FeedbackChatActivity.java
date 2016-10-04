@@ -2,15 +2,14 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.Manifest;
 import android.animation.Animator;
+import android.animation.TimeInterpolator;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -18,13 +17,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -36,18 +34,18 @@ import com.avos.avoscloud.feedback.Comment;
 import com.avos.avoscloud.feedback.Comment.CommentType;
 import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.avos.avoscloud.feedback.FeedbackThread;
-import com.avos.avoscloud.feedback.ThreadActivity;
 import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.FeedbackChatAdapter;
+import com.sorcerer.sorcery.iconpack.util.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -58,6 +56,8 @@ import rx_activity_result.Result;
 import rx_activity_result.RxActivityResult;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 /**
  * @description:
@@ -71,16 +71,48 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     private FeedbackThread mFeedbackThread;
 
     private FeedbackThread.SyncCallback mSyncCallback = new FeedbackThread.SyncCallback() {
+        private int mLastSize = 0;
+
+        private List<Comment> getNewComments() {
+            List<Comment> list = new ArrayList<>();
+            for (int i = 0; i < mAdapter.getItemCount() - mLastSize; i++) {
+                list.add(mAdapter.getItem(i + mLastSize));
+            }
+            return list;
+        }
+
+        private static final String COMMAND_INFO = "#info";
+
+        private void checkNewComments() {
+            List<Comment> list = getNewComments();
+            for (Comment comment : list) {
+                if (comment == null) {
+                    continue;
+                }
+                if (comment.getCommentType() == CommentType.DEV && comment.getContent()
+                        .equals(COMMAND_INFO)) {
+                    reportInformation();
+                }
+            }
+        }
+
         @Override
         public void onCommentsSend(List<Comment> list, AVException e) {
-            mAdapter.notifyDataSetChanged();
-            scrollToBottom();
+            if (list.size() > mLastSize) {
+                mLastSize = list.size();
+                mAdapter.notifyDataSetChanged();
+                scrollToBottom();
+            }
         }
 
         @Override
         public void onCommentsFetch(List<Comment> list, AVException e) {
-            mAdapter.notifyDataSetChanged();
-            scrollToBottom();
+            if (list.size() > mLastSize) {
+                checkNewComments();
+                mLastSize = list.size();
+                mAdapter.notifyDataSetChanged();
+                scrollToBottom();
+            }
         }
     };
 
@@ -208,6 +240,14 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
             }
         });
 
+        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                KeyboardUtil.closeKeyboard(FeedbackChatActivity.this);
+                return false;
+            }
+        });
+
         mEditText.addTextChangedListener(new TextWatcher() {
             private int mLastLength = 0;
 
@@ -239,7 +279,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
             welcome();
         }
 
-        Observable.interval(10, TimeUnit.SECONDS)
+        Observable.interval(1, TimeUnit.SECONDS)
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
@@ -250,40 +290,57 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
 
     private void welcome() {
         new MaterialDialog.Builder(this)
-                // // TODO: 2016/10/3 sting "name hint"
-                .title("起个昵称")
-                .content("为了方便辨识")
-                .input("hint", "", new MaterialDialog.InputCallback() {
-                    @Override
-                    public void onInput(@NonNull MaterialDialog dialog, CharSequence input) {
+                .title(ResourceUtil.getString(mContext, R.string.feedback_chat_name_dialog_title))
+                .content(ResourceUtil
+                        .getString(mContext, R.string.feedback_chat_name_dialog_content))
+                .input(ResourceUtil.getString(mContext, R.string.feedback_chat_name_dialog_hint),
+                        "", false, new MaterialDialog.InputCallback() {
+                            @Override
+                            public void onInput(@NonNull MaterialDialog dialog,
+                                                CharSequence input) {
 
-                    }
-                })
-                .positiveText("ok")
+                            }
+                        })
+                .inputRange(3, 20, ResourceUtil.getColor(mContext, R.color.red_500))
+                .positiveText(ResourceUtil.getString(mContext, R.string.ok))
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
-                    public void onClick(@NonNull MaterialDialog dialog,
+                    public void onClick(@NonNull final MaterialDialog dialog,
                                         @NonNull DialogAction which) {
                         if (dialog.getInputEditText() != null) {
-                            String name = dialog.getInputEditText().getText().toString();
+                            final String name = dialog.getInputEditText().getText().toString();
                             if (checkName(name)) {
-                                send(name, CommentType.USER);
-                                send("welcome", CommentType.DEV);
-                                dialog.dismiss();
+                                RxPermissions.getInstance(FeedbackChatActivity.this)
+                                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                                Manifest.permission.READ_PHONE_STATE)
+                                        .subscribe(new Action1<Boolean>() {
+                                            @Override
+                                            public void call(Boolean aBoolean) {
+                                                if (aBoolean) {
+                                                    send(name, CommentType.USER);
+                                                    send(ResourceUtil.getString(mContext,
+                                                            R.string.feedback_chat_welcome),
+                                                            CommentType.DEV);
+                                                    dialog.dismiss();
+                                                }
+                                            }
+                                        });
                             }
                         }
                     }
 
                     private boolean checkName(String name) {
                         if (name == null || name.length() < 3) {
-                            // // TODO: 2016/10/3 string "name error hint"
-                            Toast.makeText(mContext, "至少长度为3", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext,
+                                    ResourceUtil.getString(mContext,
+                                            R.string.feedback_chat_name_dialog_toast_hint),
+                                    Toast.LENGTH_SHORT).show();
                             return false;
                         }
                         return true;
                     }
                 })
-                .negativeText("leave")
+                .negativeText(ResourceUtil.getString(mContext, R.string.action_leave))
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog,
@@ -291,6 +348,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                         FeedbackChatActivity.this.finish();
                     }
                 })
+                .cancelable(false)
                 .autoDismiss(false)
                 .canceledOnTouchOutside(false)
                 .build()
@@ -328,10 +386,9 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     }
 
     private void reportInformation() {
-        String builder = "App Version: " + BuildConfig.VERSION_NAME + "\n\n" +
-                "Device Info: " + "\n" +
-                "   Device: " + Build.PRODUCT + "\n" +
-                "   SDK: " + Build.VERSION.SDK_INT + "\n";
+        String builder = "App Version: " + BuildConfig.VERSION_NAME + "\n" +
+                "Device: " + Build.PRODUCT + "\n" +
+                "SDK: " + Build.VERSION.SDK_INT + "\n";
         send(builder, CommentType.USER);
     }
 
@@ -343,9 +400,66 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
         showButton(mSendButton, mFileButton);
     }
 
-    private void showButton(final View show, View hide) {
-        show.setVisibility(View.VISIBLE);
-        hide.setVisibility(View.GONE);
+    private void showButton(final View show, final View hide) {
+        show.animate().cancel();
+        hide.animate().cancel();
+        final float defaultAlpha = 0.3f;
+        final int animDuration = 200;
+        final TimeInterpolator interpolator = new AccelerateDecelerateInterpolator();
+        hide.animate().alpha(0)
+                .scaleX(0)
+                .scaleY(0)
+                .setInterpolator(interpolator)
+                .setDuration(animDuration)
+                .setListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        hide.setVisibility(GONE);
+                        show.animate()
+                                .alpha(defaultAlpha)
+                                .setDuration(animDuration)
+                                .scaleX(1)
+                                .scaleY(1)
+                                .setInterpolator(interpolator)
+                                .setListener(new Animator.AnimatorListener() {
+                                    @Override
+                                    public void onAnimationStart(Animator animation) {
+                                        show.setVisibility(VISIBLE);
+                                    }
+
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+
+                                    }
+
+                                    @Override
+                                    public void onAnimationCancel(Animator animation) {
+
+                                    }
+
+                                    @Override
+                                    public void onAnimationRepeat(Animator animation) {
+
+                                    }
+                                })
+                                .start();
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
+                    }
+                })
+                .start();
     }
 
     private static String getPath(Context context, Uri uri) {
@@ -366,7 +480,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                     Uri split1 = ContentUris
                             .withAppendedId(Uri.parse("content://downloads/public_downloads"),
                                     Long.valueOf(docId));
-                    return getDataColumn(context, split1, (String) null, (String[]) null);
+                    return getDataColumn(context, split1, null, null);
                 }
 
                 if (isMediaDocument(uri)) {
@@ -389,7 +503,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
             }
         } else {
             if ("content".equalsIgnoreCase(uri.getScheme())) {
-                return getDataColumn(context, uri, (String) null, (String[]) null);
+                return getDataColumn(context, uri, null, null);
             }
 
             if ("file".equalsIgnoreCase(uri.getScheme())) {
@@ -409,7 +523,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
         String var8;
         try {
             cursor = context.getContentResolver()
-                    .query(uri, projection, selection, selectionArgs, (String) null);
+                    .query(uri, projection, selection, selectionArgs, null);
             if (cursor == null || !cursor.moveToFirst()) {
                 return null;
             }

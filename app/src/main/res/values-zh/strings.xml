@@ -123,7 +123,7 @@
     <string name="premium_request_title">付费申请</string>
     <string name="RMB">元</string>
     <string name="premium_alipay_title">Sorcery 付费申请图标</string>
-    <string name="premium_alipay_descript">Sorcery 付费申请图标</string>
+    <string name="premium_alipay_describe">Sorcery 付费申请图标</string>
     <string name="premium_send_title">确认付费</string>
     <string name="pay_fail">付款失败</string>
     <string name="pay_success">付款成功</string>
@@ -153,4 +153,12 @@
     <string name="icon_request_times">共被申请 # 次</string>
     <string name="nav_item_wallpapers">壁纸</string>
     <string name="version">版本</string>
+    <string name="feedback_chat_name_dialog_title">想一个昵称</string>
+    <string name="feedback_chat_name_dialog_toast_hint">昵称的长度需要大于3</string>
+    <string name="feedback_chat_welcome">Hi, 我是开发者。随时欢迎来向我反馈你的任何问题和使用感受, 同时也可发送图片给我。</string>
+    <string name="feedback_chat_name_dialog_hint">昵称</string>
+    <string name="feedback_chat_name_dialog_content">请提供一个昵称给我, 以方便我来区分不同的反馈者。</string>
+    <string name="feedback_chat_edit_hint">想说什么?</string>
+    <string name="action_report_info">报告信息</string>
+    <string name="action_leave">离开</string>
 </resources>

@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
@@ -14,7 +13,10 @@ import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
+import com.sorcerer.sorcery.iconpack.util.Prefs.LikePrefs;
+import com.sorcerer.sorcery.iconpack.util.Prefs.Prefs;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import butterknife.BindView;
@@ -31,8 +33,7 @@ import rx.functions.Action1;
  */
 public class LikeLayout extends FrameLayout {
     private static final String TAG = "LikeLayout";
-    public static final String PREF_NAME = "ICON_LIKE";
-    private SharedPreferences mSharedPreferences;
+    private LikePrefs mPrefs;
     private String mName;
     private Context mContext;
     private boolean mBind;
@@ -54,7 +55,7 @@ public class LikeLayout extends FrameLayout {
                 .subscribe(new Action1<Boolean>() {
                     @Override
                     public void call(Boolean aBoolean) {
-                        if(!aBoolean){
+                        if (!aBoolean) {
                             return;
                         }
                         int id = v.getId();
@@ -62,14 +63,14 @@ public class LikeLayout extends FrameLayout {
                             mFlag = 1;
                             handleFlag(mFlag, true);
                             if (mBind) {
-                                mSharedPreferences.edit().putInt(mName, mFlag).apply();
+                                mPrefs.like(mName).setValue(mFlag);
                                 like(mName, true);
                             }
                         } else {
                             mFlag = -1;
                             handleFlag(mFlag, true);
                             if (mBind) {
-                                mSharedPreferences.edit().putInt(mName, mFlag).apply();
+                                mPrefs.like(mName).setValue(mFlag);
                                 like(mName, false);
                             }
                         }
@@ -114,6 +115,8 @@ public class LikeLayout extends FrameLayout {
 
     private void init(Context context) {
         mContext = context;
+        mPrefs = new LikePrefs(context);
+
         View view = View.inflate(context, R.layout.layout_like, null);
         this.addView(view);
         ButterKnife.bind(this, view);
@@ -145,8 +148,7 @@ public class LikeLayout extends FrameLayout {
     public void bindIcon(String name) {
         mBind = true;
         mName = name;
-        mSharedPreferences = mContext.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        mFlag = mSharedPreferences.getInt(name, 0);
+        mFlag = mPrefs.like(name).getValue();
         handleFlag(mFlag, false);
     }
 

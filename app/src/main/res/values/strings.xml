@@ -24,6 +24,8 @@
     <string name="action_install">install</string>
     <string name="action_refuse">refuse</string>
     <string name="action_grant_permission">grant</string>
+    <string name="action_report_info">report info</string>
+    <string name="action_leave">leave</string>
 
     <string name="permission_request_title">Need Permission</string>
     <string name="permission_request_content">For better experience with the app, please grant permissions to this app. Or you may can\'t use some function normally, such as icon request, icon like. I also need some permission to collect bug in the app, please support me, thanks.</string>
@@ -203,8 +205,13 @@
 
     <bool name="config_iconpack">true</bool>
     <string name="action_soft_reboot">soft reboot</string>
-    <string name="premium_alipay_descript">Sorcery Premium Request</string>
+    <string name="premium_alipay_describe">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
 
-    <string name="feedback_chat_welcome">Welcome to communicate with the developer, you can send the user experience and pictures to the developer. Click the upper right corner to refresh the data to get the developer\'s reply.</string>
+    <string name="feedback_chat_welcome">Welcome to communicate with the developer, you can send the user experience and pictures to the developer.</string>
+    <string name="feedback_chat_edit_hint">What want to say ?</string>
+    <string name="feedback_chat_name_dialog_title">Need A Nickname</string>
+    <string name="feedback_chat_name_dialog_content">Please give me a nickname to easily distinguish between different respondents.</string>
+    <string name="feedback_chat_name_dialog_hint">nickname</string>
+    <string name="feedback_chat_name_dialog_toast_hint">The length of nickname must be greater than 3</string>
 </resources>

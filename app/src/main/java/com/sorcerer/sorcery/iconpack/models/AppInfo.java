@@ -3,7 +3,9 @@ package com.sorcerer.sorcery.iconpack.models;
 import android.graphics.drawable.Drawable;
 
 /**
- * Created by Sorcerer on 2016/1/21 0021.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/21 0021
  */
 public class AppInfo {
     public int getRequestedTimes() {

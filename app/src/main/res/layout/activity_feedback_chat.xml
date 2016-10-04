@@ -8,46 +8,45 @@
         android:id="@+id/include"
         layout="@layout/toolbar_universal"/>
 
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_feedback_chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout_feedback_chat_toolbar"
         android:layout_below="@+id/include"
-        android:background="#eee"
-        android:layout_above="@+id/linearLayout_feedback_chat_toolbar"/>
+        android:background="#eee"/>
 
     <LinearLayout
         android:id="@+id/linearLayout_feedback_chat_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="#fff"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/editText_feedback_chat_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_weight="0.89"
             android:background="@android:color/transparent"
-            android:hint="Message"
+            android:hint="@string/feedback_chat_edit_hint"
             android:inputType="textMultiLine"
-            tools:text="111"
-            android:layout_weight="0.89"/>
+            tools:text="111"/>
 
         <RelativeLayout
-            android:layout_marginRight="16dp"
             android:id="@+id/relativeLayout_feedback_chat_button_container"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:layout_marginRight="16dp">
 
             <ImageView
                 android:id="@+id/imageView_feedback_chat_file_button"
@@ -65,7 +64,8 @@
                 android:layout_centerInParent="true"
                 android:alpha="0.3"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_send_black_36dp"/>
+                android:src="@drawable/ic_send_black_36dp"
+                android:visibility="gone"/>
         </RelativeLayout>
     </LinearLayout>
 

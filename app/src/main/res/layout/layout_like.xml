@@ -12,7 +12,6 @@
         android:layout_height="56dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="6dp"
-        android:background="?android:attr/selectableItemBackground"
         android:gravity="center"
         android:text="&#x3432;"
         android:textSize="@dimen/dialog_like_text_size"/>
@@ -23,7 +22,6 @@
         android:layout_height="56dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="6dp"
-        android:background="?android:attr/selectableItemBackground"
         android:gravity="center"
         android:text="&#xe60b;"
         android:textSize="@dimen/dialog_like_text_size"/>

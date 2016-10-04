@@ -7,6 +7,13 @@
         <item>samsung_s_health</item>
         <item>xiaomi_shop</item>
         <item>ifont</item>
+        <item>appenv</item>
+        <item>mctools</item>
+        <item>txvpn</item>
+        <item>tencent_qqpimsecure</item>
+        <item>ddcat</item>
+        <item>sony_ar_effect</item>
+        <item>myandroidtools_xposed</item>
         <item>a360_clean_master</item>
         <item>a360_super_root</item>
         <item>love_best_wallpapers</item>
@@ -52,6 +59,7 @@
         <item>baidu_pan</item>
         <item>baidu_tieba</item>
         <item>baidu_waimai</item>
+        <item>baidu_wallet</item>
     </string-array>
 
     <string-array name="icon_pack_netease" translatable="false">
@@ -160,7 +168,6 @@
         <item>htc_email</item>
         <item>htc_files</item>
         <item>htc_gallery</item>
-        <item>htc_guide</item>
         <item>htc_messages</item>
         <item>htc_music</item>
         <item>htc_phone</item>
@@ -290,7 +297,6 @@
         <item>samsung_email</item>
         <item>samsung_files</item>
         <item>samsung_gallery</item>
-        <item>samsung_gear_manager</item>
         <item>samsung_music</item>
         <item>samsung_pay</item>
         <item>samsung_phone</item>
@@ -299,6 +305,7 @@
         <item>samsung_smemo</item>
         <item>samsung_sms</item>
         <item>samsung_sreminder</item>
+        <item>samsung_s_health</item>
         <item>samsung_theme</item>
         <item>samsung_video</item>
         <item>samsung_voice</item>
@@ -306,6 +313,7 @@
 
     <string-array name="icon_pack_sony" translatable="false">
         <item>sony_album</item>
+        <item>sony_ar_effect</item>
         <item>sony_audio_recorder</item>
         <item>sony_background_defocus</item>
         <item>sony_backup</item>
@@ -324,7 +332,6 @@
         <item>sony_phone</item>
         <item>sony_play_memories_mobile</item>
         <item>sony_radio</item>
-        <item>sony_select</item>
         <item>sony_settings</item>
         <item>sony_sketch</item>
         <item>sony_smart_connect</item>
@@ -344,8 +351,8 @@
         <item>tencent_news</item>
         <item>tencent_ps_play</item>
         <item>tencent_qie_fm</item>
-        <item>tencent_qpaint</item>
         <item>tencent_qq</item>
+        <item>tencent_qqpimsecure</item>
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
         <item>tencent_qq_international</item>
@@ -461,10 +468,12 @@
         <item>a12306</item>
         <item>a17</item>
         <item>a360</item>
+        <item>a360_clean_master</item>
         <item>a360_cloud</item>
         <item>a360_free_wifi</item>
         <item>a360_geek</item>
         <item>a360_liuliang</item>
+        <item>a360_super_root</item>
         <item>a3dmark</item>
         <item>a500px</item>
         <item>a51offer</item>
@@ -535,24 +544,19 @@
         <item>anyview</item>
         <item>apex_launcher</item>
         <item>apkpure</item>
+        <item>appenv</item>
         <item>apple_music</item>
         <item>appso</item>
         <item>app_drawer</item>
         <item>app_drawer_alt</item>
         <item>app_settings</item>
-        <item>asus_backup</item>
-        <item>asus_browser</item>
-        <item>asus_calculator</item>
-        <item>asus_camera</item>
-        <item>asus_clock</item>
         <item>asus_remote_link</item>
         <item>atom_launcher</item>
         <item>audiofx</item>
         <item>autodesk_pixlr</item>
         <item>autodesk_sketchbook</item>
+        <item>autohome</item>
         <item>automate</item>
-        <item>autovoice</item>
-        <item>aviary</item>
         <item>aviate_launcher</item>
         <item>**B**</item>
         <item>b612</item>
@@ -566,6 +570,7 @@
         <item>baidu_pan</item>
         <item>baidu_tieba</item>
         <item>baidu_waimai</item>
+        <item>baidu_wallet</item>
         <item>baixingwang</item>
         <item>bamboo_paper</item>
         <item>banciyuan</item>
@@ -577,8 +582,6 @@
         <item>bbc_news</item>
         <item>behance</item>
         <item>beiyue</item>
-        <item>beyondpod</item>
-        <item>bhoot</item>
         <item>bilibili</item>
         <item>bilibili_alt</item>
         <item>bilibili_live</item>
@@ -608,7 +611,7 @@
         <item>camera_fv_5</item>
         <item>camscanner</item>
         <item>careland</item>
-        <item>ccb</item>
+        <item>ccb_bank</item>
         <item>changba</item>
         <item>chaojikechengbiao</item>
         <item>chelaile</item>
@@ -629,7 +632,6 @@
         <item>complete_action_plus</item>
         <item>contacts</item>
         <item>cookbook</item>
-        <item>cookpad</item>
         <item>coolapk</item>
         <item>coolapk_alt</item>
         <item>coolapk_alt_2</item>
@@ -639,10 +641,10 @@
         <item>crossyroad</item>
         <item>ctrip</item>
         <item>ctrip_alt</item>
+        <item>ct_client</item>
         <item>current_activity</item>
         <item>custom_share</item>
         <item>cyanogenmod_camera</item>
-        <item>cyanogenmod_explorer</item>
         <item>cyanogenmod_screencast</item>
         <item>**D**</item>
         <item>dailycost</item>
@@ -650,11 +652,10 @@
         <item>dangdang</item>
         <item>dangle</item>
         <item>darker</item>
-        <item>dashlane</item>
-        <item>dashlane_browser</item>
         <item>daxianggonghui</item>
         <item>dayima</item>
         <item>days_matter</item>
+        <item>ddcat</item>
         <item>dealmoon</item>
         <item>deviantart</item>
         <item>dgtle</item>
@@ -681,7 +682,6 @@
         <item>douyu</item>
         <item>download</item>
         <item>dreamdays</item>
-        <item>drippler</item>
         <item>dropbox</item>
         <item>duckduckgo</item>
         <item>duduribao</item>
@@ -701,7 +701,6 @@
         <item>evernote</item>
         <item>evernote_alt</item>
         <item>evernote_alt_2</item>
-        <item>evolve_wallpapers</item>
         <item>ex_kernel_manager</item>
         <item>**F**</item>
         <item>facebook</item>
@@ -716,7 +715,6 @@
         <item>fetion</item>
         <item>fifth_third_bank</item>
         <item>file_commander</item>
-        <item>financius</item>
         <item>fitbit</item>
         <item>fit_time</item>
         <item>flat_style_bar_indicators</item>
@@ -807,6 +805,7 @@
         <item>game_maestria</item>
         <item>game_mekorama</item>
         <item>game_prune</item>
+        <item>game_tencent_xiangqi</item>
         <item>game_the_last_banacat</item>
         <item>game_vainglory</item>
         <item>game_virtua_tennis</item>
@@ -920,7 +919,6 @@
         <item>htc_email</item>
         <item>htc_files</item>
         <item>htc_gallery</item>
-        <item>htc_guide</item>
         <item>htc_messages</item>
         <item>htc_music</item>
         <item>htc_phone</item>
@@ -945,6 +943,7 @@
         <item>icourse163</item>
         <item>ifanr</item>
         <item>iflat</item>
+        <item>ifont</item>
         <item>ifttt</item>
         <item>ikea</item>
         <item>imagine</item>
@@ -1052,6 +1051,7 @@
         <item>link_bubble</item>
         <item>lizhi_fm</item>
         <item>lol</item>
+        <item>love_best_wallpapers</item>
         <item>lucid_launcher</item>
         <item>luckymoney</item>
         <item>lucky_patcher</item>
@@ -1062,6 +1062,7 @@
         <item>maoyan</item>
         <item>max_plus</item>
         <item>mcdonald</item>
+        <item>mctools</item>
         <item>media_converter</item>
         <item>medium</item>
         <item>mega</item>
@@ -1134,6 +1135,7 @@
         <item>muzei</item>
         <item>mxplayer</item>
         <item>myandroidtools</item>
+        <item>myandroidtools_xposed</item>
         <item>myboy_gba</item>
         <item>myscript_calculator</item>
         <item>**N**</item>
@@ -1153,16 +1155,13 @@
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
         <item>netease_youxiangdashi</item>
-        <item>news_republic</item>
         <item>next_launcher</item>
         <item>nice</item>
-        <item>nine_launcher</item>
         <item>nissan</item>
         <item>noisyfox</item>
         <item>notify_clean</item>
         <item>nova_launcher</item>
         <item>**O**</item>
-        <item>officesuite</item>
         <item>olo</item>
         <item>olympus_image_share</item>
         <item>one</item>
@@ -1224,11 +1223,9 @@
         <item>qunidaye_browser</item>
         <item>quora</item>
         <item>**R**</item>
-        <item>rar</item>
         <item>reaper</item>
         <item>renrenmeiju</item>
         <item>ringtone_maker</item>
-        <item>romow_fluxo</item>
         <item>root_explorer</item>
         <item>ruler</item>
         <item>**S**</item>
@@ -1274,7 +1271,6 @@
         <item>samsung_email</item>
         <item>samsung_files</item>
         <item>samsung_gallery</item>
-        <item>samsung_gear_manager</item>
         <item>samsung_music</item>
         <item>samsung_pay</item>
         <item>samsung_phone</item>
@@ -1283,6 +1279,7 @@
         <item>samsung_smemo</item>
         <item>samsung_sms</item>
         <item>samsung_sreminder</item>
+        <item>samsung_s_health</item>
         <item>samsung_theme</item>
         <item>samsung_video</item>
         <item>samsung_voice</item>
@@ -1320,6 +1317,7 @@
         <item>solid_explorer</item>
         <item>solo_launcher</item>
         <item>sony_album</item>
+        <item>sony_ar_effect</item>
         <item>sony_audio_recorder</item>
         <item>sony_background_defocus</item>
         <item>sony_backup</item>
@@ -1338,7 +1336,6 @@
         <item>sony_phone</item>
         <item>sony_play_memories_mobile</item>
         <item>sony_radio</item>
-        <item>sony_select</item>
         <item>sony_settings</item>
         <item>sony_sketch</item>
         <item>sony_smart_connect</item>
@@ -1354,7 +1351,6 @@
         <item>sougou_wallpaper</item>
         <item>sound_recorder</item>
         <item>spd_bank</item>
-        <item>spendee</item>
         <item>spoon</item>
         <item>spotify</item>
         <item>sspai</item>
@@ -1414,8 +1410,8 @@
         <item>tencent_news</item>
         <item>tencent_ps_play</item>
         <item>tencent_qie_fm</item>
-        <item>tencent_qpaint</item>
         <item>tencent_qq</item>
+        <item>tencent_qqpimsecure</item>
         <item>tencent_qq_browser</item>
         <item>tencent_qq_hd</item>
         <item>tencent_qq_international</item>
@@ -1458,6 +1454,7 @@
         <item>tujiedianying</item>
         <item>tumblr</item>
         <item>twitter</item>
+        <item>txvpn</item>
         <item>**U**</item>
         <item>uber</item>
         <item>uber_partner</item>
@@ -1503,11 +1500,8 @@
         <item>wififenxiangxia</item>
         <item>wifi_key</item>
         <item>wifi_luyouguanjia</item>
-        <item>wikipedia</item>
-        <item>wikipedia_beta</item>
         <item>wiz_note</item>
         <item>wolfram_alpha</item>
-        <item>wooyun</item>
         <item>wps</item>
         <item>wuba</item>
         <item>wunderlist</item>
@@ -1519,6 +1513,7 @@
         <item>xiaohongshu</item>
         <item>xiaokaxiu</item>
         <item>xiaomi_mijia</item>
+        <item>xiaomi_shop</item>
         <item>xiaowo_weather</item>
         <item>ximalayating</item>
         <item>xinstaller</item>
@@ -1529,7 +1524,6 @@
         <item>xunfei_keyboard</item>
         <item>xunlei</item>
         <item>xunlei_kuainiao</item>
-        <item>x_browser</item>
         <item>**Y**</item>
         <item>yahoo_weather</item>
         <item>yangqi</item>

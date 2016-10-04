@@ -69,7 +69,7 @@ public class FeedbackChatAdapter extends RecyclerView.Adapter<FeedbackViewHolder
     private static final int TYPE_USER = 0x01;
     private static final int TYPE_DEV = 0x02;
 
-    private Comment getItem(int position) {
+    public Comment getItem(int position) {
         return mFeedbackThread.getCommentsList().get(position);
     }
 
@@ -96,8 +96,6 @@ public class FeedbackChatAdapter extends RecyclerView.Adapter<FeedbackViewHolder
 
         Slice slice = new Slice(holder.mFrame);
         slice.setRadius(10.0f);
-        slice.setRipple(2);
-        slice.setElevation(0);
 
         if (type == TYPE_DEV) {
             holder.mContainer.setGravity(Gravity.START);
@@ -111,7 +109,7 @@ public class FeedbackChatAdapter extends RecyclerView.Adapter<FeedbackViewHolder
         }
 
         int top, bottom, left, right;
-
+        int elevation;
         if (position != 0 && getItemViewType(position) == getItemViewType(position - 1)) {
             // no top radius
             if (type == TYPE_DEV) {
@@ -142,13 +140,16 @@ public class FeedbackChatAdapter extends RecyclerView.Adapter<FeedbackViewHolder
             }
 
             bottom = 1;
+            elevation = 1;
         } else {
             // has bottom radius
             slice.showRightBottomRect(false);
             slice.showLeftBottomRect(false);
 
             bottom = 8;
+            elevation = 2;
         }
+        slice.setElevation(elevation);
 
         if (type == TYPE_DEV) {
             left = 24;

@@ -2,13 +2,12 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
 import android.content.Context;
-import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.StrictMode;
 
-import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
-import com.sorcerer.sorcery.iconpack.util.Prefs;
+import com.sorcerer.sorcery.iconpack.util.Prefs.Prefs;
+import com.sorcerer.sorcery.iconpack.util.Prefs.SorceryPrefs;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -44,7 +43,7 @@ public class SorceryIcons extends Application {
         }
         RxActivityResult.register(this);
 
-        mPrefs = new Prefs(this);
+        mPrefs = new SorceryPrefs(this);
     }
 
     public static RefWatcher getRefWatcher(Context context) {
@@ -52,9 +51,9 @@ public class SorceryIcons extends Application {
         return app.mRefWatcher;
     }
 
-    private static Prefs mPrefs;
+    private static SorceryPrefs mPrefs;
 
-    public static Prefs getPrefs() {
+    public static SorceryPrefs getPrefs() {
         return mPrefs;
     }
 }
