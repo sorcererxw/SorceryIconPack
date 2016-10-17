@@ -15,6 +15,8 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
 import java.lang.reflect.Field;
 
+import butterknife.ButterKnife;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -39,7 +41,6 @@ public class LazyBaseFragment extends Fragment {
         mContext = getActivity().getApplicationContext();
     }
 
-    //子类通过重写onCreateView，调用setOnContentView进行布局设置，否则contentView==null，返回null
     @Override
     public final View onCreateView(LayoutInflater inflater, ViewGroup container,
                                    Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class LazyBaseFragment extends Fragment {
     }
 
     protected void onCreateView(Bundle savedInstanceState) {
-
+        // implements by subclass
     }
 
     @Override
@@ -80,20 +81,12 @@ public class LazyBaseFragment extends Fragment {
         return mContentView;
     }
 
-    public View findViewById(int id) {
-        if (mContentView != null) {
-            return mContentView.findViewById(id);
-        }
-        return null;
-    }
-
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mHoldingActivity = (BaseActivity) activity;
     }
 
-    // http://stackoverflow.com/questions/15207305/getting-the-error-java-lang-illegalstateexception-activity-has-been-destroyed
     @Override
     public void onDetach() {
         Log.d("TAG", "onDetach() : ");
@@ -102,7 +95,6 @@ public class LazyBaseFragment extends Fragment {
             Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
             childFragmentManager.setAccessible(true);
             childFragmentManager.set(this, null);
-
         } catch (NoSuchFieldException e) {
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {

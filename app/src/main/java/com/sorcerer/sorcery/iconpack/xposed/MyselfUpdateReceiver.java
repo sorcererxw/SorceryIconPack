@@ -131,7 +131,7 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                             }
                         }
                         editor.putString("theme_icon_for_" + installedPkgName,
-                                gson.toJson((Object) themeIconsForApp));
+                                gson.toJson(themeIconsForApp));
                         editor.putLong("theme_last_applied", System.currentTimeMillis());
                         editor.commit();
                         Log.d(TAG, "Updated " + installedPkgName);
@@ -167,9 +167,9 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                     Resources origPkgRes;
                     SharedPreferences.Editor editor = mPrefs.edit();
                     Gson gson = new Gson();
-                    ArrayList<String> mIconPackages = new ArrayList();
+                    ArrayList<String> mIconPackages = new ArrayList<>();
                     HashMap<String, ArrayList<IconReplacementItem>> mIconReplacementsHashMap =
-                            new HashMap();
+                            new HashMap<>();
                     String themePackagePath = themePackage.sourceDir;
 
                     PackageManager pm = mContext.getPackageManager();
@@ -194,8 +194,8 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                     }
                     for (Map.Entry<String, ?> entry : mPrefs.getAll()
                             .entrySet()) {
-                        if (((String) entry.getKey()).contains("theme_icon_for_")) {
-                            editor.remove((String) entry.getKey());
+                        if (entry.getKey().contains("theme_icon_for_")) {
+                            editor.remove(entry.getKey());
                         }
                     }
                     editor.commit();
@@ -239,14 +239,14 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
 
                                     XposedUtils.cacheDrawable(item.getPackageName(),
                                             item.getOrigRes(),
-                                            (BitmapDrawable) new BitmapDrawable(origPkgRes,
+                                            new BitmapDrawable(origPkgRes,
                                                     XposedUtils.getBitmapForDensity(r,
                                                             mPrefs.getInt("display_dpi", 320),
                                                             item.getReplacementRes())));
                                 }
                                 XposedUtils.cacheDrawable(item.getPackageName(),
                                         item.getOrigRes(),
-                                        (BitmapDrawable) new BitmapDrawable(origPkgRes,
+                                        new BitmapDrawable(origPkgRes,
                                                 XposedUtils.getBitmapForDensity(r,
                                                         mPrefs.getInt("display_dpi", 320),
                                                         item.getReplacementRes())));
@@ -259,7 +259,7 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                     for (Map.Entry<String, ArrayList<IconReplacementItem>> entry2 : mIconReplacementsHashMap
                             .entrySet()) {
                         mIconPackages.add(entry2.getKey());
-                        editor.putString("theme_icon_for_" + ((String) entry2.getKey()),
+                        editor.putString("theme_icon_for_" + entry2.getKey(),
                                 gson.toJson(((ArrayList) entry2.getValue()).toArray()));
                     }
                     editor.putString("theme_icon_packages",

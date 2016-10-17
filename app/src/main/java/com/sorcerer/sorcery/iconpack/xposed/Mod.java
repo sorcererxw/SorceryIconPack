@@ -35,7 +35,9 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
- * Created by Sorcerer on 2016/2/26 0026.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/26 0026
  */
 public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         IXposedHookInitPackageResources {
@@ -133,12 +135,12 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         if (hasPrefFileChanged()) {
             this.XSharedPrefs.reload();
             this.mDisplayDpi = this.XSharedPrefs.getInt("display_dpi", 320);
-            if (this.mThemePackage != this.XSharedPrefs.getString("theme_package_name", null)) {
+            if (!this.mThemePackage.equals(this.XSharedPrefs.getString("theme_package_name", null))) {
                 this.mThemePackage = this.XSharedPrefs.getString("theme_package_name", null);
             }
             this.mThemePackagePath = this.XSharedPrefs.getString("theme_package_path", null);
             if (this.mIconReplacementsHashMap == null) {
-                this.mIconReplacementsHashMap = new HashMap();
+                this.mIconReplacementsHashMap = new HashMap<>();
             }
         }
     }
@@ -232,30 +234,31 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
-                new Object[]{Integer.TYPE, String.class, new XC_MethodHook() {
+                Integer.TYPE,
+                String.class,
+                new XC_MethodHook() {
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                         if (param.args[1].equals("replaceWithIconThemer")) {
                             param.setResult(null);
                         }
                     }
-                }
                 });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
-                new Object[]{String.class, new XC_MethodHook() {
+                String.class,
+                new XC_MethodHook() {
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                         if (param.args[0].equals("replaceWithIconThemer")) {
                             param.setResult(null);
                         }
                     }
-                }
                 });
     }
 
     private void appWorkaroundTwo(XC_LoadPackage.LoadPackageParam lpparam,
-            final String packageNameToIgnore,
-            final String resNameToIgnore) {
+                                  final String packageNameToIgnore,
+                                  final String resNameToIgnore) {
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "openRawResource",
@@ -294,7 +297,7 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
                                         if (it.getReplacementResName() != null) {
                                             XposedUtils.cacheDrawable(it.getPackageName(),
                                                     it.getOrigRes(),
-                                                    (BitmapDrawable) new BitmapDrawable(res,
+                                                    new BitmapDrawable(res,
                                                             XposedUtils
                                                                     .getBitmapForDensity(themeRes,
                                                                             Mod.this.mDisplayDpi,
@@ -318,8 +321,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
     }
 
     private void appWorkaroundThree(XC_LoadPackage.LoadPackageParam lpparam,
-            final String packageNameToIgnore,
-            final String resNameToIgnore) {
+                                    final String packageNameToIgnore,
+                                    final String resNameToIgnore) {
         XC_MethodHook methodHook = new XC_MethodHook() {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Resources res = (Resources) param.args[0];

@@ -5,7 +5,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 /**
- * Created by Sorcerer on 2016/8/28.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/8/28
  */
 public class KeyboardUtil {
     public static void closeKeyboard(Activity activity) {

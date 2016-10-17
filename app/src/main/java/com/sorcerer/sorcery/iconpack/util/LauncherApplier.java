@@ -10,7 +10,9 @@ import android.widget.Toast;
 import com.sorcerer.sorcery.iconpack.R;
 
 /**
- * Created by Sorcerer on 2016/1/24 0024.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/1/24 0024
  */
 public class LauncherApplier {
     private static final String TAG = LauncherApplier.class.getSimpleName();
@@ -431,8 +433,6 @@ public class LauncherApplier {
         context.sendBroadcast(tsf);
         context.startActivity(tsfApply);
     }
-
-    // TODO: ADD LAUNCHERS
 
     public void Layers(Context context) {
         try {

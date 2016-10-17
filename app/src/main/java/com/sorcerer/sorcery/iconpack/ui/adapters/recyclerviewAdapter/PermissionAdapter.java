@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.util.StringUtil;
 
 import java.util.List;
@@ -22,22 +23,22 @@ import butterknife.ButterKnife;
  * @author: Sorcerer
  * @date: 2016/8/12
  */
-public class PermissionAdapter
-        extends RecyclerView.Adapter<PermissionAdapter.PermissionViewHolder> {
+class PermissionViewHolder extends RecyclerView.ViewHolder {
 
-    class PermissionViewHolder extends RecyclerView.ViewHolder {
+    @BindView(R.id.textView_permission_item_title)
+    TextView title;
 
-        @BindView(R.id.textView_permission_item_title)
-        TextView title;
+    @BindView(R.id.textView_permission_item_describe)
+    TextView describe;
 
-        @BindView(R.id.textView_permission_item_describe)
-        TextView describe;
-
-        public PermissionViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
+    PermissionViewHolder(View itemView) {
+        super(itemView);
+        ButterKnife.bind(this, itemView);
     }
+}
+
+public class PermissionAdapter
+        extends RecyclerView.Adapter<PermissionViewHolder> {
 
     private Context mContext;
 

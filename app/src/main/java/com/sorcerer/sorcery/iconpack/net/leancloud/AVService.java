@@ -17,10 +17,8 @@ import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
  */
 public class AVService {
     public static void init(Context context) {
-        // 注册子类
         AVObject.registerSubclass(RequestBean.class);
         AVObject.registerSubclass(LikeBean.class);
-//        AVOSCloud.setDebugLogEnabled(true);
 
         AVOSCloud.initialize(context,
                 ResourceUtil.getString(context, R.string.leancloud_app_id),

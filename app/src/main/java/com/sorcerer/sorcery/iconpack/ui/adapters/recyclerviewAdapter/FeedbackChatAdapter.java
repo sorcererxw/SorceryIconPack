@@ -49,7 +49,7 @@ class FeedbackViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.textView_item_feedback_chat)
     TextView mTextView;
 
-    public FeedbackViewHolder(View itemView) {
+    FeedbackViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }

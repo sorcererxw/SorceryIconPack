@@ -14,6 +14,10 @@ android {
     versionProps['VERSION_CODE'] = code.toString()
     versionProps.store(versionPropsFile.newWriter(), null)
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code

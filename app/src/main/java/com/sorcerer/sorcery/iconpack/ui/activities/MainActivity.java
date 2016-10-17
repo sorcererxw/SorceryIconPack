@@ -1,6 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.Manifest;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -23,7 +22,6 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
@@ -43,6 +41,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import rx.functions.Action1;
+
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
@@ -135,7 +136,7 @@ public class MainActivity extends BaseActivity {
         }
 
         @Override
-        public void onResultClick(SearchResult result) {
+        public void onResultClick(SearchBox.SearchResult result) {
 
         }
     };
@@ -153,7 +154,7 @@ public class MainActivity extends BaseActivity {
         mLaunchIntent = getIntent();
         String action = getIntent().getAction();
 
-        mCustomPicker = action.equals("com.novalauncher.THEME");
+        mCustomPicker = "com.novalauncher.THEME".equals(action);
 
         setSupportActionBar(mMainToolbar);
         if (getSupportActionBar() != null) {
@@ -162,10 +163,11 @@ public class MainActivity extends BaseActivity {
 
         initTabAndPager();
 
-        initSearchBox();
+        initSearchBox(mCustomPicker);
+
+        initDrawer();
 
         if (!mCustomPicker) {
-            initDrawer();
             showPermissionDialog();
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -176,25 +178,24 @@ public class MainActivity extends BaseActivity {
     private void showPermissionDialog() {
         if (Build.VERSION.SDK_INT >= 23) {
             final RxPermissions rxPermissions = RxPermissions.getInstance(this);
-            if (!rxPermissions.isGranted(Manifest.permission.READ_PHONE_STATE)
-                    || !rxPermissions.isGranted(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            if (!rxPermissions.isGranted(READ_PHONE_STATE)
+                    || !rxPermissions.isGranted(WRITE_EXTERNAL_STORAGE)) {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
                 builder.title(ResourceUtil.getString(this, R.string.permission_request_title));
                 List<PermissionBean> list = new ArrayList<>();
                 list.add(new PermissionBean(null,
                         ResourceUtil.getString(this, R.string.permission_request_content), 0));
-                if (!rxPermissions.isGranted(Manifest.permission.READ_PHONE_STATE)) {
+                if (!rxPermissions.isGranted(READ_PHONE_STATE)) {
                     list.add(new PermissionBean(
                             ResourceUtil.getString(this, R.string.permission_read_phone_state),
                             ResourceUtil.getString(this,
                                     R.string.permission_request_read_phone_state),
                             R.drawable.ic_smartphone_black_24dp));
                 }
-                if (!rxPermissions.isGranted(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                if (!rxPermissions.isGranted(WRITE_EXTERNAL_STORAGE)) {
                     list.add(new PermissionBean(
-                            ResourceUtil
-                                    .getString(this,
-                                            R.string.permission_write_external_storage),
+                            ResourceUtil.getString(this,
+                                    R.string.permission_write_external_storage),
                             ResourceUtil.getString(this,
                                     R.string.permission_request_describe_write_external_storage),
                             R.drawable.ic_folder_black_24dp));
@@ -205,8 +206,8 @@ public class MainActivity extends BaseActivity {
                     @Override
                     public void onClick(@NonNull MaterialDialog materialDialog,
                                         @NonNull DialogAction dialogAction) {
-                        rxPermissions.request(Manifest.permission.READ_PHONE_STATE,
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        rxPermissions.request(READ_PHONE_STATE,
+                                WRITE_EXTERNAL_STORAGE)
                                 .subscribe(new Action1<Boolean>() {
                                     @Override
                                     public void call(Boolean aBoolean) {
@@ -266,8 +267,12 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    private void initSearchBox() {
-        mSearchBox.setLogoText("Sorcery Icons");
+    private void initSearchBox(boolean isCustomPicker) {
+        if (!isCustomPicker) {
+            mSearchBox.setLogoText("Sorcery Icons");
+        } else {
+            mSearchBox.setLogoText("Select A Icon");
+        }
         mSearchBox.setHint(ResourceUtil.getString(mContext, R.string.search_hint));
         mSearchBox.setSearchListener(mSearchListener);
         mSearchBox.setSearchWithoutSuggestions(true);

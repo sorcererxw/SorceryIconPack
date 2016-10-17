@@ -124,7 +124,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                     .getIdentifier("appfilter", "xml",
                                             themePackage.packageName));
                         }
-                        ArrayList<IconReplacementItem> themeIconsForApp = new ArrayList();
+                        ArrayList<IconReplacementItem> themeIconsForApp = new ArrayList<>();
                         Iterator i$ = Util.ParseIconReplacements(themePackage.packageName, r, xrp)
                                 .iterator();
                         while (i$.hasNext()) {
@@ -160,7 +160,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
                                         }
                                         XposedUtils.cacheDrawable(item.getPackageName(),
                                                 item.getOrigRes(),
-                                                (BitmapDrawable) new BitmapDrawable(
+                                                new BitmapDrawable(
                                                         origPkgRes,
                                                         XposedUtils
                                                                 .getBitmapForDensity(

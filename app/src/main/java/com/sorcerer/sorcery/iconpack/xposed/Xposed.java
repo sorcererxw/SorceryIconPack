@@ -34,7 +34,9 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
- * Created by Sorcerer on 2016/2/10 0010.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/10 0010
  */
 public class Xposed
         implements IXposedHookZygoteInit, IXposedHookLoadPackage, IXposedHookInitPackageResources {
@@ -44,9 +46,9 @@ public class Xposed
     public static String TAG = "Xposed";
     public static XSharedPreferences XSharedPrefs;
     private static int mDisplayDpi;
-    private static ArrayList<String> mIconPackages = new ArrayList();
+    private static ArrayList<String> mIconPackages = new ArrayList<>();
     private static HashMap<String, ArrayList<IconReplacementItem>> mIconReplacementsHashMap =
-            new HashMap();
+            new HashMap<>();
     private static String mThemePackage;
     private static String mThemePackagePath;
     private boolean mActive;
@@ -86,14 +88,14 @@ public class Xposed
 //                if (XSharedPrefs.getString("theme_icon_mask", null) != null) {
 //                    mThemeIconMask = (IconMaskItem) gson.fromJson(XSharedPrefs.getString("theme_icon_mask", null), IconMaskItem.class);
 //                }
-                    for (String pkg : (String[]) gson
+                    for (String pkg : gson
                             .fromJson(XSharedPrefs.getString("theme_icon_packages", null),
                                     String[].class)) {
                         mIconPackages.add(pkg);
-                        IconReplacementItem[] iconReplacementItems = (IconReplacementItem[]) gson
+                        IconReplacementItem[] iconReplacementItems = gson
                                 .fromJson(XSharedPrefs.getString("theme_icon_for_" + pkg, null),
                                         IconReplacementItem[].class);
-                        ArrayList<IconReplacementItem> items = new ArrayList();
+                        ArrayList<IconReplacementItem> items = new ArrayList<>();
                         Collections.addAll(items, iconReplacementItems);
                         mIconReplacementsHashMap.put(pkg, items);
                     }
@@ -281,35 +283,35 @@ public class Xposed
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
-                new Object[]{Integer.TYPE, String.class,
-                        new XC_MethodHook() {
-                            protected void beforeHookedMethod(
-                                    MethodHookParam param)
-                                    throws Throwable {
-                                if (param.args[1]
-                                        .equals("replaceWithSIP")) {
-                                    param.setResult(null);
-                                }
-                            }
+                Integer.TYPE,
+                String.class,
+                new XC_MethodHook() {
+                    protected void beforeHookedMethod(
+                            MethodHookParam param)
+                            throws Throwable {
+                        if (param.args[1]
+                                .equals("replaceWithSIP")) {
+                            param.setResult(null);
                         }
+                    }
                 });
         XposedHelpers.findAndHookMethod("android.content.res.AssetManager",
                 lpparam.classLoader,
                 "openNonAssetFd",
-                new Object[]{String.class, new XC_MethodHook() {
+                String.class,
+                new XC_MethodHook() {
                     protected void beforeHookedMethod(MethodHookParam param)
                             throws Throwable {
                         if (param.args[0].equals("replaceWithSIP")) {
                             param.setResult(null);
                         }
                     }
-                }
                 });
     }
 
 
     private void appWorkaroundTwo(XC_LoadPackage.LoadPackageParam lpparam,
-            final String packageNameToIgnore, final String resNameToIgnore) {
+                                  final String packageNameToIgnore, final String resNameToIgnore) {
         XposedHelpers.findAndHookMethod("android.content.res.Resources",
                 lpparam.classLoader,
                 "openRawResource",
@@ -379,8 +381,8 @@ public class Xposed
 
 
     private void appWorkaroundThree(XC_LoadPackage.LoadPackageParam lpparam,
-            final String packageNameToIgnore,
-            final String resNameToIgnore) {
+                                    final String packageNameToIgnore,
+                                    final String resNameToIgnore) {
         XC_MethodHook methodHook = new XC_MethodHook() {
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 Resources res = (Resources) param.args[0];
@@ -418,7 +420,7 @@ public class Xposed
                                 } else if (it.getReplacementResName() != null) {
                                     XposedUtils.cacheDrawable(it.getPackageName(),
                                             it.getOrigRes(),
-                                            (BitmapDrawable) new BitmapDrawable(
+                                            new BitmapDrawable(
                                                     res,
                                                     XposedUtils
                                                             .getBitmapForDensity(
@@ -443,13 +445,16 @@ public class Xposed
         XposedHelpers.findAndHookMethod("android.graphics.BitmapFactory",
                 lpparam.classLoader,
                 "decodeResource",
-                new Object[]{Resources.class, Integer.TYPE,
-                        BitmapFactory.Options.class,
-                        methodHook});
+                Resources.class,
+                Integer.TYPE,
+                BitmapFactory.Options.class,
+                methodHook);
         XposedHelpers.findAndHookMethod("android.graphics.BitmapFactory",
                 lpparam.classLoader,
                 "decodeResource",
-                new Object[]{Resources.class, Integer.TYPE, methodHook});
+                Resources.class,
+                Integer.TYPE,
+                methodHook);
     }
 
     public void handleInitPackageResources(
@@ -500,7 +505,7 @@ public class Xposed
                         try {
                             XposedUtils.cacheDrawable(it.getPackageName(),
                                     it.getOrigRes(),
-                                    (BitmapDrawable) new BitmapDrawable(
+                                    new BitmapDrawable(
                                             resparam.res,
                                             XposedUtils.getBitmapForDensity(
                                                     XModuleResources
@@ -513,7 +518,7 @@ public class Xposed
                                     .setReplacement(it.getOrigRes(),
                                             new XResources.DrawableLoader() {
                                                 public Drawable newDrawable(XResources res,
-                                                        int id)
+                                                                            int id)
                                                         throws Throwable {
                                                     return XposedUtils.getCachedIcon(res,
                                                             res.getResourcePackageName(

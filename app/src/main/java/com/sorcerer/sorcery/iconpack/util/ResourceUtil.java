@@ -228,15 +228,15 @@ public class ResourceUtil {
             R.color.grey_900,
     };
 
-    public static String getString(Context context,@StringRes int resId) {
+    public static String getString(Context context, @StringRes int resId) {
         return context.getString(resId);
     }
 
-    public static int getColor(Context context,@ColorRes int resId) {
+    public static int getColor(Context context, @ColorRes int resId) {
         return ContextCompat.getColor(context, resId);
     }
 
-    public static Drawable getDrawable(Context context,@DrawableRes int resId) {
+    public static Drawable getDrawable(Context context, @DrawableRes int resId) {
         return ContextCompat.getDrawable(context, resId);
     }
 
@@ -250,6 +250,10 @@ public class ResourceUtil {
         Drawable drawable = getDrawable(context, resId);
         drawable.setAlpha(alpha);
         return drawable;
+    }
+
+    public static Drawable getDrawableWithAlpha(Context context, int resId, float alpha) {
+        return getDrawableWithAlpha(context, resId, alpha * 255);
     }
 
     /**
@@ -277,11 +281,11 @@ public class ResourceUtil {
         return context.getResources().getIdentifier(resName, resFold, context.getPackageName());
     }
 
-    public static int getRandomColor(Context context,int seed, int deep) {
+    public static int getRandomColor(Context context, int seed, int deep) {
 
         Random random = new Random(seed);
         int a = Math.abs(random.nextInt()) % 19;
-        return ContextCompat.getColor(context, mColors[a*10+deep]);
+        return ContextCompat.getColor(context, mColors[a * 10 + deep]);
 
     }
 }

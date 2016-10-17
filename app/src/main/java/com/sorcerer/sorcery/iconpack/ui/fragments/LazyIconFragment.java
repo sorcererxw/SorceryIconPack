@@ -29,6 +29,8 @@ import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -65,7 +67,11 @@ public class LazyIconFragment extends LazyFragment {
 
     private List<IconBean> mIconBeanList;
 
-    private IconRecyclerView mGridView;
+    @BindView(R.id.recyclerView_icon_gird)
+    public IconRecyclerView mGridView;
+
+    @BindView(R.id.textView_icon_list_empty_view)
+    public TextView mEmptyText;
 
     public static LazyIconFragment newInstance(Flag flag, boolean customPicker) {
         LazyIconFragment fragment = new LazyIconFragment();
@@ -82,13 +88,15 @@ public class LazyIconFragment extends LazyFragment {
     private IconAdapter mIconAdapter;
     private GridLayoutManager mGridLayoutManager;
 
-
     private boolean mNeedResize = false;
-
 
     @Override
     protected void onCreateViewLazy(Bundle savedInstance) {
-        setContentView(R.layout.fragment_icon);
+
+        View view = View.inflate(getContext(), R.layout.fragment_icon, null);
+        setContentView(view);
+
+        ButterKnife.bind(this, view);
 
         if (mIconBeanList == null) {
             getIconBeanList((Flag) getArguments().get(mArgFlagKey));
@@ -112,7 +120,6 @@ public class LazyIconFragment extends LazyFragment {
         mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mGridLayoutManager.scrollToPosition(0);
 
-        mGridView = (IconRecyclerView) findViewById(R.id.recyclerView_icon_gird);
         mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);
         mGridView.setItemAnimator(new DefaultItemAnimator());
@@ -125,21 +132,21 @@ public class LazyIconFragment extends LazyFragment {
         });
 
         int iconSize = 120;
-        TextView emptyText = (TextView) findViewById(R.id.textView_icon_list_empty_view);
-        emptyText.setCompoundDrawables(null,
+        mEmptyText.setCompoundDrawables(null,
                 new IconicsDrawable(getContext())
                         .color(Color.BLACK)
                         .icon(GoogleMaterial.Icon.gmd_sentiment_very_dissatisfied)
                         .sizeDp(iconSize),
                 null, null
         );
-        emptyText.setPadding(emptyText.getPaddingLeft(),
-                emptyText.getPaddingTop(),
-                emptyText.getPaddingRight(),
-                DisplayUtil.dip2px(getContext(), (int) (emptyText.getTextSize() + iconSize) / 2)
+        mEmptyText.setPadding(
+                mEmptyText.getPaddingLeft(),
+                mEmptyText.getPaddingTop(),
+                mEmptyText.getPaddingRight(),
+                DisplayUtil.dip2px(getContext(), (int) (mEmptyText.getTextSize() + iconSize) / 2)
         );
-        emptyText.setVisibility(VISIBLE);
-        mGridView.setEmptyView(emptyText);
+        mEmptyText.setVisibility(VISIBLE);
+        mGridView.setEmptyView(mEmptyText);
 
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
@@ -148,16 +155,6 @@ public class LazyIconFragment extends LazyFragment {
         if (mNeedResize) {
             resize();
         }
-//        CardView cardView = (CardView) findViewById(R.id.cardView_fragment_icon_container);
-//        DisplayMetrics dm = getResources().getDisplayMetrics();
-//        int h_screen = dm.heightPixels;
-//        cardView.setTranslationY(h_screen);
-//        cardView.animate()
-//                .alpha(1)
-//                .translationY(0)
-//                .setInterpolator(new AccelerateDecelerateInterpolator())
-//                .setDuration(500)
-//                .start();
         DisplayMetrics dm = getResources().getDisplayMetrics();
         int h_screen = dm.heightPixels;
         mGridView.setTranslationY(h_screen);
@@ -237,42 +234,41 @@ public class LazyIconFragment extends LazyFragment {
     }
 
     private void getIconBeanList(Flag flag) {
-        Observable.just(flag)
-                .map(new Func1<Flag, List<IconBean>>() {
-                    @Override
-                    public List<IconBean> call(Flag flag) {
-                        List<IconBean> list = new ArrayList<>();
-                        for (String name : getIconNames(getContext(), flag)) {
-                            IconBean iconBean = new IconBean(name);
-                            int res = getResources()
-                                    .getIdentifier(name, "drawable", getContext().getPackageName());
-                            if (res != 0) {
-                                final int thumbRes =
-                                        getResources().getIdentifier(name, "drawable",
-                                                getContext().getPackageName());
-                                if (thumbRes != 0) {
-                                    iconBean.setRes(thumbRes);
-                                } else {
-                                    KLog.d(TAG, "thumb = 0: " + name);
-                                }
-                            }
-                            list.add(iconBean);
+        Observable.just(flag).map(new Func1<Flag, List<IconBean>>() {
+            @Override
+            public List<IconBean> call(Flag flag) {
+                List<IconBean> list = new ArrayList<>();
+                for (String name : getIconNames(getContext(), flag)) {
+                    IconBean iconBean = new IconBean(name);
+                    int res = getResources()
+                            .getIdentifier(name, "drawable", getContext().getPackageName());
+                    if (res != 0) {
+                        final int thumbRes =
+                                getResources().getIdentifier(name, "drawable",
+                                        getContext().getPackageName());
+                        if (thumbRes != 0) {
+                            iconBean.setRes(thumbRes);
+                        } else {
+                            KLog.d(TAG, "thumb = 0: " + name);
                         }
-                        return list;
                     }
+                    list.add(iconBean);
+                }
+                return list;
+            }
 
-                    private String[] getIconNames(Context context, Flag flag) {
-                        if (flag == Flag.ALL) {
-                            return ResourceUtil.getStringArray(context, "icon_pack");
-                        }
-                        String[] iconNames;
-                        iconNames = ResourceUtil.getStringArray(
-                                context,
-                                "icon_pack_" + flag.toString().toLowerCase()
-                        );
-                        return iconNames;
-                    }
-                })
+            private String[] getIconNames(Context context, Flag flag) {
+                if (flag == Flag.ALL) {
+                    return ResourceUtil.getStringArray(context, "icon_pack");
+                }
+                String[] iconNames;
+                iconNames = ResourceUtil.getStringArray(
+                        context,
+                        "icon_pack_" + flag.toString().toLowerCase()
+                );
+                return iconNames;
+            }
+        })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<List<IconBean>>() {

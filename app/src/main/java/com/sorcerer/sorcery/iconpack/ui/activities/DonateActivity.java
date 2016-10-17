@@ -111,9 +111,9 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         if (mThankCard.getVisibility() == View.VISIBLE) {
             return;
         }
-        DisplayMetrics dm = getResources().getDisplayMetrics();
-        int w_screen = dm.widthPixels;
-        mThankCard.setTranslationX(w_screen);
+            DisplayMetrics dm = getResources().getDisplayMetrics();
+            int w_screen = dm.widthPixels;
+            mThankCard.setTranslationX(w_screen);
 
         mThankCard.setTouchCallBack(new QCardView.TouchCallBack() {
             @Override

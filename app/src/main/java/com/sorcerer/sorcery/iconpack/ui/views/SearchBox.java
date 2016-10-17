@@ -42,7 +42,6 @@ import android.widget.TextView;
 
 import com.balysv.materialmenu.ps.MaterialMenuDrawable;
 import com.balysv.materialmenu.ps.MaterialMenuView;
-import com.quinny898.library.persistentsearch.SearchResult;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
@@ -55,8 +54,11 @@ import io.codetailps.animation.SupportAnimator;
 import io.codetailps.animation.ViewAnimationUtils;
 
 /**
- * Created by Sorcerer on 2016/5/4 12:14.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/5/4 12:14
  */
+
 public class SearchBox extends RelativeLayout {
 
     public static final int VOICE_RECOGNITION_CODE = 1234;
@@ -93,6 +95,29 @@ public class SearchBox extends RelativeLayout {
     private SearchFilter mSearchFilter;
     private ArrayAdapter<? extends SearchResult> mAdapter;
 
+    public static class SearchResult {
+        public String title;
+        public Drawable icon;
+        public int viewType = 0;
+
+        public SearchResult(String title, Drawable icon) {
+            this.title = title;
+            this.icon = icon;
+        }
+
+        public SearchResult(String title) {
+            this.title = title;
+        }
+
+        public SearchResult(int viewType, String title) {
+            this.viewType = viewType;
+            this.title = title;
+        }
+
+        public String toString() {
+            return this.title;
+        }
+    }
 
     /**
      * Create a new searchbox
@@ -175,7 +200,7 @@ public class SearchBox extends RelativeLayout {
 
         mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId,
-                    KeyEvent event) {
+                                          KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 //                    search(getSearchText());
                     mSearchEditText.setSelection(mSearchEditText.getSelectionStart());
@@ -247,12 +272,12 @@ public class SearchBox extends RelativeLayout {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count,
-                    int after) {
+                                          int after) {
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
-                    int count) {
+                                      int count) {
 
             }
         });
@@ -846,7 +871,7 @@ public class SearchBox extends RelativeLayout {
 
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                    long arg3) {
+                                    long arg3) {
                 SearchResult result = mResultList.get(arg2);
                 search(result, true);
             }
@@ -1051,5 +1076,9 @@ public class SearchBox extends RelativeLayout {
     public void setLogoTypeface(Typeface tf) {
         mLogoTextView.setTypeface(tf);
     }
+
+//    public void setMenuButtonVisibility(boolean visibility) {
+//        mMaterialMenu.setVisibility(visibility ? VISIBLE : GONE);
+//    }
 
 }
