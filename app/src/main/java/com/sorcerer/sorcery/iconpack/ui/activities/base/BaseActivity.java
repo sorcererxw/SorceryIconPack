@@ -12,7 +12,9 @@ import com.avos.avoscloud.AVAnalytics;
 import butterknife.ButterKnife;
 
 /**
- * Created by Sorcerer on 2016/5/28 0028.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/5/28 0028
  */
 public abstract class BaseActivity extends AppCompatActivity {
 

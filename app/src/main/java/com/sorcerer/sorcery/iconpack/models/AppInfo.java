@@ -8,6 +8,9 @@ import android.graphics.drawable.Drawable;
  * @date: 2016/1/21 0021
  */
 public class AppInfo {
+    public AppInfo(){
+    }
+
     public int getRequestedTimes() {
         return mRequestedTimes;
     }
@@ -16,14 +19,12 @@ public class AppInfo {
         mRequestedTimes = requestedTimes;
     }
 
-    int mRequestedTimes = -1;
-    String mCode = null;
-    String mName = null;
-    Drawable mIcon = null;
-    String mPackage;
-    boolean mHasCustomIcon = false;
-
-    public AppInfo(){};
+    private int mRequestedTimes = -1;
+    private String mCode = null;
+    private String mName = null;
+    private Drawable mIcon = null;
+    private String mPackage;
+    private boolean mHasCustomIcon = false;
 
     public AppInfo(String code, String name, Drawable icon) {
         mCode = code;

@@ -11,6 +11,8 @@ import com.sorcerer.sorcery.iconpack.util.Prefs.SorceryPrefs;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.tencent.tinker.loader.app.TinkerApplication;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 
 import rx_activity_result.RxActivityResult;
 

@@ -63,7 +63,7 @@ public class LauncherInfo implements Comparable, BaseModel {
         switch (mLabel) {
             case "Action":
                 Log.d(TAG, mLabel + "found");
-                mIcon = R.drawable.action_launcher;
+//                mIcon = R.drawable.action_launcher;
                 break;
             case "ADW":
                 mIcon = R.drawable.adw_launcher;

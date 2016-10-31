@@ -31,6 +31,7 @@ import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionA
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
+import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.tbruyelle.rxpermissions.RxPermissions;
@@ -321,24 +322,10 @@ public class MainActivity extends BaseActivity {
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
-                        .withTag("lab")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_settings_black_24dp, 128))
-                        .withName(R.string.nav_item_lab),
-                new PrimaryDrawerItem()
-                        .withSetSelected(false)
-                        .withSelectable(false)
                         .withTag("help")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_help_black_24dp, 128))
                         .withName(R.string.nav_item_help),
-                new PrimaryDrawerItem()
-                        .withSetSelected(false)
-                        .withSelectable(false)
-                        .withTag("donate")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_attach_money_black_24dp, 128))
-                        .withName(R.string.nav_item_donate),
                 new DividerDrawerItem(),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
@@ -346,6 +333,27 @@ public class MainActivity extends BaseActivity {
                         .withTag("about")
                         .withName(R.string.nav_item_about)
         );
+
+        if (AppInfoUtil.isXposedInstalled(this)) {
+            mDrawer.addItemAtPosition(new PrimaryDrawerItem()
+                    .withSetSelected(false)
+                    .withSelectable(false)
+                    .withTag("lab")
+                    .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                            .ic_settings_black_24dp, 128))
+                    .withName(R.string.nav_item_lab), 3);
+        }
+
+        if (AppInfoUtil.isAlipayInstalled(this)) {
+            mDrawer.addItemAtPosition(new PrimaryDrawerItem()
+                    .withSetSelected(false)
+                    .withSelectable(false)
+                    .withTag("donate")
+                    .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                            .ic_attach_money_black_24dp, 128))
+                    .withName(R.string.nav_item_donate), 4);
+        }
+
         if (BuildConfig.DEBUG) {
             mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
                     .withName("DEBUG"));

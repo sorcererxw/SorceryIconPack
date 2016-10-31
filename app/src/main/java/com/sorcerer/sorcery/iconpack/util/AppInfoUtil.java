@@ -119,7 +119,12 @@ public class AppInfoUtil {
     }
 
     public static boolean isXposedInstalled(Context context) {
-        return isPackageInstalled(context, "de.robv.android.xposed.installed");
+
+        return isPackageInstalled(context, "de.robv.android.xposed.installer");
+    }
+
+    public static boolean isAlipayInstalled(Context context) {
+        return isPackageInstalled(context, "com.eg.android.AlipayGphone");
     }
 
     public static boolean isPackageInstalled(Context context, String packageName) {

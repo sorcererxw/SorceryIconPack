@@ -56,7 +56,5 @@ public abstract class ToolbarActivity extends BaseActivity {
                 return true;
             }
         });
-
     }
-
 }

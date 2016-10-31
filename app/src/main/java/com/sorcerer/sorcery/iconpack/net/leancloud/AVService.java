@@ -5,9 +5,7 @@ import android.content.Context;
 import com.avos.avoscloud.AVAnalytics;
 import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
 /**
@@ -26,6 +24,5 @@ public class AVService {
         );
         AVAnalytics.enableCrashReport(context, true);
         AVOSCloud.useAVCloudCN();
-
     }
 }
