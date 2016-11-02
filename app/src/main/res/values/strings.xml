@@ -169,7 +169,7 @@
         <item>All</item>
         <item>ALi</item>
         <item>Baidu</item>
-        <item>Neatse</item>
+        <item>Netease</item>
         <item>Google</item>
         <item>HTC</item>
         <item>Lenovo</item>
@@ -214,4 +214,8 @@
     <string name="feedback_chat_name_dialog_content">Please give me a nickname to easily distinguish between different respondents.</string>
     <string name="feedback_chat_name_dialog_hint">nickname</string>
     <string name="feedback_chat_name_dialog_toast_hint">The length of nickname must be greater than 3</string>
+
+    <string name="shortcuts_request_icon_disable_message">Request Icon</string>
+    <string name="shortcuts_request_icon_long_label">Request Icon</string>
+    <string name="shortcuts_request_icon_short_label">Request Icon</string>
 </resources>

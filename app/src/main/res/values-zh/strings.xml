@@ -161,4 +161,7 @@
     <string name="feedback_chat_edit_hint">想说什么?</string>
     <string name="action_report_info">报告信息</string>
     <string name="action_leave">离开</string>
+    <string name="shortcuts_request_icon_short_label">申请图标</string>
+    <string name="shortcuts_request_icon_long_label">申请图标</string>
+    <string name="shortcuts_request_icon_disable_message">申请图标</string>
 </resources>

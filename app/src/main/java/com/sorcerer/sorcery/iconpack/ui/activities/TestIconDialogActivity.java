@@ -30,6 +30,5 @@ public class TestIconDialogActivity extends BaseActivity {
         IconDialogPagerAdapter adapter = new IconDialogPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(adapter);
         mViewPager.setCurrentItem(getIntent().getIntExtra(EXTRA_INDEX, 0));
-
     }
 }

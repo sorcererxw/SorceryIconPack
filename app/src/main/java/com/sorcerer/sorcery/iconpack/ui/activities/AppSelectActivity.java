@@ -72,6 +72,13 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                             save(mAdapter.getCheckedAppsList());
                         }
                     }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        if(BuildConfig.DEBUG){
+                            throwable.printStackTrace();
+                        }
+                    }
                 });
     }
 
@@ -127,6 +134,13 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         menuEnable = true;
                         if (mMenu != null) {
                             onCreateOptionsMenu(mMenu);
+                        }
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        if (BuildConfig.DEBUG) {
+                            throwable.printStackTrace();
                         }
                     }
                 });
@@ -297,6 +311,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
                     @Override
                     public void onError(Throwable e) {
+                        if (BuildConfig.DEBUG) {
+                            e.printStackTrace();
+                        }
                         Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG)
                                 .show();
                     }
