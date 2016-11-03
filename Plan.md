@@ -1,0 +1,18 @@
+- [x] App shortcut
+  - [x] Icon-Requesting shortcut
+- [ ] Flyme theme
+  - [x] Generate
+  - [ ] Test
+  - [ ] Commit
+- [ ] Better universal icon loading
+  - [ ] Fix bugs
+  - [ ] Enable to select which icon to load
+- [ ] Better search
+  - [ ] Chinese support
+  - [ ] Dialer-like Search transition()
+- [ ] Settings page
+- [ ] Card-like icon pages
+- [ ] Hot Fix support
+- [ ] Google Play pay support
+- [ ] Feedback reply notification
+ - [ ] MIUI theme
