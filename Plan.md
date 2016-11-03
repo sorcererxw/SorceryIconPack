@@ -15,4 +15,4 @@
 - [ ] Hot Fix support
 - [ ] Google Play pay support
 - [ ] Feedback reply notification
- - [ ] MIUI theme
+- [ ] MIUI theme
