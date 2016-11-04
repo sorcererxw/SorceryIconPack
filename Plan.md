@@ -1,15 +1,16 @@
 - [x] App shortcut
-  - [x] Icon-Requesting shortcut
+    - [x] Icon-Requesting shortcut
+- [x] Support split-screen
 - [ ] Flyme theme
-  - [x] Generate
-  - [ ] Test
-  - [ ] Commit
+    - [x] Generate
+    - [x] Test
+    - [x] Commit (waiting...)
 - [ ] Better universal icon loading
-  - [ ] Fix bugs
-  - [ ] Enable to select which icon to load
-- [ ] Better search
-  - [ ] Chinese support
-  - [ ] Dialer-like Search transition()
+    - [ ] Fix bugs
+    - [ ] Enable to select which icon to load
+- [ ] Better search bar
+    - [ ] Chinese support
+    - [ ] Dialer-like Search transition
 - [ ] Settings page
 - [ ] Card-like icon pages
 - [ ] Hot Fix support

@@ -13,7 +13,9 @@ import com.sorcerer.sorcery.iconpack.R;
 import java.util.Random;
 
 /**
- * Created by pqylj on 2016/5/16.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/5/16
  */
 public class ResourceUtil {
     private static final String TAG = "ResourceUtil";

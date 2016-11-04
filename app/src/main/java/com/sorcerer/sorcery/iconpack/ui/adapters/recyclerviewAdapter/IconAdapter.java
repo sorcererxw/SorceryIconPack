@@ -51,7 +51,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private static final int ITEM_TYPE_ICON = 0x1;
     private static final int ITEM_TYPE_HEADER = 0x10;
 
-
     private Activity mActivity;
     private boolean mCustomPicker = false;
     private Context mContext;
