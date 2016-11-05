@@ -38,4 +38,9 @@
     <dimen name="icon_header_first_level">10sp</dimen>
     <dimen name="icon_header_second_level">8sp</dimen>
 
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="padding_tight">8dp</dimen>
+    <dimen name="toolbar_elevation">2dp</dimen>
+    <dimen name="toolbar_minHeight">56dp</dimen>
+    <dimen name="toolbar_semi_expanded_height">64dp</dimen>
 </resources>

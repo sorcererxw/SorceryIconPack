@@ -28,6 +28,10 @@ import com.sorcerer.sorcery.iconpack.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
+import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ExposedSearchToolbar;
+import com.sorcerer.sorcery.iconpack.ui.exposedSearch.Navigator;
+import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
+import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
@@ -54,17 +58,17 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  */
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.toolbar)
-    Toolbar mMainToolbar;
+//    @BindView(R.id.toolbar)
+//    Toolbar mMainToolbar;
+
+    @BindView(R.id.exposedSearchToolbar)
+    ExposedSearchToolbar mSearchToolbar;
 
     @BindView(R.id.appBarLayout_main)
     AppBarLayout mAppBarLayout;
 
     @BindView(R.id.viewPager_icon)
     ViewPager mViewPager;
-
-    @BindView(R.id.searchBox_main_icon)
-    SearchBox mSearchBox;
 
     @BindView(R.id.tabLayout_icon)
     DoubleTapTabLayout mTabLayout;
@@ -87,9 +91,6 @@ public class MainActivity extends BaseActivity {
                 @Override
                 public void onPageScrolled(int position, float positionOffset,
                                            int positionOffsetPixels) {
-                    if (position != mViewPager.getCurrentItem()) {
-                        closeSearch();
-                    }
                     if (position == 0 && positionOffsetPixels == 0) {
                         times++;
                         if (times >= 3) {
@@ -110,42 +111,12 @@ public class MainActivity extends BaseActivity {
                 }
             };
 
-    private SearchBox.SearchListener mSearchListener = new SearchBox.SearchListener() {
-        @Override
-        public void onSearchOpened() {
-            mAppBarLayout.setExpanded(true);
-        }
-
-        @Override
-        public void onSearchCleared() {
-        }
-
-        @Override
-        public void onSearchClosed() {
-            mSearchBox.clearResults();
-        }
-
-        @Override
-        public void onSearchTermChanged(String term) {
-            ((LazyIconFragment) mPageAdapter.getItem(mViewPager.getCurrentItem()))
-                    .showWithString(term.toLowerCase());
-        }
-
-        @Override
-        public void onSearch(String result) {
-
-        }
-
-        @Override
-        public void onResultClick(SearchBox.SearchResult result) {
-
-        }
-    };
-
     @Override
     protected int provideLayoutId() {
         return R.layout.activity_main;
     }
+
+    private SearchTransitioner mSearchTransitioner;
 
     @Override
     protected void init() {
@@ -157,16 +128,22 @@ public class MainActivity extends BaseActivity {
 
         mCustomPicker = "com.novalauncher.THEME".equals(action);
 
-        setSupportActionBar(mMainToolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
         initTabAndPager();
 
-        initSearchBox(mCustomPicker);
-
         initDrawer();
+
+        mSearchTransitioner = new SearchTransitioner(this,
+                new Navigator(this),
+                mViewPager,
+                mSearchToolbar,
+                new ViewFader());
+
+        mSearchToolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mSearchTransitioner.transitionToSearch();
+            }
+        });
 
         if (!mCustomPicker) {
             showPermissionDialog();
@@ -205,8 +182,11 @@ public class MainActivity extends BaseActivity {
                         new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
                 builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
-                    public void onClick(@NonNull MaterialDialog materialDialog,
-                                        @NonNull DialogAction dialogAction) {
+                    public void onClick(
+                            @NonNull
+                                    MaterialDialog materialDialog,
+                            @NonNull
+                                    DialogAction dialogAction) {
                         rxPermissions.request(READ_PHONE_STATE,
                                 WRITE_EXTERNAL_STORAGE)
                                 .subscribe(new Action1<Boolean>() {
@@ -237,6 +217,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        mSearchTransitioner.onActivityResumed();
     }
 
     private void initTabAndPager() {
@@ -266,26 +247,6 @@ public class MainActivity extends BaseActivity {
         });
 
 
-    }
-
-    private void initSearchBox(boolean isCustomPicker) {
-        if (!isCustomPicker) {
-            mSearchBox.setLogoText("Sorcery Icons");
-        } else {
-            mSearchBox.setLogoText("Select A Icon");
-        }
-        mSearchBox.setHint(ResourceUtil.getString(mContext, R.string.search_hint));
-        mSearchBox.setSearchListener(mSearchListener);
-        mSearchBox.setSearchWithoutSuggestions(true);
-        mSearchBox.setMenuListener(new SearchBox.MenuListener() {
-            @Override
-            public void onMenuClick() {
-                openDrawer();
-            }
-        });
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "RockwellStd.otf");
-        mSearchBox.setLogoTypeface(typeface);
-        mSearchBox.setAnimateDrawerLogo(true);
     }
 
     private void initDrawer() {
@@ -411,10 +372,6 @@ public class MainActivity extends BaseActivity {
         if (!closeDrawer()) {
             super.onBackPressed();
         }
-    }
-
-    private void closeSearch() {
-        mSearchBox.closeSearch();
     }
 
     private void openDrawer() {

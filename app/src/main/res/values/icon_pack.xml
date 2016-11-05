@@ -2,6 +2,75 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>zuiyou</item>
+        <item>zuizuimanhua_comic_lover</item>
+        <item>tieba_zhushou</item>
+        <item>ireader</item>
+        <item>oneplus_filemanager</item>
+        <item>oneplus_market</item>
+        <item>oneplus_soundrecorder</item>
+        <item>oneplus_note</item>
+        <item>game_altos_adventure</item>
+        <item>douban_movie</item>
+        <item>settings</item>
+        <item>game_snake</item>
+        <item>coolapk_daily_picture</item>
+        <item>xiaomi_wallet</item>
+        <item>sspai_daikejietu</item>
+        <item>bu_bei_lang_easy_lexis</item>
+        <item>biaozhunribenyu</item>
+        <item>screen_mask</item>
+        <item>xqs_background_alt</item>
+        <item>xqs_background</item>
+        <item>viper_fx</item>
+        <item>copas</item>
+        <item>mt_filemanager</item>
+        <item>snap_vpn</item>
+        <item>nfc_emulator</item>
+        <item>nfc_emulator_alt</item>
+        <item>atom_vpn</item>
+        <item>whatsapp_messenger</item>
+        <item>sony_video_tv_slideview</item>
+        <item>dongmanzhijia</item>
+        <item>poem</item>
+        <item>keke_english</item>
+        <item>xinternalsd</item>
+        <item>microsoft_remote_desktop</item>
+        <item>chaojishipin_alt</item>
+        <item>chaojishipin</item>
+        <item>jiakaobaodian</item>
+        <item>ttbook</item>
+        <item>xiaomi_miui_calculator</item>
+        <item>microsoft_bing_search</item>
+        <item>sony_motionshot</item>
+        <item>game_netease_onmyoji</item>
+        <item>oneplus_calculator_alt</item>
+        <item>oneplus_calculator</item>
+        <item>ccleaner</item>
+        <item>microsoft_groove_music</item>
+        <item>office_suite</item>
+        <item>open_vpn</item>
+        <item>sony_news_suite</item>
+        <item>microsoft_xbox</item>
+        <item>microsoft_xbox_alt</item>
+        <item>microsoft_xbox_beta</item>
+        <item>microsoft_xbox_beta_alt</item>
+        <item>yoho_buy</item>
+        <item>cilikanpian</item>
+        <item>brevent</item>
+        <item>huluxia_gametools</item>
+        <item>adsafe</item>
+        <item>hj_word_games</item>
+        <item>ilike_cartoon</item>
+        <item>game_bob_qiuqiudazuozhan</item>
+        <item>call_vibrator</item>
+        <item>wechat_trace</item>
+        <item>yilan_matrix</item>
+        <item>tencent_app_market</item>
+        <item>zhanqi_tv</item>
+        <item>zhuishushenqi</item>
+        <item>zhuishushenqi_beta</item>
+        <item>google_messenger</item>
        	<item>hangout_dialer</item>
        	<item>lenovo_gt_browser</item>
        	<item>lenovo_calendar</item>
@@ -104,6 +173,15 @@
         <item>@string/icon_label_updated</item>
     	<item>txvpn</item>
 	    <item>jd</item>
+        <item>flyme_account</item>
+        <item>flyme_browser</item>
+        <item>flyme_dialer</item>
+        <item>flyme_filemanager</item>
+        <item>flyme_music</item>
+        <item>flyme_scanner</item>
+        <item>flyme_sms</item>
+        <item>flyme_toolbox</item>
+        <item>flyme_update</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
         <item>alipay</item>

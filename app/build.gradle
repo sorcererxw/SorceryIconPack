@@ -21,7 +21,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "3.9." + code
+        versionName "3.10." + code
         minSdkVersion 16
         targetSdkVersion 25
     }
@@ -94,7 +94,7 @@ dependencies {
     compile "com.mikepenz:iconics-core:2.8.1@aar"
     compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
     // bugly
-    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.tencent.bugly:crashreport:2.3.1'
     // slice
     compile 'com.github.mthli:Slice:v1.2'
     // photo view

@@ -13,35 +13,21 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_main_toolbar_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
+        <FrameLayout
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_semi_expanded_height">
 
-            <RelativeLayout
+            <com.sorcerer.sorcery.iconpack.ui.exposedSearch.ExposedSearchToolbar
+                android:id="@+id/exposedSearchToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:layout_scrollFlags="scroll|enterAlways"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
-                <com.sorcerer.sorcery.iconpack.ui.views.SearchBox
-                    android:id="@+id/searchBox_main_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.Toolbar>
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:elevation="@dimen/toolbar_elevation"
+                android:layout_margin="@dimen/padding_tight"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextAppearance="@style/Upcoming.Toolbar.TitleText"/>
+        </FrameLayout>
 
         <com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout
             android:id="@+id/tabLayout_icon"
