@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.ui.exposedSearch;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.sorcerer.sorcery.iconpack.ui.activities.AppSelectActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
 
 /**
@@ -20,5 +21,9 @@ public class Navigator {
 
     public void toSearch() {
         mActivity.startActivity(new Intent(mActivity, SearchActivity.class));
+    }
+
+    public void toIconRequest() {
+        mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
     }
 }

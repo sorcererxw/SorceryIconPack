@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
@@ -9,10 +8,11 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -34,7 +34,6 @@ import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
-import com.sorcerer.sorcery.iconpack.ui.views.SearchBox;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
@@ -58,11 +57,11 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  */
 public class MainActivity extends BaseActivity {
 
-//    @BindView(R.id.toolbar)
-//    Toolbar mMainToolbar;
-
     @BindView(R.id.exposedSearchToolbar)
     ExposedSearchToolbar mSearchToolbar;
+
+    @BindView(R.id.linearLayout_content_main)
+    LinearLayout mContent;
 
     @BindView(R.id.appBarLayout_main)
     AppBarLayout mAppBarLayout;
@@ -128,22 +127,31 @@ public class MainActivity extends BaseActivity {
 
         mCustomPicker = "com.novalauncher.THEME".equals(action);
 
+        setSupportActionBar(mSearchToolbar);
+
         initTabAndPager();
 
         initDrawer();
 
         mSearchTransitioner = new SearchTransitioner(this,
                 new Navigator(this),
-                mViewPager,
+                new ViewGroup[]{mTabLayout, mViewPager},
                 mSearchToolbar,
                 new ViewFader());
 
         mSearchToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mSearchTransitioner.transitionToSearch();
+                mAppBarLayout.setExpanded(true, true);
+                mAppBarLayout.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mSearchTransitioner.transitionToSearch();
+                    }
+                });
             }
         });
+        mSearchToolbar.setTitle("Sorcery Icons");
 
         if (!mCustomPicker) {
             showPermissionDialog();
@@ -252,6 +260,15 @@ public class MainActivity extends BaseActivity {
     private void initDrawer() {
         mDrawer = new DrawerBuilder()
                 .withCloseOnClick(true)
+                .withToolbar(mSearchToolbar)
+                .withActionBarDrawerToggleAnimated(true)
+                .withOnDrawerNavigationListener(new Drawer.OnDrawerNavigationListener() {
+                    @Override
+                    public boolean onNavigationClickListener(View view) {
+                        openDrawer();
+                        return false;
+                    }
+                })
                 .withAccountHeader(new AccountHeaderBuilder()
                         .withActivity(this)
                         .withHeightDp(178)
@@ -280,6 +297,13 @@ public class MainActivity extends BaseActivity {
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_mail_black_24dp, 128))
                         .withName(R.string.nav_item_feedback),
+                new PrimaryDrawerItem()
+                        .withSetSelected(false)
+                        .withSelectable(false)
+                        .withTag("settings")
+                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                                .ic_settings_black_24dp, 128))
+                        .withName(R.string.nav_item_settings),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
@@ -332,6 +356,9 @@ public class MainActivity extends BaseActivity {
                         break;
                     case "lab":
                         activityShift(LabActivity.class);
+                        break;
+                    case "settings":
+                        activityShift(SettingsActivity.class);
                         break;
                     case "help":
                         activityShift(HelpActivity.class);

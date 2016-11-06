@@ -78,7 +78,6 @@ public class LikeLayout extends FrameLayout {
                 });
     }
 
-
     @OnLongClick({R.id.textView_label_like, R.id.textView_label_dislike})
     boolean onLongClick(View v) {
         int id = v.getId();

@@ -3,11 +3,17 @@ package com.sorcerer.sorcery.iconpack.ui.exposedSearch;
 import android.app.Activity;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.TabLayout;
+import android.transition.AutoTransition;
+import android.transition.ChangeBounds;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -22,7 +28,8 @@ public class SearchTransitioner {
     private Activity mActivity;
     private ExposedSearchToolbar mSearchToolbar;
     private Navigator mNavigator;
-    private ViewGroup mActivityContent;
+    //    private ViewGroup mActivityContent;
+    private ViewGroup[] mActivityContents;
     private ViewFader mViewFader;
 
     private int mToolbarMargin;
@@ -30,12 +37,14 @@ public class SearchTransitioner {
 
     public SearchTransitioner(Activity activity,
                               Navigator navigator,
-                              ViewGroup activityContent,
+//                              ViewGroup activityContent,
+                              ViewGroup[] activityContents,
                               ExposedSearchToolbar searchToolbar,
                               ViewFader viewFader) {
         mActivity = activity;
         mNavigator = navigator;
-        mActivityContent = activityContent;
+//        mActivityContent = activityContent;
+        mActivityContents = activityContents;
         mSearchToolbar = searchToolbar;
         mViewFader = viewFader;
         mToolbarMargin = activity.getResources().getDimensionPixelSize(R.dimen.padding_tight);
@@ -45,14 +54,21 @@ public class SearchTransitioner {
         if (mTransitioning) {
             return;
         }
-        if(supportTransitions()) {
+        if (supportTransitions()) {
             Transition transition = FadeOutTransition.withAction(navigateToSearchWhenDone());
             TransitionManager.beginDelayedTransition(mSearchToolbar, transition);
             expandToolbar();
             mViewFader.hideContentOf(mSearchToolbar);
-            TransitionManager.beginDelayedTransition(mActivityContent, new Fade(Fade.OUT));
-            mActivityContent.setVisibility(View.GONE);
-        }else {
+            for (ViewGroup viewGroup : mActivityContents) {
+                if (viewGroup instanceof TabLayout) {
+                    viewGroup.animate().translationYBy(-viewGroup.getHeight()).setDuration(250)
+                            .start();
+                } else {
+                    viewGroup.animate().alpha(0).setDuration(250).start();
+                }
+            }
+
+        } else {
             mNavigator.toSearch();
         }
     }
@@ -85,15 +101,30 @@ public class SearchTransitioner {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
     }
 
-    public void onActivityResumed(){
-        if(supportTransitions()){
-            TransitionManager.beginDelayedTransition(mSearchToolbar,FadeInTransition.createTransition());
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams)mSearchToolbar.getLayoutParams();
-            layoutParams.setMargins(mToolbarMargin,mToolbarMargin,mToolbarMargin,mToolbarMargin);
+    public void onActivityResumed() {
+        if (supportTransitions()) {
+            TransitionManager
+                    .beginDelayedTransition(mSearchToolbar, FadeInTransition.createTransition());
+            FrameLayout.LayoutParams layoutParams =
+                    (FrameLayout.LayoutParams) mSearchToolbar.getLayoutParams();
+            layoutParams.setMargins(mToolbarMargin, mToolbarMargin, mToolbarMargin, mToolbarMargin);
             mViewFader.showContent(mSearchToolbar);
             mSearchToolbar.setLayoutParams(layoutParams);
-            TransitionManager.beginDelayedTransition(mActivityContent,new Fade(Fade.IN));
-            mActivityContent.setVisibility(View.VISIBLE);
+
+            for (ViewGroup viewGroup : mActivityContents) {
+                if (viewGroup instanceof TabLayout) {
+                    viewGroup.animate().translationY(0).setDuration(250).start();
+                } else {
+                    viewGroup.animate().alpha(1).setDuration(250).start();
+                }
+            }
+
+//            TransitionManager.beginDelayedTransition(mActivityContent, new Fade(Fade.IN));
+//            mActivityContent.setVisibility(View.VISIBLE);
+//            for (ViewGroup viewGroup : mActivityContents) {
+//                TransitionManager.beginDelayedTransition(viewGroup, new Fade(Fade.IN));
+//                viewGroup.setVisibility(View.VISIBLE);
+//            }
         }
     }
 

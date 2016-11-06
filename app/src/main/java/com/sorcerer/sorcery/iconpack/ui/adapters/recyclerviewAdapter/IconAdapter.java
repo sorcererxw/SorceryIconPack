@@ -181,42 +181,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         } else if (getItemViewType(position) == ITEM_TYPE_ICON) {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
 
-//            Slice slice = new Slice(iconHolder.mFrame);
-//            slice.setRadius(0f);
-//            slice.showLeftTopRect(false);
-//            slice.showLeftBottomRect(false);
-//            slice.showRightBottomRect(false);
-//            slice.showRightTopRect(false);
-//            switch (getIconPosition(position, mColumnCount, getItemCount())) {
-//                case LeftTop:
-//                    handleSlice(iconHolder, true, false, false, false);
-//                    break;
-//                case LeftBottom:
-//                    handleSlice(iconHolder, false, false, false, true);
-//                    break;
-//                case RightTop:
-//                    handleSlice(iconHolder, false, true, false, false);
-//                    break;
-//                case RightBottom:
-//                    handleSlice(iconHolder, false, false, true, false);
-//                    break;
-//                case LeftEdge:
-//                    handleSlice(iconHolder, false, false, false, false);
-//                    break;
-//                case RightEdge:
-//                    handleSlice(iconHolder, false, false, false, false);
-//                    break;
-//                case TopEdge:
-//                    handleSlice(iconHolder, false, false, false, false);
-//                    break;
-//                case BottomEdge:
-//                    handleSlice(iconHolder, false, false, false, false);
-//                    break;
-//                case Center:
-//                    handleSlice(iconHolder, false, false, false, false);
-//                    break;
-//            }
-
             if (!mCustomPicker) {
                 iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -357,58 +321,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             mActivity.setResult(Activity.RESULT_CANCELED, intent);
         }
         mActivity.finish();
-    }
-
-    private enum IconPosition {
-        LeftTop,
-        LeftBottom,
-        RightTop,
-        RightBottom,
-        LeftEdge,
-        RightEdge,
-        TopEdge,
-        BottomEdge,
-        Center
-    }
-
-    private void handleSlice(IconViewHolder iconViewHolder,
-                             boolean leftTop,
-                             boolean rightTop,
-                             boolean rightBottom,
-                             boolean leftBottom) {
-        Slice slice = new Slice(iconViewHolder.mFrame);
-        slice.showLeftTopRect(!leftTop);
-        slice.showLeftBottomRect(!leftBottom);
-        slice.showRightBottomRect(!rightBottom);
-        slice.showRightTopRect(!rightTop);
-    }
-
-    private IconPosition getIconPosition(int pos, int column, int all) {
-        if (pos < column) {
-            if (pos % column == 0) {
-                return IconPosition.LeftTop;
-            } else if ((pos + 1) % column == 0) {
-                return IconPosition.RightTop;
-            } else {
-                return IconPosition.TopEdge;
-            }
-        } else if (all - column >= pos) {
-            if (pos % column == 0) {
-                return IconPosition.LeftBottom;
-            } else if ((pos + 1) % column == 0) {
-                return IconPosition.RightBottom;
-            } else {
-                return IconPosition.BottomEdge;
-            }
-        } else {
-            if (pos % column == 0) {
-                return IconPosition.LeftEdge;
-            } else if ((pos + 1) % column == 0) {
-                return IconPosition.RightEdge;
-            } else {
-                return IconPosition.Center;
-            }
-        }
     }
 
 }

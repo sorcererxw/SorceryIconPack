@@ -11,6 +11,8 @@
 - [ ] Better search bar
     - [ ] Chinese support
     - [ ] Dialer-like Search transition
+        - [x] Search bar transition `2016-11-6`
+        - [ ] Response of search
 - [ ] Settings page
 - [ ] Card-like icon pages
 - [ ] Hot Fix support

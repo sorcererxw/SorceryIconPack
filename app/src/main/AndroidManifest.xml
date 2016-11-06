@@ -28,6 +28,7 @@
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -258,7 +259,15 @@
             android:name="xposedminversion"
             android:value="30"/>
 
-        <activity android:name=".ui.activities.SearchActivity">
+        <activity
+            android:name=".ui.activities.SearchActivity"
+            android:theme="@style/SubActivity">
+        </activity>
+
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/nav_item_settings"
+            android:theme="@style/SubActivity">
         </activity>
     </application>
 

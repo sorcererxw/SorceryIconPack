@@ -56,7 +56,7 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.9.0.2'
     compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
     // material drawer
-    compile('com.mikepenz:materialdrawer:5.6.0@aar') {
+    compile('com.mikepenz:materialdrawer:5.7.0@aar') {
         transitive = true
     }
     // indicator
@@ -67,8 +67,6 @@ dependencies {
     provided files('lib/XposedBridgeApi-20150213.jar')
     /// root tools
     compile files('libs/RootTools.jar')
-    // persistent search
-    compile 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
     // butterknife
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'

@@ -7,15 +7,16 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
  * @description:
@@ -30,27 +31,32 @@ public class SearchBar extends Toolbar {
     }
 
     public SearchBar(Context context,
-                     @Nullable
-                             AttributeSet attrs) {
+                     @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
     public SearchBar(Context context,
-                     @Nullable
-                             AttributeSet attrs, int defStyleAttr) {
+                     @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
 
-    @BindView(R.id.backKeyEditText_toolbar_search)
-    BackKeyEditText mEditText;
+    private BackKeyEditText mEditText;
 
     private void init(Context context) {
-        inflate(context, R.layout.merge_searchbar, this);
-        ButterKnife.bind(this, this);
+
+        mEditText = new BackKeyEditText(context);
+        mEditText.setBackground(null);
+        mEditText.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+        mEditText.setMaxLines(1);
+        mEditText.setLayoutParams(new LayoutParams(MATCH_PARENT, MATCH_PARENT));
+        mEditText.setGravity(Gravity.CENTER_VERTICAL);
+        mEditText.setHint("Search icon");
+        addView(mEditText);
+
         setBackgroundColor(Color.WHITE);
-//        addTintedUpNavigation();
+        addTintedUpNavigation();
         mEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
@@ -66,28 +72,29 @@ public class SearchBar extends Toolbar {
         });
     }
 
-//    private void addTintedUpNavigation() {
-//        Drawable drawable = getResources().getDrawable(R.drawable.ic_arrow_back_black_24dp).mutate();
-//        setNavigationIcon(drawable);
-//    }
+    private void addTintedUpNavigation() {
+        Drawable drawable =
+                ResourceUtil.getDrawable(getContext(), R.drawable.ic_arrow_back_grey_600_24dp);
+        setNavigationIcon(drawable);
+    }
 
-    public void setOnBackKeyPressedListener(OnBackKeyPressListener onBackKeyPressedListener){
+    public void setOnBackKeyPressedListener(OnBackKeyPressListener onBackKeyPressedListener) {
         mEditText.setOnBackKeyPressListener(onBackKeyPressedListener);
     }
 
-    public void addTextWatcher(TextWatcher textWatcher){
+    public void addTextWatcher(TextWatcher textWatcher) {
         mEditText.addTextChangedListener(textWatcher);
     }
 
-    public void setInputType(int typeTextFlag){
+    public void setInputType(int typeTextFlag) {
         mEditText.setInputType(typeTextFlag);
     }
 
-    public void setText(String text){
+    public void setText(String text) {
         mEditText.setText(text);
     }
 
-    public void clearText(){
+    public void clearText() {
         mEditText.setText(null);
     }
 
@@ -98,4 +105,5 @@ public class SearchBar extends Toolbar {
     public void setHint(String hint) {
         mEditText.setHint(hint);
     }
+
 }

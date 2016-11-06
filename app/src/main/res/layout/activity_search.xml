@@ -11,8 +11,8 @@
     <com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchBar
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
+        android:minHeight="@dimen/toolbar_semi_expanded_height"
         android:layout_height="@dimen/toolbar_semi_expanded_height"
-        android:elevation="@dimen/toolbar_elevation"
         android:gravity="top"/>
 
     <LinearLayout
@@ -20,10 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_gravity="center"
-            android:text="sadksajndskadnsakd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </LinearLayout>

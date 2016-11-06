@@ -17,7 +17,7 @@ public class FadeInTransition extends AutoTransition {
 
     }
 
-    private static final int FADE_IN_DURATION = 200;
+    private static final int FADE_IN_DURATION = 250;
 
     public static Transition createTransition() {
         AutoTransition transition = new AutoTransition();

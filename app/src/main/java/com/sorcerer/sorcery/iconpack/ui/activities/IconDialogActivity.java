@@ -87,7 +87,6 @@ public class IconDialogActivity extends ToolbarActivity {
 
     TimeWatch mTimeWatch = new TimeWatch();
 
-
     @Override
     protected Toolbar provideToolbar() {
         return mToolbar;
