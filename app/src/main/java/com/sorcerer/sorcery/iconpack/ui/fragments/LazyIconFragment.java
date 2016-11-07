@@ -68,10 +68,7 @@ public class LazyIconFragment extends LazyFragment {
     private List<IconBean> mIconBeanList;
 
     @BindView(R.id.recyclerView_icon_gird)
-    public IconRecyclerView mGridView;
-
-    @BindView(R.id.textView_icon_list_empty_view)
-    public TextView mEmptyText;
+    public RecyclerView mGridView;
 
     public static LazyIconFragment newInstance(Flag flag, boolean customPicker) {
         LazyIconFragment fragment = new LazyIconFragment();
@@ -131,23 +128,6 @@ public class LazyIconFragment extends LazyFragment {
             }
         });
 
-        int iconSize = 120;
-        mEmptyText.setCompoundDrawables(null,
-                new IconicsDrawable(getContext())
-                        .color(Color.BLACK)
-                        .icon(GoogleMaterial.Icon.gmd_sentiment_very_dissatisfied)
-                        .sizeDp(iconSize),
-                null, null
-        );
-        mEmptyText.setPadding(
-                mEmptyText.getPaddingLeft(),
-                mEmptyText.getPaddingTop(),
-                mEmptyText.getPaddingRight(),
-                DisplayUtil.dip2px(getContext(), (int) (mEmptyText.getTextSize() + iconSize) / 2)
-        );
-        mEmptyText.setVisibility(VISIBLE);
-        mGridView.setEmptyView(mEmptyText);
-
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
         }
@@ -199,32 +179,6 @@ public class LazyIconFragment extends LazyFragment {
 
     public RecyclerView getRecyclerView() {
         return mGridView;
-    }
-
-    public void showWithString(String s) {
-        s = s.toLowerCase();
-        if (mGridLayoutManager != null) {
-            if (s.isEmpty()) {
-                mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                    @Override
-                    public int getSpanSize(int position) {
-                        return mIconBeanList.get(position).getName().charAt(0) == '*'
-                                ? mNumOfRows : 1;
-                    }
-                });
-            } else {
-                mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                    @Override
-                    public int getSpanSize(int position) {
-                        return 1;
-                    }
-                });
-            }
-        }
-
-        if (mIconAdapter != null) {
-            mIconAdapter.showWithString(s);
-        }
     }
 
     @Override

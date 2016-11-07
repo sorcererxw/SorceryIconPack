@@ -9,6 +9,7 @@
     <dimen name="help_item_size">320dp</dimen>
 
     <dimen name="icon_grid_item_size">78dp</dimen>
+    <dimen name="icon_search_item_size">64dp</dimen>
     <dimen name="icon_grid_item_margin">2dp</dimen>
     <dimen name="dialog_like_size">32dp</dimen>
     <dimen name="dialog_like_text_size">40sp</dimen>

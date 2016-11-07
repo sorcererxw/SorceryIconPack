@@ -12,7 +12,7 @@
         drawable="messaging"/>
     <item
         component=":CALCULATOR"
-        drawable=""/>
+        drawable="calculator"/>
     <item
         component=":CALENDAR"
         drawable="google_calendar"/>

@@ -10,7 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -29,13 +28,13 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ExposedSearchToolbar;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.util.Navigator;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
@@ -135,7 +134,8 @@ public class MainActivity extends BaseActivity {
 
         mSearchTransitioner = new SearchTransitioner(this,
                 new Navigator(this),
-                new ViewGroup[]{mTabLayout, mViewPager},
+                mTabLayout,
+                mViewPager,
                 mSearchToolbar,
                 new ViewFader());
 

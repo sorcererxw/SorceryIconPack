@@ -4,19 +4,16 @@ import android.app.Activity;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
-import android.transition.AutoTransition;
-import android.transition.ChangeBounds;
-import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewPropertyAnimator;
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.util.Navigator;
+
+import static android.view.View.GONE;
 
 /**
  * @description:
@@ -28,8 +25,8 @@ public class SearchTransitioner {
     private Activity mActivity;
     private ExposedSearchToolbar mSearchToolbar;
     private Navigator mNavigator;
-    //    private ViewGroup mActivityContent;
-    private ViewGroup[] mActivityContents;
+    private TabLayout mTabLayout;
+    private ViewGroup mActivityContent;
     private ViewFader mViewFader;
 
     private int mToolbarMargin;
@@ -37,14 +34,14 @@ public class SearchTransitioner {
 
     public SearchTransitioner(Activity activity,
                               Navigator navigator,
-//                              ViewGroup activityContent,
-                              ViewGroup[] activityContents,
+                              TabLayout tabLayout,
+                              ViewGroup activityContent,
                               ExposedSearchToolbar searchToolbar,
                               ViewFader viewFader) {
         mActivity = activity;
         mNavigator = navigator;
-//        mActivityContent = activityContent;
-        mActivityContents = activityContents;
+        mTabLayout = tabLayout;
+        mActivityContent = activityContent;
         mSearchToolbar = searchToolbar;
         mViewFader = viewFader;
         mToolbarMargin = activity.getResources().getDimensionPixelSize(R.dimen.padding_tight);
@@ -59,15 +56,8 @@ public class SearchTransitioner {
             TransitionManager.beginDelayedTransition(mSearchToolbar, transition);
             expandToolbar();
             mViewFader.hideContentOf(mSearchToolbar);
-            for (ViewGroup viewGroup : mActivityContents) {
-                if (viewGroup instanceof TabLayout) {
-                    viewGroup.animate().translationYBy(-viewGroup.getHeight()).setDuration(250)
-                            .start();
-                } else {
-                    viewGroup.animate().alpha(0).setDuration(250).start();
-                }
-            }
-
+            mTabLayout.animate().translationYBy(-mTabLayout.getHeight()).setDuration(250).start();
+            mActivityContent.animate().alpha(0).setDuration(250).start();
         } else {
             mNavigator.toSearch();
         }
@@ -110,21 +100,8 @@ public class SearchTransitioner {
             layoutParams.setMargins(mToolbarMargin, mToolbarMargin, mToolbarMargin, mToolbarMargin);
             mViewFader.showContent(mSearchToolbar);
             mSearchToolbar.setLayoutParams(layoutParams);
-
-            for (ViewGroup viewGroup : mActivityContents) {
-                if (viewGroup instanceof TabLayout) {
-                    viewGroup.animate().translationY(0).setDuration(250).start();
-                } else {
-                    viewGroup.animate().alpha(1).setDuration(250).start();
-                }
-            }
-
-//            TransitionManager.beginDelayedTransition(mActivityContent, new Fade(Fade.IN));
-//            mActivityContent.setVisibility(View.VISIBLE);
-//            for (ViewGroup viewGroup : mActivityContents) {
-//                TransitionManager.beginDelayedTransition(viewGroup, new Fade(Fade.IN));
-//                viewGroup.setVisibility(View.VISIBLE);
-//            }
+            mTabLayout.animate().translationY(0).setDuration(250).start();
+            mActivityContent.animate().alpha(1).setDuration(250).start();
         }
     }
 

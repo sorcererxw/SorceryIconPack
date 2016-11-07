@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -42,11 +43,11 @@ public class SearchBar extends Toolbar {
         init(context);
     }
 
-    private BackKeyEditText mEditText;
+    private EditText mEditText;
 
     private void init(Context context) {
 
-        mEditText = new BackKeyEditText(context);
+        mEditText = new EditText(context);
         mEditText.setBackground(null);
         mEditText.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
         mEditText.setMaxLines(1);
@@ -72,18 +73,24 @@ public class SearchBar extends Toolbar {
         });
     }
 
+    public void requestEditTextFocus() {
+        InputMethodManager imm =
+                (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(mEditText, InputMethodManager.SHOW_IMPLICIT);
+    }
+
     private void addTintedUpNavigation() {
         Drawable drawable =
                 ResourceUtil.getDrawable(getContext(), R.drawable.ic_arrow_back_grey_600_24dp);
         setNavigationIcon(drawable);
     }
 
-    public void setOnBackKeyPressedListener(OnBackKeyPressListener onBackKeyPressedListener) {
-        mEditText.setOnBackKeyPressListener(onBackKeyPressedListener);
-    }
-
     public void addTextWatcher(TextWatcher textWatcher) {
         mEditText.addTextChangedListener(textWatcher);
+    }
+
+    public String getText() {
+        return mEditText.getText().toString();
     }
 
     public void setInputType(int typeTextFlag) {

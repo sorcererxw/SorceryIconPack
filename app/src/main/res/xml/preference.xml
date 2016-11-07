@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        app:useStockLayout="true"
+        android:title="hot fix">
+        <SwitchPreference android:title="hot fix"/>
+        <CheckBoxPreference android:title="update ion wifi"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="global icon load">
+        <SwitchPreference android:title="open"/>
+        <Preference android:title="refresh"/>
+        <Preference android:title="reboot device"/>
+        <Preference android:summary="@string/global_attention"/>
+    </PreferenceCategory>
+</PreferenceScreen>
