@@ -1,7 +1,11 @@
 package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Icon;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,8 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
+import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +37,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     private List<IconBean> mDataList;
     private List<IconBean> mShowList;
 
-    private Context mContext;
     private int mSpan;
+    private Activity mActivity;
 
-    public SearchAdapter(Context context, int span) {
-        mContext = context;
+    public SearchAdapter(Activity activity, int span) {
+        mActivity = activity;
         mSpan = span;
         mDataList = new ArrayList<>();
         mShowList = new ArrayList<>();
@@ -148,15 +154,22 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 layout = R.layout.item_icon_center;
         }
         return new SearchViewHolder(
-                LayoutInflater.from(mContext).inflate(layout, parent, false));
+                LayoutInflater.from(mActivity).inflate(layout, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(SearchViewHolder holder, int position) {
+    public void onBindViewHolder(final SearchViewHolder holder, int position) {
         if (position < mShowList.size()) {
-            Glide.with(mContext)
+            Glide.with(mActivity)
                     .load(mShowList.get(position).getRes())
                     .into(holder.icon);
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showIconDialog(holder.icon, mShowList.get(holder.getAdapterPosition()));
+                }
+            });
         }
 
         boolean leftBottomRect = false,
@@ -226,6 +239,27 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
+    private void showIconDialog(ImageView icon, IconBean iconBean) {
+        Intent intent = new Intent(mActivity, IconDialogActivity.class);
+        intent.putExtra(IconDialogActivity.EXTRA_RES, iconBean.getRes());
+        intent.putExtra(IconDialogActivity.EXTRA_NAME, iconBean.getName());
+        intent.putExtra(IconDialogActivity.EXTRA_LABEL, iconBean.getLabel());
+        if (Build.VERSION.SDK_INT >= 21) {
+            mActivity.startActivityForResult(
+                    intent,
+                    MainActivity.REQUEST_ICON_DIALOG,
+                    ActivityOptions.makeSceneTransitionAnimation(
+                            mActivity,
+                            icon,
+                            "icon"
+                    ).toBundle()
+            );
+        } else {
+            mActivity.startActivityForResult(intent, MainActivity.REQUEST_ICON_DIALOG);
+            mActivity.overridePendingTransition(R.anim.fast_fade_in, 0);
+        }
+    }
+
     static class SearchViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.frameLayout_item_icon_container)
@@ -241,6 +275,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             ButterKnife.bind(this, itemView);
             slice = new Slice(container);
             slice.setRadius(2);
+            slice.setRipple(0);
         }
+
     }
 }

@@ -64,7 +64,8 @@ dependencies {
     // gson
     compile 'com.google.code.gson:gson:2.5'
     // xposed
-    provided files('lib/XposedBridgeApi-20150213.jar')
+    provided 'de.robv.android.xposed:api:82'
+    provided 'de.robv.android.xposed:api:82:sources'
     /// root tools
     compile files('libs/RootTools.jar')
     // butterknife

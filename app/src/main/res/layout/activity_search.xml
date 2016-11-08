@@ -5,22 +5,31 @@
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical"
-    android:background="#fafafa"
     tools:context=".ui.activities.SearchActivity">
 
     <com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchBar
-        android:elevation="4dp"
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_semi_expanded_height"
+        android:elevation="4dp"
         android:gravity="top"
         android:minHeight="@dimen/toolbar_semi_expanded_height"/>
 
     <RelativeLayout
+        android:alpha="0"
         android:id="@+id/relativeLayout_content_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView_search_graphic"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:alpha="0.2"
+            android:src="@drawable/search_graphic"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView_search"

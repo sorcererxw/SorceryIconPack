@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,6 +32,9 @@ public class AboutDialogActivity extends BaseActivity {
 
     @BindView(R.id.textView_about_dialog_version)
     TextView mVersionTextView;
+
+    @BindView(R.id.textView_about_dialog_title)
+    TextView mTitleTextView;
 
     @Override
     protected void onPause() {
@@ -89,6 +93,8 @@ public class AboutDialogActivity extends BaseActivity {
         mVersionTextView
                 .setText(String.format("%s: %s", ResourceUtil.getString(this, R.string.version),
                         BuildConfig.VERSION_NAME));
+
+        mTitleTextView.setTypeface(Typeface.createFromAsset(getAssets(), "RockwellStd.otf"));
 
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
         openSource.setSpan(new UnderlineSpan(), 0, openSource.length(), 0);

@@ -17,6 +17,7 @@ import android.transition.TransitionManager;
 import android.view.Display;
 import android.view.MenuItem;
 import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
@@ -25,20 +26,15 @@ import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.SearchAdapter;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.FadeInTransition;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.FadeOutTransition;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.OnBackKeyPressListener;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchBar;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SimpleTransitionListener;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
-import com.sorcerer.sorcery.iconpack.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.util.SimpleTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,8 +44,13 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 public class SearchActivity extends AppCompatActivity {
+
+    @BindView(R.id.imageView_search_graphic)
+    ImageView mSearchGraphic;
 
     @BindView(R.id.searchBar)
     SearchBar mSearchBar;
@@ -89,6 +90,7 @@ public class SearchActivity extends AppCompatActivity {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                                 TransitionManager.beginDelayedTransition(mSearchBar,
                                         FadeInTransition.createTransition());
+                                mContent.animate().alpha(1).setDuration(250).start();
                             }
                             mViewFader.showContent(mSearchBar);
                         }
@@ -103,6 +105,11 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(final Editable editable) {
                 super.afterTextChanged(editable);
+                if (editable != null && editable.length() > 0) {
+                    mSearchGraphic.setVisibility(GONE);
+                } else {
+                    mSearchGraphic.setVisibility(VISIBLE);
+                }
                 mAdapter.search(editable.toString().toLowerCase());
 //                mHandler.removeCallbacks(mRunnable);
 //                mRunnable = new Runnable() {
@@ -123,7 +130,21 @@ public class SearchActivity extends AppCompatActivity {
         mLayoutManager = new GridLayoutManager(this, mSpanCount, VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mSearchBar.requestEditTextFocus();
+        mSearchBar.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSearchBar.requestEditTextFocus();
+            }
+        }, 250);
+
+        if (savedInstanceState != null) {
+            String text = savedInstanceState.getString(EDIT_DATA_KEY);
+            if(text!=null && text.length()>0){
+                mSearchBar.setText(savedInstanceState.getString(EDIT_DATA_KEY));
+                mAdapter.search(text);
+                mSearchGraphic.setVisibility(GONE);
+            }
+        }
 
         getIconBeanList();
     }
@@ -151,6 +172,14 @@ public class SearchActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private static final String EDIT_DATA_KEY = "edit-data-key";
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(EDIT_DATA_KEY, mSearchBar.getText());
     }
 
     @Override
@@ -189,6 +218,7 @@ public class SearchActivity extends AppCompatActivity {
         TransitionManager.beginDelayedTransition(mSearchBar, transition);
         mViewFader.hideContentOf(mSearchBar);
         TransitionManager.beginDelayedTransition(mContent, new Fade(Fade.OUT));
+        mContent.animate().alpha(0).setDuration(250).start();
     }
 
     private void getIconBeanList() {

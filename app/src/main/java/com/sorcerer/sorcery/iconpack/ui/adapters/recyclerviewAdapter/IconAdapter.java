@@ -13,8 +13,8 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,205 +48,300 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     private static final String TAG = "IconAdapter";
 
-    private static final int ITEM_TYPE_ICON = 0x1;
-    private static final int ITEM_TYPE_HEADER = 0x10;
+    private static final int TYPE_HEADER = 0x0;
+    private static final int TYPE_ICON_CENTER = 0x1;
+    private static final int TYPE_ICON_TOP = 0x2;
+    private static final int TYPE_ICON_TOP_LEFT = 0x3;
+    private static final int TYPE_ICON_TOP_RIGHT = 0x4;
+    private static final int TYPE_ICON_BOTTOM = 0x5;
+    private static final int TYPE_ICON_BOTTOM_LEFT = 0x6;
+    private static final int TYPE_ICON_BOTTOM_RIGHT = 0x7;
+    private static final int TYPE_ICON_LEFT = 0x8;
+    private static final int TYPE_ICON_RIGHT = 0x9;
+    private static final int TYPE_ICON_SINGLE_LINE_LEFT = 0x10;
+    private static final int TYPE_ICON_SINGLE_LINE_CENTER = 0x11;
+    private static final int TYPE_ICON_SINGLE_LINE_RIGHT = 0x12;
 
     private Activity mActivity;
     private boolean mCustomPicker = false;
     private Context mContext;
-    private List<IconBean> mIconBeanList = new ArrayList<>();
-    private List<IconBean> mShowIconList = new ArrayList<>();
+
+    private List<List<IconBean>> mIconBeanLists = new ArrayList<>();
+    private List<Pair<IconBean, Integer>> mShowList;
+
     private boolean mClicked = false;
-
-    private int mColumnCount;
-
-    public void setColumnCount(int columnCount) {
-        mColumnCount = columnCount;
-    }
-
-    private int mScreenWidth;
-
-    public void setScreenWidth(int screenWidth) {
-        mScreenWidth = screenWidth;
-    }
-
-    class IconItemViewHolder extends RecyclerView.ViewHolder {
-
-        IconItemViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-    }
-
-    class IconViewHolder extends IconItemViewHolder {
-
-        @BindView(R.id.frameLayout_item_icon)
-        FrameLayout mFrame;
-
-        @BindView(R.id.imageView_icon_content_new)
-        ImageView mIcon;
-
-        IconViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
-
-    private SparseBooleanArray mHeadVisibleArray = new SparseBooleanArray();
-
-    class HeaderViewHolder extends IconItemViewHolder {
-        @BindView(R.id.textView_icon_header_new)
-        TextView mHeader;
-
-        @BindView(R.id.textView_icon_header_count)
-        TextView mCount;
-
-
-        HeaderViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
+    private int mSpan;
 
     public IconAdapter(Activity activity, Context context,
-                       List<IconBean> iconBeanList) {
+                       List<IconBean> iconBeanList, int span) {
 
         mActivity = activity;
         mContext = context;
-        mIconBeanList = iconBeanList;
+        mSpan = span;
 
-        mShowIconList.clear();
-        mShowIconList.addAll(mIconBeanList);
+        List<IconBean> tmpList = new ArrayList<>();
+        for (int i = 0; i < iconBeanList.size(); i++) {
+            if (isLabel(iconBeanList.get(i).getName())) {
+                mIconBeanLists.add(tmpList);
+                tmpList = new ArrayList<>();
+            }
+            tmpList.add(iconBeanList.get(i));
+        }
+        mIconBeanLists.add(tmpList);
+        generateShowList(span);
+    }
+
+    public void setSpan(int span) {
+        if (span == mSpan) {
+            return;
+        }
+        mSpan = span;
+        generateShowList(span);
+    }
+
+    private void generateShowList(int span) {
+        mShowList = new ArrayList<>();
+        for (int i = 0; i < mIconBeanLists.size(); i++) {
+            List<IconBean> list = mIconBeanLists.get(i);
+            if (list == null || list.size() == 0) {
+                continue;
+            }
+            boolean withHead = false;
+            if (isLabel(list.get(0).getName())) {
+                withHead = true;
+                mShowList.add(new Pair<>(list.get(0), TYPE_HEADER));
+            }
+            int itemCount = withHead ? list.size() - 1 : list.size();
+            if (itemCount % span != 0) {
+                itemCount = (itemCount + span) / span * span;
+            }
+            for (int position = 0; position < itemCount; position++) {
+                int realPos = withHead ? position + 1 : position;
+                IconBean bean = null;
+                if (realPos < list.size()) {
+                    bean = list.get(realPos);
+                }
+                if (itemCount <= span) {
+                    if (position == 0) {
+                        mShowList.add(new Pair<>(bean, TYPE_ICON_SINGLE_LINE_LEFT));
+                    } else if (position == getItemCount() - 1) {
+                        mShowList.add(new Pair<>(bean, TYPE_ICON_SINGLE_LINE_RIGHT));
+                    } else {
+                        mShowList.add(new Pair<>(bean, TYPE_ICON_SINGLE_LINE_CENTER));
+                    }
+                    continue;
+                }
+                if (position == 0) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_TOP_LEFT));
+                } else if (position == span - 1) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_TOP_RIGHT));
+                } else if (position == itemCount - span) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_BOTTOM_LEFT));
+                } else if (position == itemCount - 1) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_BOTTOM_RIGHT));
+                } else if (position < span) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_TOP));
+                } else if (position + span >= itemCount) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_BOTTOM));
+                } else if ((position + 1) % span == 0) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_RIGHT));
+                } else if (position % span == 0) {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_LEFT));
+                } else {
+                    mShowList.add(new Pair<>(bean, TYPE_ICON_CENTER));
+                }
+            }
+        }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (isLabel(mShowIconList.get(position).getName())) {
-            return ITEM_TYPE_HEADER;
-        }
-        return ITEM_TYPE_ICON;
+        return mShowList.get(position).second;
     }
 
     public IconItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == ITEM_TYPE_HEADER) {
+        if (viewType == TYPE_HEADER) {
             View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.layout_icon_header_new, parent, false);
             return new HeaderViewHolder(view);
-        } else if (viewType == ITEM_TYPE_ICON) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.layout_icon_content_new, parent, false);
-            return new IconViewHolder(view);
         }
-        return null;
-    }
-
-    private String getGroupLength(int index) {
-        int cnt = 0;
-        for (int i = index + 1; i < mShowIconList.size(); i++) {
-            if (isLabel(mShowIconList.get(i).getLabel())) {
+        int layout;
+        switch (viewType) {
+            case TYPE_ICON_SINGLE_LINE_CENTER:
+                layout = R.layout.item_icon_single_line_center;
                 break;
-            } else {
-                cnt++;
-            }
+            case TYPE_ICON_SINGLE_LINE_LEFT:
+                layout = R.layout.item_icon_single_line_left;
+                break;
+            case TYPE_ICON_SINGLE_LINE_RIGHT:
+                layout = R.layout.item_icon_single_line_right;
+                break;
+            case TYPE_ICON_CENTER:
+                layout = R.layout.item_icon_center;
+                break;
+            case TYPE_ICON_TOP:
+                layout = R.layout.item_icon_top;
+                break;
+            case TYPE_ICON_TOP_LEFT:
+                layout = R.layout.item_icon_top_left;
+                break;
+            case TYPE_ICON_TOP_RIGHT:
+                layout = R.layout.item_icon_top_right;
+                break;
+            case TYPE_ICON_BOTTOM:
+                layout = R.layout.item_icon_bottom;
+                break;
+            case TYPE_ICON_BOTTOM_LEFT:
+                layout = R.layout.item_icon_bottom_left;
+                break;
+            case TYPE_ICON_BOTTOM_RIGHT:
+                layout = R.layout.item_icon_bottom_right;
+                break;
+            case TYPE_ICON_LEFT:
+                layout = R.layout.item_icon_left;
+                break;
+            case TYPE_ICON_RIGHT:
+                layout = R.layout.item_icon_right;
+                break;
+            default:
+                layout = R.layout.item_icon_center;
         }
-        StringBuilder builder = new StringBuilder(cnt + "");
-        while (builder.length() < 5) {
-            builder.append(" ");
-            builder.insert(0, " ");
-        }
-        return builder.toString();
+        return new IconViewHolder(LayoutInflater.from(mContext).inflate(layout, parent, false));
     }
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, int position) {
-        if (getItemViewType(position) == ITEM_TYPE_HEADER) {
+        int type = mShowList.get(position).second;
+        IconBean iconBean = mShowList.get(position).first;
+        if (type == TYPE_HEADER) {
             final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
-            headerHolder.mHeader.setText(getLabel(mShowIconList.get(position).getName()));
-            headerHolder.mCount.setText(getGroupLength(position));
-            headerHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (mHeadVisibleArray.get(headerHolder.getAdapterPosition())) {
-                        mHeadVisibleArray.put(headerHolder.getAdapterPosition(), false);
-                        headerHolder.mCount.setVisibility(View.INVISIBLE);
-                    } else {
-                        mHeadVisibleArray.put(headerHolder.getAdapterPosition(), true);
-                        headerHolder.mCount.setVisibility(View.VISIBLE);
-                    }
-                }
-            });
-            if (mHeadVisibleArray.get(position)) {
-                headerHolder.mCount.setVisibility(View.VISIBLE);
-            } else {
-                headerHolder.mCount.setVisibility(View.INVISIBLE);
-            }
-        } else if (getItemViewType(position) == ITEM_TYPE_ICON) {
+            headerHolder.mHeader.setText(getLabel(iconBean.getName()));
+        } else {
             final IconViewHolder iconHolder = (IconViewHolder) holder;
 
-            if (!mCustomPicker) {
-                iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        KeyboardUtil.closeKeyboard((Activity) mContext);
-
-                        if (mClicked) {
-                            return;
-                        }
-                        lock(v);
-                        showIconDialog(iconHolder, iconHolder.getAdapterPosition());
-                    }
-                });
-            } else {
-                iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        KeyboardUtil.closeKeyboard((Activity) mContext);
-                        returnIconResource(iconHolder.getAdapterPosition());
-                    }
-                });
-            }
-
-            Glide.with(mContext)
-                    .load(mShowIconList.get(position).getRes())
-                    .asBitmap()
-                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                    .into(new BitmapImageViewTarget(iconHolder.mIcon) {
+            if (iconBean != null) {
+                if (!mCustomPicker) {
+                    iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        protected void setResource(Bitmap resource) {
-                            TransitionDrawable drawable = new TransitionDrawable(new Drawable[]{
-                                    new ColorDrawable(Color.TRANSPARENT),
-                                    new BitmapDrawable(mContext.getResources(), resource)
-                            });
-                            iconHolder.mIcon.setImageDrawable(drawable);
-                            drawable.startTransition(100);
+                        public void onClick(View v) {
+                            KeyboardUtil.closeKeyboard((Activity) mContext);
+                            if (mClicked) {
+                                return;
+                            }
+                            lock(v);
+                            showIconDialog(iconHolder, iconHolder.getAdapterPosition());
                         }
                     });
+                } else {
+                    iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            KeyboardUtil.closeKeyboard((Activity) mContext);
+                            returnIconResource(iconHolder.getAdapterPosition());
+                        }
+                    });
+                }
+
+                Glide.with(mContext)
+                        .load(iconBean.getRes())
+                        .asBitmap()
+                        .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                        .animate(android.R.anim.fade_in)
+                        .into(iconHolder.mIcon);
+//                        .into(new BitmapImageViewTarget(iconHolder.mIcon) {
+//                            @Override
+//                            protected void setResource(Bitmap resource) {
+//                                TransitionDrawable drawable = new TransitionDrawable(new Drawable[]{
+//                                        new ColorDrawable(Color.TRANSPARENT),
+//                                        new BitmapDrawable(mContext.getResources(), resource)
+//                                });
+//                                iconHolder.mIcon.setImageDrawable(drawable);
+//                                drawable.startTransition(100);
+//                            }
+//                        });
+            } else {
+                iconHolder.itemView.setOnClickListener(null);
+                iconHolder.mIcon.setImageBitmap(null);
+            }
+
+            boolean leftBottomRect = false,
+                    rightBottomRect = false,
+                    leftTopRect = false,
+                    rightTopRect = false,
+                    leftEdgeShadow = false,
+                    rightEdgeShadow = false,
+                    bottomEdgeShadow = false,
+                    topEdgeShadow = false;
+
+            switch (type) {
+                case TYPE_ICON_CENTER:
+                    break;
+                case TYPE_ICON_TOP:
+                    topEdgeShadow = true;
+                    break;
+                case TYPE_ICON_TOP_LEFT:
+                    topEdgeShadow = true;
+                    leftEdgeShadow = true;
+                    leftTopRect = true;
+                    break;
+                case TYPE_ICON_TOP_RIGHT:
+                    topEdgeShadow = true;
+                    rightEdgeShadow = true;
+                    rightTopRect = true;
+                    break;
+                case TYPE_ICON_BOTTOM:
+                    bottomEdgeShadow = true;
+                    break;
+                case TYPE_ICON_BOTTOM_LEFT:
+                    bottomEdgeShadow = true;
+                    leftEdgeShadow = true;
+                    leftBottomRect = true;
+                    break;
+                case TYPE_ICON_BOTTOM_RIGHT:
+                    rightEdgeShadow = true;
+                    bottomEdgeShadow = true;
+                    rightBottomRect = true;
+                    break;
+                case TYPE_ICON_LEFT:
+                    leftEdgeShadow = true;
+                    break;
+                case TYPE_ICON_RIGHT:
+                    rightEdgeShadow = true;
+                    break;
+                case TYPE_ICON_SINGLE_LINE_LEFT:
+                    topEdgeShadow = true;
+                    bottomEdgeShadow = true;
+                    leftEdgeShadow = true;
+                    leftTopRect = true;
+                    leftBottomRect = true;
+                    break;
+                case TYPE_ICON_SINGLE_LINE_CENTER:
+                    topEdgeShadow = true;
+                    bottomEdgeShadow = true;
+                    break;
+                case TYPE_ICON_SINGLE_LINE_RIGHT:
+                    topEdgeShadow = true;
+                    bottomEdgeShadow = true;
+                    rightBottomRect = true;
+                    rightTopRect = true;
+                    rightEdgeShadow = true;
+                    break;
+            }
+
+            iconHolder.slice.showLeftBottomRect(!leftBottomRect);
+            iconHolder.slice.showRightBottomRect(!rightBottomRect);
+            iconHolder.slice.showLeftTopRect(!leftTopRect);
+            iconHolder.slice.showRightTopRect(!rightTopRect);
+            iconHolder.slice.showLeftEdgeShadow(leftEdgeShadow);
+            iconHolder.slice.showRightEdgeShadow(rightEdgeShadow);
+            iconHolder.slice.showBottomEdgeShadow(bottomEdgeShadow);
+            iconHolder.slice.showTopEdgeShadow(topEdgeShadow);
         }
     }
 
     @Override
     public int getItemCount() {
-        return mShowIconList.size();
-    }
-
-    public void showWithString(String s) {
-        if (s.isEmpty() && mShowIconList.size() == mIconBeanList.size()) {
-            return;
-        }
-
-        mShowIconList.clear();
-
-        if (s.isEmpty()) {
-            for (int i = 0; i < mIconBeanList.size(); i++) {
-                mShowIconList.add(mIconBeanList.get(i));
-            }
-        } else {
-            for (int i = 0; i < mIconBeanList.size(); i++) {
-                if (mIconBeanList.get(i).getLabel().contains(s)
-                        && !isLabel(mIconBeanList.get(i).getName())) {
-                    mShowIconList.add(mIconBeanList.get(i));
-                }
-            }
-        }
-        notifyDataSetChanged();
+        return mShowList.size();
     }
 
     public void setCustomPicker(Activity activity, boolean customPicker) {
@@ -265,6 +360,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }, 500);
     }
 
+    public boolean isItemHead(int position) {
+        return mShowList.get(position).second == TYPE_HEADER;
+    }
+
     private boolean isLabel(String s) {
         return s.startsWith("**") && s.endsWith("**");
     }
@@ -276,10 +375,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private void showIconDialog(IconViewHolder holder, final int position) {
         Intent intent = new Intent(mContext, IconDialogActivity.class);
         intent.putExtra(IconDialogActivity.EXTRA_RES,
-                mShowIconList.get(position).getRes());
+                mShowList.get(position).first.getRes());
         intent.putExtra(IconDialogActivity.EXTRA_NAME,
-                mShowIconList.get(position).getName());
-        intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowIconList.get(position).getLabel());
+                mShowList.get(position).first.getName());
+        intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowList.get(position).first.getLabel());
         if (Build.VERSION.SDK_INT >= 21) {
             ((Activity) mContext).startActivityForResult(
                     intent,
@@ -303,7 +402,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
         try {
             bitmap = BitmapFactory.decodeResource(mContext.getResources(),
-                    mShowIconList.get(position).getRes());
+                    mShowList.get(position).first.getRes());
         } catch (Exception e) {
             if (BuildConfig.DEBUG) {
                 e.printStackTrace();
@@ -312,9 +411,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         if (bitmap != null) {
             intent.putExtra("icon", bitmap);
             intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE",
-                    mShowIconList.get(position).getRes());
+                    mShowList.get(position).first.getRes());
             String bmUri = "android.resource://" + mContext.getPackageName() + "/"
-                    + String.valueOf(mShowIconList.get(position).getRes());
+                    + String.valueOf(mShowList.get(position).first.getRes());
             intent.setData(Uri.parse(bmUri));
             mActivity.setResult(Activity.RESULT_OK, intent);
         } else {
@@ -323,4 +422,40 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         mActivity.finish();
     }
 
+    class IconItemViewHolder extends RecyclerView.ViewHolder {
+
+        IconItemViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+    }
+
+    class IconViewHolder extends IconItemViewHolder {
+
+        @BindView(R.id.frameLayout_item_icon_container)
+        FrameLayout mFrame;
+
+        @BindView(R.id.imageView_item_icon)
+        ImageView mIcon;
+
+        Slice slice;
+
+        IconViewHolder(View itemView) {
+            super(itemView);
+            slice = new Slice(mFrame);
+            slice.setRadius(2);
+            slice.setRipple(0);
+        }
+    }
+
+    class HeaderViewHolder extends IconItemViewHolder {
+        @BindView(R.id.textView_icon_header_new)
+        TextView mHeader;
+
+        HeaderViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
 }
+
+

@@ -277,7 +277,6 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mXposedRefreshButton.setEnabled(true);
         mXposedRebootButton.setEnabled(true);
         mProgressDialog.dismiss();
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
     }
 
     private boolean appIsInstalledInMountASEC() {

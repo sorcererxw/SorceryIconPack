@@ -4,7 +4,9 @@
 - [ ] Flyme theme
     - [x] Generate
     - [x] Test
-    - [x] Commit (waiting...)
+    - [x] Commit (NOT PASSED)
+    - [ ] Modify
+    - [ ] Commit again
 - [ ] Better universal icon loading
     - [ ] Fix bugs
     - [ ] Enable to select which icon to load
@@ -12,9 +14,10 @@
     - [ ] Chinese support
     - [ ] Dialer-like Search transition
         - [x] Search bar transition `2016-11-6`
-        - [ ] Response of search
+        - [x] Response of search `2016-11-8`
+        - [ ] Better anim and tip in search
 - [ ] Settings page
-- [ ] Card-like icon pages
+- [x] Card-like icon pages `2016-11-8`
 - [ ] Hot Fix support
 - [ ] Google Play pay support
 - [ ] Feedback reply notification

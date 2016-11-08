@@ -225,7 +225,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mSearchTransitioner.onActivityResumed();
+        getWindow().getDecorView().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSearchTransitioner.onActivityResumed();
+            }
+        }, 100);
     }
 
     private void initTabAndPager() {

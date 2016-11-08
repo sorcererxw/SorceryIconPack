@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 import android.Manifest;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.util.AttributeSet;
@@ -37,7 +38,8 @@ public class LikeLayout extends FrameLayout {
     private String mName;
     private Context mContext;
     private boolean mBind;
-
+    private Handler mHandler = new Handler();
+    private Runnable mLikeRunnable;
     private final float mTimeToScaleLikeImg = 1.5f;
 
     private int mFlag = 0;
@@ -161,6 +163,9 @@ public class LikeLayout extends FrameLayout {
             if (scale) {
                 scale(mLikeText, true);
                 scale(mDislikeText, false);
+            } else {
+                mLikeText.setScaleX(mTimeToScaleLikeImg);
+                mLikeText.setScaleY(mTimeToScaleLikeImg);
             }
         } else if (flag == -1) {
             mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
@@ -168,6 +173,9 @@ public class LikeLayout extends FrameLayout {
             if (scale) {
                 scale(mDislikeText, true);
                 scale(mLikeText, false);
+            } else {
+                mDislikeText.setScaleX(mTimeToScaleLikeImg);
+                mDislikeText.setScaleY(mTimeToScaleLikeImg);
             }
         }
     }
@@ -192,12 +200,28 @@ public class LikeLayout extends FrameLayout {
             return;
         }
 
-        LikeBean likeBean = new LikeBean();
+        if (deviceId == null || deviceId.length() == 0) {
+            return;
+        }
+
+        if (mLikeRunnable != null) {
+            mHandler.removeCallbacks(mLikeRunnable);
+        }
+
+        final LikeBean likeBean = new LikeBean();
         likeBean.setLike(like);
         likeBean.setBuild(BuildConfig.VERSION_CODE + "");
         likeBean.setDeviceId(deviceId);
         likeBean.setIconName(name);
-        likeBean.saveInBackground();
+
+        mLikeRunnable = new Runnable() {
+            @Override
+            public void run() {
+                likeBean.saveInBackground();
+            }
+        };
+
+        mHandler.postDelayed(mLikeRunnable, 1000);
     }
 
 

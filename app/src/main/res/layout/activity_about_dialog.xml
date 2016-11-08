@@ -31,12 +31,13 @@
                       android:paddingRight="32dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_marginTop="16dp"
                 android:src="@mipmap/ic_launcher"/>
 
             <TextView
+                android:id="@+id/textView_about_dialog_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"

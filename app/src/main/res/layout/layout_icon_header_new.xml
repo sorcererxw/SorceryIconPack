@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="left"
     android:orientation="horizontal">
 
     <TextView
+        android:typeface="serif"
+        android:layout_marginLeft="12dp"
         android:id="@+id/textView_icon_header_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,13 +20,4 @@
         android:textSize="34sp"
         tools:text="11">
     </TextView>
-
-    <TextView
-        android:textSize="20sp"
-        android:textColor="@color/primary_text"
-        android:background="@drawable/shape_icon_header_count_background"
-        android:id="@+id/textView_icon_header_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"/>
 </LinearLayout>

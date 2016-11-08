@@ -16,6 +16,8 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
 
+    <color name="background">#f5f5f5</color>
+
     <color name="google_plus">#dc493c</color>
     <color name="wechat">#09b83e</color>
     <color name="alipay">#00a0e9</color>

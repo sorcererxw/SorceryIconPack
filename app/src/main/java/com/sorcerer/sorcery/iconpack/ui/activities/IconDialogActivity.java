@@ -101,10 +101,6 @@ public class IconDialogActivity extends ToolbarActivity {
 
         mTimeWatch.resetTime();
 
-//        mLabel = SorceryIcons.sTmpIconBean.getLabel();
-//        mName = SorceryIcons.sTmpIconBean.getName();
-//        mRes = SorceryIcons.sTmpIconBean.getRes();
-
         KLog.d(mTimeWatch.consumeTime(true));
 
         if (mRes == 0) {
@@ -125,7 +121,6 @@ public class IconDialogActivity extends ToolbarActivity {
         mLikeLayout.bindIcon(mName);
 
         KLog.d(mTimeWatch.consumeTime(true));
-
 
         mBackground.setOnTouchListener(new View.OnTouchListener() {
             @Override

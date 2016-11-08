@@ -53,11 +53,11 @@ public class Xposed
     private static String mThemePackagePath;
     private boolean mActive;
 
-
     private void log(Object o) {
         XposedBridge.log("[" + TAG + "]" + o.toString());
     }
 
+    @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
         MODULE_PATH = startupParam.modulePath;
         XSharedPrefs = new XSharedPreferences(PACKAGE_NAME,
@@ -180,11 +180,15 @@ public class Xposed
         }
     }
 
+    @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         if (mActive) {
             if (mThemePackage != null && new File(mThemePackagePath).exists()) {
                 if (lpparam.packageName.equals("com.teslacoilsw.launcher")) {
                     appWorkaroundOne(lpparam);
+                }
+                if(lpparam.packageName.equals("com.tsf.shell")){
+                    appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
                 }
                 if (lpparam.packageName.equals("com.abcOrganizer.lite")) {
                     appWorkaroundThree(lpparam, "com.abcOrganizer.lite", "icon");
@@ -192,11 +196,6 @@ public class Xposed
                 if (lpparam.packageName.equals("com.abcOrganizer")) {
                     appWorkaroundThree(lpparam, "com.abcOrganizer", "icon");
                 }
-            }
-            if (lpparam.packageName.equals("com.tsf.shell")
-                    && mThemePackage != null
-                    && new File(mThemePackagePath).exists()) {
-                appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
             }
             if (lpparam.packageName.equals(PACKAGE_NAME)) {
                 XposedHelpers.findAndHookMethod("com.sorcerer.sorcery.iconpack.xposed.XposedUtils",

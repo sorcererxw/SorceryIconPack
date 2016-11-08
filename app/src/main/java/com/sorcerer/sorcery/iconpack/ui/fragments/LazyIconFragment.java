@@ -103,15 +103,15 @@ public class LazyIconFragment extends LazyFragment {
     }
 
     private void init() {
-        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList);
         calcNumOfRows();
+        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mNumOfRows);
 
         boolean customPicker = getArguments().getBoolean(mArgCustomPickerKey, false);
         mGridLayoutManager = new GridLayoutManager(getContext(), mNumOfRows);
         mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                return mIconBeanList.get(position).getName().charAt(0) == '*' ? mNumOfRows : 1;
+                return mIconAdapter.isItemHead(position) ? mNumOfRows : 1;
             }
         });
         mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
@@ -158,6 +158,7 @@ public class LazyIconFragment extends LazyFragment {
             mNeedResize = false;
             calcNumOfRows();
             mGridLayoutManager.setSpanCount(mNumOfRows);
+            mIconAdapter.setSpan(mNumOfRows);
         } else {
             mNeedResize = true;
         }
@@ -171,10 +172,6 @@ public class LazyIconFragment extends LazyFragment {
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.icon_grid_item_size);
         mNumOfRows = (int) (size.x / s);
-        if (mIconAdapter != null) {
-            mIconAdapter.setColumnCount(mNumOfRows);
-            mIconAdapter.setScreenWidth(size.x);
-        }
     }
 
     public RecyclerView getRecyclerView() {
