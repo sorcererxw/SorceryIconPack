@@ -3,5 +3,5 @@ A custom icon pack
 
 [coolapk](http://www.coolapk.com/apk/com.sorcerer.sorcery.iconpack)
 
-# Plan
+# Todo
 [link](https://github.com/sorcererXW/SorceryIconPack/blob/master/Plan.md)
