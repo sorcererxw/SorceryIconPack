@@ -1,4 +1,0 @@
-com.theotino.chinadaily/com.theotino.chinadaily.ui.MainActivity
-times: 7982
-------------------------------
---------------------
