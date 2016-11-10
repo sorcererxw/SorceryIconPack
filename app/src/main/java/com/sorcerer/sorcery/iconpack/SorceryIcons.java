@@ -10,6 +10,8 @@ import com.sorcerer.sorcery.iconpack.util.Prefs.SorceryPrefs;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.tencent.tinker.loader.app.TinkerApplication;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 
 import rx_activity_result.RxActivityResult;
 
@@ -20,9 +22,15 @@ import rx_activity_result.RxActivityResult;
  */
 public class SorceryIcons extends Application {
 
-    public static final boolean ENABLE_LEAKCARRY = false;
-
-    private RefWatcher mRefWatcher;
+//    public SorceryIcons() {
+//        super(ShareConstants.TINKER_ENABLE_ALL,
+//                "tinker.sample.android.app.SampleApplicationLike");
+//        AVService.init(this);
+//        if (!BuildConfig.DEBUG) {
+//            CrashReport.initCrashReport(getApplicationContext(), "900053240", false);
+//        }
+//        RxActivityResult.register(this);
+//    }
 
     @Override
     public void onCreate() {
@@ -31,28 +39,6 @@ public class SorceryIcons extends Application {
         if (!BuildConfig.DEBUG) {
             CrashReport.initCrashReport(getApplicationContext(), "900053240", false);
         }
-        if (BuildConfig.DEBUG && Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-            StrictMode.setThreadPolicy(
-                    new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-            StrictMode.setVmPolicy(
-                    new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
-        }
-        if (BuildConfig.DEBUG && ENABLE_LEAKCARRY) {
-            mRefWatcher = LeakCanary.install(this);
-        }
         RxActivityResult.register(this);
-
-        mPrefs = new SorceryPrefs(this);
-    }
-
-    public static RefWatcher getRefWatcher(Context context) {
-        SorceryIcons app = (SorceryIcons) context.getApplicationContext();
-        return app.mRefWatcher;
-    }
-
-    private static SorceryPrefs mPrefs;
-
-    public static SorceryPrefs getPrefs() {
-        return mPrefs;
     }
 }

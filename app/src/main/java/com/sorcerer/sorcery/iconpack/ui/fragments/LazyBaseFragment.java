@@ -35,9 +35,6 @@ public class LazyBaseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        if (BuildConfig.DEBUG && SorceryIcons.ENABLE_LEAKCARRY) {
-            SorceryIcons.getRefWatcher(getContext()).watch(this);
-        }
         mContext = getActivity().getApplicationContext();
     }
 

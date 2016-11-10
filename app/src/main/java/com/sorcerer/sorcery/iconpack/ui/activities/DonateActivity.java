@@ -20,6 +20,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
+import com.sorcerer.sorcery.iconpack.util.Prefs.SorceryPrefs;
 
 import java.net.URISyntaxException;
 
@@ -37,7 +38,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        boolean isDonated = SorceryIcons.getPrefs().donated().getValue();
+        boolean isDonated = SorceryPrefs.getInstance(this).donated().getValue();
 
         if (isDonated) {
             mThankCard.post(new Runnable() {
@@ -59,7 +60,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         try {
 
             startActivity(intent);
-            SorceryIcons.getPrefs().donated().setValue(true);
+            SorceryPrefs.getInstance(this).donated().setValue(true);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
             if (BuildConfig.DEBUG) {

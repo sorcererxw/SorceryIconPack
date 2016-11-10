@@ -1,1117 +1,1314 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <version>1</version>
-   <category title="*"/>
-   <item drawable="a10086"/>
-   <item drawable="a115"/>
-   <item drawable="a12306"/>
-   <item drawable="a17"/>
-   <item drawable="a360"/>
-   <item drawable="a360_clean_master"/>
-   <item drawable="a360_cloud"/>
-   <item drawable="a360_free_wifi"/>
-   <item drawable="a360_geek"/>
-   <item drawable="a360_liuliang"/>
-   <item drawable="a360_super_root"/>
-   <item drawable="a3dmark"/>
-   <item drawable="a500px"/>
-   <item drawable="a51offer"/>
-   <item drawable="a5sing"/>
-   <item drawable="a94_percent"/>
-   <category title="A"/>
-   <item drawable="abcchina_bank"/>
-   <item drawable="accuweather"/>
-   <item drawable="accuweather_plus"/>
-   <item drawable="acdisplay"/>
-   <item drawable="acfun"/>
-   <item drawable="acfun_alt"/>
-   <item drawable="action_launcher"/>
-   <item drawable="adaway"/>
-   <item drawable="adobe_acrobat"/>
-   <item drawable="adobe_air"/>
-   <item drawable="adobe_brush"/>
-   <item drawable="adobe_capture"/>
-   <item drawable="adobe_color"/>
-   <item drawable="adobe_connect"/>
-   <item drawable="adobe_fill"/>
-   <item drawable="adobe_flash"/>
-   <item drawable="adobe_flash_alt"/>
-   <item drawable="adobe_illustrator_draw"/>
-   <item drawable="adobe_lightroom"/>
-   <item drawable="adobe_mix"/>
-   <item drawable="adobe_photoshop"/>
-   <item drawable="adobe_premiere_clip"/>
-   <item drawable="adobe_shape"/>
-   <item drawable="adobe_sign_manager"/>
-   <item drawable="advanced_download_manager"/>
-   <item drawable="adwex_launcher"/>
-   <item drawable="adw_launcher"/>
-   <item drawable="aibizhi"/>
-   <item drawable="airbnb"/>
-   <item drawable="airdroid"/>
-   <item drawable="airfrozen"/>
-   <item drawable="aisen"/>
-   <item drawable="alipay"/>
-   <item drawable="alipay_alt"/>
-   <item drawable="ali_antfortune"/>
-   <item drawable="ali_cainiao_guoguo"/>
-   <item drawable="ali_dingding"/>
-   <item drawable="ali_koubei_waimai"/>
-   <item drawable="ali_koubei_waimai_alt"/>
-   <item drawable="ali_miaojie"/>
-   <item drawable="ali_qua"/>
-   <item drawable="ali_taobao"/>
-   <item drawable="ali_taobao_dianying"/>
-   <item drawable="ali_taobao_nongcun"/>
-   <item drawable="ali_tmall"/>
-   <item drawable="ali_tmall_alt"/>
-   <item drawable="ali_wangxin"/>
-   <item drawable="ali_wangxin_alt"/>
-   <item drawable="ali_xianyu"/>
-   <item drawable="ali_xiaohao"/>
-   <item drawable="allcast"/>
-   <item drawable="almalence_camera"/>
-   <item drawable="amap"/>
-   <item drawable="amazon"/>
-   <item drawable="amplify"/>
-   <item drawable="android_nify"/>
-   <item drawable="android_pay"/>
-   <item drawable="anime_taste"/>
-   <item drawable="antutu"/>
-   <item drawable="anydo"/>
-   <item drawable="anydo_calendar"/>
-   <item drawable="anyview"/>
-   <item drawable="apex_launcher"/>
-   <item drawable="apkpure"/>
-   <item drawable="appenv"/>
-   <item drawable="apple_music"/>
-   <item drawable="appso"/>
-   <item drawable="app_drawer"/>
-   <item drawable="app_drawer_alt"/>
-   <item drawable="app_settings"/>
-   <item drawable="asus_remote_link"/>
-   <item drawable="atom_launcher"/>
-   <item drawable="audiofx"/>
-   <item drawable="autodesk_pixlr"/>
-   <item drawable="autodesk_sketchbook"/>
-   <item drawable="autohome"/>
-   <item drawable="automate"/>
-   <item drawable="aviate_launcher"/>
-   <category title="B"/>
-   <item drawable="b612"/>
-   <item drawable="backdrops"/>
-   <item drawable="baicizhan"/>
-   <item drawable="baidu"/>
-   <item drawable="baidu_hi"/>
-   <item drawable="baidu_keyboard"/>
-   <item drawable="baidu_maps"/>
-   <item drawable="baidu_nuomi"/>
-   <item drawable="baidu_pan"/>
-   <item drawable="baidu_tieba"/>
-   <item drawable="baidu_waimai"/>
-   <item drawable="baidu_wallet"/>
-   <item drawable="baixingwang"/>
-   <item drawable="bamboo_paper"/>
-   <item drawable="banciyuan"/>
-   <item drawable="bank_of_china"/>
-   <item drawable="bank_of_communications"/>
-   <item drawable="barcode_scanner"/>
-   <item drawable="battery_taskmaster"/>
-   <item drawable="battery_widget_reborn"/>
-   <item drawable="bbc_news"/>
-   <item drawable="behance"/>
-   <item drawable="beiyue"/>
-   <item drawable="bilibili"/>
-   <item drawable="bilibili_alt"/>
-   <item drawable="bilibili_live"/>
-   <item drawable="bittorrent_sync"/>
-   <item drawable="blacklight"/>
-   <item drawable="block_launcher_pro"/>
-   <item drawable="blued"/>
-   <item drawable="bluenote"/>
-   <item drawable="boomerang"/>
-   <item drawable="bootmanager"/>
-   <item drawable="bootmanager_alt"/>
-   <item drawable="boxer"/>
-   <item drawable="browser"/>
-   <item drawable="budingdonghua"/>
-   <item drawable="bughd"/>
-   <item drawable="bukamanhua"/>
-   <item drawable="burgerking"/>
-   <item drawable="busybox"/>
-   <item drawable="butter_camera"/>
-   <item drawable="buzz_launcher"/>
-   <category title="C"/>
-   <item drawable="cabinet"/>
-   <item drawable="calculator"/>
-   <item drawable="calc_plus"/>
-   <item drawable="camera"/>
-   <item drawable="camera360"/>
-   <item drawable="camera_fv_5"/>
-   <item drawable="camscanner"/>
-   <item drawable="careland"/>
-   <item drawable="ccb_bank"/>
-   <item drawable="changba"/>
-   <item drawable="chaojikechengbiao"/>
-   <item drawable="chelaile"/>
-   <item drawable="chromer"/>
-   <item drawable="chronus"/>
-   <item drawable="chufaba"/>
-   <item drawable="cib_bank"/>
-   <item drawable="cinnamon"/>
-   <item drawable="cleanmaster"/>
-   <item drawable="clock"/>
-   <item drawable="cloudmagic"/>
-   <item drawable="cloud_vpn"/>
-   <item drawable="cmbchina"/>
-   <item drawable="cmbc_bank"/>
-   <item drawable="cmcc_wifi"/>
-   <item drawable="cm_browser"/>
-   <item drawable="cntv"/>
-   <item drawable="complete_action_plus"/>
-   <item drawable="contacts"/>
-   <item drawable="cookbook"/>
-   <item drawable="coolapk"/>
-   <item drawable="coolapk_alt"/>
-   <item drawable="coolapk_alt_2"/>
-   <item drawable="coolify"/>
-   <item drawable="couplete"/>
-   <item drawable="cpu_z"/>
-   <item drawable="crossyroad"/>
-   <item drawable="ctrip"/>
-   <item drawable="ctrip_alt"/>
-   <item drawable="ct_client"/>
-   <item drawable="current_activity"/>
-   <item drawable="custom_share"/>
-   <item drawable="cyanogenmod_camera"/>
-   <item drawable="cyanogenmod_screencast"/>
-   <category title="D"/>
-   <item drawable="dailycost"/>
-   <item drawable="dandu"/>
-   <item drawable="dangdang"/>
-   <item drawable="dangle"/>
-   <item drawable="darker"/>
-   <item drawable="daxianggonghui"/>
-   <item drawable="dayima"/>
-   <item drawable="days_matter"/>
-   <item drawable="ddcat"/>
-   <item drawable="dealmoon"/>
-   <item drawable="deviantart"/>
-   <item drawable="dgtle"/>
-   <item drawable="dialer"/>
-   <item drawable="dianping"/>
-   <item drawable="dice"/>
-   <item drawable="didaqingdan"/>
-   <item drawable="didi"/>
-   <item drawable="digg"/>
-   <item drawable="dingxiangyisheng"/>
-   <item drawable="ditietong"/>
-   <item drawable="documents"/>
-   <item drawable="doggcatcher"/>
-   <item drawable="dolphin_browser"/>
-   <item drawable="domino_pizza"/>
-   <item drawable="domino_pizza_alt"/>
-   <item drawable="dongdong"/>
-   <item drawable="dongqiudi"/>
-   <item drawable="douban"/>
-   <item drawable="douban_fm"/>
-   <item drawable="douban_read"/>
-   <item drawable="douguomeishi"/>
-   <item drawable="doutushenqi"/>
-   <item drawable="douyu"/>
-   <item drawable="download"/>
-   <item drawable="dreamdays"/>
-   <item drawable="dropbox"/>
-   <item drawable="duckduckgo"/>
-   <item drawable="duduribao"/>
-   <item drawable="duitang"/>
-   <item drawable="duokan"/>
-   <item drawable="duolingo"/>
-   <category title="E"/>
-   <item drawable="echo"/>
-   <item drawable="ecitic_bank"/>
-   <item drawable="edx"/>
-   <item drawable="eleme"/>
-   <item drawable="eleme_alt"/>
-   <item drawable="email"/>
-   <item drawable="es_explorer"/>
-   <item drawable="eudic"/>
-   <item drawable="evermemo"/>
-   <item drawable="evernote"/>
-   <item drawable="evernote_alt"/>
-   <item drawable="evernote_alt_2"/>
-   <item drawable="ex_kernel_manager"/>
-   <category title="F"/>
-   <item drawable="facebook"/>
-   <item drawable="facebook_messenger"/>
-   <item drawable="fancy"/>
-   <item drawable="fangdai_calculator"/>
-   <item drawable="fanliwang"/>
-   <item drawable="feedly"/>
-   <item drawable="fenghuang"/>
-   <item drawable="fenghuang_fm"/>
-   <item drawable="fenqile"/>
-   <item drawable="fetion"/>
-   <item drawable="fifth_third_bank"/>
-   <item drawable="file_commander"/>
-   <item drawable="fitbit"/>
-   <item drawable="fit_time"/>
-   <item drawable="flat_style_bar_indicators"/>
-   <item drawable="flat_style_colored_bars"/>
-   <item drawable="flickr"/>
-   <item drawable="flipboard"/>
-   <item drawable="floatify"/>
-   <item drawable="flow_bank"/>
-   <item drawable="flyme_account"/>
-   <item drawable="flyme_appcenter"/>
-   <item drawable="flyme_browser"/>
-   <item drawable="flyme_calculator"/>
-   <item drawable="flyme_calendar"/>
-   <item drawable="flyme_calendar_1"/>
-   <item drawable="flyme_calendar_10"/>
-   <item drawable="flyme_calendar_11"/>
-   <item drawable="flyme_calendar_12"/>
-   <item drawable="flyme_calendar_13"/>
-   <item drawable="flyme_calendar_14"/>
-   <item drawable="flyme_calendar_15"/>
-   <item drawable="flyme_calendar_16"/>
-   <item drawable="flyme_calendar_17"/>
-   <item drawable="flyme_calendar_18"/>
-   <item drawable="flyme_calendar_19"/>
-   <item drawable="flyme_calendar_2"/>
-   <item drawable="flyme_calendar_20"/>
-   <item drawable="flyme_calendar_21"/>
-   <item drawable="flyme_calendar_22"/>
-   <item drawable="flyme_calendar_23"/>
-   <item drawable="flyme_calendar_24"/>
-   <item drawable="flyme_calendar_25"/>
-   <item drawable="flyme_calendar_26"/>
-   <item drawable="flyme_calendar_27"/>
-   <item drawable="flyme_calendar_28"/>
-   <item drawable="flyme_calendar_29"/>
-   <item drawable="flyme_calendar_3"/>
-   <item drawable="flyme_calendar_30"/>
-   <item drawable="flyme_calendar_31"/>
-   <item drawable="flyme_calendar_4"/>
-   <item drawable="flyme_calendar_5"/>
-   <item drawable="flyme_calendar_6"/>
-   <item drawable="flyme_calendar_7"/>
-   <item drawable="flyme_calendar_8"/>
-   <item drawable="flyme_calendar_9"/>
-   <item drawable="flyme_camera"/>
-   <item drawable="flyme_clock"/>
-   <item drawable="flyme_customizecenter"/>
-   <item drawable="flyme_dialer"/>
-   <item drawable="flyme_download"/>
-   <item drawable="flyme_email"/>
-   <item drawable="flyme_feedback"/>
-   <item drawable="flyme_filemanager"/>
-   <item drawable="flyme_gallery"/>
-   <item drawable="flyme_game"/>
-   <item drawable="flyme_life"/>
-   <item drawable="flyme_lifekit"/>
-   <item drawable="flyme_map"/>
-   <item drawable="flyme_music"/>
-   <item drawable="flyme_notepaper"/>
-   <item drawable="flyme_painter"/>
-   <item drawable="flyme_read"/>
-   <item drawable="flyme_safe"/>
-   <item drawable="flyme_scanner"/>
-   <item drawable="flyme_settings"/>
-   <item drawable="flyme_sms"/>
-   <item drawable="flyme_soundrecorder"/>
-   <item drawable="flyme_toolbox"/>
-   <item drawable="flyme_tools"/>
-   <item drawable="flyme_update"/>
-   <item drawable="flyme_video"/>
-   <item drawable="flyme_voice_assistant"/>
-   <item drawable="flyme_wallet"/>
-   <item drawable="flyme_weather"/>
-   <item drawable="fmradio"/>
-   <item drawable="foodie"/>
-   <item drawable="forest"/>
-   <item drawable="fotor"/>
-   <item drawable="franco_kernel"/>
-   <item drawable="fulimanman"/>
-   <category title="G"/>
-   <item drawable="gallery"/>
-   <item drawable="gamecores"/>
-   <item drawable="game_clash_of_clans"/>
-   <item drawable="game_clash_royale"/>
-   <item drawable="game_dots_and_co"/>
-   <item drawable="game_dots_out"/>
-   <item drawable="game_heartstone"/>
-   <item drawable="game_maestria"/>
-   <item drawable="game_mekorama"/>
-   <item drawable="game_prune"/>
-   <item drawable="game_tencent_xiangqi"/>
-   <item drawable="game_the_last_banacat"/>
-   <item drawable="game_vainglory"/>
-   <item drawable="game_virtua_tennis"/>
-   <item drawable="game_wangzherongyao"/>
-   <item drawable="gaotieguanjia"/>
-   <item drawable="geometric_weather"/>
-   <item drawable="gewala_movie"/>
-   <item drawable="gg_assistant"/>
-   <item drawable="gitskarios"/>
-   <item drawable="globalcash"/>
-   <item drawable="golden_dict"/>
-   <item drawable="google"/>
-   <item drawable="google_androidify"/>
-   <item drawable="google_arts"/>
-   <item drawable="google_authenticator"/>
-   <item drawable="google_calendar"/>
-   <item drawable="google_calendar_1"/>
-   <item drawable="google_calendar_10"/>
-   <item drawable="google_calendar_11"/>
-   <item drawable="google_calendar_12"/>
-   <item drawable="google_calendar_13"/>
-   <item drawable="google_calendar_14"/>
-   <item drawable="google_calendar_15"/>
-   <item drawable="google_calendar_16"/>
-   <item drawable="google_calendar_17"/>
-   <item drawable="google_calendar_18"/>
-   <item drawable="google_calendar_19"/>
-   <item drawable="google_calendar_2"/>
-   <item drawable="google_calendar_20"/>
-   <item drawable="google_calendar_21"/>
-   <item drawable="google_calendar_22"/>
-   <item drawable="google_calendar_23"/>
-   <item drawable="google_calendar_24"/>
-   <item drawable="google_calendar_25"/>
-   <item drawable="google_calendar_26"/>
-   <item drawable="google_calendar_27"/>
-   <item drawable="google_calendar_28"/>
-   <item drawable="google_calendar_29"/>
-   <item drawable="google_calendar_3"/>
-   <item drawable="google_calendar_30"/>
-   <item drawable="google_calendar_31"/>
-   <item drawable="google_calendar_4"/>
-   <item drawable="google_calendar_5"/>
-   <item drawable="google_calendar_6"/>
-   <item drawable="google_calendar_7"/>
-   <item drawable="google_calendar_8"/>
-   <item drawable="google_calendar_9"/>
-   <item drawable="google_camera"/>
-   <item drawable="google_chrome"/>
-   <item drawable="google_chrome_beta"/>
-   <item drawable="google_chrome_dev"/>
-   <item drawable="google_chromium"/>
-   <item drawable="google_device_manager"/>
-   <item drawable="google_docs"/>
-   <item drawable="google_drive"/>
-   <item drawable="google_earth"/>
-   <item drawable="google_goggles"/>
-   <item drawable="google_hangout"/>
-   <item drawable="google_inbox"/>
-   <item drawable="google_io"/>
-   <item drawable="google_keep"/>
-   <item drawable="google_keyboard"/>
-   <item drawable="google_maps"/>
-   <item drawable="google_messenger"/>
-   <item drawable="google_messenger_alt"/>
-   <item drawable="google_now_enabler"/>
-   <item drawable="google_now_launcher"/>
-   <item drawable="google_opinion_rewards"/>
-   <item drawable="google_pinyin_keyboard"/>
-   <item drawable="google_play_books"/>
-   <item drawable="google_play_games"/>
-   <item drawable="google_play_movies"/>
-   <item drawable="google_play_music"/>
-   <item drawable="google_play_newsstand"/>
-   <item drawable="google_play_store"/>
-   <item drawable="google_plus"/>
-   <item drawable="google_sheets"/>
-   <item drawable="google_slides"/>
-   <item drawable="google_snapseed"/>
-   <item drawable="google_translate"/>
-   <item drawable="google_voice_search"/>
-   <item drawable="google_youtube"/>
-   <item drawable="go_launcher"/>
-   <item drawable="gravity_box"/>
-   <item drawable="gravity_screen"/>
-   <item drawable="greenify"/>
-   <item drawable="green_vpn"/>
-   <item drawable="guaguamanhua"/>
-   <item drawable="gudong"/>
-   <item drawable="guokr"/>
-   <item drawable="guokr_fenda"/>
-   <category title="H"/>
-   <item drawable="h5_browser"/>
-   <item drawable="hai360"/>
-   <item drawable="haibei_music"/>
-   <item drawable="haici_dict"/>
-   <item drawable="handle_external_storage"/>
-   <item drawable="hanglvzongheng"/>
-   <item drawable="hiwifi"/>
-   <item drawable="holo_launcher"/>
-   <item drawable="houzz"/>
-   <item drawable="htc_backup"/>
-   <item drawable="htc_browser"/>
-   <item drawable="htc_calculator"/>
-   <item drawable="htc_calendar"/>
-   <item drawable="htc_camera"/>
-   <item drawable="htc_car"/>
-   <item drawable="htc_clock"/>
-   <item drawable="htc_contacts"/>
-   <item drawable="htc_dot_view"/>
-   <item drawable="htc_email"/>
-   <item drawable="htc_files"/>
-   <item drawable="htc_gallery"/>
-   <item drawable="htc_messages"/>
-   <item drawable="htc_music"/>
-   <item drawable="htc_phone"/>
-   <item drawable="htc_radio"/>
-   <item drawable="htc_recorder"/>
-   <item drawable="htc_scribble"/>
-   <item drawable="htc_settings"/>
-   <item drawable="htc_stock"/>
-   <item drawable="htc_tasks"/>
-   <item drawable="htc_weather"/>
-   <item drawable="huaxia_bank"/>
-   <item drawable="huaxiong"/>
-   <item drawable="hupo_weather"/>
-   <item drawable="huputiyu"/>
-   <item drawable="huya"/>
-   <item drawable="hydrogen_wallpager"/>
-   <category title="I"/>
-   <item drawable="ia_writer"/>
-   <item drawable="icbc_bank"/>
-   <item drawable="icbc_bank_im"/>
-   <item drawable="icebox"/>
-   <item drawable="icourse163"/>
-   <item drawable="ifanr"/>
-   <item drawable="iflat"/>
-   <item drawable="ifont"/>
-   <item drawable="ifttt"/>
-   <item drawable="ikea"/>
-   <item drawable="imagine"/>
-   <item drawable="imdb"/>
-   <item drawable="imooc"/>
-   <item drawable="ingress"/>
-   <item drawable="inspire_launcher"/>
-   <item drawable="instagram"/>
-   <item drawable="instagram_alt"/>
-   <item drawable="instapaper"/>
-   <item drawable="iqiyi"/>
-   <item drawable="it_home"/>
-   <category title="J"/>
-   <item drawable="jd"/>
-   <item drawable="jd_jinrong"/>
-   <item drawable="jd_wallet"/>
-   <item drawable="jianjie_calendar"/>
-   <item drawable="jianshu"/>
-   <item drawable="jiemian_news"/>
-   <item drawable="jike"/>
-   <item drawable="jinritoutiao"/>
-   <item drawable="jinsanciba"/>
-   <item drawable="jotterpad"/>
-   <item drawable="jswarts_browser"/>
-   <item drawable="juejin"/>
-   <category title="K"/>
-   <item drawable="kaifazhetoutiao"/>
-   <item drawable="kaixiaohao"/>
-   <item drawable="kaomanfen_tuofu"/>
-   <item drawable="kaoyanbang"/>
-   <item drawable="kechenggezi"/>
-   <item drawable="keep_health"/>
-   <item drawable="kejimeixue"/>
-   <item drawable="kernel_adiutor"/>
-   <item drawable="kfc"/>
-   <item drawable="kindle"/>
-   <item drawable="kingmaster"/>
-   <item drawable="kingroot"/>
-   <item drawable="kitchen_stories"/>
-   <item drawable="kk_launcher"/>
-   <item drawable="koudaijizhang"/>
-   <item drawable="kuaikan_comic"/>
-   <item drawable="kuaikuaicha_xinhuazidian"/>
-   <item drawable="kuaipan"/>
-   <item drawable="kuaiya"/>
-   <item drawable="kugou"/>
-   <category title="L"/>
-   <item drawable="lanrenzhoumo"/>
-   <item drawable="lantern"/>
-   <item drawable="lastpass"/>
-   <item drawable="lavaradio"/>
-   <item drawable="layers_manager"/>
-   <item drawable="layout"/>
-   <item drawable="lbe"/>
-   <item drawable="ledongli"/>
-   <item drawable="ledongli_run"/>
-   <item drawable="lenovo_calculator"/>
-   <item drawable="lenovo_file_browser"/>
-   <item drawable="lenovo_music"/>
-   <item drawable="lenovo_radio"/>
-   <item drawable="lenovo_security"/>
-   <item drawable="lenovo_shareit"/>
-   <item drawable="lenovo_syncit"/>
-   <item drawable="letv"/>
-   <item drawable="letv_sport"/>
-   <item drawable="lg_backup"/>
-   <item drawable="lg_browser"/>
-   <item drawable="lg_calculator"/>
-   <item drawable="lg_calendar"/>
-   <item drawable="lg_camera"/>
-   <item drawable="lg_clock"/>
-   <item drawable="lg_contacts"/>
-   <item drawable="lg_downloads"/>
-   <item drawable="lg_email"/>
-   <item drawable="lg_files"/>
-   <item drawable="lg_gallery"/>
-   <item drawable="lg_health"/>
-   <item drawable="lg_messages"/>
-   <item drawable="lg_music"/>
-   <item drawable="lg_notebook"/>
-   <item drawable="lg_phone"/>
-   <item drawable="lg_quickmemo"/>
-   <item drawable="lg_quick_remote"/>
-   <item drawable="lg_radio"/>
-   <item drawable="lg_remote_call_service"/>
-   <item drawable="lg_settings"/>
-   <item drawable="lg_smartworld"/>
-   <item drawable="lg_tasks"/>
-   <item drawable="lg_task_manager"/>
-   <item drawable="lg_update_center"/>
-   <item drawable="lg_video"/>
-   <item drawable="lg_video_editor"/>
-   <item drawable="lg_voice_mate"/>
-   <item drawable="lg_voice_recorder"/>
-   <item drawable="lg_weather"/>
-   <item drawable="lightning_browser"/>
-   <item drawable="lightning_wall"/>
-   <item drawable="line"/>
-   <item drawable="line_at"/>
-   <item drawable="line_camera"/>
-   <item drawable="line_deco"/>
-   <item drawable="line_dict"/>
-   <item drawable="lingshengduoduo"/>
-   <item drawable="lingxi"/>
-   <item drawable="link_bubble"/>
-   <item drawable="lizhi_fm"/>
-   <item drawable="lol"/>
-   <item drawable="love_best_wallpapers"/>
-   <item drawable="lucid_launcher"/>
-   <item drawable="luckymoney"/>
-   <item drawable="lucky_patcher"/>
-   <item drawable="luyinbao"/>
-   <item drawable="lvmamalvyou"/>
-   <category title="M"/>
-   <item drawable="mangguo_tv"/>
-   <item drawable="maoyan"/>
-   <item drawable="max_plus"/>
-   <item drawable="mcdonald"/>
-   <item drawable="mctools"/>
-   <item drawable="media_converter"/>
-   <item drawable="medium"/>
-   <item drawable="mega"/>
-   <item drawable="meiriyiwen"/>
-   <item drawable="meiriyujia"/>
-   <item drawable="meituan"/>
-   <item drawable="meituan_waimai"/>
-   <item drawable="meituxiuxiu"/>
-   <item drawable="meiyanxiangji"/>
-   <item drawable="mengniangbaike"/>
-   <item drawable="messaging"/>
-   <item drawable="microsoft_account"/>
-   <item drawable="microsoft_arrow_launcher"/>
-   <item drawable="microsoft_bing_dict"/>
-   <item drawable="microsoft_bing_keyboard"/>
-   <item drawable="microsoft_cortana"/>
-   <item drawable="microsoft_office_excel"/>
-   <item drawable="microsoft_office_lens"/>
-   <item drawable="microsoft_office_mobile"/>
-   <item drawable="microsoft_office_onenote"/>
-   <item drawable="microsoft_office_outlook"/>
-   <item drawable="microsoft_office_powerpoint"/>
-   <item drawable="microsoft_office_word"/>
-   <item drawable="microsoft_onedrive"/>
-   <item drawable="microsoft_translator"/>
-   <item drawable="minecraft"/>
-   <item drawable="minecraft_toolbox"/>
-   <item drawable="minminguard"/>
-   <item drawable="misfit"/>
-   <item drawable="miui_account"/>
-   <item drawable="miui_authenticator"/>
-   <item drawable="miui_bug_report"/>
-   <item drawable="miui_compass"/>
-   <item drawable="miui_fm_radio"/>
-   <item drawable="miui_forum"/>
-   <item drawable="miui_gallery"/>
-   <item drawable="miui_music"/>
-   <item drawable="miui_notes"/>
-   <item drawable="miui_scanner"/>
-   <item drawable="miui_security"/>
-   <item drawable="miui_transfer"/>
-   <item drawable="miui_video"/>
-   <item drawable="miui_weather"/>
-   <item drawable="miwifi"/>
-   <item drawable="mi_fit"/>
-   <item drawable="mi_remote"/>
-   <item drawable="moji_weather"/>
-   <item drawable="mokee_aegis"/>
-   <item drawable="momo"/>
-   <item drawable="momobeidanci"/>
-   <item drawable="mono"/>
-   <item drawable="monument_valley"/>
-   <item drawable="moonreader"/>
-   <item drawable="moonreader_pro"/>
-   <item drawable="moon_phase"/>
-   <item drawable="mora"/>
-   <item drawable="moto_alert"/>
-   <item drawable="moto_assist"/>
-   <item drawable="moto_body"/>
-   <item drawable="moto_camera"/>
-   <item drawable="moto_connect"/>
-   <item drawable="moto_gallery"/>
-   <item drawable="moto_help"/>
-   <item drawable="moto_message"/>
-   <item drawable="moto_migrate"/>
-   <item drawable="moto_moto"/>
-   <item drawable="moto_radio"/>
-   <item drawable="moto_updater"/>
-   <item drawable="music"/>
-   <item drawable="muzei"/>
-   <item drawable="mxplayer"/>
-   <item drawable="myandroidtools"/>
-   <item drawable="myandroidtools_xposed"/>
-   <item drawable="myboy_gba"/>
-   <item drawable="myscript_calculator"/>
-   <category title="N"/>
-   <item drawable="netease_cloudclass"/>
-   <item drawable="netease_cloudclass_alt"/>
-   <item drawable="netease_huochepiao"/>
-   <item drawable="netease_lofter"/>
-   <item drawable="netease_music"/>
-   <item drawable="netease_music_alt"/>
-   <item drawable="netease_news"/>
-   <item drawable="netease_open_class"/>
-   <item drawable="netease_super_calculator"/>
-   <item drawable="netease_yanxuan"/>
-   <item drawable="netease_yixin"/>
-   <item drawable="netease_youdao_dict"/>
-   <item drawable="netease_youdao_note"/>
-   <item drawable="netease_youdao_translator"/>
-   <item drawable="netease_youqian"/>
-   <item drawable="netease_youxiangdashi"/>
-   <item drawable="next_launcher"/>
-   <item drawable="nice"/>
-   <item drawable="nissan"/>
-   <item drawable="noisyfox"/>
-   <item drawable="notify_clean"/>
-   <item drawable="nova_launcher"/>
-   <category title="O"/>
-   <item drawable="olo"/>
-   <item drawable="olympus_image_share"/>
-   <item drawable="one"/>
-   <item drawable="onefootball"/>
-   <item drawable="oneplus_camera_oxygen"/>
-   <item drawable="oneplus_community"/>
-   <item drawable="oneplus_weather"/>
-   <item drawable="oneplus_weather_cloudy"/>
-   <item drawable="oneplus_weather_cloudy_dark"/>
-   <item drawable="oneplus_weather_sunny"/>
-   <item drawable="ookla_speedtest"/>
-   <category title="P"/>
-   <item drawable="panda_tv"/>
-   <item drawable="path"/>
-   <item drawable="paypal"/>
-   <item drawable="pebble"/>
-   <item drawable="peel_smart_remote"/>
-   <item drawable="pengpai_news"/>
-   <item drawable="perfect_color_bar"/>
-   <item drawable="perfmon"/>
-   <item drawable="periscope"/>
-   <item drawable="phhhoto"/>
-   <item drawable="pianke"/>
-   <item drawable="piaofanzi"/>
-   <item drawable="picooc"/>
-   <item drawable="pinglide"/>
-   <item drawable="pixiv"/>
-   <item drawable="pixolor"/>
-   <item drawable="pizzahut"/>
-   <item drawable="playstation"/>
-   <item drawable="pocket"/>
-   <item drawable="pocket_casts"/>
-   <item drawable="pokemon_go"/>
-   <item drawable="pokemon_go_alt"/>
-   <item drawable="polaris_office"/>
-   <item drawable="polarr"/>
-   <item drawable="pomotodo"/>
-   <item drawable="pornhub"/>
-   <item drawable="poweramp"/>
-   <item drawable="powertoggle"/>
-   <item drawable="power_clean"/>
-   <item drawable="ppiicc"/>
-   <item drawable="pptv"/>
-   <item drawable="pp_assistant"/>
-   <item drawable="press"/>
-   <item drawable="prisma"/>
-   <item drawable="psiphon"/>
-   <item drawable="pure_weather"/>
-   <category title="Q"/>
-   <item drawable="qdaily"/>
-   <item drawable="qidian_reader"/>
-   <item drawable="qingting_fm"/>
-   <item drawable="quanminkge"/>
-   <item drawable="quanneng_toolbox"/>
-   <item drawable="qufenqi"/>
-   <item drawable="quickpic"/>
-   <item drawable="quickshortcutmaker"/>
-   <item drawable="qunar"/>
-   <item drawable="qunidaye_browser"/>
-   <item drawable="quora"/>
-   <category title="R"/>
-   <item drawable="reaper"/>
-   <item drawable="renrenmeiju"/>
-   <item drawable="ringtone_maker"/>
-   <item drawable="root_explorer"/>
-   <item drawable="ruler"/>
-   <category title="S"/>
-   <item drawable="same"/>
-   <item drawable="samsung_apps"/>
-   <item drawable="samsung_browser"/>
-   <item drawable="samsung_calculator"/>
-   <item drawable="samsung_calendar"/>
-   <item drawable="samsung_calendar_1"/>
-   <item drawable="samsung_calendar_10"/>
-   <item drawable="samsung_calendar_11"/>
-   <item drawable="samsung_calendar_12"/>
-   <item drawable="samsung_calendar_13"/>
-   <item drawable="samsung_calendar_14"/>
-   <item drawable="samsung_calendar_15"/>
-   <item drawable="samsung_calendar_16"/>
-   <item drawable="samsung_calendar_17"/>
-   <item drawable="samsung_calendar_18"/>
-   <item drawable="samsung_calendar_19"/>
-   <item drawable="samsung_calendar_2"/>
-   <item drawable="samsung_calendar_20"/>
-   <item drawable="samsung_calendar_21"/>
-   <item drawable="samsung_calendar_22"/>
-   <item drawable="samsung_calendar_23"/>
-   <item drawable="samsung_calendar_24"/>
-   <item drawable="samsung_calendar_25"/>
-   <item drawable="samsung_calendar_26"/>
-   <item drawable="samsung_calendar_27"/>
-   <item drawable="samsung_calendar_28"/>
-   <item drawable="samsung_calendar_29"/>
-   <item drawable="samsung_calendar_3"/>
-   <item drawable="samsung_calendar_30"/>
-   <item drawable="samsung_calendar_31"/>
-   <item drawable="samsung_calendar_4"/>
-   <item drawable="samsung_calendar_5"/>
-   <item drawable="samsung_calendar_6"/>
-   <item drawable="samsung_calendar_7"/>
-   <item drawable="samsung_calendar_8"/>
-   <item drawable="samsung_calendar_9"/>
-   <item drawable="samsung_camera"/>
-   <item drawable="samsung_clock"/>
-   <item drawable="samsung_contacts"/>
-   <item drawable="samsung_email"/>
-   <item drawable="samsung_files"/>
-   <item drawable="samsung_gallery"/>
-   <item drawable="samsung_music"/>
-   <item drawable="samsung_pay"/>
-   <item drawable="samsung_phone"/>
-   <item drawable="samsung_settings"/>
-   <item drawable="samsung_smart_manager"/>
-   <item drawable="samsung_smemo"/>
-   <item drawable="samsung_sms"/>
-   <item drawable="samsung_sreminder"/>
-   <item drawable="samsung_s_health"/>
-   <item drawable="samsung_theme"/>
-   <item drawable="samsung_video"/>
-   <item drawable="samsung_voice"/>
-   <item drawable="sanguliupo"/>
-   <item drawable="scanbot"/>
-   <item drawable="scientific_calculator"/>
-   <item drawable="screen_recorder"/>
-   <item drawable="sd_maid"/>
-   <item drawable="seed"/>
-   <item drawable="settings_editor"/>
-   <item drawable="sfly"/>
-   <item drawable="shadowsocks"/>
-   <item drawable="shanbay"/>
-   <item drawable="shanbay_listen"/>
-   <item drawable="shanbay_news"/>
-   <item drawable="shihuo"/>
-   <item drawable="shoujileyuan"/>
-   <item drawable="shouxin_keyboard"/>
-   <item drawable="shuqi"/>
-   <item drawable="shuqi_alt"/>
-   <item drawable="sim"/>
-   <item drawable="simplenote"/>
-   <item drawable="skitch"/>
-   <item drawable="skype"/>
-   <item drawable="smartisan_note"/>
-   <item drawable="smartisan_reader"/>
-   <item drawable="smart_launcher"/>
-   <item drawable="smooth"/>
-   <item drawable="smooth_alt"/>
-   <item drawable="smzdm"/>
-   <item drawable="snapchat"/>
-   <item drawable="snaptube"/>
-   <item drawable="sogou_chat"/>
-   <item drawable="sohu_video"/>
-   <item drawable="solid_explorer"/>
-   <item drawable="solo_launcher"/>
-   <item drawable="sony_album"/>
-   <item drawable="sony_ar_effect"/>
-   <item drawable="sony_audio_recorder"/>
-   <item drawable="sony_background_defocus"/>
-   <item drawable="sony_backup"/>
-   <item drawable="sony_browser"/>
-   <item drawable="sony_calculator"/>
-   <item drawable="sony_calendar"/>
-   <item drawable="sony_camera"/>
-   <item drawable="sony_clock"/>
-   <item drawable="sony_contacts"/>
-   <item drawable="sony_email"/>
-   <item drawable="sony_lifelog"/>
-   <item drawable="sony_movies"/>
-   <item drawable="sony_movie_creator"/>
-   <item drawable="sony_music"/>
-   <item drawable="sony_notes"/>
-   <item drawable="sony_phone"/>
-   <item drawable="sony_play_memories_mobile"/>
-   <item drawable="sony_radio"/>
-   <item drawable="sony_settings"/>
-   <item drawable="sony_sketch"/>
-   <item drawable="sony_smart_connect"/>
-   <item drawable="sony_sms"/>
-   <item drawable="sony_support"/>
-   <item drawable="sony_themes"/>
-   <item drawable="sony_trackid"/>
-   <item drawable="sony_video"/>
-   <item drawable="sony_weather"/>
-   <item drawable="sony_whatsnew"/>
-   <item drawable="sorcery_icons"/>
-   <item drawable="sougou_keyboard"/>
-   <item drawable="sougou_wallpaper"/>
-   <item drawable="sound_recorder"/>
-   <item drawable="spd_bank"/>
-   <item drawable="spoon"/>
-   <item drawable="spotify"/>
-   <item drawable="sspai"/>
-   <item drawable="starbucks"/>
-   <item drawable="star_walk_2"/>
-   <item drawable="steam"/>
-   <item drawable="stocard"/>
-   <item drawable="suibiji"/>
-   <item drawable="suishouji"/>
-   <item drawable="suning"/>
-   <item drawable="suning_read"/>
-   <item drawable="sunrise"/>
-   <item drawable="sunrise_1"/>
-   <item drawable="sunrise_10"/>
-   <item drawable="sunrise_11"/>
-   <item drawable="sunrise_12"/>
-   <item drawable="sunrise_13"/>
-   <item drawable="sunrise_14"/>
-   <item drawable="sunrise_15"/>
-   <item drawable="sunrise_16"/>
-   <item drawable="sunrise_17"/>
-   <item drawable="sunrise_18"/>
-   <item drawable="sunrise_19"/>
-   <item drawable="sunrise_2"/>
-   <item drawable="sunrise_20"/>
-   <item drawable="sunrise_21"/>
-   <item drawable="sunrise_22"/>
-   <item drawable="sunrise_23"/>
-   <item drawable="sunrise_24"/>
-   <item drawable="sunrise_25"/>
-   <item drawable="sunrise_26"/>
-   <item drawable="sunrise_27"/>
-   <item drawable="sunrise_28"/>
-   <item drawable="sunrise_29"/>
-   <item drawable="sunrise_3"/>
-   <item drawable="sunrise_30"/>
-   <item drawable="sunrise_31"/>
-   <item drawable="sunrise_4"/>
-   <item drawable="sunrise_5"/>
-   <item drawable="sunrise_6"/>
-   <item drawable="sunrise_7"/>
-   <item drawable="sunrise_8"/>
-   <item drawable="sunrise_9"/>
-   <item drawable="supersu"/>
-   <item drawable="swiftkey_keyboard"/>
-   <category title="T"/>
-   <item drawable="t66y"/>
-   <item drawable="tapet"/>
-   <item drawable="taptap"/>
-   <item drawable="tasker"/>
-   <item drawable="taskman"/>
-   <item drawable="ted"/>
-   <item drawable="telegram"/>
-   <item drawable="tencent_file_manager"/>
-   <item drawable="tencent_lightalk"/>
-   <item drawable="tencent_map"/>
-   <item drawable="tencent_news"/>
-   <item drawable="tencent_ps_play"/>
-   <item drawable="tencent_qie_fm"/>
-   <item drawable="tencent_qq"/>
-   <item drawable="tencent_qqpimsecure"/>
-   <item drawable="tencent_qq_browser"/>
-   <item drawable="tencent_qq_hd"/>
-   <item drawable="tencent_qq_international"/>
-   <item drawable="tencent_qq_japan"/>
-   <item drawable="tencent_qq_keyboard"/>
-   <item drawable="tencent_qq_lite"/>
-   <item drawable="tencent_qq_mail"/>
-   <item drawable="tencent_qq_music"/>
-   <item drawable="tencent_qq_music_alt"/>
-   <item drawable="tencent_qq_music_local_player"/>
-   <item drawable="tencent_qq_player"/>
-   <item drawable="tencent_qq_secure"/>
-   <item drawable="tencent_qzone"/>
-   <item drawable="tencent_video"/>
-   <item drawable="tencent_webank"/>
-   <item drawable="tencent_wechat"/>
-   <item drawable="tencent_wechat_alt"/>
-   <item drawable="tencent_weiyun"/>
-   <item drawable="tencent_weiyun_alt"/>
-   <item drawable="tencent_weread"/>
-   <item drawable="tencent_wesync"/>
-   <item drawable="terminal"/>
-   <item drawable="terminal_emulator"/>
-   <item drawable="texpand"/>
-   <item drawable="theinitium"/>
-   <item drawable="tianshidongman"/>
-   <item drawable="tianyashequ"/>
-   <item drawable="ticktick"/>
-   <item drawable="timi"/>
-   <item drawable="titanium_backup"/>
-   <item drawable="tonghuashun"/>
-   <item drawable="touchpal_keyboard"/>
-   <item drawable="toughwo"/>
-   <item drawable="tp_link"/>
-   <item drawable="tsf_launcher"/>
-   <item drawable="ttpod"/>
-   <item drawable="tuchong"/>
-   <item drawable="tudou"/>
-   <item drawable="tuiku"/>
-   <item drawable="tujiedianying"/>
-   <item drawable="tumblr"/>
-   <item drawable="twitter"/>
-   <item drawable="txvpn"/>
-   <category title="U"/>
-   <item drawable="uber"/>
-   <item drawable="uber_partner"/>
-   <item drawable="uc_browser"/>
-   <item drawable="udacity"/>
-   <item drawable="unicom"/>
-   <item drawable="unicon"/>
-   <item drawable="unionpay_wallet"/>
-   <item drawable="uniqlo"/>
-   <item drawable="uniqlock"/>
-   <item drawable="uniqlooks"/>
-   <item drawable="uniqlo_calendar"/>
-   <item drawable="uniqlo_recipe"/>
-   <item drawable="uniqlo_wakeup"/>
-   <category title="V"/>
-   <item drawable="v2ex"/>
-   <item drawable="versus"/>
-   <item drawable="via_browser"/>
-   <item drawable="vine"/>
-   <item drawable="vine_alt"/>
-   <item drawable="viper4android"/>
-   <item drawable="vipshop"/>
-   <item drawable="vlc"/>
-   <item drawable="vsco"/>
-   <item drawable="vst"/>
-   <item drawable="vue"/>
-   <category title="W"/>
-   <item drawable="wandoujia"/>
-   <item drawable="wandoujia_alt"/>
-   <item drawable="wandoujia_eyepetizer"/>
-   <item drawable="wandoujia_qingzhuomian"/>
-   <item drawable="wandoujia_tongzhiqingli"/>
-   <item drawable="wandoujia_wechat_helper"/>
-   <item drawable="wandoujia_yilan"/>
-   <item drawable="wandoujia_youxiribao"/>
-   <item drawable="wannengyingshi"/>
-   <item drawable="weather_timeline"/>
-   <item drawable="wechatui"/>
-   <item drawable="weibo"/>
-   <item drawable="weico"/>
-   <item drawable="welike"/>
-   <item drawable="welove"/>
-   <item drawable="wififenxiangxia"/>
-   <item drawable="wifi_key"/>
-   <item drawable="wifi_luyouguanjia"/>
-   <item drawable="wiz_note"/>
-   <item drawable="wolfram_alpha"/>
-   <item drawable="wps"/>
-   <item drawable="wuba"/>
-   <item drawable="wunderlist"/>
-   <category title="X"/>
-   <item drawable="xiachufang"/>
-   <item drawable="xiami"/>
-   <item drawable="xiami_alt"/>
-   <item drawable="xiaoenai"/>
-   <item drawable="xiaohongshu"/>
-   <item drawable="xiaokaxiu"/>
-   <item drawable="xiaomi_mijia"/>
-   <item drawable="xiaomi_shop"/>
-   <item drawable="xiaowo_weather"/>
-   <item drawable="ximalayating"/>
-   <item drawable="xinstaller"/>
-   <item drawable="xposed"/>
-   <item drawable="xprivacy"/>
-   <item drawable="xuebajun"/>
-   <item drawable="xueqiu"/>
-   <item drawable="xunfei_keyboard"/>
-   <item drawable="xunlei"/>
-   <item drawable="xunlei_kuainiao"/>
-   <category title="Y"/>
-   <item drawable="yahoo_weather"/>
-   <item drawable="yangqi"/>
-   <item drawable="yaokongjingling"/>
-   <item drawable="yidaoyongche"/>
-   <item drawable="yidianzixun"/>
-   <item drawable="yidong_gps"/>
-   <item drawable="yihaodian"/>
-   <item drawable="yixi"/>
-   <item drawable="youku"/>
-   <item drawable="youku_alt"/>
-   <item drawable="youyaoqimanhua"/>
-   <item drawable="yuantiku_gaokao"/>
-   <item drawable="yuantiku_gongkao"/>
-   <item drawable="yuantiku_kaoyan"/>
-   <item drawable="yuantiku_sikao"/>
-   <item drawable="yuantiku_souti"/>
-   <item drawable="yuelaiyuehao"/>
-   <item drawable="yunduo_nighttools"/>
-   <category title="Z"/>
-   <item drawable="zaker"/>
-   <item drawable="zank"/>
-   <item drawable="zarchiver"/>
-   <item drawable="zcamera"/>
-   <item drawable="zealer"/>
-   <item drawable="zedge"/>
-   <item drawable="zero"/>
-   <item drawable="zhangshangshenghuo"/>
-   <item drawable="zhangyu_keyboard"/>
-   <item drawable="zhengdian_naozhong"/>
-   <item drawable="zhengdian_rili"/>
-   <item drawable="zhiboba"/>
-   <item drawable="zhihu"/>
-   <item drawable="zhihu_ribao"/>
-   <item drawable="zhimibeidanci"/>
-   <item drawable="zhiqu_weather"/>
-   <item drawable="zhixing"/>
-   <item drawable="zhixinghuochepiao"/>
-   <item drawable="zhiyeyishiwantiku"/>
-   <item drawable="zhongguoyouzheng"/>
-   <item drawable="zhonghuawannianli"/>
-   <item drawable="zhuanxin"/>
-   <item drawable="zhuishushenqi"/>
-   <item drawable="zitiguanjia"/>
-   <item drawable="zol"/>
-   <item drawable="zuimeishiguang"/>
-   <item drawable="zuimeiyingyong"/>
-   <item drawable="zuimeizipai"/>
-   <item drawable="zuiworld"/>
-   <item drawable="zuzhiyunxing"/>
-</resources>
+<string-array name="icon_pack_ali" translatable="false">
+   <item>alibaba</item>
+   <item>alipay</item>
+   <item>alipay_alt</item>
+   <item>aliyun</item>
+   <item>ali_antfortune</item>
+   <item>ali_cainiao_guoguo</item>
+   <item>ali_dingding</item>
+   <item>ali_jiankang</item>
+   <item>ali_koubei_waimai</item>
+   <item>ali_koubei_waimai_alt</item>
+   <item>ali_miaojie</item>
+   <item>ali_newjob</item>
+   <item>ali_qua</item>
+   <item>ali_taobao</item>
+   <item>ali_taobao_dianying</item>
+   <item>ali_taobao_nongcun</item>
+   <item>ali_tmall</item>
+   <item>ali_tmall_alt</item>
+   <item>ali_tv_helper</item>
+   <item>ali_wangxin</item>
+   <item>ali_wangxin_alt</item>
+   <item>ali_xianyu</item>
+   <item>ali_xiaohao</item>
+   <item>ali_zhineng</item>
+</string-array>
+
+<string-array name="icon_pack_baidu" translatable="false">
+   <item>baidu</item>
+   <item>baidu_appsearch</item>
+   <item>baidu_browser</item>
+   <item>baidu_chuanke</item>
+   <item>baidu_hi</item>
+   <item>baidu_homework</item>
+   <item>baidu_iknow</item>
+   <item>baidu_imgae</item>
+   <item>baidu_imgae_alt</item>
+   <item>baidu_keyboard</item>
+   <item>baidu_maps</item>
+   <item>baidu_navigate</item>
+   <item>baidu_nuomi</item>
+   <item>baidu_pan</item>
+   <item>baidu_patient</item>
+   <item>baidu_security_center</item>
+   <item>baidu_simeji_keyboard</item>
+   <item>baidu_tieba</item>
+   <item>baidu_translate</item>
+   <item>baidu_travel</item>
+   <item>baidu_waimai</item>
+   <item>baidu_wallet</item>
+   <item>baidu_wear</item>
+   <item>baidu_wenku</item>
+   <item>baidu_yuedu</item>
+</string-array>
+
+<string-array name="icon_pack_netease" translatable="false">
+   <item>netease_cartoon_reader</item>
+   <item>netease_cloudclass</item>
+   <item>netease_cloudclass_alt</item>
+   <item>netease_epay</item>
+   <item>netease_epay_alt</item>
+   <item>netease_finance</item>
+   <item>netease_finance_alt</item>
+   <item>netease_gacha</item>
+   <item>netease_game_forums</item>
+   <item>netease_huochepiao</item>
+   <item>netease_kaola</item>
+   <item>netease_lofter</item>
+   <item>netease_mail_box</item>
+   <item>netease_mkey</item>
+   <item>netease_music</item>
+   <item>netease_music_alt</item>
+   <item>netease_news</item>
+   <item>netease_open_class</item>
+   <item>netease_pris</item>
+   <item>netease_super_calculator</item>
+   <item>netease_yanxuan</item>
+   <item>netease_yixin</item>
+   <item>netease_youdao_dict</item>
+   <item>netease_youdao_note</item>
+   <item>netease_youdao_translator</item>
+   <item>netease_youqian</item>
+   <item>netease_youxiangdashi</item>
+</string-array>
+
+<string-array name="icon_pack_google" translatable="false">
+   <item>google</item>
+   <item>google_allo</item>
+   <item>google_arts</item>
+   <item>google_calendar</item>
+   <item>google_calendar_1</item>
+   <item>google_calendar_10</item>
+   <item>google_calendar_11</item>
+   <item>google_calendar_12</item>
+   <item>google_calendar_13</item>
+   <item>google_calendar_14</item>
+   <item>google_calendar_15</item>
+   <item>google_calendar_16</item>
+   <item>google_calendar_17</item>
+   <item>google_calendar_18</item>
+   <item>google_calendar_19</item>
+   <item>google_calendar_2</item>
+   <item>google_calendar_20</item>
+   <item>google_calendar_21</item>
+   <item>google_calendar_22</item>
+   <item>google_calendar_23</item>
+   <item>google_calendar_24</item>
+   <item>google_calendar_25</item>
+   <item>google_calendar_26</item>
+   <item>google_calendar_27</item>
+   <item>google_calendar_28</item>
+   <item>google_calendar_29</item>
+   <item>google_calendar_3</item>
+   <item>google_calendar_30</item>
+   <item>google_calendar_31</item>
+   <item>google_calendar_4</item>
+   <item>google_calendar_5</item>
+   <item>google_calendar_6</item>
+   <item>google_calendar_7</item>
+   <item>google_calendar_8</item>
+   <item>google_calendar_9</item>
+   <item>google_camera</item>
+   <item>google_chrome</item>
+   <item>google_chrome_beta</item>
+   <item>google_chrome_dev</item>
+   <item>google_chromium</item>
+   <item>google_device_policy</item>
+   <item>google_docs</item>
+   <item>google_drive</item>
+   <item>google_duo</item>
+   <item>google_io</item>
+   <item>google_keyboard</item>
+   <item>google_messenger</item>
+   <item>google_messenger_alt</item>
+   <item>google_messenger_alt_2</item>
+   <item>google_now_enabler</item>
+   <item>google_pinyin_keyboard</item>
+   <item>google_play_books</item>
+   <item>google_play_games</item>
+   <item>google_play_movies</item>
+   <item>google_play_music</item>
+   <item>google_play_newsstand</item>
+   <item>google_play_service</item>
+   <item>google_play_store</item>
+   <item>google_plus</item>
+   <item>google_sheets</item>
+   <item>google_slides</item>
+   <item>google_snapseed</item>
+   <item>google_spotlight_stories</item>
+   <item>google_translate</item>
+   <item>google_voice_search</item>
+   <item>google_youtube</item>
+   <item>google_youtube_music</item>
+</string-array>
+
+<string-array name="icon_pack_htc" translatable="false">
+   <item>htc_car</item>
+   <item>htc_phone</item>
+   <item>htc_scribble</item>
+</string-array>
+
+<string-array name="icon_pack_lenovo" translatable="false">
+   <item>lenovo_calendar</item>
+   <item>lenovo_gt_browser</item>
+</string-array>
+
+<string-array name="icon_pack_lg" translatable="false">
+</string-array>
+
+<string-array name="icon_pack_moto" translatable="false">
+   <item>moto_body</item>
+   <item>moto_connect</item>
+</string-array>
+
+<string-array name="icon_pack_microsoft" translatable="false">
+   <item>microsoft_bing_dict</item>
+   <item>microsoft_bing_keyboard</item>
+   <item>microsoft_bing_search</item>
+   <item>microsoft_cortana</item>
+   <item>microsoft_groove_music</item>
+   <item>microsoft_office_excel</item>
+   <item>microsoft_office_lens</item>
+   <item>microsoft_office_onenote</item>
+   <item>microsoft_office_outlook</item>
+   <item>microsoft_office_powerpoint</item>
+   <item>microsoft_office_remote</item>
+   <item>microsoft_office_word</item>
+   <item>microsoft_onedrive</item>
+   <item>microsoft_remote_desktop</item>
+   <item>microsoft_translator</item>
+   <item>microsoft_xbox</item>
+   <item>microsoft_xbox_alt</item>
+   <item>microsoft_xbox_beta</item>
+   <item>microsoft_xbox_beta_alt</item>
+</string-array>
+
+<string-array name="icon_pack_samsung" translatable="false">
+   <item>samsung_pay</item>
+   <item>samsung_sreminder</item>
+   <item>samsung_s_health</item>
+</string-array>
+
+<string-array name="icon_pack_sony" translatable="false">
+   <item>sony_ar_effect</item>
+   <item>sony_calendar</item>
+   <item>sony_lifelog</item>
+   <item>sony_motionshot</item>
+   <item>sony_movies</item>
+   <item>sony_music</item>
+   <item>sony_news_suite</item>
+   <item>sony_play_memories_mobile</item>
+   <item>sony_support</item>
+   <item>sony_video_tv_slideview</item>
+   <item>sony_weather</item>
+</string-array>
+
+<string-array name="icon_pack_tencent" translatable="false">
+   <item>tencent_anime_comic</item>
+   <item>tencent_app_market</item>
+   <item>tencent_file_manager</item>
+   <item>tencent_lightalk</item>
+   <item>tencent_map</item>
+   <item>tencent_news</item>
+   <item>tencent_ps_play</item>
+   <item>tencent_qie_fm</item>
+   <item>tencent_qq</item>
+   <item>tencent_qqpimsecure</item>
+   <item>tencent_qq_browser</item>
+   <item>tencent_qq_hd</item>
+   <item>tencent_qq_international</item>
+   <item>tencent_qq_japan</item>
+   <item>tencent_qq_keyboard</item>
+   <item>tencent_qq_lite</item>
+   <item>tencent_qq_mail</item>
+   <item>tencent_qq_music</item>
+   <item>tencent_qq_music_alt</item>
+   <item>tencent_qq_music_local_player</item>
+   <item>tencent_qq_player</item>
+   <item>tencent_qq_reader</item>
+   <item>tencent_qq_secure</item>
+   <item>tencent_qzone</item>
+   <item>tencent_video</item>
+   <item>tencent_webank</item>
+   <item>tencent_wechat</item>
+   <item>tencent_wechat_alt</item>
+   <item>tencent_weiyun</item>
+   <item>tencent_weiyun_alt</item>
+   <item>tencent_weread</item>
+   <item>tencent_wesync</item>
+</string-array>
+
+<string-array name="icon_pack_miui" translatable="false">
+</string-array>
+
+<string-array name="icon_pack_flyme" translatable="false">
+   <item>flyme_account</item>
+   <item>flyme_appcenter</item>
+   <item>flyme_browser</item>
+   <item>flyme_calculator</item>
+   <item>flyme_calendar</item>
+   <item>flyme_calendar_1</item>
+   <item>flyme_calendar_10</item>
+   <item>flyme_calendar_11</item>
+   <item>flyme_calendar_12</item>
+   <item>flyme_calendar_13</item>
+   <item>flyme_calendar_14</item>
+   <item>flyme_calendar_15</item>
+   <item>flyme_calendar_16</item>
+   <item>flyme_calendar_17</item>
+   <item>flyme_calendar_18</item>
+   <item>flyme_calendar_19</item>
+   <item>flyme_calendar_2</item>
+   <item>flyme_calendar_20</item>
+   <item>flyme_calendar_21</item>
+   <item>flyme_calendar_22</item>
+   <item>flyme_calendar_23</item>
+   <item>flyme_calendar_24</item>
+   <item>flyme_calendar_25</item>
+   <item>flyme_calendar_26</item>
+   <item>flyme_calendar_27</item>
+   <item>flyme_calendar_28</item>
+   <item>flyme_calendar_29</item>
+   <item>flyme_calendar_3</item>
+   <item>flyme_calendar_30</item>
+   <item>flyme_calendar_31</item>
+   <item>flyme_calendar_4</item>
+   <item>flyme_calendar_5</item>
+   <item>flyme_calendar_6</item>
+   <item>flyme_calendar_7</item>
+   <item>flyme_calendar_8</item>
+   <item>flyme_calendar_9</item>
+   <item>flyme_camera</item>
+   <item>flyme_clock</item>
+   <item>flyme_customizecenter</item>
+   <item>flyme_dialer</item>
+   <item>flyme_download</item>
+   <item>flyme_email</item>
+   <item>flyme_feedback</item>
+   <item>flyme_filemanager</item>
+   <item>flyme_gallery</item>
+   <item>flyme_game</item>
+   <item>flyme_life</item>
+   <item>flyme_lifekit</item>
+   <item>flyme_map</item>
+   <item>flyme_music</item>
+   <item>flyme_notepaper</item>
+   <item>flyme_painter</item>
+   <item>flyme_read</item>
+   <item>flyme_safe</item>
+   <item>flyme_scanner</item>
+   <item>flyme_settings</item>
+   <item>flyme_sms</item>
+   <item>flyme_soundrecorder</item>
+   <item>flyme_toolbox</item>
+   <item>flyme_tools</item>
+   <item>flyme_update</item>
+   <item>flyme_video</item>
+   <item>flyme_voice_assistant</item>
+   <item>flyme_wallet</item>
+   <item>flyme_weather</item>
+</string-array>
+
+<string-array name="icon_pack" translatable="false">
+<item>*****</item>
+   <item>a10086</item>
+   <item>a115</item>
+   <item>a12306</item>
+   <item>a17</item>
+   <item>a360</item>
+   <item>a360_clean_master</item>
+   <item>a360_cloud</item>
+   <item>a360_free_wifi</item>
+   <item>a360_geek</item>
+   <item>a360_liuliang</item>
+   <item>a360_super_root</item>
+   <item>a3dmark</item>
+   <item>a51offer</item>
+   <item>a5sing</item>
+   <item>a94_percent</item>
+   <item>**A**</item>
+   <item>abcchina_bank</item>
+   <item>acfun</item>
+   <item>acfun_alt</item>
+   <item>adobe_acrobat</item>
+   <item>adobe_air</item>
+   <item>adobe_brush</item>
+   <item>adobe_capture</item>
+   <item>adobe_color</item>
+   <item>adobe_connect</item>
+   <item>adobe_fill</item>
+   <item>adobe_flash</item>
+   <item>adobe_flash_alt</item>
+   <item>adobe_illustrator_draw</item>
+   <item>adobe_lightroom</item>
+   <item>adobe_mix</item>
+   <item>adobe_photoshop</item>
+   <item>adobe_premiere_clip</item>
+   <item>adobe_shape</item>
+   <item>adobe_sign_manager</item>
+   <item>adsafe</item>
+   <item>aibizhi</item>
+   <item>airfrozen</item>
+   <item>aisen</item>
+   <item>alibaba</item>
+   <item>alipay</item>
+   <item>alipay_alt</item>
+   <item>aliyun</item>
+   <item>ali_antfortune</item>
+   <item>ali_cainiao_guoguo</item>
+   <item>ali_dingding</item>
+   <item>ali_jiankang</item>
+   <item>ali_koubei_waimai</item>
+   <item>ali_koubei_waimai_alt</item>
+   <item>ali_miaojie</item>
+   <item>ali_newjob</item>
+   <item>ali_qua</item>
+   <item>ali_taobao</item>
+   <item>ali_taobao_dianying</item>
+   <item>ali_taobao_nongcun</item>
+   <item>ali_tmall</item>
+   <item>ali_tmall_alt</item>
+   <item>ali_tv_helper</item>
+   <item>ali_wangxin</item>
+   <item>ali_wangxin_alt</item>
+   <item>ali_xianyu</item>
+   <item>ali_xiaohao</item>
+   <item>ali_zhineng</item>
+   <item>almalence_camera</item>
+   <item>amap</item>
+   <item>android_nify</item>
+   <item>anime_taste</item>
+   <item>anydo</item>
+   <item>anydo_calendar</item>
+   <item>anyview</item>
+   <item>apkpure</item>
+   <item>appenv</item>
+   <item>apple_music</item>
+   <item>appso</item>
+   <item>app_drawer</item>
+   <item>app_drawer_alt</item>
+   <item>app_settings</item>
+   <item>atom_vpn</item>
+   <item>autohome</item>
+   <item>**B**</item>
+   <item>b612</item>
+   <item>baicizhan</item>
+   <item>baidu</item>
+   <item>baidu_appsearch</item>
+   <item>baidu_browser</item>
+   <item>baidu_chuanke</item>
+   <item>baidu_hi</item>
+   <item>baidu_homework</item>
+   <item>baidu_iknow</item>
+   <item>baidu_imgae</item>
+   <item>baidu_imgae_alt</item>
+   <item>baidu_keyboard</item>
+   <item>baidu_maps</item>
+   <item>baidu_navigate</item>
+   <item>baidu_nuomi</item>
+   <item>baidu_pan</item>
+   <item>baidu_patient</item>
+   <item>baidu_security_center</item>
+   <item>baidu_simeji_keyboard</item>
+   <item>baidu_tieba</item>
+   <item>baidu_translate</item>
+   <item>baidu_travel</item>
+   <item>baidu_waimai</item>
+   <item>baidu_wallet</item>
+   <item>baidu_wear</item>
+   <item>baidu_wenku</item>
+   <item>baidu_yuedu</item>
+   <item>baixingwang</item>
+   <item>bamboo_paper</item>
+   <item>banciyuan</item>
+   <item>bank_of_china</item>
+   <item>bank_of_communications</item>
+   <item>battery_taskmaster</item>
+   <item>battlefield_companion</item>
+   <item>beiyue</item>
+   <item>biaozhunribenyu</item>
+   <item>bilibili</item>
+   <item>bilibili_alt</item>
+   <item>bilibili_live</item>
+   <item>bittorrent_sync</item>
+   <item>blacklight</item>
+   <item>blizzard_authenticator</item>
+   <item>block_launcher_pro</item>
+   <item>blued</item>
+   <item>boomerang</item>
+   <item>boost_plus</item>
+   <item>bootmanager</item>
+   <item>bootmanager_alt</item>
+   <item>boxer</item>
+   <item>brevent</item>
+   <item>browser</item>
+   <item>budingdonghua</item>
+   <item>bughd</item>
+   <item>bukamanhua</item>
+   <item>burgerking</item>
+   <item>butter_camera</item>
+   <item>bu_bei_lang_easy_lexis</item>
+   <item>**C**</item>
+   <item>calculator</item>
+   <item>calc_plus</item>
+   <item>call_vibrator</item>
+   <item>camera</item>
+   <item>careland</item>
+   <item>ccb_bank</item>
+   <item>ccleaner</item>
+   <item>changba</item>
+   <item>chaojikechengbiao</item>
+   <item>chaojishipin</item>
+   <item>chaojishipin_alt</item>
+   <item>chelaile</item>
+   <item>chufaba</item>
+   <item>cib_bank</item>
+   <item>cilikanpian</item>
+   <item>clock</item>
+   <item>cloud_vpn</item>
+   <item>cmbc_bank</item>
+   <item>cmcc_wifi</item>
+   <item>cntv</item>
+   <item>coolapk</item>
+   <item>coolapk_alt</item>
+   <item>coolapk_alt_2</item>
+   <item>coolapk_daily_picture</item>
+   <item>copas</item>
+   <item>couplete</item>
+   <item>ctrip</item>
+   <item>ctrip_alt</item>
+   <item>ct_client</item>
+   <item>current_activity</item>
+   <item>custom_share</item>
+   <item>cyanogenmod_camera</item>
+   <item>**D**</item>
+   <item>dailycost</item>
+   <item>dandu</item>
+   <item>dangdang</item>
+   <item>dangle</item>
+   <item>daxianggonghui</item>
+   <item>dayima</item>
+   <item>days_matter</item>
+   <item>ddcat</item>
+   <item>dealmoon</item>
+   <item>dgtle</item>
+   <item>dialer</item>
+   <item>dianping</item>
+   <item>dice</item>
+   <item>didaqingdan</item>
+   <item>didi</item>
+   <item>dingxiangyisheng</item>
+   <item>ditietong</item>
+   <item>domino_pizza</item>
+   <item>domino_pizza_alt</item>
+   <item>dongdong</item>
+   <item>dongmanzhijia</item>
+   <item>dongqiudi</item>
+   <item>douban</item>
+   <item>douban_fm</item>
+   <item>douban_movie</item>
+   <item>douban_read</item>
+   <item>douguomeishi</item>
+   <item>doutushenqi</item>
+   <item>douyu</item>
+   <item>download</item>
+   <item>dreamdays</item>
+   <item>duckduckgo</item>
+   <item>duduribao</item>
+   <item>duitang</item>
+   <item>duokan</item>
+   <item>**E**</item>
+   <item>echo</item>
+   <item>ecitic_bank</item>
+   <item>edx</item>
+   <item>eleme</item>
+   <item>eleme_alt</item>
+   <item>email</item>
+   <item>es_explorer</item>
+   <item>eudic</item>
+   <item>evermemo</item>
+   <item>evernote</item>
+   <item>evernote_alt</item>
+   <item>evernote_alt_2</item>
+   <item>every_wiki</item>
+   <item>**F**</item>
+   <item>facebook</item>
+   <item>fancy</item>
+   <item>fangdai_calculator</item>
+   <item>fanliwang</item>
+   <item>feedly</item>
+   <item>fenghuang</item>
+   <item>fenghuang_fm</item>
+   <item>fenqile</item>
+   <item>fetion</item>
+   <item>fifth_third_bank</item>
+   <item>firefox</item>
+   <item>firefox_beta</item>
+   <item>fitbit</item>
+   <item>fit_time</item>
+   <item>flat_style_bar_indicators</item>
+   <item>flat_style_colored_bars</item>
+   <item>flickr</item>
+   <item>floatify</item>
+   <item>flow_bank</item>
+   <item>flyme_account</item>
+   <item>flyme_appcenter</item>
+   <item>flyme_browser</item>
+   <item>flyme_calculator</item>
+   <item>flyme_calendar</item>
+   <item>flyme_calendar_1</item>
+   <item>flyme_calendar_10</item>
+   <item>flyme_calendar_11</item>
+   <item>flyme_calendar_12</item>
+   <item>flyme_calendar_13</item>
+   <item>flyme_calendar_14</item>
+   <item>flyme_calendar_15</item>
+   <item>flyme_calendar_16</item>
+   <item>flyme_calendar_17</item>
+   <item>flyme_calendar_18</item>
+   <item>flyme_calendar_19</item>
+   <item>flyme_calendar_2</item>
+   <item>flyme_calendar_20</item>
+   <item>flyme_calendar_21</item>
+   <item>flyme_calendar_22</item>
+   <item>flyme_calendar_23</item>
+   <item>flyme_calendar_24</item>
+   <item>flyme_calendar_25</item>
+   <item>flyme_calendar_26</item>
+   <item>flyme_calendar_27</item>
+   <item>flyme_calendar_28</item>
+   <item>flyme_calendar_29</item>
+   <item>flyme_calendar_3</item>
+   <item>flyme_calendar_30</item>
+   <item>flyme_calendar_31</item>
+   <item>flyme_calendar_4</item>
+   <item>flyme_calendar_5</item>
+   <item>flyme_calendar_6</item>
+   <item>flyme_calendar_7</item>
+   <item>flyme_calendar_8</item>
+   <item>flyme_calendar_9</item>
+   <item>flyme_camera</item>
+   <item>flyme_clock</item>
+   <item>flyme_customizecenter</item>
+   <item>flyme_dialer</item>
+   <item>flyme_download</item>
+   <item>flyme_email</item>
+   <item>flyme_feedback</item>
+   <item>flyme_filemanager</item>
+   <item>flyme_gallery</item>
+   <item>flyme_game</item>
+   <item>flyme_life</item>
+   <item>flyme_lifekit</item>
+   <item>flyme_map</item>
+   <item>flyme_music</item>
+   <item>flyme_notepaper</item>
+   <item>flyme_painter</item>
+   <item>flyme_read</item>
+   <item>flyme_safe</item>
+   <item>flyme_scanner</item>
+   <item>flyme_settings</item>
+   <item>flyme_sms</item>
+   <item>flyme_soundrecorder</item>
+   <item>flyme_toolbox</item>
+   <item>flyme_tools</item>
+   <item>flyme_update</item>
+   <item>flyme_video</item>
+   <item>flyme_voice_assistant</item>
+   <item>flyme_wallet</item>
+   <item>flyme_weather</item>
+   <item>foodie</item>
+   <item>forest</item>
+   <item>fulimanman</item>
+   <item>**G**</item>
+   <item>gallery</item>
+   <item>gamecores</item>
+   <item>game_altos_adventure</item>
+   <item>game_bob_qiuqiudazuozhan</item>
+   <item>game_clash_of_clans</item>
+   <item>game_clash_royale</item>
+   <item>game_dots_and_co</item>
+   <item>game_dots_out</item>
+   <item>game_heartstone</item>
+   <item>game_maestria</item>
+   <item>game_mekorama</item>
+   <item>game_netease_onmyoji</item>
+   <item>game_prune</item>
+   <item>game_snake</item>
+   <item>game_tencent_hlddz</item>
+   <item>game_tencent_xiangqi</item>
+   <item>game_the_last_banacat</item>
+   <item>game_vainglory</item>
+   <item>game_virtua_tennis</item>
+   <item>game_wangzherongyao</item>
+   <item>gaotieguanjia</item>
+   <item>geometric_weather</item>
+   <item>gewala_movie</item>
+   <item>gg_assistant</item>
+   <item>gitskarios</item>
+   <item>globalcash</item>
+   <item>golden_dict</item>
+   <item>google</item>
+   <item>google_allo</item>
+   <item>google_arts</item>
+   <item>google_calendar</item>
+   <item>google_calendar_1</item>
+   <item>google_calendar_10</item>
+   <item>google_calendar_11</item>
+   <item>google_calendar_12</item>
+   <item>google_calendar_13</item>
+   <item>google_calendar_14</item>
+   <item>google_calendar_15</item>
+   <item>google_calendar_16</item>
+   <item>google_calendar_17</item>
+   <item>google_calendar_18</item>
+   <item>google_calendar_19</item>
+   <item>google_calendar_2</item>
+   <item>google_calendar_20</item>
+   <item>google_calendar_21</item>
+   <item>google_calendar_22</item>
+   <item>google_calendar_23</item>
+   <item>google_calendar_24</item>
+   <item>google_calendar_25</item>
+   <item>google_calendar_26</item>
+   <item>google_calendar_27</item>
+   <item>google_calendar_28</item>
+   <item>google_calendar_29</item>
+   <item>google_calendar_3</item>
+   <item>google_calendar_30</item>
+   <item>google_calendar_31</item>
+   <item>google_calendar_4</item>
+   <item>google_calendar_5</item>
+   <item>google_calendar_6</item>
+   <item>google_calendar_7</item>
+   <item>google_calendar_8</item>
+   <item>google_calendar_9</item>
+   <item>google_camera</item>
+   <item>google_chrome</item>
+   <item>google_chrome_beta</item>
+   <item>google_chrome_dev</item>
+   <item>google_chromium</item>
+   <item>google_device_policy</item>
+   <item>google_docs</item>
+   <item>google_drive</item>
+   <item>google_duo</item>
+   <item>google_io</item>
+   <item>google_keyboard</item>
+   <item>google_messenger</item>
+   <item>google_messenger_alt</item>
+   <item>google_messenger_alt_2</item>
+   <item>google_now_enabler</item>
+   <item>google_pinyin_keyboard</item>
+   <item>google_play_books</item>
+   <item>google_play_games</item>
+   <item>google_play_movies</item>
+   <item>google_play_music</item>
+   <item>google_play_newsstand</item>
+   <item>google_play_service</item>
+   <item>google_play_store</item>
+   <item>google_plus</item>
+   <item>google_sheets</item>
+   <item>google_slides</item>
+   <item>google_snapseed</item>
+   <item>google_spotlight_stories</item>
+   <item>google_translate</item>
+   <item>google_voice_search</item>
+   <item>google_youtube</item>
+   <item>google_youtube_music</item>
+   <item>gravity_box</item>
+   <item>greenify</item>
+   <item>green_vpn</item>
+   <item>guaguamanhua</item>
+   <item>gudong</item>
+   <item>guokr</item>
+   <item>guokr_fenda</item>
+   <item>**H**</item>
+   <item>h5_browser</item>
+   <item>hai360</item>
+   <item>haibei_music</item>
+   <item>haici_dict</item>
+   <item>handle_external_storage</item>
+   <item>hanglvzongheng</item>
+   <item>hangout_dialer</item>
+   <item>himail</item>
+   <item>hiwifi</item>
+   <item>hj_word_games</item>
+   <item>houzz</item>
+   <item>htc_car</item>
+   <item>htc_phone</item>
+   <item>htc_scribble</item>
+   <item>huaxia_bank</item>
+   <item>huaxiong</item>
+   <item>huluxia_gametools</item>
+   <item>huputiyu</item>
+   <item>huya</item>
+   <item>hydrogen_wallpager</item>
+   <item>**I**</item>
+   <item>ia_writer</item>
+   <item>icbc_bank</item>
+   <item>icbc_bank_im</item>
+   <item>icebox</item>
+   <item>icourse163</item>
+   <item>ifanr</item>
+   <item>iflat</item>
+   <item>ifont</item>
+   <item>ifttt</item>
+   <item>ikea</item>
+   <item>ilike_cartoon</item>
+   <item>imooc</item>
+   <item>instagram</item>
+   <item>instagram_alt</item>
+   <item>ireader</item>
+   <item>it_home</item>
+   <item>**J**</item>
+   <item>jd</item>
+   <item>jd_jinrong</item>
+   <item>jd_wallet</item>
+   <item>jiakaobaodian</item>
+   <item>jianjie_calendar</item>
+   <item>jianshu</item>
+   <item>jiemian_news</item>
+   <item>jike</item>
+   <item>jinritoutiao</item>
+   <item>jinsanciba</item>
+   <item>jotterpad</item>
+   <item>jswarts_browser</item>
+   <item>juejin</item>
+   <item>**K**</item>
+   <item>kaifazhetoutiao</item>
+   <item>kaixiaohao</item>
+   <item>kaomanfen_tuofu</item>
+   <item>kaoyanbang</item>
+   <item>kechenggezi</item>
+   <item>keep_health</item>
+   <item>kejimeixue</item>
+   <item>keke_english</item>
+   <item>kfc</item>
+   <item>kindle</item>
+   <item>kingmaster</item>
+   <item>kingroot</item>
+   <item>kitchen_stories</item>
+   <item>kmplayer</item>
+   <item>kmplayer_pro</item>
+   <item>koudaijizhang</item>
+   <item>kuaikan_comic</item>
+   <item>kuaikuaicha_xinhuazidian</item>
+   <item>kuaipan</item>
+   <item>kuaiya</item>
+   <item>kugou</item>
+   <item>**L**</item>
+   <item>lanrenzhoumo</item>
+   <item>lantern</item>
+   <item>lavaradio</item>
+   <item>layout</item>
+   <item>lbe</item>
+   <item>ledongli</item>
+   <item>ledongli_run</item>
+   <item>lenovo_calendar</item>
+   <item>lenovo_gt_browser</item>
+   <item>letv</item>
+   <item>letv_sport</item>
+   <item>lightning_wall</item>
+   <item>line</item>
+   <item>line_at</item>
+   <item>line_camera</item>
+   <item>line_deco</item>
+   <item>line_dict</item>
+   <item>lingshengduoduo</item>
+   <item>lingxi</item>
+   <item>lizhi_fm</item>
+   <item>lol</item>
+   <item>love_best_wallpapers</item>
+   <item>luckymoney</item>
+   <item>luyinbao</item>
+   <item>lvmamalvyou</item>
+   <item>**M**</item>
+   <item>mangguo_tv</item>
+   <item>maoyan</item>
+   <item>max_plus</item>
+   <item>mbalib_wiki</item>
+   <item>mcdonald</item>
+   <item>mctools</item>
+   <item>media_converter</item>
+   <item>mega</item>
+   <item>meiriyiwen</item>
+   <item>meiriyujia</item>
+   <item>meituan</item>
+   <item>meituan_waimai</item>
+   <item>meituxiuxiu</item>
+   <item>meiyanxiangji</item>
+   <item>mengniangbaike</item>
+   <item>messaging</item>
+   <item>microsoft_bing_dict</item>
+   <item>microsoft_bing_keyboard</item>
+   <item>microsoft_bing_search</item>
+   <item>microsoft_cortana</item>
+   <item>microsoft_groove_music</item>
+   <item>microsoft_office_excel</item>
+   <item>microsoft_office_lens</item>
+   <item>microsoft_office_onenote</item>
+   <item>microsoft_office_outlook</item>
+   <item>microsoft_office_powerpoint</item>
+   <item>microsoft_office_remote</item>
+   <item>microsoft_office_word</item>
+   <item>microsoft_onedrive</item>
+   <item>microsoft_remote_desktop</item>
+   <item>microsoft_translator</item>
+   <item>microsoft_xbox</item>
+   <item>microsoft_xbox_alt</item>
+   <item>microsoft_xbox_beta</item>
+   <item>microsoft_xbox_beta_alt</item>
+   <item>minecraft_toolbox</item>
+   <item>minminguard</item>
+   <item>misfit</item>
+   <item>miwifi</item>
+   <item>mi_remote</item>
+   <item>moji_weather</item>
+   <item>mokee_aegis</item>
+   <item>momo</item>
+   <item>momobeidanci</item>
+   <item>mono</item>
+   <item>moonreader</item>
+   <item>moonreader_pro</item>
+   <item>moon_phase</item>
+   <item>mora</item>
+   <item>moto_body</item>
+   <item>moto_connect</item>
+   <item>mt_filemanager</item>
+   <item>music</item>
+   <item>mxplayer</item>
+   <item>myandroidtools</item>
+   <item>myandroidtools_xposed</item>
+   <item>myscript_calculator</item>
+   <item>**N**</item>
+   <item>netease_cartoon_reader</item>
+   <item>netease_cloudclass</item>
+   <item>netease_cloudclass_alt</item>
+   <item>netease_epay</item>
+   <item>netease_epay_alt</item>
+   <item>netease_finance</item>
+   <item>netease_finance_alt</item>
+   <item>netease_gacha</item>
+   <item>netease_game_forums</item>
+   <item>netease_huochepiao</item>
+   <item>netease_kaola</item>
+   <item>netease_lofter</item>
+   <item>netease_mail_box</item>
+   <item>netease_mkey</item>
+   <item>netease_music</item>
+   <item>netease_music_alt</item>
+   <item>netease_news</item>
+   <item>netease_open_class</item>
+   <item>netease_pris</item>
+   <item>netease_super_calculator</item>
+   <item>netease_yanxuan</item>
+   <item>netease_yixin</item>
+   <item>netease_youdao_dict</item>
+   <item>netease_youdao_note</item>
+   <item>netease_youdao_translator</item>
+   <item>netease_youqian</item>
+   <item>netease_youxiangdashi</item>
+   <item>nfc_emulator</item>
+   <item>nfc_emulator_alt</item>
+   <item>nga_player_community</item>
+   <item>nice</item>
+   <item>nissan</item>
+   <item>noisyfox</item>
+   <item>notify_clean</item>
+   <item>**O**</item>
+   <item>office_suite</item>
+   <item>olo</item>
+   <item>olympus_image_share</item>
+   <item>one</item>
+   <item>onefootball</item>
+   <item>onepluse_calendar</item>
+   <item>onepluse_calendar_1</item>
+   <item>onepluse_calendar_10</item>
+   <item>onepluse_calendar_11</item>
+   <item>onepluse_calendar_12</item>
+   <item>onepluse_calendar_13</item>
+   <item>onepluse_calendar_14</item>
+   <item>onepluse_calendar_15</item>
+   <item>onepluse_calendar_16</item>
+   <item>onepluse_calendar_17</item>
+   <item>onepluse_calendar_18</item>
+   <item>onepluse_calendar_19</item>
+   <item>onepluse_calendar_2</item>
+   <item>onepluse_calendar_20</item>
+   <item>onepluse_calendar_21</item>
+   <item>onepluse_calendar_22</item>
+   <item>onepluse_calendar_23</item>
+   <item>onepluse_calendar_24</item>
+   <item>onepluse_calendar_25</item>
+   <item>onepluse_calendar_26</item>
+   <item>onepluse_calendar_27</item>
+   <item>onepluse_calendar_28</item>
+   <item>onepluse_calendar_29</item>
+   <item>onepluse_calendar_3</item>
+   <item>onepluse_calendar_30</item>
+   <item>onepluse_calendar_31</item>
+   <item>onepluse_calendar_4</item>
+   <item>onepluse_calendar_5</item>
+   <item>onepluse_calendar_6</item>
+   <item>onepluse_calendar_7</item>
+   <item>onepluse_calendar_8</item>
+   <item>onepluse_calendar_9</item>
+   <item>oneplus_calculator</item>
+   <item>oneplus_calculator_alt</item>
+   <item>oneplus_camera_oxygen</item>
+   <item>oneplus_community</item>
+   <item>oneplus_deskclock</item>
+   <item>oneplus_filemanager</item>
+   <item>oneplus_gallery</item>
+   <item>oneplus_market</item>
+   <item>oneplus_note</item>
+   <item>oneplus_soundrecorder</item>
+   <item>oneplus_weather</item>
+   <item>oneplus_weather_cloudy</item>
+   <item>oneplus_weather_cloudy_dark</item>
+   <item>oneplus_weather_sunny</item>
+   <item>ookla_speedtest</item>
+   <item>open_vpn</item>
+   <item>**P**</item>
+   <item>panda_tv</item>
+   <item>path</item>
+   <item>pebble</item>
+   <item>pengpai_news</item>
+   <item>perfect_color_bar</item>
+   <item>perfmon</item>
+   <item>periscope</item>
+   <item>phhhoto</item>
+   <item>pianke</item>
+   <item>piaofanzi</item>
+   <item>picooc</item>
+   <item>pinglide</item>
+   <item>pinterest</item>
+   <item>pixiv</item>
+   <item>pizzahut</item>
+   <item>playstation</item>
+   <item>pocket_casts</item>
+   <item>poem</item>
+   <item>pokemon_go</item>
+   <item>pokemon_go_alt</item>
+   <item>polaris_office</item>
+   <item>polarr</item>
+   <item>pomotodo</item>
+   <item>pornhub</item>
+   <item>powertoggle</item>
+   <item>ppiicc</item>
+   <item>pptv</item>
+   <item>pp_assistant</item>
+   <item>press</item>
+   <item>prisma</item>
+   <item>pure_weather</item>
+   <item>**Q**</item>
+   <item>qdaily</item>
+   <item>qidian_reader</item>
+   <item>qingting_fm</item>
+   <item>quanminkge</item>
+   <item>quanneng_toolbox</item>
+   <item>qufenqi</item>
+   <item>quickpic</item>
+   <item>qunar</item>
+   <item>qunidaye_browser</item>
+   <item>quora</item>
+   <item>**R**</item>
+   <item>reaper</item>
+   <item>renrenmeiju</item>
+   <item>ringtone_maker</item>
+   <item>root_explorer</item>
+   <item>**S**</item>
+   <item>same</item>
+   <item>samsung_pay</item>
+   <item>samsung_sreminder</item>
+   <item>samsung_s_health</item>
+   <item>sanguliupo</item>
+   <item>scanbot</item>
+   <item>scientific_calculator</item>
+   <item>screen_mask</item>
+   <item>seed</item>
+   <item>settings</item>
+   <item>settings_editor</item>
+   <item>sfly</item>
+   <item>shadowsocks</item>
+   <item>shanbay</item>
+   <item>shanbay_listen</item>
+   <item>shanbay_news</item>
+   <item>shihuo</item>
+   <item>shoujileyuan</item>
+   <item>shouxin_keyboard</item>
+   <item>shuqi</item>
+   <item>shuqi_alt</item>
+   <item>skype</item>
+   <item>smartisan_note</item>
+   <item>smartisan_reader</item>
+   <item>smooth</item>
+   <item>smooth_alt</item>
+   <item>smzdm</item>
+   <item>snapchat</item>
+   <item>snaptube</item>
+   <item>snap_vpn</item>
+   <item>sogou_chat</item>
+   <item>sony_ar_effect</item>
+   <item>sony_calendar</item>
+   <item>sony_lifelog</item>
+   <item>sony_motionshot</item>
+   <item>sony_movies</item>
+   <item>sony_music</item>
+   <item>sony_news_suite</item>
+   <item>sony_play_memories_mobile</item>
+   <item>sony_support</item>
+   <item>sony_video_tv_slideview</item>
+   <item>sony_weather</item>
+   <item>sorcery_icons</item>
+   <item>sougou_keyboard</item>
+   <item>sougou_wallpaper</item>
+   <item>sound_recorder</item>
+   <item>spd_bank</item>
+   <item>spoon</item>
+   <item>spotify</item>
+   <item>sspai</item>
+   <item>sspai_daikejietu</item>
+   <item>starbucks</item>
+   <item>start_chart</item>
+   <item>start_chart_education</item>
+   <item>star_walk_2</item>
+   <item>steam</item>
+   <item>suibiji</item>
+   <item>suishouji</item>
+   <item>suning</item>
+   <item>suning_read</item>
+   <item>sunrise</item>
+   <item>sunrise_1</item>
+   <item>sunrise_10</item>
+   <item>sunrise_11</item>
+   <item>sunrise_12</item>
+   <item>sunrise_13</item>
+   <item>sunrise_14</item>
+   <item>sunrise_15</item>
+   <item>sunrise_16</item>
+   <item>sunrise_17</item>
+   <item>sunrise_18</item>
+   <item>sunrise_19</item>
+   <item>sunrise_2</item>
+   <item>sunrise_20</item>
+   <item>sunrise_21</item>
+   <item>sunrise_22</item>
+   <item>sunrise_23</item>
+   <item>sunrise_24</item>
+   <item>sunrise_25</item>
+   <item>sunrise_26</item>
+   <item>sunrise_27</item>
+   <item>sunrise_28</item>
+   <item>sunrise_29</item>
+   <item>sunrise_3</item>
+   <item>sunrise_30</item>
+   <item>sunrise_31</item>
+   <item>sunrise_4</item>
+   <item>sunrise_5</item>
+   <item>sunrise_6</item>
+   <item>sunrise_7</item>
+   <item>sunrise_8</item>
+   <item>sunrise_9</item>
+   <item>swiftkey_keyboard</item>
+   <item>**T**</item>
+   <item>t66y</item>
+   <item>taptap</item>
+   <item>taskman</item>
+   <item>ted</item>
+   <item>telegram</item>
+   <item>tencent_anime_comic</item>
+   <item>tencent_app_market</item>
+   <item>tencent_file_manager</item>
+   <item>tencent_lightalk</item>
+   <item>tencent_map</item>
+   <item>tencent_news</item>
+   <item>tencent_ps_play</item>
+   <item>tencent_qie_fm</item>
+   <item>tencent_qq</item>
+   <item>tencent_qqpimsecure</item>
+   <item>tencent_qq_browser</item>
+   <item>tencent_qq_hd</item>
+   <item>tencent_qq_international</item>
+   <item>tencent_qq_japan</item>
+   <item>tencent_qq_keyboard</item>
+   <item>tencent_qq_lite</item>
+   <item>tencent_qq_mail</item>
+   <item>tencent_qq_music</item>
+   <item>tencent_qq_music_alt</item>
+   <item>tencent_qq_music_local_player</item>
+   <item>tencent_qq_player</item>
+   <item>tencent_qq_reader</item>
+   <item>tencent_qq_secure</item>
+   <item>tencent_qzone</item>
+   <item>tencent_video</item>
+   <item>tencent_webank</item>
+   <item>tencent_wechat</item>
+   <item>tencent_wechat_alt</item>
+   <item>tencent_weiyun</item>
+   <item>tencent_weiyun_alt</item>
+   <item>tencent_weread</item>
+   <item>tencent_wesync</item>
+   <item>terminal</item>
+   <item>theinitium</item>
+   <item>tianshidongman</item>
+   <item>tianyashequ</item>
+   <item>ticktick</item>
+   <item>tieba_zhushou</item>
+   <item>timi</item>
+   <item>tonghuashun</item>
+   <item>touchpal_keyboard</item>
+   <item>toughwo</item>
+   <item>tp_link</item>
+   <item>ttbook</item>
+   <item>ttpod</item>
+   <item>tuchong</item>
+   <item>tudou</item>
+   <item>tuiku</item>
+   <item>tujiedianying</item>
+   <item>twitter</item>
+   <item>txvpn</item>
+   <item>**U**</item>
+   <item>uber</item>
+   <item>uber_partner</item>
+   <item>uc_browser</item>
+   <item>udacity</item>
+   <item>unicom</item>
+   <item>unicon</item>
+   <item>unionpay_wallet</item>
+   <item>uniqlo</item>
+   <item>uniqlock</item>
+   <item>uniqlooks</item>
+   <item>uniqlo_calendar</item>
+   <item>uniqlo_recipe</item>
+   <item>uniqlo_wakeup</item>
+   <item>**V**</item>
+   <item>v2ex</item>
+   <item>versus</item>
+   <item>vine</item>
+   <item>vine_alt</item>
+   <item>viper_fx</item>
+   <item>vipshop</item>
+   <item>vlc</item>
+   <item>vsco</item>
+   <item>vst</item>
+   <item>vue</item>
+   <item>**W**</item>
+   <item>wandoujia</item>
+   <item>wandoujia_alt</item>
+   <item>wandoujia_eyepetizer</item>
+   <item>wandoujia_qingzhuomian</item>
+   <item>wandoujia_tongzhiqingli</item>
+   <item>wandoujia_wechat_helper</item>
+   <item>wandoujia_yilan</item>
+   <item>wandoujia_youxiribao</item>
+   <item>wannengyingshi</item>
+   <item>weather_timeline</item>
+   <item>wechatui</item>
+   <item>wechat_trace</item>
+   <item>weibo</item>
+   <item>weico</item>
+   <item>welike</item>
+   <item>welove</item>
+   <item>whatsapp_messenger</item>
+   <item>wififenxiangxia</item>
+   <item>wifi_key</item>
+   <item>wifi_luyouguanjia</item>
+   <item>wikipedia</item>
+   <item>wikipedia_beta</item>
+   <item>wiki_for_minecraft</item>
+   <item>wiz_note</item>
+   <item>wolfram_alpha</item>
+   <item>wps</item>
+   <item>wuba</item>
+   <item>wunderlist</item>
+   <item>**X**</item>
+   <item>xcurrency</item>
+   <item>xiachufang</item>
+   <item>xiami</item>
+   <item>xiami_alt</item>
+   <item>xiaoenai</item>
+   <item>xiaohongshu</item>
+   <item>xiaokaxiu</item>
+   <item>xiaomi_mijia</item>
+   <item>xiaomi_miui_calculator</item>
+   <item>xiaomi_shop</item>
+   <item>xiaomi_wallet</item>
+   <item>xiaowo_weather</item>
+   <item>ximalayating</item>
+   <item>xinternalsd</item>
+   <item>xposed</item>
+   <item>xqs_background</item>
+   <item>xqs_background_alt</item>
+   <item>xuebajun</item>
+   <item>xueqiu</item>
+   <item>xunfei_keyboard</item>
+   <item>xunlei</item>
+   <item>xunlei_kuainiao</item>
+   <item>**Y**</item>
+   <item>yangqi</item>
+   <item>yaokongjingling</item>
+   <item>yidaoyongche</item>
+   <item>yidianzixun</item>
+   <item>yidong_gps</item>
+   <item>yihaodian</item>
+   <item>yilan_matrix</item>
+   <item>yixi</item>
+   <item>yoho_buy</item>
+   <item>youku</item>
+   <item>youku_alt</item>
+   <item>youyaoqimanhua</item>
+   <item>yuantiku_gaokao</item>
+   <item>yuantiku_gongkao</item>
+   <item>yuantiku_kaoyan</item>
+   <item>yuantiku_sikao</item>
+   <item>yuantiku_souti</item>
+   <item>yuelaiyuehao</item>
+   <item>yunduo_nighttools</item>
+   <item>**Z**</item>
+   <item>zaker</item>
+   <item>zank</item>
+   <item>zcamera</item>
+   <item>zealer</item>
+   <item>zedge</item>
+   <item>zero</item>
+   <item>zhangshangshenghuo</item>
+   <item>zhangyu_keyboard</item>
+   <item>zhanqi_tv</item>
+   <item>zhengdian_naozhong</item>
+   <item>zhengdian_rili</item>
+   <item>zhiboba</item>
+   <item>zhihu</item>
+   <item>zhihu_ribao</item>
+   <item>zhimibeidanci</item>
+   <item>zhiqu_weather</item>
+   <item>zhixing</item>
+   <item>zhixinghuochepiao</item>
+   <item>zhiyeyishiwantiku</item>
+   <item>zhiyoo</item>
+   <item>zhongguoyouzheng</item>
+   <item>zhonghuawannianli</item>
+   <item>zhuanxin</item>
+   <item>zhuishushenqi</item>
+   <item>zhuishushenqi_beta</item>
+   <item>zitiguanjia</item>
+   <item>zol</item>
+   <item>zuimeishiguang</item>
+   <item>zuimeiyingyong</item>
+   <item>zuimeizipai</item>
+   <item>zuiworld</item>
+   <item>zuiyou</item>
+   <item>zuizuimanhua_comic_lover</item>
+   <item>zuzhiyunxing</item>
+</string-array>
 

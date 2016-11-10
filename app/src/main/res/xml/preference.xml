@@ -2,8 +2,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
-        app:useStockLayout="true"
-        android:title="hot fix">
+        android:title="hot fix"
+        app:useStockLayout="true">
         <SwitchPreference android:title="hot fix"/>
         <CheckBoxPreference android:title="update ion wifi"/>
     </PreferenceCategory>
@@ -14,5 +14,10 @@
         <Preference android:title="refresh"/>
         <Preference android:title="reboot device"/>
         <Preference android:summary="@string/global_attention"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="About">
+        <Preference android:title="about app"/>
     </PreferenceCategory>
 </PreferenceScreen>

@@ -15,4 +15,5 @@
         android:name="com.sorcerer.sorcery.iconpack.ui.activities.SettingsActivity$SettingsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

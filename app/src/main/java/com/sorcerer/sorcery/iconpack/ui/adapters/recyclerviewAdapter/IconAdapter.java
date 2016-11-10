@@ -6,11 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.util.Pair;
@@ -21,10 +16,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
@@ -58,9 +53,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private static final int TYPE_ICON_BOTTOM_RIGHT = 0x7;
     private static final int TYPE_ICON_LEFT = 0x8;
     private static final int TYPE_ICON_RIGHT = 0x9;
-    private static final int TYPE_ICON_SINGLE_LINE_LEFT = 0x10;
-    private static final int TYPE_ICON_SINGLE_LINE_CENTER = 0x11;
-    private static final int TYPE_ICON_SINGLE_LINE_RIGHT = 0x12;
+    private static final int TYPE_ICON_SINGLE_LINE_LEFT = 0xA;
+    private static final int TYPE_ICON_SINGLE_LINE_CENTER = 0xB;
+    private static final int TYPE_ICON_SINGLE_LINE_RIGHT = 0xC;
 
     private Activity mActivity;
     private boolean mCustomPicker = false;
@@ -81,7 +76,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
         List<IconBean> tmpList = new ArrayList<>();
         for (int i = 0; i < iconBeanList.size(); i++) {
-            if (isLabel(iconBeanList.get(i).getName())) {
+            if (isLabel(iconBeanList.get(i).getName()) && !tmpList.isEmpty()) {
                 mIconBeanLists.add(tmpList);
                 tmpList = new ArrayList<>();
             }
@@ -124,7 +119,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 if (itemCount <= span) {
                     if (position == 0) {
                         mShowList.add(new Pair<>(bean, TYPE_ICON_SINGLE_LINE_LEFT));
-                    } else if (position == getItemCount() - 1) {
+                    } else if (position == itemCount - 1) {
                         mShowList.add(new Pair<>(bean, TYPE_ICON_SINGLE_LINE_RIGHT));
                     } else {
                         mShowList.add(new Pair<>(bean, TYPE_ICON_SINGLE_LINE_CENTER));
@@ -211,7 +206,16 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, int position) {
-        int type = mShowList.get(position).second;
+        final int type = mShowList.get(position).second;
+        if (BuildConfig.DEBUG) {
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    Toast.makeText(mActivity, type + "", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            });
+        }
         IconBean iconBean = mShowList.get(position).first;
         if (type == TYPE_HEADER) {
             final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;

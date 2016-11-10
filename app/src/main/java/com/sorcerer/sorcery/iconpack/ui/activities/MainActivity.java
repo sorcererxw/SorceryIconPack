@@ -288,13 +288,13 @@ public class MainActivity extends BaseActivity {
                 .withActivity(mActivity)
                 .build();
         mDrawer.addItems(
-                new PrimaryDrawerItem()
-                        .withSetSelected(false)
-                        .withSelectable(false)
-                        .withTag("apply")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_input_black_24dp, 128))
-                        .withName(R.string.nav_item_apply),
+//                new PrimaryDrawerItem()
+//                        .withSetSelected(false)
+//                        .withSelectable(false)
+//                        .withTag("apply")
+//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+//                                .ic_input_black_24dp, 128))
+//                        .withName(R.string.nav_item_apply),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
@@ -305,23 +305,23 @@ public class MainActivity extends BaseActivity {
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
-                        .withTag("settings")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_settings_black_24dp, 128))
-                        .withName(R.string.nav_item_settings),
-                new PrimaryDrawerItem()
-                        .withSetSelected(false)
-                        .withSelectable(false)
                         .withTag("help")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_help_black_24dp, 128))
-                        .withName(R.string.nav_item_help),
-                new DividerDrawerItem(),
-                new PrimaryDrawerItem()
-                        .withSetSelected(false)
-                        .withSelectable(false)
-                        .withTag("about")
-                        .withName(R.string.nav_item_about)
+                        .withName(R.string.nav_item_help)
+//                new PrimaryDrawerItem()
+//                        .withSetSelected(false)
+//                        .withSelectable(false)
+//                        .withTag("settings")
+//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+//                                .ic_settings_black_24dp, 128))
+//                        .withName(R.string.nav_item_settings)
+//                new DividerDrawerItem(),
+//                new PrimaryDrawerItem()
+//                        .withSetSelected(false)
+//                        .withSelectable(false)
+//                        .withTag("about")
+//                        .withName(R.string.nav_item_about)
         );
 
         if (AppInfoUtil.isXposedInstalled(this)) {

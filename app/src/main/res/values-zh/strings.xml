@@ -35,15 +35,15 @@
         <item>百度</item>
         <item>网易</item>
         <item>谷歌</item>
-        <item>HTC</item>
-        <item>联想</item>
-        <item>LG</item>
-        <item>MOTO</item>
+        <!--<item>HTC</item>-->
+        <!--<item>联想</item>-->
+        <!--<item>LG</item>-->
+        <!--<item>MOTO</item>-->
         <item>微软</item>
-        <item>三星</item>
-        <item>索尼</item>
+        <!--<item>三星</item>-->
+        <!--<item>索尼</item>-->
         <item>腾讯</item>
-        <item>小米</item>
+        <!--<item>小米</item>-->
         <item>魅族</item>
     </string-array>
     <string name="nav_item_apply">应用到启动器</string>

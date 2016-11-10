@@ -1,12 +1,12 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.graphics.Point;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Display;
 import android.view.MenuItem;
 
+import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.HelpAdapter;
@@ -24,7 +24,7 @@ public class HelpActivity extends SlideInAndOutAppCompatActivity {
     }
 
     private HelpAdapter mAdapter;
-    private GridLayoutManager mGridLayoutManager;
+    private StaggeredGridLayoutManager mLayoutManager;
 
     @Override
     protected void init() {
@@ -32,17 +32,10 @@ public class HelpActivity extends SlideInAndOutAppCompatActivity {
 
         setToolbarBackIndicator();
 
-        mGridLayoutManager =
-                new GridLayoutManager(this, calcNumOfRows(), LinearLayoutManager.VERTICAL, false);
+        mLayoutManager = new StaggeredGridLayoutManager(calcNumOfRows(),
+                StaggeredGridLayoutManager.VERTICAL);
 
-        mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                return 1;
-            }
-        });
-
-        mRecyclerView.setLayoutManager(mGridLayoutManager);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
         mAdapter = new HelpAdapter(this, calcNumOfRows());
 
@@ -67,8 +60,8 @@ public class HelpActivity extends SlideInAndOutAppCompatActivity {
     }
 
     private void resize() {
-        mGridLayoutManager.setSpanCount(calcNumOfRows());
-        mGridLayoutManager.requestLayout();
+        mLayoutManager.setSpanCount(calcNumOfRows());
+        mLayoutManager.requestLayout();
         mAdapter.changeSpan(calcNumOfRows());
     }
 
@@ -77,7 +70,6 @@ public class HelpActivity extends SlideInAndOutAppCompatActivity {
         Point size = new Point();
         display.getSize(size);
         float s = getResources().getDimension(R.dimen.help_item_size);
-//                + 2 * getResources().getDimension(R.dimen.icon_grid_item_margin);
         return Math.max(1, (int) (size.x / s));
     }
 

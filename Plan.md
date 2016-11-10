@@ -18,6 +18,7 @@
         - [ ] Better anim and tip in search
 - [ ] Settings page
 - [x] Card-like icon pages `2016-11-8`
+- [x] Waterfall-flow-layout in help list `2016-11-9`
 - [ ] Hot Fix support
 - [ ] Google Play pay support
 - [ ] Feedback reply notification

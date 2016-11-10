@@ -75,7 +75,6 @@
        	<item>lenovo_gt_browser</item>
        	<item>lenovo_calendar</item>
        	<item>netease_mkey</item>
-       	<item>netease_mkey</item>
        	<item>netease_finance_alt</item>
        	<item>netease_finance</item>
        	<item>netease_kaola</item>
@@ -184,47 +183,80 @@
         <item>flyme_update</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
+        <item>alibaba</item>
         <item>alipay</item>
         <item>alipay_alt</item>
+        <item>aliyun</item>
         <item>ali_antfortune</item>
         <item>ali_cainiao_guoguo</item>
         <item>ali_dingding</item>
+        <item>ali_jiankang</item>
         <item>ali_koubei_waimai</item>
         <item>ali_koubei_waimai_alt</item>
         <item>ali_miaojie</item>
+        <item>ali_newjob</item>
         <item>ali_qua</item>
         <item>ali_taobao</item>
         <item>ali_taobao_dianying</item>
         <item>ali_taobao_nongcun</item>
         <item>ali_tmall</item>
         <item>ali_tmall_alt</item>
+        <item>ali_tv_helper</item>
         <item>ali_wangxin</item>
         <item>ali_wangxin_alt</item>
         <item>ali_xianyu</item>
         <item>ali_xiaohao</item>
+        <item>ali_zhineng</item>
     </string-array>
 
     <string-array name="icon_pack_baidu" translatable="false">
         <item>baidu</item>
+        <item>baidu_appsearch</item>
+        <item>baidu_browser</item>
+        <item>baidu_chuanke</item>
         <item>baidu_hi</item>
+        <item>baidu_homework</item>
+        <item>baidu_iknow</item>
+        <item>baidu_imgae</item>
+        <item>baidu_imgae_alt</item>
         <item>baidu_keyboard</item>
         <item>baidu_maps</item>
+        <item>baidu_navigate</item>
         <item>baidu_nuomi</item>
         <item>baidu_pan</item>
+        <item>baidu_patient</item>
+        <item>baidu_security_center</item>
+        <item>baidu_simeji_keyboard</item>
         <item>baidu_tieba</item>
+        <item>baidu_translate</item>
+        <item>baidu_travel</item>
         <item>baidu_waimai</item>
         <item>baidu_wallet</item>
+        <item>baidu_wear</item>
+        <item>baidu_wenku</item>
+        <item>baidu_yuedu</item>
     </string-array>
 
     <string-array name="icon_pack_netease" translatable="false">
+        <item>netease_cartoon_reader</item>
         <item>netease_cloudclass</item>
         <item>netease_cloudclass_alt</item>
+        <item>netease_epay</item>
+        <item>netease_epay_alt</item>
+        <item>netease_finance</item>
+        <item>netease_finance_alt</item>
+        <item>netease_gacha</item>
+        <item>netease_game_forums</item>
         <item>netease_huochepiao</item>
+        <item>netease_kaola</item>
         <item>netease_lofter</item>
+        <item>netease_mail_box</item>
+        <item>netease_mkey</item>
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
         <item>netease_open_class</item>
+        <item>netease_pris</item>
         <item>netease_super_calculator</item>
         <item>netease_yanxuan</item>
         <item>netease_yixin</item>
@@ -237,9 +269,8 @@
 
     <string-array name="icon_pack_google" translatable="false">
         <item>google</item>
-        <item>google_androidify</item>
+        <item>google_allo</item>
         <item>google_arts</item>
-        <item>google_authenticator</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
         <item>google_calendar_10</item>
@@ -277,228 +308,99 @@
         <item>google_chrome_beta</item>
         <item>google_chrome_dev</item>
         <item>google_chromium</item>
-        <item>google_device_manager</item>
+        <item>google_device_policy</item>
         <item>google_docs</item>
         <item>google_drive</item>
-        <item>google_earth</item>
-        <item>google_goggles</item>
-        <item>google_hangout</item>
-        <item>google_inbox</item>
+        <item>google_duo</item>
         <item>google_io</item>
-        <item>google_keep</item>
         <item>google_keyboard</item>
-        <item>google_maps</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
+        <item>google_messenger_alt_2</item>
         <item>google_now_enabler</item>
-        <item>google_now_launcher</item>
-        <item>google_opinion_rewards</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
         <item>google_play_music</item>
         <item>google_play_newsstand</item>
+        <item>google_play_service</item>
         <item>google_play_store</item>
         <item>google_plus</item>
         <item>google_sheets</item>
         <item>google_slides</item>
         <item>google_snapseed</item>
+        <item>google_spotlight_stories</item>
         <item>google_translate</item>
         <item>google_voice_search</item>
         <item>google_youtube</item>
+        <item>google_youtube_music</item>
     </string-array>
 
     <string-array name="icon_pack_htc" translatable="false">
-        <item>htc_backup</item>
-        <item>htc_browser</item>
-        <item>htc_calculator</item>
-        <item>htc_calendar</item>
-        <item>htc_camera</item>
         <item>htc_car</item>
-        <item>htc_clock</item>
-        <item>htc_contacts</item>
-        <item>htc_dot_view</item>
-        <item>htc_email</item>
-        <item>htc_files</item>
-        <item>htc_gallery</item>
-        <item>htc_messages</item>
-        <item>htc_music</item>
         <item>htc_phone</item>
-        <item>htc_radio</item>
-        <item>htc_recorder</item>
         <item>htc_scribble</item>
-        <item>htc_settings</item>
-        <item>htc_stock</item>
-        <item>htc_tasks</item>
-        <item>htc_weather</item>
     </string-array>
 
     <string-array name="icon_pack_lenovo" translatable="false">
-        <item>lenovo_calculator</item>
-        <item>lenovo_file_browser</item>
-        <item>lenovo_music</item>
-        <item>lenovo_radio</item>
-        <item>lenovo_security</item>
-        <item>lenovo_shareit</item>
-        <item>lenovo_syncit</item>
+        <item>lenovo_calendar</item>
+        <item>lenovo_gt_browser</item>
     </string-array>
 
     <string-array name="icon_pack_lg" translatable="false">
-        <item>lg_backup</item>
-        <item>lg_browser</item>
-        <item>lg_calculator</item>
-        <item>lg_calendar</item>
-        <item>lg_camera</item>
-        <item>lg_clock</item>
-        <item>lg_contacts</item>
-        <item>lg_downloads</item>
-        <item>lg_email</item>
-        <item>lg_files</item>
-        <item>lg_gallery</item>
-        <item>lg_health</item>
-        <item>lg_messages</item>
-        <item>lg_music</item>
-        <item>lg_notebook</item>
-        <item>lg_phone</item>
-        <item>lg_quickmemo</item>
-        <item>lg_quick_remote</item>
-        <item>lg_radio</item>
-        <item>lg_remote_call_service</item>
-        <item>lg_settings</item>
-        <item>lg_smartworld</item>
-        <item>lg_tasks</item>
-        <item>lg_task_manager</item>
-        <item>lg_update_center</item>
-        <item>lg_video</item>
-        <item>lg_video_editor</item>
-        <item>lg_voice_mate</item>
-        <item>lg_voice_recorder</item>
-        <item>lg_weather</item>
     </string-array>
 
     <string-array name="icon_pack_moto" translatable="false">
-        <item>moto_alert</item>
-        <item>moto_assist</item>
         <item>moto_body</item>
-        <item>moto_camera</item>
         <item>moto_connect</item>
-        <item>moto_gallery</item>
-        <item>moto_help</item>
-        <item>moto_message</item>
-        <item>moto_migrate</item>
-        <item>moto_moto</item>
-        <item>moto_radio</item>
-        <item>moto_updater</item>
     </string-array>
 
     <string-array name="icon_pack_microsoft" translatable="false">
-        <item>microsoft_account</item>
-        <item>microsoft_arrow_launcher</item>
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_keyboard</item>
+        <item>microsoft_bing_search</item>
         <item>microsoft_cortana</item>
+        <item>microsoft_groove_music</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
-        <item>microsoft_office_mobile</item>
         <item>microsoft_office_onenote</item>
         <item>microsoft_office_outlook</item>
         <item>microsoft_office_powerpoint</item>
+        <item>microsoft_office_remote</item>
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
+        <item>microsoft_remote_desktop</item>
         <item>microsoft_translator</item>
+        <item>microsoft_xbox</item>
+        <item>microsoft_xbox_alt</item>
+        <item>microsoft_xbox_beta</item>
+        <item>microsoft_xbox_beta_alt</item>
     </string-array>
 
     <string-array name="icon_pack_samsung" translatable="false">
-        <item>samsung_apps</item>
-        <item>samsung_browser</item>
-        <item>samsung_calculator</item>
-        <item>samsung_calendar</item>
-        <item>samsung_calendar_1</item>
-        <item>samsung_calendar_10</item>
-        <item>samsung_calendar_11</item>
-        <item>samsung_calendar_12</item>
-        <item>samsung_calendar_13</item>
-        <item>samsung_calendar_14</item>
-        <item>samsung_calendar_15</item>
-        <item>samsung_calendar_16</item>
-        <item>samsung_calendar_17</item>
-        <item>samsung_calendar_18</item>
-        <item>samsung_calendar_19</item>
-        <item>samsung_calendar_2</item>
-        <item>samsung_calendar_20</item>
-        <item>samsung_calendar_21</item>
-        <item>samsung_calendar_22</item>
-        <item>samsung_calendar_23</item>
-        <item>samsung_calendar_24</item>
-        <item>samsung_calendar_25</item>
-        <item>samsung_calendar_26</item>
-        <item>samsung_calendar_27</item>
-        <item>samsung_calendar_28</item>
-        <item>samsung_calendar_29</item>
-        <item>samsung_calendar_3</item>
-        <item>samsung_calendar_30</item>
-        <item>samsung_calendar_31</item>
-        <item>samsung_calendar_4</item>
-        <item>samsung_calendar_5</item>
-        <item>samsung_calendar_6</item>
-        <item>samsung_calendar_7</item>
-        <item>samsung_calendar_8</item>
-        <item>samsung_calendar_9</item>
-        <item>samsung_camera</item>
-        <item>samsung_clock</item>
-        <item>samsung_contacts</item>
-        <item>samsung_email</item>
-        <item>samsung_files</item>
-        <item>samsung_gallery</item>
-        <item>samsung_music</item>
         <item>samsung_pay</item>
-        <item>samsung_phone</item>
-        <item>samsung_settings</item>
-        <item>samsung_smart_manager</item>
-        <item>samsung_smemo</item>
-        <item>samsung_sms</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
-        <item>samsung_theme</item>
-        <item>samsung_video</item>
-        <item>samsung_voice</item>
     </string-array>
 
     <string-array name="icon_pack_sony" translatable="false">
-        <item>sony_album</item>
         <item>sony_ar_effect</item>
-        <item>sony_audio_recorder</item>
-        <item>sony_background_defocus</item>
-        <item>sony_backup</item>
-        <item>sony_browser</item>
-        <item>sony_calculator</item>
         <item>sony_calendar</item>
-        <item>sony_camera</item>
-        <item>sony_clock</item>
-        <item>sony_contacts</item>
-        <item>sony_email</item>
         <item>sony_lifelog</item>
+        <item>sony_motionshot</item>
         <item>sony_movies</item>
-        <item>sony_movie_creator</item>
         <item>sony_music</item>
-        <item>sony_notes</item>
-        <item>sony_phone</item>
+        <item>sony_news_suite</item>
         <item>sony_play_memories_mobile</item>
-        <item>sony_radio</item>
-        <item>sony_settings</item>
-        <item>sony_sketch</item>
-        <item>sony_smart_connect</item>
-        <item>sony_sms</item>
         <item>sony_support</item>
-        <item>sony_themes</item>
-        <item>sony_trackid</item>
-        <item>sony_video</item>
+        <item>sony_video_tv_slideview</item>
         <item>sony_weather</item>
-        <item>sony_whatsnew</item>
     </string-array>
 
     <string-array name="icon_pack_tencent" translatable="false">
+        <item>tencent_anime_comic</item>
+        <item>tencent_app_market</item>
         <item>tencent_file_manager</item>
         <item>tencent_lightalk</item>
         <item>tencent_map</item>
@@ -518,6 +420,7 @@
         <item>tencent_qq_music_alt</item>
         <item>tencent_qq_music_local_player</item>
         <item>tencent_qq_player</item>
+        <item>tencent_qq_reader</item>
         <item>tencent_qq_secure</item>
         <item>tencent_qzone</item>
         <item>tencent_video</item>
@@ -531,20 +434,6 @@
     </string-array>
 
     <string-array name="icon_pack_miui" translatable="false">
-        <item>miui_account</item>
-        <item>miui_authenticator</item>
-        <item>miui_bug_report</item>
-        <item>miui_compass</item>
-        <item>miui_fm_radio</item>
-        <item>miui_forum</item>
-        <item>miui_gallery</item>
-        <item>miui_music</item>
-        <item>miui_notes</item>
-        <item>miui_scanner</item>
-        <item>miui_security</item>
-        <item>miui_transfer</item>
-        <item>miui_video</item>
-        <item>miui_weather</item>
     </string-array>
 
     <string-array name="icon_pack_flyme" translatable="false">
@@ -629,19 +518,13 @@
         <item>a360_liuliang</item>
         <item>a360_super_root</item>
         <item>a3dmark</item>
-        <item>a500px</item>
         <item>a51offer</item>
         <item>a5sing</item>
         <item>a94_percent</item>
         <item>**A**</item>
         <item>abcchina_bank</item>
-        <item>accuweather</item>
-        <item>accuweather_plus</item>
-        <item>acdisplay</item>
         <item>acfun</item>
         <item>acfun_alt</item>
-        <item>action_launcher</item>
-        <item>adaway</item>
         <item>adobe_acrobat</item>
         <item>adobe_air</item>
         <item>adobe_brush</item>
@@ -658,45 +541,41 @@
         <item>adobe_premiere_clip</item>
         <item>adobe_shape</item>
         <item>adobe_sign_manager</item>
-        <item>advanced_download_manager</item>
-        <item>adwex_launcher</item>
-        <item>adw_launcher</item>
+        <item>adsafe</item>
         <item>aibizhi</item>
-        <item>airbnb</item>
-        <item>airdroid</item>
         <item>airfrozen</item>
         <item>aisen</item>
+        <item>alibaba</item>
         <item>alipay</item>
         <item>alipay_alt</item>
+        <item>aliyun</item>
         <item>ali_antfortune</item>
         <item>ali_cainiao_guoguo</item>
         <item>ali_dingding</item>
+        <item>ali_jiankang</item>
         <item>ali_koubei_waimai</item>
         <item>ali_koubei_waimai_alt</item>
         <item>ali_miaojie</item>
+        <item>ali_newjob</item>
         <item>ali_qua</item>
         <item>ali_taobao</item>
         <item>ali_taobao_dianying</item>
         <item>ali_taobao_nongcun</item>
         <item>ali_tmall</item>
         <item>ali_tmall_alt</item>
+        <item>ali_tv_helper</item>
         <item>ali_wangxin</item>
         <item>ali_wangxin_alt</item>
         <item>ali_xianyu</item>
         <item>ali_xiaohao</item>
-        <item>allcast</item>
+        <item>ali_zhineng</item>
         <item>almalence_camera</item>
         <item>amap</item>
-        <item>amazon</item>
-        <item>amplify</item>
         <item>android_nify</item>
-        <item>android_pay</item>
         <item>anime_taste</item>
-        <item>antutu</item>
         <item>anydo</item>
         <item>anydo_calendar</item>
         <item>anyview</item>
-        <item>apex_launcher</item>
         <item>apkpure</item>
         <item>appenv</item>
         <item>apple_music</item>
@@ -704,144 +583,135 @@
         <item>app_drawer</item>
         <item>app_drawer_alt</item>
         <item>app_settings</item>
-        <item>asus_remote_link</item>
-        <item>atom_launcher</item>
-        <item>audiofx</item>
-        <item>autodesk_pixlr</item>
-        <item>autodesk_sketchbook</item>
+        <item>atom_vpn</item>
         <item>autohome</item>
-        <item>automate</item>
-        <item>aviate_launcher</item>
         <item>**B**</item>
         <item>b612</item>
-        <item>backdrops</item>
         <item>baicizhan</item>
         <item>baidu</item>
+        <item>baidu_appsearch</item>
+        <item>baidu_browser</item>
+        <item>baidu_chuanke</item>
         <item>baidu_hi</item>
+        <item>baidu_homework</item>
+        <item>baidu_iknow</item>
+        <item>baidu_imgae</item>
+        <item>baidu_imgae_alt</item>
         <item>baidu_keyboard</item>
         <item>baidu_maps</item>
+        <item>baidu_navigate</item>
         <item>baidu_nuomi</item>
         <item>baidu_pan</item>
+        <item>baidu_patient</item>
+        <item>baidu_security_center</item>
+        <item>baidu_simeji_keyboard</item>
         <item>baidu_tieba</item>
+        <item>baidu_translate</item>
+        <item>baidu_travel</item>
         <item>baidu_waimai</item>
         <item>baidu_wallet</item>
+        <item>baidu_wear</item>
+        <item>baidu_wenku</item>
+        <item>baidu_yuedu</item>
         <item>baixingwang</item>
         <item>bamboo_paper</item>
         <item>banciyuan</item>
         <item>bank_of_china</item>
         <item>bank_of_communications</item>
-        <item>barcode_scanner</item>
         <item>battery_taskmaster</item>
-        <item>battery_widget_reborn</item>
-        <item>bbc_news</item>
-        <item>behance</item>
+        <item>battlefield_companion</item>
         <item>beiyue</item>
+        <item>biaozhunribenyu</item>
         <item>bilibili</item>
         <item>bilibili_alt</item>
         <item>bilibili_live</item>
         <item>bittorrent_sync</item>
         <item>blacklight</item>
+        <item>blizzard_authenticator</item>
         <item>block_launcher_pro</item>
         <item>blued</item>
-        <item>bluenote</item>
         <item>boomerang</item>
+        <item>boost_plus</item>
         <item>bootmanager</item>
         <item>bootmanager_alt</item>
         <item>boxer</item>
+        <item>brevent</item>
         <item>browser</item>
         <item>budingdonghua</item>
         <item>bughd</item>
         <item>bukamanhua</item>
         <item>burgerking</item>
-        <item>busybox</item>
         <item>butter_camera</item>
-        <item>buzz_launcher</item>
+        <item>bu_bei_lang_easy_lexis</item>
         <item>**C**</item>
-        <item>cabinet</item>
         <item>calculator</item>
         <item>calc_plus</item>
+        <item>call_vibrator</item>
         <item>camera</item>
-        <item>camera360</item>
-        <item>camera_fv_5</item>
-        <item>camscanner</item>
         <item>careland</item>
         <item>ccb_bank</item>
+        <item>ccleaner</item>
         <item>changba</item>
         <item>chaojikechengbiao</item>
+        <item>chaojishipin</item>
+        <item>chaojishipin_alt</item>
         <item>chelaile</item>
-        <item>chromer</item>
-        <item>chronus</item>
         <item>chufaba</item>
         <item>cib_bank</item>
-        <item>cinnamon</item>
-        <item>cleanmaster</item>
+        <item>cilikanpian</item>
         <item>clock</item>
-        <item>cloudmagic</item>
         <item>cloud_vpn</item>
-        <item>cmbchina</item>
         <item>cmbc_bank</item>
         <item>cmcc_wifi</item>
-        <item>cm_browser</item>
         <item>cntv</item>
-        <item>complete_action_plus</item>
-        <item>contacts</item>
-        <item>cookbook</item>
         <item>coolapk</item>
         <item>coolapk_alt</item>
         <item>coolapk_alt_2</item>
-        <item>coolify</item>
+        <item>coolapk_daily_picture</item>
+        <item>copas</item>
         <item>couplete</item>
-        <item>cpu_z</item>
-        <item>crossyroad</item>
         <item>ctrip</item>
         <item>ctrip_alt</item>
         <item>ct_client</item>
         <item>current_activity</item>
         <item>custom_share</item>
         <item>cyanogenmod_camera</item>
-        <item>cyanogenmod_screencast</item>
         <item>**D**</item>
         <item>dailycost</item>
         <item>dandu</item>
         <item>dangdang</item>
         <item>dangle</item>
-        <item>darker</item>
         <item>daxianggonghui</item>
         <item>dayima</item>
         <item>days_matter</item>
         <item>ddcat</item>
         <item>dealmoon</item>
-        <item>deviantart</item>
         <item>dgtle</item>
         <item>dialer</item>
         <item>dianping</item>
         <item>dice</item>
         <item>didaqingdan</item>
         <item>didi</item>
-        <item>digg</item>
         <item>dingxiangyisheng</item>
         <item>ditietong</item>
-        <item>documents</item>
-        <item>doggcatcher</item>
-        <item>dolphin_browser</item>
         <item>domino_pizza</item>
         <item>domino_pizza_alt</item>
         <item>dongdong</item>
+        <item>dongmanzhijia</item>
         <item>dongqiudi</item>
         <item>douban</item>
         <item>douban_fm</item>
+        <item>douban_movie</item>
         <item>douban_read</item>
         <item>douguomeishi</item>
         <item>doutushenqi</item>
         <item>douyu</item>
         <item>download</item>
         <item>dreamdays</item>
-        <item>dropbox</item>
         <item>duckduckgo</item>
         <item>duduribao</item>
         <item>duitang</item>
         <item>duokan</item>
-        <item>duolingo</item>
         <item>**E**</item>
         <item>echo</item>
         <item>ecitic_bank</item>
@@ -855,10 +725,9 @@
         <item>evernote</item>
         <item>evernote_alt</item>
         <item>evernote_alt_2</item>
-        <item>ex_kernel_manager</item>
+        <item>every_wiki</item>
         <item>**F**</item>
         <item>facebook</item>
-        <item>facebook_messenger</item>
         <item>fancy</item>
         <item>fangdai_calculator</item>
         <item>fanliwang</item>
@@ -868,13 +737,13 @@
         <item>fenqile</item>
         <item>fetion</item>
         <item>fifth_third_bank</item>
-        <item>file_commander</item>
+        <item>firefox</item>
+        <item>firefox_beta</item>
         <item>fitbit</item>
         <item>fit_time</item>
         <item>flat_style_bar_indicators</item>
         <item>flat_style_colored_bars</item>
         <item>flickr</item>
-        <item>flipboard</item>
         <item>floatify</item>
         <item>flow_bank</item>
         <item>flyme_account</item>
@@ -942,15 +811,14 @@
         <item>flyme_voice_assistant</item>
         <item>flyme_wallet</item>
         <item>flyme_weather</item>
-        <item>fmradio</item>
         <item>foodie</item>
         <item>forest</item>
-        <item>fotor</item>
-        <item>franco_kernel</item>
         <item>fulimanman</item>
         <item>**G**</item>
         <item>gallery</item>
         <item>gamecores</item>
+        <item>game_altos_adventure</item>
+        <item>game_bob_qiuqiudazuozhan</item>
         <item>game_clash_of_clans</item>
         <item>game_clash_royale</item>
         <item>game_dots_and_co</item>
@@ -958,7 +826,10 @@
         <item>game_heartstone</item>
         <item>game_maestria</item>
         <item>game_mekorama</item>
+        <item>game_netease_onmyoji</item>
         <item>game_prune</item>
+        <item>game_snake</item>
+        <item>game_tencent_hlddz</item>
         <item>game_tencent_xiangqi</item>
         <item>game_the_last_banacat</item>
         <item>game_vainglory</item>
@@ -972,9 +843,8 @@
         <item>globalcash</item>
         <item>golden_dict</item>
         <item>google</item>
-        <item>google_androidify</item>
+        <item>google_allo</item>
         <item>google_arts</item>
-        <item>google_authenticator</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
         <item>google_calendar_10</item>
@@ -1012,39 +882,34 @@
         <item>google_chrome_beta</item>
         <item>google_chrome_dev</item>
         <item>google_chromium</item>
-        <item>google_device_manager</item>
+        <item>google_device_policy</item>
         <item>google_docs</item>
         <item>google_drive</item>
-        <item>google_earth</item>
-        <item>google_goggles</item>
-        <item>google_hangout</item>
-        <item>google_inbox</item>
+        <item>google_duo</item>
         <item>google_io</item>
-        <item>google_keep</item>
         <item>google_keyboard</item>
-        <item>google_maps</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
+        <item>google_messenger_alt_2</item>
         <item>google_now_enabler</item>
-        <item>google_now_launcher</item>
-        <item>google_opinion_rewards</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
         <item>google_play_music</item>
         <item>google_play_newsstand</item>
+        <item>google_play_service</item>
         <item>google_play_store</item>
         <item>google_plus</item>
         <item>google_sheets</item>
         <item>google_slides</item>
         <item>google_snapseed</item>
+        <item>google_spotlight_stories</item>
         <item>google_translate</item>
         <item>google_voice_search</item>
         <item>google_youtube</item>
-        <item>go_launcher</item>
+        <item>google_youtube_music</item>
         <item>gravity_box</item>
-        <item>gravity_screen</item>
         <item>greenify</item>
         <item>green_vpn</item>
         <item>guaguamanhua</item>
@@ -1058,34 +923,17 @@
         <item>haici_dict</item>
         <item>handle_external_storage</item>
         <item>hanglvzongheng</item>
+        <item>hangout_dialer</item>
+        <item>himail</item>
         <item>hiwifi</item>
-        <item>holo_launcher</item>
+        <item>hj_word_games</item>
         <item>houzz</item>
-        <item>htc_backup</item>
-        <item>htc_browser</item>
-        <item>htc_calculator</item>
-        <item>htc_calendar</item>
-        <item>htc_camera</item>
         <item>htc_car</item>
-        <item>htc_clock</item>
-        <item>htc_contacts</item>
-        <item>htc_dot_view</item>
-        <item>htc_email</item>
-        <item>htc_files</item>
-        <item>htc_gallery</item>
-        <item>htc_messages</item>
-        <item>htc_music</item>
         <item>htc_phone</item>
-        <item>htc_radio</item>
-        <item>htc_recorder</item>
         <item>htc_scribble</item>
-        <item>htc_settings</item>
-        <item>htc_stock</item>
-        <item>htc_tasks</item>
-        <item>htc_weather</item>
         <item>huaxia_bank</item>
         <item>huaxiong</item>
-        <item>hupo_weather</item>
+        <item>huluxia_gametools</item>
         <item>huputiyu</item>
         <item>huya</item>
         <item>hydrogen_wallpager</item>
@@ -1100,20 +948,17 @@
         <item>ifont</item>
         <item>ifttt</item>
         <item>ikea</item>
-        <item>imagine</item>
-        <item>imdb</item>
+        <item>ilike_cartoon</item>
         <item>imooc</item>
-        <item>ingress</item>
-        <item>inspire_launcher</item>
         <item>instagram</item>
         <item>instagram_alt</item>
-        <item>instapaper</item>
-        <item>iqiyi</item>
+        <item>ireader</item>
         <item>it_home</item>
         <item>**J**</item>
         <item>jd</item>
         <item>jd_jinrong</item>
         <item>jd_wallet</item>
+        <item>jiakaobaodian</item>
         <item>jianjie_calendar</item>
         <item>jianshu</item>
         <item>jiemian_news</item>
@@ -1131,13 +976,14 @@
         <item>kechenggezi</item>
         <item>keep_health</item>
         <item>kejimeixue</item>
-        <item>kernel_adiutor</item>
+        <item>keke_english</item>
         <item>kfc</item>
         <item>kindle</item>
         <item>kingmaster</item>
         <item>kingroot</item>
         <item>kitchen_stories</item>
-        <item>kk_launcher</item>
+        <item>kmplayer</item>
+        <item>kmplayer_pro</item>
         <item>koudaijizhang</item>
         <item>kuaikan_comic</item>
         <item>kuaikuaicha_xinhuazidian</item>
@@ -1147,53 +993,15 @@
         <item>**L**</item>
         <item>lanrenzhoumo</item>
         <item>lantern</item>
-        <item>lastpass</item>
         <item>lavaradio</item>
-        <item>layers_manager</item>
         <item>layout</item>
         <item>lbe</item>
         <item>ledongli</item>
         <item>ledongli_run</item>
-        <item>lenovo_calculator</item>
-        <item>lenovo_file_browser</item>
-        <item>lenovo_music</item>
-        <item>lenovo_radio</item>
-        <item>lenovo_security</item>
-        <item>lenovo_shareit</item>
-        <item>lenovo_syncit</item>
+        <item>lenovo_calendar</item>
+        <item>lenovo_gt_browser</item>
         <item>letv</item>
         <item>letv_sport</item>
-        <item>lg_backup</item>
-        <item>lg_browser</item>
-        <item>lg_calculator</item>
-        <item>lg_calendar</item>
-        <item>lg_camera</item>
-        <item>lg_clock</item>
-        <item>lg_contacts</item>
-        <item>lg_downloads</item>
-        <item>lg_email</item>
-        <item>lg_files</item>
-        <item>lg_gallery</item>
-        <item>lg_health</item>
-        <item>lg_messages</item>
-        <item>lg_music</item>
-        <item>lg_notebook</item>
-        <item>lg_phone</item>
-        <item>lg_quickmemo</item>
-        <item>lg_quick_remote</item>
-        <item>lg_radio</item>
-        <item>lg_remote_call_service</item>
-        <item>lg_settings</item>
-        <item>lg_smartworld</item>
-        <item>lg_tasks</item>
-        <item>lg_task_manager</item>
-        <item>lg_update_center</item>
-        <item>lg_video</item>
-        <item>lg_video_editor</item>
-        <item>lg_voice_mate</item>
-        <item>lg_voice_recorder</item>
-        <item>lg_weather</item>
-        <item>lightning_browser</item>
         <item>lightning_wall</item>
         <item>line</item>
         <item>line_at</item>
@@ -1202,23 +1010,20 @@
         <item>line_dict</item>
         <item>lingshengduoduo</item>
         <item>lingxi</item>
-        <item>link_bubble</item>
         <item>lizhi_fm</item>
         <item>lol</item>
         <item>love_best_wallpapers</item>
-        <item>lucid_launcher</item>
         <item>luckymoney</item>
-        <item>lucky_patcher</item>
         <item>luyinbao</item>
         <item>lvmamalvyou</item>
         <item>**M**</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
         <item>max_plus</item>
+        <item>mbalib_wiki</item>
         <item>mcdonald</item>
         <item>mctools</item>
         <item>media_converter</item>
-        <item>medium</item>
         <item>mega</item>
         <item>meiriyiwen</item>
         <item>meiriyujia</item>
@@ -1228,79 +1033,67 @@
         <item>meiyanxiangji</item>
         <item>mengniangbaike</item>
         <item>messaging</item>
-        <item>microsoft_account</item>
-        <item>microsoft_arrow_launcher</item>
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_keyboard</item>
+        <item>microsoft_bing_search</item>
         <item>microsoft_cortana</item>
+        <item>microsoft_groove_music</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
-        <item>microsoft_office_mobile</item>
         <item>microsoft_office_onenote</item>
         <item>microsoft_office_outlook</item>
         <item>microsoft_office_powerpoint</item>
+        <item>microsoft_office_remote</item>
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
+        <item>microsoft_remote_desktop</item>
         <item>microsoft_translator</item>
-        <item>minecraft</item>
+        <item>microsoft_xbox</item>
+        <item>microsoft_xbox_alt</item>
+        <item>microsoft_xbox_beta</item>
+        <item>microsoft_xbox_beta_alt</item>
         <item>minecraft_toolbox</item>
         <item>minminguard</item>
         <item>misfit</item>
-        <item>miui_account</item>
-        <item>miui_authenticator</item>
-        <item>miui_bug_report</item>
-        <item>miui_compass</item>
-        <item>miui_fm_radio</item>
-        <item>miui_forum</item>
-        <item>miui_gallery</item>
-        <item>miui_music</item>
-        <item>miui_notes</item>
-        <item>miui_scanner</item>
-        <item>miui_security</item>
-        <item>miui_transfer</item>
-        <item>miui_video</item>
-        <item>miui_weather</item>
         <item>miwifi</item>
-        <item>mi_fit</item>
         <item>mi_remote</item>
         <item>moji_weather</item>
         <item>mokee_aegis</item>
         <item>momo</item>
         <item>momobeidanci</item>
         <item>mono</item>
-        <item>monument_valley</item>
         <item>moonreader</item>
         <item>moonreader_pro</item>
         <item>moon_phase</item>
         <item>mora</item>
-        <item>moto_alert</item>
-        <item>moto_assist</item>
         <item>moto_body</item>
-        <item>moto_camera</item>
         <item>moto_connect</item>
-        <item>moto_gallery</item>
-        <item>moto_help</item>
-        <item>moto_message</item>
-        <item>moto_migrate</item>
-        <item>moto_moto</item>
-        <item>moto_radio</item>
-        <item>moto_updater</item>
+        <item>mt_filemanager</item>
         <item>music</item>
-        <item>muzei</item>
         <item>mxplayer</item>
         <item>myandroidtools</item>
         <item>myandroidtools_xposed</item>
-        <item>myboy_gba</item>
         <item>myscript_calculator</item>
         <item>**N**</item>
+        <item>netease_cartoon_reader</item>
         <item>netease_cloudclass</item>
         <item>netease_cloudclass_alt</item>
+        <item>netease_epay</item>
+        <item>netease_epay_alt</item>
+        <item>netease_finance</item>
+        <item>netease_finance_alt</item>
+        <item>netease_gacha</item>
+        <item>netease_game_forums</item>
         <item>netease_huochepiao</item>
+        <item>netease_kaola</item>
         <item>netease_lofter</item>
+        <item>netease_mail_box</item>
+        <item>netease_mkey</item>
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
         <item>netease_open_class</item>
+        <item>netease_pris</item>
         <item>netease_super_calculator</item>
         <item>netease_yanxuan</item>
         <item>netease_yixin</item>
@@ -1309,30 +1102,71 @@
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
         <item>netease_youxiangdashi</item>
-        <item>next_launcher</item>
+        <item>nfc_emulator</item>
+        <item>nfc_emulator_alt</item>
+        <item>nga_player_community</item>
         <item>nice</item>
         <item>nissan</item>
         <item>noisyfox</item>
         <item>notify_clean</item>
-        <item>nova_launcher</item>
         <item>**O**</item>
+        <item>office_suite</item>
         <item>olo</item>
         <item>olympus_image_share</item>
         <item>one</item>
         <item>onefootball</item>
+        <item>onepluse_calendar</item>
+        <item>onepluse_calendar_1</item>
+        <item>onepluse_calendar_10</item>
+        <item>onepluse_calendar_11</item>
+        <item>onepluse_calendar_12</item>
+        <item>onepluse_calendar_13</item>
+        <item>onepluse_calendar_14</item>
+        <item>onepluse_calendar_15</item>
+        <item>onepluse_calendar_16</item>
+        <item>onepluse_calendar_17</item>
+        <item>onepluse_calendar_18</item>
+        <item>onepluse_calendar_19</item>
+        <item>onepluse_calendar_2</item>
+        <item>onepluse_calendar_20</item>
+        <item>onepluse_calendar_21</item>
+        <item>onepluse_calendar_22</item>
+        <item>onepluse_calendar_23</item>
+        <item>onepluse_calendar_24</item>
+        <item>onepluse_calendar_25</item>
+        <item>onepluse_calendar_26</item>
+        <item>onepluse_calendar_27</item>
+        <item>onepluse_calendar_28</item>
+        <item>onepluse_calendar_29</item>
+        <item>onepluse_calendar_3</item>
+        <item>onepluse_calendar_30</item>
+        <item>onepluse_calendar_31</item>
+        <item>onepluse_calendar_4</item>
+        <item>onepluse_calendar_5</item>
+        <item>onepluse_calendar_6</item>
+        <item>onepluse_calendar_7</item>
+        <item>onepluse_calendar_8</item>
+        <item>onepluse_calendar_9</item>
+        <item>oneplus_calculator</item>
+        <item>oneplus_calculator_alt</item>
         <item>oneplus_camera_oxygen</item>
         <item>oneplus_community</item>
+        <item>oneplus_deskclock</item>
+        <item>oneplus_filemanager</item>
+        <item>oneplus_gallery</item>
+        <item>oneplus_market</item>
+        <item>oneplus_note</item>
+        <item>oneplus_soundrecorder</item>
         <item>oneplus_weather</item>
         <item>oneplus_weather_cloudy</item>
         <item>oneplus_weather_cloudy_dark</item>
         <item>oneplus_weather_sunny</item>
         <item>ookla_speedtest</item>
+        <item>open_vpn</item>
         <item>**P**</item>
         <item>panda_tv</item>
         <item>path</item>
-        <item>paypal</item>
         <item>pebble</item>
-        <item>peel_smart_remote</item>
         <item>pengpai_news</item>
         <item>perfect_color_bar</item>
         <item>perfmon</item>
@@ -1342,27 +1176,24 @@
         <item>piaofanzi</item>
         <item>picooc</item>
         <item>pinglide</item>
+        <item>pinterest</item>
         <item>pixiv</item>
-        <item>pixolor</item>
         <item>pizzahut</item>
         <item>playstation</item>
-        <item>pocket</item>
         <item>pocket_casts</item>
+        <item>poem</item>
         <item>pokemon_go</item>
         <item>pokemon_go_alt</item>
         <item>polaris_office</item>
         <item>polarr</item>
         <item>pomotodo</item>
         <item>pornhub</item>
-        <item>poweramp</item>
         <item>powertoggle</item>
-        <item>power_clean</item>
         <item>ppiicc</item>
         <item>pptv</item>
         <item>pp_assistant</item>
         <item>press</item>
         <item>prisma</item>
-        <item>psiphon</item>
         <item>pure_weather</item>
         <item>**Q**</item>
         <item>qdaily</item>
@@ -1372,7 +1203,6 @@
         <item>quanneng_toolbox</item>
         <item>qufenqi</item>
         <item>quickpic</item>
-        <item>quickshortcutmaker</item>
         <item>qunar</item>
         <item>qunidaye_browser</item>
         <item>quora</item>
@@ -1381,68 +1211,17 @@
         <item>renrenmeiju</item>
         <item>ringtone_maker</item>
         <item>root_explorer</item>
-        <item>ruler</item>
         <item>**S**</item>
         <item>same</item>
-        <item>samsung_apps</item>
-        <item>samsung_browser</item>
-        <item>samsung_calculator</item>
-        <item>samsung_calendar</item>
-        <item>samsung_calendar_1</item>
-        <item>samsung_calendar_10</item>
-        <item>samsung_calendar_11</item>
-        <item>samsung_calendar_12</item>
-        <item>samsung_calendar_13</item>
-        <item>samsung_calendar_14</item>
-        <item>samsung_calendar_15</item>
-        <item>samsung_calendar_16</item>
-        <item>samsung_calendar_17</item>
-        <item>samsung_calendar_18</item>
-        <item>samsung_calendar_19</item>
-        <item>samsung_calendar_2</item>
-        <item>samsung_calendar_20</item>
-        <item>samsung_calendar_21</item>
-        <item>samsung_calendar_22</item>
-        <item>samsung_calendar_23</item>
-        <item>samsung_calendar_24</item>
-        <item>samsung_calendar_25</item>
-        <item>samsung_calendar_26</item>
-        <item>samsung_calendar_27</item>
-        <item>samsung_calendar_28</item>
-        <item>samsung_calendar_29</item>
-        <item>samsung_calendar_3</item>
-        <item>samsung_calendar_30</item>
-        <item>samsung_calendar_31</item>
-        <item>samsung_calendar_4</item>
-        <item>samsung_calendar_5</item>
-        <item>samsung_calendar_6</item>
-        <item>samsung_calendar_7</item>
-        <item>samsung_calendar_8</item>
-        <item>samsung_calendar_9</item>
-        <item>samsung_camera</item>
-        <item>samsung_clock</item>
-        <item>samsung_contacts</item>
-        <item>samsung_email</item>
-        <item>samsung_files</item>
-        <item>samsung_gallery</item>
-        <item>samsung_music</item>
         <item>samsung_pay</item>
-        <item>samsung_phone</item>
-        <item>samsung_settings</item>
-        <item>samsung_smart_manager</item>
-        <item>samsung_smemo</item>
-        <item>samsung_sms</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
-        <item>samsung_theme</item>
-        <item>samsung_video</item>
-        <item>samsung_voice</item>
         <item>sanguliupo</item>
         <item>scanbot</item>
         <item>scientific_calculator</item>
-        <item>screen_recorder</item>
-        <item>sd_maid</item>
+        <item>screen_mask</item>
         <item>seed</item>
+        <item>settings</item>
         <item>settings_editor</item>
         <item>sfly</item>
         <item>shadowsocks</item>
@@ -1454,52 +1233,27 @@
         <item>shouxin_keyboard</item>
         <item>shuqi</item>
         <item>shuqi_alt</item>
-        <item>sim</item>
-        <item>simplenote</item>
-        <item>skitch</item>
         <item>skype</item>
         <item>smartisan_note</item>
         <item>smartisan_reader</item>
-        <item>smart_launcher</item>
         <item>smooth</item>
         <item>smooth_alt</item>
         <item>smzdm</item>
         <item>snapchat</item>
         <item>snaptube</item>
+        <item>snap_vpn</item>
         <item>sogou_chat</item>
-        <item>sohu_video</item>
-        <item>solid_explorer</item>
-        <item>solo_launcher</item>
-        <item>sony_album</item>
         <item>sony_ar_effect</item>
-        <item>sony_audio_recorder</item>
-        <item>sony_background_defocus</item>
-        <item>sony_backup</item>
-        <item>sony_browser</item>
-        <item>sony_calculator</item>
         <item>sony_calendar</item>
-        <item>sony_camera</item>
-        <item>sony_clock</item>
-        <item>sony_contacts</item>
-        <item>sony_email</item>
         <item>sony_lifelog</item>
+        <item>sony_motionshot</item>
         <item>sony_movies</item>
-        <item>sony_movie_creator</item>
         <item>sony_music</item>
-        <item>sony_notes</item>
-        <item>sony_phone</item>
+        <item>sony_news_suite</item>
         <item>sony_play_memories_mobile</item>
-        <item>sony_radio</item>
-        <item>sony_settings</item>
-        <item>sony_sketch</item>
-        <item>sony_smart_connect</item>
-        <item>sony_sms</item>
         <item>sony_support</item>
-        <item>sony_themes</item>
-        <item>sony_trackid</item>
-        <item>sony_video</item>
+        <item>sony_video_tv_slideview</item>
         <item>sony_weather</item>
-        <item>sony_whatsnew</item>
         <item>sorcery_icons</item>
         <item>sougou_keyboard</item>
         <item>sougou_wallpaper</item>
@@ -1508,10 +1262,12 @@
         <item>spoon</item>
         <item>spotify</item>
         <item>sspai</item>
+        <item>sspai_daikejietu</item>
         <item>starbucks</item>
+        <item>start_chart</item>
+        <item>start_chart_education</item>
         <item>star_walk_2</item>
         <item>steam</item>
-        <item>stocard</item>
         <item>suibiji</item>
         <item>suishouji</item>
         <item>suning</item>
@@ -1548,16 +1304,15 @@
         <item>sunrise_7</item>
         <item>sunrise_8</item>
         <item>sunrise_9</item>
-        <item>supersu</item>
         <item>swiftkey_keyboard</item>
         <item>**T**</item>
         <item>t66y</item>
-        <item>tapet</item>
         <item>taptap</item>
-        <item>tasker</item>
         <item>taskman</item>
         <item>ted</item>
         <item>telegram</item>
+        <item>tencent_anime_comic</item>
+        <item>tencent_app_market</item>
         <item>tencent_file_manager</item>
         <item>tencent_lightalk</item>
         <item>tencent_map</item>
@@ -1577,6 +1332,7 @@
         <item>tencent_qq_music_alt</item>
         <item>tencent_qq_music_local_player</item>
         <item>tencent_qq_player</item>
+        <item>tencent_qq_reader</item>
         <item>tencent_qq_secure</item>
         <item>tencent_qzone</item>
         <item>tencent_video</item>
@@ -1588,25 +1344,22 @@
         <item>tencent_weread</item>
         <item>tencent_wesync</item>
         <item>terminal</item>
-        <item>terminal_emulator</item>
-        <item>texpand</item>
         <item>theinitium</item>
         <item>tianshidongman</item>
         <item>tianyashequ</item>
         <item>ticktick</item>
+        <item>tieba_zhushou</item>
         <item>timi</item>
-        <item>titanium_backup</item>
         <item>tonghuashun</item>
         <item>touchpal_keyboard</item>
         <item>toughwo</item>
         <item>tp_link</item>
-        <item>tsf_launcher</item>
+        <item>ttbook</item>
         <item>ttpod</item>
         <item>tuchong</item>
         <item>tudou</item>
         <item>tuiku</item>
         <item>tujiedianying</item>
-        <item>tumblr</item>
         <item>twitter</item>
         <item>txvpn</item>
         <item>**U**</item>
@@ -1626,10 +1379,9 @@
         <item>**V**</item>
         <item>v2ex</item>
         <item>versus</item>
-        <item>via_browser</item>
         <item>vine</item>
         <item>vine_alt</item>
-        <item>viper4android</item>
+        <item>viper_fx</item>
         <item>vipshop</item>
         <item>vlc</item>
         <item>vsco</item>
@@ -1647,19 +1399,25 @@
         <item>wannengyingshi</item>
         <item>weather_timeline</item>
         <item>wechatui</item>
+        <item>wechat_trace</item>
         <item>weibo</item>
         <item>weico</item>
         <item>welike</item>
         <item>welove</item>
+        <item>whatsapp_messenger</item>
         <item>wififenxiangxia</item>
         <item>wifi_key</item>
         <item>wifi_luyouguanjia</item>
+        <item>wikipedia</item>
+        <item>wikipedia_beta</item>
+        <item>wiki_for_minecraft</item>
         <item>wiz_note</item>
         <item>wolfram_alpha</item>
         <item>wps</item>
         <item>wuba</item>
         <item>wunderlist</item>
         <item>**X**</item>
+        <item>xcurrency</item>
         <item>xiachufang</item>
         <item>xiami</item>
         <item>xiami_alt</item>
@@ -1667,26 +1425,30 @@
         <item>xiaohongshu</item>
         <item>xiaokaxiu</item>
         <item>xiaomi_mijia</item>
+        <item>xiaomi_miui_calculator</item>
         <item>xiaomi_shop</item>
+        <item>xiaomi_wallet</item>
         <item>xiaowo_weather</item>
         <item>ximalayating</item>
-        <item>xinstaller</item>
+        <item>xinternalsd</item>
         <item>xposed</item>
-        <item>xprivacy</item>
+        <item>xqs_background</item>
+        <item>xqs_background_alt</item>
         <item>xuebajun</item>
         <item>xueqiu</item>
         <item>xunfei_keyboard</item>
         <item>xunlei</item>
         <item>xunlei_kuainiao</item>
         <item>**Y**</item>
-        <item>yahoo_weather</item>
         <item>yangqi</item>
         <item>yaokongjingling</item>
         <item>yidaoyongche</item>
         <item>yidianzixun</item>
         <item>yidong_gps</item>
         <item>yihaodian</item>
+        <item>yilan_matrix</item>
         <item>yixi</item>
+        <item>yoho_buy</item>
         <item>youku</item>
         <item>youku_alt</item>
         <item>youyaoqimanhua</item>
@@ -1700,13 +1462,13 @@
         <item>**Z**</item>
         <item>zaker</item>
         <item>zank</item>
-        <item>zarchiver</item>
         <item>zcamera</item>
         <item>zealer</item>
         <item>zedge</item>
         <item>zero</item>
         <item>zhangshangshenghuo</item>
         <item>zhangyu_keyboard</item>
+        <item>zhanqi_tv</item>
         <item>zhengdian_naozhong</item>
         <item>zhengdian_rili</item>
         <item>zhiboba</item>
@@ -1717,16 +1479,23 @@
         <item>zhixing</item>
         <item>zhixinghuochepiao</item>
         <item>zhiyeyishiwantiku</item>
+        <item>zhiyoo</item>
         <item>zhongguoyouzheng</item>
         <item>zhonghuawannianli</item>
         <item>zhuanxin</item>
         <item>zhuishushenqi</item>
+        <item>zhuishushenqi_beta</item>
         <item>zitiguanjia</item>
         <item>zol</item>
         <item>zuimeishiguang</item>
         <item>zuimeiyingyong</item>
         <item>zuimeizipai</item>
         <item>zuiworld</item>
+        <item>zuiyou</item>
+        <item>zuizuimanhua_comic_lover</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
+
+
 </resources>

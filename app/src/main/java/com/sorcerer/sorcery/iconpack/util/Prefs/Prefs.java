@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
  */
 
 public abstract class Prefs {
+
     private final SharedPreferences mPreferences;
 
     protected abstract String providePreferenceName();

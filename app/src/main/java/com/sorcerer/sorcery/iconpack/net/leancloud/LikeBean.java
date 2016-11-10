@@ -11,7 +11,7 @@ import com.avos.avoscloud.AVObject;
 
 @AVClassName(LikeBean.LIKE_TABLE)
 public class LikeBean extends AVObject {
-    static final String LIKE_TABLE = "LikeTableNew";
+    static final String LIKE_TABLE = "LikeTable";
     private static final String COLUMN_LIKE = "like";
     private static final String COLUMN_DEVICE_ID = "deviceId";
     private static final String COLUMN_BUILD = "build";

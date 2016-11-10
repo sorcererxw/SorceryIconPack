@@ -19,8 +19,8 @@ public class AVService {
         AVObject.registerSubclass(LikeBean.class);
 
         AVOSCloud.initialize(context,
-                ResourceUtil.getString(context, R.string.leancloud_app_id),
-                ResourceUtil.getString(context, R.string.leancloud_app_key)
+                "740H3GFA2IOWSuXPg5bJ8aLJ-gzGzoHsz",
+                "AHqwrdQPTp9HCXjDi65CID60"
         );
         AVAnalytics.enableCrashReport(context, true);
         AVOSCloud.useAVCloudCN();

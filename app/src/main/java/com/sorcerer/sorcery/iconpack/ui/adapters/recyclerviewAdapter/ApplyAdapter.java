@@ -115,7 +115,7 @@ public class ApplyAdapter
                 .load(mDataList.get(position).getIcon())
                 .into(holder.icon);
 
-        setViewMargin(holder.card, position, 2);
+        setViewMargin(holder.card, position, 2, holder);
 
         if (mDataList.get(position).isInstalled()) {
             holder.isInstalled.setText(mContext.getString(R.string.installed));

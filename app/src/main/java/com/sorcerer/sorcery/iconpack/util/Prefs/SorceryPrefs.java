@@ -10,13 +10,22 @@ import android.content.Context;
 
 public class SorceryPrefs extends Prefs {
 
+    private static SorceryPrefs mSorceryPrefs;
+
+    public static SorceryPrefs getInstance(Context context){
+        if(mSorceryPrefs==null){
+            mSorceryPrefs = new SorceryPrefs(context);
+        }
+        return mSorceryPrefs;
+    }
+
+    private SorceryPrefs(Context context){
+        super(context);
+    }
+
     @Override
     protected String providePreferenceName() {
         return "SorceryIcons";
-    }
-
-    public SorceryPrefs(Context context) {
-        super(context);
     }
 
     private SorceryPreference<Boolean> mDonated;

@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack.util;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.sorcerer.sorcery.iconpack.ui.activities.AboutDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.AppSelectActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
 
@@ -26,5 +27,9 @@ public class Navigator {
 
     public void toIconRequest() {
         mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
+    }
+
+    public void showAboutDialog() {
+        mActivity.startActivity(new Intent(mActivity, AboutDialogActivity.class));
     }
 }

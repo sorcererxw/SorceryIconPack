@@ -1,9 +1,11 @@
 package com.sorcerer.sorcery.iconpack.ui.adapters.base;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
 
 import java.util.List;
@@ -28,8 +30,9 @@ public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseVie
      * @param pos
      * @param times  one margin is 4dp * times
      */
-    protected void setViewMargin(View target, int pos, int times) {
-        ItemPosType type = calculateItemPosType(pos, mSpan, getItemCount());
+    protected void setViewMargin(View target, int pos,
+                                 int times, RecyclerView.ViewHolder viewHolder) {
+        ItemPosType type = calculateItemPosType(pos, mSpan, getItemCount(), viewHolder);
         ItemMargin itemMargin = getItemMargin(type);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -58,11 +61,23 @@ public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseVie
         int bottom;
     }
 
-    private enum ItemPosType {
-        ONE_COL_TOP, ONE_COL_MID, ONE_COL_BOTTOM,
-        ONE_ROW_LEFT, ONE_ROW_MID, ONE_ROW_RIGHT,
-        TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT,
-        EDGE_TOP, EDGE_BOTTOM, EDGE_LEFT, EDGE_RIGHT,
+    enum ItemPosType {
+        ONE_COL_TOP,
+        ONE_COL_MID,
+        ONE_COL_BOTTOM,
+
+        ONE_ROW_LEFT,
+        ONE_ROW_MID,
+        ONE_ROW_RIGHT,
+
+        TOP_LEFT,
+        TOP_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_RIGHT,
+        EDGE_TOP,
+        EDGE_BOTTOM,
+        EDGE_LEFT,
+        EDGE_RIGHT,
         CENTER
     }
 
@@ -108,7 +123,8 @@ public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseVie
         notifyDataSetChanged();
     }
 
-    protected ItemPosType calculateItemPosType(int pos, int span, int itemNum) {
+    protected ItemPosType calculateItemPosType(int pos, int span, int itemNum,
+                                               RecyclerView.ViewHolder viewHolder) {
         if (span == 1) {
             if (pos == 0) {
                 return ItemPosType.ONE_COL_TOP;

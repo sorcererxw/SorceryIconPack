@@ -14,7 +14,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerAdapter;
-import com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.base.StaggeredGridRecyclerAdapter;
 
 import java.util.Arrays;
 
@@ -25,7 +25,7 @@ import butterknife.BindView;
  * @author: Sorcerer
  * @date: 2016/3/8 0008
  */
-public class HelpAdapter extends GridRecyclerAdapter<HelpAdapter.ViewHolder, String> {
+public class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHolder, String> {
 
     public HelpAdapter(Context context, int span) {
         super(context,
@@ -55,7 +55,7 @@ public class HelpAdapter extends GridRecyclerAdapter<HelpAdapter.ViewHolder, Str
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext)
-                .inflate(R.layout.item_help, mHoldingRecyclerView, false));
+                .inflate(R.layout.item_help, parent, false));
     }
 
     @Override
@@ -63,9 +63,7 @@ public class HelpAdapter extends GridRecyclerAdapter<HelpAdapter.ViewHolder, Str
         holder.title.setText(getTitle(position));
         holder.content.setText(getContent(position));
 
-//        setViewMargin(holder.card, position, 2);
-        setViewMargin(holder.card, position, 2);
-
+        setViewMargin(holder.card, holder.getAdapterPosition(), 2, holder);
 
         holder.card.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -77,7 +75,7 @@ public class HelpAdapter extends GridRecyclerAdapter<HelpAdapter.ViewHolder, Str
                 builder.onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog,
-                            @NonNull DialogAction which) {
+                                        @NonNull DialogAction which) {
                         ClipboardManager clipboard = (ClipboardManager) mContext
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
                         ClipData clip =
