@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -13,18 +12,13 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.TextView;
 
-import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
-import com.sorcerer.sorcery.iconpack.ui.views.IconRecyclerView;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +30,6 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
-
-import static android.view.View.VISIBLE;
 
 /**
  * @description:
@@ -63,6 +55,7 @@ public class LazyIconFragment extends LazyFragment {
         TENCENT,
 //        MIUI,
         FLYME,
+        ONEPLUS
     }
 
     private List<IconBean> mIconBeanList;

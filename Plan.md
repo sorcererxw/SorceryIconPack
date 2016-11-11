@@ -12,11 +12,11 @@
     - [ ] Enable to select which icon to load
 - [ ] Better search bar
     - [ ] Chinese support
-    - [ ] Dialer-like Search transition
+    - [x] Dialer-like Search transition
         - [x] Search bar transition `2016-11-6`
         - [x] Response of search `2016-11-8`
-        - [ ] Better anim and tip in search
-- [ ] Settings page
+        - [x] Better anim and tip in search `2016-11-11`
+- [x] Settings page `2016-11-11`
 - [x] Card-like icon pages `2016-11-8`
 - [x] Waterfall-flow-layout in help list `2016-11-9`
 - [ ] Hot Fix support

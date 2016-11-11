@@ -17,7 +17,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter;
-import com.sorcerer.sorcery.iconpack.util.ImageUtil;
+import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 
 import java.util.Collections;
 import java.util.Comparator;

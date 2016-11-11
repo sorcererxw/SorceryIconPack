@@ -20,6 +20,9 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.sorcerer.sorcery.iconpack.tinker.app.BuildInfo;
+import com.sorcerer.sorcery.iconpack.tinker.crash.SampleUncaughtExceptionHandler;
+import com.sorcerer.sorcery.iconpack.tinker.util.Utils;
 import com.tencent.tinker.lib.listener.DefaultPatchListener;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.tinker.TinkerLoadResult;
@@ -30,10 +33,6 @@ import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
 
 import java.io.File;
 import java.util.Properties;
-
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.app.BuildInfo;
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.crash.SampleUncaughtExceptionHandler;
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.util.Utils;
 
 /**
  * Created by zhangshaowen on 16/4/30.
@@ -74,7 +73,8 @@ public class SamplePatchListener extends DefaultPatchListener {
             if (isUpgrade) {
                 returnCode = Utils.checkForPatchRecover(NEW_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);
             } else {
-                returnCode = Utils.checkForPatchRecover(OLD_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);
+                returnCode = Utils
+                        .checkForPatchRecover(OLD_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);
             }
         }
 

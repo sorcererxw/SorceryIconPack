@@ -4,8 +4,7 @@ import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.util.Log;
 
-import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 
 /**
  * @description:
@@ -125,7 +124,7 @@ public class LauncherInfo implements Comparable {
 //                mIcon = R.drawable.tsf_launcher;
                 break;
             case "Unicon":
-                mIcon = R.drawable.unicon;
+//                mIcon = R.drawable.unicon;
                 break;
             default:
                 Log.d(TAG, mLabel + ": no such launcher");

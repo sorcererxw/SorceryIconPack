@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
  * @description:

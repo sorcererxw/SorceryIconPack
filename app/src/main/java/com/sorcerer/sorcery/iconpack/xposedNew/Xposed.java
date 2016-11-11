@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.xposedNew;
 
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.content.res.XModuleResources;
 import android.util.TypedValue;
 
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
@@ -32,6 +33,8 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class Xposed
         implements IXposedHookZygoteInit, IXposedHookLoadPackage, IXposedHookInitPackageResources {
+    private final static String PACKAGE_NAME = "com.sorcerer.sorcery.iconpack";
+    private final static String PREF_NAME = "SIP_XPOSED";
     private XSharedPreferences mXSharedPref;
     private int mDisplayDpi;
     private List<String> mIconPackages = new ArrayList<>();
@@ -104,6 +107,11 @@ public class Xposed
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
+        mXSharedPref = new XSharedPreferences(PACKAGE_NAME, PREF_NAME);
+        mDisplayDpi = mXSharedPref.getInt("display_dpi", 320);
+        mThemePackage = "com.sorcerer.sorcery.iconpakc";
 
+
+        XModuleResources themeRes = XModuleResources.createInstance(mThemePackagePath, null);
     }
 }

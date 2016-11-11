@@ -9,13 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
 import java.lang.reflect.Field;
-
-import butterknife.ButterKnife;
 
 /**
  * @description:

@@ -10,7 +10,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,8 +21,8 @@ import com.avos.avoscloud.feedback.FeedbackThread;
 import com.bumptech.glide.Glide;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.PhotoViewActivity;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

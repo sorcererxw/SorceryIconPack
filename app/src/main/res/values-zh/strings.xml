@@ -45,6 +45,7 @@
         <item>腾讯</item>
         <!--<item>小米</item>-->
         <item>魅族</item>
+        <item>一加</item>
     </string-array>
     <string name="nav_item_apply">应用到启动器</string>
     <string name="nav_item_icon">图标</string>
@@ -79,17 +80,16 @@
     <string name="xposed_tag">
         全局加载Sorcery图标包, 勾选并去图标包设置里面打开</string>
     <string name="nav_item_lab">实验室</string>
-    <string name="global_detail">
-        #通过Xposed进行加载图标包以实现全局更换图标|#你需要先root您的设备并且在Xposed框架中勾选此应用
+    <string name="global_detail">通过Xposed进行加载图标包以实现全局更换图标|你需要先root您的设备并且在Xposed框架中勾选此应用
     </string>
 
     <string name="global_attention">
         说明:|
-        #1.应用之后需要重启设备以更换图标|
-        #2.请在所有手机后台管理应用中将这个应用纳入白名单|
-        #3.暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
-        #4.运行样本较少, 无法保证模块百分百运行正常|
-        #5.启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
+        #1. 应用之后需要重启设备以更换图标|
+        #2. 请在所有手机后台管理应用中将这个应用纳入白名单|
+        #3. 暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
+        #4. 运行样本较少, 无法保证模块百分百运行正常|
+        #5. 启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
     <string name="global_state_active">已开启</string>
     <string name="global_state_label">当前状态</string>
     <string name="global_state_not_active">尚未开启</string>
@@ -130,7 +130,7 @@
     <string name="fail_open_premium">无法开启付费模式</string>
     <string name="premium_send_dialog_mail_label">邮箱</string>
     <string name="premium_send_dialog_mail_hint">请留下您的邮箱(必填)</string>
-    <string name="premium_send_dialog_note_hint">捎句话...</string>
+    <string name="premium_send_dialog_note_hint">捎句话…</string>
     <string name="premium_send_dialog_note_label">备注</string>
     <string name="please_input_right_mail_address">请输入正确的邮箱地址</string>
     <string name="icon_label_added">**最近添加**</string>
@@ -164,4 +164,17 @@
     <string name="shortcuts_request_icon_short_label">申请图标</string>
     <string name="shortcuts_request_icon_long_label">申请图标</string>
     <string name="shortcuts_request_icon_disable_message">申请图标</string>
+    <string name="preference_about_app">应用信息</string>
+    <string name="preference_about_lib">许可</string>
+    <string name="preference_group_about">关于</string>
+    <string name="action_later">暂不</string>
+    <string name="action_know_what_doing">我知道我在干什么</string>
+    <string name="attention">警告</string>
+    <string name="search_hint_not_found">额…似乎没找到</string>
+    <string name="search_hint_only_letter">不好意思, 搜索暂时只支持英文和数字</string>
+    <string name="preference_group_general">常规</string>
+    <string name="preference_general_clear_cache">清除缓存</string>
+    <string name="preference_group_laboratory">实验室</string>
+    <string name="preference_laboratory_global_load">全局加载</string>
+    <string name="language">zh</string>
 </resources>

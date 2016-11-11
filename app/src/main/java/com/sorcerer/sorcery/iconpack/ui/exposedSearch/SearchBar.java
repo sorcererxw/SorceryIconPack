@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
@@ -49,7 +49,7 @@ public class SearchBar extends Toolbar {
 
         mEditText = new EditText(context);
         mEditText.setBackground(null);
-        mEditText.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+        mEditText.setImeOptions(EditorInfo.IME_ACTION_SEARCH | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         mEditText.setMaxLines(1);
         mEditText.setLayoutParams(new LayoutParams(MATCH_PARENT, MATCH_PARENT));
         mEditText.setGravity(Gravity.CENTER_VERTICAL);

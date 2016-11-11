@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/fragment_settings"
-        android:name="com.sorcerer.sorcery.iconpack.ui.activities.SettingsActivity$SettingsFragment"
+        android:name="com.sorcerer.sorcery.iconpack.ui.fragments.SettingsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

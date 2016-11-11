@@ -2,6 +2,8 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>contacts</item>
+        <item>google_play_service</item>
         <item>zuiyou</item>
         <item>zuizuimanhua_comic_lover</item>
         <item>tieba_zhushou</item>
@@ -504,6 +506,55 @@
         <item>flyme_weather</item>
     </string-array>
 
+    <string-array name="icon_pack_oneplus" translatable="false">
+        <item>onepluse_calendar</item>
+        <item>onepluse_calendar_1</item>
+        <item>onepluse_calendar_10</item>
+        <item>onepluse_calendar_11</item>
+        <item>onepluse_calendar_12</item>
+        <item>onepluse_calendar_13</item>
+        <item>onepluse_calendar_14</item>
+        <item>onepluse_calendar_15</item>
+        <item>onepluse_calendar_16</item>
+        <item>onepluse_calendar_17</item>
+        <item>onepluse_calendar_18</item>
+        <item>onepluse_calendar_19</item>
+        <item>onepluse_calendar_2</item>
+        <item>onepluse_calendar_20</item>
+        <item>onepluse_calendar_21</item>
+        <item>onepluse_calendar_22</item>
+        <item>onepluse_calendar_23</item>
+        <item>onepluse_calendar_24</item>
+        <item>onepluse_calendar_25</item>
+        <item>onepluse_calendar_26</item>
+        <item>onepluse_calendar_27</item>
+        <item>onepluse_calendar_28</item>
+        <item>onepluse_calendar_29</item>
+        <item>onepluse_calendar_3</item>
+        <item>onepluse_calendar_30</item>
+        <item>onepluse_calendar_31</item>
+        <item>onepluse_calendar_4</item>
+        <item>onepluse_calendar_5</item>
+        <item>onepluse_calendar_6</item>
+        <item>onepluse_calendar_7</item>
+        <item>onepluse_calendar_8</item>
+        <item>onepluse_calendar_9</item>
+        <item>oneplus_calculator</item>
+        <item>oneplus_calculator_alt</item>
+        <item>oneplus_camera_oxygen</item>
+        <item>oneplus_community</item>
+        <item>oneplus_deskclock</item>
+        <item>oneplus_filemanager</item>
+        <item>oneplus_gallery</item>
+        <item>oneplus_market</item>
+        <item>oneplus_note</item>
+        <item>oneplus_soundrecorder</item>
+        <item>oneplus_weather</item>
+        <item>oneplus_weather_cloudy</item>
+        <item>oneplus_weather_cloudy_dark</item>
+        <item>oneplus_weather_sunny</item>
+    </string-array>
+
     <string-array name="icon_pack" translatable="false">
         <item>*****</item>
         <item>a10086</item>
@@ -664,6 +715,7 @@
         <item>cmbc_bank</item>
         <item>cmcc_wifi</item>
         <item>cntv</item>
+        <item>contacts</item>
         <item>coolapk</item>
         <item>coolapk_alt</item>
         <item>coolapk_alt_2</item>
@@ -1495,7 +1547,4 @@
         <item>zuizuimanhua_comic_lover</item>
         <item>zuzhiyunxing</item>
     </string-array>
-
-
-
 </resources>

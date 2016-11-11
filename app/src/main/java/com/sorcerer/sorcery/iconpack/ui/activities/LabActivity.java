@@ -25,7 +25,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
-import com.sorcerer.sorcery.iconpack.util.StringUtil;
+import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;

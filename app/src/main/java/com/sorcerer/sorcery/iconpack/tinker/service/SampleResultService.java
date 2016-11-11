@@ -24,6 +24,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
+import com.sorcerer.sorcery.iconpack.tinker.util.Utils;
 import com.tencent.tinker.lib.service.DefaultTinkerResultService;
 import com.tencent.tinker.lib.service.PatchResult;
 import com.tencent.tinker.lib.tinker.Tinker;
@@ -33,7 +34,6 @@ import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
 
 import java.io.File;
 
-import tinker.sample.android.util.Utils;
 
 /**
  * optional, you can just use DefaultTinkerResultService

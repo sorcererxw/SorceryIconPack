@@ -5,8 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.socks.library.KLog;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 
 import java.util.List;
 

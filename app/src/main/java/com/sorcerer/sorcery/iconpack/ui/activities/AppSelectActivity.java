@@ -28,8 +28,8 @@ import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.ToolbarOnGestureListener;
+import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.ToolbarOnGestureListener;
 import com.tbruyelle.rxpermissions.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 

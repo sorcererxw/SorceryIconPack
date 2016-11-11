@@ -39,8 +39,8 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.FeedbackChatAdapter;
-import com.sorcerer.sorcery.iconpack.util.KeyboardUtil;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.io.File;

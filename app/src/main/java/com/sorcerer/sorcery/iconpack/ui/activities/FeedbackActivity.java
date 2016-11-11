@@ -6,17 +6,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.feedback.Comment;
-import com.avos.avoscloud.feedback.FeedbackAgent;
-import com.avos.avoscloud.feedback.FeedbackThread;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
-import com.sorcerer.sorcery.iconpack.util.NetUtil;
-
-import java.util.List;
+import com.sorcerer.sorcery.iconpack.utils.NetUtil;
 
 import butterknife.OnClick;
 

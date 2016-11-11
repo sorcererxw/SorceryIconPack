@@ -3,7 +3,7 @@ package com.sorcerer.sorcery.iconpack;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>

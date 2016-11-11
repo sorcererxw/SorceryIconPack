@@ -19,8 +19,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
  * Created by Sorcerer on 2016/2/5 0005.

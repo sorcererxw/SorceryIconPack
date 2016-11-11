@@ -1,6 +1,8 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
@@ -8,7 +10,9 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,9 +22,9 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
@@ -32,10 +36,11 @@ import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.Navigator;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.utils.Navigator;
+import com.sorcerer.sorcery.iconpack.utils.OtherUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.util.ArrayList;
@@ -263,6 +268,21 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initDrawer() {
+        AccountHeaderBuilder headBuilder = new AccountHeaderBuilder();
+        headBuilder.withActivity(this)
+                .withHeightDp(178)
+                .withProfileImagesClickable(false)
+                .withResetDrawerOnProfileListClick(false)
+                .withSelectionListEnabled(false)
+                .withSelectionListEnabledForSingleProfile(false)
+                .withDividerBelowHeader(false)
+                .withHeaderBackgroundScaleType(ImageView.ScaleType.CENTER_CROP);
+        if (OtherUtil.showHead(this)) {
+            headBuilder.withHeaderBackground(R.drawable.sandy_shore);
+        } else {
+            headBuilder.withHeaderBackground(R.drawable.sorcery_head);
+        }
+
         mDrawer = new DrawerBuilder()
                 .withCloseOnClick(true)
                 .withToolbar(mSearchToolbar)
@@ -274,17 +294,7 @@ public class MainActivity extends BaseActivity {
                         return false;
                     }
                 })
-                .withAccountHeader(new AccountHeaderBuilder()
-                        .withActivity(this)
-                        .withHeightDp(178)
-                        .withHeaderBackground(R.drawable.sandy_shore)
-                        .withHeaderBackgroundScaleType(ImageView.ScaleType.CENTER_CROP)
-                        .withProfileImagesClickable(false)
-                        .withResetDrawerOnProfileListClick(false)
-                        .withSelectionListEnabled(false)
-                        .withSelectionListEnabledForSingleProfile(false)
-                        .withDividerBelowHeader(false)
-                        .build())
+                .withAccountHeader(headBuilder.build())
                 .withActivity(mActivity)
                 .build();
         mDrawer.addItems(
@@ -309,44 +319,39 @@ public class MainActivity extends BaseActivity {
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_help_black_24dp, 128))
                         .withName(R.string.nav_item_help)
-//                new PrimaryDrawerItem()
-//                        .withSetSelected(false)
-//                        .withSelectable(false)
-//                        .withTag("settings")
-//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-//                                .ic_settings_black_24dp, 128))
-//                        .withName(R.string.nav_item_settings)
-//                new DividerDrawerItem(),
-//                new PrimaryDrawerItem()
-//                        .withSetSelected(false)
-//                        .withSelectable(false)
-//                        .withTag("about")
-//                        .withName(R.string.nav_item_about)
         );
 
-        if (AppInfoUtil.isXposedInstalled(this)) {
-            mDrawer.addItemAtPosition(new PrimaryDrawerItem()
-                    .withSetSelected(false)
-                    .withSelectable(false)
-                    .withTag("lab")
-                    .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                            .ic_settings_black_24dp, 128))
-                    .withName(R.string.nav_item_lab), 3);
-        }
-
         if (AppInfoUtil.isAlipayInstalled(this)) {
-            mDrawer.addItemAtPosition(new PrimaryDrawerItem()
+            mDrawer.addItem(new PrimaryDrawerItem()
                     .withSetSelected(false)
                     .withSelectable(false)
                     .withTag("donate")
                     .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                             .ic_attach_money_black_24dp, 128))
-                    .withName(R.string.nav_item_donate), 4);
+                    .withName(R.string.nav_item_donate));
         }
+
+        mDrawer.addItem(new PrimaryDrawerItem()
+                .withSetSelected(false)
+                .withSelectable(false)
+                .withTag("settings")
+                .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                        .ic_settings_black_24dp, 128))
+                .withName(R.string.nav_item_settings));
 
         if (BuildConfig.DEBUG) {
             mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
                     .withName("DEBUG"));
+
+            if (AppInfoUtil.isXposedInstalled(this)) {
+                mDrawer.addItemAtPosition(new PrimaryDrawerItem()
+                        .withSetSelected(false)
+                        .withSelectable(false)
+                        .withTag("lab")
+                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                                .ic_settings_black_24dp, 128))
+                        .withName(R.string.nav_item_lab), 3);
+            }
         }
 
         mDrawer.setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -371,11 +376,35 @@ public class MainActivity extends BaseActivity {
                     case "donate":
                         activityShift(DonateActivity.class);
                         break;
-                    case "about":
-                        Intent intent = new Intent(mContext, AboutDialogActivity.class);
-                        mContext.startActivity(intent);
-                        mActivity.overridePendingTransition(R.anim.fast_fade_in, 0);
-                        break;
+                }
+                return false;
+            }
+        });
+
+        for (int i = 0; i < 10; i++) {
+            mDrawer.addItems(new PrimaryDrawerItem()
+                    .withIconColorRes(0)
+                    .withName("")
+                    .withSelectable(false)
+                    .withEnabled(false)
+                    .withSetSelected(false));
+        }
+
+        final RecyclerView drawerRecyclerView = mDrawer.getRecyclerView();
+        drawerRecyclerView.setVerticalScrollBarEnabled(false);
+        drawerRecyclerView.setHorizontalScrollBarEnabled(false);
+        drawerRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                KLog.d(motionEvent.getAction() + "");
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP
+                        || motionEvent.getAction() == MotionEvent.ACTION_CANCEL) {
+                    drawerRecyclerView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            drawerRecyclerView.smoothScrollToPosition(0);
+                        }
+                    }, 200);
                 }
                 return false;
             }

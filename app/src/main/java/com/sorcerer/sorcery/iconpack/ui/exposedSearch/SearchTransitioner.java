@@ -6,14 +6,11 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.transition.Transition;
 import android.transition.TransitionManager;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.util.Navigator;
-
-import static android.view.View.GONE;
+import com.sorcerer.sorcery.iconpack.utils.Navigator;
 
 /**
  * @description:

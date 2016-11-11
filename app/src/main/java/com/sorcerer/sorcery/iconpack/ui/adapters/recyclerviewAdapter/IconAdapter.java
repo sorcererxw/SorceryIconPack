@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -25,7 +24,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.util.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -207,16 +206,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, int position) {
         final int type = mShowList.get(position).second;
-        if (BuildConfig.DEBUG) {
-            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    Toast.makeText(mActivity, type + "", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            });
-        }
-        IconBean iconBean = mShowList.get(position).first;
+        final IconBean iconBean = mShowList.get(position).first;
         if (type == TYPE_HEADER) {
             final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(iconBean.getName()));
@@ -224,45 +214,29 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             final IconViewHolder iconHolder = (IconViewHolder) holder;
 
             if (iconBean != null) {
-                if (!mCustomPicker) {
-                    iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (!mCustomPicker) {
                             KeyboardUtil.closeKeyboard((Activity) mContext);
                             if (mClicked) {
                                 return;
                             }
-                            lock(v);
-                            showIconDialog(iconHolder, iconHolder.getAdapterPosition());
-                        }
-                    });
-                } else {
-                    iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                            lock(view);
+                            showIconDialog(iconHolder,
+                                    iconHolder.getAdapterPosition());
+                        } else {
                             KeyboardUtil.closeKeyboard((Activity) mContext);
                             returnIconResource(iconHolder.getAdapterPosition());
                         }
-                    });
-                }
-
+                    }
+                });
                 Glide.with(mContext)
                         .load(iconBean.getRes())
                         .asBitmap()
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .animate(android.R.anim.fade_in)
                         .into(iconHolder.mIcon);
-//                        .into(new BitmapImageViewTarget(iconHolder.mIcon) {
-//                            @Override
-//                            protected void setResource(Bitmap resource) {
-//                                TransitionDrawable drawable = new TransitionDrawable(new Drawable[]{
-//                                        new ColorDrawable(Color.TRANSPARENT),
-//                                        new BitmapDrawable(mContext.getResources(), resource)
-//                                });
-//                                iconHolder.mIcon.setImageDrawable(drawable);
-//                                drawable.startTransition(100);
-//                            }
-//                        });
             } else {
                 iconHolder.itemView.setOnClickListener(null);
                 iconHolder.mIcon.setImageBitmap(null);

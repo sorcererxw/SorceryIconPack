@@ -9,9 +9,8 @@ import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
-import com.sorcerer.sorcery.iconpack.util.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
-import com.sorcerer.sorcery.iconpack.util.StringUtil;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 
 import java.util.List;
 

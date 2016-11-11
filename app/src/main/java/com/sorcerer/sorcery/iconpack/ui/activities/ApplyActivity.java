@@ -12,8 +12,8 @@ import android.view.View;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter;
-import com.sorcerer.sorcery.iconpack.util.AppInfoUtil;
-import com.sorcerer.sorcery.iconpack.util.LauncherIntents;
+import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.LauncherIntents;
 
 import butterknife.BindView;
 

@@ -23,7 +23,7 @@
         android:xlargeScreens="true"/>
 
     <application
-        android:name=".SorceryIcons"
+        android:name=".SorceryIconsApp"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -207,12 +207,6 @@
             android:name=".ui.activities.IconDialogActivity"
             android:theme="@style/AppTheme.Dialog"/>
         <activity
-            android:name=".ui.activities.AboutDialogActivity"
-            android:theme="@style/AppTheme.Dialog"/>
-        <activity
-            android:name=".ui.activities.TestIconDialogActivity"
-            android:theme="@style/AppTheme.Dialog"/>
-        <activity
             android:name=".ui.activities.base.PhotoViewActivity"
             android:label="big image"
             android:theme="@style/AppTheme.PhotoView"/>
@@ -260,6 +254,7 @@
             android:value="30"/>
 
         <activity
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".ui.activities.SearchActivity"
             android:theme="@style/SubActivity">
         </activity>
@@ -269,6 +264,10 @@
             android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity">
         </activity>
+
+        <service
+            android:name=".tinker.service.SampleResultService"
+            android:exported="false"/>
     </application>
 
 </manifest>

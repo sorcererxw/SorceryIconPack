@@ -8,16 +8,16 @@
     android:orientation="horizontal">
 
     <TextView
-        android:typeface="serif"
-        android:layout_marginLeft="12dp"
         android:id="@+id/textView_icon_header_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
         android:gravity="center_vertical"
         android:padding="8dp"
         android:textColor="@color/title"
         android:textSize="34sp"
+        android:typeface="serif"
         tools:text="11">
     </TextView>
 </LinearLayout>

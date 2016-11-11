@@ -21,15 +21,14 @@ import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.widget.Toast;
 
+import com.sorcerer.sorcery.iconpack.tinker.reporter.SampleTinkerReport;
+import com.sorcerer.sorcery.iconpack.tinker.util.TinkerManager;
+import com.sorcerer.sorcery.iconpack.tinker.util.Utils;
 import com.tencent.tinker.lib.tinker.TinkerApplicationHelper;
 import com.tencent.tinker.lib.util.TinkerLog;
 import com.tencent.tinker.loader.app.ApplicationLike;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
-
-import tinker.sample.android.reporter.SampleTinkerReport;
-import tinker.sample.android.util.TinkerManager;
-import tinker.sample.android.util.Utils;
 
 /**
  * optional, use dynamic configuration is better way

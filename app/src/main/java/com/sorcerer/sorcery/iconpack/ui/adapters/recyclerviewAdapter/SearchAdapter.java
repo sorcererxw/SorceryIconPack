@@ -2,9 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -218,12 +218,31 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     public void search(String s) {
         mShowList.clear();
+
         if (s == null || s.length() == 0) {
+            if (mHintTextView != null) {
+                mHintTextView.setVisibility(View.GONE);
+            }
             mShowList.clear();
+        } else if (!s.matches("[0-9a-zA-Z]+")) {
+            if (mHintTextView != null) {
+                mHintTextView.setText(R.string.search_hint_only_letter);
+                mHintTextView.setVisibility(View.VISIBLE);
+            }
         } else {
             for (IconBean iconBean : mDataList) {
                 if (iconBean.getLabel().contains(s)) {
                     mShowList.add(iconBean);
+                }
+            }
+            if (mHintTextView != null) {
+                if (mShowList.size() > 0) {
+                    mHintTextView.setVisibility(View.GONE);
+                } else {
+                    mHintTextView.setText(
+                            ResourceUtil.getString(mActivity, R.string.search_hint_not_found)
+                                    + new String(Character.toChars(0x1F614)));
+                    mHintTextView.setVisibility(View.VISIBLE);
                 }
             }
         }
@@ -278,5 +297,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             slice.setRipple(0);
         }
 
+    }
+
+    private TextView mHintTextView;
+
+    public void setHintTextView(TextView hintTextView) {
+        mHintTextView = hintTextView;
     }
 }

@@ -16,7 +16,7 @@
 
 package com.sorcerer.sorcery.iconpack.tinker.app;
 
-import tinker.sample.android.BuildConfig;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 
 /**
  * Created by zhangshaowen on 16/6/30.

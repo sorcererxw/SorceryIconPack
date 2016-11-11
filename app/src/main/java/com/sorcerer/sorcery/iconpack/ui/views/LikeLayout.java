@@ -14,10 +14,8 @@ import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.SorceryIcons;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
-import com.sorcerer.sorcery.iconpack.util.Prefs.LikePrefs;
-import com.sorcerer.sorcery.iconpack.util.Prefs.Prefs;
+import com.sorcerer.sorcery.iconpack.utils.Prefs.LikePrefs;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import butterknife.BindView;

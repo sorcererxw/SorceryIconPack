@@ -16,6 +16,11 @@
 
 package com.sorcerer.sorcery.iconpack.tinker.util;
 
+import com.sorcerer.sorcery.iconpack.tinker.crash.SampleUncaughtExceptionHandler;
+import com.sorcerer.sorcery.iconpack.tinker.reporter.SampleLoadReporter;
+import com.sorcerer.sorcery.iconpack.tinker.reporter.SamplePatchListener;
+import com.sorcerer.sorcery.iconpack.tinker.reporter.SamplePatchReporter;
+import com.sorcerer.sorcery.iconpack.tinker.service.SampleResultService;
 import com.tencent.tinker.lib.listener.PatchListener;
 import com.tencent.tinker.lib.patch.AbstractPatch;
 import com.tencent.tinker.lib.patch.RepairPatch;
@@ -25,12 +30,6 @@ import com.tencent.tinker.lib.reporter.PatchReporter;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.lib.util.TinkerLog;
 import com.tencent.tinker.loader.app.ApplicationLike;
-
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.crash.SampleUncaughtExceptionHandler;
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.reporter.SampleLoadReporter;
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.reporter.SamplePatchListener;
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.reporter.SamplePatchReporter;
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.service.SampleResultService;
 
 /**
  * Created by zhangshaowen on 16/7/3.

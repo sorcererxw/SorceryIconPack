@@ -2,6 +2,8 @@
     <string name="app_name">Sorcery Icons</string>
     <string name="sorcery" translatable="false">Sorcery</string>
 
+    <string name="language">en</string>
+
     <string name="action_feedback">feedback</string>
     <string name="action_welcome">welcome</string>
     <string name="action_apply">apply</string>
@@ -26,6 +28,9 @@
     <string name="action_grant_permission">grant</string>
     <string name="action_report_info">report info</string>
     <string name="action_leave">leave</string>
+    <string name="action_know_what_doing">I know what I\'m doing</string>
+    <string name="action_later">Maybe later</string>
+    <string name="action_soft_reboot">soft reboot</string>
 
     <string name="permission_request_title">Need Permission</string>
     <string name="permission_request_content">For better experience with the app, please grant permissions to this app. Or you may can\'t use some function normally, such as icon request, icon like. I also need some permission to collect bug in the app, please support me, thanks.</string>
@@ -38,9 +43,13 @@
 
     <string name="search_hint">Search in current page</string>
 
+    <string name="search_hint_only_letter">Sorry, searching support letter and number only.</string>
+    <string name="search_hint_not_found">Oops…Not found</string>
+
     <string name="pay_success">pay successfully</string>
     <string name="pay_fail">fail</string>
 
+    <string name="attention">Attention</string>
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="ok">OK</string>
@@ -181,6 +190,7 @@
         <item>Tencent</item>
         <!--<item>Xiaomi</item>-->
         <item>Meizu</item>
+        <item>Oneplus</item>
     </string-array>
 
     <string-array name="search_suggestion" translatable="false">
@@ -204,7 +214,6 @@
     </string-array>
 
     <bool name="config_iconpack">true</bool>
-    <string name="action_soft_reboot">soft reboot</string>
     <string name="premium_alipay_describe">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
 
@@ -218,4 +227,14 @@
     <string name="shortcuts_request_icon_disable_message">Request Icon</string>
     <string name="shortcuts_request_icon_long_label">Request Icon</string>
     <string name="shortcuts_request_icon_short_label">Request Icon</string>
+
+    <string name="preference_group_general">General</string>
+    <string name="preference_general_clear_cache">Clear cache</string>
+    
+    <string name="preference_group_laboratory">Experimental</string>
+    <string name="preference_laboratory_global_load">Global load</string>
+
+    <string name="preference_group_about">About</string>
+    <string name="preference_about_app">Application information</string>
+    <string name="preference_about_lib">Open source licenses</string>
 </resources>

@@ -16,9 +16,12 @@ import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.view.Display;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
@@ -30,8 +33,9 @@ import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchBar;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SimpleTransitionListener;
 import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
-import com.sorcerer.sorcery.iconpack.util.ResourceUtil;
-import com.sorcerer.sorcery.iconpack.util.SimpleTextWatcher;
+import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.SimpleTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +64,9 @@ public class SearchActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView_search)
     RecyclerView mRecyclerView;
+
+    @BindView(R.id.textView_search_hint)
+    TextView mHintTextView;
 
     private SearchAdapter mAdapter;
     private GridLayoutManager mLayoutManager;
@@ -125,10 +132,18 @@ public class SearchActivity extends AppCompatActivity {
         mSpanCount = calSpanCount(this);
 
         mAdapter = new SearchAdapter(this, mSpanCount);
+        mAdapter.setHintTextView(mHintTextView);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(this, mSpanCount, VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                KeyboardUtil.closeKeyboard(SearchActivity.this);
+                return false;
+            }
+        });
 
         mSearchBar.postDelayed(new Runnable() {
             @Override
@@ -139,7 +154,7 @@ public class SearchActivity extends AppCompatActivity {
 
         if (savedInstanceState != null) {
             String text = savedInstanceState.getString(EDIT_DATA_KEY);
-            if(text!=null && text.length()>0){
+            if (text != null && text.length() > 0) {
                 mSearchBar.setText(savedInstanceState.getString(EDIT_DATA_KEY));
                 mAdapter.search(text);
                 mSearchGraphic.setVisibility(GONE);
@@ -185,13 +200,6 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mAdapter != null && mLayoutManager != null) {
-            mSpanCount = calSpanCount(this);
-            if (mLayoutManager.getSpanCount() != mSpanCount) {
-                mLayoutManager.setSpanCount(mSpanCount);
-                mAdapter.setSpan(mSpanCount);
-            }
-        }
     }
 
     @Override

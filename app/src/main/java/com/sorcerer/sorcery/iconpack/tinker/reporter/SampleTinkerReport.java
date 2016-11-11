@@ -16,11 +16,10 @@
 
 package com.sorcerer.sorcery.iconpack.tinker.reporter;
 
+import com.sorcerer.sorcery.iconpack.tinker.util.Utils;
 import com.tencent.tinker.lib.util.TinkerLog;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
-
-import com.sorcerer.sorcery.iconpack.tinker.sample.android.util.Utils;
 
 /**
  * a simple tinker data reporter
