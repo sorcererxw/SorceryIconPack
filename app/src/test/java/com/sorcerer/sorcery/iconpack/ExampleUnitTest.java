@@ -8,6 +8,8 @@ import org.junit.Test;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-
+        String component =
+                "ComponentInfo{com.qihoo.freewifi/com.qihoo.freewifi.activity.WelcomeActivity}";
+        System.out.println(component.substring(14, component.length() - 1));
     }
 }

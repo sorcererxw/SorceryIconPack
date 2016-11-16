@@ -136,7 +136,7 @@ public class LazyIconFragment extends LazyFragment {
                 .alpha(1)
                 .translationY(0)
                 .setInterpolator(new AccelerateDecelerateInterpolator())
-                .setDuration(500)
+                .setDuration(350)
                 .start();
     }
 

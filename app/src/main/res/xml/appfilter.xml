@@ -53,7 +53,6 @@
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
         drawable="onepluse_calendar_"/>
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -291,6 +290,24 @@
     <item
         component="ComponentInfo{cn.xiaochuankeji.tieba/cn.xiaochuankeji.tieba.ui.base.SplashActivity}"
         drawable="zuiyou"/>
+    <item
+        component="ComponentInfo{cn.amazon.mShop.android/com.amazon.mShop.home.HomeActivity}"
+        drawable="amazon_shopping"/>
+    <item
+        component="ComponentInfo{com.sony.store.china/com.sony.store.china.activity.FirstActivity}"
+        drawable="sony_store_china"/>
+    <item
+        component="ComponentInfo{com.sony.store.china/com.sony.store.china.ui.activity.init.FirstActivity}"
+        drawable="sony_store_china"/>
+    <item
+        component="ComponentInfo{com.huawei.KoBackup/com.huawei.KoBackup.InitializeActivity}"
+        drawable="huawei_backup"/>
+    <item
+        component="ComponentInfo{com.teamviewer.teamviewer.market.mobile/com.teamviewer.remotecontrollib.activity.MainActivity}"
+        drawable="team_viewer_remote_control"/>
+    <item
+        component="ComponentInfo{com.camel.corp.universalcopy/com.camel.corp.universalcopy.SettingsActivity}"
+        drawable="universal_copy"/>
     <item
         component="ComponentInfo{tk.wasdennnoch.androidn_ify/tk.wasdennnoch.androidn_ify.SettingsAlias}"
         drawable="android_nify"/>
@@ -1159,6 +1176,9 @@
         component="ComponentInfo{com.android.settings/com.android.settings.Settings$EdgeSettingsActivity}"
         drawable="settings"/>
     <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiP2pSettingsActivity}"
+        drawable="settings"/>
+    <item
         component="ComponentInfo{com.mipay.wallet/com.mipay.wallet.ui.MipayEntryActivity}"
         drawable="xiaomi_wallet"/>
     <item
@@ -1197,6 +1217,24 @@
     <item
         component="ComponentInfo{com.sony.nfx.app.sfrc/com.sony.nfx.app.sfrc.npam.InitialActivity}"
         drawable="sony_news_suite"/>
+    <item
+        component="ComponentInfo{com.yingyonghui.market/com.yingyonghui.market.activity.SplashActivity}"
+        drawable="appchina_yingyonghui_market"/>
+    <item
+        component="ComponentInfo{com.getkeepsafe.applock/com.getkeepsafe.applock.ui.main.view.AppListActivity}"
+        drawable="app_lock"/>
+    <item
+        component="ComponentInfo{com.sonymobile.sleeppartner.xperialabs/com.sonymobile.sleeppartner.presenter.WelcomeActivity}"
+        drawable="sony_sleep_partner"/>
+    <item
+        component="ComponentInfo{com.huawei.phoneservice/com.huawei.phoneservice.ui.HelpCenterActivity}"
+        drawable="huawei_phone_service"/>
+    <item
+        component="ComponentInfo{com.sonymobile.androidapp.cameraaddon.stickercreator/com.sonymobile.androidapp.cameraaddon.stickercreator.ModeSelectorActivity}"
+        drawable="sony_sticker_creator"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.conversations/com.sonyericsson.conversations.ui.ConversationListActivity}"
+        drawable="sony_messaging"/>
     <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
@@ -2040,9 +2078,6 @@
     <item
         component="ComponentInfo{com.coolsoft.movie/com.coolsoft.movie.entry.EntryViewPagerActivity}"
         drawable="piaofanzi"/>
-    <item
-        component="ComponentInfo{com.scee.psxandroid/com.scee.psxandroid.activity.TopActivity}"
-        drawable="playstation"/>
     <item
         component="ComponentInfo{au.com.shiftyjelly.pocketcasts/au.com.shiftyjelly.pocketcasts.ui.MainActivity}"
         drawable="pocket_casts"/>
@@ -3757,9 +3792,6 @@
         component="ComponentInfo{com.yulong.android.contacts/com.yulong.android.contacts.life.YellowPageActivity}"
         drawable="contacts"/>
     <item
-        component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.LaunchActivity}"
-        drawable="contacts"/>
-    <item
         component="ComponentInfo{cn.nubia.contacts/cn.nubia.contacts.mainlist.PeopleActivity}"
         drawable="contacts"/>
     <item
@@ -3792,5 +3824,89 @@
     <item
         component="ComponentInfo{com.asus.contacts/com.android.contacts.activities.DialtactsActivity}"
         drawable="dialer"/>
+    <item
+        component="ComponentInfo{com.lbe.parallel/com.lbe.parallel.ui.tour.SplashActivity}"
+        drawable="lbe_parallel_space"/>
+    <item
+        component="ComponentInfo{com.lbe.parallel.intl/com.lbe.parallel.ui.tour.SplashActivity}"
+        drawable="lbe_parallel_space"/>
+    <item
+        component="ComponentInfo{nico.styTool/nico.styTool.MainActivity}"
+        drawable="nico_stytool_nilimengmeng"/>
+    <item
+        component="ComponentInfo{nico.styTool/nico.styTool.i}"
+        drawable="nico_stytool_nilimengmeng"/>
+    <item
+        component="ComponentInfo{nico.styTool/nico.styTool.MainTab_smali}"
+        drawable="nico_stytool_nilimengmeng"/>
+    <item
+        component="ComponentInfo{nico.styTool/dump.g.d}"
+        drawable="nico_stytool_nilimengmeng"/>
+    <item
+        component="ComponentInfo{com.ccb.atms.mobilepay_forsd/com.ccb.ui.LoadingActivity}"
+        drawable="ccb_atm_mobilepay"/>
+    <item
+        component="ComponentInfo{com.Kingdee.Express/com.Kingdee.Express.activity.SplashWithBaiduAllianceActivity}"
+        drawable="express_100"/>
+    <item
+        component="ComponentInfo{com.Kingdee.Express/com.Kingdee.Express.activity.SplashActivity}"
+        drawable="express_100"/>
+    <item
+        component="ComponentInfo{cn.kuwo.player/com.qihoo.util.StartActivity}"
+        drawable="kuwo_music_player"/>
+    <item
+        component="ComponentInfo{cn.kuwo.player/cn.kuwo.player.activities.EntryActivity}"
+        drawable="kuwo_music_player"/>
+    <item
+        component="ComponentInfo{com.tmri.app.main/com.tmri.app.ui.activity.TmriActivity}"
+        drawable="tmri_jiaoguan_12123"/>
+    <item
+        component="ComponentInfo{com.samsung.android.voc/com.samsung.android.voc.LauncherActivity}"
+        drawable="samsung_galaxy_members"/>
+    <item
+        component="ComponentInfo{com.naxy.xykey/com.naxy.xykey.activity.ActivityMain}"
+        drawable="xykey"/>
+    <item
+        component="ComponentInfo{cc.netpas.android_firewall/cc.netpas.android_firewall.activities.VPNHomeActivity}"
+        drawable="netfits_vpn"/>
+    <item
+        component="ComponentInfo{tw.fatminmin.xposed.networkspeedindicator/tw.fatminmin.xposed.networkspeedindicator.SettingsActivity}"
+        drawable="network_speed_indicator"/>
+    <item
+        component="ComponentInfo{com.huawei.appmarket/com.huawei.appmarket.MainActivity}"
+        drawable="huawei_appmarket"/>
+    <item
+        component="ComponentInfo{com.huawei.phoneservice/com.huawei.phoneservice.ui.HelpCenterActivity}"
+        drawable="huawei_phone_service"/>
+    <item
+        component="ComponentInfo{com.sonymobile.email/com.sonymobile.email.activity.Welcome}"
+        drawable="sony_mail"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.xhs/com.sonymobile.xhs.activities.StartMenu}"
+        drawable="sony_xhs_lounge"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.android.camera/com.sonyericsson.android.camera.CameraActivity}"
+        drawable="sony_camera"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.album/com.sonyericsson.album.MainActivity}"
+        drawable="sony_album"/>
+    <item
+        component="ComponentInfo{com.sonymobile.androidapp.audiorecorder/com.sonymobile.androidapp.audiorecorder.activity.MainActivity}"
+        drawable="sony_audio_recorder"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.fmradio/com.sonyericsson.fmradio.ui.FmRadioActivity}"
+        drawable="sony_fm_radio"/>
+    <item
+        component="ComponentInfo{com.sonymobile.androidapp.cameraaddon.arfun/com.sonymobile.androidapp.cameraaddon.arfun.ARfunApp}"
+        drawable="sony_ar_fun"/>
+    <item
+        component="ComponentInfo{com.sonymobile.hostapp.swr30/com.sonymobile.hostapp.swr30.LauncherActivity}"
+        drawable="sony_smart_band_talk"/>
+    <item
+        component="ComponentInfo{com.sony.snei.psnportal/com.sony.snei.psnportal.MainActivity}"
+        drawable="sony_playstation_network"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.LaunchActivity}"
+        drawable="sony_contacts"/>
 
 </resources>

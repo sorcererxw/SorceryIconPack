@@ -12,14 +12,14 @@ public class SorceryPrefs extends Prefs {
 
     private static SorceryPrefs mSorceryPrefs;
 
-    public static SorceryPrefs getInstance(Context context){
-        if(mSorceryPrefs==null){
+    public static SorceryPrefs getInstance(Context context) {
+        if (mSorceryPrefs == null) {
             mSorceryPrefs = new SorceryPrefs(context);
         }
         return mSorceryPrefs;
     }
 
-    private SorceryPrefs(Context context){
+    private SorceryPrefs(Context context) {
         super(context);
     }
 
@@ -35,5 +35,15 @@ public class SorceryPrefs extends Prefs {
             mDonated = new SorceryPreference<>(getPreferences(), "donated", false);
         }
         return mDonated;
+    }
+
+    private SorceryPreference<Boolean> mDevOptionsOpened;
+
+    public SorceryPreference<Boolean> devOptionsOpened() {
+        if (mDevOptionsOpened == null) {
+            mDevOptionsOpened =
+                    new SorceryPreference<>(getPreferences(), "dev options opened", false);
+        }
+        return mDevOptionsOpened;
     }
 }

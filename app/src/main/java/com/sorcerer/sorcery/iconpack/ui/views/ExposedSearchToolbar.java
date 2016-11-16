@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.exposedSearch;
+package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
 import android.graphics.Typeface;

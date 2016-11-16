@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
@@ -25,6 +27,8 @@ import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.TimeWatch;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
+
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import rx.Observable;
@@ -138,29 +142,23 @@ public class IconDialogActivity extends ToolbarActivity {
     protected void onResume() {
         super.onResume();
 
-        mTimeWatch.resetTime();
-
-        Observable.just(mName)
-                .subscribeOn(Schedulers.newThread())
-                .map(new Func1<String, String>() {
-                    @Override
-                    public String call(String s) {
-                        return AppInfoUtil.getComponentByName(IconDialogActivity.this, mName);
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<String>() {
-                    @Override
-                    public void call(String component) {
-                        mComponent = component;
-                        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-                        if (mMenu != null) {
-                            onCreateOptionsMenu(mMenu);
-                        }
-                    }
-                });
-
-        KLog.d(mTimeWatch.consumeTime(true));
+        Observable.just(mName).delay(50, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.newThread()).map(new Func1<String, String>() {
+            @Override
+            public String call(String s) {
+                return AppInfoUtil
+                        .getComponentByName(IconDialogActivity.this, mName);
+            }
+        }).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
+            @Override
+            public void call(String component) {
+                mComponent = component;
+                mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                if (mMenu != null) {
+                    onCreateOptionsMenu(mMenu);
+                }
+            }
+        });
     }
 
     @Override

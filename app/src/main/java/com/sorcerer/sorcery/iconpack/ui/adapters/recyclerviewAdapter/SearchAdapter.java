@@ -34,6 +34,8 @@ import io.github.mthli.slice.Slice;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
 
+    private boolean mCustomPicker = false;
+
     private List<IconBean> mDataList;
     private List<IconBean> mShowList;
 
@@ -45,14 +47,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         mSpan = span;
         mDataList = new ArrayList<>();
         mShowList = new ArrayList<>();
-    }
-
-    public void setSpan(int span) {
-        if (span == mSpan) {
-            return;
-        }
-        mSpan = span;
-        notifyDataSetChanged();
     }
 
     public void setData(List<IconBean> dataList) {
@@ -164,12 +158,24 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                     .load(mShowList.get(position).getRes())
                     .into(holder.icon);
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    showIconDialog(holder.icon, mShowList.get(holder.getAdapterPosition()));
-                }
-            });
+            if (mCustomPicker) {
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mActivity.setResult(Activity.RESULT_OK,
+                                new Intent().putExtra("icon res",
+                                        mShowList.get(holder.getAdapterPosition()).getRes()));
+                        mActivity.finish();
+                    }
+                });
+            } else {
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showIconDialog(holder.icon, mShowList.get(holder.getAdapterPosition()));
+                    }
+                });
+            }
         }
 
         boolean leftBottomRect = false,
@@ -300,6 +306,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     }
 
     private TextView mHintTextView;
+
+    public void setCustomPicker(boolean customPicker) {
+        mCustomPicker = customPicker;
+    }
 
     public void setHintTextView(TextView hintTextView) {
         mHintTextView = hintTextView;

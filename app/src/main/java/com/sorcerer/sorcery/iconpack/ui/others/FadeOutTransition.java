@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.exposedSearch;
+package com.sorcerer.sorcery.iconpack.ui.others;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;

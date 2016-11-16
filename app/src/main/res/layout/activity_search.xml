@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context=".ui.activities.SearchActivity">
 
-    <com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchBar
+    <com.sorcerer.sorcery.iconpack.ui.views.SearchBar
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_semi_expanded_height"

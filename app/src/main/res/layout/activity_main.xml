@@ -19,7 +19,7 @@
             android:background="@color/primary"
             app:layout_scrollFlags="scroll|enterAlways">
 
-            <com.sorcerer.sorcery.iconpack.ui.exposedSearch.ExposedSearchToolbar
+            <com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar
                 android:id="@+id/exposedSearchToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

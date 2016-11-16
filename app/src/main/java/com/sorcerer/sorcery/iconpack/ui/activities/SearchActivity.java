@@ -27,13 +27,14 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.SearchAdapter;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.FadeInTransition;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.FadeOutTransition;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchBar;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SimpleTransitionListener;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
+import com.sorcerer.sorcery.iconpack.ui.others.FadeInTransition;
+import com.sorcerer.sorcery.iconpack.ui.others.FadeOutTransition;
+import com.sorcerer.sorcery.iconpack.ui.others.SearchTransitioner;
+import com.sorcerer.sorcery.iconpack.ui.others.SimpleTransitionListener;
+import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
+import com.sorcerer.sorcery.iconpack.ui.views.SearchBar;
 import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.utils.Prefs.Prefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.SimpleTextWatcher;
 
@@ -117,15 +118,11 @@ public class SearchActivity extends AppCompatActivity {
                 } else {
                     mSearchGraphic.setVisibility(VISIBLE);
                 }
-                mAdapter.search(editable.toString().toLowerCase());
-//                mHandler.removeCallbacks(mRunnable);
-//                mRunnable = new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        mAdapter.search(editable.toString());
-//                    }
-//                };
-//                mHandler.postDelayed(mRunnable, 500);
+                if (editable == null) {
+                    mAdapter.search(null);
+                } else {
+                    mAdapter.search(editable.toString().toLowerCase());
+                }
             }
         });
 
@@ -133,6 +130,7 @@ public class SearchActivity extends AppCompatActivity {
 
         mAdapter = new SearchAdapter(this, mSpanCount);
         mAdapter.setHintTextView(mHintTextView);
+        mAdapter.setCustomPicker(getIntent().getBooleanExtra("custom picker", false));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(this, mSpanCount, VERTICAL, false);
@@ -151,15 +149,6 @@ public class SearchActivity extends AppCompatActivity {
                 mSearchBar.requestEditTextFocus();
             }
         }, 250);
-
-        if (savedInstanceState != null) {
-            String text = savedInstanceState.getString(EDIT_DATA_KEY);
-            if (text != null && text.length() > 0) {
-                mSearchBar.setText(savedInstanceState.getString(EDIT_DATA_KEY));
-                mAdapter.search(text);
-                mSearchGraphic.setVisibility(GONE);
-            }
-        }
 
         getIconBeanList();
     }
@@ -190,17 +179,6 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private static final String EDIT_DATA_KEY = "edit-data-key";
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(EDIT_DATA_KEY, mSearchBar.getText());
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-    }
 
     @Override
     public void onBackPressed() {

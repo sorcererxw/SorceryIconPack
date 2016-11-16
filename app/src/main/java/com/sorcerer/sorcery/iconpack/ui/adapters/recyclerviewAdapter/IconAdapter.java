@@ -227,7 +227,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                                     iconHolder.getAdapterPosition());
                         } else {
                             KeyboardUtil.closeKeyboard((Activity) mContext);
-                            returnIconResource(iconHolder.getAdapterPosition());
+                            ((MainActivity)mActivity).onReturnCustomPickerRes(
+                                    mShowList.get(iconHolder.getAdapterPosition()).first.getRes());
                         }
                     }
                 });
@@ -372,32 +373,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     MainActivity.REQUEST_ICON_DIALOG);
             ((Activity) mContext).overridePendingTransition(R.anim.fast_fade_in, 0);
         }
-    }
-
-    private void returnIconResource(final int position) {
-        Intent intent = new Intent();
-        Bitmap bitmap = null;
-
-        try {
-            bitmap = BitmapFactory.decodeResource(mContext.getResources(),
-                    mShowList.get(position).first.getRes());
-        } catch (Exception e) {
-            if (BuildConfig.DEBUG) {
-                e.printStackTrace();
-            }
-        }
-        if (bitmap != null) {
-            intent.putExtra("icon", bitmap);
-            intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE",
-                    mShowList.get(position).first.getRes());
-            String bmUri = "android.resource://" + mContext.getPackageName() + "/"
-                    + String.valueOf(mShowList.get(position).first.getRes());
-            intent.setData(Uri.parse(bmUri));
-            mActivity.setResult(Activity.RESULT_OK, intent);
-        } else {
-            mActivity.setResult(Activity.RESULT_CANCELED, intent);
-        }
-        mActivity.finish();
     }
 
     class IconItemViewHolder extends RecyclerView.ViewHolder {

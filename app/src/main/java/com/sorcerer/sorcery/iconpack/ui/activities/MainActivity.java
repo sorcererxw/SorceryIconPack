@@ -1,8 +1,10 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
@@ -22,7 +24,9 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
@@ -31,11 +35,11 @@ import com.sorcerer.sorcery.iconpack.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ExposedSearchToolbar;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.SearchTransitioner;
-import com.sorcerer.sorcery.iconpack.ui.exposedSearch.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
+import com.sorcerer.sorcery.iconpack.ui.others.SearchTransitioner;
+import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
+import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.Navigator;
@@ -46,6 +50,7 @@ import com.tbruyelle.rxpermissions.RxPermissions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import rx.functions.Action1;
@@ -114,6 +119,8 @@ public class MainActivity extends BaseActivity {
                 }
             };
 
+    private Navigator mNavigator;
+
     @Override
     protected int provideLayoutId() {
         return R.layout.activity_main;
@@ -132,6 +139,8 @@ public class MainActivity extends BaseActivity {
         mCustomPicker = "com.novalauncher.THEME".equals(action);
 
         setSupportActionBar(mSearchToolbar);
+
+        mNavigator = new Navigator(this);
 
         initTabAndPager();
 
@@ -161,8 +170,10 @@ public class MainActivity extends BaseActivity {
         if (!mCustomPicker) {
             showPermissionDialog();
         } else {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            getSupportActionBar().setTitle(getString(R.string.select_an_icon));
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                getSupportActionBar().setTitle(getString(R.string.select_an_icon));
+            }
         }
     }
 
@@ -239,7 +250,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initTabAndPager() {
-        mViewPager.setOffscreenPageLimit(1);
+//        mViewPager.setOffscreenPageLimit(1);
 
         mViewPager.addOnPageChangeListener(mPageChangeListener);
         mViewPager.setPageMargin(DisplayUtil.dip2px(mContext, 16));
@@ -298,20 +309,27 @@ public class MainActivity extends BaseActivity {
                 .withActivity(mActivity)
                 .build();
         mDrawer.addItems(
-//                new PrimaryDrawerItem()
-//                        .withSetSelected(false)
-//                        .withSelectable(false)
-//                        .withTag("apply")
-//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-//                                .ic_input_black_24dp, 128))
-//                        .withName(R.string.nav_item_apply),
-                new PrimaryDrawerItem()
+                new ExpandableDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
-                        .withTag("feedback")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_mail_black_24dp, 128))
-                        .withName(R.string.nav_item_feedback),
+                        .withName(R.string.nav_item_feedback)
+                        .withTag("")
+                        .withSubItems(
+                                new SecondaryDrawerItem()
+                                        .withLevel(3)
+                                        .withSetSelected(false)
+                                        .withSelectable(false)
+                                        .withName(R.string.request)
+                                        .withTag("request"),
+                                new SecondaryDrawerItem()
+                                        .withLevel(3)
+                                        .withSetSelected(false)
+                                        .withSelectable(false)
+                                        .withName(R.string.suggest)
+                                        .withTag("suggest")
+                        ),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
@@ -340,18 +358,19 @@ public class MainActivity extends BaseActivity {
                 .withName(R.string.nav_item_settings));
 
         if (BuildConfig.DEBUG) {
-            mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
-                    .withName("DEBUG"));
 
             if (AppInfoUtil.isXposedInstalled(this)) {
-                mDrawer.addItemAtPosition(new PrimaryDrawerItem()
+                mDrawer.addItem(new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("lab")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
                                 .ic_settings_black_24dp, 128))
-                        .withName(R.string.nav_item_lab), 3);
+                        .withName(R.string.nav_item_lab));
             }
+
+            mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
+                    .withName("DEBUG"));
         }
 
         mDrawer.setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -359,22 +378,28 @@ public class MainActivity extends BaseActivity {
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 switch ((String) drawerItem.getTag()) {
                     case "apply":
-                        activityShift(ApplyActivity.class);
+                        mNavigator.toAppleActivity();
                         break;
                     case "feedback":
-                        activityShift(FeedbackActivity.class);
+                        mNavigator.toFeedbackActivity();
                         break;
                     case "lab":
-                        activityShift(LabActivity.class);
+                        mNavigator.toLabActivity();
                         break;
                     case "settings":
-                        activityShift(SettingsActivity.class);
+                        mNavigator.toSettingsActivity();
                         break;
                     case "help":
-                        activityShift(HelpActivity.class);
+                        mNavigator.toHelpActivity();
                         break;
                     case "donate":
-                        activityShift(DonateActivity.class);
+                        mNavigator.toDonateActivity();
+                        break;
+                    case "request":
+                        mNavigator.toIconRequest();
+                        break;
+                    case "suggest":
+                        mNavigator.toFeedbackChatActivity();
                         break;
                 }
                 return false;
@@ -422,12 +447,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    private void activityShift(Class<?> cls) {
-        Intent intent = new Intent(this, cls);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
-    }
-
     @Override
     public void onBackPressed() {
         if (!closeDrawer()) {
@@ -447,5 +466,33 @@ public class MainActivity extends BaseActivity {
             return true;
         }
         return false;
+    }
+
+    public boolean isCustomPicker() {
+        return mCustomPicker;
+    }
+
+    public void onReturnCustomPickerRes(int res) {
+        Intent intent = new Intent();
+        Bitmap bitmap = null;
+
+        try {
+            bitmap = BitmapFactory.decodeResource(mContext.getResources(), res);
+        } catch (Exception e) {
+            if (BuildConfig.DEBUG) {
+                e.printStackTrace();
+            }
+        }
+        if (bitmap != null) {
+            intent.putExtra("icon", bitmap);
+            intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", res);
+            String bmUri =
+                    "android.resource://" + mContext.getPackageName() + "/" + String.valueOf(res);
+            intent.setData(Uri.parse(bmUri));
+            setResult(Activity.RESULT_OK, intent);
+        } else {
+            setResult(Activity.RESULT_CANCELED, intent);
+        }
+        finish();
     }
 }

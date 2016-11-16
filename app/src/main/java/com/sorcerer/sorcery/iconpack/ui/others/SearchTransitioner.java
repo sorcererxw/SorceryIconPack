@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.exposedSearch;
+package com.sorcerer.sorcery.iconpack.ui.others;
 
 import android.app.Activity;
 import android.os.Build;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 import com.sorcerer.sorcery.iconpack.utils.Navigator;
 
 /**

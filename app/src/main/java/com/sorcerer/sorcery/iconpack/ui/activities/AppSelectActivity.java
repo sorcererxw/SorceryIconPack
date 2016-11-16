@@ -75,7 +75,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        if(BuildConfig.DEBUG){
+                        if (BuildConfig.DEBUG) {
                             throwable.printStackTrace();
                         }
                     }
@@ -144,7 +144,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         }
                     }
                 });
-
     }
 
     private void setupRecyclerView(List<AppInfo> appInfoList) {
@@ -273,7 +272,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                             AppSelectActivity.this, app.getPackage()));
                     request.setZhName(AppInfoUtil.getAppChineseName(
                             AppSelectActivity.this, app.getPackage()));
-                    if (deviceId != null && sharedPreferences.getInt(app.getCode(), 0) == 0) {
+                    if (deviceId != null && deviceId.length() > 0
+                            && sharedPreferences.getInt(app.getCode(), 0) == 0) {
                         request.setDeviceId(deviceId);
                         requestBeanList.add(request);
                         sharedPreferences.edit().putInt(app.getCode(), 1).apply();

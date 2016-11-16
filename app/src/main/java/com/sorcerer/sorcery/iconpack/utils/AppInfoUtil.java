@@ -12,6 +12,7 @@ import android.content.res.XmlResourceParser;
 import android.os.Build;
 import android.util.Log;
 
+import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
@@ -43,13 +44,10 @@ public class AppInfoUtil {
         List list = pm.queryIntentActivities(intent, 0);
         Iterator iterator = list.iterator();
 
-        String xmlString = "";
+        List<String> xmlStringList = new ArrayList<>();
 
         if (withHasCustomIcon) {
-            xmlString = getAppfilterToString(context);
-        }
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, xmlString);
+            xmlStringList = getAppfilterToString(context);
         }
 
         for (int i = 0; i < list.size(); i++) {
@@ -59,10 +57,7 @@ public class AppInfoUtil {
                     resolveInfo.loadLabel(pm).toString(),
                     resolveInfo.loadIcon(pm));
             if (withHasCustomIcon) {
-                if (BuildConfig.DEBUG) {
-                    Log.d(TAG, tempAppInfo.getCode());
-                }
-                if (xmlString.contains(tempAppInfo.getCode())) {
+                if (xmlStringList.contains(tempAppInfo.getCode())) {
                     tempAppInfo.setHasCustomIcon(true);
                 }
             }
@@ -86,11 +81,11 @@ public class AppInfoUtil {
         return appInfoList;
     }
 
-    public static String getAppfilterToString(Context context) {
-        String res = "";
+    public static List<String> getAppfilterToString(Context context) {
+        List<String> list = new ArrayList<>();
         int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
         XmlResourceParser parser = context.getResources().getXml(i);
-        int eventType = -1;
+        int eventType;
         try {
             eventType = parser.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
@@ -98,9 +93,13 @@ public class AppInfoUtil {
                     case XmlPullParser.START_DOCUMENT:
                         break;
                     case XmlPullParser.START_TAG:
-
                         if (parser.getName().equals("item")) {
-                            res += parser.getAttributeValue(0);
+                            String component = parser.getAttributeValue(null, "component");
+                            try {
+                                list.add(component.substring(14, component.length() - 1));
+                            } catch (Exception e) {
+                                KLog.e(component);
+                            }
                         }
                         break;
                     case XmlPullParser.END_TAG:
@@ -111,7 +110,7 @@ public class AppInfoUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return res;
+        return list;
     }
 
     public static boolean isLauncherInstalled(Context context, String packageName) {

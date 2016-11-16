@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.exposedSearch;
+package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -54,6 +54,7 @@ public class SearchBar extends Toolbar {
         mEditText.setLayoutParams(new LayoutParams(MATCH_PARENT, MATCH_PARENT));
         mEditText.setGravity(Gravity.CENTER_VERTICAL);
         mEditText.setHint("Search icon");
+        mEditText.setSingleLine(true);
         addView(mEditText);
 
         setBackgroundColor(Color.WHITE);

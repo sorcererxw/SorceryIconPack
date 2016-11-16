@@ -7,34 +7,45 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Util {
     public static String TAG = "Util";
 
-    public static ArrayList<IconReplacementItem> ParseIconReplacements(String packageName,
-            Resources r, XmlPullParser xrp) throws XmlPullParserException, IOException {
-        ArrayList<IconReplacementItem> iconReplacementItemArrayList = new ArrayList();
+    public static List<IconReplacementItem> ParseIconReplacements(String packageName,
+                                                                       Resources resources,
+                                                                       XmlPullParser xrp)
+            throws XmlPullParserException, IOException {
+        List<IconReplacementItem> iconReplacementItemArrayList = new ArrayList<>();
         xrp.next();
         int eventType = xrp.getEventType();
-        while (eventType != 1) {
-            if (eventType == 2 && xrp.getName().equalsIgnoreCase("item")) {
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            if (eventType == XmlPullParser.START_TAG && xrp.getName().equalsIgnoreCase("item")) {
                 String component = xrp.getAttributeValue(null, "component");
                 String drawableName = xrp.getAttributeValue(null, "drawable");
                 if (component == null || drawableName == null) {
-                    eventType = xrp.next();
+//                    eventType = xrp.next();
                 } else {
-                    int resId = r.getIdentifier(drawableName, "drawable", packageName);
-                    if (resId == 0) {
-                        eventType = xrp.next();
-                    } else {
-                        IconReplacementItem irt =
-                                new IconReplacementItem(component, resId, r.getResourceName(resId));
-                        if (irt.getPackageName() == null) {
-                            eventType = xrp.next();
-                        } else {
-                            iconReplacementItemArrayList.add(irt);
+                    int resId = resources.getIdentifier(drawableName, "drawable", packageName);
+                    if (resId != 0) {
+                        IconReplacementItem replacementItem = new IconReplacementItem(
+                                component, resId, resources.getResourceName(resId));
+                        if (replacementItem.getPackageName() != null) {
+                            iconReplacementItemArrayList.add(replacementItem);
                         }
                     }
+
+//                    if (resId == 0) {
+//                        eventType = xrp.next();
+//                    } else {
+//                        IconReplacementItem irt = new IconReplacementItem(
+//                                component, resId, resources.getResourceName(resId));
+//                        if (irt.getPackageName() == null) {
+//                            eventType = xrp.next();
+//                        } else {
+//                            iconReplacementItemArrayList.add(irt);
+//                        }
+//                    }
                 }
             }
             eventType = xrp.next();
