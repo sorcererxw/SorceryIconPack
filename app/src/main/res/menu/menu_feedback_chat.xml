@@ -9,6 +9,7 @@
         app:showAsAction="ifRoom"/>
 
     <item
+        android:visible="false"
         android:id="@+id/action_report_info"
         android:icon="@drawable/ic_refresh_white_24dp"
         android:title="@string/action_report_info"/>

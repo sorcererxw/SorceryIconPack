@@ -2,6 +2,8 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>**Add (Not released)**</item>
+        <item>supersu_material</item>
+        <item>supersu_emblem</item>
         <item>battlefield_companion</item>
         <item>sony_messaging</item>
         <item>sony_contacts</item>
@@ -36,9 +38,14 @@
         <item>ccb_atm_mobilepay</item>
         <item>nico_stytool_nilimengmeng</item>
         <item>lbe_parallel_space</item>
+
         <item>**Update (Not released)**</item>
         <item>pinterest</item>
         <item>whatsapp_messenger</item>
+        <item>a360_liuliang</item>
+        <item>zol</item>
+        <item>yaokongjingling</item>
+        
         <item>@string/icon_label_added</item>
         <item>contacts</item>
         <item>google_play_service</item>

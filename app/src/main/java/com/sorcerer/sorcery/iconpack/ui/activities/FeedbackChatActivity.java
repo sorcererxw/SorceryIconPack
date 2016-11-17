@@ -551,4 +551,11 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     private static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        KeyboardUtil.closeKeyboard(this);
+        overridePendingTransition(R.anim.activity_in_scale,R.anim.activity_out_top_to_bottom);
+    }
 }

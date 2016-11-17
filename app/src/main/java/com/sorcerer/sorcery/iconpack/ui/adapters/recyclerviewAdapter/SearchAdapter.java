@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -222,6 +223,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.slice.showTopEdgeShadow(topEdgeShadow);
     }
 
+    @SuppressLint("SetTextI18n")
     public void search(String s) {
         mShowList.clear();
 

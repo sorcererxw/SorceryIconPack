@@ -118,15 +118,13 @@ public class MainActivity extends BaseActivity {
                     times = 0;
                 }
             };
-
     private Navigator mNavigator;
+    private SearchTransitioner mSearchTransitioner;
 
     @Override
     protected int provideLayoutId() {
         return R.layout.activity_main;
     }
-
-    private SearchTransitioner mSearchTransitioner;
 
     @Override
     protected void init() {

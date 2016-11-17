@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -225,8 +226,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
             return true;
         } else if (id == android.R.id.home) {
             onBackPressed();
-        } else if (id == R.id.action_premium_request) {
-
         } else if (id == R.id.action_select_all) {
             mCheckAll = !mCheckAll;
             mAdapter.checkAll(mCheckAll);
@@ -236,12 +235,12 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                 showFab(false);
             }
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     private void save(final List<AppInfo> list) {
         Observable.create(new Observable.OnSubscribe<List<AppInfo>>() {
+            @SuppressLint("HardwareIds")
             @Override
             public void call(final Subscriber<? super List<AppInfo>> subscriber) {
                 String deviceId = null;
@@ -328,5 +327,11 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         AppSelectActivity.this.finish();
                     }
                 });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.activity_in_scale,R.anim.activity_out_top_to_bottom);
     }
 }

@@ -34,6 +34,7 @@
     </style>
 
     <style name="AppTheme.Dialog" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@color/dialog_background_scrim</item>
     </style>

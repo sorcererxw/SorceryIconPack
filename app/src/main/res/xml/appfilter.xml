@@ -53,6 +53,7 @@
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
         drawable="onepluse_calendar_"/>
+
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -1236,6 +1237,9 @@
         component="ComponentInfo{com.sonyericsson.conversations/com.sonyericsson.conversations.ui.ConversationListActivity}"
         drawable="sony_messaging"/>
     <item
+        component="ComponentInfo{eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Emblem}"
+        drawable="supersu_emblem"/>
+    <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
     <item
@@ -1515,9 +1519,6 @@
         component="ComponentInfo{com.htc.contacts/com.htc.contacts.DialerTabActivity}"
         drawable="htc_phone"/>
     <item
-        component="ComponentInfo{com.htc.lucy/com.htc.lucy.editor.LandingActivity}"
-        drawable="htc_scribble"/>
-    <item
         component="ComponentInfo{com.android.htccontacts/com.android.htccontacts.DialerTabActivity}"
         drawable="htc_phone"/>
     <item
@@ -1552,6 +1553,9 @@
         drawable="icebox"/>
     <item
         component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.mainActivity.MainActivityFakeDrawer}"
+        drawable="icebox"/>
+    <item
+        component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.mainActivity.MainActivityWithRoundIcon}"
         drawable="icebox"/>
     <item
         component="ComponentInfo{com.theme.mumu.flat/com.afollestad.polar.ui.MainActivity}"
@@ -1812,6 +1816,9 @@
         component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.Welcome}"
         drawable="meituan"/>
     <item
+        component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.FlashWelcome}"
+        drawable="meituan"/>
+    <item
         component="ComponentInfo{com.dailyyoga.cn/com.user.login.AdvertActivity}"
         drawable="meiriyujia"/>
     <item
@@ -2003,9 +2010,6 @@
     <item
         component="ComponentInfo{com.oneplus.bbs/com.oneplus.bbs.ui.activity.PreStartActivity}"
         drawable="oneplus_community"/>
-    <item
-        component="ComponentInfo{de.motain.iliga/de.motain.iliga.activity.SplashScreenActivity}"
-        drawable="onefootball"/>
     <item
         component="ComponentInfo{net.oneplus.weather/net.oneplus.weather.app.MainActivity}"
         drawable="oneplus_weather"/>
@@ -2946,6 +2950,9 @@
         component="ComponentInfo{com.tencent.qqpim/com.tencent.qqpim.ui.QQPimAndroid}"
         drawable="tencent_wesync"/>
     <item
+        component="ComponentInfo{com.tencent.qqpim/com.tencent.qqpim.UI.QQPimAndroid}"
+        drawable="tencent_wesync"/>
+    <item
         component="ComponentInfo{cn.zhj.hydrogenwallpager/cn.zhj.hydrogenwallpager.view.MainActivity}"
         drawable="hydrogen_wallpager"/>
     <item
@@ -2956,6 +2963,9 @@
         drawable="wannengyingshi"/>
     <item
         component="ComponentInfo{air.com.adobe.pstouchphone/air.com.adobe.pstouchphone.AppEntry}"
+        drawable="adobe_photoshop"/>
+    <item
+        component="ComponentInfo{air.com.adobe.pstouchphone/com.jobernowl.MainActivity}"
         drawable="adobe_photoshop"/>
     <item
         component="ComponentInfo{com.android.calendar/com.android.calendar.CalendarTabActivity}"
@@ -3324,6 +3334,9 @@
         component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}"
         drawable="samsung_s_health"/>
     <item
+        component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.SplashScreenActivity}"
+        drawable="samsung_s_health"/>
+    <item
         component="ComponentInfo{com.cubic.autohome/com.cubic.autohome.LogoActivity}"
         drawable="autohome"/>
     <item
@@ -3571,10 +3584,10 @@
         drawable="atom_vpn"/>
     <item
         component="ComponentInfo{com.geektoy.nfcemulator/com.geektoy.nfcemulator.MainActivity}"
-        drawable="nfc_emulator_alt"/>
+        drawable="nfc_emulator"/>
     <item
         component="ComponentInfo{com.geektoy.nfcemulator/com.qihoo.util.StartActivity}"
-        drawable="nfc_emulator_alt"/>
+        drawable="nfc_emulator"/>
     <item
         component="ComponentInfo{free.vpn.unblock.proxy.vpnpro/com.quickdy.vpn.app.VpnMainActivity}"
         drawable="snap_vpn"/>
@@ -3908,5 +3921,13 @@
     <item
         component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.LaunchActivity}"
         drawable="sony_contacts"/>
-
+    <item
+        component="ComponentInfo{com.funinput.digit/com.funinput.digit.activity.WelcomeActivity}"
+        drawable="dgtle"/>
+    <item
+        component="ComponentInfo{com.eg.android.AlipayGphone/com.alipay.mobile.quinox.LauncherActivity.alias}"
+        drawable="alipay_qr_code"/>
+    <item
+        component="ComponentInfo{eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Material}"
+        drawable="supersu_material"/>
 </resources>
