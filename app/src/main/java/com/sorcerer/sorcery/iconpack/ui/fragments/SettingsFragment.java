@@ -96,6 +96,9 @@ public class SettingsFragment extends PreferenceFragment {
     private static final String KEY_GENERAL_CLEAR_CACHE = "preference_general_clear_cache";
     private Preference mGeneralClearCachePreference;
 
+    private static final String KEY_LAB_GROUP = "preference_group_laboratory";
+    private PreferenceGroup mLabGroup;
+
     private static final String KEY_LABORATORY_GLOBAL_LOAD =
             "preference_switch_laboratory_global_load";
     private SorcerySwitchPreference mLaboratoryGlobalLoadSwitchPreference;
@@ -146,53 +149,58 @@ public class SettingsFragment extends PreferenceFragment {
                 .cancelable(false)
                 .build();
 
-        mLaboratoryGlobalLoadSwitchPreference =
-                (SorcerySwitchPreference) findPreference(KEY_LABORATORY_GLOBAL_LOAD);
-        mLaboratoryGlobalLoadSwitchPreference.setSummary(StringUtil.handleLongXmlString(
-                ResourceUtil.getString(mActivity, R.string.global_detail)));
-        mLaboratoryGlobalLoadSwitchPreference.setChecked(mGlobalLoadActive);
-        mLaboratoryGlobalLoadSwitchPreference.setOnPreferenceClickListener(
-                new Preference.OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        if (!mGlobalLoadActive) {
-                            if (!AppInfoUtil.isXposedInstalled(mActivity)) {
-                                Toast.makeText(mActivity, "need Xposed", Toast.LENGTH_SHORT)
-                                        .show();
-                                return true;
+        if (Build.VERSION.SDK_INT >= 24) {
+            mLabGroup = (PreferenceGroup) findPreference(KEY_LAB_GROUP);
+            mPreferenceScreen.removePreference(mLabGroup);
+        } else {
+            mLaboratoryGlobalLoadSwitchPreference =
+                    (SorcerySwitchPreference) findPreference(KEY_LABORATORY_GLOBAL_LOAD);
+            mLaboratoryGlobalLoadSwitchPreference.setSummary(StringUtil.handleLongXmlString(
+                    ResourceUtil.getString(mActivity, R.string.global_detail)));
+            mLaboratoryGlobalLoadSwitchPreference.setChecked(mGlobalLoadActive);
+            mLaboratoryGlobalLoadSwitchPreference.setOnPreferenceClickListener(
+                    new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            if (!mGlobalLoadActive) {
+                                if (!AppInfoUtil.isXposedInstalled(mActivity)) {
+                                    Toast.makeText(mActivity, "need Xposed", Toast.LENGTH_SHORT)
+                                            .show();
+                                    return true;
+                                }
+                                new MaterialDialog.Builder(mActivity)
+                                        .title(R.string.attention)
+                                        .content(StringUtil.handleLongXmlString(ResourceUtil
+                                                .getString(mActivity,
+                                                        R.string.global_attention)))
+                                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                            @Override
+                                            public void onClick(@NonNull MaterialDialog dialog,
+                                                                @NonNull DialogAction which) {
+                                                tryAndApplyIcon(mActivity.getApplicationInfo());
+                                            }
+                                        })
+                                        .onNegative(new MaterialDialog.SingleButtonCallback() {
+                                            @Override
+                                            public void onClick(@NonNull MaterialDialog dialog,
+                                                                @NonNull DialogAction which) {
+                                                dialog.dismiss();
+                                            }
+                                        })
+                                        .positiveText(R.string.action_know_what_doing)
+                                        .negativeText(R.string.action_later)
+                                        .build().show();
+                            } else {
+                                mGlobalLoadActive = false;
+                                mSharedPreferences.edit()
+                                        .putBoolean("pref_global_load", false)
+                                        .apply();
+                                mLaboratoryGlobalLoadSwitchPreference.setChecked(false);
                             }
-                            new MaterialDialog.Builder(mActivity)
-                                    .title(R.string.attention)
-                                    .content(StringUtil.handleLongXmlString(ResourceUtil
-                                            .getString(mActivity,
-                                                    R.string.global_attention)))
-                                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                        @Override
-                                        public void onClick(@NonNull MaterialDialog dialog,
-                                                            @NonNull DialogAction which) {
-                                            tryAndApplyIcon(mActivity.getApplicationInfo());
-                                        }
-                                    })
-                                    .onNegative(new MaterialDialog.SingleButtonCallback() {
-                                        @Override
-                                        public void onClick(@NonNull MaterialDialog dialog,
-                                                            @NonNull DialogAction which) {
-                                            dialog.dismiss();
-                                        }
-                                    })
-                                    .positiveText(R.string.action_know_what_doing)
-                                    .negativeText(R.string.action_later)
-                                    .build().show();
-                        } else {
-                            mGlobalLoadActive = false;
-                            mSharedPreferences.edit()
-                                    .putBoolean("pref_global_load", false)
-                                    .apply();
-                            mLaboratoryGlobalLoadSwitchPreference.setChecked(false);
+                            return true;
                         }
-                        return true;
-                    }
-                });
+                    });
+        }
 
         mDevPreferenceGroup = (PreferenceGroup) findPreference(KEY_DEV_GROUP);
         if (!mPrefs.devOptionsOpened().getValue()) {
@@ -224,7 +232,7 @@ public class SettingsFragment extends PreferenceFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mActivity = activity;
-        if (AppInfoUtil.isXposedInstalled(activity)) {
+        if (AppInfoUtil.isXposedInstalled(activity) && Build.VERSION.SDK_INT <= 23) {
             mSharedPreferences =
                     mActivity.getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
             mGlobalLoadActive = mSharedPreferences.getBoolean("pref_global_load", false);

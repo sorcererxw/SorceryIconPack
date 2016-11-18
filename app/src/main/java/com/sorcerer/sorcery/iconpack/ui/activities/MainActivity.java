@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -24,6 +25,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
@@ -292,6 +294,9 @@ public class MainActivity extends BaseActivity {
             headBuilder.withHeaderBackground(R.drawable.sorcery_head);
         }
 
+        int textColorRes = R.color.grey_800;
+        int subTextColorRes = R.color.grey_600;
+        int iconAlpha = 128;
         mDrawer = new DrawerBuilder()
                 .withCloseOnClick(true)
                 .withToolbar(mSearchToolbar)
@@ -310,8 +315,9 @@ public class MainActivity extends BaseActivity {
                 new ExpandableDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_mail_black_24dp, 128))
+                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext,
+                                R.drawable.ic_mail_black_24dp, iconAlpha))
+                        .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_feedback)
                         .withTag("")
                         .withSubItems(
@@ -320,20 +326,31 @@ public class MainActivity extends BaseActivity {
                                         .withSetSelected(false)
                                         .withSelectable(false)
                                         .withName(R.string.request)
+                                        .withTextColorRes(subTextColorRes)
                                         .withTag("request"),
                                 new SecondaryDrawerItem()
                                         .withLevel(3)
                                         .withSetSelected(false)
                                         .withSelectable(false)
+                                        .withTextColorRes(subTextColorRes)
                                         .withName(R.string.suggest)
                                         .withTag("suggest")
                         ),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
+                        .withTag("settings")
+                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+                                .ic_settings_black_24dp, iconAlpha))
+                        .withTextColorRes(textColorRes)
+                        .withName(R.string.nav_item_settings),
+                new PrimaryDrawerItem()
+                        .withSetSelected(false)
+                        .withSelectable(false)
                         .withTag("help")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_help_black_24dp, 128))
+                                .ic_help_black_24dp, iconAlpha))
+                        .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_help)
         );
 
@@ -343,32 +360,22 @@ public class MainActivity extends BaseActivity {
                     .withSelectable(false)
                     .withTag("donate")
                     .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                            .ic_attach_money_black_24dp, 128))
+                            .ic_attach_money_black_24dp, iconAlpha))
+                    .withTextColorRes(textColorRes)
                     .withName(R.string.nav_item_donate));
         }
 
-        mDrawer.addItem(new PrimaryDrawerItem()
-                .withSetSelected(false)
-                .withSelectable(false)
-                .withTag("settings")
-                .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                        .ic_settings_black_24dp, 128))
-                .withName(R.string.nav_item_settings));
-
         if (BuildConfig.DEBUG) {
-
             if (AppInfoUtil.isXposedInstalled(this)) {
                 mDrawer.addItem(new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("lab")
                         .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_settings_black_24dp, 128))
+                                .ic_settings_black_24dp, iconAlpha))
+                        .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_lab));
             }
-
-            mDrawer.addItem(new PrimaryDrawerItem().withSelectable(false).withTag("DEBUG")
-                    .withName("DEBUG"));
         }
 
         mDrawer.setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {

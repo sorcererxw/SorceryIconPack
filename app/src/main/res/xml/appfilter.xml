@@ -53,7 +53,6 @@
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
         drawable="onepluse_calendar_"/>
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -3930,4 +3929,11 @@
     <item
         component="ComponentInfo{eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Material}"
         drawable="supersu_material"/>
+    <item
+        component="ComponentInfo{pl.solidexplorer2/pl.solidexplorer.SolidExplorer}"
+        drawable="soild_explorer"/>
+    <item
+        component="ComponentInfo{pl.solidexplorer/pl.solidexplorer.SolidExplorer}"
+        drawable="soild_explorer"/>
+
 </resources>
