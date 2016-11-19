@@ -21,6 +21,8 @@ import com.sorcerer.sorcery.iconpack.tinker.log.MyLogImp;
 import com.sorcerer.sorcery.iconpack.tinker.util.SampleApplicationContext;
 import com.sorcerer.sorcery.iconpack.tinker.util.TinkerManager;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -70,6 +72,9 @@ public class SorceryIconsAppLike extends DefaultApplicationLike {
         }
 //        RxActivityResult.register(getApplication());
         RxActivityResult.register(getApplication());
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)

@@ -41,7 +41,6 @@ import com.sorcerer.sorcery.iconpack.ui.preferences.SorcerySwitchPreference;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.OpenSourceLibInformations;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.Prefs;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.SimpleCallback;
@@ -80,6 +79,7 @@ import static com.sorcerer.sorcery.iconpack.ui.activities.LabActivity.SHARED_PRE
  * @date: 2016/11/11
  */
 
+@SuppressWarnings("ALL")
 public class SettingsFragment extends PreferenceFragment {
     private Activity mActivity;
 

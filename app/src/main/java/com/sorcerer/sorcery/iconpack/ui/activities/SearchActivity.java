@@ -189,7 +189,7 @@ public class SearchActivity extends AppCompatActivity {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        float s = activity.getResources().getDimension(R.dimen.icon_grid_item_size);
+        float s = activity.getResources().getDimension(R.dimen.icon_grid_item_size) + 2 * activity.getResources().getDimension(R.dimen.icon_grid_item_margin);
         return (int) (size.x / s);
     }
 

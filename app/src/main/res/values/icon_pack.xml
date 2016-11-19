@@ -2,6 +2,36 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>teamviewer_host_for_samsung</item>
+        <item>samsung_artcanvas</item>
+        <item>samsung_gear_galaxy_wear</item>
+        <item>samsung_s_voice_app</item>
+        <item>samsung_notes</item>
+        <item>samsung_dialer</item>
+        <item>samsung_contacts</item>
+        <item>samsung_milk_music</item>
+        <item>samsung_milk_music_alt</item>
+        <item>samsung_cloud</item>
+        <item>samsung_video</item>
+        <item>samsung_messages</item>
+        <item>samsung_galaxy_apps</item>
+        <item>samsung_email</item>
+        <item>samsung_game_tunner</item>
+        <item>samsung_reader</item>
+        <item>samsung_write_on_pdf</item>
+        <item>samsung_themes_store</item>
+        <item>sony_live_on_youtube</item>
+        <item>sony_play_memories_online</item>
+        <item>sony_play_memories_online_alt</item>
+        <item>sony_smart_connect</item>
+        <item>sony_smart_key</item>
+        <item>sony_trackid</item>
+        <item>sony_walkmate</item>
+        <item>sony_alpha_clock</item>
+        <item>sony_background_defocus</item>
+        <item>sony_movie_maker</item>
+        <item>sony_sketch</item>
+        <item>sony_whats_new</item>
         <item>soild_explorer</item>
         <item>supersu_material</item>
         <item>supersu_emblem</item>
@@ -48,195 +78,11 @@
         <item>a360_liuliang</item>
         <item>zol</item>
         <item>yaokongjingling</item>
-        
-        <!--<item>@string/icon_label_added</item>-->
-        <!--<item>contacts</item>-->
-        <!--<item>google_play_service</item>-->
-        <!--<item>zuiyou</item>-->
-        <!--<item>zuizuimanhua_comic_lover</item>-->
-        <!--<item>tieba_zhushou</item>-->
-        <!--<item>ireader</item>-->
-        <!--<item>oneplus_filemanager</item>-->
-        <!--<item>oneplus_market</item>-->
-        <!--<item>oneplus_soundrecorder</item>-->
-        <!--<item>oneplus_note</item>-->
-        <!--<item>game_altos_adventure</item>-->
-        <!--<item>douban_movie</item>-->
-        <!--<item>settings</item>-->
-        <!--<item>game_snake</item>-->
-        <!--<item>coolapk_daily_picture</item>-->
-        <!--<item>xiaomi_wallet</item>-->
-        <!--<item>sspai_daikejietu</item>-->
-        <!--<item>bu_bei_lang_easy_lexis</item>-->
-        <!--<item>biaozhunribenyu</item>-->
-        <!--<item>screen_mask</item>-->
-        <!--<item>xqs_background_alt</item>-->
-        <!--<item>xqs_background</item>-->
-        <!--<item>viper_fx</item>-->
-        <!--<item>copas</item>-->
-        <!--<item>mt_filemanager</item>-->
-        <!--<item>snap_vpn</item>-->
-        <!--<item>nfc_emulator</item>-->
-        <!--<item>nfc_emulator_alt</item>-->
-        <!--<item>atom_vpn</item>-->
-        <!--<item>whatsapp_messenger</item>-->
-        <!--<item>sony_video_tv_slideview</item>-->
-        <!--<item>dongmanzhijia</item>-->
-        <!--<item>poem</item>-->
-        <!--<item>keke_english</item>-->
-        <!--<item>xinternalsd</item>-->
-        <!--<item>microsoft_remote_desktop</item>-->
-        <!--<item>chaojishipin_alt</item>-->
-        <!--<item>chaojishipin</item>-->
-        <!--<item>jiakaobaodian</item>-->
-        <!--<item>ttbook</item>-->
-        <!--<item>xiaomi_miui_calculator</item>-->
-        <!--<item>microsoft_bing_search</item>-->
-        <!--<item>sony_motionshot</item>-->
-        <!--<item>game_netease_onmyoji</item>-->
-        <!--<item>oneplus_calculator_alt</item>-->
-        <!--<item>oneplus_calculator</item>-->
-        <!--<item>ccleaner</item>-->
-        <!--<item>microsoft_groove_music</item>-->
-        <!--<item>office_suite</item>-->
-        <!--<item>open_vpn</item>-->
-        <!--<item>sony_news_suite</item>-->
-        <!--<item>microsoft_xbox</item>-->
-        <!--<item>microsoft_xbox_alt</item>-->
-        <!--<item>microsoft_xbox_beta</item>-->
-        <!--<item>microsoft_xbox_beta_alt</item>-->
-        <!--<item>yoho_buy</item>-->
-        <!--<item>cilikanpian</item>-->
-        <!--<item>brevent</item>-->
-        <!--<item>huluxia_gametools</item>-->
-        <!--<item>adsafe</item>-->
-        <!--<item>hj_word_games</item>-->
-        <!--<item>ilike_cartoon</item>-->
-        <!--<item>game_bob_qiuqiudazuozhan</item>-->
-        <!--<item>call_vibrator</item>-->
-        <!--<item>wechat_trace</item>-->
-        <!--<item>yilan_matrix</item>-->
-        <!--<item>tencent_app_market</item>-->
-        <!--<item>zhanqi_tv</item>-->
-        <!--<item>zhuishushenqi</item>-->
-        <!--<item>zhuishushenqi_beta</item>-->
-        <!--<item>google_messenger</item>-->
-        <!--<item>hangout_dialer</item>-->
-        <!--<item>lenovo_gt_browser</item>-->
-        <!--<item>lenovo_calendar</item>-->
-        <!--<item>netease_mkey</item>-->
-        <!--<item>netease_finance_alt</item>-->
-        <!--<item>netease_finance</item>-->
-        <!--<item>netease_kaola</item>-->
-        <!--<item>netease_cartoon_reader</item>-->
-        <!--<item>netease_mail_box</item>-->
-        <!--<item>netease_game_forums</item>-->
-        <!--<item>netease_pris</item>-->
-        <!--<item>netease_epay_alt</item>-->
-        <!--<item>netease_epay</item>-->
-        <!--<item>baidu_travel</item>-->
-        <!--<item>ali_newjob</item>-->
-        <!--<item>ali_zhineng</item>-->
-        <!--<item>ali_jiankang</item>-->
-        <!--<item>google_youtube_music</item>-->
-        <!--<item>start_chart_education</item>-->
-        <!--<item>start_chart</item>-->
-        <!--<item>pinterest</item>-->
-        <!--<item>kmplayer_pro</item>-->
-        <!--<item>kmplayer</item>-->
-        <!--<item>google_spotlight_stories</item>-->
-        <!--<item>firefox_beta</item>-->
-        <!--<item>firefox</item>-->
-        <!--<item>google_duo</item>-->
-        <!--<item>google_device_policy</item>-->
-        <!--<item>boost_plus</item>-->
-        <!--<item>battlefield_companion</item>-->
-        <!--<item>google_allo</item>-->
-        <!--<item>netease_gacha</item>-->
-        <!--<item>aliyun</item>-->
-        <!--<item>baidu_iknow</item>-->
-        <!--<item>baidu_patient</item>-->
-        <!--<item>alibaba</item>-->
-        <!--<item>baidu_imgae_alt</item>-->
-        <!--<item>baidu_imgae</item>-->
-        <!--<item>tencent_qq_reader</item>-->
-        <!--<item>baidu_yuedu</item>-->
-        <!--<item>every_wiki</item>-->
-        <!--<item>baidu_wear</item>-->
-        <!--<item>baidu_simeji_keyboard</item>-->
-        <!--<item>ali_tv_helper</item>-->
-        <!--<item>mbalib_wiki</item>-->
-        <!--<item>baidu_appsearch</item>-->
-        <!--<item>wiki_for_minecraft</item>-->
-        <!--<item>wikipedia</item>-->
-        <!--<item>wikipedia_beta</item>-->
-        <!--<item>baidu_wenku</item>-->
-        <!--<item>himail</item>-->
-        <!--<item>baidu_security_center</item>-->
-        <!--<item>baidu_chuanke</item>-->
-        <!--<item>baidu_navigate</item>-->
-        <!--<item>baidu_browser</item>-->
-        <!--<item>baidu_translate</item>-->
-        <!--<item>oneplus_deskclock</item>-->
-        <!--<item>microsoft_office_remote</item>-->
-        <!--<item>baidu_homework</item>-->
-        <!--<item>zhiyoo</item>-->
-        <!--<item>tencent_anime_comic</item>-->
-        <!--<item>blizzard_authenticator</item>-->
-        <!--<item>nga_player_community</item>-->
-        <!--<item>game_tencent_hlddz</item>-->
-        <!--<item>xcurrency</item>-->
-        <!--<item>oneplus_gallery</item>-->
-        <!--<item>onepluse_calendar</item>-->
-        <!--<item>onepluse_calendar_1</item>-->
-        <!--<item>onepluse_calendar_2</item>-->
-        <!--<item>onepluse_calendar_3</item>-->
-        <!--<item>onepluse_calendar_4</item>-->
-        <!--<item>onepluse_calendar_5</item>-->
-        <!--<item>onepluse_calendar_6</item>-->
-        <!--<item>onepluse_calendar_7</item>-->
-        <!--<item>onepluse_calendar_8</item>-->
-        <!--<item>onepluse_calendar_9</item>-->
-        <!--<item>onepluse_calendar_10</item>-->
-        <!--<item>onepluse_calendar_11</item>-->
-        <!--<item>onepluse_calendar_12</item>-->
-        <!--<item>onepluse_calendar_13</item>-->
-        <!--<item>onepluse_calendar_14</item>-->
-        <!--<item>onepluse_calendar_15</item>-->
-        <!--<item>onepluse_calendar_16</item>-->
-        <!--<item>onepluse_calendar_17</item>-->
-        <!--<item>onepluse_calendar_18</item>-->
-        <!--<item>onepluse_calendar_19</item>-->
-        <!--<item>onepluse_calendar_20</item>-->
-        <!--<item>onepluse_calendar_21</item>-->
-        <!--<item>onepluse_calendar_22</item>-->
-        <!--<item>onepluse_calendar_23</item>-->
-        <!--<item>onepluse_calendar_24</item>-->
-        <!--<item>onepluse_calendar_25</item>-->
-        <!--<item>onepluse_calendar_26</item>-->
-        <!--<item>onepluse_calendar_27</item>-->
-        <!--<item>onepluse_calendar_28</item>-->
-        <!--<item>onepluse_calendar_29</item>-->
-        <!--<item>onepluse_calendar_30</item>-->
-        <!--<item>onepluse_calendar_31</item>-->
-        <!---->
-        <!--<item>@string/icon_label_updated</item>-->
-        <!--<item>txvpn</item>-->
-        <!--<item>jd</item>-->
-        <!--<item>flyme_account</item>-->
-        <!--<item>flyme_browser</item>-->
-        <!--<item>flyme_dialer</item>-->
-        <!--<item>flyme_filemanager</item>-->
-        <!--<item>flyme_music</item>-->
-        <!--<item>flyme_scanner</item>-->
-        <!--<item>flyme_sms</item>-->
-        <!--<item>flyme_toolbox</item>-->
-        <!--<item>flyme_update</item>-->
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
         <item>alibaba</item>
         <item>alipay</item>
-        <item>alipay_alt</item>
+        <item>alipay_qr_code</item>
         <item>aliyun</item>
         <item>ali_antfortune</item>
         <item>ali_cainiao_guoguo</item>
@@ -391,7 +237,6 @@
     <string-array name="icon_pack_htc" translatable="false">
         <item>htc_car</item>
         <item>htc_phone</item>
-        <item>htc_scribble</item>
     </string-array>
 
     <string-array name="icon_pack_lenovo" translatable="false">
@@ -430,23 +275,66 @@
     </string-array>
 
     <string-array name="icon_pack_samsung" translatable="false">
+        <item>samsung_artcanvas</item>
+        <item>samsung_cloud</item>
+        <item>samsung_contacts</item>
+        <item>samsung_dialer</item>
+        <item>samsung_email</item>
+        <item>samsung_galaxy_apps</item>
+        <item>samsung_galaxy_members</item>
+        <item>samsung_galaxy_members_alt</item>
+        <item>samsung_game_tunner</item>
+        <item>samsung_gear_galaxy_wear</item>
+        <item>samsung_messages</item>
+        <item>samsung_milk_music</item>
+        <item>samsung_milk_music_alt</item>
+        <item>samsung_notes</item>
         <item>samsung_pay</item>
+        <item>samsung_reader</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
+        <item>samsung_s_voice_app</item>
+        <item>samsung_themes_store</item>
+        <item>samsung_video</item>
+        <item>samsung_write_on_pdf</item>
     </string-array>
 
     <string-array name="icon_pack_sony" translatable="false">
+        <item>sony_album</item>
+        <item>sony_alpha_clock</item>
         <item>sony_ar_effect</item>
+        <item>sony_ar_fun</item>
+        <item>sony_audio_recorder</item>
+        <item>sony_background_defocus</item>
         <item>sony_calendar</item>
+        <item>sony_camera</item>
+        <item>sony_contacts</item>
+        <item>sony_fm_radio</item>
         <item>sony_lifelog</item>
+        <item>sony_live_on_youtube</item>
+        <item>sony_mail</item>
+        <item>sony_messaging</item>
         <item>sony_motionshot</item>
-        <item>sony_movies</item>
+        <item>sony_movie_maker</item>
         <item>sony_music</item>
         <item>sony_news_suite</item>
+        <item>sony_playstation_network</item>
         <item>sony_play_memories_mobile</item>
+        <item>sony_play_memories_online</item>
+        <item>sony_play_memories_online_alt</item>
+        <item>sony_sketch</item>
+        <item>sony_sleep_partner</item>
+        <item>sony_smart_band_talk</item>
+        <item>sony_smart_connect</item>
+        <item>sony_smart_key</item>
+        <item>sony_store_china</item>
         <item>sony_support</item>
+        <item>sony_trackid</item>
         <item>sony_video_tv_slideview</item>
+        <item>sony_walkmate</item>
         <item>sony_weather</item>
+        <item>sony_whats_new</item>
+        <item>sony_xhs_lounge</item>
     </string-array>
 
     <string-array name="icon_pack_tencent" translatable="false">
@@ -647,7 +535,7 @@
         <item>aisen</item>
         <item>alibaba</item>
         <item>alipay</item>
-        <item>alipay_alt</item>
+        <item>alipay_qr_code</item>
         <item>aliyun</item>
         <item>ali_antfortune</item>
         <item>ali_cainiao_guoguo</item>
@@ -671,17 +559,20 @@
         <item>ali_zhineng</item>
         <item>almalence_camera</item>
         <item>amap</item>
+        <item>amazon_shopping</item>
         <item>android_nify</item>
         <item>anime_taste</item>
         <item>anydo</item>
         <item>anydo_calendar</item>
         <item>anyview</item>
         <item>apkpure</item>
+        <item>appchina_yingyonghui_market</item>
         <item>appenv</item>
         <item>apple_music</item>
         <item>appso</item>
         <item>app_drawer</item>
         <item>app_drawer_alt</item>
+        <item>app_lock</item>
         <item>app_settings</item>
         <item>atom_vpn</item>
         <item>autohome</item>
@@ -720,6 +611,7 @@
         <item>bank_of_communications</item>
         <item>battery_taskmaster</item>
         <item>battlefield_companion</item>
+        <item>battlefield_companion_alt</item>
         <item>beiyue</item>
         <item>biaozhunribenyu</item>
         <item>bilibili</item>
@@ -749,6 +641,7 @@
         <item>call_vibrator</item>
         <item>camera</item>
         <item>careland</item>
+        <item>ccb_atm_mobilepay</item>
         <item>ccb_bank</item>
         <item>ccleaner</item>
         <item>changba</item>
@@ -765,6 +658,7 @@
         <item>cmcc_wifi</item>
         <item>cntv</item>
         <item>contacts</item>
+        <item>contacts_alt</item>
         <item>coolapk</item>
         <item>coolapk_alt</item>
         <item>coolapk_alt_2</item>
@@ -827,6 +721,7 @@
         <item>evernote_alt</item>
         <item>evernote_alt_2</item>
         <item>every_wiki</item>
+        <item>express_100</item>
         <item>**F**</item>
         <item>facebook</item>
         <item>fancy</item>
@@ -1031,7 +926,9 @@
         <item>houzz</item>
         <item>htc_car</item>
         <item>htc_phone</item>
-        <item>htc_scribble</item>
+        <item>huawei_appmarket</item>
+        <item>huawei_backup</item>
+        <item>huawei_phone_service</item>
         <item>huaxia_bank</item>
         <item>huaxiong</item>
         <item>huluxia_gametools</item>
@@ -1091,12 +988,14 @@
         <item>kuaipan</item>
         <item>kuaiya</item>
         <item>kugou</item>
+        <item>kuwo_music_player</item>
         <item>**L**</item>
         <item>lanrenzhoumo</item>
         <item>lantern</item>
         <item>lavaradio</item>
         <item>layout</item>
         <item>lbe</item>
+        <item>lbe_parallel_space</item>
         <item>ledongli</item>
         <item>ledongli_run</item>
         <item>lenovo_calendar</item>
@@ -1203,10 +1102,13 @@
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
         <item>netease_youxiangdashi</item>
+        <item>netfits_vpn</item>
+        <item>network_speed_indicator</item>
         <item>nfc_emulator</item>
         <item>nfc_emulator_alt</item>
         <item>nga_player_community</item>
         <item>nice</item>
+        <item>nico_stytool_nilimengmeng</item>
         <item>nissan</item>
         <item>noisyfox</item>
         <item>notify_clean</item>
@@ -1215,7 +1117,6 @@
         <item>olo</item>
         <item>olympus_image_share</item>
         <item>one</item>
-        <item>onefootball</item>
         <item>onepluse_calendar</item>
         <item>onepluse_calendar_1</item>
         <item>onepluse_calendar_10</item>
@@ -1280,7 +1181,6 @@
         <item>pinterest</item>
         <item>pixiv</item>
         <item>pizzahut</item>
-        <item>playstation</item>
         <item>pocket_casts</item>
         <item>poem</item>
         <item>pokemon_go</item>
@@ -1314,9 +1214,28 @@
         <item>root_explorer</item>
         <item>**S**</item>
         <item>same</item>
+        <item>samsung_artcanvas</item>
+        <item>samsung_cloud</item>
+        <item>samsung_contacts</item>
+        <item>samsung_dialer</item>
+        <item>samsung_email</item>
+        <item>samsung_galaxy_apps</item>
+        <item>samsung_galaxy_members</item>
+        <item>samsung_galaxy_members_alt</item>
+        <item>samsung_game_tunner</item>
+        <item>samsung_gear_galaxy_wear</item>
+        <item>samsung_messages</item>
+        <item>samsung_milk_music</item>
+        <item>samsung_milk_music_alt</item>
+        <item>samsung_notes</item>
         <item>samsung_pay</item>
+        <item>samsung_reader</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
+        <item>samsung_s_voice_app</item>
+        <item>samsung_themes_store</item>
+        <item>samsung_video</item>
+        <item>samsung_write_on_pdf</item>
         <item>sanguliupo</item>
         <item>scanbot</item>
         <item>scientific_calculator</item>
@@ -1344,17 +1263,42 @@
         <item>snaptube</item>
         <item>snap_vpn</item>
         <item>sogou_chat</item>
+        <item>soild_explorer</item>
+        <item>sony_album</item>
+        <item>sony_alpha_clock</item>
         <item>sony_ar_effect</item>
+        <item>sony_ar_fun</item>
+        <item>sony_audio_recorder</item>
+        <item>sony_background_defocus</item>
         <item>sony_calendar</item>
+        <item>sony_camera</item>
+        <item>sony_contacts</item>
+        <item>sony_fm_radio</item>
         <item>sony_lifelog</item>
+        <item>sony_live_on_youtube</item>
+        <item>sony_mail</item>
+        <item>sony_messaging</item>
         <item>sony_motionshot</item>
-        <item>sony_movies</item>
+        <item>sony_movie_maker</item>
         <item>sony_music</item>
         <item>sony_news_suite</item>
+        <item>sony_playstation_network</item>
         <item>sony_play_memories_mobile</item>
+        <item>sony_play_memories_online</item>
+        <item>sony_play_memories_online_alt</item>
+        <item>sony_sketch</item>
+        <item>sony_sleep_partner</item>
+        <item>sony_smart_band_talk</item>
+        <item>sony_smart_connect</item>
+        <item>sony_smart_key</item>
+        <item>sony_store_china</item>
         <item>sony_support</item>
+        <item>sony_trackid</item>
         <item>sony_video_tv_slideview</item>
+        <item>sony_walkmate</item>
         <item>sony_weather</item>
+        <item>sony_whats_new</item>
+        <item>sony_xhs_lounge</item>
         <item>sorcery_icons</item>
         <item>sougou_keyboard</item>
         <item>sougou_wallpaper</item>
@@ -1405,11 +1349,15 @@
         <item>sunrise_7</item>
         <item>sunrise_8</item>
         <item>sunrise_9</item>
+        <item>supersu_emblem</item>
+        <item>supersu_material</item>
         <item>swiftkey_keyboard</item>
         <item>**T**</item>
         <item>t66y</item>
         <item>taptap</item>
         <item>taskman</item>
+        <item>teamviewer_host_for_samsung</item>
+        <item>team_viewer_remote_control</item>
         <item>ted</item>
         <item>telegram</item>
         <item>tencent_anime_comic</item>
@@ -1451,6 +1399,7 @@
         <item>ticktick</item>
         <item>tieba_zhushou</item>
         <item>timi</item>
+        <item>tmri_jiaoguan_12123</item>
         <item>tonghuashun</item>
         <item>touchpal_keyboard</item>
         <item>toughwo</item>
@@ -1477,6 +1426,7 @@
         <item>uniqlo_calendar</item>
         <item>uniqlo_recipe</item>
         <item>uniqlo_wakeup</item>
+        <item>universal_copy</item>
         <item>**V**</item>
         <item>v2ex</item>
         <item>versus</item>
@@ -1540,6 +1490,7 @@
         <item>xunfei_keyboard</item>
         <item>xunlei</item>
         <item>xunlei_kuainiao</item>
+        <item>xykey</item>
         <item>**Y**</item>
         <item>yangqi</item>
         <item>yaokongjingling</item>
@@ -1596,4 +1547,5 @@
         <item>zuizuimanhua_comic_lover</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
 </resources>

@@ -45,15 +45,15 @@ public class LazyIconFragment extends LazyFragment {
         BAIDU,
         NETEASE,
         GOOGLE,
-//        HTC,
+        //        HTC,
 //        LENOVO,
 //        LG,
 //        MOTO,
         MICROSOFT,
-//        SAMSUNG,
-//        SONY,
+        SAMSUNG,
+        SONY,
         TENCENT,
-//        MIUI,
+        //        MIUI,
         FLYME,
         ONEPLUS
     }
@@ -163,7 +163,8 @@ public class LazyIconFragment extends LazyFragment {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        float s = getResources().getDimension(R.dimen.icon_grid_item_size);
+        float s = getResources().getDimension(R.dimen.icon_grid_item_size)
+                + 2 * getResources().getDimension(R.dimen.icon_grid_item_margin);
         mNumOfRows = (int) (size.x / s);
     }
 

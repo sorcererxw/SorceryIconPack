@@ -134,7 +134,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     @Override
     public AppItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new AppItemViewHolder(
-                LayoutInflater.from(mContext).inflate(R.layout.item_icon_request, parent, false)
+                LayoutInflater.from(mContext).inflate(R.layout.item_icons_request, parent, false)
         );
     }
 

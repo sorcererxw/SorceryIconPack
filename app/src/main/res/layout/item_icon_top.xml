@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="wrap_content">
 
@@ -7,17 +8,19 @@
         android:layout_marginTop="8dp"
         android:id="@+id/frameLayout_item_icon_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:id="@+id/imageView_item_icon"
             android:layout_width="@dimen/icon_grid_item_size"
             android:layout_height="@dimen/icon_grid_item_size"
             android:layout_gravity="center"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginBottom="@dimen/icon_grid_item_margin"
+            android:layout_marginLeft="@dimen/icon_grid_item_margin"
+            android:layout_marginRight="@dimen/icon_grid_item_margin"
+            android:layout_marginTop="@dimen/icon_grid_item_margin_double"
+            tools:ignore="ContentDescription"/>
     </FrameLayout>
 
 </FrameLayout>

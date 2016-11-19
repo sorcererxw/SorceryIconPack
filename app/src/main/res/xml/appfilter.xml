@@ -53,6 +53,7 @@
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
         drawable="onepluse_calendar_"/>
+
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -308,6 +309,18 @@
     <item
         component="ComponentInfo{com.camel.corp.universalcopy/com.camel.corp.universalcopy.SettingsActivity}"
         drawable="universal_copy"/>
+    <item
+        component="ComponentInfo{com.samsung.android.contacts/com.android.dialer.DialtactsActivity}"
+        drawable="samsung_dialer"/>
+    <item
+        component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}"
+        drawable="samsung_email"/>
+    <item
+        component="ComponentInfo{com.samsung.android.gametuner.thin/com.samsung.android.gametuner.thin.activity.SplashActivity}"
+        drawable="samsung_game_tunner"/>
+    <item
+        component="ComponentInfo{com.sonymobile.sketch/com.sonymobile.sketch.dashboard.DashboardActivity}"
+        drawable="sony_sketch"/>
     <item
         component="ComponentInfo{tk.wasdennnoch.androidn_ify/tk.wasdennnoch.androidn_ify.SettingsAlias}"
         drawable="android_nify"/>
@@ -1239,10 +1252,40 @@
         component="ComponentInfo{eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Emblem}"
         drawable="supersu_emblem"/>
     <item
+        component="ComponentInfo{com.teamviewer.host.samsung/com.teamviewer.host.ui.HostActivity}"
+        drawable="teamviewer_host_for_samsung"/>
+    <item
+        component="ComponentInfo{com.samsung.smartcalli/com.samsung.smartcalli.activity.WelcomeActivity}"
+        drawable="samsung_artcanvas"/>
+    <item
+        component="ComponentInfo{com.samsung.android.app.watchmanager/com.samsung.android.app.watchmanager.setupwizard.SetupWizardWelcomeActivity}"
+        drawable="samsung_gear_galaxy_wear"/>
+    <item
+        component="ComponentInfo{com.android.contacts/com.sec.android.app.contacts.RecntcallEntryActivity}"
+        drawable="samsung_dialer"/>
+    <item
+        component="ComponentInfo{com.google.android.contacts/com.android.contacts.activities.PeopleActivity}"
+        drawable="contacts"/>
+    <item
+        component="ComponentInfo{com.samsung.android.spdfnote/spdfnote.control.ui.filemanager.MainHomeActivity}"
+        drawable="samsung_write_on_pdf"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.extras.liveware/com.sonyericsson.extras.liveware.ui.LaunchActivity}"
+        drawable="sony_smart_connect"/>
+    <item
+        component="ComponentInfo{com.sonymobile.moviecreator.rmm/com.sonymobile.moviecreator.rmm.HighlightListActivity}"
+        drawable="sony_movie_maker"/>
+    <item
+        component="ComponentInfo{com.sonymobile.moviecreator.rmm/com.sonymobile.moviecreator.rmm.LaunchActivity}"
+        drawable="sony_movie_maker"/>
+    <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
     <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryActivity}"
+        drawable="gallery"/>
+    <item
+        component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity}"
         drawable="gallery"/>
     <item
         component="ComponentInfo{com.android.camera/com.android.camera.GalleryPicker}"
@@ -1653,6 +1696,9 @@
         component="ComponentInfo{fm.jihua.kecheng/fm.jihua.kecheng.ui.activity.home.HomeActivity}"
         drawable="kechenggezi"/>
     <item
+        component="ComponentInfo{fm.jihua.kecheng/fm.jihua.kecheng.ui.activity.BaseSplashActivity}"
+        drawable="kechenggezi"/>
+    <item
         component="ComponentInfo{com.daimajia.gold/com.daimajia.gold.LogoActivity}"
         drawable="juejin"/>
     <item
@@ -1816,6 +1862,9 @@
         drawable="meituan"/>
     <item
         component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.FlashWelcome}"
+        drawable="meituan"/>
+    <item
+        component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.PreloadedWelcome}"
         drawable="meituan"/>
     <item
         component="ComponentInfo{com.dailyyoga.cn/com.user.login.AdvertActivity}"
@@ -3792,12 +3841,6 @@
         component="ComponentInfo{com.android.contacts/com.android.mms.ui.ConversationList}"
         drawable="contacts"/>
     <item
-        component="ComponentInfo{com.samsung.android.contacts/com.android.contacts.activities.PeopleActivity}"
-        drawable="contacts"/>
-    <item
-        component="ComponentInfo{com.samsung.android.contacts/com.android.dialer.DialtactsActivity}"
-        drawable="contacts"/>
-    <item
         component="ComponentInfo{com.yulong.android.contacts/com.yulong.android.contacts.ui.main.ContactMainActivity}"
         drawable="contacts"/>
     <item
@@ -3935,5 +3978,64 @@
     <item
         component="ComponentInfo{pl.solidexplorer/pl.solidexplorer.SolidExplorer}"
         drawable="soild_explorer"/>
-
+    <item
+        component="ComponentInfo{com.samsung.voiceserviceplatform/com.samsung.voiceserviceplatform.ui.SVoiceMainActivity}"
+        drawable="samsung_s_voice_app"/>
+    <item
+        component="ComponentInfo{com.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivity}"
+        drawable="samsung_notes"/>
+    <item
+        component="ComponentInfo{com.samsung.android.contacts/com.android.contacts.activities.PeopleActivity}"
+        drawable="samsung_contacts"/>
+    <item
+        component="ComponentInfo{com.samsung.android.app.music.chn/com.samsung.android.app.music.common.activity.MusicMainActivity}"
+        drawable="samsung_milk_music"/>
+    <item
+        component="ComponentInfo{com.samsung.android.app.music.chn/com.sec.android.app.music.common.activity.MusicMainActivity}"
+        drawable="samsung_milk_music"/>
+    <item
+        component="ComponentInfo{com.samsung.multidevicecloud/com.kanbox.wp.Main}"
+        drawable="samsung_cloud"/>
+    <item
+        component="ComponentInfo{com.samsung.android.onlinevideo/com.samsung.android.onlinevideo.list.activity.VideoList}"
+        drawable="samsung_video"/>
+    <item
+        component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer}"
+        drawable="samsung_messages"/>
+    <item
+        component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity}"
+        drawable="samsung_galaxy_apps"/>
+    <item
+        component="ComponentInfo{com.mci.smagazine/com.chaozh.iReader.ui.activity.WelcomeActivity}"
+        drawable="samsung_reader"/>
+    <item
+        component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.WTLauncher}"
+        drawable="samsung_themes_store"/>
+    <item
+        component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.Launcher}"
+        drawable="samsung_themes_store"/>
+    <item
+        component="ComponentInfo{com.sonymobile.camera.addon.livefromsonyxperia/com.sonymobile.camera.addon.livefromsonyxperia.view.ActivityMain}"
+        drawable="sony_live_on_youtube"/>
+    <item
+        component="ComponentInfo{jp.co.sony.tablet.PersonalSpace/com.sony.pmo.pmoa.startup.StartupActivity}"
+        drawable="sony_play_memories_online"/>
+    <item
+        component="ComponentInfo{com.sonymobile.extras.liveware.extension.smartkey/com.sonymobile.extras.liveware.extension.smartkey.view.activity.PermissionActivityMain}"
+        drawable="sony_smart_key"/>
+    <item
+        component="ComponentInfo{com.sonyericsson.trackid/com.sonyericsson.trackid.activity.WidgetHandlerActivity}"
+        drawable="sony_trackid"/>
+    <item
+        component="ComponentInfo{com.sonymobile.androidapp.walkmate/com.sonymobile.androidapp.walkmate.view.main.MainActivity}"
+        drawable="sony_walkmate"/>
+    <item
+        component="ComponentInfo{com.sony.aclock/com.sony.aclock.MainActivity}"
+        drawable="sony_alpha_clock"/>
+    <item
+        component="ComponentInfo{com.sonymobile.backgrounddefocus/com.sonymobile.backgrounddefocus.ViewFinderActivity}"
+        drawable="sony_background_defocus"/>
+    <item
+        component="ComponentInfo{com.sonymobile.entrance/com.sonymobile.entrance.EntranceActivity}"
+        drawable="sony_whats_new"/>
 </resources>

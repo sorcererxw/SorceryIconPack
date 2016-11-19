@@ -15,10 +15,10 @@
             android:layout_width="@dimen/icon_grid_item_size"
             android:layout_height="@dimen/icon_grid_item_size"
             android:layout_gravity="center"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginTop="2dp"/>
+            android:layout_marginBottom="@dimen/icon_grid_item_margin_double"
+            android:layout_marginLeft="@dimen/icon_grid_item_margin"
+            android:layout_marginRight="@dimen/icon_grid_item_margin_double"
+            android:layout_marginTop="@dimen/icon_grid_item_margin"/>
     </FrameLayout>
 
 </FrameLayout>

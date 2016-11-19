@@ -56,6 +56,7 @@ import java.util.Objects;
 
 import butterknife.BindView;
 import rx.functions.Action1;
+import timber.log.Timber;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -426,7 +427,38 @@ public class MainActivity extends BaseActivity {
         drawerRecyclerView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                KLog.d(motionEvent.getAction() + "");
+                String[] actions = new String[]{
+                        "ACTION_BUTTON_PRESS =11",
+                        "ACTION_BUTTON_RELEASE =12",
+                        "ACTION_CANCEL =3",
+                        "ACTION_DOWN =0",
+                        "ACTION_HOVER_ENTER =9",
+                        "ACTION_HOVER_EXIT =10",
+                        "ACTION_HOVER_MOVE =7",
+                        "ACTION_MASK =255",
+                        "ACTION_MOVE =2",
+                        "ACTION_OUTSIDE =4",
+                        "ACTION_POINTER_1_DOWN =5",
+                        "ACTION_POINTER_1_UP =6",
+                        "ACTION_POINTER_2_DOWN =261",
+                        "ACTION_POINTER_2_UP =262",
+                        "ACTION_POINTER_3_DOWN =517",
+                        "ACTION_POINTER_3_UP =518",
+                        "ACTION_POINTER_DOWN =5",
+                        "ACTION_POINTER_ID_MASK =65280",
+                        "ACTION_POINTER_ID_SHIFT =8",
+                        "ACTION_POINTER_INDEX_MASK =65280",
+                        "ACTION_POINTER_INDEX_SHIFT =8",
+                        "ACTION_POINTER_UP =6",
+                        "ACTION_SCROLL =8",
+                        "ACTION_UP =1"};
+                int actionId = motionEvent.getAction();
+                for (String action : actions) {
+                    if (Integer.valueOf(action.split(" =")[1]) == actionId) {
+                        Timber.d(action);
+                    }
+                }
+
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP
                         || motionEvent.getAction() == MotionEvent.ACTION_CANCEL) {
                     drawerRecyclerView.postDelayed(new Runnable() {
