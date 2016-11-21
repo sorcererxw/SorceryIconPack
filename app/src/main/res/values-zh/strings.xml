@@ -5,7 +5,7 @@
     <string name="action_welcome">感谢使用</string>
 
     <string name="request">申请图标</string>
-    <string name="suggest">和开发者谈笑风生</string>
+    <string name="suggest">提出建议与疑问</string>
 
     <string name="choose_mail_app">请选择邮箱</string>
 
@@ -28,25 +28,6 @@
     <string name="icon_request_send_success">发送成功, 感谢反馈</string>
     <string name="update_start">检查更新</string>
 
-    <string-array name="tab_name">
-        <item>最新</item>
-        <item>所有</item>
-        <item>阿里</item>
-        <item>百度</item>
-        <item>网易</item>
-        <item>谷歌</item>
-        <!--<item>HTC</item>-->
-        <!--<item>联想</item>-->
-        <!--<item>LG</item>-->
-        <!--<item>MOTO</item>-->
-        <item>微软</item>
-        <item>三星</item>
-        <item>索尼</item>
-        <item>腾讯</item>
-        <!--<item>小米</item>-->
-        <item>魅族</item>
-        <item>一加</item>
-    </string-array>
     <string name="nav_item_apply">应用到启动器</string>
     <string name="nav_item_icon">图标</string>
     <string name="nav_item_feedback">反馈</string>
@@ -177,4 +158,26 @@
     <string name="preference_group_laboratory">实验室</string>
     <string name="preference_laboratory_global_load">全局加载</string>
     <string name="language">zh</string>
+    <string name="tab_ali">阿里</string>
+    <string name="tab_all">所有</string>
+    <string name="tab_baidu">百度</string>
+    <string name="tab_google">谷歌</string>
+    <string name="tab_htc">HTC</string>
+    <string name="tab_lenovo">联想</string>
+    <string name="tab_lg">LG</string>
+    <string name="tab_meizu">魅族</string>
+    <string name="tab_microsoft">微软</string>
+    <string name="tab_moto">摩托</string>
+    <string name="tab_netease">网易</string>
+    <string name="tab_new">最新</string>
+    <string name="tab_oneplus">一加</string>
+    <string name="tab_samsung">三星</string>
+    <string name="tab_sony">索尼</string>
+    <string name="tab_tencent">腾讯</string>
+    <string name="tab_xiaomi">小米</string>
+    <string name="tab_flyme">魅族</string>
+    <string name="tab_miui">小米</string>
+    <string name="preference_general_customize_tabs">自定义图标页</string>
+    <string name="preference_general_customize_tabs_summary">仅显示你关注的图标页</string>
+    <string name="restart_to_take_effect">重启以生效</string>
 </resources>

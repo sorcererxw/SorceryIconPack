@@ -18,22 +18,11 @@
         <!--<item name="android:navigationBarColor">@android:color/transparent</item>-->
     </style>
 
-    <!--<style name="AppTheme.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">-->
-    <!--<item name="android:popupBackground">@color/white</item>-->
-    <!--</style>-->
-
-    <!--&lt;!&ndash; Bonus: if you want to style whole Action Bar, not just the menu &ndash;&gt;-->
-    <!--<style name="AppTheme.ActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">-->
-    <!--<item name="android:background">@color/white</item>-->
-    <!--</style>-->
-
     <style name="SubActivity" parent="Theme.AppCompat.Light.DarkActionBar">
-
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
         <!--<item name="colorPrimary">@color/primaryColor</item>-->
         <!--<item name="colorPrimaryDark">@color/primaryColorDark</item>-->
         <item name="android:statusBarColor">@android:color/transparent</item>
@@ -44,9 +33,14 @@
         <!--<item name="android:windowAllowReturnTransitionOverlap">true</item>-->
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
-
-
     </style>
+
+    <style name="AppTheme.Dialog" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/dialog_background_scrim</item>
+    </style>
+
 
     <style name="PreferenceTheme" parent="AppTheme">
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>

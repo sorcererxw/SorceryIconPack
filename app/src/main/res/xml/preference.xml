@@ -6,6 +6,11 @@
     <PreferenceCategory
         android:title="@string/preference_group_general">
         <Preference
+            android:key="preference_general_customize_tabs"
+            android:title="@string/preference_general_customize_tabs"
+            android:summary="@string/preference_general_customize_tabs_summary"/>
+
+        <Preference
             android:key="preference_general_clear_cache"
             android:title="@string/preference_general_clear_cache"/>
     </PreferenceCategory>

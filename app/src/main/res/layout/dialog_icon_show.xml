@@ -64,6 +64,16 @@
                     tools:src="@drawable/evernote"/>
             </LinearLayout>
 
+            <FrameLayout
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/frameLayout_dialog_icon_component_info_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"/>
+
             <com.sorcerer.sorcery.iconpack.ui.views.LikeLayout
                 android:id="@+id/likeLayout"
                 android:layout_width="match_parent"

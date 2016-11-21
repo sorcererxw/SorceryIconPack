@@ -53,7 +53,8 @@ public class LazyIconFragment extends LazyFragment {
         SAMSUNG,
         SONY,
         TENCENT,
-        //        MIUI,
+        //      XIAOMI,
+//      MIUI
         FLYME,
         ONEPLUS
     }
@@ -163,9 +164,10 @@ public class LazyIconFragment extends LazyFragment {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        float s = getResources().getDimension(R.dimen.icon_grid_item_size)
-                + 2 * getResources().getDimension(R.dimen.icon_grid_item_margin);
-        mNumOfRows = (int) (size.x / s);
+        float iconMargin = getResources().getDimension(R.dimen.icon_grid_item_margin);
+        float cardMargin = getResources().getDimension(R.dimen.icon_grid_card_margin);
+        float iconSize = getResources().getDimension(R.dimen.icon_grid_item_size) + 2 * iconMargin;
+        mNumOfRows = (int) ((size.x - 2 * cardMargin - 2 * iconMargin) / iconSize);
     }
 
     public RecyclerView getRecyclerView() {

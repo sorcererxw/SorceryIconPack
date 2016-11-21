@@ -103,6 +103,8 @@ public class SearchActivity extends AppCompatActivity {
                             mViewFader.showContent(mSearchBar);
                         }
                     });
+        } else {
+            mContent.animate().alpha(1).setDuration(250).start();
         }
 
         mSearchBar.addTextWatcher(new SimpleTextWatcher() {
@@ -178,8 +180,6 @@ public class SearchActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static final String EDIT_DATA_KEY = "edit-data-key";
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -189,8 +189,11 @@ public class SearchActivity extends AppCompatActivity {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        float s = activity.getResources().getDimension(R.dimen.icon_grid_item_size) + 2 * activity.getResources().getDimension(R.dimen.icon_grid_item_margin);
-        return (int) (size.x / s);
+        float iconMargin = activity.getResources().getDimension(R.dimen.icon_grid_item_margin);
+        float cardMargin = activity.getResources().getDimension(R.dimen.icon_grid_card_margin);
+        float iconSize =
+                activity.getResources().getDimension(R.dimen.icon_grid_item_size) + 2 * iconMargin;
+        return (int) ((size.x - 2 * cardMargin - 2 * iconMargin) / iconSize);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

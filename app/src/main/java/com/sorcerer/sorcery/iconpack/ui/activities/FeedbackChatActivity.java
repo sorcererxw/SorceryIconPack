@@ -41,8 +41,6 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.FeedbackChatAdapter;
 import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.sorcererxw.rxactivityresult.Result;
-import com.sorcererxw.rxactivityresult.RxActivityResult;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.io.File;
@@ -54,6 +52,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import rx.Observable;
 import rx.functions.Action1;
+import rx_activity_result.Result;
+import rx_activity_result.RxActivityResult;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static android.view.View.GONE;
@@ -155,11 +155,11 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                                     .subscribe(new Action1<Result<FeedbackChatActivity>>() {
                                         @Override
                                         public void call(Result<FeedbackChatActivity> result) {
-                                            Intent data = result.getData();
-                                            int resultCode = result.getResultCode();
+                                            Intent data = result.data();
+                                            int resultCode = result.resultCode();
 
                                             if (resultCode == RESULT_OK) {
-                                                result.getActivity().handleImageIntent(data);
+                                                result.targetUI().handleImageIntent(data);
                                             }
                                         }
                                     });
@@ -556,6 +556,6 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     public void finish() {
         super.finish();
         KeyboardUtil.closeKeyboard(this);
-        overridePendingTransition(R.anim.activity_in_scale,R.anim.activity_out_top_to_bottom);
+        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
     }
 }

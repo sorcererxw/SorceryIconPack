@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
-import com.sorcerer.sorcery.iconpack.utils.Navigator;
+import com.sorcerer.sorcery.iconpack.ui.Navigator;
 
 /**
  * @description:

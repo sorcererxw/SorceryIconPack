@@ -5,8 +5,8 @@
     - [x] Generate
     - [x] Test
     - [x] Commit (NOT PASSED)
-    - [ ] Modify
-    - [ ] Commit again
+    - [x] Modify `2016-11-20`
+    - [x] Commit again `2016-11-20`
 - [ ] Better universal icon loading
     - [ ] Fix bugs
     - [ ] Enable to select which icon to load
@@ -23,3 +23,4 @@
 - [ ] Google Play pay support
 - [ ] Feedback reply notification
 - [ ] MIUI theme
+- [ ] User guide 

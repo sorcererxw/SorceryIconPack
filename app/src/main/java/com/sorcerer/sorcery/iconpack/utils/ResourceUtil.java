@@ -12,6 +12,8 @@ import com.sorcerer.sorcery.iconpack.R;
 
 import java.util.Random;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -232,6 +234,17 @@ public class ResourceUtil {
 
     public static String getString(Context context, @StringRes int resId) {
         return context.getString(resId);
+    }
+
+    public static String getStringFromResString(Context context, String resString) {
+        try {
+            int id = context.getResources()
+                    .getIdentifier(resString, "string", context.getPackageName());
+            return context.getResources().getString(id);
+        } catch (Exception e) {
+            Timber.e(e);
+            return "load fail";
+        }
     }
 
     public static int getColor(Context context, @ColorRes int resId) {

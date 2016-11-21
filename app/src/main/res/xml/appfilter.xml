@@ -661,9 +661,6 @@
         component="ComponentInfo{com.sdu.didi.psnger/com.didi.sdk.app.DidiLoadDexActivity}"
         drawable="didi"/>
     <item
-        component="ComponentInfo{com.funinput.digit/com.qihoo.util.StartActivity}"
-        drawable="dgtle"/>
-    <item
         component="ComponentInfo{cn.dxy.android.aspirin/cn.dxy.android.aspirin.ui.activity.StartupActivity}"
         drawable="dingxiangyisheng"/>
     <item
@@ -1240,9 +1237,6 @@
         component="ComponentInfo{com.sonymobile.sleeppartner.xperialabs/com.sonymobile.sleeppartner.presenter.WelcomeActivity}"
         drawable="sony_sleep_partner"/>
     <item
-        component="ComponentInfo{com.huawei.phoneservice/com.huawei.phoneservice.ui.HelpCenterActivity}"
-        drawable="huawei_phone_service"/>
-    <item
         component="ComponentInfo{com.sonymobile.androidapp.cameraaddon.stickercreator/com.sonymobile.androidapp.cameraaddon.stickercreator.ModeSelectorActivity}"
         drawable="sony_sticker_creator"/>
     <item
@@ -1278,6 +1272,15 @@
     <item
         component="ComponentInfo{com.sonymobile.moviecreator.rmm/com.sonymobile.moviecreator.rmm.LaunchActivity}"
         drawable="sony_movie_maker"/>
+    <item
+        component="ComponentInfo{com.oneplus.opbugreport/com.oneplus.opbugreport.OPUploadReport}"
+        drawable="oneplus_feedback"/>
+    <item
+        component="ComponentInfo{com.finalwire.aida64/com.finalwire.aida64.HHMainActivity}"
+        drawable="aida64"/>
+    <item
+        component="ComponentInfo{rikka.searchbyimage/rikka.searchbyimage.ui.MainActivity}"
+        drawable="search_by_image"/>
     <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
@@ -1603,6 +1606,9 @@
         component="ComponentInfo{com.theme.mumu.flat/com.afollestad.polar.ui.MainActivity}"
         drawable="iflat"/>
     <item
+        component="ComponentInfo{com.theme.mumu.flat/com.theme.mumu.flat.MainActivity}"
+        drawable="iflat"/>
+    <item
         component="ComponentInfo{com.netease.edu.ucmooc/com.netease.edu.ucmooc.activity.ActivityWelcome}"
         drawable="icourse163"/>
     <item
@@ -1613,6 +1619,9 @@
         drawable="ifanr"/>
     <item
         component="ComponentInfo{com.ifttt.ifttt/com.ifttt.ifttt.HomeActivity}"
+        drawable="ifttt"/>
+    <item
+        component="ComponentInfo{com.ifttt.ifttt/com.ifttt.ifttt.home.HomeActivity}"
         drawable="ifttt"/>
     <item
         component="ComponentInfo{com.ikea.kompis/com.ikea.kompis.ksa.KSAStartupActivity}"
@@ -2755,6 +2764,9 @@
         component="ComponentInfo{com.iwoll.weather/com.iwoll.weather.activity.MainActivity}"
         drawable="xiaowo_weather"/>
     <item
+        component="ComponentInfo{com.iwoll.weather/com.iwoll.weather.activity.SplashActivity}"
+        drawable="xiaowo_weather"/>
+    <item
         component="ComponentInfo{com.sxy.ui/com.sxy.ui.view.MainActivity}"
         drawable="welike"/>
     <item
@@ -3376,6 +3388,9 @@
         component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.vivo.GalleryTabActivity}"
         drawable="gallery"/>
     <item
+        component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.camera_activity1}"
+        drawable="gallery"/>
+    <item
         component="ComponentInfo{com.xiaomi.shop/com.xiaomi.shop.activity.MainTabActivity}"
         drawable="xiaomi_shop"/>
     <item
@@ -3841,6 +3856,9 @@
         component="ComponentInfo{com.android.contacts/com.android.mms.ui.ConversationList}"
         drawable="contacts"/>
     <item
+        component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivity}"
+        drawable="contacts"/>
+    <item
         component="ComponentInfo{com.yulong.android.contacts/com.yulong.android.contacts.ui.main.ContactMainActivity}"
         drawable="contacts"/>
     <item
@@ -3967,6 +3985,9 @@
         component="ComponentInfo{com.funinput.digit/com.funinput.digit.activity.WelcomeActivity}"
         drawable="dgtle"/>
     <item
+        component="ComponentInfo{com.funinput.digit/com.qihoo.util.StartActivity}"
+        drawable="dgtle"/>
+    <item
         component="ComponentInfo{com.eg.android.AlipayGphone/com.alipay.mobile.quinox.LauncherActivity.alias}"
         drawable="alipay_qr_code"/>
     <item
@@ -4038,4 +4059,26 @@
     <item
         component="ComponentInfo{com.sonymobile.entrance/com.sonymobile.entrance.EntranceActivity}"
         drawable="sony_whats_new"/>
+    <item
+        component="ComponentInfo{com.android2.calculator3/com.android2.calculator3.Calculator}"
+        drawable="calculator"/>
+    <item
+        component="ComponentInfo{im.xingzhe/im.xingzhe.activity.LaunchActivity}"
+        drawable="xingzhe"/>
+    <item
+        component="ComponentInfo{in.zhaoj.shadowsocksr/com.github.shadowsocks.Shadowsocks}"
+        drawable="shadowsocksr"/>
+    <item
+        component="ComponentInfo{net.htcp.shadowsocksr/com.github.shadowsocks.Shadowsocks}"
+        drawable="shadowsocksr"/>
+    <item
+        component="ComponentInfo{in.zhaoj.shadowsockss/com.github.shadowsocks.Shadowsocks}"
+        drawable="shadowsocksr"/>
+    <item
+        component="ComponentInfo{com.proxy.shadowsocksr/com.proxy.shadowsocksr.MainActivity}"
+        drawable="shadowsocksr"/>
+    <item
+        component="ComponentInfo{com.quark.browser/com.ucpro.MainActivity}"
+        drawable="quark_browser"/>
+
 </resources>

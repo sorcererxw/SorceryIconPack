@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -25,12 +24,10 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
@@ -44,15 +41,14 @@ import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.utils.Navigator;
+import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.utils.OtherUtil;
+import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import rx.functions.Action1;
@@ -123,6 +119,20 @@ public class MainActivity extends BaseActivity {
             };
     private Navigator mNavigator;
     private SearchTransitioner mSearchTransitioner;
+    private SorceryPrefs mPrefs;
+
+    private static final boolean ENABLE_GUIDE = false;
+
+    @Override
+    protected void hookBeforeSetContentView() {
+        super.hookBeforeSetContentView();
+        mPrefs = SorceryPrefs.getInstance(this);
+        if (ENABLE_GUIDE && !mPrefs.userGuideShowed().getValue()) {
+            startActivity(new Intent(this, WelcomeActivity.class));
+            overridePendingTransition(0, 0);
+            this.finish();
+        }
+    }
 
     @Override
     protected int provideLayoutId() {
@@ -251,14 +261,11 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initTabAndPager() {
-//        mViewPager.setOffscreenPageLimit(1);
-
         mViewPager.addOnPageChangeListener(mPageChangeListener);
         mViewPager.setPageMargin(DisplayUtil.dip2px(mContext, 16));
 
-        mPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
+        mPageAdapter = new ViewPageAdapter(this, getSupportFragmentManager(), mCustomPicker);
 
-        generateFragments(mPageAdapter);
         mViewPager.setAdapter(mPageAdapter);
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
@@ -275,7 +282,6 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
-
 
     }
 
@@ -471,17 +477,6 @@ public class MainActivity extends BaseActivity {
                 return false;
             }
         });
-    }
-
-    private void generateFragments(ViewPageAdapter adapter) {
-        String[] name = getResources().getStringArray(R.array.tab_name);
-        LazyIconFragment.Flag[] flag = LazyIconFragment.Flag.values();
-
-        Log.d(TAG, Arrays.toString(flag));
-
-        for (int i = 0; i < flag.length; i++) {
-            adapter.addFragment(LazyIconFragment.newInstance(flag[i], mCustomPicker), name[i]);
-        }
     }
 
     @Override

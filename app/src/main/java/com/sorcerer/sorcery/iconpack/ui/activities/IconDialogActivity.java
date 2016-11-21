@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -13,11 +14,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
@@ -25,10 +25,7 @@ import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
-import com.sorcerer.sorcery.iconpack.utils.TimeWatch;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
-
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import rx.Observable;
@@ -62,6 +59,10 @@ public class IconDialogActivity extends ToolbarActivity {
     @BindView(R.id.linearLayout_dialog_icon_show)
     ViewGroup mRoot;
 
+    @BindView(R.id.frameLayout_dialog_icon_component_info_container)
+    FrameLayout mComponentContainer;
+
+
     public static final String EXTRA_RES = "EXTRA_RES";
     public static final String EXTRA_NAME = "EXTRA_NAME";
     public static final String EXTRA_LABEL = "EXTRA_LABEL";
@@ -88,8 +89,6 @@ public class IconDialogActivity extends ToolbarActivity {
         }
     }
 
-    TimeWatch mTimeWatch = new TimeWatch();
-
     @Override
     protected Toolbar provideToolbar() {
         return mToolbar;
@@ -101,10 +100,6 @@ public class IconDialogActivity extends ToolbarActivity {
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
         mName = getIntent().getStringExtra(EXTRA_NAME);
         mRes = getIntent().getIntExtra(EXTRA_RES, 0);
-
-        mTimeWatch.resetTime();
-
-        KLog.d(mTimeWatch.consumeTime(true));
 
         if (mRes == 0) {
             this.finish();
@@ -119,11 +114,7 @@ public class IconDialogActivity extends ToolbarActivity {
 
         mIconImageView.setImageResource(mRes);
 
-        KLog.d(mTimeWatch.consumeTime(true));
-
         mLikeLayout.bindIcon(mName);
-
-        KLog.d(mTimeWatch.consumeTime(true));
 
         mBackground.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -142,8 +133,7 @@ public class IconDialogActivity extends ToolbarActivity {
     protected void onResume() {
         super.onResume();
 
-        Observable.just(mName).delay(50, TimeUnit.MILLISECONDS)
-                .subscribeOn(Schedulers.newThread()).map(new Func1<String, String>() {
+        Observable.just(mName).subscribeOn(Schedulers.newThread()).map(new Func1<String, String>() {
             @Override
             public String call(String s) {
                 return AppInfoUtil
@@ -151,11 +141,26 @@ public class IconDialogActivity extends ToolbarActivity {
             }
         }).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override
-            public void call(String component) {
+            public void call(final String component) {
                 mComponent = component;
                 mPackageName = StringUtil.componentInfoToPackageName(mComponent);
                 if (mMenu != null) {
                     onCreateOptionsMenu(mMenu);
+                }
+                if (BuildConfig.DEBUG) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            TextView componentTextView =
+                                    (TextView) View.inflate(IconDialogActivity.this,
+                                            R.layout.textview_dialog_icon_component_info, null);
+                            componentTextView.setVisibility(View.VISIBLE);
+                            componentTextView.setText(
+                                    (component == null || component.isEmpty()) ?
+                                            "null" : component);
+                            mComponentContainer.addView(componentTextView);
+                        }
+                    }, 500);
                 }
             }
         });
@@ -203,7 +208,7 @@ public class IconDialogActivity extends ToolbarActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("market://details?id=" + appPackageName)));
                 onBackPressed();
-            } catch (android.content.ActivityNotFoundException anfe) {
+            } catch (ActivityNotFoundException e) {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://play.google.com/store/apps/details?id="
                                 + appPackageName)));

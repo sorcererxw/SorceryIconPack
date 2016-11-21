@@ -1,1 +1,1 @@
-include ':app', ':rx_activity_result', ':rx_activity_result'
+include ':app'

@@ -35,6 +35,7 @@ import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.OpenSourceLibBean;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.CustomizeTabsAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.OpenSourceLibAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
 import com.sorcerer.sorcery.iconpack.ui.preferences.SorcerySwitchPreference;
@@ -71,6 +72,7 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 import static android.content.Context.MODE_WORLD_READABLE;
+import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static com.sorcerer.sorcery.iconpack.ui.activities.LabActivity.SHARED_PREFERENCE_NAME;
 
 /**
@@ -92,6 +94,9 @@ public class SettingsFragment extends PreferenceFragment {
 
     private static final String KEY_PREFERENCE_SCREEN = "preference_screen";
     private PreferenceScreen mPreferenceScreen;
+
+    private static final String KEY_GENERAL_CUSTOMIZE_TABS = "preference_general_customize_tabs";
+    private Preference mGeneralCustomizeTabs;
 
     private static final String KEY_GENERAL_CLEAR_CACHE = "preference_general_clear_cache";
     private Preference mGeneralClearCachePreference;
@@ -118,8 +123,57 @@ public class SettingsFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.preference);
 
         mPreferenceScreen = (PreferenceScreen) findPreference(KEY_PREFERENCE_SCREEN);
+        initGeneral();
+        initLab();
+        initDevOps();
+        initAbout();
+    }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
+        if (AppInfoUtil.isXposedInstalled(activity) && Build.VERSION.SDK_INT <= 23) {
+            mSharedPreferences =
+                    mActivity.getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
+            mGlobalLoadActive = mSharedPreferences.getBoolean("pref_global_load", false);
+        }
+        mPrefs = SorceryPrefs.getInstance(activity);
+    }
+
+    private void initGeneral() {
         mGeneralClearCachePreference = findPreference(KEY_GENERAL_CLEAR_CACHE);
+
+        mGeneralCustomizeTabs = findPreference(KEY_GENERAL_CUSTOMIZE_TABS);
+        mGeneralCustomizeTabs.setOnPreferenceClickListener(
+                new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        RecyclerView recyclerView = new RecyclerView(mActivity);
+                        CustomizeTabsAdapter ctAdapter = new CustomizeTabsAdapter(mActivity);
+                        recyclerView.setAdapter(ctAdapter);
+                        recyclerView.setLayoutParams(new RecyclerView.LayoutParams(
+                                ViewGroup.LayoutParams.MATCH_PARENT,
+                                ViewGroup.LayoutParams.MATCH_PARENT));
+                        recyclerView.setLayoutManager(
+                                new LinearLayoutManager(mActivity, VERTICAL, false));
+                        new MaterialDialog.Builder(mActivity)
+                                .customView(recyclerView, false)
+                                .title(getString(R.string.preference_general_customize_tabs))
+                                .positiveText(getString(R.string.action_apply))
+                                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                    @Override
+                                    public void onClick(@NonNull MaterialDialog dialog,
+                                                        @NonNull DialogAction which) {
+                                        Toast.makeText(mActivity,
+                                                getString(R.string.restart_to_take_effect),
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                }).build().show();
+                        return true;
+                    }
+                });
+
         mGeneralClearCachePreference.setSummary("...");
         updateCache(Observable.create(new Observable.OnSubscribe<Long>() {
             @Override
@@ -142,14 +196,16 @@ public class SettingsFragment extends PreferenceFragment {
                         return false;
                     }
                 });
+    }
 
+    private void initLab() {
         mGlobalLoadDialog = new MaterialDialog.Builder(mActivity)
                 .content("Waiting")
                 .canceledOnTouchOutside(false)
                 .cancelable(false)
                 .build();
 
-        if (Build.VERSION.SDK_INT >= 24) {
+        if (!AppInfoUtil.isXposedInstalled(mActivity) || Build.VERSION.SDK_INT >= 24) {
             mLabGroup = (PreferenceGroup) findPreference(KEY_LAB_GROUP);
             mPreferenceScreen.removePreference(mLabGroup);
         } else {
@@ -201,12 +257,16 @@ public class SettingsFragment extends PreferenceFragment {
                         }
                     });
         }
+    }
 
+    private void initDevOps() {
         mDevPreferenceGroup = (PreferenceGroup) findPreference(KEY_DEV_GROUP);
         if (!mPrefs.devOptionsOpened().getValue()) {
             mPreferenceScreen.removePreference(mDevPreferenceGroup);
         }
+    }
 
+    private void initAbout() {
         mAboutAppPreference = findPreference(KEY_ABOUT_APP);
         mAboutAppPreference.setOnPreferenceClickListener(
                 new Preference.OnPreferenceClickListener() {
@@ -226,18 +286,6 @@ public class SettingsFragment extends PreferenceFragment {
                         return false;
                     }
                 });
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mActivity = activity;
-        if (AppInfoUtil.isXposedInstalled(activity) && Build.VERSION.SDK_INT <= 23) {
-            mSharedPreferences =
-                    mActivity.getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
-            mGlobalLoadActive = mSharedPreferences.getBoolean("pref_global_load", false);
-        }
-        mPrefs = SorceryPrefs.getInstance(activity);
     }
 
     private void updateCache(Observable<Long> observable) {
@@ -337,7 +385,7 @@ public class SettingsFragment extends PreferenceFragment {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         recyclerView.setLayoutManager(
-                new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
+                new LinearLayoutManager(mActivity, VERTICAL, false));
         builder.customView(recyclerView, false);
 
         builder.build().show();

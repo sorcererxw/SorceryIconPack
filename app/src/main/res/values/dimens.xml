@@ -8,7 +8,8 @@
     <dimen name="apply_item_size">160dp</dimen>
     <dimen name="help_item_size">320dp</dimen>
 
-    <dimen name="icon_grid_item_size">78dp</dimen>
+    <dimen name="icon_grid_card_margin">8dp</dimen>
+    <dimen name="icon_grid_item_size">72dp</dimen>
     <dimen name="icon_grid_item_margin">4dp</dimen>
     <dimen name="icon_grid_item_margin_double">8dp</dimen>
     <dimen name="dialog_like_size">32dp</dimen>

@@ -10,7 +10,6 @@ import android.os.Build;
 import android.support.multidex.MultiDex;
 
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
-import com.sorcererxw.rxactivityresult.RxActivityResult;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.tinker.anno.DefaultLifeCycle;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
@@ -21,6 +20,7 @@ import com.sorcerer.sorcery.iconpack.tinker.log.MyLogImp;
 import com.sorcerer.sorcery.iconpack.tinker.util.SampleApplicationContext;
 import com.sorcerer.sorcery.iconpack.tinker.util.TinkerManager;
 
+import rx_activity_result.RxActivityResult;
 import timber.log.Timber;
 
 /**

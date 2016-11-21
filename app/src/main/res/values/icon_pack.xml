@@ -2,6 +2,14 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>quark_browser</item>
+        <item>search_by_image</item>
+        <item>shadowsocks</item>
+        <item>shadowsocksr</item>
+        <item>aida64</item>
+        <item>oneplus_feedback</item>
+        <item>xingzhe</item>
+        <item>sony_sticker_creator</item>
         <item>teamviewer_host_for_samsung</item>
         <item>samsung_artcanvas</item>
         <item>samsung_gear_galaxy_wear</item>
@@ -69,8 +77,15 @@
         <item>ccb_atm_mobilepay</item>
         <item>nico_stytool_nilimengmeng</item>
         <item>lbe_parallel_space</item>
+        <item>ifttt</item>
+        <item>aliyun</item>
 
         <item>@string/icon_label_updated</item>
+        <item>oneplus_gallery</item>
+        <item>flyme_life</item>
+        <item>flyme_feedback</item>
+        <item>camera</item>
+        <item>tencent_file_manager</item>
         <item>gallery</item>
         <item>calculator</item>
         <item>pinterest</item>
@@ -84,6 +99,7 @@
         <item>alipay</item>
         <item>alipay_qr_code</item>
         <item>aliyun</item>
+        <item>aliyun_alt</item>
         <item>ali_antfortune</item>
         <item>ali_cainiao_guoguo</item>
         <item>ali_dingding</item>
@@ -327,6 +343,7 @@
         <item>sony_smart_band_talk</item>
         <item>sony_smart_connect</item>
         <item>sony_smart_key</item>
+        <item>sony_sticker_creator</item>
         <item>sony_store_china</item>
         <item>sony_support</item>
         <item>sony_trackid</item>
@@ -481,6 +498,7 @@
         <item>oneplus_camera_oxygen</item>
         <item>oneplus_community</item>
         <item>oneplus_deskclock</item>
+        <item>oneplus_feedback</item>
         <item>oneplus_filemanager</item>
         <item>oneplus_gallery</item>
         <item>oneplus_market</item>
@@ -531,12 +549,14 @@
         <item>adobe_sign_manager</item>
         <item>adsafe</item>
         <item>aibizhi</item>
+        <item>aida64</item>
         <item>airfrozen</item>
         <item>aisen</item>
         <item>alibaba</item>
         <item>alipay</item>
         <item>alipay_qr_code</item>
         <item>aliyun</item>
+        <item>aliyun_alt</item>
         <item>ali_antfortune</item>
         <item>ali_cainiao_guoguo</item>
         <item>ali_dingding</item>
@@ -945,6 +965,7 @@
         <item>iflat</item>
         <item>ifont</item>
         <item>ifttt</item>
+        <item>ifttt_alt</item>
         <item>ikea</item>
         <item>ilike_cartoon</item>
         <item>imooc</item>
@@ -1154,6 +1175,7 @@
         <item>oneplus_camera_oxygen</item>
         <item>oneplus_community</item>
         <item>oneplus_deskclock</item>
+        <item>oneplus_feedback</item>
         <item>oneplus_filemanager</item>
         <item>oneplus_gallery</item>
         <item>oneplus_market</item>
@@ -1202,6 +1224,7 @@
         <item>qingting_fm</item>
         <item>quanminkge</item>
         <item>quanneng_toolbox</item>
+        <item>quark_browser</item>
         <item>qufenqi</item>
         <item>quickpic</item>
         <item>qunar</item>
@@ -1240,11 +1263,13 @@
         <item>scanbot</item>
         <item>scientific_calculator</item>
         <item>screen_mask</item>
+        <item>search_by_image</item>
         <item>seed</item>
         <item>settings</item>
         <item>settings_editor</item>
         <item>sfly</item>
         <item>shadowsocks</item>
+        <item>shadowsocksr</item>
         <item>shanbay</item>
         <item>shanbay_listen</item>
         <item>shanbay_news</item>
@@ -1291,6 +1316,7 @@
         <item>sony_smart_band_talk</item>
         <item>sony_smart_connect</item>
         <item>sony_smart_key</item>
+        <item>sony_sticker_creator</item>
         <item>sony_store_china</item>
         <item>sony_support</item>
         <item>sony_trackid</item>
@@ -1481,6 +1507,7 @@
         <item>xiaomi_wallet</item>
         <item>xiaowo_weather</item>
         <item>ximalayating</item>
+        <item>xingzhe</item>
         <item>xinternalsd</item>
         <item>xposed</item>
         <item>xqs_background</item>

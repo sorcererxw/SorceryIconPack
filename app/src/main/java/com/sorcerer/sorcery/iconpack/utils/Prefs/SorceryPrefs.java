@@ -2,6 +2,9 @@ package com.sorcerer.sorcery.iconpack.utils.Prefs;
 
 import android.content.Context;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -45,5 +48,27 @@ public class SorceryPrefs extends Prefs {
                     new SorceryPreference<>(getPreferences(), "dev options opened", false);
         }
         return mDevOptionsOpened;
+    }
+
+    private Map<String, SorceryPreference<Boolean>> tabShowMap = new HashMap<>();
+
+    public SorceryPreference<Boolean> isTabShow(String tabName) {
+        if (tabShowMap.containsKey(tabName)) {
+            return tabShowMap.get(tabName);
+        }
+        SorceryPreference<Boolean> sp =
+                new SorceryPreference<>(getPreferences(), "tab_show_" + tabName, true);
+        tabShowMap.put(tabName, sp);
+        return sp;
+    }
+
+    private SorceryPreference<Boolean> mUserGuideShowed;
+
+    public SorceryPreference<Boolean> userGuideShowed() {
+        if (mUserGuideShowed == null) {
+            mUserGuideShowed =
+                    new SorceryPreference<>(getPreferences(), "user_guide_showed", false);
+        }
+        return mUserGuideShowed;
     }
 }

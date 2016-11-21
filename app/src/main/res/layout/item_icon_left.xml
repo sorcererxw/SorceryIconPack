@@ -4,7 +4,7 @@
              android:layout_height="wrap_content">
 
     <FrameLayout
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="@dimen/icon_grid_card_margin"
         android:id="@+id/frameLayout_item_icon_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

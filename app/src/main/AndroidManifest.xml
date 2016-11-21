@@ -254,8 +254,8 @@
             android:value="30"/>
 
         <activity
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".ui.activities.SearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/SubActivity">
         </activity>
 
@@ -264,6 +264,10 @@
             android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity">
         </activity>
+
+        <activity
+            android:name=".ui.activities.WelcomeActivity"
+            android:theme="@style/AppTheme"/>
 
         <service
             android:name=".tinker.service.SampleResultService"
