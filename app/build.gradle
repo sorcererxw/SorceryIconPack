@@ -5,7 +5,7 @@ def javaVersion = JavaVersion.VERSION_1_7
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     useLibrary 'org.apache.http.legacy'
 
     def Properties versionProps = new Properties()
@@ -142,8 +142,8 @@ dependencies {
     provided 'com.tencent.tinker:tinker-android-anno:1.7.3'
     compile 'com.tencent.tinker:tinker-android-lib:1.7.3'
     // qiniu
-//    compile 'com.qiniu:qiniu-android-sdk:7.2.+'
-//    compile 'com.qiniu:happy-dns:0.2.10'
+    //    compile 'com.qiniu:qiniu-android-sdk:7.2.+'
+    //    compile 'com.qiniu:happy-dns:0.2.10'
     // okhttp
     compile 'com.squareup.okhttp3:okhttp:3.4.2'
     compile 'com.squareup.okio:okio:1.11.0'

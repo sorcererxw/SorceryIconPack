@@ -40,12 +40,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     private List<IconBean> mDataList;
     private List<IconBean> mShowList;
 
-    private int mSpan;
     private Activity mActivity;
 
-    public SearchAdapter(Activity activity, int span) {
+    public SearchAdapter(Activity activity) {
         mActivity = activity;
-        mSpan = span;
         mDataList = new ArrayList<>();
         mShowList = new ArrayList<>();
     }
@@ -54,102 +52,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         mDataList = dataList;
     }
 
-    private static final int TYPE_CENTER = 0x1;
-    private static final int TYPE_TOP = 0x2;
-    private static final int TYPE_TOP_LEFT = 0x3;
-    private static final int TYPE_TOP_RIGHT = 0x4;
-    private static final int TYPE_BOTTOM = 0x5;
-    private static final int TYPE_BOTTOM_LEFT = 0x6;
-    private static final int TYPE_BOTTOM_RIGHT = 0x7;
-    private static final int TYPE_LEFT = 0x8;
-    private static final int TYPE_RIGHT = 0x9;
-    private static final int TYPE_SINGLE_LINE_LEFT = 0x10;
-    private static final int TYPE_SINGLE_LINE_CENTER = 0x11;
-    private static final int TYPE_SINGLE_LINE_RIGHT = 0x12;
-
-    @Override
-    public int getItemViewType(int position) {
-        if (getItemCount() <= mSpan) {
-            if (position == 0) {
-                return TYPE_SINGLE_LINE_LEFT;
-            }
-            if (position == getItemCount() - 1) {
-                return TYPE_SINGLE_LINE_RIGHT;
-            }
-            return TYPE_SINGLE_LINE_CENTER;
-        }
-        if (position == 0) {
-            return TYPE_TOP_LEFT;
-        }
-        if (position == mSpan - 1) {
-            return TYPE_TOP_RIGHT;
-        }
-        if (position == getItemCount() - mSpan) {
-            return TYPE_BOTTOM_LEFT;
-        }
-        if (position == getItemCount() - 1) {
-            return TYPE_BOTTOM_RIGHT;
-        }
-        if (position < mSpan) {
-            return TYPE_TOP;
-        }
-        if (position + mSpan >= getItemCount()) {
-            return TYPE_BOTTOM;
-        }
-        if ((position + 1) % mSpan == 0) {
-            return TYPE_RIGHT;
-        }
-        if (position % mSpan == 0) {
-            return TYPE_LEFT;
-        }
-        return TYPE_CENTER;
-    }
-
     @Override
     public SearchViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        int layout;
-        switch (viewType) {
-            case TYPE_SINGLE_LINE_CENTER:
-                layout = R.layout.item_icon_single_line_center;
-                break;
-            case TYPE_SINGLE_LINE_LEFT:
-                layout = R.layout.item_icon_single_line_left;
-                break;
-            case TYPE_SINGLE_LINE_RIGHT:
-                layout = R.layout.item_icon_single_line_right;
-                break;
-            case TYPE_CENTER:
-                layout = R.layout.item_icon_center;
-                break;
-            case TYPE_TOP:
-                layout = R.layout.item_icon_top;
-                break;
-            case TYPE_TOP_LEFT:
-                layout = R.layout.item_icon_top_left;
-                break;
-            case TYPE_TOP_RIGHT:
-                layout = R.layout.item_icon_top_right;
-                break;
-            case TYPE_BOTTOM:
-                layout = R.layout.item_icon_bottom;
-                break;
-            case TYPE_BOTTOM_LEFT:
-                layout = R.layout.item_icon_bottom_left;
-                break;
-            case TYPE_BOTTOM_RIGHT:
-                layout = R.layout.item_icon_bottom_right;
-                break;
-            case TYPE_LEFT:
-                layout = R.layout.item_icon_left;
-                break;
-            case TYPE_RIGHT:
-                layout = R.layout.item_icon_right;
-                break;
-            default:
-                layout = R.layout.item_icon_center;
-        }
         return new SearchViewHolder(
-                LayoutInflater.from(mActivity).inflate(layout, parent, false));
+                LayoutInflater.from(mActivity).inflate(R.layout.item_icon_center, parent, false));
     }
 
     @Override
@@ -178,49 +84,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 });
             }
         }
-
-        boolean leftBottomRect = false,
-                rightBottomRect = false,
-                leftTopRect = false,
-                rightTopRect = false,
-                leftEdgeShadow = false,
-                rightEdgeShadow = false,
-                bottomEdgeShadow = false,
-                topEdgeShadow = false;
-        if (position == 0) {
-            leftTopRect = true;
-        }
-        if (position == mSpan - 1) {
-            rightTopRect = true;
-        }
-        if (position == getItemCount() - mSpan) {
-            leftBottomRect = true;
-        }
-        if (position == getItemCount() - 1) {
-            rightBottomRect = true;
-        }
-
-        if (position < mSpan) {
-            topEdgeShadow = true;
-        }
-        if (position + mSpan >= getItemCount()) {
-            bottomEdgeShadow = true;
-        }
-        if ((position + 1) % mSpan == 0) {
-            rightEdgeShadow = true;
-        }
-        if (position % mSpan == 0) {
-            leftEdgeShadow = true;
-        }
-
-        holder.slice.showLeftBottomRect(!leftBottomRect);
-        holder.slice.showRightBottomRect(!rightBottomRect);
-        holder.slice.showLeftTopRect(!leftTopRect);
-        holder.slice.showRightTopRect(!rightTopRect);
-        holder.slice.showLeftEdgeShadow(leftEdgeShadow);
-        holder.slice.showRightEdgeShadow(rightEdgeShadow);
-        holder.slice.showBottomEdgeShadow(bottomEdgeShadow);
-        holder.slice.showTopEdgeShadow(topEdgeShadow);
     }
 
     @SuppressLint("SetTextI18n")
@@ -259,11 +122,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     @Override
     public int getItemCount() {
-        if (mShowList.size() % mSpan == 0) {
-            return mShowList.size();
-        } else {
-            return (mShowList.size() + mSpan) / mSpan * mSpan;
-        }
+        return mShowList.size();
     }
 
     private void showIconDialog(ImageView icon, IconBean iconBean) {
@@ -295,14 +154,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         @BindView(R.id.imageView_item_icon)
         ImageView icon;
 
-        Slice slice;
 
         public SearchViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            slice = new Slice(container);
-            slice.setRadius(2);
-            slice.setRipple(0);
         }
 
     }

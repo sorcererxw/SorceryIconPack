@@ -5,7 +5,9 @@ import android.graphics.ColorMatrixColorFilter;
 import android.widget.ImageView;
 
 /**
- * Created by Sorcerer on 2016/5/2.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/5/2
  */
 public class ImageUtil {
     public static void grayScale(ImageView imageView) {

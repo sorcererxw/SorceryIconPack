@@ -1,7 +1,9 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
 /**
- * Created by Sorcerer on 2016/4/26.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/4/26
  */
 public class StringUtil {
     public static boolean isNullOrEmpty(String s){

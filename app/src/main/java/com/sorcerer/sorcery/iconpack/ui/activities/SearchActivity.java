@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -54,6 +55,9 @@ import static android.view.View.VISIBLE;
 
 public class SearchActivity extends AppCompatActivity {
 
+    @BindView(R.id.nestedScrollView_search)
+    NestedScrollView mNestedScrollView;
+
     @BindView(R.id.imageView_search_graphic)
     ImageView mSearchGraphic;
 
@@ -71,7 +75,6 @@ public class SearchActivity extends AppCompatActivity {
 
     private SearchAdapter mAdapter;
     private GridLayoutManager mLayoutManager;
-    private int mSpanCount;
 
     private ViewFader mViewFader = new ViewFader();
 
@@ -128,15 +131,17 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        mSpanCount = calSpanCount(this);
 
-        mAdapter = new SearchAdapter(this, mSpanCount);
+        mAdapter = new SearchAdapter(this);
         mAdapter.setHintTextView(mHintTextView);
         mAdapter.setCustomPicker(getIntent().getBooleanExtra("custom picker", false));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(this, mSpanCount, VERTICAL, false);
+
+        int spanCount = calSpanCount(this);
+        mLayoutManager = new GridLayoutManager(this, spanCount, VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {

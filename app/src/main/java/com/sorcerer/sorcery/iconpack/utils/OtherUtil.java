@@ -15,9 +15,6 @@ import com.sorcerer.sorcery.iconpack.R;
 public class OtherUtil {
 
     public static boolean showHead(Activity activity) {
-        if (!ResourceUtil.getString(activity, R.string.language).equals("zh")) {
-            return false;
-        }
-        return true;
+        return ResourceUtil.getString(activity, R.string.language).equals("zh");
     }
 }

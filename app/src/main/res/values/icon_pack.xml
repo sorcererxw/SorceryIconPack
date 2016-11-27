@@ -2,98 +2,38 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>quark_browser</item>
-        <item>search_by_image</item>
-        <item>shadowsocks</item>
-        <item>shadowsocksr</item>
-        <item>aida64</item>
-        <item>oneplus_feedback</item>
-        <item>xingzhe</item>
-        <item>sony_sticker_creator</item>
-        <item>teamviewer_host_for_samsung</item>
-        <item>samsung_artcanvas</item>
-        <item>samsung_gear_galaxy_wear</item>
-        <item>samsung_s_voice_app</item>
-        <item>samsung_notes</item>
-        <item>samsung_dialer</item>
-        <item>samsung_contacts</item>
-        <item>samsung_milk_music</item>
-        <item>samsung_milk_music_alt</item>
-        <item>samsung_cloud</item>
-        <item>samsung_video</item>
-        <item>samsung_messages</item>
-        <item>samsung_galaxy_apps</item>
-        <item>samsung_email</item>
-        <item>samsung_game_tunner</item>
-        <item>samsung_reader</item>
-        <item>samsung_write_on_pdf</item>
-        <item>samsung_themes_store</item>
-        <item>sony_live_on_youtube</item>
-        <item>sony_play_memories_online</item>
-        <item>sony_play_memories_online_alt</item>
-        <item>sony_smart_connect</item>
-        <item>sony_smart_key</item>
-        <item>sony_trackid</item>
-        <item>sony_walkmate</item>
-        <item>sony_alpha_clock</item>
-        <item>sony_background_defocus</item>
-        <item>sony_movie_maker</item>
-        <item>sony_sketch</item>
-        <item>sony_whats_new</item>
-        <item>soild_explorer</item>
-        <item>supersu_material</item>
-        <item>supersu_emblem</item>
-        <item>battlefield_companion</item>
-        <item>sony_messaging</item>
-        <item>sony_contacts</item>
-        <item>sony_playstation_network</item>
-        <item>sony_smart_band_talk</item>
-        <item>sony_ar_fun</item>
-        <item>sony_fm_radio</item>
-        <item>sony_audio_recorder</item>
-        <item>sony_album</item>
-        <item>sony_camera</item>
-        <item>sony_xhs_lounge</item>
-        <item>sony_mail</item>
-        <item>huawei_phone_service</item>
-        <item>huawei_appmarket</item>
-        <item>universal_copy</item>
-        <item>team_viewer_remote_control</item>
-        <item>huawei_backup</item>
-        <item>sony_store_china</item>
-        <item>sony_sleep_partner</item>
-        <item>contacts_alt</item>
-        <item>amazon_shopping</item>
-        <item>app_lock</item>
-        <item>appchina_yingyonghui_market</item>
-        <item>network_speed_indicator</item>
-        <item>netfits_vpn</item>
-        <item>xykey</item>
-        <item>samsung_galaxy_members_alt</item>
-        <item>samsung_galaxy_members</item>
-        <item>tmri_jiaoguan_12123</item>
-        <item>kuwo_music_player</item>
-        <item>express_100</item>
-        <item>ccb_atm_mobilepay</item>
-        <item>nico_stytool_nilimengmeng</item>
-        <item>lbe_parallel_space</item>
-        <item>ifttt</item>
-        <item>aliyun</item>
+        <item>xiaomi_dialer</item>
+        <item>titanium_backup</item>
+        <item>sony_settings</item>
+        <item>sony_dialer</item>
+        <item>samsung_settings</item>
+        <item>sim_toolkit</item>
+        <item>lg_health</item>
+        <item>flyme_calculator_alt</item>
+        <item>flyme_lifekit_alt</item>
+        <item>meizu_voice_assistant_alt</item>
+        <item>flyme_read_alt</item>
+        <item>flyme_toolbox_alt</item>
+        <item>flyme_scanner_alt</item>
+        <item>flyme_weather</item>
+        <item>flyme_email_alt</item>
+        <item>netease_youdao_hanyu_yuwen</item>
+        <item>flyme_safe_alt</item>
+        <item>flyme_appcenter_alt</item>
 
         <item>@string/icon_label_updated</item>
-        <item>oneplus_gallery</item>
-        <item>flyme_life</item>
-        <item>flyme_feedback</item>
-        <item>camera</item>
-        <item>tencent_file_manager</item>
-        <item>gallery</item>
         <item>calculator</item>
-        <item>pinterest</item>
-        <item>whatsapp_messenger</item>
-        <item>a360_liuliang</item>
-        <item>zol</item>
-        <item>yaokongjingling</item>
+        <item>email</item>
+        <item>flyme_account</item>
+        <item>flyme_painter</item>
+        <item>flyme_notepaper</item>
+        <item>flyme_map</item>
+        <item>flyme_update</item>
+        <item>netease_youqian</item>
+
+
     </string-array>
+
     <string-array name="icon_pack_ali" translatable="false">
         <item>alibaba</item>
         <item>alipay</item>
