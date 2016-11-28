@@ -25,7 +25,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.mthli.slice.Slice;
 
 /**
  * @description:
@@ -86,38 +85,35 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
+    public static final int SEARCH_CODE_OK = 0x0;
+    public static final int SEARCH_CODE_INVALID_INPUT = 0x1;
+    public static final int SEARCH_CODE_EMPTY = 0x2;
+    public static final int SEARCH_CODE_NOT_FOUND = 0x3;
+
+    public interface SearchCallback {
+        void call(int code);
+    }
+
     @SuppressLint("SetTextI18n")
-    public void search(String s) {
+    public void search(String s, SearchCallback searchCallback) {
         mShowList.clear();
 
         if (s == null || s.length() == 0) {
-            if (mHintTextView != null) {
-                mHintTextView.setVisibility(View.GONE);
-            }
-            mShowList.clear();
+            searchCallback.call(SEARCH_CODE_EMPTY);
         } else if (!s.matches("[0-9a-zA-Z]+")) {
-            if (mHintTextView != null) {
-                mHintTextView.setText(R.string.search_hint_only_letter);
-                mHintTextView.setVisibility(View.VISIBLE);
-            }
+            searchCallback.call(SEARCH_CODE_INVALID_INPUT);
         } else {
             for (IconBean iconBean : mDataList) {
                 if (iconBean.getLabel().contains(s)) {
                     mShowList.add(iconBean);
                 }
             }
-            if (mHintTextView != null) {
-                if (mShowList.size() > 0) {
-                    mHintTextView.setVisibility(View.GONE);
-                } else {
-                    mHintTextView.setText(
-                            ResourceUtil.getString(mActivity, R.string.search_hint_not_found)
-                                    + new String(Character.toChars(0x1F614)));
-                    mHintTextView.setVisibility(View.VISIBLE);
-                }
+            if (mShowList.size() <= 0) {
+                searchCallback.call(SEARCH_CODE_NOT_FOUND);
+            } else {
+                searchCallback.call(SEARCH_CODE_OK);
             }
         }
-        notifyDataSetChanged();
     }
 
     @Override
@@ -162,13 +158,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     }
 
-    private TextView mHintTextView;
-
     public void setCustomPicker(boolean customPicker) {
         mCustomPicker = customPicker;
     }
 
-    public void setHintTextView(TextView hintTextView) {
-        mHintTextView = hintTextView;
-    }
 }

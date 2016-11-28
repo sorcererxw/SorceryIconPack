@@ -51,6 +51,7 @@ import rx.schedulers.Schedulers;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 public class SearchActivity extends AppCompatActivity {
@@ -77,6 +78,39 @@ public class SearchActivity extends AppCompatActivity {
     private GridLayoutManager mLayoutManager;
 
     private ViewFader mViewFader = new ViewFader();
+
+    SearchAdapter.SearchCallback mSearchCallback = new SearchAdapter.SearchCallback() {
+        @Override
+        public void call(int code) {
+            switch (code) {
+                case SearchAdapter.SEARCH_CODE_EMPTY:
+                    mNestedScrollView.setVisibility(INVISIBLE);
+                    mHintTextView.setVisibility(GONE);
+                    mSearchGraphic.setVisibility(VISIBLE);
+                    break;
+                case SearchAdapter.SEARCH_CODE_INVALID_INPUT:
+                    mNestedScrollView.setVisibility(INVISIBLE);
+                    mHintTextView.setText(R.string.search_hint_only_letter);
+                    mHintTextView.setVisibility(View.VISIBLE);
+                    mSearchGraphic.setVisibility(GONE);
+                    break;
+                case SearchAdapter.SEARCH_CODE_NOT_FOUND:
+                    mNestedScrollView.setVisibility(INVISIBLE);
+                    mHintTextView.setText(
+                            ResourceUtil.getString(SearchActivity.this,
+                                    R.string.search_hint_not_found)
+                                    + new String(Character.toChars(0x1F614)));
+                    mHintTextView.setVisibility(View.VISIBLE);
+                    mSearchGraphic.setVisibility(GONE);
+                    break;
+                default:
+                    mNestedScrollView.setVisibility(VISIBLE);
+                    mHintTextView.setVisibility(GONE);
+                    mSearchGraphic.setVisibility(GONE);
+                    mAdapter.notifyDataSetChanged();
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,9 +145,6 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         mSearchBar.addTextWatcher(new SimpleTextWatcher() {
-            private Handler mHandler = new Handler();
-
-            private Runnable mRunnable;
 
             @Override
             public void afterTextChanged(final Editable editable) {
@@ -123,17 +154,17 @@ public class SearchActivity extends AppCompatActivity {
                 } else {
                     mSearchGraphic.setVisibility(VISIBLE);
                 }
+
                 if (editable == null) {
-                    mAdapter.search(null);
+                    mAdapter.search(null, mSearchCallback);
                 } else {
-                    mAdapter.search(editable.toString().toLowerCase());
+                    mAdapter.search(editable.toString().toLowerCase(), mSearchCallback);
                 }
             }
         });
 
 
         mAdapter = new SearchAdapter(this);
-        mAdapter.setHintTextView(mHintTextView);
         mAdapter.setCustomPicker(getIntent().getBooleanExtra("custom picker", false));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
@@ -256,7 +287,7 @@ public class SearchActivity extends AppCompatActivity {
                     @Override
                     public void onNext(List<IconBean> iconBeen) {
                         mAdapter.setData(iconBeen);
-                        mAdapter.search(mSearchBar.getText());
+                        mAdapter.search(mSearchBar.getText(), mSearchCallback);
                     }
                 });
     }
