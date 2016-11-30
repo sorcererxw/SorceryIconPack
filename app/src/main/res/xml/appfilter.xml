@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- NOVA LAUNCHER STUFF -->
     <item
         component=":LAUNCHER_ACTION_APP_DRAWER"
         drawable="app_drawer"/>
@@ -53,7 +52,6 @@
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
         drawable="onepluse_calendar_"/>
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -1012,12 +1010,6 @@
         component="ComponentInfo{com.youdao.calculator/com.youdao.calculator.activities.MainActivity}"
         drawable="netease_super_calculator"/>
     <item
-        component="ComponentInfo{com.android.music/com.android.music.MusicBrowserActivity}"
-        drawable="music"/>
-    <item
-        component="ComponentInfo{com.android.music/com.android.music.activitymanagement.TopLevelActivity}"
-        drawable="music"/>
-    <item
         component="ComponentInfo{com.tencent.qqpimsecure/com.tencent.server.fore.QuickLoadActivity}"
         drawable="tencent_qqpimsecure"/>
     <item
@@ -1255,9 +1247,6 @@
         component="ComponentInfo{com.samsung.android.app.watchmanager/com.samsung.android.app.watchmanager.setupwizard.SetupWizardWelcomeActivity}"
         drawable="samsung_gear_galaxy_wear"/>
     <item
-        component="ComponentInfo{com.android.contacts/com.sec.android.app.contacts.RecntcallEntryActivity}"
-        drawable="samsung_dialer"/>
-    <item
         component="ComponentInfo{com.google.android.contacts/com.android.contacts.activities.PeopleActivity}"
         drawable="contacts"/>
     <item
@@ -1281,6 +1270,9 @@
     <item
         component="ComponentInfo{rikka.searchbyimage/rikka.searchbyimage.ui.MainActivity}"
         drawable="search_by_image"/>
+    <item
+        component="ComponentInfo{com.miui.notes/com.miui.notes.ui.NotesListActivity}"
+        drawable="xiaomi_notepaper"/>
     <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
@@ -2753,10 +2745,10 @@
         drawable="wps"/>
     <item
         component="ComponentInfo{com.xiaomi.smarthome/com.xiaomi.smarthome.StartupActivity}"
-        drawable="xiaomi_mijia"/>
+        drawable="xiaomi_smarthome"/>
     <item
         component="ComponentInfo{com.xiaomi.smarthome/com.xiaomi.smarthome.SmartHomeMainActivity}"
-        drawable="xiaomi_mijia"/>
+        drawable="xiaomi_smarthome"/>
     <item
         component="ComponentInfo{com.yixia.xiaokaxiu/com.yixia.xiaokaxiu.controllers.activity.common.SplashActivity}"
         drawable="xiaokaxiu"/>
@@ -3703,6 +3695,9 @@
         component="ComponentInfo{com.handsgo.jiakao.android/com.handsgo.jiakao.android.Login}"
         drawable="jiakaobaodian"/>
     <item
+        component="ComponentInfo{com.handsgo.jiakao.android/com.handsgo.jiakao.android.splash.Login}"
+        drawable="jiakaobaodian"/>
+    <item
         component="ComponentInfo{com.sony.motionshot/com.sony.motionshot.record.RecordActivity}"
         drawable="sony_motionshot"/>
     <item
@@ -3841,6 +3836,9 @@
         component="ComponentInfo{com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsActivity}"
         drawable="google_play_service"/>
     <item
+        component="ComponentInfo{com.google.android.gms/com.google.android.gms.common.settings.GoogleSettingsActivity}"
+        drawable="google_play_service"/>
+    <item
         component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivity}"
         drawable="contacts"/>
     <item
@@ -3881,7 +3879,7 @@
         drawable="contacts"/>
     <item
         component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.DialerEntryActivity}"
-        drawable="dialer"/>
+        drawable="sony_dialer"/>
     <item
         component="ComponentInfo{com.yulong.android.contacts/com.yulong.android.contacts.dial.DialActivity}"
         drawable="dialer"/>
@@ -4063,6 +4061,9 @@
         component="ComponentInfo{com.android2.calculator3/com.android2.calculator3.Calculator}"
         drawable="calculator"/>
     <item
+        component="ComponentInfo{com.android2.calculator3/com.xlythe.calculator.material.Calculator}"
+        drawable="calculator"/>
+    <item
         component="ComponentInfo{im.xingzhe/im.xingzhe.activity.LaunchActivity}"
         drawable="xingzhe"/>
     <item
@@ -4080,5 +4081,104 @@
     <item
         component="ComponentInfo{com.quark.browser/com.ucpro.MainActivity}"
         drawable="quark_browser"/>
+    <item
+        component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}"
+        drawable="amazon_shopping"/>
+    <item
+        component="ComponentInfo{com.youdao.hanyu/com.youdao.hanyu.activity.SplashActv}"
+        drawable="netease_youdao_hanyu_yuwen"/>
+    <item
+        component="ComponentInfo{com.didi.echo/com.didi.echo.bussiness.splash.SplashActivity}"
+        drawable="uber"/>
+    <item
+        component="ComponentInfo{com.lge.lifetracker/com.lge.lifetracker.ui.MainActivity}"
+        drawable="lg_health"/>
+    <item
+        component="ComponentInfo{com.lge.lifetracker/com.lge.lifetracker.MainActivity}"
+        drawable="lg_health"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherListActivity}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.SubStkLauncherActivity}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkMain}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity1}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityI}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity2}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityII}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity}"
+        drawable="titanium_backup"/>
+    <item
+        component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}"
+        drawable="xiaomi_gallery"/>
+    <item
+        component="ComponentInfo{com.miui.gallery/com.miui.gallery.app.Gallery}"
+        drawable="xiaomi_gallery"/>
+    <item
+        component="ComponentInfo{com.miui.video/com.miui.video.HomeActivity}"
+        drawable="xiaomi_video"/>
+    <item
+        component="ComponentInfo{com.android.thememanager/com.android.thememanager.ThemeResourceTabActivity}"
+        drawable="xiaomi_theme"/>
+    <item
+        component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherMain}"
+        drawable="xiaomi_weather"/>
+    <item
+        component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherCycle}"
+        drawable="xiaomi_weather"/>
+    <item
+        component="ComponentInfo{com.miui.fm/com.miui.fmradio.FmActivity}"
+        drawable="xiaomi_fm"/>
+    <item
+        component="ComponentInfo{com.xiaomi.market/com.xiaomi.market.ui.MarketTabActivity}"
+        drawable="xiaomi_app_market"/>
+    <item
+        component="ComponentInfo{com.xiaomi.market/com.xiaomi.market.ui.MainTabActivity}"
+        drawable="xiaomi_app_market"/>
+    <item
+        component="ComponentInfo{com.xiaomi.account/com.xiaomi.account.ui.AccountSettingsActivity}"
+        drawable="xiaomi_account"/>
+    <item
+        component="ComponentInfo{com.miui.compass/com.miui.compass.CompassActivity}"
+        drawable="xiaomi_compass"/>
+    <item
+        component="ComponentInfo{com.miui.player/com.miui.player.ui.MusicBrowserActivity}"
+        drawable="xiaomi_music"/>
+    <item
+        component="ComponentInfo{com.android.music/com.android.music.MusicBrowserActivity}"
+        drawable="music"/>
+    <item
+        component="ComponentInfo{com.android.music/com.android.music.activitymanagement.TopLevelActivity}"
+        drawable="music"/>
+    <item
+        component="ComponentInfo{com.android.music/com.android.music.ui.MusicBrowserActivity}"
+        drawable="music"/>
+    <item
+        component="ComponentInfo{com.android.music/com.android.music.MusicScanResultActivity}"
+        drawable="music"/>
+    <item
+        component="ComponentInfo{com.miui.barcodescanner/com.miui.barcodescanner.activity.CaptureActivity}"
+        drawable="xiaomi_barcode_scanner"/>
+    <item
+        component="ComponentInfo{com.xiaomi.gamecenter/com.xiaomi.gamecenter.ui.MainTabActivity}"
+        drawable="xiaomi_gamecenter"/>
+    <item
+        component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}"
+        drawable="google_photos"/>
 
 </resources>

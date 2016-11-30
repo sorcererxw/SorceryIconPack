@@ -9,18 +9,15 @@ public class IconBean {
     private String mName;
     private String mLabel;
     private int mRes;
-    private boolean mShown;
 
     public IconBean(String name) {
         mName = name;
         mLabel = handleIconName(name);
-        mShown = true;
     }
 
     public IconBean(String name, int res) {
         mName = name;
         mLabel = handleIconName(name);
-        mShown = true;
         mRes = res;
     }
 
@@ -57,13 +54,4 @@ public class IconBean {
         }
         return res.replaceAll("_", " ");
     }
-
-    public boolean isShown() {
-        return mShown;
-    }
-
-    public void setShown(boolean shown) {
-        mShown = shown;
-    }
-
 }

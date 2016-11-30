@@ -33,6 +33,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -136,8 +137,7 @@ public class IconDialogActivity extends ToolbarActivity {
         Observable.just(mName).subscribeOn(Schedulers.newThread()).map(new Func1<String, String>() {
             @Override
             public String call(String s) {
-                return AppInfoUtil
-                        .getComponentByName(IconDialogActivity.this, mName);
+                return AppInfoUtil.getComponentByName(IconDialogActivity.this, mName);
             }
         }).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
             @Override
@@ -237,9 +237,7 @@ public class IconDialogActivity extends ToolbarActivity {
                     mRoot.addView(mOriginImage);
                 }
             } catch (Exception e) {
-                if (BuildConfig.DEBUG) {
-                    e.printStackTrace();
-                }
+                Timber.e(e);
             }
         }
         return super.onOptionsItemSelected(item);

@@ -2,6 +2,26 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>xiaomi_map</item>
+        <item>xiaomi_gallery</item>
+        <item>xiaomi_theme</item>
+        <item>xiaomi_video</item>
+        <item>xiaomi_file_explorer</item>
+        <item>xiaomi_weather</item>
+        <item>xiaomi_fm</item>
+        <item>xiaomi_app_market</item>
+        <item>xiaomi_compass</item>
+        <item>xiaomi_music</item>
+        <item>xiaomi_smarthome</item>
+        <item>xiaomi_backup</item>
+        <item>xiaomi_account</item>
+        <item>xiaomi_mail</item>
+        <item>xiaomi_notepaper</item>
+        <item>xiaomi_barcode_scanner</item>
+        <item>xiaomi_browser</item>
+        <item>xiaomi_updater</item>
+        <item>xiaomi_gamecenter</item>
+        <item>google_photos</item>
         <item>xiaomi_dialer</item>
         <item>titanium_backup</item>
         <item>sony_settings</item>
@@ -30,7 +50,6 @@
         <item>flyme_map</item>
         <item>flyme_update</item>
         <item>netease_youqian</item>
-
 
     </string-array>
 

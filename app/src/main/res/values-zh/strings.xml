@@ -180,4 +180,5 @@
     <string name="preference_general_customize_tabs">自定义图标页</string>
     <string name="preference_general_customize_tabs_summary">仅显示你关注的图标页</string>
     <string name="restart_to_take_effect">重启以生效</string>
+    <string name="tab_installed">已安装</string>
 </resources>

@@ -12,10 +12,10 @@ import android.content.res.XmlResourceParser;
 import android.os.Build;
 import android.util.Log;
 
-import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.models.AppfilterItem;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -28,6 +28,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -39,19 +41,17 @@ public class AppInfoUtil {
     public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon) {
         List<AppInfo> appInfoList = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
-        Intent intent = new Intent("android.intent.action.MAIN", null);
-        intent.addCategory("android.intent.category.LAUNCHER");
-        List list = pm.queryIntentActivities(intent, 0);
-        Iterator iterator = list.iterator();
+        List<ResolveInfo> list = getInstallApps(pm);
+        Iterator<ResolveInfo> iterator = list.iterator();
 
         List<String> xmlStringList = new ArrayList<>();
 
         if (withHasCustomIcon) {
-            xmlStringList = getAppfilterToString(context);
+            xmlStringList = getAppfilterComponentList(context);
         }
 
         for (int i = 0; i < list.size(); i++) {
-            ResolveInfo resolveInfo = (ResolveInfo) iterator.next();
+            ResolveInfo resolveInfo = iterator.next();
             AppInfo tempAppInfo = new AppInfo(
                     resolveInfo.activityInfo.packageName + "/" + resolveInfo.activityInfo.name,
                     resolveInfo.loadLabel(pm).toString(),
@@ -81,7 +81,50 @@ public class AppInfoUtil {
         return appInfoList;
     }
 
-    public static List<String> getAppfilterToString(Context context) {
+    public static List<ResolveInfo> getInstallApps(PackageManager pm) {
+        Intent intent = new Intent("android.intent.action.MAIN", null);
+        intent.addCategory("android.intent.category.LAUNCHER");
+        return pm.queryIntentActivities(intent, 0);
+    }
+
+    public static List<AppfilterItem> getAppfilterList(Context context) {
+        List<AppfilterItem> list = new ArrayList<>();
+        int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
+        XmlResourceParser parser = context.getResources().getXml(i);
+        int eventType;
+        try {
+            eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        if (parser.getName().equals("item")) {
+                            String component = parser.getAttributeValue(null, "component");
+                            String drawable = parser.getAttributeValue(null, "drawable");
+                            if (component.startsWith(":")) {
+                                break;
+                            }
+                            try {
+                                list.add(new AppfilterItem(
+                                        component.substring(14, component.length() - 1), drawable));
+                            } catch (Exception e) {
+                                Timber.e(e);
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public static List<String> getAppfilterComponentList(Context context) {
         List<String> list = new ArrayList<>();
         int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
         XmlResourceParser parser = context.getResources().getXml(i);
@@ -96,9 +139,11 @@ public class AppInfoUtil {
                         if (parser.getName().equals("item")) {
                             String component = parser.getAttributeValue(null, "component");
                             try {
-                                list.add(component.substring(14, component.length() - 1));
+                                if (component.charAt(0) != ':') {
+                                    list.add(component.substring(14, component.length() - 1));
+                                }
                             } catch (Exception e) {
-                                KLog.e(component);
+                                Timber.e(e);
                             }
                         }
                         break;
@@ -153,7 +198,8 @@ public class AppInfoUtil {
                         break;
                     case XmlPullParser.START_TAG:
                         if (parser.getName().equals("item")) {
-                            if (parser.getAttributeValue(1).matches("^" + name + "$")) {
+                            if (parser.getAttributeValue(1).matches("^" + name + "$") &&
+                                    !parser.getAttributeValue(0).startsWith(":")) {
                                 return parser.getAttributeValue(0);
                             }
                         }
