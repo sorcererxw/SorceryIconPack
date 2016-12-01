@@ -1,12 +1,8 @@
 package com.sorcerer.sorcery.iconpack.ui.adapters.base;
 
 import android.content.Context;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.View;
-
-import com.socks.library.KLog;
 
 import java.util.List;
 

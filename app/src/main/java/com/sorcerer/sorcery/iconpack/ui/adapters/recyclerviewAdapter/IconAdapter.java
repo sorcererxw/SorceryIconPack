@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
@@ -17,9 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
@@ -63,15 +59,18 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private List<List<IconBean>> mIconBeanLists = new ArrayList<>();
     private List<Pair<IconBean, Integer>> mShowList;
 
+    private RequestManager mGlideRequestManager;
+
     private boolean mClicked = false;
     private int mSpan;
 
     public IconAdapter(Activity activity, Context context,
-                       List<IconBean> iconBeanList, int span) {
+                       List<IconBean> iconBeanList, int span, RequestManager glideRequestManager) {
 
         mActivity = activity;
         mContext = context;
         mSpan = span;
+        mGlideRequestManager = glideRequestManager;
 
         List<IconBean> tmpList = new ArrayList<>();
         for (int i = 0; i < iconBeanList.size(); i++) {
@@ -227,16 +226,13 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                                     iconHolder.getAdapterPosition());
                         } else {
                             KeyboardUtil.closeKeyboard((Activity) mContext);
-                            ((MainActivity)mActivity).onReturnCustomPickerRes(
+                            ((MainActivity) mActivity).onReturnCustomPickerRes(
                                     mShowList.get(iconHolder.getAdapterPosition()).first.getRes());
                         }
                     }
                 });
-                Glide.with(mContext)
+                mGlideRequestManager
                         .load(iconBean.getRes())
-                        .asBitmap()
-                        .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                        .animate(android.R.anim.fade_in)
                         .into(iconHolder.mIcon);
             } else {
                 iconHolder.itemView.setOnClickListener(null);
@@ -307,14 +303,20 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                     break;
             }
 
-            iconHolder.slice.showLeftBottomRect(!leftBottomRect);
-            iconHolder.slice.showRightBottomRect(!rightBottomRect);
-            iconHolder.slice.showLeftTopRect(!leftTopRect);
-            iconHolder.slice.showRightTopRect(!rightTopRect);
-            iconHolder.slice.showLeftEdgeShadow(leftEdgeShadow);
-            iconHolder.slice.showRightEdgeShadow(rightEdgeShadow);
-            iconHolder.slice.showBottomEdgeShadow(bottomEdgeShadow);
-            iconHolder.slice.showTopEdgeShadow(topEdgeShadow);
+            Slice slice = new Slice(iconHolder.mFrame);
+            slice.setRadius(2);
+            slice.setRipple(0);
+
+            slice.showLeftBottomRect(!leftBottomRect);
+            slice.showRightBottomRect(!rightBottomRect);
+            slice.showLeftTopRect(!leftTopRect);
+            slice.showRightTopRect(!rightTopRect);
+            if (Build.VERSION.SDK_INT < 21) {
+                slice.showLeftEdgeShadow(leftEdgeShadow);
+                slice.showRightEdgeShadow(rightEdgeShadow);
+                slice.showBottomEdgeShadow(bottomEdgeShadow);
+                slice.showTopEdgeShadow(topEdgeShadow);
+            }
         }
     }
 
@@ -391,13 +393,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         @BindView(R.id.imageView_item_icon)
         ImageView mIcon;
 
-        Slice slice;
-
         IconViewHolder(View itemView) {
             super(itemView);
-            slice = new Slice(mFrame);
-            slice.setRadius(2);
-            slice.setRipple(0);
         }
     }
 
@@ -410,5 +407,3 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }
     }
 }
-
-

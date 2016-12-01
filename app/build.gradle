@@ -53,13 +53,11 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -116,8 +114,11 @@ dependencies {
     // glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
     // leancloud
+    //noinspection GradleDynamicVersion
     compile 'cn.leancloud.android:avoscloud-sdk:v3.+'
+    //noinspection GradleDynamicVersion
     compile 'cn.leancloud.android:avoscloud-statistics:v3.+'
+    //noinspection GradleDynamicVersion
     compile 'cn.leancloud.android:avoscloud-feedback:v3.+@aar'
     // rx
     compile 'io.reactivex:rxjava:1.2.2'
@@ -127,8 +128,6 @@ dependencies {
     compile 'com.github.VictorAlbertos:RxActivityResult:0.3.9'
     // timber
     compile 'com.jakewharton.timber:timber:4.3.1'
-//     klog
-    compile 'com.github.zhaokaiqiang.klog:library:1.5.0'
     // iconic
     compile 'com.mikepenz:iconics-core:2.8.1@aar'
     compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
@@ -141,9 +140,6 @@ dependencies {
     // tinker
     provided 'com.tencent.tinker:tinker-android-anno:1.7.3'
     compile 'com.tencent.tinker:tinker-android-lib:1.7.3'
-    // qiniu
-    //    compile 'com.qiniu:qiniu-android-sdk:7.2.+'
-    //    compile 'com.qiniu:happy-dns:0.2.10'
     // okhttp
     compile 'com.squareup.okhttp3:okhttp:3.4.2'
     compile 'com.squareup.okio:okio:1.11.0'

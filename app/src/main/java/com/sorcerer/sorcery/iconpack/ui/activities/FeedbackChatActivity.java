@@ -34,7 +34,6 @@ import com.avos.avoscloud.feedback.Comment;
 import com.avos.avoscloud.feedback.Comment.CommentType;
 import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.avos.avoscloud.feedback.FeedbackThread;
-import com.socks.library.KLog;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
@@ -176,7 +175,6 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     private void handleImageIntent(Intent intent) {
         Uri uri = intent.getData();
         String filePath = getPath(this, uri);
-        KLog.d(filePath);
         if (filePath != null) {
             try {
                 File file = new File(filePath);

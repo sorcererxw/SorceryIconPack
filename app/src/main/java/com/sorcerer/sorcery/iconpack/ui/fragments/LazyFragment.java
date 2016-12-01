@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -84,11 +86,33 @@ public class LazyFragment extends LazyBaseFragment {
     }
 
     @Override
-    public void setContentView(View view) {
+    public void setContentView(final View view) {
         // if isLazyLoad==true, remove lazy view to load real view
         if (isLazyLoad && getContentView() != null && getContentView().getParent() != null) {
-            layout.removeAllViews();
-            layout.addView(view);
+            for (int i = 0; i < layout.getChildCount(); i++) {
+                Animation animation = new AlphaAnimation(1, 0);
+                animation.setDuration(200);
+                if (i == layout.getChildCount() - 1) {
+                    animation.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            layout.removeAllViews();
+                            layout.addView(view);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+                }
+                layout.getChildAt(i).startAnimation(animation);
+            }
         }
         // else load directly
         else {

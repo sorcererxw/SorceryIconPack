@@ -1,16 +1,11 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
-import android.databinding.repacked.google.common.collect.Lists;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -18,18 +13,19 @@ import android.view.Display;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-import com.socks.library.KLog;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppfilterItem;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -96,10 +92,14 @@ public class LazyIconFragment extends LazyFragment {
     protected void onCreateViewLazy(Bundle savedInstance) {
 
         View view = View.inflate(getContext(), R.layout.fragment_icon, null);
-        setContentView(view);
-
         ButterKnife.bind(this, view);
 
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        final int h_screen = dm.heightPixels;
+        mGridView.setTranslationY(h_screen);
+        mGridView.setAlpha(0);
+
+        setContentView(view);
         if (mIconBeanList == null) {
             getIconBeanList((Flag) getArguments().get(mArgFlagKey));
         } else {
@@ -109,7 +109,9 @@ public class LazyIconFragment extends LazyFragment {
 
     private void init() {
         calcNumOfRows();
-        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mNumOfRows);
+        final RequestManager rm = Glide.with(this);
+
+        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mNumOfRows, rm);
 
         boolean customPicker = getArguments().getBoolean(mArgCustomPickerKey, false);
         mGridLayoutManager = new GridLayoutManager(getContext(), mNumOfRows);
@@ -124,14 +126,6 @@ public class LazyIconFragment extends LazyFragment {
 
         mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);
-        mGridView.setItemAnimator(new DefaultItemAnimator());
-        mGridView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
-                                       RecyclerView.State state) {
-                outRect.set(0, 0, 0, 0);
-            }
-        });
 
         if (customPicker) {
             mIconAdapter.setCustomPicker(mHoldingActivity, true);
@@ -221,12 +215,25 @@ public class LazyIconFragment extends LazyFragment {
                     List<String> list = new ArrayList<>();
                     List<AppfilterItem> afList = AppInfoUtil.getAppfilterList(context);
                     List<ResolveInfo> installedList = AppInfoUtil.getInstallApps(pm);
+                    List<String> allIconList =
+                            Arrays.asList(ResourceUtil.getStringArray(context, "icon_pack"));
                     for (ResolveInfo ri : installedList) {
                         String comp = ri.activityInfo.packageName + "/" + ri.activityInfo.name;
-                        Timber.d(comp);
-                        for (AppfilterItem ai : afList) {
+                        for (int i = 0; i < afList.size(); i++) {
+                            AppfilterItem ai = afList.get(i);
                             if (comp.equals(ai.getComponent())) {
-                                list.add(ai.getDrawable());
+                                String drawable = ai.getDrawable();
+                                int index = allIconList.indexOf(drawable);
+                                if (index < 0) {
+                                    break;
+                                }
+                                for (int j = index; j < allIconList.size(); j++) {
+                                    if (allIconList.get(index).startsWith(drawable)) {
+                                        list.add(allIconList.get(j));
+                                    } else {
+                                        break;
+                                    }
+                                }
                                 break;
                             }
                         }
