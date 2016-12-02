@@ -67,6 +67,9 @@
     <string name="welcome_body">If there is any problem, search answer in FAQ</string>
     <string name="welcome_close">OK</string>
 
+    <string name="apply_recommend">Recommend</string>
+    <string name="apply_supported_system">Apply to system</string>
+    <string name="apply_supported_launcher">Apply to launcher</string>
 
     <string name="installed">installed</string>
     <string name="not_installed">not installed</string>

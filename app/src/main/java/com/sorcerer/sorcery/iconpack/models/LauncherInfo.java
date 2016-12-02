@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.util.Log;
 
+import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 
 /**
@@ -59,72 +60,24 @@ public class LauncherInfo implements Comparable {
     }
 
     private void setIcon(Context context) {
-        switch (mLabel) {
-            case "Action":
-                Log.d(TAG, mLabel + "found");
-//                mIcon = R.drawable.action_launcher;
+        switch (mLabel.toLowerCase()) {
+            case "action":
+                mIcon = R.drawable.action_launcher;
                 break;
-            case "ADW":
-//                mIcon = R.drawable.adw_launcher;
+            case "nova":
+                mIcon = R.drawable.nova_launcher;
                 break;
-            case "ADW EX":
-
-//                mIcon = R.drawable.adwex_launcher;
+            case "apex":
+                mIcon = R.drawable.apex_launcher;
                 break;
-            case "Apex":
-//                mIcon = R.drawable.apex_launcher;
+            case "miui":
+                mIcon = R.drawable.xiaomi_miui;
                 break;
-            case "Atom":
-//                mIcon = R.drawable.atom_launcher;
+            case "flyme":
+                mIcon = R.drawable.flyme;
                 break;
-            case "Aviate":
-//                mIcon = R.drawable.aviate_launcher;
-                break;
-            case "CM Theme Engine":
-                break;
-            case "Go":
-//                mIcon = R.drawable.go_launcher;
-                break;
-            case "Google Now":
-                break;
-            case "Holo":
-//                mIcon = R.drawable.holo_launcher;
-                break;
-            case "Holo ICS":
-                break;
-            case "KK":
-//                mIcon = R.drawable.kk_launcher;
-                break;
-            case "L":
-                break;
-            case "LG Home":
-                break;
-            case "Lucid":
-//                mIcon = R.drawable.lucid_launcher;
-                break;
-            case "Mini":
-                break;
-            case "Next":
-//                mIcon = R.drawable.next_launcher;
-                break;            case "Nova":
-//                mIcon = R.drawable.nova_launcher;
-                break;
-            case "S":
-                break;
-            case "Smart":
-//                mIcon = R.drawable.smart_launcher;
-                break;
-            case "Smart Pro":
-//                mIcon = R.drawable.smart_launcher;
-                break;
-            case "Solo":
-//                mIcon = R.drawable.solo_launcher;
-                break;
-            case "TSF":
-//                mIcon = R.drawable.tsf_launcher;
-                break;
-            case "Unicon":
-//                mIcon = R.drawable.unicon;
+            case "unicon":
+                mIcon = R.drawable.unicon;
                 break;
             default:
                 Log.d(TAG, mLabel + ": no such launcher");

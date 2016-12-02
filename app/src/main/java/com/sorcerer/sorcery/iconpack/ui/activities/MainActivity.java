@@ -319,6 +319,15 @@ public class MainActivity extends BaseActivity {
                 .withActivity(mActivity)
                 .build();
         mDrawer.addItems(
+                new PrimaryDrawerItem()
+                        .withSetSelected(false)
+                        .withSelectable(false)
+                        .withTag("apply")
+                        .withIcon(ResourceUtil
+                                .getDrawableWithAlpha(mContext, R.drawable.ic_input_black_24dp,
+                                        iconAlpha))
+                        .withTextColorRes(textColorRes)
+                        .withName(R.string.nav_item_apply),
                 new ExpandableDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
@@ -391,9 +400,6 @@ public class MainActivity extends BaseActivity {
                 switch ((String) drawerItem.getTag()) {
                     case "apply":
                         mNavigator.toAppleActivity();
-                        break;
-                    case "feedback":
-                        mNavigator.toFeedbackActivity();
                         break;
                     case "lab":
                         mNavigator.toLabActivity();

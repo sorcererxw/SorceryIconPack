@@ -216,8 +216,12 @@ public class AppInfoUtil {
     }
 
     public static List<LauncherInfo> generateLauncherInfo(Context context) {
+        return generateLauncherInfo(context, R.array.launchers);
+    }
+
+    public static List<LauncherInfo> generateLauncherInfo(Context context, int id) {
         List<LauncherInfo> list = new ArrayList<>();
-        String[] launchers = context.getResources().getStringArray(R.array.launchers);
+        String[] launchers = context.getResources().getStringArray(id);
         for (String launcher : launchers) {
             String[] tmp = launcher.split("\\|");
             if (BuildConfig.DEBUG) {

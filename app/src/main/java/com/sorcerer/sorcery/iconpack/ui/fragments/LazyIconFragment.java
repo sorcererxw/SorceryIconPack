@@ -25,7 +25,6 @@ import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -60,8 +59,8 @@ public class LazyIconFragment extends LazyFragment {
         SAMSUNG,
         SONY,
         TENCENT,
-        //      XIAOMI,
-//      MIUI
+        XIAOMI,
+        //      MIUI
         FLYME,
         ONEPLUS
     }
@@ -217,18 +216,23 @@ public class LazyIconFragment extends LazyFragment {
                     List<ResolveInfo> installedList = AppInfoUtil.getInstallApps(pm);
                     List<String> allIconList =
                             Arrays.asList(ResourceUtil.getStringArray(context, "icon_pack"));
+                    Collections.sort(allIconList);
+
                     for (ResolveInfo ri : installedList) {
                         String comp = ri.activityInfo.packageName + "/" + ri.activityInfo.name;
                         for (int i = 0; i < afList.size(); i++) {
                             AppfilterItem ai = afList.get(i);
                             if (comp.equals(ai.getComponent())) {
                                 String drawable = ai.getDrawable();
+                                list.add(drawable);
                                 int index = allIconList.indexOf(drawable);
                                 if (index < 0) {
                                     break;
                                 }
-                                for (int j = index; j < allIconList.size(); j++) {
-                                    if (allIconList.get(index).startsWith(drawable)) {
+                                for (int j = index + 1; j < allIconList.size(); j++) {
+                                    if (allIconList.get(j).startsWith(drawable + "_alt") ||
+                                            (drawable.endsWith("calendar")
+                                                    && allIconList.get(j).startsWith(drawable))) {
                                         list.add(allIconList.get(j));
                                     } else {
                                         break;

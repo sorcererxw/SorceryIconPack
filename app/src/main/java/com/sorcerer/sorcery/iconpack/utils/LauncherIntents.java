@@ -18,77 +18,77 @@ import com.sorcerer.sorcery.iconpack.R;
 public class LauncherIntents {
 
     public LauncherIntents(Context context, String launcherName) {
-        switch (launcherName) {
-            case "Action":
+        switch (launcherName.toLowerCase()) {
+            case "action":
                 ActionLauncher(context);
                 break;
-            case "ADW":
+            case "adw":
                 AdwLauncher(context);
                 break;
-            case "ADW EX":
+            case "adw ex":
                 AdwEXLauncher(context);
                 break;
-            case "Apex":
+            case "apex":
                 ApexLauncher(context);
                 break;
-            case "Atom":
+            case "atom":
                 AtomLauncher(context);
                 break;
-            case "Aviate":
+            case "aviate":
                 AviateLauncher(context);
                 break;
-            case "Cmthemeengine":
+            case "cmthemeengine":
                 CMThemeEngine(context);
                 break;
-            case "Go":
+            case "go":
                 GoLauncher(context);
                 break;
             case "Holo":
                 HoloLauncher(context);
                 break;
-            case "Holo ICS":
+            case "holo ics":
                 HoloLauncherICS(context);
                 break;
-            case "KK":
+            case "kk":
                 KkLauncher(context);
                 break;
-            case "LG Home":
+            case "lg home":
                 LgHomeLauncher(context);
                 break;
-            case "L":
+            case "l":
                 LLauncher(context);
                 break;
-            case "Lucid":
+            case "lucid":
                 LucidLauncher(context);
                 break;
-            case "Mini":
+            case "mini":
                 MiniLauncher(context);
                 break;
-            case "Next":
+            case "next":
                 NextLauncher(context);
                 break;
-            case "Nova":
+            case "nova":
                 NovaLauncher(context);
                 break;
-            case "S":
+            case "n":
                 SLauncher(context);
                 break;
-            case "Smart":
+            case "nmart":
                 SmartLauncher(context);
                 break;
-            case "Smart pro":
+            case "nmart pro":
                 SmartLauncherPro(context);
                 break;
-            case "Solo":
+            case "nolo":
                 SoloLauncher(context);
                 break;
-            case "Tsf":
+            case "tsf":
                 TsfLauncher(context);
                 break;
-            case "Unicon":
+            case "unicon":
                 Unicon(context);
                 break;
-            case "Layers":
+            case "layers":
                 Layers(context);
                 break;
             default:
@@ -314,7 +314,6 @@ public class LauncherIntents {
             layers.putExtra("pkgName", context.getPackageName());
             context.startActivity(layers);
         }
-
     }
 
 }

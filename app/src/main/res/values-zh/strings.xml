@@ -181,4 +181,7 @@
     <string name="preference_general_customize_tabs_summary">仅显示你关注的图标页</string>
     <string name="restart_to_take_effect">重启以生效</string>
     <string name="tab_installed">已安装</string>
+    <string name="apply_recommend">推荐</string>
+    <string name="apply_supported_launcher">应用到启动器</string>
+    <string name="apply_supported_system">应用到系统</string>
 </resources>

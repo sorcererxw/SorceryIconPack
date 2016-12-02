@@ -2,8 +2,8 @@
 <resources>
     <string-array name="launchers" translatable="false">
         <item>Action|com.actionlauncher.playstore</item>
-        <item>ADW|org.adw.launcher</item>
-        <item>ADW EX|org.adwfreak.launcher</item>
+        <!--<item>ADW|org.adw.launcher</item>-->
+        <!--<item>ADW EX|org.adwfreak.launcher</item>-->
         <item>Apex|com.anddoes.launcher</item>
         <item>Atom|com.dlto.atom.launcher</item>
         <item>Aviate|com.tul.aviate</item>
@@ -25,5 +25,18 @@
         <item>Solo|home.solo.launcher.free</item>
         <item>TSF|com.tsf.shell</item>
         <item>Unicon|sg.ruqqq.IconThemer</item>
+    </string-array>
+
+    <string-array name="apply_systems" translatable="false">
+        <item>Flyme|com.meizu.customizecenter</item>
+        <item>MIUI|com.android.thememanager</item>
+        <!--<item>CM Theme Engine|org.cyanogenmod.theme.chooser|org.cyanogenmod.theme.chooser2</item>-->
+        <item>Unicon|sg.ruqqq.IconThemer</item>
+    </string-array>
+
+    <string-array name="apply_launchers" translatable="false">
+        <item>Action|com.actionlauncher.playstore</item>
+        <item>Apex|com.anddoes.launcher</item>
+        <item>Nova|com.teslacoilsw.launcher</item>
     </string-array>
 </resources>

@@ -5,8 +5,12 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="wallpaper_item_size">180dp</dimen>
-    <dimen name="apply_item_size">160dp</dimen>
     <dimen name="help_item_size">320dp</dimen>
+
+    <dimen name="apply_item_size">160dp</dimen>
+    <dimen name="apply_icon_size">112dp</dimen>
+    <dimen name="apply_icon_margin">16dp</dimen>
+    <dimen name="apply_card_margin">8dp</dimen>
 
     <dimen name="icon_grid_card_margin">8dp</dimen>
     <dimen name="icon_grid_item_size">72dp</dimen>

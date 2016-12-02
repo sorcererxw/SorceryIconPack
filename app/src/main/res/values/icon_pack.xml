@@ -2,6 +2,13 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>flyme_dialer</item>
+        <item>ctrip</item>
+        <item>didi</item>
+        <item>settings_alt</item>
+        <item>tumblr</item>
+        <item>google_keep</item>
+        <item>xiaomi_mi_talk</item>
         <item>xiaomi_map</item>
         <item>xiaomi_gallery</item>
         <item>xiaomi_theme</item>
@@ -40,6 +47,15 @@
         <item>netease_youdao_hanyu_yuwen</item>
         <item>flyme_safe_alt</item>
         <item>flyme_appcenter_alt</item>
+        <item>flyme</item>
+        <item>xiaomi_miui</item>
+        <item>apex_launcher</item>
+        <item>nova_launcher_prime</item>
+        <item>nova_launcher_tesla_unread</item>
+        <item>nova_launcher_settings</item>
+        <item>nova_launcher</item>
+        <item>action_launcher</item>
+        <item>spotify_alt</item>
 
         <item>@string/icon_label_updated</item>
         <item>calculator</item>
@@ -50,9 +66,39 @@
         <item>flyme_map</item>
         <item>flyme_update</item>
         <item>netease_youqian</item>
-
+        <item>flyme_calendar</item>
+        <item>flyme_calendar_1</item>
+        <item>flyme_calendar_2</item>
+        <item>flyme_calendar_3</item>
+        <item>flyme_calendar_4</item>
+        <item>flyme_calendar_5</item>
+        <item>flyme_calendar_6</item>
+        <item>flyme_calendar_7</item>
+        <item>flyme_calendar_8</item>
+        <item>flyme_calendar_9</item>
+        <item>flyme_calendar_10</item>
+        <item>flyme_calendar_11</item>
+        <item>flyme_calendar_12</item>
+        <item>flyme_calendar_13</item>
+        <item>flyme_calendar_14</item>
+        <item>flyme_calendar_15</item>
+        <item>flyme_calendar_16</item>
+        <item>flyme_calendar_17</item>
+        <item>flyme_calendar_18</item>
+        <item>flyme_calendar_19</item>
+        <item>flyme_calendar_20</item>
+        <item>flyme_calendar_21</item>
+        <item>flyme_calendar_22</item>
+        <item>flyme_calendar_23</item>
+        <item>flyme_calendar_24</item>
+        <item>flyme_calendar_25</item>
+        <item>flyme_calendar_26</item>
+        <item>flyme_calendar_27</item>
+        <item>flyme_calendar_28</item>
+        <item>flyme_calendar_29</item>
+        <item>flyme_calendar_30</item>
+        <item>flyme_calendar_31</item>
     </string-array>
-
     <string-array name="icon_pack_ali" translatable="false">
         <item>alibaba</item>
         <item>alipay</item>
@@ -127,12 +173,14 @@
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
+        <item>netease_news_alt</item>
         <item>netease_open_class</item>
         <item>netease_pris</item>
         <item>netease_super_calculator</item>
         <item>netease_yanxuan</item>
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
+        <item>netease_youdao_hanyu_yuwen</item>
         <item>netease_youdao_note</item>
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
@@ -185,11 +233,13 @@
         <item>google_drive</item>
         <item>google_duo</item>
         <item>google_io</item>
+        <item>google_keep</item>
         <item>google_keyboard</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
         <item>google_messenger_alt_2</item>
         <item>google_now_enabler</item>
+        <item>google_photos</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
@@ -220,6 +270,7 @@
     </string-array>
 
     <string-array name="icon_pack_lg" translatable="false">
+        <item>lg_health</item>
     </string-array>
 
     <string-array name="icon_pack_moto" translatable="false">
@@ -266,6 +317,7 @@
         <item>samsung_notes</item>
         <item>samsung_pay</item>
         <item>samsung_reader</item>
+        <item>samsung_settings</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
         <item>samsung_s_voice_app</item>
@@ -284,6 +336,7 @@
         <item>sony_calendar</item>
         <item>sony_camera</item>
         <item>sony_contacts</item>
+        <item>sony_dialer</item>
         <item>sony_fm_radio</item>
         <item>sony_lifelog</item>
         <item>sony_live_on_youtube</item>
@@ -297,6 +350,7 @@
         <item>sony_play_memories_mobile</item>
         <item>sony_play_memories_online</item>
         <item>sony_play_memories_online_alt</item>
+        <item>sony_settings</item>
         <item>sony_sketch</item>
         <item>sony_sleep_partner</item>
         <item>sony_smart_band_talk</item>
@@ -351,11 +405,43 @@
     <string-array name="icon_pack_miui" translatable="false">
     </string-array>
 
+    <string-array name="icon_pack_xiaomi" translatable="false">
+        <item>xiaomi_account</item>
+        <item>xiaomi_app_market</item>
+        <item>xiaomi_backup</item>
+        <item>xiaomi_barcode_scanner</item>
+        <item>xiaomi_browser</item>
+        <item>xiaomi_compass</item>
+        <item>xiaomi_dialer</item>
+        <item>xiaomi_file_explorer</item>
+        <item>xiaomi_fm</item>
+        <item>xiaomi_gallery</item>
+        <item>xiaomi_gamecenter</item>
+        <item>xiaomi_mail</item>
+        <item>xiaomi_map</item>
+        <item>xiaomi_miui</item>
+        <item>xiaomi_miui_calculator</item>
+        <item>xiaomi_mi_talk</item>
+        <item>xiaomi_music</item>
+        <item>xiaomi_notepaper</item>
+        <item>xiaomi_shop</item>
+        <item>xiaomi_smarthome</item>
+        <item>xiaomi_smarthome_alt</item>
+        <item>xiaomi_theme</item>
+        <item>xiaomi_updater</item>
+        <item>xiaomi_video</item>
+        <item>xiaomi_wallet</item>
+        <item>xiaomi_weather</item>
+    </string-array>
+
     <string-array name="icon_pack_flyme" translatable="false">
+        <item>flyme</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
+        <item>flyme_appcenter_alt</item>
         <item>flyme_browser</item>
         <item>flyme_calculator</item>
+        <item>flyme_calculator_alt</item>
         <item>flyme_calendar</item>
         <item>flyme_calendar_1</item>
         <item>flyme_calendar_10</item>
@@ -394,29 +480,39 @@
         <item>flyme_dialer</item>
         <item>flyme_download</item>
         <item>flyme_email</item>
+        <item>flyme_email_alt</item>
         <item>flyme_feedback</item>
         <item>flyme_filemanager</item>
         <item>flyme_gallery</item>
         <item>flyme_game</item>
         <item>flyme_life</item>
         <item>flyme_lifekit</item>
+        <item>flyme_lifekit_alt</item>
         <item>flyme_map</item>
+        <item>flyme_map_alt</item>
         <item>flyme_music</item>
         <item>flyme_notepaper</item>
         <item>flyme_painter</item>
+        <item>flyme_painter_alt</item>
         <item>flyme_read</item>
+        <item>flyme_read_alt</item>
         <item>flyme_safe</item>
+        <item>flyme_safe_alt</item>
         <item>flyme_scanner</item>
+        <item>flyme_scanner_alt</item>
         <item>flyme_settings</item>
         <item>flyme_sms</item>
         <item>flyme_soundrecorder</item>
         <item>flyme_toolbox</item>
+        <item>flyme_toolbox_alt</item>
         <item>flyme_tools</item>
         <item>flyme_update</item>
         <item>flyme_video</item>
         <item>flyme_voice_assistant</item>
+        <item>flyme_voice_assistant_alt</item>
         <item>flyme_wallet</item>
         <item>flyme_weather</item>
+        <item>flyme_weather_alt</item>
     </string-array>
 
     <string-array name="icon_pack_oneplus" translatable="false">
@@ -464,6 +560,9 @@
         <item>oneplus_note</item>
         <item>oneplus_soundrecorder</item>
         <item>oneplus_weather</item>
+        <item>oneplus_weather_alt_cloudy</item>
+        <item>oneplus_weather_alt_cloudy_dark</item>
+        <item>oneplus_weather_alt_sunny</item>
         <item>oneplus_weather_cloudy</item>
         <item>oneplus_weather_cloudy_dark</item>
         <item>oneplus_weather_sunny</item>
@@ -490,6 +589,7 @@
         <item>abcchina_bank</item>
         <item>acfun</item>
         <item>acfun_alt</item>
+        <item>action_launcher</item>
         <item>adobe_acrobat</item>
         <item>adobe_air</item>
         <item>adobe_brush</item>
@@ -544,6 +644,7 @@
         <item>anydo</item>
         <item>anydo_calendar</item>
         <item>anyview</item>
+        <item>apex_launcher</item>
         <item>apkpure</item>
         <item>appchina_yingyonghui_market</item>
         <item>appenv</item>
@@ -646,6 +747,7 @@
         <item>couplete</item>
         <item>ctrip</item>
         <item>ctrip_alt</item>
+        <item>ctrip_alt_2</item>
         <item>ct_client</item>
         <item>current_activity</item>
         <item>custom_share</item>
@@ -666,6 +768,7 @@
         <item>dice</item>
         <item>didaqingdan</item>
         <item>didi</item>
+        <item>didi_alt</item>
         <item>dingxiangyisheng</item>
         <item>ditietong</item>
         <item>domino_pizza</item>
@@ -721,10 +824,13 @@
         <item>flickr</item>
         <item>floatify</item>
         <item>flow_bank</item>
+        <item>flyme</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
+        <item>flyme_appcenter_alt</item>
         <item>flyme_browser</item>
         <item>flyme_calculator</item>
+        <item>flyme_calculator_alt</item>
         <item>flyme_calendar</item>
         <item>flyme_calendar_1</item>
         <item>flyme_calendar_10</item>
@@ -763,29 +869,39 @@
         <item>flyme_dialer</item>
         <item>flyme_download</item>
         <item>flyme_email</item>
+        <item>flyme_email_alt</item>
         <item>flyme_feedback</item>
         <item>flyme_filemanager</item>
         <item>flyme_gallery</item>
         <item>flyme_game</item>
         <item>flyme_life</item>
         <item>flyme_lifekit</item>
+        <item>flyme_lifekit_alt</item>
         <item>flyme_map</item>
+        <item>flyme_map_alt</item>
         <item>flyme_music</item>
         <item>flyme_notepaper</item>
         <item>flyme_painter</item>
+        <item>flyme_painter_alt</item>
         <item>flyme_read</item>
+        <item>flyme_read_alt</item>
         <item>flyme_safe</item>
+        <item>flyme_safe_alt</item>
         <item>flyme_scanner</item>
+        <item>flyme_scanner_alt</item>
         <item>flyme_settings</item>
         <item>flyme_sms</item>
         <item>flyme_soundrecorder</item>
         <item>flyme_toolbox</item>
+        <item>flyme_toolbox_alt</item>
         <item>flyme_tools</item>
         <item>flyme_update</item>
         <item>flyme_video</item>
         <item>flyme_voice_assistant</item>
+        <item>flyme_voice_assistant_alt</item>
         <item>flyme_wallet</item>
         <item>flyme_weather</item>
+        <item>flyme_weather_alt</item>
         <item>foodie</item>
         <item>forest</item>
         <item>fulimanman</item>
@@ -862,11 +978,13 @@
         <item>google_drive</item>
         <item>google_duo</item>
         <item>google_io</item>
+        <item>google_keep</item>
         <item>google_keyboard</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
         <item>google_messenger_alt_2</item>
         <item>google_now_enabler</item>
+        <item>google_photos</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
@@ -944,6 +1062,7 @@
         <item>jinritoutiao</item>
         <item>jinsanciba</item>
         <item>jotterpad</item>
+        <item>jotterpad_alt</item>
         <item>jswarts_browser</item>
         <item>juejin</item>
         <item>**K**</item>
@@ -982,6 +1101,7 @@
         <item>lenovo_gt_browser</item>
         <item>letv</item>
         <item>letv_sport</item>
+        <item>lg_health</item>
         <item>lightning_wall</item>
         <item>line</item>
         <item>line_at</item>
@@ -1011,6 +1131,7 @@
         <item>meituan_waimai</item>
         <item>meituxiuxiu</item>
         <item>meiyanxiangji</item>
+        <item>meizu_voice_assistant_alt</item>
         <item>mengniangbaike</item>
         <item>messaging</item>
         <item>microsoft_bing_dict</item>
@@ -1072,12 +1193,14 @@
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
+        <item>netease_news_alt</item>
         <item>netease_open_class</item>
         <item>netease_pris</item>
         <item>netease_super_calculator</item>
         <item>netease_yanxuan</item>
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
+        <item>netease_youdao_hanyu_yuwen</item>
         <item>netease_youdao_note</item>
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
@@ -1092,6 +1215,10 @@
         <item>nissan</item>
         <item>noisyfox</item>
         <item>notify_clean</item>
+        <item>nova_launcher</item>
+        <item>nova_launcher_prime</item>
+        <item>nova_launcher_settings</item>
+        <item>nova_launcher_tesla_unread</item>
         <item>**O**</item>
         <item>office_suite</item>
         <item>olo</item>
@@ -1141,6 +1268,9 @@
         <item>oneplus_note</item>
         <item>oneplus_soundrecorder</item>
         <item>oneplus_weather</item>
+        <item>oneplus_weather_alt_cloudy</item>
+        <item>oneplus_weather_alt_cloudy_dark</item>
+        <item>oneplus_weather_alt_sunny</item>
         <item>oneplus_weather_cloudy</item>
         <item>oneplus_weather_cloudy_dark</item>
         <item>oneplus_weather_sunny</item>
@@ -1212,6 +1342,7 @@
         <item>samsung_notes</item>
         <item>samsung_pay</item>
         <item>samsung_reader</item>
+        <item>samsung_settings</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
         <item>samsung_s_voice_app</item>
@@ -1225,6 +1356,7 @@
         <item>search_by_image</item>
         <item>seed</item>
         <item>settings</item>
+        <item>settings_alt</item>
         <item>settings_editor</item>
         <item>sfly</item>
         <item>shadowsocks</item>
@@ -1237,6 +1369,7 @@
         <item>shouxin_keyboard</item>
         <item>shuqi</item>
         <item>shuqi_alt</item>
+        <item>sim_toolkit</item>
         <item>skype</item>
         <item>smartisan_note</item>
         <item>smartisan_reader</item>
@@ -1257,6 +1390,7 @@
         <item>sony_calendar</item>
         <item>sony_camera</item>
         <item>sony_contacts</item>
+        <item>sony_dialer</item>
         <item>sony_fm_radio</item>
         <item>sony_lifelog</item>
         <item>sony_live_on_youtube</item>
@@ -1270,6 +1404,7 @@
         <item>sony_play_memories_mobile</item>
         <item>sony_play_memories_online</item>
         <item>sony_play_memories_online_alt</item>
+        <item>sony_settings</item>
         <item>sony_sketch</item>
         <item>sony_sleep_partner</item>
         <item>sony_smart_band_talk</item>
@@ -1291,6 +1426,7 @@
         <item>spd_bank</item>
         <item>spoon</item>
         <item>spotify</item>
+        <item>spotify_alt</item>
         <item>sspai</item>
         <item>sspai_daikejietu</item>
         <item>starbucks</item>
@@ -1384,6 +1520,7 @@
         <item>ticktick</item>
         <item>tieba_zhushou</item>
         <item>timi</item>
+        <item>titanium_backup</item>
         <item>tmri_jiaoguan_12123</item>
         <item>tonghuashun</item>
         <item>touchpal_keyboard</item>
@@ -1395,6 +1532,7 @@
         <item>tudou</item>
         <item>tuiku</item>
         <item>tujiedianying</item>
+        <item>tumblr</item>
         <item>twitter</item>
         <item>txvpn</item>
         <item>**U**</item>
@@ -1460,10 +1598,32 @@
         <item>xiaoenai</item>
         <item>xiaohongshu</item>
         <item>xiaokaxiu</item>
-        <item>xiaomi_mijia</item>
+        <item>xiaomi_account</item>
+        <item>xiaomi_app_market</item>
+        <item>xiaomi_backup</item>
+        <item>xiaomi_barcode_scanner</item>
+        <item>xiaomi_browser</item>
+        <item>xiaomi_compass</item>
+        <item>xiaomi_dialer</item>
+        <item>xiaomi_file_explorer</item>
+        <item>xiaomi_fm</item>
+        <item>xiaomi_gallery</item>
+        <item>xiaomi_gamecenter</item>
+        <item>xiaomi_mail</item>
+        <item>xiaomi_map</item>
+        <item>xiaomi_miui</item>
         <item>xiaomi_miui_calculator</item>
+        <item>xiaomi_mi_talk</item>
+        <item>xiaomi_music</item>
+        <item>xiaomi_notepaper</item>
         <item>xiaomi_shop</item>
+        <item>xiaomi_smarthome</item>
+        <item>xiaomi_smarthome_alt</item>
+        <item>xiaomi_theme</item>
+        <item>xiaomi_updater</item>
+        <item>xiaomi_video</item>
         <item>xiaomi_wallet</item>
+        <item>xiaomi_weather</item>
         <item>xiaowo_weather</item>
         <item>ximalayating</item>
         <item>xingzhe</item>
