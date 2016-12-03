@@ -2,60 +2,100 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>flyme_dialer</item>
+        <item>a500px</item>
+        <item>a500px_alt</item>
+        <item>action_launcher</item>
+        <item>advance_download_manager</item>
+        <item>apex_launcher</item>
+        <item>aviate_launcher</item>
         <item>ctrip</item>
         <item>didi</item>
-        <item>settings_alt</item>
-        <item>tumblr</item>
-        <item>google_keep</item>
-        <item>xiaomi_mi_talk</item>
-        <item>xiaomi_map</item>
-        <item>xiaomi_gallery</item>
-        <item>xiaomi_theme</item>
-        <item>xiaomi_video</item>
-        <item>xiaomi_file_explorer</item>
-        <item>xiaomi_weather</item>
-        <item>xiaomi_fm</item>
-        <item>xiaomi_app_market</item>
-        <item>xiaomi_compass</item>
-        <item>xiaomi_music</item>
-        <item>xiaomi_smarthome</item>
-        <item>xiaomi_backup</item>
-        <item>xiaomi_account</item>
-        <item>xiaomi_mail</item>
-        <item>xiaomi_notepaper</item>
-        <item>xiaomi_barcode_scanner</item>
-        <item>xiaomi_browser</item>
-        <item>xiaomi_updater</item>
-        <item>xiaomi_gamecenter</item>
-        <item>google_photos</item>
-        <item>xiaomi_dialer</item>
-        <item>titanium_backup</item>
-        <item>sony_settings</item>
-        <item>sony_dialer</item>
-        <item>samsung_settings</item>
-        <item>sim_toolkit</item>
-        <item>lg_health</item>
-        <item>flyme_calculator_alt</item>
-        <item>flyme_lifekit_alt</item>
-        <item>meizu_voice_assistant_alt</item>
-        <item>flyme_read_alt</item>
-        <item>flyme_toolbox_alt</item>
-        <item>flyme_scanner_alt</item>
-        <item>flyme_weather</item>
-        <item>flyme_email_alt</item>
-        <item>netease_youdao_hanyu_yuwen</item>
-        <item>flyme_safe_alt</item>
-        <item>flyme_appcenter_alt</item>
         <item>flyme</item>
-        <item>xiaomi_miui</item>
-        <item>apex_launcher</item>
-        <item>nova_launcher_prime</item>
-        <item>nova_launcher_tesla_unread</item>
-        <item>nova_launcher_settings</item>
+        <item>flyme_appcenter_alt</item>
+        <item>flyme_calculator</item>
+        <item>flyme_customizecenter</item>
+        <item>flyme_dialer</item>
+        <item>flyme_email_alt</item>
+        <item>flyme_gallery</item>
+        <item>flyme_lifekit_alt</item>
+        <item>flyme_map</item>
+        <item>flyme_read_alt</item>
+        <item>flyme_safe_alt</item>
+        <item>flyme_scanner_alt</item>
+        <item>flyme_toolbox_alt</item>
+        <item>flyme_weather</item>
+        <item>google_hangouts</item>
+        <item>google_keep</item>
+        <item>google_keep_alt</item>
+        <item>google_maps</item>
+        <item>google_now_launcher</item>
+        <item>google_photos</item>
+        <item>google_photos_alt</item>
+        <item>jotterpad</item>
+        <item>lg_health</item>
+        <item>flyme_security_alt_2</item>
+        <item>flyme_voice_assistant_alt</item>
+        <item>netease_youdao_hanyu_yuwen</item>
         <item>nova_launcher</item>
-        <item>action_launcher</item>
+        <item>nova_launcher_prime</item>
+        <item>nova_launcher_settings</item>
+        <item>nova_launcher_tesla_unread</item>
+        <item>samsung_settings</item>
+        <item>settings_alt</item>
+        <item>sim_toolkit</item>
+        <item>sony_dialer</item>
+        <item>sony_settings</item>
         <item>spotify_alt</item>
+        <item>titanium_backup</item>
+        <item>tumblr</item>
+        <item>xiaomi_account</item>
+        <item>xiaomi_account_alt</item>
+        <item>xiaomi_app_market</item>
+        <item>xiaomi_app_market_alt</item>
+        <item>xiaomi_audio_recorder</item>
+        <item>xiaomi_backup</item>
+        <item>xiaomi_barcode_scanner</item>
+        <item>xiaomi_barcode_scanner_alt</item>
+        <item>xiaomi_barcode_scanner_alt_2</item>
+        <item>xiaomi_browser</item>
+        <item>xiaomi_calendar</item>
+        <item>xiaomi_camera</item>
+        <item>xiaomi_clock</item>
+        <item>xiaomi_community</item>
+        <item>xiaomi_compass</item>
+        <item>xiaomi_compass_alt</item>
+        <item>xiaomi_contacts</item>
+        <item>xiaomi_dialer</item>
+        <item>xiaomi_download</item>
+        <item>xiaomi_file_explorer</item>
+        <item>xiaomi_file_explorer_alt</item>
+        <item>xiaomi_fit</item>
+        <item>xiaomi_fm</item>
+        <item>xiaomi_gallery</item>
+        <item>xiaomi_gallery_alt</item>
+        <item>xiaomi_game_alt</item>
+        <item>xiaomi_gamecenter</item>
+        <item>xiaomi_mail</item>
+        <item>xiaomi_map</item>
+        <item>xiaomi_mi_talk</item>
+        <item>xiaomi_miui</item>
+        <item>xiaomi_music</item>
+        <item>xiaomi_music_alt</item>
+        <item>xiaomi_notepaper</item>
+        <item>xiaomi_roaming</item>
+        <item>xiaomi_security_center</item>
+        <item>xiaomi_settings</item>
+        <item>xiaomi_smarthome</item>
+        <item>xiaomi_sms_message</item>
+        <item>cyanogenmod_theme_chooser</item>
+        <item>xiaomi_theme</item>
+        <item>xiaomi_updater</item>
+        <item>xiaomi_updater_alt</item>
+        <item>xiaomi_user_feedback</item>
+        <item>xiaomi_video</item>
+        <item>xiaomi_voice_assistant</item>
+        <item>xiaomi_weather</item>
+        <item>xiaomi_weather_alt</item>
 
         <item>@string/icon_label_updated</item>
         <item>calculator</item>
@@ -63,7 +103,7 @@
         <item>flyme_account</item>
         <item>flyme_painter</item>
         <item>flyme_notepaper</item>
-        <item>flyme_map</item>
+        <item>flyme_map_alt</item>
         <item>flyme_update</item>
         <item>netease_youqian</item>
         <item>flyme_calendar</item>
@@ -232,14 +272,19 @@
         <item>google_docs</item>
         <item>google_drive</item>
         <item>google_duo</item>
+        <item>google_hangouts</item>
         <item>google_io</item>
         <item>google_keep</item>
+        <item>google_keep_alt</item>
         <item>google_keyboard</item>
+        <item>google_maps</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
         <item>google_messenger_alt_2</item>
         <item>google_now_enabler</item>
+        <item>google_now_launcher</item>
         <item>google_photos</item>
+        <item>google_photos_alt</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
@@ -407,31 +452,56 @@
 
     <string-array name="icon_pack_xiaomi" translatable="false">
         <item>xiaomi_account</item>
+        <item>xiaomi_account_alt</item>
         <item>xiaomi_app_market</item>
+        <item>xiaomi_app_market_alt</item>
+        <item>xiaomi_audio_recorder</item>
         <item>xiaomi_backup</item>
         <item>xiaomi_barcode_scanner</item>
+        <item>xiaomi_barcode_scanner_alt</item>
+        <item>xiaomi_barcode_scanner_alt_2</item>
         <item>xiaomi_browser</item>
+        <item>xiaomi_calendar</item>
+        <item>xiaomi_camera</item>
+        <item>xiaomi_clock</item>
+        <item>xiaomi_community</item>
         <item>xiaomi_compass</item>
+        <item>xiaomi_compass_alt</item>
+        <item>xiaomi_contacts</item>
         <item>xiaomi_dialer</item>
+        <item>xiaomi_download</item>
         <item>xiaomi_file_explorer</item>
+        <item>xiaomi_file_explorer_alt</item>
+        <item>xiaomi_fit</item>
         <item>xiaomi_fm</item>
         <item>xiaomi_gallery</item>
+        <item>xiaomi_gallery_alt</item>
         <item>xiaomi_gamecenter</item>
+        <item>xiaomi_game_alt</item>
         <item>xiaomi_mail</item>
         <item>xiaomi_map</item>
         <item>xiaomi_miui</item>
         <item>xiaomi_miui_calculator</item>
         <item>xiaomi_mi_talk</item>
         <item>xiaomi_music</item>
+        <item>xiaomi_music_alt</item>
         <item>xiaomi_notepaper</item>
+        <item>xiaomi_roaming</item>
+        <item>xiaomi_security_center</item>
+        <item>xiaomi_settings</item>
         <item>xiaomi_shop</item>
         <item>xiaomi_smarthome</item>
         <item>xiaomi_smarthome_alt</item>
+        <item>xiaomi_sms_message</item>
         <item>xiaomi_theme</item>
         <item>xiaomi_updater</item>
+        <item>xiaomi_updater_alt</item>
+        <item>xiaomi_user_feedback</item>
         <item>xiaomi_video</item>
+        <item>xiaomi_voice_assistant</item>
         <item>xiaomi_wallet</item>
         <item>xiaomi_weather</item>
+        <item>xiaomi_weather_alt</item>
     </string-array>
 
     <string-array name="icon_pack_flyme" translatable="false">
@@ -441,7 +511,6 @@
         <item>flyme_appcenter_alt</item>
         <item>flyme_browser</item>
         <item>flyme_calculator</item>
-        <item>flyme_calculator_alt</item>
         <item>flyme_calendar</item>
         <item>flyme_calendar_1</item>
         <item>flyme_calendar_10</item>
@@ -500,6 +569,7 @@
         <item>flyme_safe_alt</item>
         <item>flyme_scanner</item>
         <item>flyme_scanner_alt</item>
+        <item>flyme_security_alt_2</item>
         <item>flyme_settings</item>
         <item>flyme_sms</item>
         <item>flyme_soundrecorder</item>
@@ -513,6 +583,9 @@
         <item>flyme_wallet</item>
         <item>flyme_weather</item>
         <item>flyme_weather_alt</item>
+    </string-array>
+
+    <string-array name="icon_pack_meizu" translatable="false">
     </string-array>
 
     <string-array name="icon_pack_oneplus" translatable="false">
@@ -563,9 +636,6 @@
         <item>oneplus_weather_alt_cloudy</item>
         <item>oneplus_weather_alt_cloudy_dark</item>
         <item>oneplus_weather_alt_sunny</item>
-        <item>oneplus_weather_cloudy</item>
-        <item>oneplus_weather_cloudy_dark</item>
-        <item>oneplus_weather_sunny</item>
     </string-array>
 
     <string-array name="icon_pack" translatable="false">
@@ -582,6 +652,8 @@
         <item>a360_liuliang</item>
         <item>a360_super_root</item>
         <item>a3dmark</item>
+        <item>a500px</item>
+        <item>a500px_alt</item>
         <item>a51offer</item>
         <item>a5sing</item>
         <item>a94_percent</item>
@@ -607,6 +679,7 @@
         <item>adobe_shape</item>
         <item>adobe_sign_manager</item>
         <item>adsafe</item>
+        <item>advance_download_manager</item>
         <item>aibizhi</item>
         <item>aida64</item>
         <item>airfrozen</item>
@@ -656,6 +729,7 @@
         <item>app_settings</item>
         <item>atom_vpn</item>
         <item>autohome</item>
+        <item>aviate_launcher</item>
         <item>**B**</item>
         <item>b612</item>
         <item>baicizhan</item>
@@ -752,6 +826,7 @@
         <item>current_activity</item>
         <item>custom_share</item>
         <item>cyanogenmod_camera</item>
+        <item>cyanogenmod_theme_chooser</item>
         <item>**D**</item>
         <item>dailycost</item>
         <item>dandu</item>
@@ -830,7 +905,6 @@
         <item>flyme_appcenter_alt</item>
         <item>flyme_browser</item>
         <item>flyme_calculator</item>
-        <item>flyme_calculator_alt</item>
         <item>flyme_calendar</item>
         <item>flyme_calendar_1</item>
         <item>flyme_calendar_10</item>
@@ -889,6 +963,7 @@
         <item>flyme_safe_alt</item>
         <item>flyme_scanner</item>
         <item>flyme_scanner_alt</item>
+        <item>flyme_security_alt_2</item>
         <item>flyme_settings</item>
         <item>flyme_sms</item>
         <item>flyme_soundrecorder</item>
@@ -977,14 +1052,19 @@
         <item>google_docs</item>
         <item>google_drive</item>
         <item>google_duo</item>
+        <item>google_hangouts</item>
         <item>google_io</item>
         <item>google_keep</item>
+        <item>google_keep_alt</item>
         <item>google_keyboard</item>
+        <item>google_maps</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
         <item>google_messenger_alt_2</item>
         <item>google_now_enabler</item>
+        <item>google_now_launcher</item>
         <item>google_photos</item>
+        <item>google_photos_alt</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
         <item>google_play_games</item>
@@ -1131,7 +1211,6 @@
         <item>meituan_waimai</item>
         <item>meituxiuxiu</item>
         <item>meiyanxiangji</item>
-        <item>meizu_voice_assistant_alt</item>
         <item>mengniangbaike</item>
         <item>messaging</item>
         <item>microsoft_bing_dict</item>
@@ -1271,9 +1350,6 @@
         <item>oneplus_weather_alt_cloudy</item>
         <item>oneplus_weather_alt_cloudy_dark</item>
         <item>oneplus_weather_alt_sunny</item>
-        <item>oneplus_weather_cloudy</item>
-        <item>oneplus_weather_cloudy_dark</item>
-        <item>oneplus_weather_sunny</item>
         <item>ookla_speedtest</item>
         <item>open_vpn</item>
         <item>**P**</item>
@@ -1599,31 +1675,56 @@
         <item>xiaohongshu</item>
         <item>xiaokaxiu</item>
         <item>xiaomi_account</item>
+        <item>xiaomi_account_alt</item>
         <item>xiaomi_app_market</item>
+        <item>xiaomi_app_market_alt</item>
+        <item>xiaomi_audio_recorder</item>
         <item>xiaomi_backup</item>
         <item>xiaomi_barcode_scanner</item>
+        <item>xiaomi_barcode_scanner_alt</item>
+        <item>xiaomi_barcode_scanner_alt_2</item>
         <item>xiaomi_browser</item>
+        <item>xiaomi_calendar</item>
+        <item>xiaomi_camera</item>
+        <item>xiaomi_clock</item>
+        <item>xiaomi_community</item>
         <item>xiaomi_compass</item>
+        <item>xiaomi_compass_alt</item>
+        <item>xiaomi_contacts</item>
         <item>xiaomi_dialer</item>
+        <item>xiaomi_download</item>
         <item>xiaomi_file_explorer</item>
+        <item>xiaomi_file_explorer_alt</item>
+        <item>xiaomi_fit</item>
         <item>xiaomi_fm</item>
         <item>xiaomi_gallery</item>
+        <item>xiaomi_gallery_alt</item>
         <item>xiaomi_gamecenter</item>
+        <item>xiaomi_game_alt</item>
         <item>xiaomi_mail</item>
         <item>xiaomi_map</item>
         <item>xiaomi_miui</item>
         <item>xiaomi_miui_calculator</item>
         <item>xiaomi_mi_talk</item>
         <item>xiaomi_music</item>
+        <item>xiaomi_music_alt</item>
         <item>xiaomi_notepaper</item>
+        <item>xiaomi_roaming</item>
+        <item>xiaomi_security_center</item>
+        <item>xiaomi_settings</item>
         <item>xiaomi_shop</item>
         <item>xiaomi_smarthome</item>
         <item>xiaomi_smarthome_alt</item>
+        <item>xiaomi_sms_message</item>
         <item>xiaomi_theme</item>
         <item>xiaomi_updater</item>
+        <item>xiaomi_updater_alt</item>
+        <item>xiaomi_user_feedback</item>
         <item>xiaomi_video</item>
+        <item>xiaomi_voice_assistant</item>
         <item>xiaomi_wallet</item>
         <item>xiaomi_weather</item>
+        <item>xiaomi_weather_alt</item>
         <item>xiaowo_weather</item>
         <item>ximalayating</item>
         <item>xingzhe</item>

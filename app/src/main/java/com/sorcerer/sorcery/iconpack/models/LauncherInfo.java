@@ -79,6 +79,9 @@ public class LauncherInfo implements Comparable {
             case "unicon":
                 mIcon = R.drawable.unicon;
                 break;
+            case "aviate":
+                mIcon = R.drawable.aviate_launcher;
+                break;
             default:
                 Log.d(TAG, mLabel + ": no such launcher");
         }

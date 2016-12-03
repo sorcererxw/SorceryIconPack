@@ -55,8 +55,7 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 if (mAdapter.getItem(position).isInstalled()) {
-                    LauncherIntents intents =
-                            new LauncherIntents(mContext, mAdapter.getItem(position).getLabel());
+                    new LauncherIntents(mContext, mAdapter.getItem(position).getLabel());
                 } else {
                     final String appPackageName =
                             mAdapter.getItem(position).getPackageName();

@@ -37,6 +37,7 @@
     <string-array name="apply_launchers" translatable="false">
         <item>Action|com.actionlauncher.playstore</item>
         <item>Apex|com.anddoes.launcher</item>
+        <item>Aviate|com.tul.aviate</item>
         <item>Nova|com.teslacoilsw.launcher</item>
     </string-array>
 </resources>
