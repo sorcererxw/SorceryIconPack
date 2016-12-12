@@ -31,7 +31,7 @@ import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdap
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
 import com.sorcerer.sorcery.iconpack.utils.ToolbarOnGestureListener;
-import com.tbruyelle.rxpermissions.RxPermissions;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
@@ -39,11 +39,14 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 import static android.provider.Settings.Secure.ANDROID_ID;
 
@@ -66,16 +69,16 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         RxPermissions.getInstance(this)
                 .request(Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Action1<Boolean>() {
+                .subscribe(new Consumer<Boolean>() {
                     @Override
-                    public void call(Boolean aBoolean) {
+                    public void accept(Boolean aBoolean) {
                         if (aBoolean) {
                             save(mAdapter.getCheckedAppsList());
                         }
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) {
                         if (BuildConfig.DEBUG) {
                             throwable.printStackTrace();
                         }
@@ -116,17 +119,17 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
         menuEnable = false;
 
-        Observable.create(new Observable.OnSubscribe<List<AppInfo>>() {
+        Observable.create(new ObservableOnSubscribe<List<AppInfo>>() {
             @Override
-            public void call(Subscriber<? super List<AppInfo>> subscriber) {
-                subscriber.onNext(AppInfoUtil.getComponentInfo(AppSelectActivity.this, true));
+            public void subscribe(ObservableEmitter<List<AppInfo>> e) throws Exception {
+                e.onNext(AppInfoUtil.getComponentInfo(AppSelectActivity.this, true));
             }
         })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<List<AppInfo>>() {
+                .subscribe(new Consumer<List<AppInfo>>() {
                     @Override
-                    public void call(List<AppInfo> list) {
+                    public void accept(List<AppInfo> list) {
                         setupRecyclerView(list);
 
                         dismissIndicator();
@@ -137,9 +140,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                             onCreateOptionsMenu(mMenu);
                         }
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) {
                         if (BuildConfig.DEBUG) {
                             throwable.printStackTrace();
                         }
@@ -239,10 +242,10 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     }
 
     private void save(final List<AppInfo> list) {
-        Observable.create(new Observable.OnSubscribe<List<AppInfo>>() {
+        Observable.create(new ObservableOnSubscribe<List<AppInfo>>() {
             @SuppressLint("HardwareIds")
             @Override
-            public void call(final Subscriber<? super List<AppInfo>> subscriber) {
+            public void subscribe(final ObservableEmitter<List<AppInfo>> emitter) throws Exception {
                 String deviceId = null;
                 try {
                     TelephonyManager tm =
@@ -281,19 +284,19 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                 RequestBean.saveAllInBackground(requestBeanList, new SaveCallback() {
                     @Override
                     public void done(AVException e) {
-                        subscriber.onNext(null);
+                        emitter.onComplete();
                     }
                 });
             }
         })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<List<AppInfo>>() {
+                .subscribe(new Observer<List<AppInfo>>() {
+
                     ProgressDialog mProgressDialog;
 
                     @Override
-                    public void onStart() {
-                        super.onStart();
+                    public void onSubscribe(Disposable d) {
                         if (mProgressDialog == null) {
                             mProgressDialog = new ProgressDialog(AppSelectActivity.this);
                             mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -304,8 +307,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                     }
 
                     @Override
-                    public void onCompleted() {
-
+                    public void onNext(List<AppInfo> value) {
                     }
 
                     @Override
@@ -313,12 +315,13 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         if (BuildConfig.DEBUG) {
                             e.printStackTrace();
                         }
+                        mProgressDialog.dismiss();
                         Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG)
                                 .show();
                     }
 
                     @Override
-                    public void onNext(List<AppInfo> list) {
+                    public void onComplete() {
                         mProgressDialog.dismiss();
                         mAdapter.uncheckAfterSend();
                         showFab(false);
@@ -332,6 +335,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.activity_in_scale,R.anim.activity_out_top_to_bottom);
+        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
     }
 }

@@ -39,5 +39,6 @@
         <item>Apex|com.anddoes.launcher</item>
         <item>Aviate|com.tul.aviate</item>
         <item>Nova|com.teslacoilsw.launcher</item>
+        <!--<item>Launcher Lab|com.gtp.launcherlab</item>-->
     </string-array>
 </resources>

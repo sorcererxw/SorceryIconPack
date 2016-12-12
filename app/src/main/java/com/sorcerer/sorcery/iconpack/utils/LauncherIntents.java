@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -91,12 +93,21 @@ public class LauncherIntents {
             case "layers":
                 Layers(context);
                 break;
+            case "launcher lab":
+                LauncherLab(context);
+                break;
             default:
-                if (BuildConfig.DEBUG) {
-                    Log.d("LauncherIntents", "No method for: " + launcherName);
-                }
+                Timber.d("No method for: %s", launcherName);
                 break;
         }
+    }
+
+    private void LauncherLab(Context context) {
+        context.startActivity(
+                new Intent().setComponent(new ComponentName("com.gtp.launcherlab",
+                        "com.gtp.launcherlab.settings.activity.DeskSettingSecondActivity")));
+        Intent action = context.getPackageManager()
+                .getLaunchIntentForPackage("com.gtp.launcherlab");
     }
 
     private void ActionLauncher(Context context) {

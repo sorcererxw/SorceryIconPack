@@ -65,11 +65,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 import static android.content.Context.MODE_WORLD_READABLE;
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
@@ -175,21 +176,23 @@ public class SettingsFragment extends PreferenceFragment {
                 });
 
         mGeneralClearCachePreference.setSummary("...");
-        updateCache(Observable.create(new Observable.OnSubscribe<Long>() {
+        updateCache(Observable.create(new ObservableOnSubscribe<Long>() {
             @Override
-            public void call(Subscriber<? super Long> subscriber) {
-                subscriber.onNext(FileUtil.calculateDirectorySize(mActivity.getCacheDir()));
+            public void subscribe(ObservableEmitter<Long> emitter) throws Exception {
+                emitter.onNext(FileUtil.calculateDirectorySize(mActivity.getCacheDir()));
             }
         }).subscribeOn(Schedulers.newThread()));
+
         mGeneralClearCachePreference.setOnPreferenceClickListener(
                 new Preference.OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
-                        updateCache(Observable.create(new Observable.OnSubscribe<Long>() {
+                        updateCache(Observable.create(new ObservableOnSubscribe<Long>() {
                             @Override
-                            public void call(Subscriber<? super Long> subscriber) {
+                            public void subscribe(ObservableEmitter<Long> emitter)
+                                    throws Exception {
                                 FileUtil.deleteDirectory(mActivity.getCacheDir());
-                                subscriber.onNext(FileUtil
+                                emitter.onNext(FileUtil
                                         .calculateDirectorySize(mActivity.getCacheDir()));
                             }
                         }).subscribeOn(Schedulers.newThread()));
@@ -290,9 +293,9 @@ public class SettingsFragment extends PreferenceFragment {
 
     private void updateCache(Observable<Long> observable) {
         observable.observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<Long>() {
+                .subscribe(new Consumer<Long>() {
                     @Override
-                    public void call(Long longSize) {
+                    public void accept(Long longSize) {
                         double size = Double.valueOf(longSize);
                         String unit = "KB";
                         size /= 1024;
@@ -303,9 +306,9 @@ public class SettingsFragment extends PreferenceFragment {
                         mGeneralClearCachePreference
                                 .setSummary(String.format("%.2f %s", size, unit));
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) {
                         if (BuildConfig.DEBUG) {
                             throwable.printStackTrace();
                         }
@@ -431,9 +434,9 @@ public class SettingsFragment extends PreferenceFragment {
     }
 
     private void apply(final ApplicationInfo themePackage) {
-        Observable.just(themePackage).subscribe(new Action1<ApplicationInfo>() {
+        Observable.just(themePackage).subscribe(new Consumer<ApplicationInfo>() {
             @Override
-            public void call(ApplicationInfo applicationInfo) {
+            public void accept(ApplicationInfo applicationInfo) {
                 XmlPullParser xrp, xrp2;
                 List<IconReplacementItem> replacementList;
                 Resources originPackageRes;
@@ -446,7 +449,6 @@ public class SettingsFragment extends PreferenceFragment {
             public void run() {
                 try {
                     XmlPullParser xrp;
-                    XmlPullParser xrp2;
                     ArrayList<IconReplacementItem> items;
                     Resources origPkgRes;
                     SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -462,7 +464,6 @@ public class SettingsFragment extends PreferenceFragment {
                                 "rm " + mActivity.getExternalCacheDir()
                                         .getAbsolutePath()
                                         + "/current_theme.apk"));
-
                     } else {
                         Command commandCapture = new CommandCapture(0,
                                 "rm /data/data/" + mActivity.getPackageName()
@@ -488,15 +489,8 @@ public class SettingsFragment extends PreferenceFragment {
                         factory.setNamespaceAware(true);
                         xrp = factory.newPullParser();
                         xrp.setInput(istr, "UTF-8");
-                        InputStream istr2 = r.getAssets().open("values/appfilter.xml");
-                        XmlPullParserFactory factory2 = XmlPullParserFactory.newInstance();
-                        factory2.setNamespaceAware(true);
-                        xrp2 = factory2.newPullParser();
-                        xrp2.setInput(istr2, "UTF-8");
                     } else {
                         xrp = r.getXml(r
-                                .getIdentifier("appfilter", "xml", themePackage.packageName));
-                        xrp2 = r.getXml(r
                                 .getIdentifier("appfilter", "xml", themePackage.packageName));
                     }
                     for (Map.Entry<String, ?> entry : mSharedPreferences.getAll().entrySet()) {
@@ -591,6 +585,7 @@ public class SettingsFragment extends PreferenceFragment {
                 }
             }
         }).start();
+
     }
 
     private void runAfterSuccess() {

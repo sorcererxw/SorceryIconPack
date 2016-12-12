@@ -72,22 +72,8 @@ public class Xposed
                 XposedBridge.log("[" + TAG + "] [" + mThemePackage + "] Loading...");
                 XModuleResources themeRes =
                         XModuleResources.createInstance(mThemePackagePath, null);
-//            try {
-//                if (mThemeIconShader == null) {
-//                    int shaderRes = themeRes.getIdentifier("shader", "xml", mThemePackage);
-//                    if (shaderRes != 0) {
-//                        mThemeIconShader = IconShader.parseXml(themeRes.getXml(shaderRes));
-//                        XposedBridge.log("[" + TAG + "] [" + mThemePackage + "] Loaded shader.xml");
-//                    }
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
                 try {
                     Gson gson = new Gson();
-//                if (XSharedPrefs.getString("theme_icon_mask", null) != null) {
-//                    mThemeIconMask = (IconMaskItem) gson.fromJson(XSharedPrefs.getString("theme_icon_mask", null), IconMaskItem.class);
-//                }
                     for (String pkg : gson
                             .fromJson(XSharedPrefs.getString("theme_icon_packages", null),
                                     String[].class)) {
@@ -114,29 +100,23 @@ public class Xposed
                                                     XResources res,
                                                     int id)
                                                     throws Throwable {
-                                                return XposedUtils
-                                                        .getCachedIcon(
+                                                return XposedUtils.getCachedIcon(
                                                                 res,
-                                                                res.getResourcePackageName(
-                                                                        id),
+                                                                res.getResourcePackageName(id),
                                                                 id);
                                             }
                                         });
                             } else if (!it.hasNoCustomIcon()) {
                                 try {
                                     final Drawable icon = new BitmapDrawable(XResources.getSystem(),
-                                            XposedUtils
-                                                    .getBitmapForDensity(
+                                            XposedUtils.getBitmapForDensity(
                                                             themeRes,
                                                             mDisplayDpi,
                                                             it.getReplacementRes()));
                                     XResources.setSystemWideReplacement(it.getOrigRes(),
                                             new XResources.DrawableLoader() {
-                                                public Drawable newDrawable(
-                                                        XResources res,
-                                                        int id)
-                                                        throws
-                                                        Throwable {
+                                                public Drawable newDrawable(XResources res, int id)
+                                                        throws Throwable {
                                                     return icon;
                                                 }
                                             });
@@ -187,7 +167,7 @@ public class Xposed
                 if (lpparam.packageName.equals("com.teslacoilsw.launcher")) {
                     appWorkaroundOne(lpparam);
                 }
-                if(lpparam.packageName.equals("com.tsf.shell")){
+                if (lpparam.packageName.equals("com.tsf.shell")) {
                     appWorkaroundTwo(lpparam, "com.tsf.shell", "tsf_ico");
                 }
                 if (lpparam.packageName.equals("com.abcOrganizer.lite")) {
@@ -201,14 +181,13 @@ public class Xposed
                 XposedHelpers.findAndHookMethod("com.sorcerer.sorcery.iconpack.xposed.XposedUtils",
                         lpparam.classLoader,
                         "reloadResource",
-                        new Object[]{new XC_MethodHook() {
+                        new XC_MethodHook() {
                             protected void afterHookedMethod(
                                     MethodHookParam param)
                                     throws Throwable {
                                 XposedBridge.log("[" + TAG + "] [" + mThemePackage
                                         + "] Overriding Nova Asset Manager call");
                             }
-                        }
                         });
             }
         }

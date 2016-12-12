@@ -32,7 +32,7 @@ import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
 import com.stericson.RootTools.RootTools;
 import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
-import com.tbruyelle.rxpermissions.RxPermissions;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -47,7 +47,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import rx.functions.Action1;
+import io.reactivex.functions.Consumer;
 
 public class LabActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
@@ -81,9 +81,9 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             .button_lab_xposed_reboot, R.id.button_lab_xposed_refresh})
     public void onClick(final View v) {
         RxPermissions.getInstance(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Action1<Boolean>() {
+                .subscribe(new Consumer<Boolean>() {
                     @Override
-                    public void call(Boolean aBoolean) {
+                    public void accept(Boolean aBoolean) {
                         if (!aBoolean) {
                             return;
                         }

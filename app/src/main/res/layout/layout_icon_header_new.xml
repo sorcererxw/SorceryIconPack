@@ -15,7 +15,7 @@
         android:layout_marginLeft="12dp"
         android:gravity="center_vertical"
         android:padding="8dp"
-        android:textColor="@color/title"
+        android:textColor="#424242"
         android:textSize="34sp"
         android:typeface="serif"
         tools:text="11">

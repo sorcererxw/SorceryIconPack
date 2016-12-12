@@ -93,7 +93,14 @@ public class Apply1Activity extends SlideInAndOutAppCompatActivity {
                         intent.setComponent(
                                 new ComponentName("com.meizu.customizecenter",
                                         "com.meizu.customizecenter.OnlineThemeActivity"));
-                        intent.putExtra("PACKAGE_NAME", "com.meizu.theme.sorcery");
+                        intent.putExtra("ONLINE_THEME_WAY", "ONLINE_WAY_URL");
+                        intent.putExtra("URL", "/themes/public/detail/3000115");
+                        intent.putExtra("search_content_type", "themes");
+                        intent.putExtra("position", 0);
+                        intent.putExtra("search_action", "click_history_label");
+                        intent.putExtra("event_path", "OneSearchActivity");
+                        intent.putExtra("search_content", "Sorcery");
+                        intent.putExtra("search_id", "cbe31a19-ac0f-4d86-b8a3-2077fc132088");
                         startActivity(intent);
                     } else if (item.getLabel().toLowerCase().equals("miui")) {
 

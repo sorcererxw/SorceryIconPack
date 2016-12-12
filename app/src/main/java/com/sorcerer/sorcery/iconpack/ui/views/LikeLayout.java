@@ -16,14 +16,14 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.LikePrefs;
-import com.tbruyelle.rxpermissions.RxPermissions;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
-import rx.functions.Action1;
+import io.reactivex.functions.Consumer;
 
 /**
  * @description:
@@ -52,9 +52,9 @@ public class LikeLayout extends FrameLayout {
         RxPermissions.getInstance(mContext)
                 .request(Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Action1<Boolean>() {
+                .subscribe(new Consumer<Boolean>() {
                     @Override
-                    public void call(Boolean aBoolean) {
+                    public void accept(Boolean aBoolean) {
                         if (!aBoolean) {
                             return;
                         }

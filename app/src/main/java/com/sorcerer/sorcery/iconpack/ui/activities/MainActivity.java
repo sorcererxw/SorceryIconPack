@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -45,13 +46,13 @@ import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.utils.OtherUtil;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.tbruyelle.rxpermissions.RxPermissions;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import rx.functions.Action1;
+import io.reactivex.functions.Consumer;
 import timber.log.Timber;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
@@ -224,9 +225,9 @@ public class MainActivity extends BaseActivity {
                                     DialogAction dialogAction) {
                         rxPermissions.request(READ_PHONE_STATE,
                                 WRITE_EXTERNAL_STORAGE)
-                                .subscribe(new Action1<Boolean>() {
+                                .subscribe(new Consumer<Boolean>() {
                                     @Override
-                                    public void call(Boolean aBoolean) {
+                                    public void accept(Boolean aBoolean) {
                                         if (!aBoolean) {
                                             showPermissionDialog();
                                         }

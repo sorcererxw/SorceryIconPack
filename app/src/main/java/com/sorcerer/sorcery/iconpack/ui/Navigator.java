@@ -14,9 +14,10 @@ import com.sorcerer.sorcery.iconpack.ui.activities.LabActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SettingsActivity;
-import rx.functions.Action1;
-import rx_activity_result.Result;
-import rx_activity_result.RxActivityResult;
+
+import io.reactivex.functions.Consumer;
+import rx_activity_result2.Result;
+import rx_activity_result2.RxActivityResult;
 
 
 /**
@@ -39,9 +40,9 @@ public class Navigator {
                     .startIntent(new Intent(mActivity, SearchActivity.class)
                             .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                             .putExtra("custom picker", mainActivity.isCustomPicker()))
-                    .subscribe(new Action1<Result>() {
+                    .subscribe(new Consumer<Result<Activity>>() {
                         @Override
-                        public void call(Result result) {
+                        public void accept(Result result) {
                             if (result.data() != null) {
                                 mainActivity.onReturnCustomPickerRes(
                                         result.data().getIntExtra("icon res", 0));

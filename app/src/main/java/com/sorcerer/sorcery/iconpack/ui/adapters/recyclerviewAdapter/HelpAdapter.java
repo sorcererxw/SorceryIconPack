@@ -28,8 +28,7 @@ import butterknife.BindView;
 public class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHolder, String> {
 
     public HelpAdapter(Context context, int span) {
-        super(context,
-                Arrays.asList(context.getResources().getStringArray(R.array.help_list)),
+        super(context, Arrays.asList(context.getResources().getStringArray(R.array.help_list)),
                 span);
     }
 

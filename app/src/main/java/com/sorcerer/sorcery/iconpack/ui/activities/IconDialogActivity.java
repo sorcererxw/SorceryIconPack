@@ -28,11 +28,11 @@ import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
 
 import butterknife.BindView;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 /**
@@ -134,36 +134,44 @@ public class IconDialogActivity extends ToolbarActivity {
     protected void onResume() {
         super.onResume();
 
-        Observable.just(mName).subscribeOn(Schedulers.newThread()).map(new Func1<String, String>() {
-            @Override
-            public String call(String s) {
-                return AppInfoUtil.getComponentByName(IconDialogActivity.this, mName);
-            }
-        }).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<String>() {
-            @Override
-            public void call(final String component) {
-                mComponent = component;
-                mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-                if (mMenu != null) {
-                    onCreateOptionsMenu(mMenu);
-                }
-                if (BuildConfig.DEBUG) {
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            TextView componentTextView =
-                                    (TextView) View.inflate(IconDialogActivity.this,
-                                            R.layout.textview_dialog_icon_component_info, null);
-                            componentTextView.setVisibility(View.VISIBLE);
-                            componentTextView.setText(
-                                    (component == null || component.isEmpty()) ?
-                                            "null" : component);
-                            mComponentContainer.addView(componentTextView);
+        Observable.just(mName).subscribeOn(Schedulers.newThread())
+                .map(new Function<String, String>() {
+                    @Override
+                    public String apply(String name) {
+                        String res = AppInfoUtil.getComponentByName(IconDialogActivity.this, name);
+                        if (res == null) {
+                            res = "";
                         }
-                    }, 500);
-                }
-            }
-        });
+                        return res;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(final String component) {
+                        mComponent = component;
+                        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                        if (mMenu != null) {
+                            onCreateOptionsMenu(mMenu);
+                        }
+                        if (false && BuildConfig.DEBUG) {
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    TextView componentTextView =
+                                            (TextView) View.inflate(IconDialogActivity.this,
+                                                    R.layout.textview_dialog_icon_component_info,
+                                                    null);
+                                    componentTextView.setVisibility(View.VISIBLE);
+                                    componentTextView.setText(
+                                            (component == null || component.isEmpty()) ?
+                                                    "null" : component);
+                                    mComponentContainer.addView(componentTextView);
+                                }
+                            }, 500);
+                        }
+                    }
+                });
     }
 
     @Override

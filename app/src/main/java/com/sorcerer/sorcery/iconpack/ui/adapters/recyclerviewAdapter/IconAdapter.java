@@ -5,14 +5,17 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Handler;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -65,7 +68,8 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private int mSpan;
 
     public IconAdapter(Activity activity, Context context,
-                       List<IconBean> iconBeanList, int span, RequestManager glideRequestManager) {
+                       List<IconBean> iconBeanList, int span,
+                       RequestManager glideRequestManager) {
 
         mActivity = activity;
         mContext = context;
@@ -361,7 +365,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                 mShowList.get(position).first.getName());
         intent.putExtra(IconDialogActivity.EXTRA_LABEL, mShowList.get(position).first.getLabel());
         if (Build.VERSION.SDK_INT >= 21) {
-            ((Activity) mContext).startActivityForResult(
+            mActivity.startActivityForResult(
                     intent,
                     MainActivity.REQUEST_ICON_DIALOG,
                     ActivityOptions.makeSceneTransitionAnimation(
@@ -378,7 +382,6 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     }
 
     class IconItemViewHolder extends RecyclerView.ViewHolder {
-
         IconItemViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -402,7 +405,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         @BindView(R.id.textView_icon_header_new)
         TextView mHeader;
 
-        HeaderViewHolder(View itemView) {
+        HeaderViewHolder(final View itemView) {
             super(itemView);
         }
     }

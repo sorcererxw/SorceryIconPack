@@ -29,11 +29,11 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 /**
@@ -185,9 +185,9 @@ public class LazyIconFragment extends LazyFragment {
     }
 
     private void getIconBeanList(Flag flag) {
-        Observable.just(flag).map(new Func1<Flag, List<IconBean>>() {
+        Observable.just(flag).map(new Function<Flag, List<IconBean>>() {
             @Override
-            public List<IconBean> call(Flag flag) {
+            public List<IconBean> apply(Flag flag) {
                 List<IconBean> list = new ArrayList<>();
                 for (String name : getIconNames(getContext(), flag)) {
                     IconBean iconBean = new IconBean(name);
@@ -259,15 +259,15 @@ public class LazyIconFragment extends LazyFragment {
         })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<List<IconBean>>() {
+                .subscribe(new Consumer<List<IconBean>>() {
                     @Override
-                    public void call(List<IconBean> list) {
+                    public void accept(List<IconBean> list) {
                         mIconBeanList = list;
                         init();
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) {
                         Timber.e(throwable);
                     }
                 });

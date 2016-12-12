@@ -2,6 +2,8 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>flyme_find_phone</item>
+        <item>iqiyi</item>
         <item>a500px</item>
         <item>a500px_alt</item>
         <item>action_launcher</item>
@@ -10,6 +12,20 @@
         <item>aviate_launcher</item>
         <item>ctrip</item>
         <item>didi</item>
+        <item>microsoft_solitaire</item>
+        <item>xiaomi_o2o</item>
+        <item>xiaomi_usb</item>
+        <item>behance</item>
+        <item>cyanogenmod_audiofx</item>
+        <item>cyanogenmod_screencast</item>
+        <item>deviantart</item>
+        <item>medium</item>
+        <item>pocket</item>
+        <item>caller_info</item>
+        <item>clean_master_lite</item>
+        <item>clean_master</item>
+        <item>xiaomi_video_call</item>
+        <item>enjoy</item>
         <item>flyme</item>
         <item>flyme_appcenter_alt</item>
         <item>flyme_calculator</item>
@@ -58,7 +74,6 @@
         <item>xiaomi_barcode_scanner_alt</item>
         <item>xiaomi_barcode_scanner_alt_2</item>
         <item>xiaomi_browser</item>
-        <item>xiaomi_calendar</item>
         <item>xiaomi_camera</item>
         <item>xiaomi_clock</item>
         <item>xiaomi_community</item>
@@ -87,6 +102,16 @@
         <item>xiaomi_settings</item>
         <item>xiaomi_smarthome</item>
         <item>xiaomi_sms_message</item>
+        <item>xiaomi_yidian_news</item>
+        <item>xiaomi_live</item>
+        <item>ali_taobao_etao</item>
+        <item>ali_taobao_dianying</item>
+        <item>via_browser</item>
+        <item>oneplus_card</item>
+        <item>memory_cleaner</item>
+        <item>ali_trip</item>
+        <item>wifi_key</item>
+        <item>cyanogenmod_file_manager</item>
         <item>cyanogenmod_theme_chooser</item>
         <item>xiaomi_theme</item>
         <item>xiaomi_updater</item>
@@ -96,13 +121,57 @@
         <item>xiaomi_voice_assistant</item>
         <item>xiaomi_weather</item>
         <item>xiaomi_weather_alt</item>
+        <item>flyme_ebook</item>
+        <item>clip_stack</item>
+        <item>xiaomi_calendar</item>
+        <item>xiaomi_calendar</item>
+        <item>xiaomi_calendar_1</item>
+        <item>xiaomi_calendar_2</item>
+        <item>xiaomi_calendar_3</item>
+        <item>xiaomi_calendar_4</item>
+        <item>xiaomi_calendar_5</item>
+        <item>xiaomi_calendar_6</item>
+        <item>xiaomi_calendar_7</item>
+        <item>xiaomi_calendar_8</item>
+        <item>xiaomi_calendar_9</item>
+        <item>xiaomi_calendar_10</item>
+        <item>xiaomi_calendar_11</item>
+        <item>xiaomi_calendar_12</item>
+        <item>xiaomi_calendar_13</item>
+        <item>xiaomi_calendar_14</item>
+        <item>xiaomi_calendar_15</item>
+        <item>xiaomi_calendar_16</item>
+        <item>xiaomi_calendar_17</item>
+        <item>xiaomi_calendar_18</item>
+        <item>xiaomi_calendar_19</item>
+        <item>xiaomi_calendar_20</item>
+        <item>xiaomi_calendar_21</item>
+        <item>xiaomi_calendar_22</item>
+        <item>xiaomi_calendar_23</item>
+        <item>xiaomi_calendar_24</item>
+        <item>xiaomi_calendar_25</item>
+        <item>xiaomi_calendar_26</item>
+        <item>xiaomi_calendar_27</item>
+        <item>xiaomi_calendar_28</item>
+        <item>xiaomi_calendar_29</item>
+        <item>xiaomi_calendar_30</item>
+        <item>xiaomi_calendar_31</item>
 
         <item>@string/icon_label_updated</item>
+        <item>feedly</item>
+        <item>flyme_notepaper</item>
+        <item>flyme_sms</item>
+        <item>sound_recorder</item>
+        <item>maoyan</item>
+        <item>xiaomi_miui_calculator</item>
+        <item>flyme_video</item>
+        <item>google_play_games</item>
+        <item>flyme_game</item>
+        <item>kugou</item>
         <item>calculator</item>
         <item>email</item>
         <item>flyme_account</item>
         <item>flyme_painter</item>
-        <item>flyme_notepaper</item>
         <item>flyme_map_alt</item>
         <item>flyme_update</item>
         <item>netease_youqian</item>
@@ -472,6 +541,7 @@
         <item>xiaomi_download</item>
         <item>xiaomi_file_explorer</item>
         <item>xiaomi_file_explorer_alt</item>
+        <item>xiaomi_finance</item>
         <item>xiaomi_fit</item>
         <item>xiaomi_fm</item>
         <item>xiaomi_gallery</item>
@@ -548,10 +618,12 @@
         <item>flyme_customizecenter</item>
         <item>flyme_dialer</item>
         <item>flyme_download</item>
+        <item>flyme_ebook</item>
         <item>flyme_email</item>
         <item>flyme_email_alt</item>
         <item>flyme_feedback</item>
         <item>flyme_filemanager</item>
+        <item>flyme_find_phone</item>
         <item>flyme_gallery</item>
         <item>flyme_game</item>
         <item>flyme_life</item>
@@ -572,6 +644,7 @@
         <item>flyme_security_alt_2</item>
         <item>flyme_settings</item>
         <item>flyme_sms</item>
+        <item>flyme_sms_alt</item>
         <item>flyme_soundrecorder</item>
         <item>flyme_toolbox</item>
         <item>flyme_toolbox_alt</item>
@@ -589,40 +662,40 @@
     </string-array>
 
     <string-array name="icon_pack_oneplus" translatable="false">
-        <item>onepluse_calendar</item>
-        <item>onepluse_calendar_1</item>
-        <item>onepluse_calendar_10</item>
-        <item>onepluse_calendar_11</item>
-        <item>onepluse_calendar_12</item>
-        <item>onepluse_calendar_13</item>
-        <item>onepluse_calendar_14</item>
-        <item>onepluse_calendar_15</item>
-        <item>onepluse_calendar_16</item>
-        <item>onepluse_calendar_17</item>
-        <item>onepluse_calendar_18</item>
-        <item>onepluse_calendar_19</item>
-        <item>onepluse_calendar_2</item>
-        <item>onepluse_calendar_20</item>
-        <item>onepluse_calendar_21</item>
-        <item>onepluse_calendar_22</item>
-        <item>onepluse_calendar_23</item>
-        <item>onepluse_calendar_24</item>
-        <item>onepluse_calendar_25</item>
-        <item>onepluse_calendar_26</item>
-        <item>onepluse_calendar_27</item>
-        <item>onepluse_calendar_28</item>
-        <item>onepluse_calendar_29</item>
-        <item>onepluse_calendar_3</item>
-        <item>onepluse_calendar_30</item>
-        <item>onepluse_calendar_31</item>
-        <item>onepluse_calendar_4</item>
-        <item>onepluse_calendar_5</item>
-        <item>onepluse_calendar_6</item>
-        <item>onepluse_calendar_7</item>
-        <item>onepluse_calendar_8</item>
-        <item>onepluse_calendar_9</item>
         <item>oneplus_calculator</item>
         <item>oneplus_calculator_alt</item>
+        <item>oneplus_calendar</item>
+        <item>oneplus_calendar_1</item>
+        <item>oneplus_calendar_10</item>
+        <item>oneplus_calendar_11</item>
+        <item>oneplus_calendar_12</item>
+        <item>oneplus_calendar_13</item>
+        <item>oneplus_calendar_14</item>
+        <item>oneplus_calendar_15</item>
+        <item>oneplus_calendar_16</item>
+        <item>oneplus_calendar_17</item>
+        <item>oneplus_calendar_18</item>
+        <item>oneplus_calendar_19</item>
+        <item>oneplus_calendar_2</item>
+        <item>oneplus_calendar_20</item>
+        <item>oneplus_calendar_21</item>
+        <item>oneplus_calendar_22</item>
+        <item>oneplus_calendar_23</item>
+        <item>oneplus_calendar_24</item>
+        <item>oneplus_calendar_25</item>
+        <item>oneplus_calendar_26</item>
+        <item>oneplus_calendar_27</item>
+        <item>oneplus_calendar_28</item>
+        <item>oneplus_calendar_29</item>
+        <item>oneplus_calendar_3</item>
+        <item>oneplus_calendar_30</item>
+        <item>oneplus_calendar_31</item>
+        <item>oneplus_calendar_4</item>
+        <item>oneplus_calendar_5</item>
+        <item>oneplus_calendar_6</item>
+        <item>oneplus_calendar_7</item>
+        <item>oneplus_calendar_8</item>
+        <item>oneplus_calendar_9</item>
         <item>oneplus_camera_oxygen</item>
         <item>oneplus_community</item>
         <item>oneplus_deskclock</item>
@@ -806,6 +879,7 @@
         <item>chufaba</item>
         <item>cib_bank</item>
         <item>cilikanpian</item>
+        <item>clip_stack</item>
         <item>clock</item>
         <item>cloud_vpn</item>
         <item>cmbc_bank</item>
@@ -942,10 +1016,12 @@
         <item>flyme_customizecenter</item>
         <item>flyme_dialer</item>
         <item>flyme_download</item>
+        <item>flyme_ebook</item>
         <item>flyme_email</item>
         <item>flyme_email_alt</item>
         <item>flyme_feedback</item>
         <item>flyme_filemanager</item>
+        <item>flyme_find_phone</item>
         <item>flyme_gallery</item>
         <item>flyme_game</item>
         <item>flyme_life</item>
@@ -966,6 +1042,7 @@
         <item>flyme_security_alt_2</item>
         <item>flyme_settings</item>
         <item>flyme_sms</item>
+        <item>flyme_sms_alt</item>
         <item>flyme_soundrecorder</item>
         <item>flyme_toolbox</item>
         <item>flyme_toolbox_alt</item>
@@ -1128,6 +1205,7 @@
         <item>imooc</item>
         <item>instagram</item>
         <item>instagram_alt</item>
+        <item>iqiyi</item>
         <item>ireader</item>
         <item>it_home</item>
         <item>**J**</item>
@@ -1303,40 +1381,40 @@
         <item>olo</item>
         <item>olympus_image_share</item>
         <item>one</item>
-        <item>onepluse_calendar</item>
-        <item>onepluse_calendar_1</item>
-        <item>onepluse_calendar_10</item>
-        <item>onepluse_calendar_11</item>
-        <item>onepluse_calendar_12</item>
-        <item>onepluse_calendar_13</item>
-        <item>onepluse_calendar_14</item>
-        <item>onepluse_calendar_15</item>
-        <item>onepluse_calendar_16</item>
-        <item>onepluse_calendar_17</item>
-        <item>onepluse_calendar_18</item>
-        <item>onepluse_calendar_19</item>
-        <item>onepluse_calendar_2</item>
-        <item>onepluse_calendar_20</item>
-        <item>onepluse_calendar_21</item>
-        <item>onepluse_calendar_22</item>
-        <item>onepluse_calendar_23</item>
-        <item>onepluse_calendar_24</item>
-        <item>onepluse_calendar_25</item>
-        <item>onepluse_calendar_26</item>
-        <item>onepluse_calendar_27</item>
-        <item>onepluse_calendar_28</item>
-        <item>onepluse_calendar_29</item>
-        <item>onepluse_calendar_3</item>
-        <item>onepluse_calendar_30</item>
-        <item>onepluse_calendar_31</item>
-        <item>onepluse_calendar_4</item>
-        <item>onepluse_calendar_5</item>
-        <item>onepluse_calendar_6</item>
-        <item>onepluse_calendar_7</item>
-        <item>onepluse_calendar_8</item>
-        <item>onepluse_calendar_9</item>
         <item>oneplus_calculator</item>
         <item>oneplus_calculator_alt</item>
+        <item>oneplus_calendar</item>
+        <item>oneplus_calendar_1</item>
+        <item>oneplus_calendar_10</item>
+        <item>oneplus_calendar_11</item>
+        <item>oneplus_calendar_12</item>
+        <item>oneplus_calendar_13</item>
+        <item>oneplus_calendar_14</item>
+        <item>oneplus_calendar_15</item>
+        <item>oneplus_calendar_16</item>
+        <item>oneplus_calendar_17</item>
+        <item>oneplus_calendar_18</item>
+        <item>oneplus_calendar_19</item>
+        <item>oneplus_calendar_2</item>
+        <item>oneplus_calendar_20</item>
+        <item>oneplus_calendar_21</item>
+        <item>oneplus_calendar_22</item>
+        <item>oneplus_calendar_23</item>
+        <item>oneplus_calendar_24</item>
+        <item>oneplus_calendar_25</item>
+        <item>oneplus_calendar_26</item>
+        <item>oneplus_calendar_27</item>
+        <item>oneplus_calendar_28</item>
+        <item>oneplus_calendar_29</item>
+        <item>oneplus_calendar_3</item>
+        <item>oneplus_calendar_30</item>
+        <item>oneplus_calendar_31</item>
+        <item>oneplus_calendar_4</item>
+        <item>oneplus_calendar_5</item>
+        <item>oneplus_calendar_6</item>
+        <item>oneplus_calendar_7</item>
+        <item>oneplus_calendar_8</item>
+        <item>oneplus_calendar_9</item>
         <item>oneplus_camera_oxygen</item>
         <item>oneplus_community</item>
         <item>oneplus_deskclock</item>
@@ -1695,6 +1773,7 @@
         <item>xiaomi_download</item>
         <item>xiaomi_file_explorer</item>
         <item>xiaomi_file_explorer_alt</item>
+        <item>xiaomi_finance</item>
         <item>xiaomi_fit</item>
         <item>xiaomi_fm</item>
         <item>xiaomi_gallery</item>
@@ -1794,5 +1873,6 @@
         <item>zuizuimanhua_comic_lover</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
 
 </resources>

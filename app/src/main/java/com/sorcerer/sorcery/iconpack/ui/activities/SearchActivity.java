@@ -1,11 +1,9 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
 import android.app.Activity;
-import android.content.res.Configuration;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +33,6 @@ import com.sorcerer.sorcery.iconpack.ui.others.SimpleTransitionListener;
 import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBar;
 import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.Prefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.SimpleTextWatcher;
 
@@ -44,10 +41,13 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static android.view.View.GONE;
@@ -247,9 +247,9 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void getIconBeanList() {
-        Observable.create(new Observable.OnSubscribe<List<IconBean>>() {
+        Observable.create(new ObservableOnSubscribe<List<IconBean>>() {
             @Override
-            public void call(Subscriber<? super List<IconBean>> subscriber) {
+            public void subscribe(ObservableEmitter<List<IconBean>> emitter) throws Exception {
                 List<IconBean> list = new ArrayList<>();
                 for (String name : ResourceUtil.getStringArray(SearchActivity.this, "icon_pack")) {
                     if (name.startsWith("**")) {
@@ -266,22 +266,28 @@ public class SearchActivity extends AppCompatActivity {
                     }
                     list.add(iconBean);
                 }
-                subscriber.onNext(list);
+                emitter.onNext(list);
             }
         })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<List<IconBean>>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
+                .subscribe(new Observer<List<IconBean>>() {
 
                     @Override
                     public void onError(Throwable e) {
                         if (BuildConfig.DEBUG) {
                             e.printStackTrace();
                         }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
                     }
 
                     @Override

@@ -40,7 +40,7 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.FeedbackChatAdapter;
 import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.tbruyelle.rxpermissions.RxPermissions;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -49,10 +49,10 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import rx.Observable;
-import rx.functions.Action1;
-import rx_activity_result.Result;
-import rx_activity_result.RxActivityResult;
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
+import rx_activity_result2.Result;
+import rx_activity_result2.RxActivityResult;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static android.view.View.GONE;
@@ -133,9 +133,9 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     void onFileClick() {
         RxPermissions.getInstance(this)
                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Action1<Boolean>() {
+                .subscribe(new Consumer<Boolean>() {
                     @Override
-                    public void call(Boolean aBoolean) {
+                    public void accept(Boolean aBoolean) {
                         if (aBoolean) {
                             Intent takeImageIntent;
                             if (Build.VERSION.SDK_INT < 19) {
@@ -151,9 +151,9 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                             }
                             RxActivityResult.on(FeedbackChatActivity.this)
                                     .startIntent(takeImageIntent)
-                                    .subscribe(new Action1<Result<FeedbackChatActivity>>() {
+                                    .subscribe(new Consumer<Result<FeedbackChatActivity>>() {
                                         @Override
-                                        public void call(Result<FeedbackChatActivity> result) {
+                                        public void accept(Result<FeedbackChatActivity> result) {
                                             Intent data = result.data();
                                             int resultCode = result.resultCode();
 
@@ -278,9 +278,9 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
         }
 
         Observable.interval(1, TimeUnit.SECONDS)
-                .subscribe(new Action1<Long>() {
+                .subscribe(new Consumer<Long>() {
                     @Override
-                    public void call(Long aLong) {
+                    public void accept(Long aLong) {
                         mFeedbackThread.sync(mSyncCallback);
                     }
                 });
@@ -311,9 +311,9 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                                 RxPermissions.getInstance(FeedbackChatActivity.this)
                                         .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
                                                 Manifest.permission.READ_PHONE_STATE)
-                                        .subscribe(new Action1<Boolean>() {
+                                        .subscribe(new Consumer<Boolean>() {
                                             @Override
-                                            public void call(Boolean aBoolean) {
+                                            public void accept(Boolean aBoolean) {
                                                 if (aBoolean) {
                                                     send(name, CommentType.USER);
                                                     send(ResourceUtil.getString(mContext,
