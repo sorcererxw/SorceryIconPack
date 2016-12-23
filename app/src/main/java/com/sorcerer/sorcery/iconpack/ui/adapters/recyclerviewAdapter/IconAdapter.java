@@ -39,8 +39,6 @@ import io.github.mthli.slice.Slice;
  */
 public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHolder> {
 
-    private static final String TAG = "IconAdapter";
-
     private static final int TYPE_HEADER = 0x0;
     private static final int TYPE_ICON_CENTER = 0x1;
     private static final int TYPE_ICON_TOP = 0x2;
@@ -226,8 +224,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                                 return;
                             }
                             lock(view);
-                            showIconDialog(iconHolder,
-                                    iconHolder.getAdapterPosition());
+                            showIconDialog(iconHolder, iconHolder.getAdapterPosition());
                         } else {
                             KeyboardUtil.closeKeyboard((Activity) mContext);
                             ((MainActivity) mActivity).onReturnCustomPickerRes(
@@ -235,9 +232,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                         }
                     }
                 });
-                mGlideRequestManager
-                        .load(iconBean.getRes())
-                        .into(iconHolder.mIcon);
+                mGlideRequestManager.load(iconBean.getRes()).into(iconHolder.mIcon);
             } else {
                 iconHolder.itemView.setOnClickListener(null);
                 iconHolder.mIcon.setImageBitmap(null);

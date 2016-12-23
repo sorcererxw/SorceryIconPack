@@ -14,7 +14,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.views.materialDesignLibrary.utils.Utils;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 
 public abstract class Button extends CustomView {
 
@@ -46,8 +46,8 @@ public abstract class Button extends CustomView {
 
     protected void setDefaultProperties() {
         // Min size
-        setMinimumHeight(Utils.dpToPx(minHeight, getResources()));
-        setMinimumWidth(Utils.dpToPx(minWidth, getResources()));
+        setMinimumHeight(DisplayUtil.dip2px(getContext(),minHeight));
+        setMinimumWidth(DisplayUtil.dip2px(getContext(),minWidth));
         // Background shape
         setBackgroundResource(background);
         setBackgroundColor(backgroundColor);
@@ -118,8 +118,8 @@ public abstract class Button extends CustomView {
 
     public Bitmap makeCircle() {
         Bitmap output = Bitmap.createBitmap(
-                getWidth() - Utils.dpToPx(6, getResources()), getHeight()
-                        - Utils.dpToPx(7, getResources()), Config.ARGB_8888);
+                getWidth() - DisplayUtil.dip2px(getContext(),6), getHeight()
+                        - DisplayUtil.dip2px(getContext(),7), Config.ARGB_8888);
         Canvas canvas = new Canvas(output);
         canvas.drawARGB(0, 0, 0, 0);
         Paint paint = new Paint();
@@ -148,7 +148,7 @@ public abstract class Button extends CustomView {
     protected int makePressColor() {
         int r = (this.backgroundColor >> 16) & 0xFF;
         int g = (this.backgroundColor >> 8) & 0xFF;
-        int b = (this.backgroundColor >> 0) & 0xFF;
+        int b = (this.backgroundColor) & 0xFF;
         r = (r - 30 < 0) ? 0 : r - 30;
         g = (g - 30 < 0) ? 0 : g - 30;
         b = (b - 30 < 0) ? 0 : b - 30;

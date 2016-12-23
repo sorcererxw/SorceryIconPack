@@ -70,10 +70,6 @@ public class IconRecyclerView extends RecyclerView {
     public void onScrollStateChanged(int state) {
         super.onScrollStateChanged(state);
 
-//        if (mLastState != state) {
-//            Toast.makeText(getContext(), state + "", Toast.LENGTH_SHORT).show();
-//            mLastState = state;
-//        }
     }
 
 }

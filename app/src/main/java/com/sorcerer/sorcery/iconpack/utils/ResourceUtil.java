@@ -20,7 +20,6 @@ import timber.log.Timber;
  * @date: 2016/5/16
  */
 public class ResourceUtil {
-    private static final String TAG = "ResourceUtil";
     private static Integer[] mColors = new Integer[]{
             R.color.red_50,
             R.color.red_100,

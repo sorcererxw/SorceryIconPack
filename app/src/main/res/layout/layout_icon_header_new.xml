@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="12dp"
-        android:gravity="center_vertical"
-        android:padding="8dp"
-        android:textColor="#424242"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/icon_page_label"
         android:textSize="34sp"
         android:typeface="serif"
         tools:text="11">

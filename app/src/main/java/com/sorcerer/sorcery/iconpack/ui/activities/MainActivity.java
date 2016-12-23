@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -22,6 +23,9 @@ import android.widget.LinearLayout;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.Iconics;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -289,23 +293,23 @@ public class MainActivity extends BaseActivity {
     private void initDrawer() {
         AccountHeaderBuilder headBuilder = new AccountHeaderBuilder();
         headBuilder.withActivity(this)
-                .withHeightDp(178)
                 .withProfileImagesClickable(false)
                 .withResetDrawerOnProfileListClick(false)
                 .withSelectionListEnabled(false)
                 .withSelectionListEnabledForSingleProfile(false)
                 .withDividerBelowHeader(false)
                 .withHeaderBackgroundScaleType(ImageView.ScaleType.CENTER_CROP);
-        if (OtherUtil.showHead(this)) {
-            headBuilder.withHeaderBackground(R.drawable.sandy_shore);
-        } else {
-            headBuilder.withHeaderBackground(R.drawable.sorcery_head);
-        }
-
+//        if (OtherUtil.showHead(this)) {
+//            headBuilder.withHeaderBackground(R.drawable.sandy_shore);
+//        } else {
+//            headBuilder.withHeaderBackground(R.drawable.sorcery_head);
+//        }
+        headBuilder.withHeaderBackground(R.drawable.drawer_head);
         int textColorRes = R.color.grey_800;
         int subTextColorRes = R.color.grey_600;
         int iconAlpha = 128;
         mDrawer = new DrawerBuilder()
+                .withSliderBackgroundColor(Color.WHITE)
                 .withCloseOnClick(true)
                 .withToolbar(mSearchToolbar)
                 .withActionBarDrawerToggleAnimated(true)
@@ -324,16 +328,18 @@ public class MainActivity extends BaseActivity {
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("apply")
-                        .withIcon(ResourceUtil
-                                .getDrawableWithAlpha(mContext, R.drawable.ic_input_black_24dp,
-                                        iconAlpha))
+                        .withIcon(GoogleMaterial.Icon.gmd_palette)
+//                        .withIcon(ResourceUtil
+//                                .getDrawableWithAlpha(mContext, R.drawable.ic_input_black_24dp,
+//                                        iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_apply),
                 new ExpandableDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext,
-                                R.drawable.ic_mail_black_24dp, iconAlpha))
+                        .withIcon(GoogleMaterial.Icon.gmd_mail)
+//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext,
+//                                R.drawable.ic_mail_black_24dp, iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_feedback)
                         .withTag("")
@@ -357,16 +363,18 @@ public class MainActivity extends BaseActivity {
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("settings")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_settings_black_24dp, iconAlpha))
+                        .withIcon(GoogleMaterial.Icon.gmd_settings)
+//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+//                                .ic_settings_black_24dp, iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_settings),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("help")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_help_black_24dp, iconAlpha))
+                        .withIcon(GoogleMaterial.Icon.gmd_help)
+//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+//                                .ic_help_black_24dp, iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_help)
         );
@@ -376,8 +384,9 @@ public class MainActivity extends BaseActivity {
                     .withSetSelected(false)
                     .withSelectable(false)
                     .withTag("donate")
-                    .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                            .ic_attach_money_black_24dp, iconAlpha))
+                    .withIcon(GoogleMaterial.Icon.gmd_local_atm)
+//                    .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
+//                            .ic_attach_money_black_24dp, iconAlpha))
                     .withTextColorRes(textColorRes)
                     .withName(R.string.nav_item_donate));
         }
@@ -425,65 +434,9 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        for (int i = 0; i < 10; i++) {
-            mDrawer.addItems(new PrimaryDrawerItem()
-                    .withIconColorRes(0)
-                    .withName("")
-                    .withSelectable(false)
-                    .withEnabled(false)
-                    .withSetSelected(false));
-        }
-
-        final RecyclerView drawerRecyclerView = mDrawer.getRecyclerView();
+        RecyclerView drawerRecyclerView = mDrawer.getRecyclerView();
         drawerRecyclerView.setVerticalScrollBarEnabled(false);
         drawerRecyclerView.setHorizontalScrollBarEnabled(false);
-        drawerRecyclerView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                String[] actions = new String[]{
-                        "ACTION_BUTTON_PRESS =11",
-                        "ACTION_BUTTON_RELEASE =12",
-                        "ACTION_CANCEL =3",
-                        "ACTION_DOWN =0",
-                        "ACTION_HOVER_ENTER =9",
-                        "ACTION_HOVER_EXIT =10",
-                        "ACTION_HOVER_MOVE =7",
-                        "ACTION_MASK =255",
-                        "ACTION_MOVE =2",
-                        "ACTION_OUTSIDE =4",
-                        "ACTION_POINTER_1_DOWN =5",
-                        "ACTION_POINTER_1_UP =6",
-                        "ACTION_POINTER_2_DOWN =261",
-                        "ACTION_POINTER_2_UP =262",
-                        "ACTION_POINTER_3_DOWN =517",
-                        "ACTION_POINTER_3_UP =518",
-                        "ACTION_POINTER_DOWN =5",
-                        "ACTION_POINTER_ID_MASK =65280",
-                        "ACTION_POINTER_ID_SHIFT =8",
-                        "ACTION_POINTER_INDEX_MASK =65280",
-                        "ACTION_POINTER_INDEX_SHIFT =8",
-                        "ACTION_POINTER_UP =6",
-                        "ACTION_SCROLL =8",
-                        "ACTION_UP =1"};
-                int actionId = motionEvent.getAction();
-                for (String action : actions) {
-                    if (Integer.valueOf(action.split(" =")[1]) == actionId) {
-                        Timber.d(action);
-                    }
-                }
-
-                if (motionEvent.getAction() == MotionEvent.ACTION_UP
-                        || motionEvent.getAction() == MotionEvent.ACTION_CANCEL) {
-                    drawerRecyclerView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            drawerRecyclerView.smoothScrollToPosition(0);
-                        }
-                    }, 200);
-                }
-                return false;
-            }
-        });
     }
 
     @Override

@@ -11,14 +11,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.views.materialDesignLibrary.utils.Utils;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 
 public class ButtonRectangle extends Button {
 
     TextView textButton;
 
     int paddingTop, paddingBottom, paddingLeft, paddingRight;
-
 
     public ButtonRectangle(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -91,16 +90,10 @@ public class ButtonRectangle extends Button {
             LayoutParams params =
                     new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-            params.setMargins(Utils.dpToPx(5, getResources()), Utils.dpToPx(5, getResources()),
-                    Utils.dpToPx(5, getResources()), Utils
-                            .dpToPx(5, getResources()));
+            int margin = DisplayUtil.dip2px(getResources(), 5);
+            params.setMargins(margin, margin, margin, margin);
             textButton.setLayoutParams(params);
             addView(textButton);
-//					FrameLayout.LayoutParams params = (LayoutParams) textView.getLayoutParams();
-//					params.width = getWidth();
-//					params.gravity = Gravity.CENTER_HORIZONTAL;
-////					params.setMargins(paddingLeft, paddingTop, paddingRight, paddingRight);
-//					textView.setLayoutParams(params);textColor
             int textColor = attrs.getAttributeResourceValue(ANDROIDXML, "textColor", -1);
             if (textColor != -1) {
                 textButton.setTextColor(textColor);
@@ -123,7 +116,7 @@ public class ButtonRectangle extends Button {
         }
 
         rippleSpeed = attrs.getAttributeFloatValue(MATERIALDESIGNXML,
-                "rippleSpeed", Utils.dpToPx(6, getResources()));
+                "rippleSpeed", DisplayUtil.dip2px(getResources(), 7));
     }
 
 //	/**
@@ -148,11 +141,12 @@ public class ButtonRectangle extends Button {
 //		centrarTexto();
         super.onDraw(canvas);
         if (x != -1) {
-            Rect src = new Rect(0, 0, getWidth() - Utils.dpToPx(6, getResources()),
-                    getHeight() - Utils.dpToPx(7, getResources()));
-            Rect dst = new Rect(Utils.dpToPx(6, getResources()), Utils.dpToPx(6, getResources()),
-                    getWidth() - Utils.dpToPx(6, getResources()),
-                    getHeight() - Utils.dpToPx(7, getResources()));
+            Rect src = new Rect(0, 0, getWidth() - DisplayUtil.dip2px(getResources(), 6),
+                    getHeight() - DisplayUtil.dip2px(getResources(), 7));
+            Rect dst = new Rect(DisplayUtil.dip2px(getResources(), 6),
+                    DisplayUtil.dip2px(getResources(), 6),
+                    getWidth() - DisplayUtil.dip2px(getResources(), 6),
+                    getHeight() - DisplayUtil.dip2px(getResources(), 7));
             canvas.drawBitmap(makeCircle(), src, dst, null);
             invalidate();
         }

@@ -31,7 +31,6 @@ import io.reactivex.functions.Consumer;
  * @date: 2016/2/29 0029
  */
 public class LikeLayout extends FrameLayout {
-    private static final String TAG = "LikeLayout";
     private LikePrefs mPrefs;
     private String mName;
     private Context mContext;

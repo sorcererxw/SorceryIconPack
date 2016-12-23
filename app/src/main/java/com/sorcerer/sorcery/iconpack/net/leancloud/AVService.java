@@ -5,6 +5,7 @@ import android.content.Context;
 import com.avos.avoscloud.AVAnalytics;
 import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 
 /**
  * @description:
@@ -16,10 +17,7 @@ public class AVService {
         AVObject.registerSubclass(RequestBean.class);
         AVObject.registerSubclass(LikeBean.class);
 
-        AVOSCloud.initialize(context,
-                "740H3GFA2IOWSuXPg5bJ8aLJ-gzGzoHsz",
-                "AHqwrdQPTp9HCXjDi65CID60"
-        );
+        AVOSCloud.initialize(context, BuildConfig.LEANCLOUD_ID, BuildConfig.LEANCLOUD_KEY);
         AVAnalytics.enableCrashReport(context, true);
         AVOSCloud.useAVCloudCN();
     }

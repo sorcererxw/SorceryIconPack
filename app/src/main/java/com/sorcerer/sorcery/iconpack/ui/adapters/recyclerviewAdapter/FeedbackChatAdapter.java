@@ -34,27 +34,28 @@ import io.github.mthli.slice.Slice;
  * @date: 2016/10/2
  */
 
-class FeedbackViewHolder extends RecyclerView.ViewHolder {
+public class FeedbackChatAdapter
+        extends RecyclerView.Adapter<FeedbackChatAdapter.FeedbackViewHolder> {
 
-    @BindView(R.id.linearLayout_item_feedback_frame)
-    LinearLayout mFrame;
+    static class FeedbackViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.linearLayout_item_feedback_container)
-    LinearLayout mContainer;
+        @BindView(R.id.linearLayout_item_feedback_frame)
+        LinearLayout mFrame;
 
-    @BindView(R.id.imageView_item_feedback_chat)
-    ImageView mImageView;
+        @BindView(R.id.linearLayout_item_feedback_container)
+        LinearLayout mContainer;
 
-    @BindView(R.id.textView_item_feedback_chat)
-    TextView mTextView;
+        @BindView(R.id.imageView_item_feedback_chat)
+        ImageView mImageView;
 
-    FeedbackViewHolder(View itemView) {
-        super(itemView);
-        ButterKnife.bind(this, itemView);
+        @BindView(R.id.textView_item_feedback_chat)
+        TextView mTextView;
+
+        FeedbackViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
     }
-}
-
-public class FeedbackChatAdapter extends RecyclerView.Adapter<FeedbackViewHolder> {
 
     private Context mContext;
 

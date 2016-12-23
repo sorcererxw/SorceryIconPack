@@ -103,11 +103,11 @@ public class LauncherIntents {
     }
 
     private void LauncherLab(Context context) {
-        context.startActivity(
-                new Intent().setComponent(new ComponentName("com.gtp.launcherlab",
-                        "com.gtp.launcherlab.settings.activity.DeskSettingSecondActivity")));
-        Intent action = context.getPackageManager()
-                .getLaunchIntentForPackage("com.gtp.launcherlab");
+//        context.startActivity(
+//                new Intent().setComponent(new ComponentName("com.gtp.launcherlab",
+//                        "com.gtp.launcherlab.settings.activity.DeskSettingSecondActivity")));
+//        Intent action = context.getPackageManager()
+//                .getLaunchIntentForPackage("com.gtp.launcherlab");
     }
 
     private void ActionLauncher(Context context) {

@@ -30,7 +30,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Created by Sorcerer on 2016/2/26 0026.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/26 0026
  */
 public class PackageAddedReceiver extends BroadcastReceiver {
     private static final String TAG = "PAReceiver";

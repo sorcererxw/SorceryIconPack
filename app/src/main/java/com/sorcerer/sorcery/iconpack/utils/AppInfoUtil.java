@@ -40,7 +40,7 @@ public class AppInfoUtil {
 
     public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon) {
         List<AppInfo> appInfoList = new ArrayList<>();
-        PackageManager pm = context.getPackageManager();
+        PackageManager pm = context.getApplicationContext().getPackageManager();
         List<ResolveInfo> list = getInstallApps(pm);
         Iterator<ResolveInfo> iterator = list.iterator();
 
@@ -172,7 +172,7 @@ public class AppInfoUtil {
     }
 
     public static boolean isPackageInstalled(Context context, String packageName) {
-        final PackageManager pm = context.getPackageManager();
+        final PackageManager pm = context.getApplicationContext().getPackageManager();
         try {
             pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
             return true;
@@ -215,10 +215,6 @@ public class AppInfoUtil {
         return null;
     }
 
-    public static List<LauncherInfo> generateLauncherInfo(Context context) {
-        return generateLauncherInfo(context, R.array.launchers);
-    }
-
     public static List<LauncherInfo> generateLauncherInfo(Context context, int id) {
         List<LauncherInfo> list = new ArrayList<>();
         String[] launchers = context.getResources().getStringArray(id);
@@ -241,7 +237,7 @@ public class AppInfoUtil {
     }
 
     public static String getAppLocaleName(Activity context, String packageName, Locale locale) {
-        PackageManager pm = context.getPackageManager();
+        PackageManager pm = context.getApplicationContext().getPackageManager();
         try {
             ApplicationInfo appInfo
                     = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
@@ -289,7 +285,7 @@ public class AppInfoUtil {
     }
 
     public static String getAppSystemName(Context context, String packageName) {
-        PackageManager packageManager = context.getPackageManager();
+        PackageManager packageManager = context.getApplicationContext().getPackageManager();
         ApplicationInfo applicationInfo = null;
         try {
             applicationInfo = packageManager.getApplicationInfo(packageName, 0);

@@ -1010,12 +1010,12 @@
     <item
         component="ComponentInfo{com.ecitic.bank.mobile/com.citicbank.newmobilebank.ui.SplashActivity}"
         drawable="ecitic_bank"/>
-    <item
-        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity}"
-        drawable="sorcery_icons"/>
-    <item
-        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity}"
-        drawable="sorcery_icons"/>
+    <!--<item-->
+        <!--component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity}"-->
+        <!--drawable="sorcery_icons"/>-->
+    <!--<item-->
+        <!--component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity}"-->
+        <!--drawable="sorcery_icons"/>-->
     <item
         component="ComponentInfo{com.youdao.calculator/com.youdao.calculator.activities.SplashActivity}"
         drawable="netease_super_calculator"/>

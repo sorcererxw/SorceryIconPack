@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.TypedValue;
 
 /**
@@ -9,10 +10,16 @@ import android.util.TypedValue;
  * @date: 2016/4/28
  */
 public class DisplayUtil {
+
     public static int dip2px(Context context, float dipValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
+        return dip2px(context.getResources(), dipValue);
+    }
+
+    public static int dip2px(Resources resources, float dipValue) {
+        final float scale = resources.getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
     }
+
 
     public static int px2dip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;

@@ -34,7 +34,6 @@ import butterknife.ButterKnife;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
 
-    private boolean mCustomPicker = false;
 
     private List<IconBean> mDataList;
     private List<IconBean> mShowList;
@@ -85,6 +84,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
+    @Override
+    public int getItemCount() {
+        return mShowList.size();
+    }
+
     public static final int SEARCH_CODE_OK = 0x0;
     public static final int SEARCH_CODE_INVALID_INPUT = 0x1;
     public static final int SEARCH_CODE_EMPTY = 0x2;
@@ -92,6 +96,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     public interface SearchCallback {
         void call(int code);
+    }
+
+    static class SearchViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.frameLayout_item_icon_container)
+        FrameLayout container;
+
+        @BindView(R.id.imageView_item_icon)
+        ImageView icon;
+
+        public SearchViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -116,11 +135,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
-    @Override
-    public int getItemCount() {
-        return mShowList.size();
-    }
-
     private void showIconDialog(ImageView icon, IconBean iconBean) {
         Intent intent = new Intent(mActivity, IconDialogActivity.class);
         intent.putExtra(IconDialogActivity.EXTRA_RES, iconBean.getRes());
@@ -142,21 +156,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
-    static class SearchViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.frameLayout_item_icon_container)
-        FrameLayout container;
-
-        @BindView(R.id.imageView_item_icon)
-        ImageView icon;
-
-
-        public SearchViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-    }
+    private boolean mCustomPicker = false;
 
     public void setCustomPicker(boolean customPicker) {
         mCustomPicker = customPicker;

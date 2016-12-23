@@ -31,7 +31,6 @@ import butterknife.ButterKnife;
  * @date: 2016/8/18
  */
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHolder> {
-    private final static String TAG = "RequestAdapter";
 
     private Context mContext;
     private List<CheckAppInfo> mAppInfoList;

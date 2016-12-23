@@ -22,22 +22,24 @@ import butterknife.ButterKnife;
  * @author: Sorcerer
  * @date: 2016/8/12
  */
-class PermissionViewHolder extends RecyclerView.ViewHolder {
-
-    @BindView(R.id.textView_permission_item_title)
-    TextView title;
-
-    @BindView(R.id.textView_permission_item_describe)
-    TextView describe;
-
-    PermissionViewHolder(View itemView) {
-        super(itemView);
-        ButterKnife.bind(this, itemView);
-    }
-}
 
 public class PermissionAdapter
-        extends RecyclerView.Adapter<PermissionViewHolder> {
+        extends RecyclerView.Adapter<PermissionAdapter.PermissionViewHolder> {
+
+    static class PermissionViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.textView_permission_item_title)
+        TextView title;
+
+        @BindView(R.id.textView_permission_item_describe)
+        TextView describe;
+
+        PermissionViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+    }
+
 
     private Context mContext;
 
@@ -66,8 +68,8 @@ public class PermissionAdapter
         }
         holder.title.setText(mPermissionBeanList.get(position).getTitle());
         holder.title.setCompoundDrawablesWithIntrinsicBounds(
-                mPermissionBeanList.get(position).getResId(),0, 0, 0);
-        holder.title.setCompoundDrawablePadding(DisplayUtil.dip2px(mContext,16));
+                mPermissionBeanList.get(position).getResId(), 0, 0, 0);
+        holder.title.setCompoundDrawablePadding(DisplayUtil.dip2px(mContext, 16));
         holder.describe.setText(mPermissionBeanList.get(position).getDescribe());
     }
 

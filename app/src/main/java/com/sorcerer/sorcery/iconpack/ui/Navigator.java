@@ -5,7 +5,6 @@ import android.content.Intent;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.AppSelectActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.Apply1Activity;
 import com.sorcerer.sorcery.iconpack.ui.activities.ApplyActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.FeedbackChatActivity;
@@ -74,7 +73,7 @@ public class Navigator {
     }
 
     public void toAppleActivity() {
-        mainActivityShift(Apply1Activity.class);
+        mainActivityShift(ApplyActivity.class);
     }
 
     public void toDonateActivity() {

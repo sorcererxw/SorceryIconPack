@@ -26,12 +26,13 @@
         android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_christmas"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:exported="true"
             android:name=".ui.activities.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
@@ -176,16 +177,13 @@
             android:label="@string/nav_item_apply"
             android:theme="@style/SubActivity"/>
         <activity
-            android:name=".ui.activities.Apply1Activity"
-            android:label="@string/nav_item_apply"
-            android:theme="@style/SubActivity"/>
-        <activity
             android:name=".ui.activities.DonateActivity"
             android:label="@string/nav_item_donate"
             android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.AppSelectActivity"
             android:label="@string/request"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activities.FeedbackChatActivity"
@@ -209,38 +207,36 @@
             android:name=".ui.activities.base.PhotoViewActivity"
             android:label="big image"
             android:theme="@style/AppTheme.PhotoView"/>
-        <activity android:name="com.avos.avoscloud.feedback.ThreadActivity">
-        </activity>
 
-        <receiver
-            android:name=".xposed.PackageInstalledReceiver"
-            android:enabled="false">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+        <!--<receiver-->
+            <!--android:name=".xposed.PackageInstalledReceiver"-->
+            <!--android:enabled="false">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_ADDED"/>-->
+                <!--<action android:name="android.intent.action.PACKAGE_CHANGED"/>-->
+                <!--<action android:name="android.intent.action.PACKAGE_REMOVED"/>-->
 
-                <data android:scheme="package"/>
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".xposed.PackageAddedReceiver"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <!--<data android:scheme="package"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver-->
+            <!--android:name=".xposed.PackageAddedReceiver"-->
+            <!--android:enabled="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_ADDED"/>-->
+                <!--<action android:name="android.intent.action.PACKAGE_CHANGED"/>-->
+                <!--<action android:name="android.intent.action.PACKAGE_REMOVED"/>-->
 
-                <data android:scheme="package"/>
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".xposed.MyselfUpdateReceiver"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
-            </intent-filter>
-        </receiver>
+                <!--<data android:scheme="package"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver-->
+            <!--android:name=".xposed.MyselfUpdateReceiver"-->
+            <!--android:enabled="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
         <meta-data
             android:name="xposedmodule"
@@ -254,6 +250,7 @@
 
         <activity
             android:name=".ui.activities.SearchActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/SubActivity">
         </activity>
@@ -261,16 +258,11 @@
         <activity
             android:name=".ui.activities.SettingsActivity"
             android:label="@string/nav_item_settings"
-            android:theme="@style/SubActivity">
-        </activity>
+            android:theme="@style/SubActivity"/>
 
         <activity
             android:name=".ui.activities.WelcomeActivity"
             android:theme="@style/AppTheme"/>
-
-        <service
-            android:name=".tinker.service.SampleResultService"
-            android:exported="false"/>
     </application>
 
 </manifest>

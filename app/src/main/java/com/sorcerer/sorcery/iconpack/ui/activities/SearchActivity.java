@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -56,9 +55,6 @@ import static android.view.View.VISIBLE;
 
 public class SearchActivity extends AppCompatActivity {
 
-    @BindView(R.id.nestedScrollView_search)
-    NestedScrollView mNestedScrollView;
-
     @BindView(R.id.imageView_search_graphic)
     ImageView mSearchGraphic;
 
@@ -84,27 +80,26 @@ public class SearchActivity extends AppCompatActivity {
         public void call(int code) {
             switch (code) {
                 case SearchAdapter.SEARCH_CODE_EMPTY:
-                    mNestedScrollView.setVisibility(INVISIBLE);
+                    mRecyclerView.setVisibility(INVISIBLE);
                     mHintTextView.setVisibility(GONE);
                     mSearchGraphic.setVisibility(VISIBLE);
                     break;
                 case SearchAdapter.SEARCH_CODE_INVALID_INPUT:
-                    mNestedScrollView.setVisibility(INVISIBLE);
+                    mRecyclerView.setVisibility(INVISIBLE);
                     mHintTextView.setText(R.string.search_hint_only_letter);
                     mHintTextView.setVisibility(View.VISIBLE);
                     mSearchGraphic.setVisibility(GONE);
                     break;
                 case SearchAdapter.SEARCH_CODE_NOT_FOUND:
-                    mNestedScrollView.setVisibility(INVISIBLE);
-                    mHintTextView.setText(
-                            ResourceUtil.getString(SearchActivity.this,
-                                    R.string.search_hint_not_found)
-                                    + new String(Character.toChars(0x1F614)));
+                    mRecyclerView.setVisibility(INVISIBLE);
+                    mHintTextView.setText(ResourceUtil.getString(SearchActivity.this,
+                            R.string.search_hint_not_found)
+                            + new String(Character.toChars(0x1F614)));
                     mHintTextView.setVisibility(View.VISIBLE);
                     mSearchGraphic.setVisibility(GONE);
                     break;
                 default:
-                    mNestedScrollView.setVisibility(VISIBLE);
+                    mRecyclerView.setVisibility(VISIBLE);
                     mHintTextView.setVisibility(GONE);
                     mSearchGraphic.setVisibility(GONE);
                     mAdapter.notifyDataSetChanged();
