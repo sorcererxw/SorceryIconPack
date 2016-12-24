@@ -88,6 +88,10 @@
     <string name="icon_request_send_fail">send fail</string>
     <string name="icon_request_times">Requested # times</string>
 
+    <string name="apply_tip_only_flyme">Only for Flyme</string>
+    <string name="apply_tip_only_miui">Only for MIUI</string>
+    <string name="apply_tip_no_launcher">This launcher is not installed. Whether to install from the store?</string>
+
     <string name="nav_open" translatable="false">open</string>
     <string name="nav_close" translatable="false">close</string>
 

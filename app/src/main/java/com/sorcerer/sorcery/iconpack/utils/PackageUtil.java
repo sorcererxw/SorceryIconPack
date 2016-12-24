@@ -35,13 +35,12 @@ import timber.log.Timber;
  * @author: Sorcerer
  * @date: 2016/4/26
  */
-public class AppInfoUtil {
-    private static final String TAG = "AppInfoUtil";
-
-    public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon) {
+public class PackageUtil {
+    public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon)
+            throws Exception {
         List<AppInfo> appInfoList = new ArrayList<>();
         PackageManager pm = context.getApplicationContext().getPackageManager();
-        List<ResolveInfo> list = getInstallApps(pm);
+        List<ResolveInfo> list = getInstallApps(context);
         Iterator<ResolveInfo> iterator = list.iterator();
 
         List<String> xmlStringList = new ArrayList<>();
@@ -81,10 +80,28 @@ public class AppInfoUtil {
         return appInfoList;
     }
 
-    public static List<ResolveInfo> getInstallApps(PackageManager pm) {
-        Intent intent = new Intent("android.intent.action.MAIN", null);
-        intent.addCategory("android.intent.category.LAUNCHER");
-        return pm.queryIntentActivities(intent, 0);
+    public static String getCurrentLauncher(Context context) {
+        try {
+            PackageManager localPackageManager = context.getPackageManager();
+            Intent intent = new Intent("android.intent.action.MAIN");
+            intent.addCategory("android.intent.category.HOME");
+            return localPackageManager.resolveActivity(intent,
+                    PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
+        }catch (Exception e){
+            Timber.e(e);
+            return "";
+        }
+    }
+
+    public static List<ResolveInfo> getInstallApps(Context context) {
+        try {
+            PackageManager pm = context.getApplicationContext().getPackageManager();
+            Intent intent = new Intent("android.intent.action.MAIN", null);
+            intent.addCategory("android.intent.category.LAUNCHER");
+            return pm.queryIntentActivities(intent, 0);
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
     }
 
     public static List<AppfilterItem> getAppfilterList(Context context) {
@@ -163,7 +180,6 @@ public class AppInfoUtil {
     }
 
     public static boolean isXposedInstalled(Context context) {
-
         return isPackageInstalled(context, "de.robv.android.xposed.installer");
     }
 
@@ -172,11 +188,12 @@ public class AppInfoUtil {
     }
 
     public static boolean isPackageInstalled(Context context, String packageName) {
-        final PackageManager pm = context.getApplicationContext().getPackageManager();
         try {
+            PackageManager pm = context.getApplicationContext().getPackageManager();
             pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
             return true;
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (Exception e) {
+            Timber.e(e);
             return false;
         }
     }
@@ -220,9 +237,6 @@ public class AppInfoUtil {
         String[] launchers = context.getResources().getStringArray(id);
         for (String launcher : launchers) {
             String[] tmp = launcher.split("\\|");
-            if (BuildConfig.DEBUG) {
-                Log.d(TAG, launcher + "\n" + tmp[1] + "\n" + tmp[0] + "\n---------");
-            }
             list.add(new LauncherInfo(context, tmp[1], tmp[0]));
         }
         return list;
@@ -237,18 +251,12 @@ public class AppInfoUtil {
     }
 
     public static String getAppLocaleName(Activity context, String packageName, Locale locale) {
-        PackageManager pm = context.getApplicationContext().getPackageManager();
         try {
+            PackageManager pm = context.getApplicationContext().getPackageManager();
             ApplicationInfo appInfo
                     = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
 
             if (appInfo != null) {
-                final String label = String.valueOf(pm.getApplicationLabel(appInfo));
-
-                if (BuildConfig.DEBUG) {
-                    Log.w(TAG, "Current app label is " + label);
-                }
-
                 Configuration config = new Configuration();
 
                 if (Build.VERSION.SDK_INT >= 17) {
@@ -262,41 +270,25 @@ public class AppInfoUtil {
                 appRes.updateConfiguration(config, context.getBaseContext().getResources()
                         .getDisplayMetrics());
 
-                final String localizedLabel = appRes.getString(appInfo.labelRes);
-
-                if (BuildConfig.DEBUG) {
-                    Log.w(TAG, "Localized app label is " + localizedLabel);
-                }
-
-                return localizedLabel;
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            if (BuildConfig.DEBUG) {
-                Log.e(TAG, "Failed to obtain app info!");
-                e.printStackTrace();
+                return appRes.getString(appInfo.labelRes);
             }
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) {
-                Log.e(TAG, "Other exception");
-                e.printStackTrace();
-            }
+            Timber.e(e);
         }
         return getAppSystemName(context, packageName);
     }
 
     public static String getAppSystemName(Context context, String packageName) {
-        PackageManager packageManager = context.getApplicationContext().getPackageManager();
-        ApplicationInfo applicationInfo = null;
+        String res;
         try {
-            applicationInfo = packageManager.getApplicationInfo(packageName, 0);
+            PackageManager packageManager = context.getApplicationContext().getPackageManager();
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packageName, 0);
+            res = packageManager.getApplicationLabel(applicationInfo).toString();
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) {
-                e.printStackTrace();
-            }
+            Timber.e(e);
+            res = "";
         }
-        return applicationInfo == null
-                ? ""
-                : packageManager.getApplicationLabel(applicationInfo).toString();
+        return res;
     }
 
 }

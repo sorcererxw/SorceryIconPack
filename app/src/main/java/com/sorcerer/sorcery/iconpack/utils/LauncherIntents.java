@@ -4,10 +4,8 @@ import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 
 import timber.log.Timber;
@@ -158,10 +156,10 @@ public class LauncherIntents {
         boolean themesAppInstalled = true;
         Intent intent = new Intent("android.intent.action.MAIN");
 
-        if (AppInfoUtil.isPackageInstalled(context, "org.cyanogenmod.theme.chooser")) {
+        if (PackageUtil.isPackageInstalled(context, "org.cyanogenmod.theme.chooser")) {
             intent.setComponent(new ComponentName("org.cyanogenmod.theme.chooser",
                     "org.cyanogenmod.theme.chooser.ChooserActivity"));
-        } else if (AppInfoUtil.isPackageInstalled(context, "com.cyngn.theme.chooser")) {
+        } else if (PackageUtil.isPackageInstalled(context, "com.cyngn.theme.chooser")) {
             intent.setComponent(new ComponentName("com.cyngn.theme.chooser",
                     "com.cyngn.theme.chooser.ChooserActivity"));
         } else {

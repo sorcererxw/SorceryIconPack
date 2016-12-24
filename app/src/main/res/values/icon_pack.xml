@@ -57,7 +57,7 @@
         <item>nova_launcher_settings</item>
         <item>nova_launcher_tesla_unread</item>
         <item>samsung_settings</item>
-        <item>settings_alt</item>
+        <item>settings</item>
         <item>sim_toolkit</item>
         <item>sony_dialer</item>
         <item>sony_settings</item>
@@ -111,6 +111,7 @@
         <item>memory_cleaner</item>
         <item>ali_trip</item>
         <item>wifi_key</item>
+        <item>sorcery_icons_christmas</item>
         <item>cyanogenmod_file_manager</item>
         <item>cyanogenmod_theme_chooser</item>
         <item>xiaomi_theme</item>
@@ -225,9 +226,12 @@
         <item>ali_qua</item>
         <item>ali_taobao</item>
         <item>ali_taobao_dianying</item>
+        <item>ali_taobao_dianying_alt</item>
+        <item>ali_taobao_etao</item>
         <item>ali_taobao_nongcun</item>
         <item>ali_tmall</item>
         <item>ali_tmall_alt</item>
+        <item>ali_trip</item>
         <item>ali_tv_helper</item>
         <item>ali_wangxin</item>
         <item>ali_wangxin_alt</item>
@@ -407,6 +411,7 @@
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
         <item>microsoft_remote_desktop</item>
+        <item>microsoft_solitaire</item>
         <item>microsoft_translator</item>
         <item>microsoft_xbox</item>
         <item>microsoft_xbox_alt</item>
@@ -531,6 +536,37 @@
         <item>xiaomi_barcode_scanner_alt_2</item>
         <item>xiaomi_browser</item>
         <item>xiaomi_calendar</item>
+        <item>xiaomi_calendar_1</item>
+        <item>xiaomi_calendar_10</item>
+        <item>xiaomi_calendar_11</item>
+        <item>xiaomi_calendar_12</item>
+        <item>xiaomi_calendar_13</item>
+        <item>xiaomi_calendar_14</item>
+        <item>xiaomi_calendar_15</item>
+        <item>xiaomi_calendar_16</item>
+        <item>xiaomi_calendar_17</item>
+        <item>xiaomi_calendar_18</item>
+        <item>xiaomi_calendar_19</item>
+        <item>xiaomi_calendar_2</item>
+        <item>xiaomi_calendar_20</item>
+        <item>xiaomi_calendar_21</item>
+        <item>xiaomi_calendar_22</item>
+        <item>xiaomi_calendar_23</item>
+        <item>xiaomi_calendar_24</item>
+        <item>xiaomi_calendar_25</item>
+        <item>xiaomi_calendar_26</item>
+        <item>xiaomi_calendar_27</item>
+        <item>xiaomi_calendar_28</item>
+        <item>xiaomi_calendar_29</item>
+        <item>xiaomi_calendar_3</item>
+        <item>xiaomi_calendar_30</item>
+        <item>xiaomi_calendar_31</item>
+        <item>xiaomi_calendar_4</item>
+        <item>xiaomi_calendar_5</item>
+        <item>xiaomi_calendar_6</item>
+        <item>xiaomi_calendar_7</item>
+        <item>xiaomi_calendar_8</item>
+        <item>xiaomi_calendar_9</item>
         <item>xiaomi_camera</item>
         <item>xiaomi_clock</item>
         <item>xiaomi_community</item>
@@ -538,6 +574,7 @@
         <item>xiaomi_compass_alt</item>
         <item>xiaomi_contacts</item>
         <item>xiaomi_dialer</item>
+        <item>xiaomi_dialer_alt</item>
         <item>xiaomi_download</item>
         <item>xiaomi_file_explorer</item>
         <item>xiaomi_file_explorer_alt</item>
@@ -548,6 +585,8 @@
         <item>xiaomi_gallery_alt</item>
         <item>xiaomi_gamecenter</item>
         <item>xiaomi_game_alt</item>
+        <item>xiaomi_icon_folder</item>
+        <item>xiaomi_live</item>
         <item>xiaomi_mail</item>
         <item>xiaomi_map</item>
         <item>xiaomi_miui</item>
@@ -556,6 +595,7 @@
         <item>xiaomi_music</item>
         <item>xiaomi_music_alt</item>
         <item>xiaomi_notepaper</item>
+        <item>xiaomi_o2o</item>
         <item>xiaomi_roaming</item>
         <item>xiaomi_security_center</item>
         <item>xiaomi_settings</item>
@@ -563,15 +603,19 @@
         <item>xiaomi_smarthome</item>
         <item>xiaomi_smarthome_alt</item>
         <item>xiaomi_sms_message</item>
+        <item>xiaomi_sms_message_alt</item>
         <item>xiaomi_theme</item>
         <item>xiaomi_updater</item>
         <item>xiaomi_updater_alt</item>
+        <item>xiaomi_usb</item>
         <item>xiaomi_user_feedback</item>
         <item>xiaomi_video</item>
+        <item>xiaomi_video_call</item>
         <item>xiaomi_voice_assistant</item>
         <item>xiaomi_wallet</item>
         <item>xiaomi_weather</item>
         <item>xiaomi_weather_alt</item>
+        <item>xiaomi_yidian_news</item>
     </string-array>
 
     <string-array name="icon_pack_flyme" translatable="false">
@@ -697,6 +741,7 @@
         <item>oneplus_calendar_8</item>
         <item>oneplus_calendar_9</item>
         <item>oneplus_camera_oxygen</item>
+        <item>oneplus_card</item>
         <item>oneplus_community</item>
         <item>oneplus_deskclock</item>
         <item>oneplus_feedback</item>
@@ -773,9 +818,12 @@
         <item>ali_qua</item>
         <item>ali_taobao</item>
         <item>ali_taobao_dianying</item>
+        <item>ali_taobao_dianying_alt</item>
+        <item>ali_taobao_etao</item>
         <item>ali_taobao_nongcun</item>
         <item>ali_tmall</item>
         <item>ali_tmall_alt</item>
+        <item>ali_trip</item>
         <item>ali_tv_helper</item>
         <item>ali_wangxin</item>
         <item>ali_wangxin_alt</item>
@@ -839,6 +887,7 @@
         <item>battery_taskmaster</item>
         <item>battlefield_companion</item>
         <item>battlefield_companion_alt</item>
+        <item>behance</item>
         <item>beiyue</item>
         <item>biaozhunribenyu</item>
         <item>bilibili</item>
@@ -865,6 +914,7 @@
         <item>**C**</item>
         <item>calculator</item>
         <item>calc_plus</item>
+        <item>caller_info</item>
         <item>call_vibrator</item>
         <item>camera</item>
         <item>careland</item>
@@ -879,6 +929,8 @@
         <item>chufaba</item>
         <item>cib_bank</item>
         <item>cilikanpian</item>
+        <item>clean_master</item>
+        <item>clean_master_lite</item>
         <item>clip_stack</item>
         <item>clock</item>
         <item>cloud_vpn</item>
@@ -899,7 +951,10 @@
         <item>ct_client</item>
         <item>current_activity</item>
         <item>custom_share</item>
+        <item>cyanogenmod_audiofx</item>
         <item>cyanogenmod_camera</item>
+        <item>cyanogenmod_file_manager</item>
+        <item>cyanogenmod_screencast</item>
         <item>cyanogenmod_theme_chooser</item>
         <item>**D**</item>
         <item>dailycost</item>
@@ -911,6 +966,7 @@
         <item>days_matter</item>
         <item>ddcat</item>
         <item>dealmoon</item>
+        <item>deviantart</item>
         <item>dgtle</item>
         <item>dialer</item>
         <item>dianping</item>
@@ -945,6 +1001,7 @@
         <item>eleme</item>
         <item>eleme_alt</item>
         <item>email</item>
+        <item>enjoy</item>
         <item>es_explorer</item>
         <item>eudic</item>
         <item>evermemo</item>
@@ -1282,6 +1339,7 @@
         <item>mcdonald</item>
         <item>mctools</item>
         <item>media_converter</item>
+        <item>medium</item>
         <item>mega</item>
         <item>meiriyiwen</item>
         <item>meiriyujia</item>
@@ -1289,6 +1347,7 @@
         <item>meituan_waimai</item>
         <item>meituxiuxiu</item>
         <item>meiyanxiangji</item>
+        <item>memory_cleaner</item>
         <item>mengniangbaike</item>
         <item>messaging</item>
         <item>microsoft_bing_dict</item>
@@ -1305,6 +1364,7 @@
         <item>microsoft_office_word</item>
         <item>microsoft_onedrive</item>
         <item>microsoft_remote_desktop</item>
+        <item>microsoft_solitaire</item>
         <item>microsoft_translator</item>
         <item>microsoft_xbox</item>
         <item>microsoft_xbox_alt</item>
@@ -1416,6 +1476,7 @@
         <item>oneplus_calendar_8</item>
         <item>oneplus_calendar_9</item>
         <item>oneplus_camera_oxygen</item>
+        <item>oneplus_card</item>
         <item>oneplus_community</item>
         <item>oneplus_deskclock</item>
         <item>oneplus_feedback</item>
@@ -1446,6 +1507,7 @@
         <item>pinterest</item>
         <item>pixiv</item>
         <item>pizzahut</item>
+        <item>pocket</item>
         <item>pocket_casts</item>
         <item>poem</item>
         <item>pokemon_go</item>
@@ -1510,7 +1572,6 @@
         <item>search_by_image</item>
         <item>seed</item>
         <item>settings</item>
-        <item>settings_alt</item>
         <item>settings_editor</item>
         <item>sfly</item>
         <item>shadowsocks</item>
@@ -1574,6 +1635,7 @@
         <item>sony_whats_new</item>
         <item>sony_xhs_lounge</item>
         <item>sorcery_icons</item>
+        <item>sorcery_icons_christmas</item>
         <item>sougou_keyboard</item>
         <item>sougou_wallpaper</item>
         <item>sound_recorder</item>
@@ -1707,6 +1769,7 @@
         <item>**V**</item>
         <item>v2ex</item>
         <item>versus</item>
+        <item>via_browser</item>
         <item>vine</item>
         <item>vine_alt</item>
         <item>viper_fx</item>
@@ -1763,6 +1826,37 @@
         <item>xiaomi_barcode_scanner_alt_2</item>
         <item>xiaomi_browser</item>
         <item>xiaomi_calendar</item>
+        <item>xiaomi_calendar_1</item>
+        <item>xiaomi_calendar_10</item>
+        <item>xiaomi_calendar_11</item>
+        <item>xiaomi_calendar_12</item>
+        <item>xiaomi_calendar_13</item>
+        <item>xiaomi_calendar_14</item>
+        <item>xiaomi_calendar_15</item>
+        <item>xiaomi_calendar_16</item>
+        <item>xiaomi_calendar_17</item>
+        <item>xiaomi_calendar_18</item>
+        <item>xiaomi_calendar_19</item>
+        <item>xiaomi_calendar_2</item>
+        <item>xiaomi_calendar_20</item>
+        <item>xiaomi_calendar_21</item>
+        <item>xiaomi_calendar_22</item>
+        <item>xiaomi_calendar_23</item>
+        <item>xiaomi_calendar_24</item>
+        <item>xiaomi_calendar_25</item>
+        <item>xiaomi_calendar_26</item>
+        <item>xiaomi_calendar_27</item>
+        <item>xiaomi_calendar_28</item>
+        <item>xiaomi_calendar_29</item>
+        <item>xiaomi_calendar_3</item>
+        <item>xiaomi_calendar_30</item>
+        <item>xiaomi_calendar_31</item>
+        <item>xiaomi_calendar_4</item>
+        <item>xiaomi_calendar_5</item>
+        <item>xiaomi_calendar_6</item>
+        <item>xiaomi_calendar_7</item>
+        <item>xiaomi_calendar_8</item>
+        <item>xiaomi_calendar_9</item>
         <item>xiaomi_camera</item>
         <item>xiaomi_clock</item>
         <item>xiaomi_community</item>
@@ -1770,6 +1864,7 @@
         <item>xiaomi_compass_alt</item>
         <item>xiaomi_contacts</item>
         <item>xiaomi_dialer</item>
+        <item>xiaomi_dialer_alt</item>
         <item>xiaomi_download</item>
         <item>xiaomi_file_explorer</item>
         <item>xiaomi_file_explorer_alt</item>
@@ -1780,6 +1875,8 @@
         <item>xiaomi_gallery_alt</item>
         <item>xiaomi_gamecenter</item>
         <item>xiaomi_game_alt</item>
+        <item>xiaomi_icon_folder</item>
+        <item>xiaomi_live</item>
         <item>xiaomi_mail</item>
         <item>xiaomi_map</item>
         <item>xiaomi_miui</item>
@@ -1788,6 +1885,7 @@
         <item>xiaomi_music</item>
         <item>xiaomi_music_alt</item>
         <item>xiaomi_notepaper</item>
+        <item>xiaomi_o2o</item>
         <item>xiaomi_roaming</item>
         <item>xiaomi_security_center</item>
         <item>xiaomi_settings</item>
@@ -1795,15 +1893,19 @@
         <item>xiaomi_smarthome</item>
         <item>xiaomi_smarthome_alt</item>
         <item>xiaomi_sms_message</item>
+        <item>xiaomi_sms_message_alt</item>
         <item>xiaomi_theme</item>
         <item>xiaomi_updater</item>
         <item>xiaomi_updater_alt</item>
+        <item>xiaomi_usb</item>
         <item>xiaomi_user_feedback</item>
         <item>xiaomi_video</item>
+        <item>xiaomi_video_call</item>
         <item>xiaomi_voice_assistant</item>
         <item>xiaomi_wallet</item>
         <item>xiaomi_weather</item>
         <item>xiaomi_weather_alt</item>
+        <item>xiaomi_yidian_news</item>
         <item>xiaowo_weather</item>
         <item>ximalayating</item>
         <item>xingzhe</item>
@@ -1873,6 +1975,4 @@
         <item>zuizuimanhua_comic_lover</item>
         <item>zuzhiyunxing</item>
     </string-array>
-
-
 </resources>

@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.Point;
@@ -19,7 +18,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppfilterItem;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import java.util.ArrayList;
@@ -210,10 +209,9 @@ public class LazyIconFragment extends LazyFragment {
 
             private String[] getIconNames(Context context, Flag flag) {
                 if (flag == Flag.INSTALLED) {
-                    PackageManager pm = context.getPackageManager();
                     List<String> list = new ArrayList<>();
-                    List<AppfilterItem> afList = AppInfoUtil.getAppfilterList(context);
-                    List<ResolveInfo> installedList = AppInfoUtil.getInstallApps(pm);
+                    List<AppfilterItem> afList = PackageUtil.getAppfilterList(context);
+                    List<ResolveInfo> installedList = PackageUtil.getInstallApps(context);
                     List<String> allIconList =
                             Arrays.asList(ResourceUtil.getStringArray(context, "icon_pack"));
                     Collections.sort(allIconList);

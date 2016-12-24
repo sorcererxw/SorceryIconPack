@@ -9,33 +9,31 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.iconics.Iconics;
-import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.PermissionBean;
+import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
@@ -44,10 +42,8 @@ import com.sorcerer.sorcery.iconpack.ui.others.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.ui.Navigator;
-import com.sorcerer.sorcery.iconpack.utils.OtherUtil;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -57,7 +53,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import io.reactivex.functions.Consumer;
-import timber.log.Timber;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -89,8 +84,6 @@ public class MainActivity extends BaseActivity {
     CoordinatorLayout mCoordinatorLayout;
 
     private Drawer mDrawer;
-
-    private static final String TAG = "TAG_MAIN_ACTIVITY";
 
     public static final int REQUEST_ICON_DIALOG = 100;
 
@@ -146,7 +139,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        Log.d(TAG, "onCreate");
         getWindow().setBackgroundDrawable(null);
 
         mLaunchIntent = getIntent();
@@ -159,7 +151,6 @@ public class MainActivity extends BaseActivity {
         mNavigator = new Navigator(this);
 
         initTabAndPager();
-
         initDrawer();
 
         mSearchTransitioner = new SearchTransitioner(this,
@@ -249,22 +240,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        getWindow().getDecorView().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSearchTransitioner.onActivityResumed();
-            }
-        }, 100);
-    }
-
     private void initTabAndPager() {
         mViewPager.addOnPageChangeListener(mPageChangeListener);
         mViewPager.setPageMargin(DisplayUtil.dip2px(mContext, 16));
@@ -291,20 +266,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initDrawer() {
-        AccountHeaderBuilder headBuilder = new AccountHeaderBuilder();
-        headBuilder.withActivity(this)
-                .withProfileImagesClickable(false)
-                .withResetDrawerOnProfileListClick(false)
-                .withSelectionListEnabled(false)
-                .withSelectionListEnabledForSingleProfile(false)
-                .withDividerBelowHeader(false)
-                .withHeaderBackgroundScaleType(ImageView.ScaleType.CENTER_CROP);
-//        if (OtherUtil.showHead(this)) {
-//            headBuilder.withHeaderBackground(R.drawable.sandy_shore);
-//        } else {
-//            headBuilder.withHeaderBackground(R.drawable.sorcery_head);
-//        }
-        headBuilder.withHeaderBackground(R.drawable.drawer_head);
+
         int textColorRes = R.color.grey_800;
         int subTextColorRes = R.color.grey_600;
         int iconAlpha = 128;
@@ -320,26 +282,21 @@ public class MainActivity extends BaseActivity {
                         return false;
                     }
                 })
-                .withAccountHeader(headBuilder.build())
                 .withActivity(mActivity)
                 .build();
+
         mDrawer.addItems(
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("apply")
                         .withIcon(GoogleMaterial.Icon.gmd_palette)
-//                        .withIcon(ResourceUtil
-//                                .getDrawableWithAlpha(mContext, R.drawable.ic_input_black_24dp,
-//                                        iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_apply),
                 new ExpandableDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withIcon(GoogleMaterial.Icon.gmd_mail)
-//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext,
-//                                R.drawable.ic_mail_black_24dp, iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_feedback)
                         .withTag("")
@@ -364,8 +321,6 @@ public class MainActivity extends BaseActivity {
                         .withSelectable(false)
                         .withTag("settings")
                         .withIcon(GoogleMaterial.Icon.gmd_settings)
-//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-//                                .ic_settings_black_24dp, iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_settings),
                 new PrimaryDrawerItem()
@@ -373,26 +328,22 @@ public class MainActivity extends BaseActivity {
                         .withSelectable(false)
                         .withTag("help")
                         .withIcon(GoogleMaterial.Icon.gmd_help)
-//                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-//                                .ic_help_black_24dp, iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_help)
         );
 
-        if (AppInfoUtil.isAlipayInstalled(this)) {
+        if (PackageUtil.isAlipayInstalled(this)) {
             mDrawer.addItem(new PrimaryDrawerItem()
                     .withSetSelected(false)
                     .withSelectable(false)
                     .withTag("donate")
                     .withIcon(GoogleMaterial.Icon.gmd_local_atm)
-//                    .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-//                            .ic_attach_money_black_24dp, iconAlpha))
                     .withTextColorRes(textColorRes)
                     .withName(R.string.nav_item_donate));
         }
 
         if (BuildConfig.DEBUG) {
-            if (AppInfoUtil.isXposedInstalled(this)) {
+            if (PackageUtil.isXposedInstalled(this)) {
                 mDrawer.addItem(new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
@@ -434,9 +385,95 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        RecyclerView drawerRecyclerView = mDrawer.getRecyclerView();
+        final RecyclerView drawerRecyclerView = mDrawer.getRecyclerView();
         drawerRecyclerView.setVerticalScrollBarEnabled(false);
         drawerRecyclerView.setHorizontalScrollBarEnabled(false);
+
+        ViewTreeObserver viewTreeObserver = drawerRecyclerView.getViewTreeObserver();
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.addOnGlobalLayoutListener(
+                    new ViewTreeObserver.OnGlobalLayoutListener() {
+                        @Override
+                        public void onGlobalLayout() {
+                            drawerRecyclerView.getViewTreeObserver()
+                                    .removeOnGlobalLayoutListener(this);
+
+                            BitmapFactory.Options dimensions = new BitmapFactory.Options();
+                            dimensions.inJustDecodeBounds = true;
+                            BitmapFactory.decodeResource(getResources(), R.drawable.drawer_head,
+                                    dimensions);
+                            int height = dimensions.outHeight;
+                            int width = dimensions.outWidth;
+
+                            height = height * drawerRecyclerView.getWidth() / width;
+
+                            int titleBarHeight = UIUtils.getStatusBarHeight(MainActivity.this);
+
+                            View view = View.inflate(MainActivity.this, R.layout.layout_drawer_head,
+                                    null);
+                            ImageView image =
+                                    (ImageView) view.findViewById(R.id.imageView_drawer_head);
+                            image.setImageResource(R.drawable.drawer_head);
+                            ViewGroup.LayoutParams imageLayoutParams = image.getLayoutParams();
+                            if (imageLayoutParams == null) {
+                                imageLayoutParams = new ViewGroup.LayoutParams(
+                                        ViewGroup.LayoutParams.MATCH_PARENT, height);
+                            } else {
+                                imageLayoutParams.height = height;
+                            }
+                            image.setLayoutParams(imageLayoutParams);
+
+                            View topSpace = view.findViewById(R.id.view_drawer_head_space_top);
+                            ViewGroup.LayoutParams topSpaceLayoutParams =
+                                    topSpace.getLayoutParams();
+                            if (topSpaceLayoutParams == null) {
+                                topSpaceLayoutParams = new ViewGroup.LayoutParams(
+                                        ViewGroup.LayoutParams.MATCH_PARENT, titleBarHeight);
+                            } else {
+                                topSpaceLayoutParams.height = titleBarHeight;
+                            }
+                            topSpace.setLayoutParams(topSpaceLayoutParams);
+
+                            View bottomSpace =
+                                    view.findViewById(R.id.view_drawer_head_space_bottom);
+                            ViewGroup.LayoutParams bottomSpaceLayoutParams =
+                                    bottomSpace.getLayoutParams();
+                            int bottomPadding = Math.max(0,
+                                    DisplayUtil.dip2px(MainActivity.this, 178) - titleBarHeight
+                                            - height);
+                            if (bottomSpaceLayoutParams == null) {
+                                bottomSpaceLayoutParams = new ViewGroup.LayoutParams(
+                                        ViewGroup.LayoutParams.MATCH_PARENT, bottomPadding);
+                            } else {
+                                bottomSpaceLayoutParams.height = bottomPadding;
+                            }
+                            bottomSpace.setLayoutParams(bottomSpaceLayoutParams);
+
+                            mDrawer.setHeader(view, false, false);
+                        }
+                    });
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getWindow().getDecorView().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSearchTransitioner.onActivityResumed();
+            }
+        }, 100);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
     }
 
     @Override

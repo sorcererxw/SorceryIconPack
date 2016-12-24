@@ -43,9 +43,6 @@
     <calendar
         component="ComponentInfo{am.sunrise.android.calendar/am.sunrise.android.calendar.ui.HomeActivity}"
         prefix="sunrise_"/>
-    <!--<calendar-->
-        <!--component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"-->
-        <!--prefix="xiaomi_calendar_"/>-->
     <calendar
         component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}"
         prefix="flyme_calendar_"/>
@@ -54,7 +51,10 @@
         prefix="google_calendar_"/>
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
-        drawable="oneplus_calendar_"/>
+        drawable="onepluse_calendar_"/>
+    <calendar
+        component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
+        prefix="xiaomi_calendar_"/>
 
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
@@ -201,6 +201,9 @@
         component="ComponentInfo{com.cainiao.wireless/com.cainiao.commonsharelibrary.navigation.navtest.NewMainActivity}"
         drawable="ali_cainiao_guoguo"/>
     <item
+        component="ComponentInfo{com.cainiao.wireless/com.cainiao.wireless.homepage.presentation.view.activity.HomepageActivity}"
+        drawable="ali_cainiao_guoguo"/>
+    <item
         component="ComponentInfo{com.taobao.mobile.dipei/com.taobao.ecoupon.activity.SplashActivity}"
         drawable="ali_koubei_waimai"/>
     <item
@@ -332,6 +335,9 @@
     <item
         component="ComponentInfo{com.android.system.usb_notifications_button/xiaomi}"
         drawable="xiaomi_usb"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.downjoy/com.downjoy.activity.SdkLoadActivity}"
+        drawable="game_netease_onmyoji"/>
     <item
         component="ComponentInfo{tk.wasdennnoch.androidn_ify/tk.wasdennnoch.androidn_ify.SettingsAlias}"
         drawable="android_nify"/>
@@ -478,18 +484,6 @@
         drawable="boxer"/>
     <item
         component="ComponentInfo{com.google.android.browser/com.android.browser.BrowserActivity}"
-        drawable="browser"/>
-    <item
-        component="ComponentInfo{com.android.browser/com.tencent.mtt.SplashActivity}"
-        drawable="browser"/>
-    <item
-        component="ComponentInfo{com.android.browser/com.android.browser.BrowserActivity}"
-        drawable="browser"/>
-    <item
-        component="ComponentInfo{com.android.browser/com.google.android.apps.chrome.Main}"
-        drawable="browser"/>
-    <item
-        component="ComponentInfo{com.android.browser/com.android.browser.PermissionCheckActivity}"
         drawable="browser"/>
     <item
         component="ComponentInfo{in.huohua.Yuki/in.huohua.Yuki.app.SplashActivity}"
@@ -1010,12 +1004,12 @@
     <item
         component="ComponentInfo{com.ecitic.bank.mobile/com.citicbank.newmobilebank.ui.SplashActivity}"
         drawable="ecitic_bank"/>
-    <!--<item-->
-        <!--component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity}"-->
-        <!--drawable="sorcery_icons"/>-->
-    <!--<item-->
-        <!--component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity}"-->
-        <!--drawable="sorcery_icons"/>-->
+    <item
+        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity}"
+        drawable="sorcery_icons_christmas"/>
+    <item
+        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity}"
+        drawable="sorcery_icons_christmas"/>
     <item
         component="ComponentInfo{com.youdao.calculator/com.youdao.calculator.activities.SplashActivity}"
         drawable="netease_super_calculator"/>
@@ -1122,6 +1116,9 @@
         component="ComponentInfo{com.kaola/com.kaola.spring.ui.welcome.SplashActivity}"
         drawable="netease_kaola"/>
     <item
+        component="ComponentInfo{com.kaola/com.qihoo.util.StartActivity}"
+        drawable="netease_kaola"/>
+    <item
         component="ComponentInfo{com.netease.finance/com.netease.finance.activities.SplashActivity}"
         drawable="netease_finance"/>
     <item
@@ -1189,6 +1186,18 @@
         drawable="settings"/>
     <item
         component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiP2pSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.dual.DualManagerAppActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiApSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$HotspotActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$TetherSettingsActivity2}"
         drawable="settings"/>
     <item
         component="ComponentInfo{com.mipay.wallet/com.mipay.wallet.ui.MipayEntryActivity}"
@@ -1311,6 +1320,48 @@
         component="ComponentInfo{com.microsoft.microsoftsolitairecollection/com.smokingguninc.engine.framework.SgiLauncherActivity}"
         drawable="microsoft_solitaire"/>
     <item
+        component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}"
+        drawable="samsung_s_health"/>
+    <item
+        component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.SplashScreenActivity}"
+        drawable="samsung_s_health"/>
+    <item
+        component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.RootActivity}"
+        drawable="samsung_s_health"/>
+    <item
+        component="ComponentInfo{com.android.browser/com.tencent.mtt.SplashActivity}"
+        drawable="browser"/>
+    <item
+        component="ComponentInfo{com.android.browser/com.android.browser.BrowserActivity}"
+        drawable="browser"/>
+    <item
+        component="ComponentInfo{com.android.browser/com.google.android.apps.chrome.Main}"
+        drawable="browser"/>
+    <item
+        component="ComponentInfo{com.android.browser/com.android.browser.PermissionCheckActivity}"
+        drawable="browser"/>
+    <item
+        component="ComponentInfo{com.android.browser/com.android.browser.permission.PermissionCheckActivity}"
+        drawable="browser"/>
+    <item
+        component="ComponentInfo{com.iplay.assistant/com.iplay.assistant.ui.market_new.GGMarketActivity}"
+        drawable="gg_assistant"/>
+    <item
+        component="ComponentInfo{com.iplay.assistant/com.iplay.assistant.ui.SplashActivity}"
+        drawable="gg_assistant"/>
+    <item
+        component="ComponentInfo{com.iplay.assistant/com.qihoo.util.StartActivity}"
+        drawable="gg_assistant"/>
+    <item
+        component="ComponentInfo{com.iplay.assistant/com.iplay.assistant.ui.GMSplashActivity}"
+        drawable="gg_assistant"/>
+    <item
+        component="ComponentInfo{com.iplay.assistant/com.iplay.assistant.SplashActivity}"
+        drawable="gg_assistant"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.gh/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
     <item
@@ -1327,6 +1378,9 @@
         drawable="gallery"/>
     <item
         component="ComponentInfo{com.supercell.clashofclans.wdj/com.supercell.clashofclans.GameAppKunlun}"
+        drawable="game_clash_of_clans"/>
+    <item
+        component="ComponentInfo{com.supercell.clashofclans.wdj/com.flamingo.sdk.view.WDJSplashActivity}"
         drawable="game_clash_of_clans"/>
     <item
         component="ComponentInfo{com.supercell.clashofclans/com.supercell.clashofclans.GameApp}"
@@ -1391,15 +1445,6 @@
     <item
         component="ComponentInfo{com.gewara/com.qihoo.util.StartActivity}"
         drawable="gewala_movie"/>
-    <item
-        component="ComponentInfo{com.iplay.assistant/com.iplay.assistant.ui.market_new.GGMarketActivity}"
-        drawable="gg_assistant"/>
-    <item
-        component="ComponentInfo{com.iplay.assistant/com.iplay.assistant.ui.SplashActivity}"
-        drawable="gg_assistant"/>
-    <item
-        component="ComponentInfo{com.iplay.assistant/com.qihoo.util.StartActivity}"
-        drawable="gg_assistant"/>
     <item
         component="ComponentInfo{epaylinks.global.payment/epaylinks.global.payment.ui.SplashActivity}"
         drawable="globalcash"/>
@@ -2010,6 +2055,9 @@
         component="ComponentInfo{com.mxtech.videoplayer.pro/com.mxtech.videoplayer.ad.ActivityMediaList}"
         drawable="mxplayer"/>
     <item
+        component="ComponentInfo{com.mxtech.videoplayer.pro/com.mxtech.videoplayer.ActivityMediaList}"
+        drawable="mxplayer"/>
+    <item
         component="ComponentInfo{cn.wq.myandroidtools/cn.wq.myandroidtools.MainActivity}"
         drawable="myandroidtools"/>
     <item
@@ -2185,6 +2233,9 @@
         drawable="polarr"/>
     <item
         component="ComponentInfo{com.nianticlabs.pokemongo/com.unity3d.player.UnityPlayerNativeActivity}"
+        drawable="pokemon_go"/>
+    <item
+        component="ComponentInfo{com.nianticlabs.pokemongo/com.unity3d.player.UnityPlayerActivity}"
         drawable="pokemon_go"/>
     <item
         component="ComponentInfo{com.painless.pc/com.painless.pc.settings.LaunchActivity}"
@@ -3084,13 +3135,13 @@
         component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}"
         drawable="google_calendar"/>
     <item
-        component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
-        drawable="google_calendar"/>
-    <item
         component="ComponentInfo{com.android.calendar/com.android.calendar.LaunchTasksActivity}"
         drawable="google_calendar"/>
     <item
         component="ComponentInfo{org.aisen.weibo.sina/org.aisen.weibo.sina.ui.activity.base.SplashActivity}"
+        drawable="aisen"/>
+    <item
+        component="ComponentInfo{org.aisen.weibo.sina/org.aisen.weibo.sina.ui.activity.basic.SplashActivity}"
         drawable="aisen"/>
     <item
         component="ComponentInfo{com.tencent.research.drop/com.tencent.research.drop.GuideActivity}"
@@ -3423,13 +3474,10 @@
         component="ComponentInfo{com.xiaomi.shop/com.xiaomi.shop.activity.MainTabActivity}"
         drawable="xiaomi_shop"/>
     <item
-        component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}"
-        drawable="samsung_s_health"/>
-    <item
-        component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.SplashScreenActivity}"
-        drawable="samsung_s_health"/>
-    <item
         component="ComponentInfo{com.cubic.autohome/com.cubic.autohome.LogoActivity}"
+        drawable="autohome"/>
+    <item
+        component="ComponentInfo{com.cubic.autohome/com.cubic.autohome.business.Logo}"
         drawable="autohome"/>
     <item
         component="ComponentInfo{com.ct.client/com.ct.client.SplashActivity}"
@@ -3511,6 +3559,9 @@
         drawable="baidu_wenku"/>
     <item
         component="ComponentInfo{org.wikipedia.beta/org.wikipedia.MainActivity}"
+        drawable="wikipedia_beta"/>
+    <item
+        component="ComponentInfo{org.wikipedia.beta/org.wikipedia.main.MainActivity}"
         drawable="wikipedia_beta"/>
     <item
         component="ComponentInfo{org.wikipedia/org.wikipedia.MainActivity}"
@@ -3645,6 +3696,9 @@
         component="ComponentInfo{com.wepie.snake/com.wepie.snake.activity.StartActivity}"
         drawable="game_snake"/>
     <item
+        component="ComponentInfo{com.wepie.snake/com.wepie.snake.base.StartActivity}"
+        drawable="game_snake"/>
+    <item
         component="ComponentInfo{com.wepie.snake.nearme.gamecenter/com.wepie.snake.activity.StartActivity}"
         drawable="game_snake"/>
     <item
@@ -3682,6 +3736,9 @@
         drawable="nfc_emulator"/>
     <item
         component="ComponentInfo{free.vpn.unblock.proxy.vpnpro/com.quickdy.vpn.app.VpnMainActivity}"
+        drawable="snap_vpn"/>
+    <item
+        component="ComponentInfo{free.vpn.unblock.proxy.vpnpro/com.quickdy.vpn.app.SplashActivity}"
         drawable="snap_vpn"/>
     <item
         component="ComponentInfo{com.sony.tvsideview.phone/com.sony.tvsideview.MainActivity}"
@@ -3822,6 +3879,9 @@
         component="ComponentInfo{com.adsafe/com.adsafe.ui.activity.LeadFirstActivity}"
         drawable="adsafe"/>
     <item
+        component="ComponentInfo{com.adsafe/com.adsafe.LeadFirstActivity}"
+        drawable="adsafe"/>
+    <item
         component="ComponentInfo{com.hjwordgames/com.hjwordgames.Splash}"
         drawable="hj_word_games"/>
     <item
@@ -3958,6 +4018,9 @@
         drawable="express_100"/>
     <item
         component="ComponentInfo{com.Kingdee.Express/com.Kingdee.Express.activity.SplashActivity}"
+        drawable="express_100"/>
+    <item
+        component="ComponentInfo{com.Kingdee.Express/com.Express.Activity.Splash}"
         drawable="express_100"/>
     <item
         component="ComponentInfo{cn.kuwo.player/com.qihoo.util.StartActivity}"
@@ -4436,5 +4499,49 @@
     <item
         component="ComponentInfo{com.xiaomi.o2o/com.xiaomi.o2o.activity.GuideActivity}"
         drawable="xiaomi_o2o"/>
-
+    <item
+        component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
+        drawable="xiaomi_calendar"/>
+    <item
+        component="ComponentInfo{com.android.providers.downloads/com.color.downloads.ui.DownloadMainActivity}"
+        drawable="download"/>
+    <item
+        component="ComponentInfo{com.android.providers.downloads/com.android.providers.downloads.ui.DownloadList}"
+        drawable="download"/>
+    <item
+        component="ComponentInfo{com.android.providers.downloads/com.android.providers.downloads.ui.DownloadListUI}"
+        drawable="download"/>
+    <item
+        component="ComponentInfo{com.android.documentsui/com.android.documentsui.LauncherActivity}"
+        drawable="download"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.uc/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.sumsung/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.tencent.tmgp.yys.zqb/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.mz/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.na/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.vivo/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.lenovo/com.lenovo.lsf.gamesdk.ui.WelcomeActivity}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.supercell.clashroyale.qihoo/com.supercell.clashroyale.GameAppKunlun}"
+        drawable="game_clash_royale"/>
+    <item
+        component="ComponentInfo{com.supercell.clashofclans.nearme.gamecenter/com.supercell.clashofclans.GameAppKunlun}"
+        drawable="game_clash_of_clans"/>
+    <item
+        component="ComponentInfo{com.supercell.clashofclans.ewan.kaopu/com.wandoujia.mariosdk.plugin.api.api.SplashActivity}"
+        drawable="game_clash_of_clans"/>
 </resources>

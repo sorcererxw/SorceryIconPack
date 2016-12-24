@@ -22,7 +22,7 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
@@ -138,7 +138,7 @@ public class IconDialogActivity extends ToolbarActivity {
                 .map(new Function<String, String>() {
                     @Override
                     public String apply(String name) {
-                        String res = AppInfoUtil.getComponentByName(IconDialogActivity.this, name);
+                        String res = PackageUtil.getComponentByName(IconDialogActivity.this, name);
                         if (res == null) {
                             res = "";
                         }
@@ -194,7 +194,7 @@ public class IconDialogActivity extends ToolbarActivity {
             getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
 
             MenuItem showOrigin = menu.findItem(R.id.action_show_origin_icon);
-            if (AppInfoUtil.isPackageInstalled(mContext,
+            if (PackageUtil.isPackageInstalled(mContext,
                     StringUtil.componentInfoToPackageName(mComponent))) {
                 showOrigin.setVisible(true);
                 Drawable icon = showOrigin.getIcon();

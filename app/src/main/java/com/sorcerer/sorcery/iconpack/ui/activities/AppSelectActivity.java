@@ -29,7 +29,7 @@ import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ToolbarOnGestureListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -47,6 +47,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 import static android.provider.Settings.Secure.ANDROID_ID;
 
@@ -122,7 +123,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         Observable.create(new ObservableOnSubscribe<List<AppInfo>>() {
             @Override
             public void subscribe(ObservableEmitter<List<AppInfo>> e) throws Exception {
-                e.onNext(AppInfoUtil.getComponentInfo(AppSelectActivity.this, true));
+                e.onNext(PackageUtil.getComponentInfo(AppSelectActivity.this, true));
             }
         })
                 .subscribeOn(Schedulers.newThread())
@@ -270,9 +271,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                     AppInfo app = list.get(i);
                     request.setAppPackage(app.getPackage());
                     request.setComponent(app.getCode());
-                    request.setEnName(AppInfoUtil.getAppEnglishName(
+                    request.setEnName(PackageUtil.getAppEnglishName(
                             AppSelectActivity.this, app.getPackage()));
-                    request.setZhName(AppInfoUtil.getAppChineseName(
+                    request.setZhName(PackageUtil.getAppChineseName(
                             AppSelectActivity.this, app.getPackage()));
                     if (deviceId != null && deviceId.length() > 0
                             && sharedPreferences.getInt(app.getCode(), 0) == 0) {
@@ -312,9 +313,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        if (BuildConfig.DEBUG) {
-                            e.printStackTrace();
-                        }
+                        Timber.e(e);
                         mProgressDialog.dismiss();
                         Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG)
                                 .show();

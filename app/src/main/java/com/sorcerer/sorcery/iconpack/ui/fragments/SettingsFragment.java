@@ -39,7 +39,7 @@ import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.CustomizeTa
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.OpenSourceLibAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
 import com.sorcerer.sorcery.iconpack.ui.preferences.SorcerySwitchPreference;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.OpenSourceLibInformations;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
@@ -134,7 +134,7 @@ public class SettingsFragment extends PreferenceFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mActivity = activity;
-        if (AppInfoUtil.isXposedInstalled(activity) && Build.VERSION.SDK_INT <= 23) {
+        if (PackageUtil.isXposedInstalled(activity) && Build.VERSION.SDK_INT <= 23) {
             mSharedPreferences =
                     mActivity.getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_WORLD_READABLE);
             mGlobalLoadActive = mSharedPreferences.getBoolean("pref_global_load", false);
@@ -208,7 +208,7 @@ public class SettingsFragment extends PreferenceFragment {
                 .cancelable(false)
                 .build();
 
-        if (!AppInfoUtil.isXposedInstalled(mActivity) || Build.VERSION.SDK_INT >= 24) {
+        if (!PackageUtil.isXposedInstalled(mActivity) || Build.VERSION.SDK_INT >= 24) {
             mLabGroup = (PreferenceGroup) findPreference(KEY_LAB_GROUP);
             mPreferenceScreen.removePreference(mLabGroup);
         } else {
@@ -222,7 +222,7 @@ public class SettingsFragment extends PreferenceFragment {
                         @Override
                         public boolean onPreferenceClick(Preference preference) {
                             if (!mGlobalLoadActive) {
-                                if (!AppInfoUtil.isXposedInstalled(mActivity)) {
+                                if (!PackageUtil.isXposedInstalled(mActivity)) {
                                     Toast.makeText(mActivity, "need Xposed", Toast.LENGTH_SHORT)
                                             .show();
                                     return true;
@@ -513,7 +513,8 @@ public class SettingsFragment extends PreferenceFragment {
                         try {
                             ActivityInfo activityInfo = pm.getActivityInfo(new ComponentName(
                                     item.getPackageName(),
-                                    item.getActivityName()), PackageManager.GET_META_DATA);
+                                    item.getActivityName()),
+                                    PackageManager.GET_META_DATA);
                             if (activityInfo != null) {
                                 if (mIconReplacementsHashMap.get(item.getPackageName())
                                         == null) {

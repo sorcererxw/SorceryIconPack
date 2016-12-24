@@ -1,13 +1,15 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
  * @date: 2016/4/26
  */
 public class StringUtil {
-    public static boolean isNullOrEmpty(String s){
-        return s==null || s.isEmpty();
+    public static boolean isNullOrEmpty(String s) {
+        return s == null || s.isEmpty();
     }
 
     public static boolean isMail(String mail) {
@@ -24,6 +26,7 @@ public class StringUtil {
         try {
             return componentInfo.split("/")[0].split("\\{")[1];
         } catch (Exception e) {
+            Timber.e(e);
             return null;
         }
     }

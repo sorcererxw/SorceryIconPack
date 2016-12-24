@@ -3,7 +3,6 @@ package com.sorcerer.sorcery.iconpack.ui.activities;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Point;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -23,7 +22,7 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.LauncherIntents;
 
 import java.util.ArrayList;
@@ -49,6 +48,7 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                        R.id.recyclerView_apply_launcher})
     List<RecyclerView> mRecyclerViewList;
 
+
     private ApplyAdapter[] mApply1Adapters = new ApplyAdapter[3];
     private GridLayoutManager[] mGridLayoutManagers = new GridLayoutManager[3];
 
@@ -59,13 +59,13 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                     if (!item.isInstalled()) {
                         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
                         if (item.getLabel().toLowerCase().equals("flyme")) {
-                            builder.content("仅限Flyme系统可以使用.")
+                            builder.content(R.string.apply_tip_only_flyme)
                                     .positiveText(R.string.ok);
                         } else if (item.getLabel().toLowerCase().equals("miui")) {
-                            builder.content("MIUI主题尚未上线, 请稍作等待.")
+                            builder.content(R.string.apply_tip_only_miui)
                                     .positiveText(R.string.ok);
                         } else {
-                            builder.content("尚未安装启动器, 是否前往商店安装?")
+                            builder.content(R.string.apply_tip_no_launcher)
                                     .positiveText(R.string.ok).negativeText(R.string.cancel)
                                     .onPositive(new MaterialDialog.SingleButtonCallback() {
                                         @Override
@@ -124,9 +124,11 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
         RequestManager requestManager = Glide.with(this);
 
         List<LauncherInfo> systemInfos =
-                AppInfoUtil.generateLauncherInfo(this, R.array.apply_systems);
+                PackageUtil.generateLauncherInfo(this, R.array.apply_systems);
         List<LauncherInfo> launcherInfos =
-                AppInfoUtil.generateLauncherInfo(this, R.array.apply_launchers);
+                PackageUtil.generateLauncherInfo(this, R.array.apply_launchers);
+
+
         List<LauncherInfo> recommendInfos = generateRecommend(systemInfos, launcherInfos);
         Collections.sort(systemInfos);
         Collections.sort(launcherInfos);
@@ -163,14 +165,11 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                 }
             }
         }
-        PackageManager localPackageManager = getPackageManager();
-        Intent intent = new Intent("android.intent.action.MAIN");
-        intent.addCategory("android.intent.category.HOME");
-        String currentLauncher = localPackageManager.resolveActivity(intent,
-                PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
+
         for (int i = 0; i < launcherInfos.size(); i++) {
             if (launcherInfos.get(i).isInstalled()
-                    && launcherInfos.get(i).getPackageName().equals(currentLauncher)) {
+                    && launcherInfos.get(i).getPackageName()
+                    .equals(PackageUtil.getCurrentLauncher(mContext))) {
                 list.add(launcherInfos.get(i));
             }
         }

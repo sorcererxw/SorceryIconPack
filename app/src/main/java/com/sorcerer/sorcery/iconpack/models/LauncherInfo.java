@@ -5,7 +5,7 @@ import android.support.annotation.DrawableRes;
 import android.util.Log;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.utils.AppInfoUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 
 /**
  * @description:
@@ -22,7 +22,7 @@ public class LauncherInfo implements Comparable {
 
     public LauncherInfo(Context context, String packageName, String label) {
         mPackageName = packageName;
-        mIsInstalled = AppInfoUtil.isLauncherInstalled(context, packageName);
+        mIsInstalled = PackageUtil.isLauncherInstalled(context, packageName);
         mLabel = label;
         setIcon(context);
     }
