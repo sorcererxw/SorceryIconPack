@@ -24,8 +24,6 @@ public class App extends Application {
             CrashReport.initCrashReport(this, "900053240", false);
         }
         RxActivityResult.register(this);
-        if (BuildConfig.DEBUG) {
-            Timber.plant(new Timber.DebugTree());
-        }
+        Timber.plant(new Timber.DebugTree());
     }
 }

@@ -16,7 +16,7 @@
         android:backgroundTint="@color/alipay"
         android:gravity="center"
         android:text="@string/alipay"
-        android:textColor="@color/white"
+        android:textColor="@color/palette_white"
         android:textSize="16sp"/>
 
     <android.support.v7.widget.AppCompatButton
@@ -31,7 +31,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:text="@string/wechat"
-        android:textColor="@color/white"
+        android:textColor="@color/palette_white"
         android:textSize="16sp"
         android:visibility="gone"/>
 
@@ -47,7 +47,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:text="Google Play"
-        android:textColor="@color/white"
+        android:textColor="@color/palette_white"
         android:textSize="16sp"
         android:visibility="gone"/>
 

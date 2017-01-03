@@ -299,7 +299,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
 
                             }
                         })
-                .inputRange(3, 20, ResourceUtil.getColor(mContext, R.color.red_500))
+                .inputRange(3, 20, ResourceUtil.getColor(mContext, R.color.palette_red_500))
                 .positiveText(ResourceUtil.getString(mContext, R.string.ok))
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override

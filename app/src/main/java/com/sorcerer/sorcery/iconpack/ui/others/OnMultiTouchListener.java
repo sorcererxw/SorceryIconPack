@@ -11,7 +11,7 @@ import com.sorcerer.sorcery.iconpack.utils.SimpleCallback;
  * @author: Sorcerer
  * @date: 2016/11/12
  */
-
+ 
 public class OnMultiTouchListener implements View.OnTouchListener {
 
     private int mTime;

@@ -25,6 +25,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
@@ -34,6 +35,7 @@ import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -80,6 +82,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     @OnClick({R.id.button_lab_xposed_apply, R.id.button_lab_xposed_close, R.id
             .button_lab_xposed_reboot, R.id.button_lab_xposed_refresh})
     public void onClick(final View v) {
+
         RxPermissions.getInstance(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .subscribe(new Consumer<Boolean>() {
                     @Override
@@ -111,7 +114,8 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                             mXposedStateTextView
                                     .setText(getString(R.string.global_state_not_active));
                             mXposedStateTextView
-                                    .setTextColor(getResources().getColor(R.color.red_500));
+                                    .setTextColor(ResourceUtil
+                                            .getColor(LabActivity.this, R.color.palette_red_500));
                             mXposedApplyButton.setEnabled(true);
                             mXposedCloseButton.setEnabled(false);
                             mXposedRefreshButton.setEnabled(false);
@@ -160,14 +164,14 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
 
         if (mActive) {
             mXposedStateTextView.setText(getString(R.string.global_state_active));
-            mXposedStateTextView.setTextColor(getResources().getColor(R.color.green_500));
+            mXposedStateTextView.setTextColor(getResources().getColor(R.color.palette_green_500));
             mXposedApplyButton.setEnabled(false);
             mXposedRefreshButton.setEnabled(true);
             mXposedCloseButton.setEnabled(true);
             mXposedRebootButton.setEnabled(true);
         } else {
             mXposedStateTextView.setText(getString(R.string.global_state_not_active));
-            mXposedStateTextView.setTextColor(getResources().getColor(R.color.red_500));
+            mXposedStateTextView.setTextColor(getResources().getColor(R.color.palette_red_500));
             mXposedApplyButton.setEnabled(true);
             mXposedRefreshButton.setEnabled(false);
             mXposedCloseButton.setEnabled(false);
@@ -271,7 +275,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
         mActive = false;
         mPrefs.edit().putBoolean("pref_global_load", true).commit();
         mXposedStateTextView.setText(getString(R.string.global_state_active));
-        mXposedStateTextView.setTextColor(getResources().getColor(R.color.green_500));
+        mXposedStateTextView.setTextColor(getResources().getColor(R.color.palette_green_500));
         mXposedApplyButton.setEnabled(false);
         mXposedCloseButton.setEnabled(true);
         mXposedRefreshButton.setEnabled(true);

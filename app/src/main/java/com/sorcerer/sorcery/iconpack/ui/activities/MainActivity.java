@@ -267,8 +267,8 @@ public class MainActivity extends BaseActivity {
 
     private void initDrawer() {
 
-        int textColorRes = R.color.grey_800;
-        int subTextColorRes = R.color.grey_600;
+        int textColorRes = R.color.palette_grey_800;
+        int subTextColorRes = R.color.palette_grey_600;
         int iconAlpha = 128;
         mDrawer = new DrawerBuilder()
                 .withSliderBackgroundColor(Color.WHITE)

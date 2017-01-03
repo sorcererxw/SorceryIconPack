@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.utils.ToolbarOnGestureListener;
+import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
 
 /**
  * Created by Sorcerer on 2016/5/30 0030.

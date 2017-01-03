@@ -49,7 +49,7 @@
                         android:layout_below="@id/textView_lab_xposed_title"
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="8dp"
-                        android:background="@color/grey_300"/>
+                        android:background="@color/palette_grey_300"/>
 
                     <LinearLayout
                         android:id="@+id/linearLayout_lab_xposed_state"

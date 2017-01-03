@@ -44,7 +44,7 @@ public class ExposedSearchToolbar extends Toolbar {
     private void initTitle(Context context) {
         super.setTitle("");
         mTitleTextView = new TextView(context);
-        mTitleTextView.setTextColor(ResourceUtil.getColor(context, R.color.grey_500));
+        mTitleTextView.setTextColor(ResourceUtil.getColor(context, R.color.palette_grey_500));
         mTitleTextView.setTextSize(20);
         mTitleTextView.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,

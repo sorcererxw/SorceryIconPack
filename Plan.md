@@ -1,7 +1,7 @@
 - [x] App shortcut
     - [x] Icon-Requesting shortcut
 - [x] Support split-screen
-- [ ] Flyme theme
+- [x] Flyme theme
     - [x] Generate
     - [x] Test
     - [x] Commit (NOT PASSED)
@@ -19,8 +19,8 @@
 - [x] Settings page `2016-11-11`
 - [x] Card-like icon pages `2016-11-8`
 - [x] Waterfall-flow-layout in help list `2016-11-9`
-- [ ] Hot Fix support
 - [ ] Google Play pay support
 - [ ] Feedback reply notification
 - [ ] MIUI theme
-- [ ] User guide 
+- [ ] User guide
+- [ ] ~~Hot Fix support~~

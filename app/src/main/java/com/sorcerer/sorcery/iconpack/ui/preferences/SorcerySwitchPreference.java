@@ -26,10 +26,6 @@ public class SorcerySwitchPreference extends SwitchPreference {
 
     @Override
     protected void onClick() {
-//        if (getOnPreferenceClickListener() != null) {
-//            getOnPreferenceClickListener().onPreferenceClick(this);
-//        } else {
-//            super.onClick();
-//        }
+
     }
 }

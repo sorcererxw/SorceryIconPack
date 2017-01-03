@@ -55,7 +55,6 @@
     <calendar
         component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
         prefix="xiaomi_calendar_"/>
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -399,6 +398,9 @@
         component="ComponentInfo{com.nuomi/com.baidu.bainuo.home.FirstStartActivity}"
         drawable="baidu_nuomi"/>
     <item
+        component="ComponentInfo{com.nuomi/com.baidu.bainuo.dex.InstallDexActivity}"
+        drawable="baidu_nuomi"/>
+    <item
         component="ComponentInfo{com.baidu.BaiduMap/com.baidu.BaiduMap.BaiduMap}"
         drawable="baidu_maps"/>
     <item
@@ -559,6 +561,9 @@
         drawable="clock"/>
     <item
         component="ComponentInfo{net.bypass.vpn/net.bypass.vpn.ui.MainActivity}"
+        drawable="cloud_vpn"/>
+    <item
+        component="ComponentInfo{net.bypass.vpn/com.qihoo.util.StartActivity}"
         drawable="cloud_vpn"/>
     <item
         component="ComponentInfo{com.coolapk.market/com.coolapk.market.activity.MainActivity}"
@@ -1077,9 +1082,6 @@
         component="ComponentInfo{org.mozilla.firefox_beta/org.mozilla.firefox_beta.App}"
         drawable="firefox_beta"/>
     <item
-        component="ComponentInfo{com.google.android.spotlightstories/com.google.android.spotlightstories.app.SplashActivity}"
-        drawable="google_spotlight_stories"/>
-    <item
         component="ComponentInfo{com.ea.bf3bl.bv/com.ea.bf3bl.LauncherActivity}"
         drawable="battlefield_companion"/>
     <item
@@ -1087,7 +1089,7 @@
         drawable="battlefield_companion"/>
     <item
         component="ComponentInfo{com.escapistgames.starchartgoogleeducation/com.escapistgames.starchartgoogleeducation.StarChart}"
-        drawable="start_chart_education"/>
+        drawable="star_chart_education"/>
     <item
         component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}"
         drawable="google_youtube_music"/>
@@ -1362,6 +1364,36 @@
         component="ComponentInfo{com.netease.onmyoji.gh/com.netease.onmyoji.Launcher}"
         drawable="game_netease_onmyoji"/>
     <item
+        component="ComponentInfo{com.android.fmradio/com.android.fmradio.FmMainActivity}"
+        drawable="fm_radio"/>
+    <item
+        component="ComponentInfo{com.pixlr.express/com.pixlr.express.StartupActivity}"
+        drawable="autodesk_pixlr"/>
+    <item
+        component="ComponentInfo{so.ofo.labofo/so.ofo.labofo.activities.EntryActivity}"
+        drawable="ofo_bicycler"/>
+    <item
+        component="ComponentInfo{so.ofo.labofo/com.qihoo.util.StartActivity}"
+        drawable="ofo_bicycler"/>
+    <item
+        component="ComponentInfo{so.ofo.labofo/so.ofo.labofo.activities.journey.JourneyActivity}"
+        drawable="ofo_bicycler"/>
+    <item
+        component="ComponentInfo{com.bloomlife.luobo/com.bloomlife.luobo.activity.SplashActivity}"
+        drawable="luobo_shuzhai"/>
+    <item
+        component="ComponentInfo{com.bloomlife.luobo/com.qihoo.util.StartActivity}"
+        drawable="luobo_shuzhai"/>
+    <item
+        component="ComponentInfo{com.bloomlife.luobo/com.bloomlife.luobo.activity.MainActivity}"
+        drawable="luobo_shuzhai"/>
+    <item
+        component="ComponentInfo{com.google.android.apps.playconsole/com.google.android.apps.playconsole.activity.MainAndroidActivity}"
+        drawable="google_play_console"/>
+    <item
+        component="ComponentInfo{com.google.android.apps.wallpaper/com.google.android.apps.wallpaper.picker.CategoryPickerActivity}"
+        drawable="google_wallpapers"/>
+    <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
     <item
@@ -1498,6 +1530,9 @@
         drawable="google_io"/>
     <item
         component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}"
+        drawable="google_messenger"/>
+    <item
+        component="ComponentInfo{com.google.android.apps.messaging/com.mplus.lib.Main_ff263238}"
         drawable="google_messenger"/>
     <item
         component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}"
@@ -3631,7 +3666,10 @@
         drawable="kmplayer_pro"/>
     <item
         component="ComponentInfo{com.escapistgames.starchart/com.escapistgames.starchartgoogleplay.StarChart}"
-        drawable="start_chart"/>
+        drawable="star_chart"/>
+    <item
+        component="ComponentInfo{com.escapistgames.starchart/com.escapistgames.starchart.StarChart}"
+        drawable="star_chart"/>
     <item
         component="ComponentInfo{com.aliyun.alink/com.aliyun.alink.page.main.MainActivity}"
         drawable="ali_zhineng"/>
@@ -4395,6 +4433,9 @@
         component="ComponentInfo{com.qiyi.video/com.qiyi.video.StartActivity}"
         drawable="iqiyi"/>
     <item
+        component="ComponentInfo{com.qiyi.video/org.qiyi.video.welcome.WelcomeActivity}"
+        drawable="iqiyi"/>
+    <item
         component="ComponentInfo{com.xiaomi.hm.health/com.xiaomi.hm.health.activity.StartUpActivity}"
         drawable="xiaomi_fit"/>
     <item
@@ -4544,4 +4585,41 @@
     <item
         component="ComponentInfo{com.supercell.clashofclans.ewan.kaopu/com.wandoujia.mariosdk.plugin.api.api.SplashActivity}"
         drawable="game_clash_of_clans"/>
+    <item
+        component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.WelcomeActivity}"
+        drawable="cam_scanner"/>
+    <item
+        component="ComponentInfo{com.intsig.BizCardReader/com.intsig.camcard.BcrFirstLaunchGuide}"
+        drawable="cam_card"/>
+    <item
+        component="ComponentInfo{com.stackexchange.marvin/com.stackexchange.marvin.ui.LaunchActivity}"
+        drawable="stack_exchange"/>
+    <item
+        component="ComponentInfo{com.linkedin.android/com.linkedin.android.authenticator.LaunchActivity}"
+        drawable="linkedin"/>
+    <item
+        component="ComponentInfo{com.sonymobile.android.contacts/com.android.contacts.activities.PeopleActivity}"
+        drawable="sony_contacts"/>
+    <item
+        component="ComponentInfo{com.zealer.thefunone/com.qihoo.util.StartActivity}"
+        drawable="okey_dokey"/>
+    <item
+        component="ComponentInfo{com.zealer.thefunone/com.zealer.thefunone.activity.SplashActivity}"
+        drawable="okey_dokey"/>
+    <item
+        component="ComponentInfo{com.sollyu.android.appenv.dev/com.sollyu.android.appenv.activity.SplashActivity}"
+        drawable="appenv"/>
+    <item
+        component="ComponentInfo{com.blizzard.bma.cn/com.blizzard.bma.ui.welcome.SplashActivity}"
+        drawable="blizzard_authenticator"/>
+    <item
+        component="ComponentInfo{com.google.android.spotlightstories/com.google.android.spotlightstories.app.SplashActivity}"
+        drawable="google_spotlight_stories"/>
+    <item
+        component="ComponentInfo{com.google.android.spotlightstories/com.google.android.spotlightstories.app.ui.SplashActivity}"
+        drawable="google_spotlight_stories"/>
+    <item
+        component="ComponentInfo{com.dv.adm/com.dv.adm.Main}"
+        drawable="advance_download_manager"/>
+
 </resources>

@@ -103,9 +103,9 @@ public class FeedbackChatAdapter
             holder.mContainer.setGravity(Gravity.END);
         }
         if (type == TYPE_DEV) {
-            slice.setColor(ResourceUtil.getColor(mContext, R.color.grey_100));
+            slice.setColor(ResourceUtil.getColor(mContext, R.color.palette_grey_100));
         } else {
-            slice.setColor(ResourceUtil.getColor(mContext, R.color.green_100));
+            slice.setColor(ResourceUtil.getColor(mContext, R.color.palette_green_100));
         }
 
         int top, bottom, left, right;
@@ -206,7 +206,7 @@ public class FeedbackChatAdapter
             Glide.with(mContext)
                     .load(comment.getAttachment().getUrl())
                     .placeholder(
-                            new ColorDrawable(ResourceUtil.getColor(mContext, R.color.grey_400)))
+                            new ColorDrawable(ResourceUtil.getColor(mContext, R.color.palette_grey_400)))
                     .into(holder.mImageView);
             holder.mImageView.setOnClickListener(new View.OnClickListener() {
                 @Override

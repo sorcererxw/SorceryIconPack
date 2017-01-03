@@ -99,7 +99,7 @@
                     android:layout_gravity="center"
                     android:elevation="4dp"
                     android:text="@string/thanks"
-                    android:textColor="@color/white"
+                    android:textColor="@color/palette_white"
                     android:textSize="40sp"
                     android:textStyle="bold"/>
             </com.sorcerer.sorcery.iconpack.ui.views.QCardView>

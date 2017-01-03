@@ -67,3 +67,7 @@
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 
 -keep class com.sorcerer.sorcery.iconpack.*
+
+# bugly
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}

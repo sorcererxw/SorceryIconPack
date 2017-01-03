@@ -152,11 +152,11 @@ public class LikeLayout extends FrameLayout {
 
     private void handleFlag(int flag, boolean scale) {
         if (flag == 0) {
-            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
-            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
+            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
+            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
         } else if (flag == 1) {
-            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.pink_500));
-            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
+            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_pink_500));
+            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
             if (scale) {
                 scale(mLikeText, true);
                 scale(mDislikeText, false);
@@ -165,8 +165,8 @@ public class LikeLayout extends FrameLayout {
                 mLikeText.setScaleY(mTimeToScaleLikeImg);
             }
         } else if (flag == -1) {
-            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.grey_500));
-            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.blue_grey_500));
+            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
+            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_blue_grey_500));
             if (scale) {
                 scale(mDislikeText, true);
                 scale(mLikeText, false);

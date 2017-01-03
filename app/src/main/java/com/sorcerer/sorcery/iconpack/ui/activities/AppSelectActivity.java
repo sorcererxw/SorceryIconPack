@@ -30,7 +30,7 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-import com.sorcerer.sorcery.iconpack.utils.ToolbarOnGestureListener;
+import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -80,9 +80,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) {
-                        if (BuildConfig.DEBUG) {
-                            throwable.printStackTrace();
-                        }
+                        Timber.e(throwable);
                     }
                 });
     }
@@ -144,9 +142,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) {
-                        if (BuildConfig.DEBUG) {
-                            throwable.printStackTrace();
-                        }
+                        Timber.e(throwable);
                     }
                 });
     }
@@ -154,10 +150,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     private void setupRecyclerView(List<AppInfo> appInfoList) {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(
-                new LinearLayoutManager(mContext,
-                        LinearLayoutManager.VERTICAL,
-                        false)
-        );
+                new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         mAdapter = new RequestAdapter(mContext, appInfoList);
         mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
             @Override

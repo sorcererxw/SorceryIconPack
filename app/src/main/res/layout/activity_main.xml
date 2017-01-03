@@ -44,7 +44,7 @@
             android:background="@color/primary"
             android:elevation="4dp"
             app:tabIndicatorColor="@color/accent"
-            app:tabSelectedTextColor="@color/white"
+            app:tabSelectedTextColor="@color/palette_white"
             app:tabTextAppearance="@style/TabTextAppearance"
             app:tabTextColor="#C3E4C5"/>
 

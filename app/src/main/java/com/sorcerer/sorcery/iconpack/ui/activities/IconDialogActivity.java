@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -8,6 +10,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -16,24 +19,34 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.net.spiders.AppNameGetter;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
 
 import butterknife.BindView;
 import io.reactivex.Observable;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
+
+import static com.sorcerer.sorcery.iconpack.utils.DisplayUtil.dip2px;
 
 /**
  * @description:
@@ -63,6 +76,8 @@ public class IconDialogActivity extends ToolbarActivity {
     @BindView(R.id.frameLayout_dialog_icon_component_info_container)
     FrameLayout mComponentContainer;
 
+    @BindView(R.id.linearLayout_dialog_title_container)
+    LinearLayout mTitleContainer;
 
     public static final String EXTRA_RES = "EXTRA_RES";
     public static final String EXTRA_NAME = "EXTRA_NAME";
@@ -151,6 +166,7 @@ public class IconDialogActivity extends ToolbarActivity {
                     public void accept(final String component) {
                         mComponent = component;
                         mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                        showRealName(mPackageName);
                         if (mMenu != null) {
                             onCreateOptionsMenu(mMenu);
                         }
@@ -170,6 +186,66 @@ public class IconDialogActivity extends ToolbarActivity {
                                 }
                             }, 500);
                         }
+                    }
+                });
+    }
+
+    private void showRealName(String packageName) {
+        if (packageName == null) {
+            return;
+        }
+        Timber.d(packageName);
+        AppNameGetter.getName(packageName)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .filter(new Predicate<String>() {
+                    @Override
+                    public boolean test(String s) throws Exception {
+                        return s != null && !s.isEmpty();
+                    }
+                })
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(final String appName) {
+                        mTitleTextView.setPivotX(0);
+                        mTitleTextView.setPivotY(1);
+                        mTitleTextView.animate()
+                                .alpha(0.6f)
+                                .scaleY(0.6f)
+                                .scaleX(0.6f)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationStart(Animator animation) {
+                                        TextView textView = new TextView(mContext);
+                                        textView.setTextColor(
+                                                ResourceUtil.getColor(mContext, R.color.title));
+                                        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+                                        textView.setText(appName);
+                                        LayoutParams layoutParams = new LayoutParams(
+                                                ViewGroup.LayoutParams.MATCH_PARENT,
+                                                ViewGroup.LayoutParams.WRAP_CONTENT);
+                                        layoutParams.setMargins(0, dip2px(mContext, 8), 0, 0);
+                                        textView.setLayoutParams(layoutParams);
+                                        mTitleContainer.addView(textView, 0);
+                                        mTitleContainer.requestLayout();
+                                    }
+                                })
+                                .start();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Timber.e(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
                     }
                 });
     }
@@ -237,7 +313,7 @@ public class IconDialogActivity extends ToolbarActivity {
                             (int) mContext.getResources().getDimension(R.dimen.dialog_icon_size)
                     );
                     mOriginImage.setLayoutParams(params);
-                    mOriginImage.setPadding(DisplayUtil.dip2px(mContext, 8), 0, 0, 0);
+                    mOriginImage.setPadding(dip2px(mContext, 8), 0, 0, 0);
                 }
                 if (mRoot.getChildCount() > 1) {
                     mRoot.removeView(mOriginImage);

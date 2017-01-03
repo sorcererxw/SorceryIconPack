@@ -1,6 +1,8 @@
 package com.sorcerer.sorcery.iconpack.net.leancloud;
 
 import android.content.Context;
+import android.speech.tts.TextToSpeech;
+import android.widget.TextSwitcher;
 
 import com.avos.avoscloud.AVAnalytics;
 import com.avos.avoscloud.AVOSCloud;
