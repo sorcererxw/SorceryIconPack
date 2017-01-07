@@ -1,6 +1,13 @@
 package com.sorcerer.sorcery.iconpack;
 
+import com.sorcerer.sorcery.iconpack.net.spiders.AppSearchResultGetter;
+
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import io.reactivex.functions.Consumer;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
@@ -8,8 +15,12 @@ import org.junit.Test;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        String component =
-                "ComponentInfo{com.qihoo.freewifi/com.qihoo.freewifi.activity.WelcomeActivity}";
-        System.out.println(component.substring(14, component.length() - 1));
+        AppSearchResultGetter.search("计算器")
+                .subscribe(new Consumer<List<String>>() {
+                    @Override
+                    public void accept(List<String> strings) throws Exception {
+                        System.out.println(Arrays.toString(strings.toArray()).replace(",", "\n"));
+                    }
+                });
     }
 }

@@ -117,7 +117,6 @@
     <string name="icon_label_added">**最近添加**</string>
     <string name="icon_label_updated">**调整更新**</string>
     <string name="action_show_in_store">前往商店</string>
-    <string name="search_hint">在当前图标页搜索</string>
     <string name="action_give_permission">授权</string>
     <string name="action_show_origin_icon">显示原图标</string>
     <string name="icon_label_please_leave_baidu">**请远离百度**</string>
@@ -187,4 +186,5 @@
     <string name="apply_tip_no_launcher">尚未安装启动器, 是否前往商店安装?</string>
     <string name="apply_tip_only_flyme">仅支持Flyme</string>
     <string name="apply_tip_only_miui">仅支持MIUI</string>
+    <string name="search_edit_hint">搜索图标</string>
 </resources>

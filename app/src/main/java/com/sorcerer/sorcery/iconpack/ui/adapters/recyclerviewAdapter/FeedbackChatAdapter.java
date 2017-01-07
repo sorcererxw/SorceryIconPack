@@ -173,29 +173,21 @@ public class FeedbackChatAdapter
         if (comment.getContent() != null && !comment.getContent().isEmpty()) {
             holder.mTextView.setVisibility(View.VISIBLE);
             holder.mTextView.setText(comment.getContent());
-            holder.mFrame.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-
-                    MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                    builder.title(
-                            mContext.getString(R.string.action_copy_to_clipboard) + " ?");
-                    builder.positiveText(mContext.getString(R.string.action_copy));
-                    builder.negativeText(mContext.getString(R.string.cancel));
-                    builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                        @Override
-                        public void onClick(@NonNull MaterialDialog dialog,
-                                            @NonNull DialogAction which) {
-                            ClipboardManager clipboard = (ClipboardManager) mContext
-                                    .getSystemService(Context.CLIPBOARD_SERVICE);
-                            ClipData clip =
-                                    ClipData.newPlainText("feedback chat", comment.getContent());
-                            clipboard.setPrimaryClip(clip);
-                        }
-                    });
-                    builder.show();
-                    return false;
-                }
+            holder.mFrame.setOnLongClickListener(v -> {
+                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                builder.title(
+                        mContext.getString(R.string.action_copy_to_clipboard) + " ?");
+                builder.positiveText(mContext.getString(R.string.action_copy));
+                builder.negativeText(mContext.getString(R.string.cancel));
+                builder.onPositive((dialog, which) -> {
+                    ClipboardManager clipboard = (ClipboardManager) mContext
+                            .getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip =
+                            ClipData.newPlainText("feedback chat", comment.getContent());
+                    clipboard.setPrimaryClip(clip);
+                });
+                builder.show();
+                return false;
             });
         } else {
             holder.mTextView.setVisibility(View.GONE);
@@ -206,14 +198,11 @@ public class FeedbackChatAdapter
             Glide.with(mContext)
                     .load(comment.getAttachment().getUrl())
                     .placeholder(
-                            new ColorDrawable(ResourceUtil.getColor(mContext, R.color.palette_grey_400)))
+                            new ColorDrawable(
+                                    ResourceUtil.getColor(mContext, R.color.palette_grey_400)))
                     .into(holder.mImageView);
-            holder.mImageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PhotoViewActivity.startActivity(mContext, comment.getAttachment().getUrl());
-                }
-            });
+            holder.mImageView.setOnClickListener(v -> PhotoViewActivity
+                    .startActivity(mContext, comment.getAttachment().getUrl()));
         } else {
             holder.mImageView.setVisibility(View.GONE);
         }

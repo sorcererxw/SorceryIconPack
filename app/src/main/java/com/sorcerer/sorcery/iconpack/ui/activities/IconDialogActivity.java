@@ -198,12 +198,7 @@ public class IconDialogActivity extends ToolbarActivity {
         AppNameGetter.getName(packageName)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .filter(new Predicate<String>() {
-                    @Override
-                    public boolean test(String s) throws Exception {
-                        return s != null && !s.isEmpty();
-                    }
-                })
+                .filter(s -> s != null && !s.isEmpty())
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -256,6 +251,12 @@ public class IconDialogActivity extends ToolbarActivity {
         if (Build.VERSION.SDK_INT < 21) {
             overridePendingTransition(0, R.anim.fast_fade_out);
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 
     private Menu mMenu;

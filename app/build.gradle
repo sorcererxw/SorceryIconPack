@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
@@ -16,9 +17,14 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.0." + code + " Nightly20170103"
+        versionName "4.0." + code + " Nightly20170107"
         minSdkVersion 16
         targetSdkVersion 25
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -96,4 +102,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     // jsoup
     compile 'org.jsoup:jsoup:1.10.2'
+    // stream on java7
+    compile 'com.annimon:stream:1.1.4'
 }

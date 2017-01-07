@@ -8,23 +8,19 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.view.Display;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.IconBean;
-import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.SearchAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.WebSearchAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.FadeInTransition;
 import com.sorcerer.sorcery.iconpack.ui.others.FadeOutTransition;
 import com.sorcerer.sorcery.iconpack.ui.others.SearchTransitioner;
@@ -32,21 +28,21 @@ import com.sorcerer.sorcery.iconpack.ui.others.SimpleTransitionListener;
 import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBar;
 import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.sorcerer.sorcery.iconpack.utils.SimpleTextWatcher;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static android.view.View.GONE;
@@ -70,27 +66,35 @@ public class SearchActivity extends AppCompatActivity {
     @BindView(R.id.textView_search_hint)
     TextView mHintTextView;
 
-    private SearchAdapter mAdapter;
-    private GridLayoutManager mLayoutManager;
+    private WebSearchAdapter mAdapter;
 
     private ViewFader mViewFader = new ViewFader();
 
-    SearchAdapter.SearchCallback mSearchCallback = new SearchAdapter.SearchCallback() {
+    public interface SearchCallback {
+        void call(int code);
+    }
+
+    public static final int SEARCH_CODE_OK = 0x0;
+    public static final int SEARCH_CODE_INVALID_INPUT = 0x1;
+    public static final int SEARCH_CODE_EMPTY = 0x2;
+    public static final int SEARCH_CODE_NOT_FOUND = 0x3;
+
+    SearchCallback mSearchCallback = new SearchCallback() {
         @Override
         public void call(int code) {
             switch (code) {
-                case SearchAdapter.SEARCH_CODE_EMPTY:
+                case SEARCH_CODE_EMPTY:
                     mRecyclerView.setVisibility(INVISIBLE);
                     mHintTextView.setVisibility(GONE);
                     mSearchGraphic.setVisibility(VISIBLE);
                     break;
-                case SearchAdapter.SEARCH_CODE_INVALID_INPUT:
+                case SEARCH_CODE_INVALID_INPUT:
                     mRecyclerView.setVisibility(INVISIBLE);
                     mHintTextView.setText(R.string.search_hint_only_letter);
                     mHintTextView.setVisibility(View.VISIBLE);
                     mSearchGraphic.setVisibility(GONE);
                     break;
-                case SearchAdapter.SEARCH_CODE_NOT_FOUND:
+                case SEARCH_CODE_NOT_FOUND:
                     mRecyclerView.setVisibility(INVISIBLE);
                     mHintTextView.setText(ResourceUtil.getString(SearchActivity.this,
                             R.string.search_hint_not_found)
@@ -104,6 +108,7 @@ public class SearchActivity extends AppCompatActivity {
                     mSearchGraphic.setVisibility(GONE);
                     mAdapter.notifyDataSetChanged();
             }
+            mSearchBar.setSearching(false);
         }
     };
 
@@ -114,7 +119,9 @@ public class SearchActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(mSearchBar);
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
         if (savedInstanceState == null && SearchTransitioner.supportTransitions()) {
             mViewFader.hideContentOf(mSearchBar);
             ViewTreeObserver viewTreeObserver = mSearchBar.getViewTreeObserver();
@@ -139,62 +146,48 @@ public class SearchActivity extends AppCompatActivity {
             mContent.animate().alpha(1).setDuration(250).start();
         }
 
-        mSearchBar.addTextWatcher(new SimpleTextWatcher() {
+        mSearchBar.setSearchListener(text -> {
+            if (text != null && text.length() > 0) {
+                mSearchGraphic.setVisibility(GONE);
+            } else {
+                mSearchGraphic.setVisibility(VISIBLE);
+            }
 
-            @Override
-            public void afterTextChanged(final Editable editable) {
-                super.afterTextChanged(editable);
-                if (editable != null && editable.length() > 0) {
-                    mSearchGraphic.setVisibility(GONE);
-                } else {
-                    mSearchGraphic.setVisibility(VISIBLE);
-                }
-
-                if (editable == null) {
-                    mAdapter.search(null, mSearchCallback);
-                } else {
-                    mAdapter.search(editable.toString().toLowerCase(), mSearchCallback);
-                }
+            mSearchBar.setSearching(true);
+            if (text == null) {
+                mAdapter.search(null);
+            } else {
+                mAdapter.search(text.toLowerCase());
             }
         });
 
-
-        mAdapter = new SearchAdapter(this);
+        mAdapter = new WebSearchAdapter(this);
+        mAdapter.setSearchCallback(mSearchCallback);
         mAdapter.setCustomPicker(getIntent().getBooleanExtra("custom picker", false));
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
 
         int spanCount = calSpanCount(this);
-        mLayoutManager = new GridLayoutManager(this, spanCount, VERTICAL, false);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, spanCount, VERTICAL, false);
+        mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setNestedScrollingEnabled(false);
-        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                KeyboardUtil.closeKeyboard(SearchActivity.this);
-                return false;
-            }
+        mRecyclerView.setOnTouchListener((view, motionEvent) -> {
+            KeyboardUtil.closeKeyboard(SearchActivity.this);
+            return false;
         });
 
-        mSearchBar.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSearchBar.requestEditTextFocus();
-            }
-        }, 250);
+        mSearchBar.setHint(ResourceUtil.getString(this, R.string.search_edit_hint));
+        mSearchBar.postDelayed(() -> mSearchBar.requestEditTextFocus(), 250);
 
-        getIconBeanList();
+        initAdapterData();
     }
 
     @Override
     public void finish() {
         if (SearchTransitioner.supportTransitions()) {
-            exitTransitionWithAction(new Runnable() {
-                @Override
-                public void run() {
-                    SearchActivity.super.finish();
-                    overridePendingTransition(0, 0);
-                }
+            exitTransitionWithAction(() -> {
+                SearchActivity.super.finish();
+                overridePendingTransition(0, 0);
             });
         } else {
             super.finish();
@@ -241,55 +234,20 @@ public class SearchActivity extends AppCompatActivity {
         mContent.animate().alpha(0).setDuration(250).start();
     }
 
-    private void getIconBeanList() {
-        Observable.create(new ObservableOnSubscribe<List<IconBean>>() {
+    private void initAdapterData() {
+        Observable.create(new ObservableOnSubscribe<Map<String, List<String>>>() {
             @Override
-            public void subscribe(ObservableEmitter<List<IconBean>> emitter) throws Exception {
-                List<IconBean> list = new ArrayList<>();
-                for (String name : ResourceUtil.getStringArray(SearchActivity.this, "icon_pack")) {
-                    if (name.startsWith("**")) {
-                        continue;
-                    }
-                    IconBean iconBean = new IconBean(name);
-                    int res = getResources().getIdentifier(name, "drawable", getPackageName());
-                    if (res != 0) {
-                        final int thumbRes =
-                                getResources().getIdentifier(name, "drawable", getPackageName());
-                        if (thumbRes != 0) {
-                            iconBean.setRes(thumbRes);
-                        }
-                    }
-                    list.add(iconBean);
-                }
-                emitter.onNext(list);
+            public void subscribe(ObservableEmitter<Map<String, List<String>>> e) throws Exception {
+                e.onNext(PackageUtil.getPackageWithDrawableList(SearchActivity.this));
             }
         })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<IconBean>>() {
-
-                    @Override
-                    public void onError(Throwable e) {
-                        if (BuildConfig.DEBUG) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(List<IconBean> iconBeen) {
-                        mAdapter.setData(iconBeen);
-                        mAdapter.search(mSearchBar.getText(), mSearchCallback);
-                    }
-                });
+                .subscribe(stringStringMap -> {
+                    Timber.d(Arrays.toString(stringStringMap.entrySet().toArray())
+                            .replace(",", "\n"));
+                    mAdapter.setPackageDrawableMap(stringStringMap);
+                    mAdapter.search(mSearchBar.getText());
+                }, Timber::d);
     }
 }

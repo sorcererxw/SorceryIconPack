@@ -215,21 +215,18 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             final IconViewHolder iconHolder = (IconViewHolder) holder;
 
             if (iconBean != null) {
-                iconHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (!mCustomPicker) {
-                            KeyboardUtil.closeKeyboard((Activity) mContext);
-                            if (mClicked) {
-                                return;
-                            }
-                            lock(view);
-                            showIconDialog(iconHolder, iconHolder.getAdapterPosition());
-                        } else {
-                            KeyboardUtil.closeKeyboard((Activity) mContext);
-                            ((MainActivity) mActivity).onReturnCustomPickerRes(
-                                    mShowList.get(iconHolder.getAdapterPosition()).first.getRes());
+                iconHolder.itemView.setOnClickListener(view -> {
+                    if (!mCustomPicker) {
+                        KeyboardUtil.closeKeyboard((Activity) mContext);
+                        if (mClicked) {
+                            return;
                         }
+                        lock(view);
+                        showIconDialog(iconHolder, iconHolder.getAdapterPosition());
+                    } else {
+                        KeyboardUtil.closeKeyboard((Activity) mContext);
+                        ((MainActivity) mActivity).onReturnCustomPickerRes(
+                                mShowList.get(iconHolder.getAdapterPosition()).first.getRes());
                     }
                 });
                 mGlideRequestManager.load(iconBean.getRes()).into(iconHolder.mIcon);
@@ -332,12 +329,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private void lock(View v) {
         mClicked = true;
 
-        v.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mClicked = false;
-            }
-        }, 500);
+        v.postDelayed(() -> mClicked = false, 500);
     }
 
     public boolean isItemHead(int position) {

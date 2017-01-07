@@ -66,8 +66,15 @@
 }
 #-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 
--keep class com.sorcerer.sorcery.iconpack.*
-
 # bugly
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
+
+-dontwarn java.lang.invoke.*
+
+-obfuscationdictionary dictionary-elder.txt
+
+-keep class com.sorcerer.sorcery.iconpack.**
+-keep class com.sorcerer.sorcery.iconpack.**$**{
+    *;
+}

@@ -2,6 +2,21 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>evie_launcher</item>
+        <item>google_earth</item>
+        <item>cmbchina_bank</item>
+        <item>game_mihoyo_bh_3</item>
+        <item>tantan</item>
+        <item>settings_alt_pixel_blue</item>
+        <item>automatag</item>
+        <item>los_changelog</item>
+        <item>google_android_pay</item>
+        <item>island</item>
+        <item>ampere</item>
+        <item>paypal</item>
+        <item>iqiyi</item>
+        <item>terminal_emulator</item>
+        <item>game_solitaire_decked_out</item>
         <item>google_wallpapers</item>
         <item>google_wallpapers_alt</item>
         <item>google_play_console</item>
@@ -15,9 +30,16 @@
         <item>stack_exchange</item>
         <item>cam_card</item>
         <item>cam_scanner</item>
+        <item>flipboard</item>
+        <item>flipboard_lite</item>
+        <item>flipboard_china</item>
+        <item>zarchiver</item>
+        <item>weloop</item>
 
         <item>@string/icon_label_updated</item>
         <item>microsoft_solitaire</item>
+        <item>firefox_beta</item>
+        <item>firefox</item>
         <item>google_play_games</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
@@ -114,6 +136,7 @@
     <string-array name="icon_pack_google" translatable="false">
         <item>google</item>
         <item>google_allo</item>
+        <item>google_android_pay</item>
         <item>google_arts</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
@@ -156,6 +179,7 @@
         <item>google_docs</item>
         <item>google_drive</item>
         <item>google_duo</item>
+        <item>google_earth</item>
         <item>google_hangouts</item>
         <item>google_io</item>
         <item>google_keep</item>
@@ -169,8 +193,10 @@
         <item>google_now_launcher</item>
         <item>google_photos</item>
         <item>google_photos_alt</item>
+        <item>google_photos_alt_2</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
+        <item>google_play_console</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
         <item>google_play_music</item>
@@ -184,6 +210,8 @@
         <item>google_spotlight_stories</item>
         <item>google_translate</item>
         <item>google_voice_search</item>
+        <item>google_wallpapers</item>
+        <item>google_wallpapers_alt</item>
         <item>google_youtube</item>
         <item>google_youtube_music</item>
     </string-array>
@@ -644,6 +672,7 @@
         <item>almalence_camera</item>
         <item>amap</item>
         <item>amazon_shopping</item>
+        <item>ampere</item>
         <item>android_nify</item>
         <item>anime_taste</item>
         <item>anydo</item>
@@ -660,7 +689,9 @@
         <item>app_lock</item>
         <item>app_settings</item>
         <item>atom_vpn</item>
+        <item>autodesk_pixlr</item>
         <item>autohome</item>
+        <item>automatag</item>
         <item>aviate_launcher</item>
         <item>**B**</item>
         <item>b612</item>
@@ -728,6 +759,8 @@
         <item>caller_info</item>
         <item>call_vibrator</item>
         <item>camera</item>
+        <item>cam_card</item>
+        <item>cam_scanner</item>
         <item>careland</item>
         <item>ccb_atm_mobilepay</item>
         <item>ccb_bank</item>
@@ -745,6 +778,7 @@
         <item>clip_stack</item>
         <item>clock</item>
         <item>cloud_vpn</item>
+        <item>cmbchina_bank</item>
         <item>cmbc_bank</item>
         <item>cmcc_wifi</item>
         <item>cntv</item>
@@ -820,6 +854,7 @@
         <item>evernote_alt</item>
         <item>evernote_alt_2</item>
         <item>every_wiki</item>
+        <item>evie_launcher</item>
         <item>express_100</item>
         <item>**F**</item>
         <item>facebook</item>
@@ -839,6 +874,9 @@
         <item>flat_style_bar_indicators</item>
         <item>flat_style_colored_bars</item>
         <item>flickr</item>
+        <item>flipboard</item>
+        <item>flipboard_china</item>
+        <item>flipboard_lite</item>
         <item>floatify</item>
         <item>flow_bank</item>
         <item>flyme</item>
@@ -922,6 +960,7 @@
         <item>flyme_wallet</item>
         <item>flyme_weather</item>
         <item>flyme_weather_alt</item>
+        <item>fm_radio</item>
         <item>foodie</item>
         <item>forest</item>
         <item>fulimanman</item>
@@ -937,9 +976,11 @@
         <item>game_heartstone</item>
         <item>game_maestria</item>
         <item>game_mekorama</item>
+        <item>game_mihoyo_bh_3</item>
         <item>game_netease_onmyoji</item>
         <item>game_prune</item>
         <item>game_snake</item>
+        <item>game_solitaire_decked_out</item>
         <item>game_tencent_hlddz</item>
         <item>game_tencent_xiangqi</item>
         <item>game_the_last_banacat</item>
@@ -955,6 +996,7 @@
         <item>golden_dict</item>
         <item>google</item>
         <item>google_allo</item>
+        <item>google_android_pay</item>
         <item>google_arts</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
@@ -997,6 +1039,7 @@
         <item>google_docs</item>
         <item>google_drive</item>
         <item>google_duo</item>
+        <item>google_earth</item>
         <item>google_hangouts</item>
         <item>google_io</item>
         <item>google_keep</item>
@@ -1010,8 +1053,10 @@
         <item>google_now_launcher</item>
         <item>google_photos</item>
         <item>google_photos_alt</item>
+        <item>google_photos_alt_2</item>
         <item>google_pinyin_keyboard</item>
         <item>google_play_books</item>
+        <item>google_play_console</item>
         <item>google_play_games</item>
         <item>google_play_movies</item>
         <item>google_play_music</item>
@@ -1025,6 +1070,8 @@
         <item>google_spotlight_stories</item>
         <item>google_translate</item>
         <item>google_voice_search</item>
+        <item>google_wallpapers</item>
+        <item>google_wallpapers_alt</item>
         <item>google_youtube</item>
         <item>google_youtube_music</item>
         <item>gravity_box</item>
@@ -1074,7 +1121,9 @@
         <item>instagram</item>
         <item>instagram_alt</item>
         <item>iqiyi</item>
+        <item>iqiyi_alt</item>
         <item>ireader</item>
+        <item>island</item>
         <item>it_home</item>
         <item>**J**</item>
         <item>jd</item>
@@ -1136,10 +1185,13 @@
         <item>line_dict</item>
         <item>lingshengduoduo</item>
         <item>lingxi</item>
+        <item>linkedin</item>
         <item>lizhi_fm</item>
         <item>lol</item>
+        <item>los_changelog</item>
         <item>love_best_wallpapers</item>
         <item>luckymoney</item>
+        <item>luobo_shuzhai</item>
         <item>luyinbao</item>
         <item>lvmamalvyou</item>
         <item>**M**</item>
@@ -1249,6 +1301,8 @@
         <item>nova_launcher_tesla_unread</item>
         <item>**O**</item>
         <item>office_suite</item>
+        <item>ofo_bicycler</item>
+        <item>okey_dokey</item>
         <item>olo</item>
         <item>olympus_image_share</item>
         <item>one</item>
@@ -1305,6 +1359,7 @@
         <item>**P**</item>
         <item>panda_tv</item>
         <item>path</item>
+        <item>paypal</item>
         <item>pebble</item>
         <item>pengpai_news</item>
         <item>perfect_color_bar</item>
@@ -1383,6 +1438,7 @@
         <item>search_by_image</item>
         <item>seed</item>
         <item>settings</item>
+        <item>settings_alt_pixel_blue</item>
         <item>settings_editor</item>
         <item>sfly</item>
         <item>shadowsocks</item>
@@ -1456,9 +1512,10 @@
         <item>spotify_alt</item>
         <item>sspai</item>
         <item>sspai_daikejietu</item>
+        <item>stack_exchange</item>
         <item>starbucks</item>
-        <item>start_chart</item>
-        <item>start_chart_education</item>
+        <item>star_chart</item>
+        <item>star_chart_education</item>
         <item>star_walk_2</item>
         <item>steam</item>
         <item>suibiji</item>
@@ -1502,6 +1559,7 @@
         <item>swiftkey_keyboard</item>
         <item>**T**</item>
         <item>t66y</item>
+        <item>tantan</item>
         <item>taptap</item>
         <item>taskman</item>
         <item>teamviewer_host_for_samsung</item>
@@ -1541,6 +1599,7 @@
         <item>tencent_weread</item>
         <item>tencent_wesync</item>
         <item>terminal</item>
+        <item>terminal_emulator</item>
         <item>theinitium</item>
         <item>tianshidongman</item>
         <item>tianyashequ</item>
@@ -1605,6 +1664,7 @@
         <item>weibo</item>
         <item>weico</item>
         <item>welike</item>
+        <item>weloop</item>
         <item>welove</item>
         <item>whatsapp_messenger</item>
         <item>wififenxiangxia</item>
@@ -1753,6 +1813,7 @@
         <item>**Z**</item>
         <item>zaker</item>
         <item>zank</item>
+        <item>zarchiver</item>
         <item>zcamera</item>
         <item>zealer</item>
         <item>zedge</item>
@@ -1786,4 +1847,5 @@
         <item>zuizuimanhua_comic_lover</item>
         <item>zuzhiyunxing</item>
     </string-array>
+
 </resources>

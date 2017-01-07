@@ -30,7 +30,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
@@ -257,17 +256,9 @@ public class LazyIconFragment extends LazyFragment {
         })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<List<IconBean>>() {
-                    @Override
-                    public void accept(List<IconBean> list) {
-                        mIconBeanList = list;
-                        init();
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) {
-                        Timber.e(throwable);
-                    }
-                });
+                .subscribe(list -> {
+                    mIconBeanList = list;
+                    init();
+                }, Timber::e);
     }
 }

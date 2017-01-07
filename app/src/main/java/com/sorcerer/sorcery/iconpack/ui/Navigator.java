@@ -39,13 +39,10 @@ public class Navigator {
                     .startIntent(new Intent(mActivity, SearchActivity.class)
                             .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                             .putExtra("custom picker", mainActivity.isCustomPicker()))
-                    .subscribe(new Consumer<Result<Activity>>() {
-                        @Override
-                        public void accept(Result result) {
-                            if (result.data() != null) {
-                                mainActivity.onReturnCustomPickerRes(
-                                        result.data().getIntExtra("icon res", 0));
-                            }
+                    .subscribe(result -> {
+                        if (result.data() != null) {
+                            mainActivity.onReturnCustomPickerRes(
+                                    result.data().getIntExtra("icon res", 0));
                         }
                     });
         } else {

@@ -70,19 +70,11 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         RxPermissions.getInstance(this)
                 .request(Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) {
-                        if (aBoolean) {
-                            save(mAdapter.getCheckedAppsList());
-                        }
+                .subscribe(aBoolean -> {
+                    if (aBoolean) {
+                        save(mAdapter.getCheckedAppsList());
                     }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) {
-                        Timber.e(throwable);
-                    }
-                });
+                }, Timber::e);
     }
 
     private RequestAdapter mAdapter;
@@ -109,12 +101,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
         setToolbarCloseIndicator();
 
-        setToolbarDoubleTapListener(new ToolbarOnGestureListener.DoubleTapListener() {
-            @Override
-            public void onDoubleTap() {
-                mRecyclerView.smoothScrollToPosition(0);
-            }
-        });
+        setToolbarDoubleTapListener(() -> mRecyclerView.smoothScrollToPosition(0));
 
         menuEnable = false;
 
@@ -126,25 +113,17 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<List<AppInfo>>() {
-                    @Override
-                    public void accept(List<AppInfo> list) {
-                        setupRecyclerView(list);
+                .subscribe(list -> {
+                    setupRecyclerView(list);
 
-                        dismissIndicator();
-                        showRecyclerView();
+                    dismissIndicator();
+                    showRecyclerView();
 
-                        menuEnable = true;
-                        if (mMenu != null) {
-                            onCreateOptionsMenu(mMenu);
-                        }
+                    menuEnable = true;
+                    if (mMenu != null) {
+                        onCreateOptionsMenu(mMenu);
                     }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) {
-                        Timber.e(throwable);
-                    }
-                });
+                }, Timber::e);
     }
 
     private void setupRecyclerView(List<AppInfo> appInfoList) {
@@ -187,12 +166,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     public void onBackPressed() {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
         builder.content(getString(R.string.cancel_request));
-        builder.onAny(new MaterialDialog.SingleButtonCallback() {
-            @Override
-            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                if (which == DialogAction.POSITIVE) {
-                    back();
-                }
+        builder.onAny((dialog, which) -> {
+            if (which == DialogAction.POSITIVE) {
+                back();
             }
         });
         builder.positiveText(getString(R.string.yes));

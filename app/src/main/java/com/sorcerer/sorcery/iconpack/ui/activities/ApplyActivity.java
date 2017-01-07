@@ -53,60 +53,53 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
     private GridLayoutManager[] mGridLayoutManagers = new GridLayoutManager[3];
 
     private ApplyAdapter.OnApplyItemClickListener mOnApplyItemClickListener =
-            new ApplyAdapter.OnApplyItemClickListener() {
-                @Override
-                public void click(final LauncherInfo item) {
-                    if (!item.isInstalled()) {
-                        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                        if (item.getLabel().toLowerCase().equals("flyme")) {
-                            builder.content(R.string.apply_tip_only_flyme)
-                                    .positiveText(R.string.ok);
-                        } else if (item.getLabel().toLowerCase().equals("miui")) {
-                            builder.content(R.string.apply_tip_only_miui)
-                                    .positiveText(R.string.ok);
-                        } else {
-                            builder.content(R.string.apply_tip_no_launcher)
-                                    .positiveText(R.string.ok).negativeText(R.string.cancel)
-                                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                        @Override
-                                        public void onClick(@NonNull MaterialDialog dialog,
-                                                            @NonNull DialogAction which) {
-                                            final String appPackageName = item.getPackageName();
-                                            try {
-                                                startActivity(new Intent(Intent.ACTION_VIEW,
-                                                        Uri.parse("market://details?id="
-                                                                + appPackageName)));
-                                            } catch (android.content.ActivityNotFoundException e) {
-                                                startActivity(new Intent(Intent.ACTION_VIEW,
-                                                        Uri.parse(
-                                                                "https://play.google.com/store/apps/details?id="
-                                                                        + appPackageName)));
-                                            }
-                                        }
-                                    });
-                        }
-                        builder.build().show();
-                        return;
-                    }
+            item -> {
+                if (!item.isInstalled()) {
+                    MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
                     if (item.getLabel().toLowerCase().equals("flyme")) {
-                        Intent intent = new Intent();
-                        intent.setComponent(
-                                new ComponentName("com.meizu.customizecenter",
-                                        "com.meizu.customizecenter.OnlineThemeActivity"));
-                        intent.putExtra("ONLINE_THEME_WAY", "ONLINE_WAY_URL");
-                        intent.putExtra("URL", "/themes/public/detail/3000115");
-                        intent.putExtra("search_content_type", "themes");
-                        intent.putExtra("position", 0);
-                        intent.putExtra("search_action", "click_history_label");
-                        intent.putExtra("event_path", "OneSearchActivity");
-                        intent.putExtra("search_content", "Sorcery");
-                        intent.putExtra("search_id", "cbe31a19-ac0f-4d86-b8a3-2077fc132088");
-                        startActivity(intent);
+                        builder.content(R.string.apply_tip_only_flyme)
+                                .positiveText(R.string.ok);
                     } else if (item.getLabel().toLowerCase().equals("miui")) {
-
+                        builder.content(R.string.apply_tip_only_miui)
+                                .positiveText(R.string.ok);
                     } else {
-                        new LauncherIntents(ApplyActivity.this, item.getLabel());
+                        builder.content(R.string.apply_tip_no_launcher)
+                                .positiveText(R.string.ok).negativeText(R.string.cancel)
+                                .onPositive((dialog, which) -> {
+                                    final String appPackageName = item.getPackageName();
+                                    try {
+                                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                                Uri.parse("market://details?id="
+                                                        + appPackageName)));
+                                    } catch (android.content.ActivityNotFoundException e) {
+                                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                                Uri.parse(
+                                                        "https://play.google.com/store/apps/details?id="
+                                                                + appPackageName)));
+                                    }
+                                });
                     }
+                    builder.build().show();
+                    return;
+                }
+                if (item.getLabel().toLowerCase().equals("flyme")) {
+                    Intent intent = new Intent();
+                    intent.setComponent(
+                            new ComponentName("com.meizu.customizecenter",
+                                    "com.meizu.customizecenter.OnlineThemeActivity"));
+                    intent.putExtra("ONLINE_THEME_WAY", "ONLINE_WAY_URL");
+                    intent.putExtra("URL", "/themes/public/detail/3000115");
+                    intent.putExtra("search_content_type", "themes");
+                    intent.putExtra("position", 0);
+                    intent.putExtra("search_action", "click_history_label");
+                    intent.putExtra("event_path", "OneSearchActivity");
+                    intent.putExtra("search_content", "Sorcery");
+                    intent.putExtra("search_id", "cbe31a19-ac0f-4d86-b8a3-2077fc132088");
+                    startActivity(intent);
+                } else if (item.getLabel().toLowerCase().equals("miui")) {
+
+                } else {
+                    new LauncherIntents(ApplyActivity.this, item.getLabel());
                 }
             };
 

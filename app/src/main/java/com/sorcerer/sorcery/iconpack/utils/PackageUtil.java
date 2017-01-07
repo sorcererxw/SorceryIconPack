@@ -24,9 +24,11 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import timber.log.Timber;
 
@@ -62,19 +64,16 @@ public class PackageUtil {
             }
             appInfoList.add(tempAppInfo);
         }
-        Collections.sort(appInfoList, new Comparator<AppInfo>() {
-            @Override
-            public int compare(AppInfo lhs, AppInfo rhs) {
-                try {
-                    String s1 = new String(lhs.getName().getBytes("GB2312"), "ISO-8859-1");
-                    String s2 = new String(rhs.getName().getBytes("GB2312"), "ISO-8859-1");
-                    return s1.compareTo(s2);
-                } catch (UnsupportedEncodingException e) {
-                    if (BuildConfig.DEBUG) {
-                        e.printStackTrace();
-                    }
-                    return lhs.getName().compareTo(rhs.getName());
+        Collections.sort(appInfoList, (lhs, rhs) -> {
+            try {
+                String s1 = new String(lhs.getName().getBytes("GB2312"), "ISO-8859-1");
+                String s2 = new String(rhs.getName().getBytes("GB2312"), "ISO-8859-1");
+                return s1.compareTo(s2);
+            } catch (UnsupportedEncodingException e) {
+                if (BuildConfig.DEBUG) {
+                    e.printStackTrace();
                 }
+                return lhs.getName().compareTo(rhs.getName());
             }
         });
         return appInfoList;
@@ -87,7 +86,7 @@ public class PackageUtil {
             intent.addCategory("android.intent.category.HOME");
             return localPackageManager.resolveActivity(intent,
                     PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
-        }catch (Exception e){
+        } catch (Exception e) {
             Timber.e(e);
             return "";
         }
@@ -173,6 +172,98 @@ public class PackageUtil {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public static Map<String, List<String>> getIconWithPackageList(Context context) {
+        Map<String, List<String>> map = new HashMap<>();
+        int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
+        XmlResourceParser parser = context.getResources().getXml(i);
+        int eventType;
+        try {
+            eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        if (parser.getName().equals("item")) {
+                            String drawable = parser.getAttributeValue(null, "drawable");
+                            String component =
+                                    parser.getAttributeValue(null, "component").substring(14);
+                            try {
+                                if (component.charAt(0) != ':') {
+                                    String packageName = component.split("/")[0];
+                                    if (!map.containsKey(drawable)) {
+                                        map.put(drawable, new ArrayList<>());
+                                    }
+                                    List<String> packageList = map.get(drawable);
+                                    if (!packageList.contains(packageName)) {
+                                        packageList.add(packageName);
+                                        map.put(drawable, packageList);
+                                    }
+                                }
+                            } catch (Exception e) {
+                                Timber.e(e);
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+        return map;
+    }
+
+    public static Map<String, List<String>> getPackageWithDrawableList(Context context) {
+        Map<String, List<String>> map = new HashMap<>();
+        int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
+        XmlResourceParser parser = context.getResources().getXml(i);
+        int eventType;
+        try {
+            eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        if (parser.getName().equals("item")) {
+                            String drawable = parser.getAttributeValue(null, "drawable");
+                            String component = parser.getAttributeValue(null, "component");
+                            if (component.startsWith(":")) {
+                                break;
+                            }
+                            Timber.d(component);
+                            component = component.substring(14);
+                            try {
+                                if (component.charAt(0) != ':') {
+                                    String packageName = component.split("/")[0];
+                                    if (!map.containsKey(packageName)) {
+                                        map.put(packageName, new ArrayList<>());
+                                    }
+                                    List<String> drawableList = map.get(packageName);
+                                    if (!drawableList.contains(drawable)) {
+                                        drawableList.add(drawable);
+                                    }
+                                    map.put(packageName, drawableList);
+                                }
+                            } catch (Exception e) {
+                                Timber.e(e);
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+        return map;
     }
 
     public static boolean isLauncherInstalled(Context context, String packageName) {

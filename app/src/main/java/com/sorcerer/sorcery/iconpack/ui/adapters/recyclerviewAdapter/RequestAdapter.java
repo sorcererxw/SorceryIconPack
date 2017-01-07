@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
@@ -141,26 +142,18 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     public void onBindViewHolder(final AppItemViewHolder holder, int position) {
         final int realPos = getItem(position);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.check.setChecked(!holder.check.isChecked());
-            }
-        });
+        holder.itemView.setOnClickListener(v -> holder.check.setChecked(!holder.check.isChecked()));
         holder.check.setOnCheckedChangeListener(null);
         holder.check.setChecked(mAppInfoList.get(realPos).isChecked());
-        holder.check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mAppInfoList.get(realPos).setChecked(isChecked);
-                if (isChecked) {
-                    if (getCheckedCount() >= 1 && mOnCheckListener != null) {
-                        mOnCheckListener.OnUnEmpty();
-                    }
-                } else {
-                    if (getCheckedCount() == 0 && mOnCheckListener != null) {
-                        mOnCheckListener.OnEmpty();
-                    }
+        holder.check.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            mAppInfoList.get(realPos).setChecked(isChecked);
+            if (isChecked) {
+                if (getCheckedCount() >= 1 && mOnCheckListener != null) {
+                    mOnCheckListener.OnUnEmpty();
+                }
+            } else {
+                if (getCheckedCount() == 0 && mOnCheckListener != null) {
+                    mOnCheckListener.OnEmpty();
                 }
             }
         });
@@ -244,22 +237,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     }
 
     public List<AppInfo> getCheckedAppsList() {
-        List<AppInfo> list = new ArrayList<>();
-        for (CheckAppInfo cai : mAppInfoList) {
-            if (cai.isChecked()) {
-                list.add(cai);
-            }
-        }
-        return list;
+        return Stream.of(mAppInfoList).filter(CheckAppInfo::isChecked).collect(Collectors.toList());
     }
 
     public void uncheckAfterSend() {
-        for (CheckAppInfo cai : mAppInfoList) {
-            if (cai.isChecked()) {
-                cai.setChecked(false);
-                cai.setRequestedTimes(-1);
-            }
-        }
+        Stream.of(mAppInfoList).filter(CheckAppInfo::isChecked).forEach(cai -> {
+            cai.setChecked(false);
+            cai.setRequestedTimes(-1);
+        });
         notifyDataSetChanged();
     }
 
@@ -291,11 +276,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         mAppInfoList.addAll(tmp);
         notifyDataSetChanged();
         if (!isShowAll) {
-            for (CheckAppInfo cai : mAppInfoList) {
-                if (cai.isChecked() && cai.isHasCustomIcon()) {
-                    cai.setChecked(false);
-                }
-            }
+            Stream.of(mAppInfoList).filter(cai -> cai.isChecked() && cai.isHasCustomIcon())
+                    .forEach(cai -> cai.setChecked(false));
             if (getCheckedCount() == 0) {
                 mOnCheckListener.OnEmpty();
             }

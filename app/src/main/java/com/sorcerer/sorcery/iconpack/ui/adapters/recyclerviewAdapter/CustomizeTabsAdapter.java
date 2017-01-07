@@ -50,13 +50,9 @@ public class CustomizeTabsAdapter extends RecyclerView.Adapter<CustomizeTabsAdap
                 .getStringFromResString(mContext, "tab_" + mFlags[position].name().toLowerCase()));
         holder.checkBox
                 .setChecked(mPrefs.isTabShow(mFlags[position].name().toLowerCase()).getValue());
-        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                mPrefs.isTabShow(mFlags[holder.getAdapterPosition()].name().toLowerCase())
-                        .setValue(b);
-            }
-        });
+        holder.checkBox.setOnCheckedChangeListener(
+                (compoundButton, b) -> mPrefs.isTabShow(mFlags[holder.getAdapterPosition()].name().toLowerCase())
+                        .setValue(b));
     }
 
     @Override
@@ -71,15 +67,10 @@ public class CustomizeTabsAdapter extends RecyclerView.Adapter<CustomizeTabsAdap
         @BindView(R.id.checkBox_item_customize_tabs_check)
         CheckBox checkBox;
 
-        public TabViewHolder(View itemView) {
+        TabViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    checkBox.setChecked(!checkBox.isChecked());
-                }
-            });
+            itemView.setOnClickListener(view -> checkBox.setChecked(!checkBox.isChecked()));
         }
     }
 }

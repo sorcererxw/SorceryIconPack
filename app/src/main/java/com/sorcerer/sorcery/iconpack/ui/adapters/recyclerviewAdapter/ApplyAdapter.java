@@ -59,12 +59,9 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.ApplyViewHol
                 .into(holder.icon);
 
         holder.label.setText(mLauncherList.get(position).getLabel());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mOnApplyItemClickListener != null) {
-                    mOnApplyItemClickListener.click(mLauncherList.get(holder.getAdapterPosition()));
-                }
+        holder.itemView.setOnClickListener(view -> {
+            if (mOnApplyItemClickListener != null) {
+                mOnApplyItemClickListener.click(mLauncherList.get(holder.getAdapterPosition()));
             }
         });
 
@@ -95,7 +92,7 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.ApplyViewHol
         @BindView(R.id.textView_item_apply_label)
         TextView label;
 
-        public ApplyViewHolder(View itemView) {
+        ApplyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

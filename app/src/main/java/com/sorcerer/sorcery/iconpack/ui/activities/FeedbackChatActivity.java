@@ -133,36 +133,33 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     void onFileClick() {
         RxPermissions.getInstance(this)
                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) {
-                        if (aBoolean) {
-                            Intent takeImageIntent;
-                            if (Build.VERSION.SDK_INT < 19) {
-                                Intent intent = new Intent();
-                                intent.setType("image/*");
-                                intent.setAction(Intent.ACTION_GET_CONTENT);
-                                takeImageIntent = Intent.createChooser(intent, "select an image");
-                            } else {
-                                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                                intent.setType("image/*");
-                                takeImageIntent = intent;
-                            }
-                            RxActivityResult.on(FeedbackChatActivity.this)
-                                    .startIntent(takeImageIntent)
-                                    .subscribe(new Consumer<Result<FeedbackChatActivity>>() {
-                                        @Override
-                                        public void accept(Result<FeedbackChatActivity> result) {
-                                            Intent data = result.data();
-                                            int resultCode = result.resultCode();
-
-                                            if (resultCode == RESULT_OK) {
-                                                result.targetUI().handleImageIntent(data);
-                                            }
-                                        }
-                                    });
+                .subscribe(aBoolean -> {
+                    if (aBoolean) {
+                        Intent takeImageIntent;
+                        if (Build.VERSION.SDK_INT < 19) {
+                            Intent intent = new Intent();
+                            intent.setType("image/*");
+                            intent.setAction(Intent.ACTION_GET_CONTENT);
+                            takeImageIntent = Intent.createChooser(intent, "select an image");
+                        } else {
+                            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                            intent.addCategory(Intent.CATEGORY_OPENABLE);
+                            intent.setType("image/*");
+                            takeImageIntent = intent;
                         }
+                        RxActivityResult.on(FeedbackChatActivity.this)
+                                .startIntent(takeImageIntent)
+                                .subscribe(new Consumer<Result<FeedbackChatActivity>>() {
+                                    @Override
+                                    public void accept(Result<FeedbackChatActivity> result) {
+                                        Intent data = result.data();
+                                        int resultCode = result.resultCode();
+
+                                        if (resultCode == RESULT_OK) {
+                                            result.targetUI().handleImageIntent(data);
+                                        }
+                                    }
+                                });
                     }
                 });
     }
@@ -222,28 +219,16 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(mAdapter);
 
-        mRecyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-            @Override
-            public void onLayoutChange(View v,
-                                       int left, int top, int right, int bottom,
-                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                if (bottom < oldBottom) {
-                    mRecyclerView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            scrollToBottom();
-                        }
-                    }, 100);
-                }
-            }
-        });
+        mRecyclerView.addOnLayoutChangeListener(
+                (v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom) -> {
+                    if (bottom < oldBottom) {
+                        mRecyclerView.postDelayed(this::scrollToBottom, 100);
+                    }
+                });
 
-        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                KeyboardUtil.closeKeyboard(FeedbackChatActivity.this);
-                return false;
-            }
+        mRecyclerView.setOnTouchListener((v, event) -> {
+            KeyboardUtil.closeKeyboard(FeedbackChatActivity.this);
+            return false;
         });
 
         mEditText.addTextChangedListener(new TextWatcher() {
@@ -278,11 +263,8 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
         }
 
         Observable.interval(1, TimeUnit.SECONDS)
-                .subscribe(new Consumer<Long>() {
-                    @Override
-                    public void accept(Long aLong) {
-                        mFeedbackThread.sync(mSyncCallback);
-                    }
+                .subscribe(aLong -> {
+                    mFeedbackThread.sync(mSyncCallback);
                 });
     }
 
@@ -292,12 +274,8 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                 .content(ResourceUtil
                         .getString(mContext, R.string.feedback_chat_name_dialog_content))
                 .input(ResourceUtil.getString(mContext, R.string.feedback_chat_name_dialog_hint),
-                        "", false, new MaterialDialog.InputCallback() {
-                            @Override
-                            public void onInput(@NonNull MaterialDialog dialog,
-                                                CharSequence input) {
+                        "", false, (dialog, input) -> {
 
-                            }
                         })
                 .inputRange(3, 20, ResourceUtil.getColor(mContext, R.color.palette_red_500))
                 .positiveText(ResourceUtil.getString(mContext, R.string.ok))
@@ -311,16 +289,13 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                                 RxPermissions.getInstance(FeedbackChatActivity.this)
                                         .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
                                                 Manifest.permission.READ_PHONE_STATE)
-                                        .subscribe(new Consumer<Boolean>() {
-                                            @Override
-                                            public void accept(Boolean aBoolean) {
-                                                if (aBoolean) {
-                                                    send(name, CommentType.USER);
-                                                    send(ResourceUtil.getString(mContext,
-                                                            R.string.feedback_chat_welcome),
-                                                            CommentType.DEV);
-                                                    dialog.dismiss();
-                                                }
+                                        .subscribe(aBoolean -> {
+                                            if (aBoolean) {
+                                                send(name, CommentType.USER);
+                                                send(ResourceUtil.getString(mContext,
+                                                        R.string.feedback_chat_welcome),
+                                                        CommentType.DEV);
+                                                dialog.dismiss();
                                             }
                                         });
                             }
@@ -339,13 +314,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                     }
                 })
                 .negativeText(ResourceUtil.getString(mContext, R.string.action_leave))
-                .onNegative(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog,
-                                        @NonNull DialogAction which) {
-                        FeedbackChatActivity.this.finish();
-                    }
-                })
+                .onNegative((dialog, which) -> FeedbackChatActivity.this.finish())
                 .cancelable(false)
                 .autoDismiss(false)
                 .canceledOnTouchOutside(false)
@@ -354,12 +323,8 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     }
 
     private void scrollToBottom() {
-        mRecyclerView.post(new Runnable() {
-            @Override
-            public void run() {
-                mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount());
-            }
-        });
+        mRecyclerView.post(
+                () -> mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount()));
     }
 
     @Override

@@ -338,6 +338,9 @@
         component="ComponentInfo{com.netease.onmyoji.downjoy/com.downjoy.activity.SdkLoadActivity}"
         drawable="game_netease_onmyoji"/>
     <item
+        component="ComponentInfo{com.vasudevrb.cmchangelog/com.vasudevrb.cmchangelog.view.MainActivity}"
+        drawable="los_changelog"/>
+    <item
         component="ComponentInfo{tk.wasdennnoch.androidn_ify/tk.wasdennnoch.androidn_ify.SettingsAlias}"
         drawable="android_nify"/>
     <item
@@ -1394,6 +1397,12 @@
         component="ComponentInfo{com.google.android.apps.wallpaper/com.google.android.apps.wallpaper.picker.CategoryPickerActivity}"
         drawable="google_wallpapers"/>
     <item
+        component="ComponentInfo{com.paypal.android.p2pmobile/com.paypal.android.p2pmobile.startup.activities.StartupActivity}"
+        drawable="paypal"/>
+    <item
+        component="ComponentInfo{com.devsisters.SolitaireDeckedOut/com.unity3d.player.UnityPlayerActivity}"
+        drawable="game_solitaire_decked_out"/>
+    <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
     <item
@@ -1463,6 +1472,9 @@
         component="ComponentInfo{com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity}"
         drawable="game_wangzherongyao"/>
     <item
+        component="ComponentInfo{com.tencent.tmgp.sgame/com.putaolab.ptsdk.activity.PTMainActivity}"
+        drawable="game_wangzherongyao"/>
+    <item
         component="ComponentInfo{me.tangke.gamecores/me.tangke.gamecores.ui.activity.SplashActivity}"
         drawable="gamecores"/>
     <item
@@ -1479,6 +1491,9 @@
         drawable="gewala_movie"/>
     <item
         component="ComponentInfo{epaylinks.global.payment/epaylinks.global.payment.ui.SplashActivity}"
+        drawable="globalcash"/>
+    <item
+        component="ComponentInfo{epaylinks.global.payment/com.qihoo.util.StartActivity}"
         drawable="globalcash"/>
     <item
         component="ComponentInfo{com.alorma.github/com.alorma.github.ui.activity.MainActivity}"
@@ -1953,6 +1968,9 @@
         drawable="luyinbao"/>
     <item
         component="ComponentInfo{com.hunantv.imgo.activity/com.hunantv.imgo.activity.MainActivity}"
+        drawable="mangguo_tv"/>
+    <item
+        component="ComponentInfo{com.hunantv.imgo.activity/com.mgtv.ui.main.MgtvActivity}"
         drawable="mangguo_tv"/>
     <item
         component="ComponentInfo{com.sankuai.movie/com.sankuai.movie.welcome.Welcome}"
@@ -2436,6 +2454,9 @@
         drawable="skype"/>
     <item
         component="ComponentInfo{com.smartisan.notes/com.smartisan.notes.NewNotesActivity}"
+        drawable="smartisan_note"/>
+    <item
+        component="ComponentInfo{com.smartisan.notes/com.smartisan.notes.NotesActivity}"
         drawable="smartisan_note"/>
     <item
         component="ComponentInfo{com.mzba.happy.laugh/com.mzba.happy.laugh.SplashActivity}"
@@ -4621,5 +4642,77 @@
     <item
         component="ComponentInfo{com.dv.adm/com.dv.adm.Main}"
         drawable="advance_download_manager"/>
+    <item
+        component="ComponentInfo{com.oasisfeng.island/com.oasisfeng.island.MainActivity}"
+        drawable="island"/>
+    <item
+        component="ComponentInfo{jackpal.androidterm/jackpal.androidterm.Term}"
+        drawable="terminal_emulator"/>
+    <item
+        component="ComponentInfo{com.gombosdev.ampere/com.gombosdev.ampere.MainActivity}"
+        drawable="ampere"/>
+    <item
+        component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}"
+        drawable="google_android_pay"/>
+    <item
+        component="ComponentInfo{com.fillobotto.mp3tagger/com.fillobotto.mp3tagger.MainActivity}"
+        drawable="automatag"/>
+    <item
+        component="ComponentInfo{com.fillobotto.mp3tagger/activities.MainActivity}"
+        drawable="automatag"/>
+    <item
+        component="ComponentInfo{com.p1.mobile.putong/com.p1.mobile.putong.ui.splash.SplashAct}"
+        drawable="tantan"/>
+    <item
+        component="ComponentInfo{com.miHoYo.enterprise.NGHSoD/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.bilibili/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.uc/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.nearme.gamecenter/com.miHoYo.bh3.nearme.gamecenter.OppoSDKUtils}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.wdj/com.miHoYo.bh3.wdj.Wdjact}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.huawei/com.miHoYo.bh3.huawei.HuaweiACT}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.mz/com.miHoYo.bh3.mz.meizusdk}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.tencent.tmgp.bh3/com.tencent.tmgp.bh3.AgentMain}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{cmb.pb/cmb.pb.ui.PBInitActivity}"
+        drawable="cmbchina_bank"/>
+    <item
+        component="ComponentInfo{flipboard.cn/flipboard.activities.LaunchActivityAlias}"
+        drawable="flipboard_china"/>
+    <item
+        component="ComponentInfo{flipboard.app/flipboard.activities.LaunchActivityAlias}"
+        drawable="flipboard"/>
+    <item
+        component="ComponentInfo{is.shortcut/com.voxel.launcher3.Launcher}"
+        drawable="evie_launcher"/>
+    <item
+        component="ComponentInfo{com.google.earth/com.google.earth.EarthActivity}"
+        drawable="google_earth"/>
+    <item
+        component="ComponentInfo{com.yf.smart.weloopx.dist/com.yf.smart.weloopx.android.ui.activities.SplashScreenActivity}"
+        drawable="weloop"/>
+    <item
+        component="ComponentInfo{com.yf.smart.weloopx.dist/com.yf.smart.weloopx.app.entry.SplashScreenActivity}"
+        drawable="weloop"/>
+    <item
+        component="ComponentInfo{ru.zdevs.zarchiver.pro/ru.zdevs.zarchiver.pro.ZArchiver}"
+        drawable="zarchiver"/>
+    <item
+        component="ComponentInfo{ru.zdevs.zarchiver/ru.zdevs.zarchiver.ZArchiver}"
+        drawable="zarchiver"/>
 
 </resources>

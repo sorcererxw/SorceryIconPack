@@ -3,12 +3,12 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath ('com.tencent.tinker:tinker-patch-gradle-plugin:1.7.3')
-
+        classpath 'me.tatarka:gradle-retrolambda:3.4.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -17,6 +17,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
         maven { url "https://jitpack.io" }
         maven {
             url "https://oss.sonatype.org/content/repositories/snapshots"

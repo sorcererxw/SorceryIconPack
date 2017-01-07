@@ -54,26 +54,20 @@ public class OpenSourceLibAdapter
         holder.name.setText(mDataList.get(position).getName());
         holder.author.setText(mDataList.get(position).getAuthor());
 
-        holder.arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (holder.license.length() > 600) {
-                    holder.license.setText(mDataList.get(holder.getAdapterPosition()).getLicense()
-                            .substring(0, 600));
-                } else {
-                    holder.license.setText(mDataList.get(holder.getAdapterPosition()).getLicense());
-                }
-                holder.arrow.animate().rotationBy(180).setDuration(250).start();
+        holder.arrow.setOnClickListener(view -> {
+            if (holder.license.length() > 600) {
+                holder.license.setText(mDataList.get(holder.getAdapterPosition()).getLicense()
+                        .substring(0, 600));
+            } else {
+                holder.license.setText(mDataList.get(holder.getAdapterPosition()).getLicense());
             }
+            holder.arrow.animate().rotationBy(180).setDuration(250).start();
         });
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(mDataList.get(holder.getAdapterPosition()).getLink()));
-                mContext.startActivity(browserIntent);
-            }
+        holder.itemView.setOnClickListener(view -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mDataList.get(holder.getAdapterPosition()).getLink()));
+            mContext.startActivity(browserIntent);
         });
     }
 
@@ -96,7 +90,7 @@ public class OpenSourceLibAdapter
         @BindView(R.id.imageView_item_openSourceLib_arrow)
         ImageView arrow;
 
-        public OpenSourceLibViewHolder(View itemView) {
+        OpenSourceLibViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.models;
 
+import android.content.Context;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -53,5 +55,18 @@ public class IconBean {
             res = origin.substring(0, origin.length());
         }
         return res.replaceAll("_", " ");
+    }
+
+    public static IconBean fromDrawableName(Context context, String name) {
+        IconBean iconBean = new IconBean(name);
+        int res = context.getResources().getIdentifier(name, "drawable", context.getPackageName());
+        if (res != 0) {
+            int thumbRes = context.getResources()
+                    .getIdentifier(name, "drawable", context.getPackageName());
+            if (thumbRes != 0) {
+                iconBean.setRes(thumbRes);
+            }
+        }
+        return iconBean;
     }
 }

@@ -51,27 +51,24 @@ public class LikeLayout extends FrameLayout {
         RxPermissions.getInstance(mContext)
                 .request(Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) {
-                        if (!aBoolean) {
-                            return;
+                .subscribe(aBoolean -> {
+                    if (!aBoolean) {
+                        return;
+                    }
+                    int id = v.getId();
+                    if (id == R.id.textView_label_like) {
+                        mFlag = 1;
+                        handleFlag(mFlag, true);
+                        if (mBind) {
+                            mPrefs.like(mName).setValue(mFlag);
+                            like(mName, true);
                         }
-                        int id = v.getId();
-                        if (id == R.id.textView_label_like) {
-                            mFlag = 1;
-                            handleFlag(mFlag, true);
-                            if (mBind) {
-                                mPrefs.like(mName).setValue(mFlag);
-                                like(mName, true);
-                            }
-                        } else {
-                            mFlag = -1;
-                            handleFlag(mFlag, true);
-                            if (mBind) {
-                                mPrefs.like(mName).setValue(mFlag);
-                                like(mName, false);
-                            }
+                    } else {
+                        mFlag = -1;
+                        handleFlag(mFlag, true);
+                        if (mBind) {
+                            mPrefs.like(mName).setValue(mFlag);
+                            like(mName, false);
                         }
                     }
                 });
@@ -122,24 +119,18 @@ public class LikeLayout extends FrameLayout {
         for (TextView t : mTextViews) {
             t.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "like.ttf"));
         }
-        mLikeText.setOnLongClickListener(new OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(mContext,
-                        mContext.getString(R.string.action_like),
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
+        mLikeText.setOnLongClickListener(v -> {
+            Toast.makeText(mContext,
+                    mContext.getString(R.string.action_like),
+                    Toast.LENGTH_SHORT).show();
+            return false;
         });
 
-        mDislikeText.setOnLongClickListener(new OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(mContext,
-                        mContext.getString(R.string.action_dislike),
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
+        mDislikeText.setOnLongClickListener(v -> {
+            Toast.makeText(mContext,
+                    mContext.getString(R.string.action_dislike),
+                    Toast.LENGTH_SHORT).show();
+            return false;
         });
     }
 
@@ -211,12 +202,7 @@ public class LikeLayout extends FrameLayout {
         likeBean.setDeviceId(deviceId);
         likeBean.setIconName(name);
 
-        mLikeRunnable = new Runnable() {
-            @Override
-            public void run() {
-                likeBean.saveInBackground();
-            }
-        };
+        mLikeRunnable = likeBean::saveInBackground;
 
         mHandler.postDelayed(mLikeRunnable, 1000);
     }

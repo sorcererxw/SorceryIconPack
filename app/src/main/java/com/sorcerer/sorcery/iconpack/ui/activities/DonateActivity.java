@@ -38,12 +38,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         boolean isDonated = SorceryPrefs.getInstance(this).donated().getValue();
 
         if (isDonated) {
-            mThankCard.post(new Runnable() {
-                @Override
-                public void run() {
-                    showThanksCard();
-                }
-            });
+            mThankCard.post(this::showThanksCard);
         }
     }
 

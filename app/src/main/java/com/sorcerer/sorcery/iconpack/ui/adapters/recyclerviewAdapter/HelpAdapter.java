@@ -64,28 +64,21 @@ public class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHo
 
         setViewMargin(holder.card, holder.getAdapterPosition(), 2, holder);
 
-        holder.card.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                builder.title(mContext.getString(R.string.action_copy_to_clipboard) + " ?");
-                builder.positiveText(mContext.getString(R.string.action_copy));
-                builder.negativeText(mContext.getString(R.string.cancel));
-                builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog,
-                                        @NonNull DialogAction which) {
-                        ClipboardManager clipboard = (ClipboardManager) mContext
-                                .getSystemService(Context.CLIPBOARD_SERVICE);
-                        ClipData clip =
-                                ClipData.newPlainText(getTitle(holder.getAdapterPosition()),
-                                        getContent(holder.getAdapterPosition()));
-                        clipboard.setPrimaryClip(clip);
-                    }
-                });
-                builder.show();
-                return false;
-            }
+        holder.card.setOnLongClickListener(v -> {
+            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+            builder.title(mContext.getString(R.string.action_copy_to_clipboard) + " ?");
+            builder.positiveText(mContext.getString(R.string.action_copy));
+            builder.negativeText(mContext.getString(R.string.cancel));
+            builder.onPositive((dialog, which) -> {
+                ClipboardManager clipboard = (ClipboardManager) mContext
+                        .getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip =
+                        ClipData.newPlainText(getTitle(holder.getAdapterPosition()),
+                                getContent(holder.getAdapterPosition()));
+                clipboard.setPrimaryClip(clip);
+            });
+            builder.show();
+            return false;
         });
     }
 

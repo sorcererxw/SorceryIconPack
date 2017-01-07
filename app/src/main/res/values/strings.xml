@@ -41,10 +41,11 @@
 
     <string name="select_an_icon">select an icon</string>
 
-    <string name="search_hint">Search in current page</string>
 
+    <string name="search_edit_hint">Search icons</string>
     <string name="search_hint_only_letter">Sorry, searching support letter and number only.</string>
     <string name="search_hint_not_found">Oops…Not found</string>
+
 
     <string name="pay_success">pay successfully</string>
     <string name="pay_fail">fail</string>

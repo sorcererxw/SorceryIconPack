@@ -60,12 +60,7 @@ public class DoubleTapTabLayout extends TabLayout {
                     mTaped = false;
                 } else {
                     mTaped = true;
-                    postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mTaped = false;
-                        }
-                    }, 300);
+                    postDelayed(() -> mTaped = false, 300);
                 }
             }
         });
