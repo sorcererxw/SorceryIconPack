@@ -18,31 +18,12 @@ public class AppNameGetter {
 
     public static Observable<String> getName(final String packageName) {
         return Observable.just("")
-                .flatMap(new Function<String, ObservableSource<String>>() {
-                    public Observable<String> apply(String s) {
-                        if (!s.isEmpty()) {
-                            return Observable.just(s);
-                        }
-                        return getNameFromCoolapk(packageName);
-                    }
-                })
-                .flatMap(new Function<String, ObservableSource<String>>() {
-                    public Observable<String> apply(String s) {
-                        if (!s.isEmpty()) {
-                            return Observable.just(s);
-                        }
-                        return getNameFromQQ(packageName);
-                    }
-                })
-                .flatMap(new Function<String, ObservableSource<String>>() {
-                    @Override
-                    public ObservableSource<String> apply(String s) throws Exception {
-                        if (!s.isEmpty()) {
-                            return Observable.just(s);
-                        }
-                        return getNameFromPlay(packageName);
-                    }
-                });
+                .flatMap(name -> name.isEmpty() ?
+                        getNameFromCoolapk(packageName) : Observable.just(name))
+                .flatMap(name -> name.isEmpty() ?
+                        getNameFromQQ(packageName) : Observable.just(name))
+                .flatMap(name -> name.isEmpty() ?
+                        getNameFromPlay(packageName) : Observable.just(name));
     }
 
     private static Observable<String> getNameFromQQ(String packageName) {
@@ -99,7 +80,7 @@ public class AppNameGetter {
                 })
                 .map(s -> {
                     String[] strings = s.split(":");
-                    if(strings.length==2){
+                    if (strings.length == 2) {
                         return strings[0];
                     }
                     return s;

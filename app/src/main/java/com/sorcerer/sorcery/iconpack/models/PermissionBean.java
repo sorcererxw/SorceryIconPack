@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.models;
 
+import android.graphics.drawable.Drawable;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -8,12 +10,12 @@ package com.sorcerer.sorcery.iconpack.models;
 public class PermissionBean {
     private String mTitle;
     private String mDescribe;
-    private int mResId;
+    private Drawable mDrawable;
 
-    public PermissionBean(String title, String describe, int resId) {
+    public PermissionBean(String title, String describe, Drawable drawable) {
         mTitle = title;
         mDescribe = describe;
-        mResId = resId;
+        mDrawable = drawable;
     }
 
     public String getTitle() {
@@ -32,11 +34,11 @@ public class PermissionBean {
         mDescribe = describe;
     }
 
-    public int getResId() {
-        return mResId;
+    public Drawable getDrawable() {
+        return mDrawable;
     }
 
-    public void setResId(int resId) {
-        mResId = resId;
+    public void setDrawable(Drawable drawable) {
+        mDrawable = drawable;
     }
 }

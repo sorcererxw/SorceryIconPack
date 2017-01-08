@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
@@ -160,17 +161,9 @@ public class MainActivity extends BaseActivity {
                 mSearchToolbar,
                 new ViewFader());
 
-        mSearchToolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAppBarLayout.setExpanded(true, true);
-                mAppBarLayout.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        mSearchTransitioner.transitionToSearch();
-                    }
-                });
-            }
+        mSearchToolbar.setOnClickListener(view -> {
+            mAppBarLayout.setExpanded(true, true);
+            mAppBarLayout.post(() -> mSearchTransitioner.transitionToSearch());
         });
         mSearchToolbar.setTitle("Sorcery Icons");
 
@@ -186,20 +179,23 @@ public class MainActivity extends BaseActivity {
 
     private void showPermissionDialog() {
         if (Build.VERSION.SDK_INT >= 23) {
-            final RxPermissions rxPermissions = RxPermissions.getInstance(this);
+            final RxPermissions rxPermissions = new RxPermissions(this);
             if (!rxPermissions.isGranted(READ_PHONE_STATE)
                     || !rxPermissions.isGranted(WRITE_EXTERNAL_STORAGE)) {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
                 builder.title(ResourceUtil.getString(this, R.string.permission_request_title));
                 List<PermissionBean> list = new ArrayList<>();
                 list.add(new PermissionBean(null,
-                        ResourceUtil.getString(this, R.string.permission_request_content), 0));
+                        ResourceUtil.getString(this, R.string.permission_request_content),
+                        null));
                 if (!rxPermissions.isGranted(READ_PHONE_STATE)) {
                     list.add(new PermissionBean(
                             ResourceUtil.getString(this, R.string.permission_read_phone_state),
                             ResourceUtil.getString(this,
                                     R.string.permission_request_read_phone_state),
-                            R.drawable.ic_smartphone_black_24dp));
+                            new IconicsDrawable(this, GoogleMaterial.Icon.gmd_smartphone)
+                                    .sizeDp(24).color(Color.BLACK))
+                    );
                 }
                 if (!rxPermissions.isGranted(WRITE_EXTERNAL_STORAGE)) {
                     list.add(new PermissionBean(
@@ -207,29 +203,21 @@ public class MainActivity extends BaseActivity {
                                     R.string.permission_write_external_storage),
                             ResourceUtil.getString(this,
                                     R.string.permission_request_describe_write_external_storage),
-                            R.drawable.ic_folder_black_24dp));
+                            new IconicsDrawable(this, GoogleMaterial.Icon.gmd_folder)
+                                    .color(Color.BLACK).sizeDp(24))
+                    );
                 }
                 builder.adapter(new PermissionAdapter(this, list),
                         new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-                builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(
-                            @NonNull
-                                    MaterialDialog materialDialog,
-                            @NonNull
-                                    DialogAction dialogAction) {
-                        rxPermissions.request(READ_PHONE_STATE,
-                                WRITE_EXTERNAL_STORAGE)
-                                .subscribe(new Consumer<Boolean>() {
-                                    @Override
-                                    public void accept(Boolean aBoolean) {
-                                        if (!aBoolean) {
-                                            showPermissionDialog();
-                                        }
-                                    }
-                                });
-                        materialDialog.dismiss();
-                    }
+                builder.onPositive((materialDialog, dialogAction) -> {
+                    rxPermissions.request(READ_PHONE_STATE,
+                            WRITE_EXTERNAL_STORAGE)
+                            .subscribe(grant -> {
+                                if (!grant) {
+                                    showPermissionDialog();
+                                }
+                            });
+                    materialDialog.dismiss();
                 });
                 builder.positiveText(
                         ResourceUtil.getString(this, R.string.action_grant_permission));
@@ -251,15 +239,12 @@ public class MainActivity extends BaseActivity {
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
 
-        mTabLayout.setOnTabDoubleTapListener(new DoubleTapTabLayout.OnTabDoubleTapListener() {
-            @Override
-            public void onDoubleTap() {
-                int index = mViewPager.getCurrentItem();
-                ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
-                LazyIconFragment fragment = (LazyIconFragment) adapter.getItem(index);
-                if (fragment.getRecyclerView() != null) {
-                    fragment.getRecyclerView().smoothScrollToPosition(0);
-                }
+        mTabLayout.setOnTabDoubleTapListener(() -> {
+            int index = mViewPager.getCurrentItem();
+            ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
+            LazyIconFragment fragment = (LazyIconFragment) adapter.getItem(index);
+            if (fragment.getRecyclerView() != null) {
+                fragment.getRecyclerView().smoothScrollToPosition(0);
             }
         });
 
@@ -275,12 +260,9 @@ public class MainActivity extends BaseActivity {
                 .withCloseOnClick(true)
                 .withToolbar(mSearchToolbar)
                 .withActionBarDrawerToggleAnimated(true)
-                .withOnDrawerNavigationListener(new Drawer.OnDrawerNavigationListener() {
-                    @Override
-                    public boolean onNavigationClickListener(View view) {
-                        openDrawer();
-                        return false;
-                    }
+                .withOnDrawerNavigationListener(view -> {
+                    openDrawer();
+                    return false;
                 })
                 .withActivity(mActivity)
                 .build();
@@ -348,41 +330,38 @@ public class MainActivity extends BaseActivity {
                         .withSetSelected(false)
                         .withSelectable(false)
                         .withTag("lab")
-                        .withIcon(ResourceUtil.getDrawableWithAlpha(mContext, R.drawable
-                                .ic_settings_black_24dp, iconAlpha))
+                        .withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_settings)
+                                .sizeDp(24).color(Color.BLACK).alpha(iconAlpha))
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_lab));
             }
         }
 
-        mDrawer.setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                switch ((String) drawerItem.getTag()) {
-                    case "apply":
-                        mNavigator.toAppleActivity();
-                        break;
-                    case "lab":
-                        mNavigator.toLabActivity();
-                        break;
-                    case "settings":
-                        mNavigator.toSettingsActivity();
-                        break;
-                    case "help":
-                        mNavigator.toHelpActivity();
-                        break;
-                    case "donate":
-                        mNavigator.toDonateActivity();
-                        break;
-                    case "request":
-                        mNavigator.toIconRequest();
-                        break;
-                    case "suggest":
-                        mNavigator.toFeedbackChatActivity();
-                        break;
-                }
-                return false;
+        mDrawer.setOnDrawerItemClickListener((view, position, drawerItem) -> {
+            switch ((String) drawerItem.getTag()) {
+                case "apply":
+                    mNavigator.toAppleActivity();
+                    break;
+                case "lab":
+                    mNavigator.toLabActivity();
+                    break;
+                case "settings":
+                    mNavigator.toSettingsActivity();
+                    break;
+                case "help":
+                    mNavigator.toHelpActivity();
+                    break;
+                case "donate":
+                    mNavigator.toDonateActivity();
+                    break;
+                case "request":
+                    mNavigator.toIconRequest();
+                    break;
+                case "suggest":
+                    mNavigator.toFeedbackChatActivity();
+                    break;
             }
+            return false;
         });
 
         final RecyclerView drawerRecyclerView = mDrawer.getRecyclerView();
@@ -463,12 +442,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getWindow().getDecorView().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSearchTransitioner.onActivityResumed();
-            }
-        }, 100);
+        getWindow().getDecorView().postDelayed(() -> mSearchTransitioner.onActivityResumed(), 100);
     }
 
     @Override

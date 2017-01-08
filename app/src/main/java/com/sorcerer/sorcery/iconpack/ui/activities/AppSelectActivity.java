@@ -6,7 +6,6 @@ import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -22,7 +21,6 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.SaveCallback;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
@@ -30,7 +28,6 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -45,7 +42,6 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
@@ -67,11 +63,11 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
-        RxPermissions.getInstance(this)
+        new RxPermissions(this)
                 .request(Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(aBoolean -> {
-                    if (aBoolean) {
+                .subscribe(grant -> {
+                    if (grant) {
                         save(mAdapter.getCheckedAppsList());
                     }
                 }, Timber::e);
@@ -218,13 +214,10 @@ public class AppSelectActivity extends UniversalToolbarActivity {
             public void subscribe(final ObservableEmitter<List<AppInfo>> emitter) throws Exception {
                 String deviceId = null;
                 try {
-                    TelephonyManager tm =
-                            (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+                    TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
                     deviceId = tm.getDeviceId();
                 } catch (Exception e) {
-                    if (BuildConfig.DEBUG) {
-                        e.printStackTrace();
-                    }
+                    Timber.e(e);
                 }
                 if (deviceId == null) {
                     deviceId = Settings.Secure
@@ -284,8 +277,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                     public void onError(Throwable e) {
                         Timber.e(e);
                         mProgressDialog.dismiss();
-                        Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG)
-                                .show();
+                        Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG).show();
                     }
 
                     @Override

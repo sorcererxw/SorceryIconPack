@@ -131,7 +131,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.imageView_feedback_chat_file_button)
     void onFileClick() {
-        RxPermissions.getInstance(this)
+        new RxPermissions(this)
                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .subscribe(aBoolean -> {
                     if (aBoolean) {
@@ -149,15 +149,12 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                         }
                         RxActivityResult.on(FeedbackChatActivity.this)
                                 .startIntent(takeImageIntent)
-                                .subscribe(new Consumer<Result<FeedbackChatActivity>>() {
-                                    @Override
-                                    public void accept(Result<FeedbackChatActivity> result) {
-                                        Intent data = result.data();
-                                        int resultCode = result.resultCode();
+                                .subscribe(result -> {
+                                    Intent data = result.data();
+                                    int resultCode = result.resultCode();
 
-                                        if (resultCode == RESULT_OK) {
-                                            result.targetUI().handleImageIntent(data);
-                                        }
+                                    if (resultCode == RESULT_OK) {
+                                        result.targetUI().handleImageIntent(data);
                                     }
                                 });
                     }
@@ -286,7 +283,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                         if (dialog.getInputEditText() != null) {
                             final String name = dialog.getInputEditText().getText().toString();
                             if (checkName(name)) {
-                                RxPermissions.getInstance(FeedbackChatActivity.this)
+                                new RxPermissions(FeedbackChatActivity.this)
                                         .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
                                                 Manifest.permission.READ_PHONE_STATE)
                                         .subscribe(aBoolean -> {

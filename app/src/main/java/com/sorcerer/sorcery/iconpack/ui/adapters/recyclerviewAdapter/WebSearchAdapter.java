@@ -21,7 +21,6 @@ import com.sorcerer.sorcery.iconpack.net.spiders.AppSearchResultGetter;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
-import com.sorcerer.sorcery.iconpack.utils.ListUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -181,8 +180,9 @@ public class WebSearchAdapter extends RecyclerView.Adapter<WebSearchAdapter.Sear
                             .forEach(packageName -> {
                                 List<String> drawableList = mPackageDrawableMap.get(packageName);
                                 for (String drawable : drawableList) {
-                                    drawableSet.addAll(ListUtil.containsItems(
-                                            mAllDrawableList, drawable));
+                                    drawableSet.addAll(Stream.of(mAllDrawableList)
+                                            .filter(s -> s.contains(drawable))
+                                            .collect(Collectors.toList()));
                                 }
                                 drawableSet.addAll(drawableList);
                             });
@@ -191,7 +191,9 @@ public class WebSearchAdapter extends RecyclerView.Adapter<WebSearchAdapter.Sear
                 })
                 .map(set -> {
                     if (!searchText.isEmpty()) {
-                        set.addAll(ListUtil.containsItems(mAllDrawableList, searchText));
+                        set.addAll(Stream.of(mAllDrawableList)
+                                .filter(s -> s.contains(searchText))
+                                .collect(Collectors.toList()));
                     }
                     return set;
                 })

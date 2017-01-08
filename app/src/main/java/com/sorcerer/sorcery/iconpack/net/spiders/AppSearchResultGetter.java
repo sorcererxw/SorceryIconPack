@@ -1,5 +1,8 @@
 package com.sorcerer.sorcery.iconpack.net.spiders;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -17,17 +22,32 @@ import io.reactivex.functions.Function;
  */
 
 public class AppSearchResultGetter {
+
+    @SuppressWarnings("unchecked")
     public static Observable<List<String>> search(String text) {
-        return searchOnCoolapk(text);
+        return Observable.zip(
+                searchApkOnCoolapk(text),
+                searchGameOnCoolapk(text),
+                (list, list2) -> Stream.concat(Stream.of(list), Stream.of(list2))
+                        .collect(Collectors.toList()));
     }
 
-    private static Observable<List<String>> searchOnCoolapk(String searchText) {
+    private static Observable<List<String>> searchApkOnCoolapk(String searchText) {
+        return searchOnCoolapk(searchText, "apk");
+    }
+
+    private static Observable<List<String>> searchGameOnCoolapk(String searchText) {
+        return searchOnCoolapk(searchText, "game");
+    }
+
+    private static Observable<List<String>> searchOnCoolapk(String searchText, String type) {
         return Observable.just(searchText)
+                .map(text -> "http://www.coolapk.com/" + type + "/search?q=" + text)
                 .flatMap(new Function<String, Observable<Element>>() {
-                    public Observable<Element> apply(String text) {
+                    public Observable<Element> apply(String url) {
                         try {
                             Document document = Jsoup
-                                    .connect("http://www.coolapk.com/apk/search?q=" + text)
+                                    .connect(url)
                                     .header("User-Agent",
                                             "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
                                     .timeout(3000)
@@ -41,16 +61,18 @@ public class AppSearchResultGetter {
                                     .getElementsByClass("media-list ex-card-app-list").get(0)
                                     .getElementsByTag("li"));
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            Timber.e(e);
                         }
-                        return Observable.fromIterable(new ArrayList<Element>());
+                        return Observable.fromIterable(new ArrayList<>());
                     }
                 })
                 .map(element -> element
                         .getElementsByClass("media-body").get(0)
                         .getElementsByClass("media-heading").get(0)
-                        .getElementsByTag("a").get(0))
-                .map(element -> element.attr("href").substring(5))
+                        .getElementsByTag("a").get(0)
+                        .attr("href")
+                )
+                .map(href -> href.substring(("/" + type + "/").length()))
                 .toList()
                 .flatMapObservable(Observable::just);
     }

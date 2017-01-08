@@ -23,7 +23,9 @@ import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
- * Created by Sorcerer on 2016/2/5 0005.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/2/5 0005
  */
 public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarActivity {
 

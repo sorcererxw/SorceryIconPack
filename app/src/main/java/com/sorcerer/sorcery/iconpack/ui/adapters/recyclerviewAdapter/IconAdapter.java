@@ -5,17 +5,15 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Handler;
 import android.support.v4.util.Pair;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -31,6 +29,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.mthli.slice.Slice;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -65,14 +64,22 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
     private boolean mClicked = false;
     private int mSpan;
 
+    private RecyclerView mRecyclerView;
+    private GridLayoutManager mLayoutManager;
+
     public IconAdapter(Activity activity, Context context,
                        List<IconBean> iconBeanList, int span,
-                       RequestManager glideRequestManager) {
+                       RequestManager glideRequestManager,
+                       RecyclerView recyclerView,
+                       GridLayoutManager slowGridLayoutManager) {
 
         mActivity = activity;
         mContext = context;
         mSpan = span;
         mGlideRequestManager = glideRequestManager;
+
+        mRecyclerView = recyclerView;
+        mLayoutManager = slowGridLayoutManager;
 
         List<IconBean> tmpList = new ArrayList<>();
         for (int i = 0; i < iconBeanList.size(); i++) {
@@ -222,14 +229,17 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                             return;
                         }
                         lock(view);
-                        showIconDialog(iconHolder, iconHolder.getAdapterPosition());
+                        prepareShowIconDialog(iconHolder, iconHolder.getAdapterPosition());
                     } else {
                         KeyboardUtil.closeKeyboard((Activity) mContext);
                         ((MainActivity) mActivity).onReturnCustomPickerRes(
                                 mShowList.get(iconHolder.getAdapterPosition()).first.getRes());
                     }
                 });
-                mGlideRequestManager.load(iconBean.getRes()).into(iconHolder.mIcon);
+                mGlideRequestManager
+                        .load(iconBean.getRes())
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .into(iconHolder.mIcon);
             } else {
                 iconHolder.itemView.setOnClickListener(null);
                 iconHolder.mIcon.setImageBitmap(null);
@@ -344,6 +354,35 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         return s.substring(2, s.length() - 2);
     }
 
+    private void prepareShowIconDialog(IconViewHolder holder, final int position) {
+        Timber.d("first: %d, first complete: %d, last: %d, last complete: %d",
+                mLayoutManager.findFirstVisibleItemPosition(),
+                mLayoutManager.findFirstCompletelyVisibleItemPosition(),
+                mLayoutManager.findLastVisibleItemPosition(),
+                mLayoutManager.findLastCompletelyVisibleItemPosition());
+        if (position >= mLayoutManager.findFirstCompletelyVisibleItemPosition()
+                && position <= mLayoutManager.findLastCompletelyVisibleItemPosition()) {
+            showIconDialog(holder, position);
+        } else {
+            RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                    super.onScrollStateChanged(recyclerView, newState);
+                    if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                        showIconDialog(holder, position);
+                        mRecyclerView.removeOnScrollListener(this);
+                    }
+                    if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+                        mRecyclerView.removeOnScrollListener(this);
+                    }
+                }
+            };
+            mRecyclerView.addOnScrollListener(onScrollListener);
+
+            mRecyclerView.smoothScrollToPosition(position);
+        }
+    }
+
     private void showIconDialog(IconViewHolder holder, final int position) {
         Intent intent = new Intent(mContext, IconDialogActivity.class);
         intent.putExtra(IconDialogActivity.EXTRA_RES,
@@ -361,21 +400,17 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
                             "icon"
                     ).toBundle()
             );
-        } else {
-            ((Activity) mContext).startActivityForResult(intent,
-                    MainActivity.REQUEST_ICON_DIALOG);
-            ((Activity) mContext).overridePendingTransition(R.anim.fast_fade_in, 0);
         }
     }
 
-    class IconItemViewHolder extends RecyclerView.ViewHolder {
+    static class IconItemViewHolder extends RecyclerView.ViewHolder {
         IconItemViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
     }
 
-    class IconViewHolder extends IconItemViewHolder {
+    static class IconViewHolder extends IconItemViewHolder {
 
         @BindView(R.id.frameLayout_item_icon_container)
         FrameLayout mFrame;
@@ -388,7 +423,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }
     }
 
-    class HeaderViewHolder extends IconItemViewHolder {
+    static class HeaderViewHolder extends IconItemViewHolder {
         @BindView(R.id.textView_icon_header_new)
         TextView mHeader;
 
@@ -397,3 +432,4 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
         }
     }
 }
+

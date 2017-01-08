@@ -1,15 +1,20 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
+import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
 
 /**
- * Created by Sorcerer on 2016/5/30 0030.
+ * @description:
+ * @author: Sorcerer
+ * @date: 2016/5/30 0030
  */
 public abstract class ToolbarActivity extends BaseActivity {
     protected abstract Toolbar provideToolbar();
@@ -33,7 +38,11 @@ public abstract class ToolbarActivity extends BaseActivity {
     protected void setToolbarCloseIndicator() {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_white_24dp);
+            getSupportActionBar().setHomeAsUpIndicator(
+                    new IconicsDrawable(this, GoogleMaterial.Icon.gmd_close)
+                            .sizeDp(24)
+                            .paddingDp(4)
+                            .color(Color.WHITE));
         }
     }
 
@@ -49,12 +58,9 @@ public abstract class ToolbarActivity extends BaseActivity {
                 this,
                 new ToolbarOnGestureListener(listener)
         );
-        provideToolbar().setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                detector.onTouchEvent(event);
-                return true;
-            }
+        provideToolbar().setOnTouchListener((v, event) -> {
+            detector.onTouchEvent(event);
+            return true;
         });
     }
 }

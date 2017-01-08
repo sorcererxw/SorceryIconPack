@@ -2,6 +2,11 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>yi_live</item>
+        <item>jingdong_reader</item>
+        <item>quizlet</item>
+        <item>boss_zhipin</item>
+        <item>microsoft_account</item>
         <item>evie_launcher</item>
         <item>google_earth</item>
         <item>cmbchina_bank</item>
@@ -41,6 +46,7 @@
         <item>firefox_beta</item>
         <item>firefox</item>
         <item>google_play_games</item>
+        <item>ali_taobao_dianying</item>
     </string-array>
     <string-array name="icon_pack_ali" translatable="false">
         <item>alibaba</item>

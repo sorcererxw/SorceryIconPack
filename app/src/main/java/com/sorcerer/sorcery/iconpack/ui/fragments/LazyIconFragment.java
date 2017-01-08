@@ -58,7 +58,6 @@ public class LazyIconFragment extends LazyFragment {
         SONY,
         TENCENT,
         XIAOMI,
-        //      MIUI
         FLYME,
         ONEPLUS
     }
@@ -106,11 +105,7 @@ public class LazyIconFragment extends LazyFragment {
 
     private void init() {
         calcNumOfRows();
-        final RequestManager rm = Glide.with(this);
 
-        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mNumOfRows, rm);
-
-        boolean customPicker = getArguments().getBoolean(mArgCustomPickerKey, false);
         mGridLayoutManager = new GridLayoutManager(getContext(), mNumOfRows);
         mGridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -120,6 +115,12 @@ public class LazyIconFragment extends LazyFragment {
         });
         mGridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mGridLayoutManager.scrollToPosition(0);
+
+        final RequestManager rm = Glide.with(this);
+        mIconAdapter = new IconAdapter(getActivity(), getContext(), mIconBeanList, mNumOfRows, rm,
+                mGridView, mGridLayoutManager);
+
+        boolean customPicker = getArguments().getBoolean(mArgCustomPickerKey, false);
 
         mGridView.setLayoutManager(mGridLayoutManager);
         mGridView.setHasFixedSize(true);

@@ -83,62 +83,53 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
             .button_lab_xposed_reboot, R.id.button_lab_xposed_refresh})
     public void onClick(final View v) {
 
-        RxPermissions.getInstance(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) {
-                        if (!aBoolean) {
+        new RxPermissions(this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(grant -> {
+                    if (!grant) {
+                        return;
+                    }
+                    int id = v.getId();
+                    if (id == R.id.button_lab_xposed_apply) {
+                        try {
+                            Process root = Runtime.getRuntime().exec("su");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        if (!RootTools.isAccessGiven()) {
+                            Toast.makeText(mContext,
+                                    getString(R.string.global_state_not_root),
+                                    Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        int id = v.getId();
-                        if (id == R.id.button_lab_xposed_apply) {
-                            try {
-                                Process root = Runtime.getRuntime().exec("su");
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            if (!RootTools.isAccessGiven()) {
-                                Toast.makeText(mContext,
-                                        getString(R.string.global_state_not_root),
-                                        Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-                            mProgressDialog = new ProgressDialog(mContext);
-                            mProgressDialog.setMessage("opening...");
-                            mProgressDialog.setCanceledOnTouchOutside(false);
-                            mProgressDialog.show();
-                            tryAndApplyIcon(getApplicationInfo());
-                        } else if (id == R.id.button_lab_xposed_close) {
-                            mActive = false;
-                            mPrefs.edit().putBoolean("pref_global_load", false).commit();
-                            mXposedStateTextView
-                                    .setText(getString(R.string.global_state_not_active));
-                            mXposedStateTextView
-                                    .setTextColor(ResourceUtil
-                                            .getColor(LabActivity.this, R.color.palette_red_500));
-                            mXposedApplyButton.setEnabled(true);
-                            mXposedCloseButton.setEnabled(false);
-                            mXposedRefreshButton.setEnabled(false);
-                            mXposedRebootButton.setEnabled(false);
-                        } else if (id == R.id.button_lab_xposed_refresh) {
-                            //            XposedUtils.killLauncher();
-                            //            XposedUtils.clearNovaCache2(getPackageManager());
-                            XposedUtils.killAll(
-                                    (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
-                        } else if (id == R.id.button_lab_xposed_reboot) {
-                            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                            builder.title(getString(R.string.action_reboot) + "?");
-                            builder.positiveText(getString(R.string.yes));
-                            builder.onPositive(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog,
-                                                    @NonNull DialogAction which) {
-                                    XposedUtils.reboot();
-                                }
-                            });
-                            builder.negativeText(getString(R.string.no));
-                            builder.show();
-                        }
+                        mProgressDialog = new ProgressDialog(mContext);
+                        mProgressDialog.setMessage("opening...");
+                        mProgressDialog.setCanceledOnTouchOutside(false);
+                        mProgressDialog.show();
+                        tryAndApplyIcon(getApplicationInfo());
+                    } else if (id == R.id.button_lab_xposed_close) {
+                        mActive = false;
+                        mPrefs.edit().putBoolean("pref_global_load", false).commit();
+                        mXposedStateTextView
+                                .setText(getString(R.string.global_state_not_active));
+                        mXposedStateTextView
+                                .setTextColor(ResourceUtil
+                                        .getColor(LabActivity.this, R.color.palette_red_500));
+                        mXposedApplyButton.setEnabled(true);
+                        mXposedCloseButton.setEnabled(false);
+                        mXposedRefreshButton.setEnabled(false);
+                        mXposedRebootButton.setEnabled(false);
+                    } else if (id == R.id.button_lab_xposed_refresh) {
+                        //            XposedUtils.killLauncher();
+                        //            XposedUtils.clearNovaCache2(getPackageManager());
+                        XposedUtils.killAll(
+                                (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
+                    } else if (id == R.id.button_lab_xposed_reboot) {
+                        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                        builder.title(getString(R.string.action_reboot) + "?");
+                        builder.positiveText(getString(R.string.yes));
+                        builder.onPositive((dialog, which) -> XposedUtils.reboot());
+                        builder.negativeText(getString(R.string.no));
+                        builder.show();
                     }
                 });
     }
@@ -338,150 +329,141 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
     }
 
     private void apply(final ApplicationInfo themePackage) {
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    XmlPullParser xrp;
-                    XmlPullParser xrp2;
-                    ArrayList<IconReplacementItem> items;
-                    Resources origPkgRes;
-                    SharedPreferences.Editor editor = mPrefs.edit();
-                    Gson gson = new Gson();
-                    ArrayList<String> mIconPackages = new ArrayList();
-                    HashMap<String, ArrayList<IconReplacementItem>> mIconReplacementsHashMap =
-                            new HashMap();
-                    String themePackagePath = themePackage.sourceDir;
-                    if (themePackage.sourceDir.contains("/data/app/")) {
-                        Command tmp = RootTools.getShell(true).add(new CommandCapture(0,
-                                "rm /data/data/" + getPackageName() + "/cache/icons/*",
-                                "rm " + getExternalCacheDir().getAbsolutePath()
-                                        + "/current_theme.apk"));
+        new Thread(() -> {
+            try {
+                XmlPullParser xrp;
+                XmlPullParser xrp2;
+                ArrayList<IconReplacementItem> items;
+                Resources origPkgRes;
+                SharedPreferences.Editor editor = mPrefs.edit();
+                Gson gson = new Gson();
+                ArrayList<String> mIconPackages = new ArrayList();
+                HashMap<String, ArrayList<IconReplacementItem>> mIconReplacementsHashMap =
+                        new HashMap();
+                String themePackagePath = themePackage.sourceDir;
+                if (themePackage.sourceDir.contains("/data/app/")) {
+                    Command tmp = RootTools.getShell(true).add(new CommandCapture(0,
+                            "rm /data/data/" + getPackageName() + "/cache/icons/*",
+                            "rm " + getExternalCacheDir().getAbsolutePath()
+                                    + "/current_theme.apk"));
 
-                    } else {
-                        Log.d(TAG,
-                                "Original Theme APK is at " + themePackage.sourceDir);
-                        Command commandCapture = new CommandCapture(0,
-                                "rm /data/data/" + getPackageName() + "/cache/icons/*",
-                                "rm " + getExternalCacheDir().getAbsolutePath()
-                                        + "/current_theme.apk",
-                                "cat \"" + themePackage.sourceDir + "\" > " + getExternalCacheDir()
-                                        .getAbsolutePath() + "/current_theme.apk",
-                                "chmod 644 " + getExternalCacheDir().getAbsolutePath()
-                                        + "/current_theme.apk");
-                        Command tmp = RootTools.getShell(true).add(commandCapture);
+                } else {
+                    Log.d(TAG,
+                            "Original Theme APK is at " + themePackage.sourceDir);
+                    Command commandCapture = new CommandCapture(0,
+                            "rm /data/data/" + getPackageName() + "/cache/icons/*",
+                            "rm " + getExternalCacheDir().getAbsolutePath()
+                                    + "/current_theme.apk",
+                            "cat \"" + themePackage.sourceDir + "\" > " + getExternalCacheDir()
+                                    .getAbsolutePath() + "/current_theme.apk",
+                            "chmod 644 " + getExternalCacheDir().getAbsolutePath()
+                                    + "/current_theme.apk");
+                    Command tmp = RootTools.getShell(true).add(commandCapture);
 
-                        themePackagePath = getExternalCacheDir() + "/current_theme.apk";
-                        Log.d(TAG, "Copied Theme APK is at " + themePackagePath);
+                    themePackagePath = getExternalCacheDir() + "/current_theme.apk";
+                    Log.d(TAG, "Copied Theme APK is at " + themePackagePath);
+                }
+                PackageManager pm = getPackageManager();
+                Resources r = getPackageManager()
+                        .getResourcesForApplication(themePackage.packageName);
+                if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {
+                    InputStream istr = r.getAssets().open("values/appfilter.xml");
+                    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+                    factory.setNamespaceAware(true);
+                    xrp = factory.newPullParser();
+                    xrp.setInput(istr, "UTF-8");
+                    InputStream istr2 = r.getAssets().open("values/appfilter.xml");
+                    XmlPullParserFactory factory2 = XmlPullParserFactory.newInstance();
+                    factory2.setNamespaceAware(true);
+                    xrp2 = factory2.newPullParser();
+                    xrp2.setInput(istr2, "UTF-8");
+                } else {
+                    xrp = r.getXml(r
+                            .getIdentifier("appfilter", "xml", themePackage.packageName));
+                    xrp2 = r.getXml(r
+                            .getIdentifier("appfilter", "xml", themePackage.packageName));
+                }
+                for (Map.Entry<String, ?> entry : mPrefs.getAll()
+                        .entrySet()) {
+                    if (entry.getKey().contains("theme_icon_for_")) {
+                        editor.remove(entry.getKey());
                     }
-                    PackageManager pm = getPackageManager();
-                    Resources r = getPackageManager()
-                            .getResourcesForApplication(themePackage.packageName);
-                    if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {
-                        InputStream istr = r.getAssets().open("values/appfilter.xml");
-                        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                        factory.setNamespaceAware(true);
-                        xrp = factory.newPullParser();
-                        xrp.setInput(istr, "UTF-8");
-                        InputStream istr2 = r.getAssets().open("values/appfilter.xml");
-                        XmlPullParserFactory factory2 = XmlPullParserFactory.newInstance();
-                        factory2.setNamespaceAware(true);
-                        xrp2 = factory2.newPullParser();
-                        xrp2.setInput(istr2, "UTF-8");
-                    } else {
-                        xrp = r.getXml(r
-                                .getIdentifier("appfilter", "xml", themePackage.packageName));
-                        xrp2 = r.getXml(r
-                                .getIdentifier("appfilter", "xml", themePackage.packageName));
-                    }
-                    for (Map.Entry<String, ?> entry : mPrefs.getAll()
-                            .entrySet()) {
-                        if (((String) entry.getKey()).contains("theme_icon_for_")) {
-                            editor.remove((String) entry.getKey());
-                        }
-                    }
-                    editor.commit();
-                    DisplayMetrics metrics = new DisplayMetrics();
-                    getWindowManager().getDefaultDisplay()
-                            .getMetrics(metrics);
-                    if (metrics.densityDpi == 213) {
-                        metrics.densityDpi = 320;
-                    }
-                    editor.putInt("display_dpi", metrics.densityDpi);
-                    Iterator i$ = Util.ParseIconReplacements(themePackage.packageName, r, xrp)
-                            .iterator();
-                    while (i$.hasNext()) {
-                        IconReplacementItem item = (IconReplacementItem) i$.next();
-                        try {
-                            ActivityInfo activityInfo = pm.getActivityInfo(new ComponentName(
-                                    item.getPackageName(),
-                                    item.getActivityName()), PackageManager.GET_META_DATA);
-                            Log.d(TAG, "activity: " + item.getActivityName());
-                            Log.d(TAG, "orig res name: " + item.getOrigResName());
-                            Log.d(TAG, "component: " + item.getComponent());
-                            Log.d(TAG, "orig res: " + item.getOrigRes());
-                            Log.d(TAG, "replacement res: " + item.getReplacementRes());
-                            Log.d(TAG, "replacement res name: " + item.getReplacementResName());
-                            Log.d(TAG, "package: " + item.getPackageName());
-                            if (activityInfo != null) {
-                                if (mIconReplacementsHashMap.get(item.getPackageName()) == null) {
-                                    mIconReplacementsHashMap
-                                            .put(item.getPackageName(), new ArrayList());
-                                }
-                                items = (ArrayList) mIconReplacementsHashMap
-                                        .get(item.getPackageName());
-                                origPkgRes =
-                                        pm.getResourcesForApplication(item.getPackageName());
-                                if (activityInfo.getIconResource() != 0) {
-                                    try {
-                                        item.setPackageName(origPkgRes
-                                                .getResourcePackageName(activityInfo
-                                                        .getIconResource()));
-                                    } catch (Exception e) {
-                                    }
-                                }
-                                item.setOrigRes(activityInfo.getIconResource());
-
-                                if (!items.contains(item)) {
-                                    items.add(item);
-
-                                    XposedUtils.cacheDrawable(item.getPackageName(),
-                                            item.getOrigRes(),
-                                            (BitmapDrawable) new BitmapDrawable(origPkgRes,
-                                                    XposedUtils.getBitmapForDensity(r,
-                                                            metrics.densityDpi,
-                                                            item.getReplacementRes())));
+                }
+                editor.commit();
+                DisplayMetrics metrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay()
+                        .getMetrics(metrics);
+                if (metrics.densityDpi == 213) {
+                    metrics.densityDpi = 320;
+                }
+                editor.putInt("display_dpi", metrics.densityDpi);
+                Iterator i$ = Util.ParseIconReplacements(themePackage.packageName, r, xrp)
+                        .iterator();
+                while (i$.hasNext()) {
+                    IconReplacementItem item = (IconReplacementItem) i$.next();
+                    try {
+                        ActivityInfo activityInfo = pm.getActivityInfo(new ComponentName(
+                                item.getPackageName(),
+                                item.getActivityName()), PackageManager.GET_META_DATA);
+                        Log.d(TAG, "activity: " + item.getActivityName());
+                        Log.d(TAG, "orig res name: " + item.getOrigResName());
+                        Log.d(TAG, "component: " + item.getComponent());
+                        Log.d(TAG, "orig res: " + item.getOrigRes());
+                        Log.d(TAG, "replacement res: " + item.getReplacementRes());
+                        Log.d(TAG, "replacement res name: " + item.getReplacementResName());
+                        Log.d(TAG, "package: " + item.getPackageName());
+                        if (activityInfo != null) {
+                            if (mIconReplacementsHashMap.get(item.getPackageName()) == null) {
+                                mIconReplacementsHashMap
+                                        .put(item.getPackageName(), new ArrayList());
+                            }
+                            items = (ArrayList) mIconReplacementsHashMap
+                                    .get(item.getPackageName());
+                            origPkgRes =
+                                    pm.getResourcesForApplication(item.getPackageName());
+                            if (activityInfo.getIconResource() != 0) {
+                                try {
+                                    item.setPackageName(origPkgRes
+                                            .getResourcePackageName(activityInfo
+                                                    .getIconResource()));
+                                } catch (Exception e) {
                                 }
                             }
-                        } catch (Exception e2) {
+                            item.setOrigRes(activityInfo.getIconResource());
+
+                            if (!items.contains(item)) {
+                                items.add(item);
+
+                                XposedUtils.cacheDrawable(item.getPackageName(),
+                                        item.getOrigRes(),
+                                        new BitmapDrawable(origPkgRes,
+                                                XposedUtils.getBitmapForDensity(r,
+                                                        metrics.densityDpi,
+                                                        item.getReplacementRes())));
+                            }
                         }
+                    } catch (Exception e2) {
                     }
-                    editor.putString("theme_package_name", themePackage.packageName);
-                    editor.putString("theme_package_path", themePackagePath);
-                    for (Map.Entry<String, ArrayList<IconReplacementItem>> entry2 : mIconReplacementsHashMap
-                            .entrySet()) {
-                        mIconPackages.add(entry2.getKey());
-                        editor.putString("theme_icon_for_" + ((String) entry2.getKey()),
-                                gson.toJson(((ArrayList) entry2.getValue()).toArray()));
-                    }
-                    editor.putString("theme_icon_packages",
-                            gson.toJson(mIconPackages.toArray()));
-                    editor.commit();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            runAfterSuccess();
-                        }
-                    });
-                } catch (Exception e6) {
-                    e6.printStackTrace();
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-                            Toast.makeText(mContext, "Failed to apply icons!", Toast.LENGTH_SHORT)
-                                    .show();
-//                            tryAndApplyIcon(null);
-                        }
-                    });
                 }
+                editor.putString("theme_package_name", themePackage.packageName);
+                editor.putString("theme_package_path", themePackagePath);
+                for (Map.Entry<String, ArrayList<IconReplacementItem>> entry2 : mIconReplacementsHashMap
+                        .entrySet()) {
+                    mIconPackages.add(entry2.getKey());
+                    editor.putString("theme_icon_for_" + entry2.getKey(),
+                            gson.toJson(((ArrayList) entry2.getValue()).toArray()));
+                }
+                editor.putString("theme_icon_packages",
+                        gson.toJson(mIconPackages.toArray()));
+                editor.commit();
+                runOnUiThread(() -> runAfterSuccess());
+            } catch (Exception e6) {
+                e6.printStackTrace();
+                runOnUiThread(() -> {
+                    Toast.makeText(mContext, "Failed to apply icons!", Toast.LENGTH_SHORT)
+                            .show();
+//                            tryAndApplyIcon(null);
+                });
             }
         }).start();
     }

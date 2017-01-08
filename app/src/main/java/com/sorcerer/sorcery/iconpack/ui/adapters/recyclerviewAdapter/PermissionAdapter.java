@@ -68,7 +68,7 @@ public class PermissionAdapter
         }
         holder.title.setText(mPermissionBeanList.get(position).getTitle());
         holder.title.setCompoundDrawablesWithIntrinsicBounds(
-                mPermissionBeanList.get(position).getResId(), 0, 0, 0);
+                mPermissionBeanList.get(position).getDrawable(), null, null, null);
         holder.title.setCompoundDrawablePadding(DisplayUtil.dip2px(mContext, 16));
         holder.describe.setText(mPermissionBeanList.get(position).getDescribe());
     }

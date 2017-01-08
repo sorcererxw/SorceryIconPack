@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 
 import com.bumptech.glide.Glide;
 import com.sorcerer.sorcery.iconpack.R;

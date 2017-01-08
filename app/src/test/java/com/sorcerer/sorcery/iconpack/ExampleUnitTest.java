@@ -15,12 +15,9 @@ import io.reactivex.functions.Consumer;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        AppSearchResultGetter.search("计算器")
-                .subscribe(new Consumer<List<String>>() {
-                    @Override
-                    public void accept(List<String> strings) throws Exception {
-                        System.out.println(Arrays.toString(strings.toArray()).replace(",", "\n"));
-                    }
+        AppSearchResultGetter.search("settings")
+                .subscribe(strings -> {
+                    System.out.println(Arrays.toString(strings.toArray()).replace(",", "\n"));
                 });
     }
 }

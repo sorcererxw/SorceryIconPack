@@ -132,16 +132,13 @@ public class IconDialogActivity extends ToolbarActivity {
 
         mLikeLayout.bindIcon(mName);
 
-        mBackground.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (!ViewUtil.isPointInsideView(event.getX(),
-                        event.getY(),
-                        findViewById(R.id.cardView_icon_dialog_card))) {
-                    onBackPressed();
-                }
-                return false;
+        mBackground.setOnTouchListener((v, event) -> {
+            if (!ViewUtil.isPointInsideView(event.getX(),
+                    event.getY(),
+                    findViewById(R.id.cardView_icon_dialog_card))) {
+                onBackPressed();
             }
+            return false;
         });
     }
 
@@ -150,42 +147,33 @@ public class IconDialogActivity extends ToolbarActivity {
         super.onResume();
 
         Observable.just(mName).subscribeOn(Schedulers.newThread())
-                .map(new Function<String, String>() {
-                    @Override
-                    public String apply(String name) {
-                        String res = PackageUtil.getComponentByName(IconDialogActivity.this, name);
-                        if (res == null) {
-                            res = "";
-                        }
-                        return res;
+                .map(name -> {
+                    String res = PackageUtil.getComponentByName(IconDialogActivity.this, name);
+                    if (res == null) {
+                        res = "";
                     }
+                    return res;
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(final String component) {
-                        mComponent = component;
-                        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-                        showRealName(mPackageName);
-                        if (mMenu != null) {
-                            onCreateOptionsMenu(mMenu);
-                        }
-                        if (false && BuildConfig.DEBUG) {
-                            new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    TextView componentTextView =
-                                            (TextView) View.inflate(IconDialogActivity.this,
-                                                    R.layout.textview_dialog_icon_component_info,
-                                                    null);
-                                    componentTextView.setVisibility(View.VISIBLE);
-                                    componentTextView.setText(
-                                            (component == null || component.isEmpty()) ?
-                                                    "null" : component);
-                                    mComponentContainer.addView(componentTextView);
-                                }
-                            }, 500);
-                        }
+                .subscribe(component -> {
+                    mComponent = component;
+                    mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                    showRealName(mPackageName);
+                    if (mMenu != null) {
+                        onCreateOptionsMenu(mMenu);
+                    }
+                    if (false && BuildConfig.DEBUG) {
+                        new Handler().postDelayed(() -> {
+                            TextView componentTextView =
+                                    (TextView) View.inflate(IconDialogActivity.this,
+                                            R.layout.textview_dialog_icon_component_info,
+                                            null);
+                            componentTextView.setVisibility(View.VISIBLE);
+                            componentTextView.setText(
+                                    (component == null || component.isEmpty()) ?
+                                            "null" : component);
+                            mComponentContainer.addView(componentTextView);
+                        }, 500);
                     }
                 });
     }

@@ -137,7 +137,10 @@ public class SearchBar extends Toolbar {
 
     private void addTintedUpNavigation() {
         Drawable drawable =
-                ResourceUtil.getDrawable(getContext(), R.drawable.ic_arrow_back_grey_600_24dp);
+                new IconicsDrawable(getContext(), GoogleMaterial.Icon.gmd_arrow_back)
+                        .sizeDp(24)
+                        .paddingDp(4)
+                        .color(ResourceUtil.getColor(getContext(), R.color.palette_grey_600));
         setNavigationIcon(drawable);
     }
 

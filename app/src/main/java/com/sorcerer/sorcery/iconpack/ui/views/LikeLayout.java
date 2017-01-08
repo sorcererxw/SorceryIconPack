@@ -1,17 +1,21 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.mikepenz.community_material_typeface_library.CommunityMaterial;
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
@@ -19,11 +23,9 @@ import com.sorcerer.sorcery.iconpack.utils.Prefs.LikePrefs;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
-import io.reactivex.functions.Consumer;
 
 /**
  * @description:
@@ -41,22 +43,22 @@ public class LikeLayout extends FrameLayout {
 
     private int mFlag = 0;
 
-    @BindView(R.id.textView_label_like)
-    TextView mLikeText;
-    @BindView(R.id.textView_label_dislike)
-    TextView mDislikeText;
+    @BindView(R.id.imageView_label_like)
+    ImageView mLikeView;
+    @BindView(R.id.imageView_label_dislike)
+    ImageView mDislikeView;
 
-    @OnClick({R.id.textView_label_like, R.id.textView_label_dislike})
+    @OnClick({R.id.imageView_label_like, R.id.imageView_label_dislike})
     void onClick(final View v) {
-        RxPermissions.getInstance(mContext)
+        new RxPermissions((Activity) getContext())
                 .request(Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(aBoolean -> {
-                    if (!aBoolean) {
+                .subscribe(grant -> {
+                    if (!grant) {
                         return;
                     }
                     int id = v.getId();
-                    if (id == R.id.textView_label_like) {
+                    if (id == R.id.imageView_label_like) {
                         mFlag = 1;
                         handleFlag(mFlag, true);
                         if (mBind) {
@@ -74,10 +76,10 @@ public class LikeLayout extends FrameLayout {
                 });
     }
 
-    @OnLongClick({R.id.textView_label_like, R.id.textView_label_dislike})
+    @OnLongClick({R.id.imageView_label_like, R.id.imageView_label_dislike})
     boolean onLongClick(View v) {
         int id = v.getId();
-        if (id == R.id.textView_label_like) {
+        if (id == R.id.imageView_label_like) {
             Toast.makeText(mContext,
                     mContext.getString(R.string.action_like),
                     Toast.LENGTH_SHORT).show();
@@ -90,43 +92,45 @@ public class LikeLayout extends FrameLayout {
         }
     }
 
-    @BindViews({R.id.textView_label_like, R.id.textView_label_dislike})
-    TextView[] mTextViews;
-
     public LikeLayout(Context context) {
         super(context);
-        init(context);
+        init();
     }
 
     public LikeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        init();
     }
 
     public LikeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
+        init();
     }
 
-    private void init(Context context) {
-        mContext = context;
-        mPrefs = new LikePrefs(context);
+    private void init() {
+        mContext = getContext();
+        mPrefs = new LikePrefs(mContext);
 
-        View view = View.inflate(context, R.layout.layout_like, null);
+        View view = View.inflate(mContext, R.layout.layout_like, null);
         this.addView(view);
-        ButterKnife.bind(this, view);
+        ButterKnife.bind(this, this);
 
-        for (TextView t : mTextViews) {
-            t.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "like.ttf"));
-        }
-        mLikeText.setOnLongClickListener(v -> {
+        mLikeView.setImageDrawable(
+                new IconicsDrawable(getContext(), CommunityMaterial.Icon.cmd_heart)
+                        .sizeDp(128).paddingDp(12));
+
+        mDislikeView.setImageDrawable(
+                new IconicsDrawable(getContext(), CommunityMaterial.Icon.cmd_heart_broken)
+                        .sizeDp(128).paddingDp(12));
+
+        mLikeView.setOnLongClickListener(v -> {
             Toast.makeText(mContext,
                     mContext.getString(R.string.action_like),
                     Toast.LENGTH_SHORT).show();
             return false;
         });
 
-        mDislikeText.setOnLongClickListener(v -> {
+        mDislikeView.setOnLongClickListener(v -> {
             Toast.makeText(mContext,
                     mContext.getString(R.string.action_dislike),
                     Toast.LENGTH_SHORT).show();
@@ -143,27 +147,28 @@ public class LikeLayout extends FrameLayout {
 
     private void handleFlag(int flag, boolean scale) {
         if (flag == 0) {
-            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
-            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
+//            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
+//            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
         } else if (flag == 1) {
-            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_pink_500));
-            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
+//            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_pink_500));
+//            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
             if (scale) {
-                scale(mLikeText, true);
-                scale(mDislikeText, false);
+                scale(mLikeView, true);
+                scale(mDislikeView, false);
             } else {
-                mLikeText.setScaleX(mTimeToScaleLikeImg);
-                mLikeText.setScaleY(mTimeToScaleLikeImg);
+                mLikeView.setScaleX(mTimeToScaleLikeImg);
+                mLikeView.setScaleY(mTimeToScaleLikeImg);
             }
         } else if (flag == -1) {
-            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
-            mDislikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_blue_grey_500));
+//            mLikeText.setTextColor(ContextCompat.getColor(mContext, R.color.palette_grey_500));
+//            mDislikeText
+//                    .setTextColor(ContextCompat.getColor(mContext, R.color.palette_blue_grey_500));
             if (scale) {
-                scale(mDislikeText, true);
-                scale(mLikeText, false);
+                scale(mDislikeView, true);
+                scale(mLikeView, false);
             } else {
-                mDislikeText.setScaleX(mTimeToScaleLikeImg);
-                mDislikeText.setScaleY(mTimeToScaleLikeImg);
+                mDislikeView.setScaleX(mTimeToScaleLikeImg);
+                mDislikeView.setScaleY(mTimeToScaleLikeImg);
             }
         }
     }
@@ -206,6 +211,4 @@ public class LikeLayout extends FrameLayout {
 
         mHandler.postDelayed(mLikeRunnable, 1000);
     }
-
-
 }

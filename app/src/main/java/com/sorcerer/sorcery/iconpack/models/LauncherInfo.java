@@ -2,10 +2,13 @@ package com.sorcerer.sorcery.iconpack.models;
 
 import android.content.Context;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
+
+import timber.log.Timber;
 
 /**
  * @description:
@@ -17,8 +20,6 @@ public class LauncherInfo implements Comparable {
     private String mLabel;
     private int mIcon;
     private String mPackageName;
-
-    private final String TAG = "LauncherInfo";
 
     public LauncherInfo(Context context, String packageName, String label) {
         mPackageName = packageName;
@@ -83,12 +84,12 @@ public class LauncherInfo implements Comparable {
                 mIcon = R.drawable.aviate_launcher;
                 break;
             default:
-                Log.d(TAG, mLabel + ": no such launcher");
+                Timber.d("%s: no such launcher",mLabel);
         }
     }
 
     @Override
-    public int compareTo(Object another) {
+    public int compareTo(@NonNull Object another) {
         if (another instanceof LauncherInfo) {
             if (this.isInstalled() != ((LauncherInfo) another).isInstalled()) {
                 return this.isInstalled() ? -1 : 1;

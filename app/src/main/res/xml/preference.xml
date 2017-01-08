@@ -19,7 +19,7 @@
         android:key="preference_group_laboratory"
         android:title="@string/preference_group_laboratory">
 
-        <com.sorcerer.sorcery.iconpack.ui.preferences.SorcerySwitchPreference
+        <SwitchPreference
             android:key="preference_switch_laboratory_global_load"
             android:title="@string/preference_laboratory_global_load"/>
 

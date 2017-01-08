@@ -15,6 +15,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,7 +39,6 @@ import com.sorcerer.sorcery.iconpack.models.OpenSourceLibBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.CustomizeTabsAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.OpenSourceLibAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
-import com.sorcerer.sorcery.iconpack.ui.preferences.SorcerySwitchPreference;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.OpenSourceLibInformations;
@@ -107,7 +107,7 @@ public class SettingsFragment extends PreferenceFragment {
 
     private static final String KEY_LABORATORY_GLOBAL_LOAD =
             "preference_switch_laboratory_global_load";
-    private SorcerySwitchPreference mLaboratoryGlobalLoadSwitchPreference;
+    private SwitchPreference mLaboratoryGlobalLoadSwitchPreference;
 
     private static final String KEY_DEV_GROUP = "preference_group_dev";
     private PreferenceGroup mDevPreferenceGroup;
@@ -213,7 +213,7 @@ public class SettingsFragment extends PreferenceFragment {
             mPreferenceScreen.removePreference(mLabGroup);
         } else {
             mLaboratoryGlobalLoadSwitchPreference =
-                    (SorcerySwitchPreference) findPreference(KEY_LABORATORY_GLOBAL_LOAD);
+                    (SwitchPreference) findPreference(KEY_LABORATORY_GLOBAL_LOAD);
             mLaboratoryGlobalLoadSwitchPreference.setSummary(StringUtil.handleLongXmlString(
                     ResourceUtil.getString(mActivity, R.string.global_detail)));
             mLaboratoryGlobalLoadSwitchPreference.setChecked(mGlobalLoadActive);
@@ -512,8 +512,8 @@ public class SettingsFragment extends PreferenceFragment {
                         IconReplacementItem item = (IconReplacementItem) i$.next();
                         try {
                             ActivityInfo activityInfo = pm.getActivityInfo(new ComponentName(
-                                    item.getPackageName(),
-                                    item.getActivityName()),
+                                            item.getPackageName(),
+                                            item.getActivityName()),
                                     PackageManager.GET_META_DATA);
                             if (activityInfo != null) {
                                 if (mIconReplacementsHashMap.get(item.getPackageName())

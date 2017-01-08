@@ -14,8 +14,6 @@ import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SettingsActivity;
 
-import io.reactivex.functions.Consumer;
-import rx_activity_result2.Result;
 import rx_activity_result2.RxActivityResult;
 
 
