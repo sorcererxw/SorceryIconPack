@@ -1,8 +1,12 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
+
+import timber.log.Timber;
 
 /**
  * @description:
@@ -29,27 +33,34 @@ public class MyFloatingActionButton extends FloatingActionButton {
         return mShow;
     }
 
-    public void setShow(boolean show) {
-        mShow = show;
-    }
-
-    /**
-     * Shows the button.
-     * <p>This method will animate the button show if the view has already been laid out.</p>
-     */
     @Override
     public void show() {
-        if (mShow) {
-            super.show();
+        if (!mShow) {
+            if (getVisibility() != VISIBLE) {
+                setScaleX(0);
+                setScaleY(0);
+            }
+            animate().scaleY(1).scaleX(1).setDuration(200).setListener(
+                    new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationStart(Animator animation) {
+                            super.onAnimationStart(animation);
+                            if (getVisibility() != VISIBLE) {
+                                setScaleX(0);
+                                setScaleY(0);
+                                setVisibility(VISIBLE);
+                            }
+                        }
+                    }).start();
         }
+        mShow = true;
     }
 
-    /**
-     * Hides the button.
-     * <p>This method will animate the button hide if the view has already been laid out.</p>
-     */
     @Override
     public void hide() {
-        super.hide();
+        if (mShow) {
+            animate().scaleY(0).scaleX(0).setDuration(200).start();
+        }
+        mShow = false;
     }
 }

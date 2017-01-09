@@ -2,6 +2,11 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>newsfold</item>
+        <item>tencent_qq_sport</item>
+        <item>ali_mybank</item>
+        <item>phonograph</item>
+        <item>microsoft_cortana</item>
         <item>yi_live</item>
         <item>jingdong_reader</item>
         <item>quizlet</item>

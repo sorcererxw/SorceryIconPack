@@ -12,4 +12,8 @@
         android:icon="@drawable/ic_compare_black_24dp"
         android:title="@string/action_show_origin_icon"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_create_shortcut"
+        android:title="shortcut"/>
 </menu>

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -46,10 +48,9 @@ public class ExposedSearchToolbar extends Toolbar {
         mTitleTextView = new TextView(context);
         mTitleTextView.setTextColor(ResourceUtil.getColor(context, R.color.palette_grey_500));
         mTitleTextView.setTextSize(20);
-        mTitleTextView.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-        mTitleTextView.setTypeface(Typeface.createFromAsset(context.getAssets(), "RockwellStd.otf"));
+        mTitleTextView.setLayoutParams(new ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
+        mTitleTextView
+                .setTypeface(Typeface.createFromAsset(context.getAssets(), "RockwellStd.otf"));
         addView(mTitleTextView);
     }
 

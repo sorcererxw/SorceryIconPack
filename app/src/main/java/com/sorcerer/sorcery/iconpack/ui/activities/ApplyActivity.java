@@ -27,6 +27,7 @@ import com.sorcerer.sorcery.iconpack.utils.LauncherIntents;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -123,8 +124,8 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
 
 
         List<LauncherInfo> recommendInfos = generateRecommend(systemInfos, launcherInfos);
-        Collections.sort(systemInfos);
-        Collections.sort(launcherInfos);
+        Collections.sort(systemInfos, LauncherInfo::compareTo);
+        Collections.sort(launcherInfos, LauncherInfo::compareTo);
 
         if (recommendInfos.isEmpty()) {
             mRecommendLayout.setVisibility(View.GONE);

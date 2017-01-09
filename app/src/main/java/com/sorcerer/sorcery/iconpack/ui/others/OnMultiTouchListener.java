@@ -1,17 +1,16 @@
 package com.sorcerer.sorcery.iconpack.ui.others;
 
-import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.sorcerer.sorcery.iconpack.utils.SimpleCallback;
 
 /**
- * @description:
+ * @description: 连续多次点击事件的监听器
  * @author: Sorcerer
  * @date: 2016/11/12
  */
- 
+
 public class OnMultiTouchListener implements View.OnTouchListener {
 
     private int mTime;

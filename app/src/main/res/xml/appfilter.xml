@@ -55,6 +55,7 @@
     <calendar
         component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
         prefix="xiaomi_calendar_"/>
+
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -747,6 +748,9 @@
         drawable="email"/>
     <item
         component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}"
+        drawable="email"/>
+    <item
+        component="ComponentInfo{com.android.email/com.kingsoft.email.activity.Welcome}"
         drawable="email"/>
     <item
         component="ComponentInfo{com.google.android.email/com.android.email.activity.Welcome}"
@@ -1789,15 +1793,6 @@
     <item
         component="ComponentInfo{com.jianshu.haruki/com.baiji.jianshu.account.SplashScreenActivity}"
         drawable="jianshu"/>
-    <item
-        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.ui.activity.WelcomeActivity}"
-        drawable="jike"/>
-    <item
-        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.ui.activity.SplashActivity}"
-        drawable="jike"/>
-    <item
-        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.business.main.ui.SplashActivity}"
-        drawable="jike"/>
     <item
         component="ComponentInfo{com.ss.android.article.news/com.ss.android.article.news.activity.SplashActivity}"
         drawable="jinritoutiao"/>
@@ -4714,5 +4709,44 @@
     <item
         component="ComponentInfo{ru.zdevs.zarchiver/ru.zdevs.zarchiver.ZArchiver}"
         drawable="zarchiver"/>
+    <item
+        component="ComponentInfo{com.microsoft.msa.authenticator/com.microsoft.onlineid.authenticator.LauncherActivity}"
+        drawable="microsoft_account"/>
+    <item
+        component="ComponentInfo{com.hpbr.bosszhipin/com.hpbr.bosszhipin.module.launcher.WelcomeActivity}"
+        drawable="boss_zhipin"/>
+    <item
+        component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}"
+        drawable="quizlet"/>
+    <item
+        component="ComponentInfo{com.jingdong.app.reader/com.jingdong.app.reader.activity.MainActivity}"
+        drawable="jingdong_reader"/>
+    <item
+        component="ComponentInfo{tv.xiaoka.live/com.yixia.live.activity.SplashActivity}"
+        drawable="yi_live"/>
+    <item
+        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.ui.activity.WelcomeActivity}"
+        drawable="jike"/>
+    <item
+        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.ui.activity.SplashActivity}"
+        drawable="jike"/>
+    <item
+        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.business.main.ui.SplashActivity}"
+        drawable="jike"/>
+    <item
+        component="ComponentInfo{com.ruguoapp.jike/com.ruguoapp.jike.Launcher1}"
+        drawable="jike"/>
+    <item
+        component="ComponentInfo{com.kabouzeid.gramophone/com.kabouzeid.gramophone.ui.activities.MainActivity}"
+        drawable="phonograph"/>
+    <item
+        component="ComponentInfo{com.mybank.android.phone/com.mybank.android.phone.MainActivity}"
+        drawable="ali_mybank"/>
+    <item
+        component="ComponentInfo{com.tencent.qqsports/com.tencent.qqsports.ui.SplashActivity}"
+        drawable="tencent_qq_sport"/>
+    <item
+        component="ComponentInfo{it.mvilla.android.quote/it.mvilla.android.quote.ui.activity.WelcomeActivity}"
+        drawable="newsfold"/>
 
 </resources>

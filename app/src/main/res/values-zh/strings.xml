@@ -186,5 +186,5 @@
     <string name="apply_tip_no_launcher">尚未安装启动器, 是否前往商店安装?</string>
     <string name="apply_tip_only_flyme">仅支持Flyme</string>
     <string name="apply_tip_only_miui">仅支持MIUI</string>
-    <string name="search_edit_hint">搜索图标</string>
+    <string name="search_edit_hint">搜索图标...</string>
 </resources>

@@ -8,6 +8,8 @@ import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
+import timber.log.Timber;
+
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
 
     public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
@@ -85,10 +87,10 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
                 dxUnconsumed,
                 dyUnconsumed);
         MyFloatingActionButton fab = (MyFloatingActionButton) child;
-        if (dyConsumed > 0 && child.getVisibility() == View.VISIBLE) {
-            child.hide();
-        } else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE && fab.isShow()) {
-            child.show();
+        if (dyConsumed > 0) {
+            fab.hide();
+        } else if (dyConsumed < 0) {
+            fab.show();
         }
     }
 }

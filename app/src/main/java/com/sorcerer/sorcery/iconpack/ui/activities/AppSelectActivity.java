@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -150,7 +151,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     }
 
     private void showFab(boolean show) {
-        mFAB.setShow(show);
         if (show) {
             mFAB.show();
         } else {

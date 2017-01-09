@@ -312,6 +312,18 @@ public class IconDialogActivity extends ToolbarActivity {
             } catch (Exception e) {
                 Timber.e(e);
             }
+        } else if (id == R.id.action_create_shortcut) {
+            Intent shortcutIntent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
+            shortcutIntent.putExtra("duplicate", false);
+            shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, mLabel);
+            Intent.ShortcutIconResource ico = Intent.ShortcutIconResource
+                    .fromContext(getApplicationContext(), R.mipmap.ic_launcher);
+            shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, ico);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setAction("android.intent.action.MAIN");
+            intent.addCategory("android.intent.category.LAUNCHER");
+            shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
+            sendBroadcast(shortcutIntent);
         }
         return super.onOptionsItemSelected(item);
     }

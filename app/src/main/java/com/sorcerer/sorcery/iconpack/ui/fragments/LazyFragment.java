@@ -25,7 +25,6 @@ public class LazyFragment extends LazyBaseFragment {
 
     @Override
     protected final void onCreateView(Bundle savedInstanceState) {
-        Log.d("TAG", "onCreateView() : " + "getUserVisibleHint():" + getUserVisibleHint());
         super.onCreateView(savedInstanceState);
         Bundle bundle = getArguments();
         if (bundle != null) {
@@ -58,9 +57,6 @@ public class LazyFragment extends LazyBaseFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        Log.d("TAG", "setUserVisibleHint() called with: " + "isVisibleToUser = [" + isVisibleToUser
-                + "]");
-
         if (isVisibleToUser && !isInit && getContentView() != null) {
             // visible but not init
             onCreateViewLazy(savedInstanceState);
@@ -123,7 +119,6 @@ public class LazyFragment extends LazyBaseFragment {
     @Deprecated
     @Override
     public final void onStart() {
-        Log.d("TAG", "onStart() : " + "getUserVisibleHint():" + getUserVisibleHint());
         super.onStart();
         if (isInit && !isStart && getUserVisibleHint()) {
             isStart = true;
@@ -135,7 +130,6 @@ public class LazyFragment extends LazyBaseFragment {
     @Override
     public final void onStop() {
         super.onStop();
-        Log.d("TAG", "onStop() called: " + "getUserVisibleHint():" + getUserVisibleHint());
         if (isInit && isStart && getUserVisibleHint()) {
             isStart = false;
             onFragmentStopLazy();
@@ -144,25 +138,22 @@ public class LazyFragment extends LazyBaseFragment {
 
     // on fragment show
     protected void onFragmentStartLazy() {
-        Log.d("TAG", "onFragmentStartLazy() called with: " + "");
     }
 
     // on fragment dismiss
     protected void onFragmentStopLazy() {
-        Log.d("TAG", "onFragmentStopLazy() called with: " + "");
+
     }
 
     protected void onCreateViewLazy(Bundle savedInstanceState) {
-        Log.d("TAG", "onCreateViewLazy() called with: "
-                + "savedInstanceState = [" + savedInstanceState + "]");
+
     }
 
-    protected void onResumeLazy() {
-        Log.d("TAG", "onResumeLazy() called with: " + "");
+    protected void onResumeLazy(){
     }
 
     protected void onPauseLazy() {
-        Log.d("TAG", "onPauseLazy() called with: " + "");
+
     }
 
     protected void onDestroyViewLazy() {
@@ -172,7 +163,7 @@ public class LazyFragment extends LazyBaseFragment {
     @Override
     @Deprecated
     public final void onResume() {
-        Log.d("TAG", "onResume() : " + "getUserVisibleHint():" + getUserVisibleHint());
+
         super.onResume();
         if (isInit) {
             onResumeLazy();
@@ -182,7 +173,6 @@ public class LazyFragment extends LazyBaseFragment {
     @Override
     @Deprecated
     public final void onPause() {
-        Log.d("TAG", "onPause() : " + "getUserVisibleHint():" + getUserVisibleHint());
         super.onPause();
         if (isInit) {
             onPauseLazy();
@@ -192,7 +182,6 @@ public class LazyFragment extends LazyBaseFragment {
     @Override
     @Deprecated
     public final void onDestroyView() {
-        Log.d("TAG", "onDestroyView() : " + "getUserVisibleHint():" + getUserVisibleHint());
         super.onDestroyView();
         if (isInit) {
             onDestroyViewLazy();

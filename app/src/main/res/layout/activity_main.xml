@@ -20,6 +20,7 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar
+                android:foreground="?attr/selectableItemBackground"
                 android:id="@+id/exposedSearchToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

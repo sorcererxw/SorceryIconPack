@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
@@ -83,5 +84,13 @@ public class ResourceUtil {
 
     public static int getResourceIdFromString(Context context, String resName, String resFold) {
         return context.getResources().getIdentifier(resName, resFold, context.getPackageName());
+    }
+
+    public static Drawable getAttrDrawable(Context context, int id) {
+        int[] attrs = new int[]{id};
+        TypedArray ta = context.obtainStyledAttributes(attrs);
+        Drawable drawableFromTheme = ta.getDrawable(0);
+        ta.recycle();
+        return drawableFromTheme;
     }
 }

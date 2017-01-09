@@ -82,7 +82,6 @@ public class LazyBaseFragment extends Fragment {
 
     @Override
     public void onDetach() {
-        Log.d("TAG", "onDetach() : ");
         super.onDetach();
         try {
             Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
@@ -97,7 +96,6 @@ public class LazyBaseFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        Log.d("TAG", "onDestroy() : ");
         super.onDestroy();
     }
 }
