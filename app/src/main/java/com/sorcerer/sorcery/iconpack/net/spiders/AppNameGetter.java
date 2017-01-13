@@ -16,6 +16,9 @@ import timber.log.Timber;
 
 public class AppNameGetter {
 
+    private static final String USER_AGENT =
+            "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2";
+
     public static Observable<String> getName(final String packageName) {
         return Observable.just("")
                 .flatMap(name -> name.isEmpty() ?
@@ -31,10 +34,8 @@ public class AppNameGetter {
                 .map(name -> {
                     try {
                         Document document = Jsoup
-                                .connect("http://sj.qq.com/myapp/detail.htm?apkName="
-                                        + name)
-                                .header("User-Agent",
-                                        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
+                                .connect("http://sj.qq.com/myapp/detail.htm?apkName=" + name)
+                                .header("User-Agent", USER_AGENT)
                                 .timeout(3000)
                                 .get();
                         return document
@@ -59,8 +60,7 @@ public class AppNameGetter {
                     try {
                         Document document = Jsoup
                                 .connect("http://www.coolapk.com/apk/" + name)
-                                .header("User-Agent",
-                                        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
+                                .header("User-Agent", USER_AGENT)
                                 .timeout(3000)
                                 .get();
                         return document
@@ -79,6 +79,7 @@ public class AppNameGetter {
                     return "";
                 })
                 .map(s -> {
+                    s = s.replaceAll("&nbsp;", " ");
                     String[] strings = s.split(":");
                     if (strings.length == 2) {
                         return strings[0];
@@ -93,8 +94,7 @@ public class AppNameGetter {
                     try {
                         Document document = Jsoup
                                 .connect("http://www.wandoujia.com/apps/" + name)
-                                .header("User-Agent",
-                                        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
+                                .header("User-Agent", USER_AGENT)
                                 .timeout(3000)
                                 .get();
                         return document
@@ -118,10 +118,8 @@ public class AppNameGetter {
                 .map(name -> {
                     try {
                         Document document = Jsoup
-                                .connect("https://play.google.com/store/apps/details?id="
-                                        + name)
-                                .header("User-Agent",
-                                        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
+                                .connect("https://play.google.com/store/apps/details?id=" + name)
+                                .header("User-Agent", USER_AGENT)
                                 .timeout(3000)
                                 .get();
                         return document
@@ -138,7 +136,8 @@ public class AppNameGetter {
                                 .getElementsByClass("info-container").get(0)
                                 .getElementsByClass("info-box-top").get(0)
                                 .getElementsByClass("document-title").get(0)
-                                .getElementsByClass("id-app-title").html();
+                                .getElementsByClass("id-app-title").get(0)
+                                .html();
                     } catch (Exception e) {
                         Timber.e("Google play: failed");
                         Timber.e(e);

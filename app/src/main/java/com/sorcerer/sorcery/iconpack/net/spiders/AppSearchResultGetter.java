@@ -33,16 +33,18 @@ public class AppSearchResultGetter {
     }
 
     private static Observable<List<String>> searchApkOnCoolapk(String searchText) {
-        return searchOnCoolapk(searchText, "apk");
+        return searchOnCoolapk(searchText, "apk", 1);
     }
 
     private static Observable<List<String>> searchGameOnCoolapk(String searchText) {
-        return searchOnCoolapk(searchText, "game");
+        return searchOnCoolapk(searchText, "game", 1);
     }
 
-    private static Observable<List<String>> searchOnCoolapk(String searchText, String type) {
+    private static Observable<List<String>> searchOnCoolapk(String searchText,
+                                                            String type,
+                                                            int page) {
         return Observable.just(searchText)
-                .map(text -> "http://www.coolapk.com/" + type + "/search?q=" + text)
+                .map(text -> "http://www.coolapk.com/" + type + "/search?q=" + text + "&p=" + page)
                 .flatMap(new Function<String, Observable<Element>>() {
                     public Observable<Element> apply(String url) {
                         try {
@@ -53,11 +55,6 @@ public class AppSearchResultGetter {
                                     .timeout(3000)
                                     .get();
                             return Observable.fromIterable(document
-                                    .getElementsByClass("container ex-flex-container").get(0)
-                                    .getElementsByClass("row").get(0)
-                                    .getElementsByClass("col-md-8 ex-flex-col ").get(0)
-                                    .getElementsByClass("panel panel-default ex-card").get(0)
-                                    .getElementsByClass("ex-card-body").get(0)
                                     .getElementsByClass("media-list ex-card-app-list").get(0)
                                     .getElementsByTag("li"));
                         } catch (Exception e) {

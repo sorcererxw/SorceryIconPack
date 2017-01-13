@@ -51,10 +51,13 @@
         prefix="google_calendar_"/>
     <calendar
         component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}"
-        drawable="onepluse_calendar_"/>
+        drawable="oneplus_calendar_"/>
     <calendar
         component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}"
         prefix="xiaomi_calendar_"/>
+    <calendar
+        component="ComponentInfo{com.smartisan.calendar/com.android.calendar.AllInOneActivity}"
+        prefix="smartisan_calendar_"/>
 
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
@@ -990,6 +993,9 @@
         component="ComponentInfo{cn.soloho.fuli/cn.soloho.fuli.ui.MainActivity}"
         drawable="fulimanman"/>
     <item
+        component="ComponentInfo{cn.soloho.fuli/cn.soloho.fuli.view.SplashActivity}"
+        drawable="fulimanman"/>
+    <item
         component="ComponentInfo{cn.wq.myandroidtoolspro/cn.wq.myandroidtoolspro.MainActivity}"
         drawable="myandroidtools"/>
     <item
@@ -1018,10 +1024,10 @@
         drawable="ecitic_bank"/>
     <item
         component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity}"
-        drawable="sorcery_icons_christmas"/>
+        drawable="sorcery_icons_winter_day"/>
     <item
         component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity}"
-        drawable="sorcery_icons_christmas"/>
+        drawable="sorcery_icons_winter_day"/>
     <item
         component="ComponentInfo{com.youdao.calculator/com.youdao.calculator.activities.SplashActivity}"
         drawable="netease_super_calculator"/>
@@ -2767,6 +2773,9 @@
         drawable="vsco"/>
     <item
         component="ComponentInfo{com.vsco.cam/com.vsco.cam.navigation.NavigationBaseActivity}"
+        drawable="vsco"/>
+    <item
+        component="ComponentInfo{com.vsco.cam/com.vsco.cam.navigation.LithiumActivity}"
         drawable="vsco"/>
     <item
         component="ComponentInfo{com.vst.itv52.v1/com.vst.itv52.v1.LancherActivity}"
@@ -4748,5 +4757,104 @@
     <item
         component="ComponentInfo{it.mvilla.android.quote/it.mvilla.android.quote.ui.activity.WelcomeActivity}"
         drawable="newsfold"/>
+    <item
+        component="ComponentInfo{com.weico.international/com.weico.international.activity.LogoActivity}"
+        drawable="weibo"/>
+    <item
+        component="ComponentInfo{com.weico.international/com.qihoo.util.StartActivity}"
+        drawable="weibo"/>
+    <item
+        component="ComponentInfo{com.psiphon3/com.psiphon3.StatusActivity}"
+        drawable="psiphon"/>
+    <item
+        component="ComponentInfo{com.sand.airdroid/com.sand.airdroid.ui.splash.SplashActivity_}"
+        drawable="airdroid"/>
+    <item
+        component="ComponentInfo{com.tencent.qt.sns/com.tencent.qtcf.authorize.LoginBarrierActivity}"
+        drawable="tencent_cf_sns"/>
+    <item
+        component="ComponentInfo{com.tencent.qt.sns/com.tencent.qt.sns.login.LaunchActivity}"
+        drawable="tencent_cf_sns"/>
+    <item
+        component="ComponentInfo{free.vpn.unblock.proxy.turbovpn/free.vpn.unblock.proxy.turbovpn.activity.VpnMainActivity}"
+        drawable="turbo_vpn"/>
+    <item
+        component="ComponentInfo{nextapp.fx/nextapp.fx.ui.textedit.TextEditorActivity}"
+        drawable="fx_file_explorer"/>
+    <item
+        component="ComponentInfo{nextapp.fx/nextapp.fx.ui.ExplorerActivity}"
+        drawable="fx_file_explorer"/>
+    <item
+        component="ComponentInfo{com.glgjing.marvel/com.glgjing.marvel.HomeActivity}"
+        drawable="powerful_monitor"/>
+    <item
+        component="ComponentInfo{com.kleientertainment.doNotStarvePocket/com.kleientertainment.doNotStarvePocket.DoNotStarveActivity}"
+        drawable="game_dont_starve"/>
+    <item
+        component="ComponentInfo{com.kleientertainment.doNotStarvePocket/com.game.god.FaActivity}"
+        drawable="game_dont_starve"/>
+    <item
+        component="ComponentInfo{com.kleientertainment.doNotStarvePocket/com.muzhiwan.sdk.MzwShellActivity}"
+        drawable="game_dont_starve"/>
+    <item
+        component="ComponentInfo{com.urbandroid.lux/com.urbandroid.lux.MainActivity}"
+        drawable="twilight"/>
+    <item
+        component="ComponentInfo{com.picsart.studio/com.socialin.android.photo.picsinphoto.MainPagerActivity}"
+        drawable="picsart_photo_studio"/>
+    <item
+        component="ComponentInfo{com.picsart.studio.light/com.socialin.android.photo.picsinphoto.MainPagerActivity}"
+        drawable="picsart_photo_studio"/>
+    <item
+        component="ComponentInfo{com.scee.psxandroid/com.scee.psxandroid.activity.TopActivity}"
+        drawable="sony_playstation_network"/>
+    <item
+        component="ComponentInfo{mark.via.gp/mark.via.ui.activity.BrowserActivity}"
+        drawable="via_browser"/>
+    <item
+        component="ComponentInfo{com.picsart.draw/com.palabs.artboard.activity.SplashScreenActivity}"
+        drawable="picsart_color"/>
+    <item
+        component="ComponentInfo{com.picsart.animate/com.picsart.animator.ui.activity.SplashScreenActivity}"
+        drawable="picsart_animator"/>
+    <item
+        component="ComponentInfo{com.tiantonglaw.readlaw/com.tiantonglaw.readlaw.main.LoadingActivity}"
+        drawable="readlaw"/>
+    <item
+        component="ComponentInfo{com.tiantonglaw.readlaw/com.tiantonglaw.readlaw.LaunchActivity}"
+        drawable="readlaw"/>
+    <item
+        component="ComponentInfo{com.microblink.photomath/com.microblink.photomath.main.MainActivity}"
+        drawable="photomath"/>
+    <item
+        component="ComponentInfo{com.ifanr.android/com.ifanr.android.view.activity.SplashActivity}"
+        drawable="ifanr_sudu"/>
+    <item
+        component="ComponentInfo{com.uusafe.appmaster/com.uusafe.appmaster.ui.activity.SplashActivity}"
+        drawable="uusafe"/>
+    <item
+        component="ComponentInfo{com.smartisan.calendar/com.android.calendar.AllInOneActivity}"
+        drawable="smartisan_calendar"/>
+    <item
+        component="ComponentInfo{com.gionee.freya.gallery/com.freya.app.story.page.StoryGalleryActivity}"
+        drawable="ami_album"/>
+    <item
+        component="ComponentInfo{com.microsoft.mimickeralarm/com.microsoft.mimickeralarm.appcore.AlarmMainActivity}"
+        drawable="microsoft_mimicker_alarm"/>
+    <item
+        component="ComponentInfo{com.tencent.tmgp.carrot3/com.tencent.tmgp.carrot3.CarrotFantasy}"
+        drawable="game_carrot_3"/>
+    <item
+        component="ComponentInfo{cc.huochaihe.app/cc.huochaihe.app.ui.launch.SplashActivity}"
+        drawable="huochaihe"/>
+    <item
+        component="ComponentInfo{cn.poco.pMix/cn.poco.pMix.MainActivity}"
+        drawable="picture_mix"/>
+    <item
+        component="ComponentInfo{com.xinpinget.xbox/com.xinpinget.xbox.activity.SplashActivity}"
+        drawable="xinpinget"/>
+    <item
+        component="ComponentInfo{com.tencent.ttpic/com.tencent.ttpic.module.MainActivity}"
+        drawable="tencent_ttpic"/>
 
 </resources>

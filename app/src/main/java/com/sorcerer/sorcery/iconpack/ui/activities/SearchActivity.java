@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.WebSearchAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.FadeInTransition;
@@ -27,7 +29,6 @@ import com.sorcerer.sorcery.iconpack.ui.others.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.others.SimpleTransitionListener;
 import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.SearchBar;
-import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
@@ -172,7 +173,7 @@ public class SearchActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setOnTouchListener((view, motionEvent) -> {
-            KeyboardUtil.closeKeyboard(SearchActivity.this);
+            KeyboardUtil.hideKeyboard(SearchActivity.this);
             return false;
         });
 
@@ -202,6 +203,22 @@ public class SearchActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private Handler mFinishHandler = new Handler();
+
+    private Runnable mFinishRunnable = this::finish;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFinishHandler.removeCallbacks(mFinishRunnable);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mFinishHandler.postDelayed(mFinishRunnable, 10 * 1000);
     }
 
     @Override

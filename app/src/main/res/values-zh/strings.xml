@@ -145,7 +145,7 @@
     <string name="shortcuts_request_icon_long_label">申请图标</string>
     <string name="shortcuts_request_icon_disable_message">申请图标</string>
     <string name="preference_about_app">应用信息</string>
-    <string name="preference_about_lib">许可</string>
+    <string name="preference_about_lib">开源许可</string>
     <string name="preference_group_about">关于</string>
     <string name="action_later">暂不</string>
     <string name="action_know_what_doing">我知道我在干什么</string>
@@ -186,5 +186,7 @@
     <string name="apply_tip_no_launcher">尚未安装启动器, 是否前往商店安装?</string>
     <string name="apply_tip_only_flyme">仅支持Flyme</string>
     <string name="apply_tip_only_miui">仅支持MIUI</string>
-    <string name="search_edit_hint">搜索图标...</string>
+    <string name="search_edit_hint">搜索图标…</string>
+    <string name="about_dialog_slogan">让质感美化你的屏幕</string>
+    <string name="about_dialog_icon_count">包含 %d 个图标</string>
 </resources>

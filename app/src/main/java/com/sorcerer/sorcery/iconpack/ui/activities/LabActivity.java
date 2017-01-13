@@ -11,7 +11,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
@@ -20,7 +19,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.R;
@@ -35,7 +33,6 @@ import com.stericson.RootTools.execution.Command;
 import com.stericson.RootTools.execution.CommandCapture;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
-import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -49,7 +46,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.reactivex.functions.Consumer;
+import timber.log.Timber;
 
 public class LabActivity extends SlideInAndOutAppCompatActivity implements View.OnClickListener {
 
@@ -93,7 +90,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                         try {
                             Process root = Runtime.getRuntime().exec("su");
                         } catch (IOException e) {
-                            e.printStackTrace();
+                           Timber.e(e);
                         }
                         if (!RootTools.isAccessGiven()) {
                             Toast.makeText(mContext,
@@ -294,7 +291,7 @@ public class LabActivity extends SlideInAndOutAppCompatActivity implements View.
                 Toast.makeText(this, "acquiring root...", Toast.LENGTH_SHORT).show();
                 RootTools.getShell(true).add(new CommandCapture(0, "echo Hello"));
             } catch (Exception e) {
-                e.printStackTrace();
+                Timber.e(e);
                 return false;
             }
         }

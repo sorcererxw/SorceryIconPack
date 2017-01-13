@@ -10,10 +10,10 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.os.Build;
-import android.util.Log;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
-import com.sorcerer.sorcery.iconpack.R;
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
+import com.annimon.stream.function.Function;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.models.AppfilterItem;
 import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
@@ -40,43 +40,34 @@ import timber.log.Timber;
 public class PackageUtil {
     public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon)
             throws Exception {
-        List<AppInfo> appInfoList = new ArrayList<>();
         PackageManager pm = context.getApplicationContext().getPackageManager();
         List<ResolveInfo> list = getInstallApps(context);
-        Iterator<ResolveInfo> iterator = list.iterator();
 
-        List<String> xmlStringList = new ArrayList<>();
+        final List<String> xmlStringList = getAppfilterComponentList(context);
 
-        if (withHasCustomIcon) {
-            xmlStringList = getAppfilterComponentList(context);
-        }
-
-        for (int i = 0; i < list.size(); i++) {
-            ResolveInfo resolveInfo = iterator.next();
-            AppInfo tempAppInfo = new AppInfo(
-                    resolveInfo.activityInfo.packageName + "/" + resolveInfo.activityInfo.name,
-                    resolveInfo.loadLabel(pm).toString(),
-                    resolveInfo.loadIcon(pm));
-            if (withHasCustomIcon) {
-                if (xmlStringList.contains(tempAppInfo.getCode())) {
-                    tempAppInfo.setHasCustomIcon(true);
-                }
-            }
-            appInfoList.add(tempAppInfo);
-        }
-        Collections.sort(appInfoList, (lhs, rhs) -> {
-            try {
-                String s1 = new String(lhs.getName().getBytes("GB2312"), "ISO-8859-1");
-                String s2 = new String(rhs.getName().getBytes("GB2312"), "ISO-8859-1");
-                return s1.compareTo(s2);
-            } catch (UnsupportedEncodingException e) {
-                if (BuildConfig.DEBUG) {
-                    e.printStackTrace();
-                }
-                return lhs.getName().compareTo(rhs.getName());
-            }
-        });
-        return appInfoList;
+        return Stream.of(list)
+                .map(resolveInfo -> {
+                    AppInfo tempAppInfo = new AppInfo(
+                            resolveInfo.activityInfo.packageName + "/"
+                                    + resolveInfo.activityInfo.name,
+                            resolveInfo.loadLabel(pm).toString(),
+                            resolveInfo.loadIcon(pm));
+                    if (withHasCustomIcon && xmlStringList.contains(tempAppInfo.getCode())) {
+                        tempAppInfo.setHasCustomIcon(true);
+                    }
+                    return tempAppInfo;
+                })
+                .sorted((o1, o2) -> {
+                    try {
+                        String s1 = new String(o1.getName().getBytes("GB2312"), "ISO-8859-1");
+                        String s2 = new String(o2.getName().getBytes("GB2312"), "ISO-8859-1");
+                        return s1.compareTo(s2);
+                    } catch (UnsupportedEncodingException e) {
+                        Timber.e(e);
+                    }
+                    return o1.getName().compareTo(o2.getName());
+                })
+                .collect(Collectors.toList());
     }
 
     public static String getCurrentLauncher(Context context) {
@@ -88,8 +79,8 @@ public class PackageUtil {
                     PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
         } catch (Exception e) {
             Timber.e(e);
-            return "";
         }
+        return "";
     }
 
     public static List<ResolveInfo> getInstallApps(Context context) {
@@ -135,7 +126,7 @@ public class PackageUtil {
                 eventType = parser.next();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Timber.e(e);
         }
         return list;
     }
@@ -169,7 +160,7 @@ public class PackageUtil {
                 eventType = parser.next();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Timber.e(e);
         }
         return list;
     }
@@ -285,8 +276,8 @@ public class PackageUtil {
             return true;
         } catch (Exception e) {
             Timber.e(e);
-            return false;
         }
+        return false;
     }
 
     /**
@@ -318,19 +309,19 @@ public class PackageUtil {
                 eventType = parser.next();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Timber.e(e);
         }
         return null;
     }
 
     public static List<LauncherInfo> generateLauncherInfo(Context context, int id) {
-        List<LauncherInfo> list = new ArrayList<>();
         String[] launchers = context.getResources().getStringArray(id);
-        for (String launcher : launchers) {
-            String[] tmp = launcher.split("\\|");
-            list.add(new LauncherInfo(context, tmp[1], tmp[0]));
-        }
-        return list;
+        return Stream.of(launchers)
+                .map(launcher -> {
+                    String[] tmp = launcher.split("\\|");
+                    return new LauncherInfo(context, tmp[1], tmp[0]);
+                })
+                .collect(Collectors.toList());
     }
 
     public static String getAppEnglishName(Activity context, String packageName) {
@@ -346,7 +337,6 @@ public class PackageUtil {
             PackageManager pm = context.getApplicationContext().getPackageManager();
             ApplicationInfo appInfo
                     = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
-
             if (appInfo != null) {
                 Configuration config = new Configuration();
 
@@ -370,14 +360,13 @@ public class PackageUtil {
     }
 
     public static String getAppSystemName(Context context, String packageName) {
-        String res;
+        String res = "";
         try {
             PackageManager packageManager = context.getApplicationContext().getPackageManager();
             ApplicationInfo applicationInfo = packageManager.getApplicationInfo(packageName, 0);
             res = packageManager.getApplicationLabel(applicationInfo).toString();
         } catch (Exception e) {
             Timber.e(e);
-            res = "";
         }
         return res;
     }

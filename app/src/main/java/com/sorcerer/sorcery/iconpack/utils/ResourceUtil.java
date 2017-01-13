@@ -71,9 +71,7 @@ public class ResourceUtil {
             int id = getResourceIdFromString(context, resName, "array");
             return context.getResources().getStringArray(id);
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) {
-                e.printStackTrace();
-            }
+           Timber.e(e);
             return new String[]{"**load fail**"};
         }
     }

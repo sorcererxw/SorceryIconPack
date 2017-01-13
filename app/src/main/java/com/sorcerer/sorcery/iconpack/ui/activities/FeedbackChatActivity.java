@@ -20,7 +20,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.EditText;
@@ -34,11 +33,11 @@ import com.avos.avoscloud.feedback.Comment;
 import com.avos.avoscloud.feedback.Comment.CommentType;
 import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.avos.avoscloud.feedback.FeedbackThread;
+import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.FeedbackChatAdapter;
-import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -50,9 +49,8 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
-import rx_activity_result2.Result;
 import rx_activity_result2.RxActivityResult;
+import timber.log.Timber;
 
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
 import static android.view.View.GONE;
@@ -176,7 +174,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                 mAdapter.notifyDataSetChanged();
                 mFeedbackThread.sync(mSyncCallback);
             } catch (AVException e) {
-                e.printStackTrace();
+                Timber.e(e);
             }
         }
     }
@@ -224,7 +222,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                 });
 
         mRecyclerView.setOnTouchListener((v, event) -> {
-            KeyboardUtil.closeKeyboard(FeedbackChatActivity.this);
+            KeyboardUtil.hideKeyboard(FeedbackChatActivity.this);
             return false;
         });
 
@@ -515,7 +513,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     @Override
     public void finish() {
         super.finish();
-        KeyboardUtil.closeKeyboard(this);
+        KeyboardUtil.hideKeyboard(this);
         overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
     }
 }

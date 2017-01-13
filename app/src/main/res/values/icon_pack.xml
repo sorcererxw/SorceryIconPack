@@ -2,6 +2,35 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>tencent_ttpic</item>
+        <item>xinpinget</item>
+        <item>picture_mix</item>
+        <item>huochaihe</item>
+        <item>game_carrot_3</item>
+        <item>picsart_photo_studio</item>
+        <item>picsart_color</item>
+        <item>picsart_animator</item>
+        <item>microsoft_mimicker_alarm</item>
+        <item>ami_album</item>
+        <item>readlaw</item>
+        <item>photomath</item>
+        <item>ifanr_sudu</item>
+        <item>uusafe</item>
+        <item>psiphon</item>
+        <item>airdroid</item>
+        <item>tencent_cf_sns</item>
+        <item>turbo_vpn</item>
+        <item>fx_file_explorer</item>
+        <item>powerful_monitor</item>
+        <item>game_dont_starve</item>
+        <item>twilight</item>
+        <item>sorcery_icons_winter_day</item>
+        <item>picsart_photo_studio</item>
+        <item>picsart_animator</item>
+        <item>picsart_color</item>
+        <item>meituan</item>
+        <item>meituan_alt</item>
+        <item>dianping</item>
         <item>newsfold</item>
         <item>tencent_qq_sport</item>
         <item>ali_mybank</item>
@@ -45,6 +74,38 @@
         <item>flipboard_china</item>
         <item>zarchiver</item>
         <item>weloop</item>
+        <item>smartisan_calendar</item>
+        <item>smartisan_calendar_1</item>
+        <item>smartisan_calendar_2</item>
+        <item>smartisan_calendar_3</item>
+        <item>smartisan_calendar_4</item>
+        <item>smartisan_calendar_5</item>
+        <item>smartisan_calendar_6</item>
+        <item>smartisan_calendar_7</item>
+        <item>smartisan_calendar_8</item>
+        <item>smartisan_calendar_9</item>
+        <item>smartisan_calendar_10</item>
+        <item>smartisan_calendar_11</item>
+        <item>smartisan_calendar_12</item>
+        <item>smartisan_calendar_13</item>
+        <item>smartisan_calendar_14</item>
+        <item>smartisan_calendar_15</item>
+        <item>smartisan_calendar_16</item>
+        <item>smartisan_calendar_17</item>
+        <item>smartisan_calendar_18</item>
+        <item>smartisan_calendar_19</item>
+        <item>smartisan_calendar_20</item>
+        <item>smartisan_calendar_21</item>
+        <item>smartisan_calendar_22</item>
+        <item>smartisan_calendar_23</item>
+        <item>smartisan_calendar_24</item>
+        <item>smartisan_calendar_25</item>
+        <item>smartisan_calendar_26</item>
+        <item>smartisan_calendar_27</item>
+        <item>smartisan_calendar_28</item>
+        <item>smartisan_calendar_29</item>
+        <item>smartisan_calendar_30</item>
+        <item>smartisan_calendar_31</item>
 
         <item>@string/icon_label_updated</item>
         <item>microsoft_solitaire</item>

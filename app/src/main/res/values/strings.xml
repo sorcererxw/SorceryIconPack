@@ -42,7 +42,7 @@
     <string name="select_an_icon">select an icon</string>
 
 
-    <string name="search_edit_hint">Search icons...</string>
+    <string name="search_edit_hint">Search icons…</string>
     <string name="search_hint_only_letter">Sorry, searching support letter and number only.</string>
 
 
@@ -211,6 +211,9 @@
     <string name="feedback_chat_name_dialog_content">Please give me a nickname to easily distinguish between different respondents.</string>
     <string name="feedback_chat_name_dialog_hint">nickname</string>
     <string name="feedback_chat_name_dialog_toast_hint">The length of nickname must be greater than 3</string>
+
+    <string name="about_dialog_slogan">Let material-design materialize your screen</string>
+    <string name="about_dialog_icon_count">Includes %d icons</string>
 
     <string name="shortcuts_request_icon_disable_message">Request Icon</string>
     <string name="shortcuts_request_icon_long_label">Request Icon</string>

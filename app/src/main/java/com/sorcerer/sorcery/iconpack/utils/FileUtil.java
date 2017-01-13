@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
+import com.annimon.stream.Stream;
+
 import java.io.File;
 
 /**
@@ -10,29 +12,32 @@ import java.io.File;
 
 public class FileUtil {
     public static long calculateDirectorySize(File directory) {
-        long result = 0;
-        for (File file : directory.listFiles()) {
-            if (file.isDirectory()) {
-                result += calculateDirectorySize(file);
-            } else {
-                result += file.length();
-            }
+        if (directory == null || directory.listFiles() == null) {
+            return 0;
         }
-        return result;
+        return Stream.of(directory.listFiles())
+                .mapToLong(file -> {
+                    if (file.isDirectory()) {
+                        return calculateDirectorySize(file);
+                    } else {
+                        return file.length();
+                    }
+                })
+                .sum();
     }
 
     public static void deleteDirectory(File directory) {
-        if (directory.exists()) {
-            File[] files = directory.listFiles();
-            if (files != null) {
-                for (File file : files) {
+        if (directory == null || !directory.exists() || directory.listFiles() == null) {
+            return;
+        }
+        Stream.of(directory.listFiles())
+                .forEach(file -> {
                     if (file.isDirectory()) {
                         deleteDirectory(file);
                     } else {
                         file.delete();
                     }
-                }
-            }
-        }
+                });
+        directory.delete();
     }
 }

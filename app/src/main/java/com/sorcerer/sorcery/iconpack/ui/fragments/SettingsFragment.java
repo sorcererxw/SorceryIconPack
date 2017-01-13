@@ -32,6 +32,8 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.annimon.stream.Stream;
+import com.annimon.stream.function.Predicate;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
@@ -71,6 +73,7 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 import static android.content.Context.MODE_WORLD_READABLE;
 import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
@@ -271,24 +274,16 @@ public class SettingsFragment extends PreferenceFragment {
 
     private void initAbout() {
         mAboutAppPreference = findPreference(KEY_ABOUT_APP);
-        mAboutAppPreference.setOnPreferenceClickListener(
-                new Preference.OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        showAboutDialog();
-                        return false;
-                    }
-                });
+        mAboutAppPreference.setOnPreferenceClickListener(preference -> {
+            showAboutDialog();
+            return false;
+        });
 
         mAboutLibPreference = findPreference(KEY_ABOUT_LIB);
-        mAboutLibPreference.setOnPreferenceClickListener(
-                new Preference.OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        showLibDialog();
-                        return false;
-                    }
-                });
+        mAboutLibPreference.setOnPreferenceClickListener(preference -> {
+            showLibDialog();
+            return false;
+        });
     }
 
     private void updateCache(Observable<Long> observable) {
@@ -309,9 +304,7 @@ public class SettingsFragment extends PreferenceFragment {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) {
-                        if (BuildConfig.DEBUG) {
-                            throwable.printStackTrace();
-                        }
+                        Timber.e(throwable);
                     }
                 });
     }
@@ -330,15 +323,29 @@ public class SettingsFragment extends PreferenceFragment {
             }));
         }
 
-        TextView versionTextView =
-                (TextView) view.findViewById(R.id.textView_about_dialog_version);
+        TextView versionTextView = (TextView) view.findViewById(R.id.textView_about_dialog_version);
         TextView titleTextView = (TextView) view.findViewById(R.id.textView_about_dialog_title);
-        TextView creditsTextView =
-                (TextView) view.findViewById(R.id.textView_about_dialog_credits);
-        versionTextView
-                .setText(String.format("%s: %s",
-                        ResourceUtil.getString(mActivity, R.string.version),
-                        BuildConfig.VERSION_NAME));
+        TextView creditsTextView = (TextView) view.findViewById(R.id.textView_about_dialog_credits);
+        TextView iconCountTextView =
+                (TextView) view.findViewById(R.id.textView_about_dialog_icon_count);
+
+        iconCountTextView.setText(
+                String.format(
+                        ResourceUtil.getString(mActivity, R.string.about_dialog_icon_count),
+                        Stream.of(ResourceUtil.getStringArray(mActivity, R.array.icon_pack))
+                                .filter(new Predicate<String>() {
+                                    @Override
+                                    public boolean test(String value) {
+                                        return !value.startsWith("**");
+                                    }
+                                })
+                                .count()
+                )
+        );
+
+        versionTextView.setText(String.format("%s: %s",
+                ResourceUtil.getString(mActivity, R.string.version),
+                BuildConfig.VERSION_NAME));
         titleTextView.setTypeface(
                 Typeface.createFromAsset(mActivity.getAssets(), "RockwellStd.otf"));
         SpannableString openSource = new SpannableString(getString(R.string.open_source_lib));
@@ -401,7 +408,7 @@ public class SettingsFragment extends PreferenceFragment {
                 Toast.makeText(mActivity, "acquiring root...", Toast.LENGTH_SHORT).show();
                 RootTools.getShell(true).add(new CommandCapture(0, "echo Hello"));
             } catch (Exception e) {
-                e.printStackTrace();
+                Timber.e(e);
                 return false;
             }
         }
@@ -416,7 +423,7 @@ public class SettingsFragment extends PreferenceFragment {
                             "mkdir " + mActivity.getCacheDir().getAbsolutePath() + "/icons",
                             "chmod 777 " + mActivity.getCacheDir().getAbsolutePath() + "/icons"));
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    Timber.e(e);
                 }
             }
 //            if (!appIsInstalledInMountASEC()) {
@@ -531,9 +538,7 @@ public class SettingsFragment extends PreferenceFragment {
                                                 .getResourcePackageName(activityInfo
                                                         .getIconResource()));
                                     } catch (Exception e) {
-                                        if (BuildConfig.DEBUG) {
-                                            e.printStackTrace();
-                                        }
+                                        Timber.e(e);
                                     }
                                 }
                                 item.setOrigRes(activityInfo.getIconResource());
@@ -550,9 +555,7 @@ public class SettingsFragment extends PreferenceFragment {
                                 }
                             }
                         } catch (Exception e) {
-                            if (BuildConfig.DEBUG) {
-                                e.printStackTrace();
-                            }
+                            Timber.e(e);
                         }
                     }
                     editor.putString("theme_package_name", themePackage.packageName);

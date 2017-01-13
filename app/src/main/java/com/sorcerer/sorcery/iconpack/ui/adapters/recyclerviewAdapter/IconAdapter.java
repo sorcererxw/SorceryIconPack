@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.GridLayoutManager;
@@ -19,11 +17,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.utils.KeyboardUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -226,14 +224,14 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             if (iconBean != null) {
                 iconHolder.itemView.setOnClickListener(view -> {
                     if (!mCustomPicker) {
-                        KeyboardUtil.closeKeyboard((Activity) mContext);
+                        KeyboardUtil.hideKeyboard((Activity) mContext);
                         if (mClicked) {
                             return;
                         }
                         lock(view);
                         prepareShowIconDialog(iconHolder, iconHolder.getAdapterPosition());
                     } else {
-                        KeyboardUtil.closeKeyboard((Activity) mContext);
+                        KeyboardUtil.hideKeyboard((Activity) mContext);
                         ((MainActivity) mActivity).onReturnCustomPickerRes(
                                 mShowList.get(iconHolder.getAdapterPosition()).first.getRes());
                     }
@@ -313,7 +311,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
             Slice slice = new Slice(iconHolder.mFrame);
             slice.setRadius(2);
-            slice.setRipple(0);
+            slice.setRipple(4);
 
             slice.showLeftBottomRect(!leftBottomRect);
             slice.showRightBottomRect(!rightBottomRect);

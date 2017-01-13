@@ -14,6 +14,7 @@
         app:showAsAction="always"/>
 
     <item
+        android:visible="false"
         android:id="@+id/action_create_shortcut"
         android:title="shortcut"/>
 </menu>

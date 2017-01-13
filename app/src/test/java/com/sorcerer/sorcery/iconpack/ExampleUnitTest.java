@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack;
 
+import com.sorcerer.sorcery.iconpack.net.spiders.AppNameGetter;
 import com.sorcerer.sorcery.iconpack.net.spiders.AppSearchResultGetter;
 
 import org.junit.Test;
@@ -19,5 +20,11 @@ public class ExampleUnitTest {
                 .subscribe(strings -> {
                     System.out.println(Arrays.toString(strings.toArray()).replace(",", "\n"));
                 });
+    }
+
+    @Test
+    public void appNameGetterTest() throws Exception {
+        AppNameGetter.getName("com.tiantonglaw.readlaw")
+                .subscribe(System.out::println, Throwable::printStackTrace);
     }
 }

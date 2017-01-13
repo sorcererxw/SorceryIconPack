@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
@@ -23,6 +22,7 @@ import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import timber.log.Timber;
 
 public class DonateActivity extends SlideInAndOutAppCompatActivity {
 
@@ -55,9 +55,7 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
             SorceryPrefs.getInstance(this).donated().setValue(true);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
-            if (BuildConfig.DEBUG) {
-                e.printStackTrace();
-            }
+            Timber.e(e);
         }
     }
 
@@ -104,9 +102,9 @@ public class DonateActivity extends SlideInAndOutAppCompatActivity {
         if (mThankCard.getVisibility() == View.VISIBLE) {
             return;
         }
-            DisplayMetrics dm = getResources().getDisplayMetrics();
-            int w_screen = dm.widthPixels;
-            mThankCard.setTranslationX(w_screen);
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int w_screen = dm.widthPixels;
+        mThankCard.setTranslationX(w_screen);
 
         mThankCard.setTouchCallBack(new QCardView.TouchCallBack() {
             @Override

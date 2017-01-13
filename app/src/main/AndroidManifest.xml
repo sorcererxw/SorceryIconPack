@@ -31,7 +31,7 @@
         android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@mipmap/ic_launcher_christmas"
+        android:icon="@mipmap/sorcery_icons_winter_day"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"

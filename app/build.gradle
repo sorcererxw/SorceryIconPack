@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.0." + code + " Nightly20170107"
+        versionName "4.0." + code + " Nightly20170113"
         minSdkVersion 16
         targetSdkVersion 25
     }
@@ -88,7 +88,7 @@ dependencies {
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.1@aar'
     compile 'com.github.VictorAlbertos:RxActivityResult:0.3.9-2.x'
     // timber
-    compile 'com.jakewharton.timber:timber:4.4.0'
+    compile 'com.jakewharton.timber:timber:4.5.0'
     // iconics
     compile 'com.mikepenz:iconics-core:2.8.2@aar'
     compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
@@ -106,4 +106,6 @@ dependencies {
     compile 'org.jsoup:jsoup:1.10.2'
     // stream on java7
     compile 'com.annimon:stream:1.1.4'
+    // materialize
+    compile "com.mikepenz:materialize:1.0.0@aar"
 }
