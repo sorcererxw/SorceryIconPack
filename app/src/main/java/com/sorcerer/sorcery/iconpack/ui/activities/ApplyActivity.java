@@ -85,9 +85,8 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                 }
                 if (item.getLabel().toLowerCase().equals("flyme")) {
                     Intent intent = new Intent();
-                    intent.setComponent(
-                            new ComponentName("com.meizu.customizecenter",
-                                    "com.meizu.customizecenter.OnlineThemeActivity"));
+                    intent.setComponent(new ComponentName("com.meizu.customizecenter",
+                            "com.meizu.customizecenter.OnlineThemeActivity"));
                     intent.putExtra("ONLINE_THEME_WAY", "ONLINE_WAY_URL");
                     intent.putExtra("URL", "/themes/public/detail/3000115");
                     intent.putExtra("search_content_type", "themes");
@@ -121,7 +120,6 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                 PackageUtil.generateLauncherInfo(this, R.array.apply_systems);
         List<LauncherInfo> launcherInfos =
                 PackageUtil.generateLauncherInfo(this, R.array.apply_launchers);
-
 
         List<LauncherInfo> recommendInfos = generateRecommend(systemInfos, launcherInfos);
         Collections.sort(systemInfos, LauncherInfo::compareTo);

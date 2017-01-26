@@ -26,7 +26,8 @@ public class AppNameGetter {
                 .flatMap(name -> name.isEmpty() ?
                         getNameFromQQ(packageName) : Observable.just(name))
                 .flatMap(name -> name.isEmpty() ?
-                        getNameFromPlay(packageName) : Observable.just(name));
+                        getNameFromPlay(packageName) : Observable.just(name))
+                .map(String::trim);
     }
 
     private static Observable<String> getNameFromQQ(String packageName) {

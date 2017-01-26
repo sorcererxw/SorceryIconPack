@@ -173,7 +173,7 @@ public class WebSearchAdapter extends RecyclerView.Adapter<WebSearchAdapter.Sear
             }
             return;
         }
-        mDisposable = AppSearchResultGetter.search(searchText)
+        mDisposable = AppSearchResultGetter.searchViaApi(searchText)
                 .map(strings -> {
                     Timber.d(Arrays.toString(strings.toArray()).replace(",", "\n"));
                     LinkedHashSet<String> drawableSet = new LinkedHashSet<>();
