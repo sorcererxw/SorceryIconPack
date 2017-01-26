@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.net.spiders;
 
+import com.sorcerer.sorcery.iconpack.net.coolapk.CoolapkClient;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -22,7 +24,9 @@ public class AppNameGetter {
     public static Observable<String> getName(final String packageName) {
         return Observable.just("")
                 .flatMap(name -> name.isEmpty() ?
-                        getNameFromCoolapk(packageName) : Observable.just(name))
+                        CoolapkClient.getInstance().getAppName(packageName) : Observable.just(name))
+//                .flatMap(name -> name.isEmpty() ?
+//                        getNameFromCoolapk(packageName) : Observable.just(name))
                 .flatMap(name -> name.isEmpty() ?
                         getNameFromQQ(packageName) : Observable.just(name))
                 .flatMap(name -> name.isEmpty() ?

@@ -2,9 +2,18 @@ package com.sorcerer.sorcery.iconpack.net.coolapk;
 
 import android.os.Build;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+import com.google.gson.stream.JsonWriter;
+
 import java.io.IOException;
+import java.lang.reflect.Type;
 
 import io.reactivex.Observable;
+import io.reactivex.functions.Function;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -12,6 +21,7 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -56,7 +66,8 @@ public class CoolapkClient {
                     return chain.proceed(request);
                 }).build())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(
+                        new GsonBuilder().create()))
                 .build().create(CoolapkService.class);
     }
 
@@ -68,5 +79,13 @@ public class CoolapkClient {
         return mService.search(q);
     }
 
-
+    public Observable<String> getAppName(String packageName) {
+        return mService.getAppDetail(packageName)
+                .map(coolapkAppDetail -> {
+                    if (coolapkAppDetail.getStatus() != 0 || coolapkAppDetail.getData() == null) {
+                        return "";
+                    }
+                    return coolapkAppDetail.getData().getTitle();
+                });
+    }
 }

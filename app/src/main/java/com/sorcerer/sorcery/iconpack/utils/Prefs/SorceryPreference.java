@@ -46,6 +46,10 @@ public class SorceryPreference<T> {
     }
 
     public void setValue(T value) {
+        setValue(value, false);
+    }
+
+    public void setValue(T value, boolean immediate) {
         SharedPreferences.Editor editor = mPreferences.edit();
         if (value instanceof String) {
             editor.putString(mKey, (String) value);
@@ -63,7 +67,11 @@ public class SorceryPreference<T> {
             throw new IllegalArgumentException(
                     "Preference type not implemented " + value.getClass());
         }
-        editor.apply();
+        if (immediate) {
+            editor.commit();
+        } else {
+            editor.apply();
+        }
     }
 
     public boolean isContain() {

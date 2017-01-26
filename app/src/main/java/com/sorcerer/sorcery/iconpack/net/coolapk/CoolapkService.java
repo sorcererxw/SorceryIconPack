@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.net.coolapk;
 
 import io.reactivex.Observable;
+import retrofit2.adapter.rxjava2.Result;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -18,4 +19,10 @@ interface CoolapkService {
 
     @GET("apk/search")
     Observable<CoolapkSearchResult> search(@Query("q") String q);
+
+    @GET("device/ip")
+    Observable<Result<String>> getDeviceIp();
+
+    @GET("apk/detail")
+    Observable<CoolapkAppDetail> getAppDetail(@Query("id") String packageName);
 }

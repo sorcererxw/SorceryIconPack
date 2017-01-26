@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @description:
@@ -70,5 +71,14 @@ public class SorceryPrefs extends Prefs {
                     new SorceryPreference<>(getPreferences(), "user_guide_showed", false);
         }
         return mUserGuideShowed;
+    }
+
+    public SorceryPreference<String> getUUID() {
+        SorceryPreference<String> uuid = new SorceryPreference<>(getPreferences(), "uuid", "");
+        if (uuid.getValue().isEmpty()) {
+            String id = UUID.randomUUID().toString();
+            uuid.setValue(id, true);
+        }
+        return uuid;
     }
 }

@@ -275,7 +275,8 @@ public class PackageUtil {
             pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
             return true;
         } catch (Exception e) {
-            Timber.e(e);
+//            Timber.e(e);
+            Timber.d("not installed: %s", packageName);
         }
         return false;
     }

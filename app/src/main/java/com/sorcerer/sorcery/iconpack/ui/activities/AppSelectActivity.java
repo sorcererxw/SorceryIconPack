@@ -21,6 +21,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.SaveCallback;
+import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
@@ -28,6 +29,8 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
+import com.sorcerer.sorcery.iconpack.utils.Prefs.Prefs;
+import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -63,14 +66,15 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
-        new RxPermissions(this)
-                .request(Manifest.permission.READ_PHONE_STATE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(grant -> {
-                    if (grant) {
-                        save(mAdapter.getCheckedAppsList());
-                    }
-                }, Timber::e);
+        save(mAdapter.getCheckedAppsList());
+//        new RxPermissions(this)
+//                .request(Manifest.permission.READ_PHONE_STATE,
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                .subscribe(grant -> {
+//                    if (grant) {
+//                        save(mAdapter.getCheckedAppsList());
+//                    }
+//                }, Timber::e);
     }
 
     private RequestAdapter mAdapter;
@@ -208,20 +212,10 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     private void save(final List<AppInfo> list) {
         Observable.create(new ObservableOnSubscribe<List<AppInfo>>() {
-            @SuppressLint("HardwareIds")
             @Override
             public void subscribe(final ObservableEmitter<List<AppInfo>> emitter) throws Exception {
-                String deviceId = null;
-                try {
-                    TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-                    deviceId = tm.getDeviceId();
-                } catch (Exception e) {
-                    Timber.e(e);
-                }
-                if (deviceId == null) {
-                    deviceId = Settings.Secure
-                            .getString(AppSelectActivity.this.getContentResolver(), ANDROID_ID);
-                }
+                String deviceId = SorceryPrefs.getInstance(AppSelectActivity.this)
+                        .getUUID().getValue();
 
                 List<RequestBean> requestBeanList = new ArrayList<>();
                 SharedPreferences sharedPreferences = getSharedPreferences("request package",
