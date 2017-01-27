@@ -16,11 +16,9 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
  */
 public class AVService {
     public static void init(Context context) {
-        AVObject.registerSubclass(RequestBean.class);
         AVObject.registerSubclass(LikeBean.class);
 
         AVOSCloud.initialize(context, BuildConfig.LEANCLOUD_ID, BuildConfig.LEANCLOUD_KEY);
-        AVAnalytics.enableCrashReport(context, true);
         AVOSCloud.useAVCloudCN();
     }
 }

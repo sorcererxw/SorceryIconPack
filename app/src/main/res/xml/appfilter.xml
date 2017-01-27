@@ -74,7 +74,6 @@
         component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}"
         prefix="samsung_calendar_"/>
 
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -603,12 +602,6 @@
     <item
         component="ComponentInfo{de.defim.apk.customshare/de.defim.apk.customshare.Launch1}"
         drawable="custom_share"/>
-    <item
-        component="ComponentInfo{ctrip.android.view/ctrip.android.view.home.CtripSplashActivity}"
-        drawable="ctrip"/>
-    <item
-        component="ComponentInfo{ctrip.android.view/ctrip.android.view.splash.CtripSplashActivity}"
-        drawable="ctrip"/>
     <item
         component="ComponentInfo{com.wonderabbit.couplete/com.wonderabbit.couplete.SplashActivity}"
         drawable="couplete"/>
@@ -1162,72 +1155,6 @@
         component="ComponentInfo{com.oneplus.market/com.oneplus.market.activity.MainActivity}"
         drawable="oneplus_market"/>
     <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.HWSettings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.MainSettings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.HotspotSettings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.mokee.helper.activities.TipsHelp}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.oppo.settings.SettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.TabbedSettings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiSettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$GLFingerPrintManagerActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.OriginSettings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.GnSettingsTabActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$SuperSnapSettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.GridSettings}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.sudamod.LocationLookup}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.SettingsTabActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiDisplaySettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$EdgeSettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiP2pSettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.dual.DualManagerAppActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiApSettingsActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$HotspotActivity}"
-        drawable="settings"/>
-    <item
-        component="ComponentInfo{com.android.settings/com.android.settings.Settings$TetherSettingsActivity2}"
-        drawable="settings"/>
-    <item
         component="ComponentInfo{com.mipay.wallet/com.mipay.wallet.ui.MipayEntryActivity}"
         drawable="xiaomi_wallet"/>
     <item
@@ -1428,6 +1355,24 @@
     <item
         component="ComponentInfo{com.qidian.QDReader.g/com.qidian.QDReader.SplashActivity}"
         drawable="qidian_reader"/>
+    <item
+        component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity}"
+        drawable="samsung_voice_recorder"/>
+    <item
+        component="ComponentInfo{com.justgetflux.flux/com.justgetflux.flux.FluxActivity}"
+        drawable="flux"/>
+    <item
+        component="ComponentInfo{com.citiccard.mobilebank/com.citicbank.creditspace.DkkjClient}"
+        drawable="ecitic_bank"/>
+    <item
+        component="ComponentInfo{com.citiccard.mobilebank/com.dkkj.modules.SplashPage}"
+        drawable="ecitic_bank"/>
+    <item
+        component="ComponentInfo{com.alpha.lagouapk/com.alpha.lagouapk.HelloActivity}"
+        drawable="lagou"/>
+    <item
+        component="ComponentInfo{com.convertbee/com.convertbee.MainActivity}"
+        drawable="convertbee"/>
     <item
         component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}"
         drawable="gallery"/>
@@ -1804,6 +1749,9 @@
         component="ComponentInfo{com.jd.jrapp/com.jd.jrapp.ver2.main.welcome.WelcomeActivity}"
         drawable="jd_jinrong"/>
     <item
+        component="ComponentInfo{com.jd.jrapp/com.jd.jrapp.ver2.main.WelcomeActivity}"
+        drawable="jd_jinrong"/>
+    <item
         component="ComponentInfo{com.wangyin.payment/com.wangyin.payment.splash.ui.SplashActivity}"
         drawable="jd_wallet"/>
     <item
@@ -2030,6 +1978,12 @@
         drawable="meituan_waimai"/>
     <item
         component="ComponentInfo{com.mt.mtxx.mtxx/com.mt.mtxx.mtxx.TopViewActivity}"
+        drawable="meituxiuxiu"/>
+    <item
+        component="ComponentInfo{com.mt.mtxx.mtxx/com.qihoo.util.StartActivity}"
+        drawable="meituxiuxiu"/>
+    <item
+        component="ComponentInfo{com.mt.mtxx.mtxx/com.meitu.mtxx.MainActivity}"
         drawable="meituxiuxiu"/>
     <item
         component="ComponentInfo{com.meitu.meiyancamera/com.meitu.meiyancamera.MyxjActivity}"
@@ -2339,6 +2293,9 @@
         drawable="pure_weather"/>
     <item
         component="ComponentInfo{hanjie.app.pureweather/hanjie.app.pureweather.ui.activity.HomeActivity}"
+        drawable="pure_weather"/>
+    <item
+        component="ComponentInfo{hanjie.app.pureweather/hanjie.app.pureweather.activity.HomeActivity}"
         drawable="pure_weather"/>
     <item
         component="ComponentInfo{com.qidian.QDReader/com.qidian.QDReader.SplashActivity}"
@@ -4267,6 +4224,9 @@
         component="ComponentInfo{net.htcp.shadowsocksr/com.github.shadowsocks.Shadowsocks}"
         drawable="shadowsocksr"/>
     <item
+        component="ComponentInfo{net.htcp.shadowsocksr/com.github.shadowsocks.MainActivity}"
+        drawable="shadowsocksr"/>
+    <item
         component="ComponentInfo{in.zhaoj.shadowsockss/com.github.shadowsocks.Shadowsocks}"
         drawable="shadowsocksr"/>
     <item
@@ -4313,6 +4273,9 @@
         drawable="sim_toolkit"/>
     <item
         component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityII}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkMain2}"
         drawable="sim_toolkit"/>
     <item
         component="ComponentInfo{com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity}"
@@ -4699,13 +4662,13 @@
         component="ComponentInfo{com.p1.mobile.putong/com.p1.mobile.putong.ui.splash.SplashAct}"
         drawable="tantan"/>
     <item
-        component="ComponentInfo{com.miHoYo.bh3.uc/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
-        drawable="game_mihoyo_bh_3"/>
-    <item
         component="ComponentInfo{com.miHoYo.enterprise.NGHSoD/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
         drawable="game_mihoyo_bh_3"/>
     <item
         component="ComponentInfo{com.miHoYo.bh3.bilibili/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
+        drawable="game_mihoyo_bh_3"/>
+    <item
+        component="ComponentInfo{com.miHoYo.bh3.uc/com.miHoYo.overridenativeactivity.OverrideNativeActivity}"
         drawable="game_mihoyo_bh_3"/>
     <item
         component="ComponentInfo{com.miHoYo.bh3.nearme.gamecenter/com.miHoYo.bh3.nearme.gamecenter.OppoSDKUtils}"
@@ -5019,5 +4982,236 @@
     <item
         component="ComponentInfo{com.android.vending.billing.InAppBillingService.LACK/com.android.vending.billing.InAppBillingService.LACK.MainActivity-Original}"
         drawable="lucky_patcher"/>
+    <item
+        component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}"
+        drawable="samsung_calendar"/>
+    <item
+        component="ComponentInfo{com.samsung.android.sm/com.samsung.android.sm.app.dashboard.SmartManagerDashBoardActivity}"
+        drawable="samsung_smart_manager"/>
+    <item
+        component="ComponentInfo{com.samsung.android.sm_cn/com.samsung.android.sm.app.dashboard.SmartManagerDashBoardActivity}"
+        drawable="samsung_smart_manager"/>
+    <item
+        component="ComponentInfo{com.samsung.android.sm_cn/com.samsung.android.sm.ui.cstyleboard.SmartManagerDashBoardActivity}"
+        drawable="samsung_smart_manager"/>
+    <item
+        component="ComponentInfo{com.cleanmaster.mguard/com.keniu.security.main.MainActivity}"
+        drawable="clean_master"/>
+    <item
+        component="ComponentInfo{com.meizu.flyme.launcher/com.meizu.flyme.launcher.Launcher}"
+        drawable="flyme"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.HWSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.MainSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.HotspotSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.mokee.helper.activities.TipsHelp}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.oppo.settings.SettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.TabbedSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$GLFingerPrintManagerActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.OriginSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.GnSettingsTabActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$SuperSnapSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.GridSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.sudamod.LocationLookup}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.SettingsTabActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiDisplaySettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$EdgeSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiP2pSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.dual.DualManagerAppActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiApSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$HotspotActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$TetherSettingsActivity2}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.mokee.helper.activities.MoKeeForum}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$SprdManageTasksActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$PrivacyGuardManagerActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.LewaSettings}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.Settings$TetherSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.android.settings/com.android.settings.OntimSettingsActivity}"
+        drawable="settings"/>
+    <item
+        component="ComponentInfo{com.resilio.sync/com.resilio.sync.ui.activity.StartActivity}"
+        drawable="bittorrent_sync"/>
+    <item
+        component="ComponentInfo{com.octinn.birthdayplus/com.octinn.birthdayplus.SplashActivity}"
+        drawable="birthday_manager"/>
+    <item
+        component="ComponentInfo{com.octinn.birthdayplus/com.qihoo.util.StartActivity}"
+        drawable="birthday_manager"/>
+    <item
+        component="ComponentInfo{com.lerist.gohosts/com.qihoo.util.StartActivity}"
+        drawable="go_host"/>
+    <item
+        component="ComponentInfo{com.lerist.gohosts/com.lerist.gohosts.MainActivity}"
+        drawable="go_host"/>
+    <item
+        component="ComponentInfo{com.mfw.roadbook/com.mfw.roadbook.main.StartActivity}"
+        drawable="mayiwo_roadbook"/>
+    <item
+        component="ComponentInfo{ctrip.android.view/ctrip.android.view.home.CtripSplashActivity}"
+        drawable="ctrip"/>
+    <item
+        component="ComponentInfo{ctrip.android.view/ctrip.android.view.splash.CtripSplashActivity}"
+        drawable="ctrip"/>
+    <item
+        component="ComponentInfo{ctrip.android.view/ctrip.android.view.home.CtripDeclarationActivity}"
+        drawable="ctrip"/>
+    <item
+        component="ComponentInfo{ctrip.android.view/ctrip.android.view.view.CtripDeclarationActivity}"
+        drawable="ctrip"/>
+    <item
+        component="ComponentInfo{com.autohome.mycar/com.autohome.mycar.module.ad.AdActivity}"
+        drawable="autohome_mycar"/>
+    <item
+        component="ComponentInfo{com.esbook.reader/com.esbook.reader.activity.ActLoading}"
+        drawable="esbook_read"/>
+    <item
+        component="ComponentInfo{com.homelink.android/com.homelink.android.SplashScreenActivity}"
+        drawable="homelink"/>
+    <item
+        component="ComponentInfo{com.budejie.www/com.budejie.www.activity.LaucherActivity}"
+        drawable="baisibudejie"/>
+    <item
+        component="ComponentInfo{net.roocky.mojian/net.roocky.mojian.Activity.MainActivity}"
+        drawable="mojian"/>
+    <item
+        component="ComponentInfo{com.android.utk/com.android.utk.UtkLauncherActivity}"
+        drawable="sim_toolkit"/>
+    <item
+        component="ComponentInfo{com.shouqu.bookmarklife/com.shouqu.bookmarklife.views.activities.LaunchActivity}"
+        drawable="book_mark_life"/>
+    <item
+        component="ComponentInfo{vz.com/com.feeyo.vz.activity.VZLaunchActivity}"
+        drawable="feichangzhun"/>
+    <item
+        component="ComponentInfo{com.jiecao.news.jiecaonews/com.jiecao.news.jiecaonews.view.activity.StartActivity}"
+        drawable="jiecao_news"/>
+    <item
+        component="ComponentInfo{com.taou.maimai/com.taou.maimai.SplashActivity}"
+        drawable="maimai"/>
+    <item
+        component="ComponentInfo{com.taou.maimai/com.taou.maimai.SplashActivity}"
+        drawable="maimai"/>
+    <item
+        component="ComponentInfo{com.innologica.inoreader/com.innologica.inoreader.activities.BootstrapActivity}"
+        drawable="inoreader"/>
+    <item
+        component="ComponentInfo{com.yinyuetai.ui/com.yinyuetai.ui.activity.SplashActivity}"
+        drawable="yinyuetai"/>
+    <item
+        component="ComponentInfo{com.wuba.zhuanzhuan/com.wuba.zhuanzhuan.presentation.view.activity.LaunchActivity}"
+        drawable="wuba_zhuanzhuan"/>
+    <item
+        component="ComponentInfo{co.runner.app/co.runner.app.activity.MenuFragmentActivity}"
+        drawable="joyrun"/>
+    <item
+        component="ComponentInfo{com.nike.plusgpschina/com.nike.plusgps.SplashActivity}"
+        drawable="nike_running"/>
+    <item
+        component="ComponentInfo{com.youdao.huihui.deals/com.youdao.huihui.deals.activity.StartUpActivity}"
+        drawable="netease_youdao_huihui"/>
+    <item
+        component="ComponentInfo{de.toastcode.screener/de.toastcode.screener.LaunchActivity}"
+        drawable="screener"/>
+    <item
+        component="ComponentInfo{cn.wps.moffice_yota/cn.wps.moffice.documentmanager.PreStartActivity}"
+        drawable="wps"/>
+    <item
+        component="ComponentInfo{org.coursera.android/org.coursera.android.MainActivity}"
+        drawable="coursera"/>
+    <item
+        component="ComponentInfo{com.blizzard.wow/com.blizzard.wow.app.page.PageActivity}"
+        drawable="blizzard_wow_armory"/>
+    <item
+        component="ComponentInfo{com.airbnb.android/com.airbnb.android.activities.MainActivity}"
+        drawable="airbnb"/>
+    <item
+        component="ComponentInfo{me.bluemail.mail/com.trtf.blue.activity.Accounts}"
+        drawable="blud_mail"/>
+    <item
+        component="ComponentInfo{jp.ne.hardyinfinity.bluelightfilter.free/jp.ne.hardyinfinity.bluelightfilter.free.StartActivity}"
+        drawable="bluelight_filter"/>
+    <item
+        component="ComponentInfo{com.geekslab.eyeprotection/com.geekslab.eyeprotection.MainActivity}"
+        drawable="bluelight_filter"/>
+    <item
+        component="ComponentInfo{jp.ne.hardyinfinity.bluelightfilter.nightmode/jp.ne.hardyinfinity.bluelightfilter.nightmode.SettingActivity}"
+        drawable="bluelight_filter"/>
+    <item
+        component="ComponentInfo{com.box.android/com.box.android.activities.login.SplashScreenActivity}"
+        drawable="box"/>
+    <item
+        component="ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity}"
+        drawable="facebook_messenger"/>
+    <item
+        component="ComponentInfo{com.facebook.lite/com.facebook.lite.MainActivity}"
+        drawable="facebook_lite"/>
+    <item
+        component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}"
+        drawable="facebook_messenger_lite"/>
+    <item
+        component="ComponentInfo{com.downloading.main.baiduyundownload/com.downloading.main.baiduyundownload.home.HomeFileActivity}"
+        drawable="fake_baidu_yun"/>
+    <item
+        component="ComponentInfo{com.guangdiu.guangdiu/com.guangdiu.guangdiu.ui.MainActivity}"
+        drawable="guangdiu"/>
+    <item
+        component="ComponentInfo{com.blizzard.wowcompanion/com.blizzard.wowcompanion.CompanionNativeActivity}"
+        drawable="blizzard_wow_helper"/>
 
 </resources>

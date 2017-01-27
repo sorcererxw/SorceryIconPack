@@ -2,6 +2,25 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>blizzard_wow_armory</item>
+        <item>blizzard_wow_helper</item>
+        <item>guangdiu</item>
+        <item>fake_baidu_yun</item>
+        <item>facebook_messenger_lite</item>
+        <item>facebook_messenger</item>
+        <item>facebook_lite</item>
+        <item>echo</item>
+        <item>box</item>
+        <item>blud_mail</item>
+        <item>airbnb</item>
+        <item>coursera</item>
+        <item>screener</item>
+        <item>netease_youdao_huihui</item>
+        <item>nike_running</item>
+        <item>joyrun</item>
+        <item>wuba_zhuanzhuan</item>
+        <item>yinyuetai</item>
+        <item>bluelight_filter</item>
         <item>sony_xperia_clock</item>
         <item>search_lite</item>
         <item>google_photo_scan</item>
@@ -257,7 +276,6 @@
         <item>flyme_music</item>
 
     </string-array>
-
     <string-array name="icon_pack_ali" translatable="false">
         <item>alibaba</item>
         <item>alipay</item>
@@ -345,6 +363,7 @@
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_hanyu_yuwen</item>
+        <item>netease_youdao_huihui</item>
         <item>netease_youdao_note</item>
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
@@ -513,6 +532,38 @@
 
     <string-array name="icon_pack_samsung" translatable="false">
         <item>samsung_artcanvas</item>
+        <item>samsung_calendar</item>
+        <item>samsung_calendar_1</item>
+        <item>samsung_calendar_10</item>
+        <item>samsung_calendar_11</item>
+        <item>samsung_calendar_12</item>
+        <item>samsung_calendar_13</item>
+        <item>samsung_calendar_14</item>
+        <item>samsung_calendar_15</item>
+        <item>samsung_calendar_16</item>
+        <item>samsung_calendar_17</item>
+        <item>samsung_calendar_18</item>
+        <item>samsung_calendar_19</item>
+        <item>samsung_calendar_2</item>
+        <item>samsung_calendar_20</item>
+        <item>samsung_calendar_21</item>
+        <item>samsung_calendar_22</item>
+        <item>samsung_calendar_23</item>
+        <item>samsung_calendar_24</item>
+        <item>samsung_calendar_25</item>
+        <item>samsung_calendar_26</item>
+        <item>samsung_calendar_27</item>
+        <item>samsung_calendar_28</item>
+        <item>samsung_calendar_29</item>
+        <item>samsung_calendar_3</item>
+        <item>samsung_calendar_30</item>
+        <item>samsung_calendar_31</item>
+        <item>samsung_calendar_4</item>
+        <item>samsung_calendar_5</item>
+        <item>samsung_calendar_6</item>
+        <item>samsung_calendar_7</item>
+        <item>samsung_calendar_8</item>
+        <item>samsung_calendar_9</item>
         <item>samsung_cloud</item>
         <item>samsung_contacts</item>
         <item>samsung_dialer</item>
@@ -529,11 +580,13 @@
         <item>samsung_pay</item>
         <item>samsung_reader</item>
         <item>samsung_settings</item>
+        <item>samsung_smart_manager</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
         <item>samsung_s_voice_app</item>
         <item>samsung_themes_store</item>
         <item>samsung_video</item>
+        <item>samsung_voice_recorder</item>
         <item>samsung_write_on_pdf</item>
     </string-array>
 
@@ -927,6 +980,7 @@
         <item>advance_download_manager</item>
         <item>aibizhi</item>
         <item>aida64</item>
+        <item>airbnb</item>
         <item>airdroid</item>
         <item>airfrozen</item>
         <item>air_matters</item>
@@ -984,6 +1038,7 @@
         <item>atom_vpn</item>
         <item>autodesk_pixlr</item>
         <item>autohome</item>
+        <item>autohome_mycar</item>
         <item>automatag</item>
         <item>aviate_launcher</item>
         <item>**B**</item>
@@ -1015,6 +1070,7 @@
         <item>baidu_wear</item>
         <item>baidu_wenku</item>
         <item>baidu_yuedu</item>
+        <item>baisibudejie</item>
         <item>baixingwang</item>
         <item>bamboo_paper</item>
         <item>banciyuan</item>
@@ -1029,16 +1085,23 @@
         <item>bilibili</item>
         <item>bilibili_alt</item>
         <item>bilibili_live</item>
+        <item>birthday_manager</item>
         <item>bittorrent_sync</item>
         <item>blacklight</item>
         <item>blizzard_authenticator</item>
+        <item>blizzard_wow_armory</item>
+        <item>blizzard_wow_helper</item>
         <item>block_launcher_pro</item>
+        <item>blud_mail</item>
         <item>blued</item>
+        <item>bluelight_filter</item>
+        <item>book_mark_life</item>
         <item>boomerang</item>
         <item>boost_plus</item>
         <item>bootmanager</item>
         <item>bootmanager_alt</item>
         <item>boss_zhipin</item>
+        <item>box</item>
         <item>breadtrip</item>
         <item>brevent</item>
         <item>browser</item>
@@ -1081,12 +1144,14 @@
         <item>cntv</item>
         <item>contacts</item>
         <item>contacts_alt</item>
+        <item>convertbee</item>
         <item>coolapk</item>
         <item>coolapk_alt</item>
         <item>coolapk_alt_2</item>
         <item>coolapk_daily_picture</item>
         <item>copas</item>
         <item>couplete</item>
+        <item>coursera</item>
         <item>ctrip</item>
         <item>ctrip_alt</item>
         <item>ctrip_alt_2</item>
@@ -1140,12 +1205,14 @@
         <item>duokan</item>
         <item>**E**</item>
         <item>echo</item>
+        <item>echo_alt</item>
         <item>ecitic_bank</item>
         <item>edx</item>
         <item>eleme</item>
         <item>eleme_alt</item>
         <item>email</item>
         <item>enjoy</item>
+        <item>esbook_read</item>
         <item>es_explorer</item>
         <item>eudic</item>
         <item>evermemo</item>
@@ -1157,10 +1224,15 @@
         <item>express_100</item>
         <item>**F**</item>
         <item>facebook</item>
+        <item>facebook_lite</item>
+        <item>facebook_messenger</item>
+        <item>facebook_messenger_lite</item>
+        <item>fake_baidu_yun</item>
         <item>fancy</item>
         <item>fangdai_calculator</item>
         <item>fanliwang</item>
         <item>feedly</item>
+        <item>feichangzhun</item>
         <item>fenghuang</item>
         <item>fenghuang_fm</item>
         <item>fenqile</item>
@@ -1178,6 +1250,7 @@
         <item>flipboard_lite</item>
         <item>floatify</item>
         <item>flow_bank</item>
+        <item>flux</item>
         <item>flyme</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
@@ -1383,6 +1456,7 @@
         <item>greenify</item>
         <item>green_vpn</item>
         <item>guaguamanhua</item>
+        <item>guangdiu</item>
         <item>gudong</item>
         <item>guokr</item>
         <item>guokr_fenda</item>
@@ -1397,6 +1471,7 @@
         <item>himail</item>
         <item>hiwifi</item>
         <item>hj_word_games</item>
+        <item>homelink</item>
         <item>houzz</item>
         <item>htc_car</item>
         <item>htc_phone</item>
@@ -1428,6 +1503,7 @@
         <item>ikea</item>
         <item>ilike_cartoon</item>
         <item>imooc</item>
+        <item>inoreader</item>
         <item>instagram</item>
         <item>instagram_alt</item>
         <item>iqiyi</item>
@@ -1442,6 +1518,7 @@
         <item>jiakaobaodian</item>
         <item>jianjie_calendar</item>
         <item>jianshu</item>
+        <item>jiecao_news</item>
         <item>jiemian_news</item>
         <item>jike</item>
         <item>jingdong_reader</item>
@@ -1449,6 +1526,7 @@
         <item>jinsanciba</item>
         <item>jotterpad</item>
         <item>jotterpad_alt</item>
+        <item>joyrun</item>
         <item>jswarts_browser</item>
         <item>juejin</item>
         <item>juice_ssh</item>
@@ -1476,6 +1554,7 @@
         <item>kugou</item>
         <item>kuwo_music_player</item>
         <item>**L**</item>
+        <item>lagou</item>
         <item>lanrenzhoumo</item>
         <item>lantern</item>
         <item>lavaradio</item>
@@ -1539,9 +1618,11 @@
         <item>luyinbao</item>
         <item>lvmamalvyou</item>
         <item>**M**</item>
+        <item>maimai</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
         <item>max_plus</item>
+        <item>mayiwo_roadbook</item>
         <item>mbalib_wiki</item>
         <item>mcdonald</item>
         <item>mctools</item>
@@ -1588,6 +1669,7 @@
         <item>misfit</item>
         <item>miwifi</item>
         <item>mi_remote</item>
+        <item>mojian</item>
         <item>moji_weather</item>
         <item>mokee_aegis</item>
         <item>momo</item>
@@ -1631,6 +1713,7 @@
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
         <item>netease_youdao_hanyu_yuwen</item>
+        <item>netease_youdao_huihui</item>
         <item>netease_youdao_note</item>
         <item>netease_youdao_translator</item>
         <item>netease_youqian</item>
@@ -1643,6 +1726,7 @@
         <item>nga_player_community</item>
         <item>nice</item>
         <item>nico_stytool_nilimengmeng</item>
+        <item>nike_running</item>
         <item>nissan</item>
         <item>noisyfox</item>
         <item>notify_clean</item>
@@ -1772,6 +1856,38 @@
         <item>**S**</item>
         <item>same</item>
         <item>samsung_artcanvas</item>
+        <item>samsung_calendar</item>
+        <item>samsung_calendar_1</item>
+        <item>samsung_calendar_10</item>
+        <item>samsung_calendar_11</item>
+        <item>samsung_calendar_12</item>
+        <item>samsung_calendar_13</item>
+        <item>samsung_calendar_14</item>
+        <item>samsung_calendar_15</item>
+        <item>samsung_calendar_16</item>
+        <item>samsung_calendar_17</item>
+        <item>samsung_calendar_18</item>
+        <item>samsung_calendar_19</item>
+        <item>samsung_calendar_2</item>
+        <item>samsung_calendar_20</item>
+        <item>samsung_calendar_21</item>
+        <item>samsung_calendar_22</item>
+        <item>samsung_calendar_23</item>
+        <item>samsung_calendar_24</item>
+        <item>samsung_calendar_25</item>
+        <item>samsung_calendar_26</item>
+        <item>samsung_calendar_27</item>
+        <item>samsung_calendar_28</item>
+        <item>samsung_calendar_29</item>
+        <item>samsung_calendar_3</item>
+        <item>samsung_calendar_30</item>
+        <item>samsung_calendar_31</item>
+        <item>samsung_calendar_4</item>
+        <item>samsung_calendar_5</item>
+        <item>samsung_calendar_6</item>
+        <item>samsung_calendar_7</item>
+        <item>samsung_calendar_8</item>
+        <item>samsung_calendar_9</item>
         <item>samsung_cloud</item>
         <item>samsung_contacts</item>
         <item>samsung_dialer</item>
@@ -1788,15 +1904,18 @@
         <item>samsung_pay</item>
         <item>samsung_reader</item>
         <item>samsung_settings</item>
+        <item>samsung_smart_manager</item>
         <item>samsung_sreminder</item>
         <item>samsung_s_health</item>
         <item>samsung_s_voice_app</item>
         <item>samsung_themes_store</item>
         <item>samsung_video</item>
+        <item>samsung_voice_recorder</item>
         <item>samsung_write_on_pdf</item>
         <item>sanguliupo</item>
         <item>scanbot</item>
         <item>scientific_calculator</item>
+        <item>screener</item>
         <item>screen_mask</item>
         <item>search_by_image</item>
         <item>search_lite</item>
@@ -2083,6 +2202,7 @@
         <item>wolfram_alpha</item>
         <item>wps</item>
         <item>wuba</item>
+        <item>wuba_zhuanzhuan</item>
         <item>wunderlist</item>
         <item>**X**</item>
         <item>xcurrency</item>
@@ -2205,6 +2325,7 @@
         <item>yidong_gps</item>
         <item>yihaodian</item>
         <item>yilan_matrix</item>
+        <item>yinyuetai</item>
         <item>yixi</item>
         <item>yi_live</item>
         <item>yoho_buy</item>

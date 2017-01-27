@@ -1,17 +1,13 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.provider.Settings;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,22 +15,19 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.SaveCallback;
-import com.sorcerer.sorcery.iconpack.App;
+import com.annimon.stream.Stream;
+import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.models.AppInfo;
-import com.sorcerer.sorcery.iconpack.net.leancloud.RequestBean;
+import com.sorcerer.sorcery.iconpack.net.avos.AvosClient;
+import com.sorcerer.sorcery.iconpack.net.avos.AvosIconRequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.Prefs;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.wang.avi.AVLoadingIndicatorView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -42,13 +35,14 @@ import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
+import io.reactivex.SingleSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
-
-import static android.provider.Settings.Secure.ANDROID_ID;
 
 public class AppSelectActivity extends UniversalToolbarActivity {
 
@@ -211,44 +205,39 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     }
 
     private void save(final List<AppInfo> list) {
-        Observable.create(new ObservableOnSubscribe<List<AppInfo>>() {
-            @Override
-            public void subscribe(final ObservableEmitter<List<AppInfo>> emitter) throws Exception {
-                String deviceId = SorceryPrefs.getInstance(AppSelectActivity.this)
-                        .getUUID().getValue();
-
-                List<RequestBean> requestBeanList = new ArrayList<>();
-                SharedPreferences sharedPreferences = getSharedPreferences("request package",
-                        MODE_PRIVATE);
-
-                for (int i = 0; i < list.size(); i++) {
-                    RequestBean request = new RequestBean();
-                    AppInfo app = list.get(i);
-                    request.setAppPackage(app.getPackage());
-                    request.setComponent(app.getCode());
-                    request.setEnName(PackageUtil.getAppEnglishName(
-                            AppSelectActivity.this, app.getPackage()));
-                    request.setZhName(PackageUtil.getAppChineseName(
-                            AppSelectActivity.this, app.getPackage()));
-                    if (deviceId != null && deviceId.length() > 0
-                            && sharedPreferences.getInt(app.getCode(), 0) == 0) {
-                        request.setDeviceId(deviceId);
-                        requestBeanList.add(request);
-                        sharedPreferences.edit().putInt(app.getCode(), 1).apply();
-                    }
-                }
-                RequestBean.saveAllInBackground(requestBeanList, new SaveCallback() {
-                    @Override
-                    public void done(AVException e) {
-                        emitter.onComplete();
-                    }
-                });
-            }
-        })
+        String deviceId = SorceryPrefs.getInstance(AppSelectActivity.this).getUUID().getValue();
+        SharedPreferences sharedPreferences = getSharedPreferences("request package", MODE_PRIVATE);
+        Observable.fromIterable(list)
+                .filter(appInfo -> deviceId != null
+                        && deviceId.length() > 0
+                        && (sharedPreferences.getInt(appInfo.getCode(), 0) == 0
+                        || BuildConfig.DEBUG))
+                .map(appInfo -> {
+                    sharedPreferences.edit().putInt(appInfo.getCode(), 1).apply();
+                    return new AvosIconRequestBean(
+                            PackageUtil.getAppChineseName(AppSelectActivity.this,
+                                    appInfo.getPackage()),
+                            PackageUtil.getAppEnglishName(AppSelectActivity.this,
+                                    appInfo.getPackage()),
+                            appInfo.getPackage(),
+                            appInfo.getCode(),
+                            deviceId
+                    );
+                })
+                .toList()
+                .toObservable()
+                .flatMap(
+                        new Function<List<AvosIconRequestBean>, ObservableSource<List<Boolean>>>() {
+                            @Override
+                            public ObservableSource<List<Boolean>> apply(
+                                    List<AvosIconRequestBean> list)
+                                    throws Exception {
+                                return AvosClient.getInstance().postIconRequests(list);
+                            }
+                        })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<AppInfo>>() {
-
+                .subscribe(new Observer<List<Boolean>>() {
                     ProgressDialog mProgressDialog;
 
                     @Override
@@ -263,8 +252,11 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                     }
 
                     @Override
-                    public void onNext(List<AppInfo> value) {
+                    public void onNext(List<Boolean> booleanList) {
+                        Stream.of(booleanList)
+                                .forEach(b -> Timber.d(String.valueOf(b)));
                     }
+
 
                     @Override
                     public void onError(Throwable e) {
