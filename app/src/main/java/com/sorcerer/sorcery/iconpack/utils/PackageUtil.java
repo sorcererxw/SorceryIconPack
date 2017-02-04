@@ -13,19 +13,15 @@ import android.os.Build;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
-import com.annimon.stream.function.Function;
-import com.sorcerer.sorcery.iconpack.models.AppInfo;
-import com.sorcerer.sorcery.iconpack.models.AppfilterItem;
-import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.data.models.AppfilterItem;
+import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
 
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;

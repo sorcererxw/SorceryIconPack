@@ -6,11 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.util.ArrayMap;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -40,14 +41,9 @@ public class ViewPageAdapter extends FragmentPagerAdapter {
     }
 
     private void updateFlags() {
-        List<LazyIconFragment.Flag> flagList = new ArrayList<>();
-        LazyIconFragment.Flag[] flags = LazyIconFragment.Flag.values();
-        for (LazyIconFragment.Flag flag : flags) {
-            if (mPrefs.isTabShow(flag.name().toLowerCase()).getValue()) {
-                flagList.add(flag);
-            }
-        }
-        mFlagList = flagList;
+        mFlagList = Stream.of(LazyIconFragment.Flag.values())
+                .filter(flag -> mPrefs.isTabShow(flag.name().toLowerCase()).getValue())
+                .collect(Collectors.toList());
     }
 
     @Override

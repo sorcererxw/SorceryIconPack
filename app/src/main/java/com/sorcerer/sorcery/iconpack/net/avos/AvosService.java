@@ -1,13 +1,18 @@
 package com.sorcerer.sorcery.iconpack.net.avos;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.sorcerer.sorcery.iconpack.net.avos.models.AvosBatchRequest;
+import com.sorcerer.sorcery.iconpack.net.avos.models.AvosBatchResult;
+import com.sorcerer.sorcery.iconpack.net.avos.models.AvosCreateObjectResult;
+import com.sorcerer.sorcery.iconpack.net.avos.models.AvosIconRequestStatisticQueryResult;
 
 import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * @description:
@@ -22,4 +27,13 @@ interface AvosService {
 
     @POST("1.1/batch")
     Observable<List<AvosBatchResult>> batch(@Body AvosBatchRequest request);
+
+    @GET("1.1/classes/RequestStatistic")
+    Observable<AvosIconRequestStatisticQueryResult> queryRequestStatistic(
+            @Query("where") String where);
+
+    @GET("1.1/classes/RequestStatistic")
+    Observable<AvosIconRequestStatisticQueryResult> queryRequestStatistic(
+            @Query("where") String where, @Query("keys") String keys);
+
 }

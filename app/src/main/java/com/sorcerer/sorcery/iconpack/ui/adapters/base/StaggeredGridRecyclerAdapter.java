@@ -6,21 +6,21 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import java.util.List;
 
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_COL_TOP;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_COL_MID;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.BOTTOM_LEFT;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.BOTTOM_RIGHT;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.CENTER;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_BOTTOM;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_LEFT;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_RIGHT;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_TOP;
 import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_COL_BOTTOM;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_COL_MID;
+import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_COL_TOP;
 import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_ROW_LEFT;
 import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_ROW_MID;
 import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.ONE_ROW_RIGHT;
 import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.TOP_LEFT;
 import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.TOP_RIGHT;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.BOTTOM_LEFT;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.BOTTOM_RIGHT;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_TOP;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_BOTTOM;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_LEFT;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.EDGE_RIGHT;
-import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter.ItemPosType.CENTER;
 
 /**
  * @description:

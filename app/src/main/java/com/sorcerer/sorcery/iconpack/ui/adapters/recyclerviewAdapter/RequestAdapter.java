@@ -7,17 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.FindCallback;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.net.avos.AvosClient;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import java.util.ArrayList;
@@ -25,6 +21,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -36,11 +35,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
     private Context mContext;
     private List<CheckAppInfo> mAppInfoList;
 
-    static class CheckAppInfo extends AppInfo {
+    private static class CheckAppInfo extends AppInfo {
 
         private boolean mChecked = false;
 
-        public CheckAppInfo(AppInfo appInfo, Boolean check) {
+        CheckAppInfo(AppInfo appInfo, Boolean check) {
             setRequestedTimes(appInfo.getRequestedTimes());
             setCode(appInfo.getCode());
             setHasCustomIcon(appInfo.isHasCustomIcon());
@@ -51,11 +50,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
             mChecked = check;
         }
 
-        public boolean isChecked() {
+        boolean isChecked() {
             return mChecked;
         }
 
-        public void setChecked(boolean checked) {
+        void setChecked(boolean checked) {
             mChecked = checked;
         }
     }
@@ -70,7 +69,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         void OnUnEmpty();
     }
 
-    public static class AppItemViewHolder extends RecyclerView.ViewHolder {
+    static class AppItemViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.imageVIew_icon_request_icon)
         ImageView icon;
@@ -87,7 +86,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         private static String mPrefixTimes;
         private static String mSuffixTimes;
 
-        public AppItemViewHolder(View itemView) {
+        AppItemViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             String t = ResourceUtil.getString(itemView.getContext(), R.string.icon_request_times);
@@ -95,7 +94,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
             mSuffixTimes = t.split("#")[1];
         }
 
-        public void setTimes(int count) {
+        void setTimes(int count) {
             if (count >= 0) {
                 String t = mPrefixTimes + count + mSuffixTimes;
                 times.setText(t);
@@ -103,32 +102,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
                 times.setText("......");
             }
         }
-
-        public void show() {
-            RecyclerView.LayoutParams param =
-                    (RecyclerView.LayoutParams) itemView.getLayoutParams();
-            param.height = LinearLayout.LayoutParams.WRAP_CONTENT;
-            param.width = LinearLayout.LayoutParams.MATCH_PARENT;
-            itemView.setVisibility(View.VISIBLE);
-            itemView.setLayoutParams(param);
-        }
-
-        public void hide() {
-            RecyclerView.LayoutParams param =
-                    (RecyclerView.LayoutParams) itemView.getLayoutParams();
-            itemView.setVisibility(View.GONE);
-            param.height = 0;
-            param.width = 0;
-            itemView.setLayoutParams(param);
-        }
     }
 
     public RequestAdapter(Context context, List<AppInfo> appInfoList) {
         mContext = context;
         mAppInfoList = new ArrayList<>();
-        for (int i = 0; i < appInfoList.size(); i++) {
-            mAppInfoList.add(new CheckAppInfo(appInfoList.get(i), false));
-        }
+        mAppInfoList.addAll(Stream.range(0, appInfoList.size())
+                .map(i -> new CheckAppInfo(appInfoList.get(i), false))
+                .collect(Collectors.toList()));
     }
 
     @Override
@@ -161,24 +142,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         holder.icon.setImageDrawable(mAppInfoList.get(realPos).getIcon());
         if (mAppInfoList.get(realPos).getRequestedTimes() == -1) {
             holder.setTimes(-1);
-            AVQuery<AVObject> query = new AVQuery<>("RequestStatistic");
-            query.whereEqualTo("package", mAppInfoList.get(realPos).getPackage());
-            query.findInBackground(new FindCallback<AVObject>() {
-                @Override
-                public void done(List<AVObject> list, AVException e) {
-                    if (list == null) {
-                        return;
-                    }
-                    if (list.size() > 0) {
-                        int t = list.get(0).getInt("count");
-                        mAppInfoList.get(realPos).setRequestedTimes(t);
-                        holder.setTimes(t);
-                    } else {
-                        mAppInfoList.get(realPos).setRequestedTimes(0);
-                        holder.setTimes(0);
-                    }
-                }
-            });
+            AvosClient.getInstance()
+                    .getAppRequestedTime(mAppInfoList.get(realPos).getPackage())
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(times -> {
+                        mAppInfoList.get(realPos).setRequestedTimes(times);
+                        holder.setTimes(times);
+                    }, Timber::e);
         } else {
             holder.setTimes(mAppInfoList.get(realPos).getRequestedTimes());
         }
@@ -189,29 +160,18 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         if (mShowAll) {
             return mAppInfoList.size();
         } else {
-            int cnt = 0;
-            for (AppInfo appInfo : mAppInfoList) {
-                if (!appInfo.isHasCustomIcon()) {
-                    cnt++;
-                }
-            }
-            return cnt;
+            return (int) Stream.of(mAppInfoList)
+                    .filter(value -> !value.isHasCustomIcon())
+                    .count();
         }
     }
 
     private int getCheckedCount() {
-        int cnt = 0;
-        for (CheckAppInfo cai : mAppInfoList) {
-            if (cai.isChecked()) {
-                if (cai.isHasCustomIcon() && mShowAll) {
-                    cnt++;
-                }
-                if (!cai.isHasCustomIcon()) {
-                    cnt++;
-                }
-            }
-        }
-        return cnt;
+        return (int) Stream.of(mAppInfoList)
+                .filter(CheckAppInfo::isChecked)
+                // (hasCustomIcon && showAll) || !hasCustomIcon
+                .filter(value -> !value.isHasCustomIcon() || mShowAll)
+                .count();
     }
 
     private int getItem(int pos) {
@@ -248,30 +208,27 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         notifyDataSetChanged();
     }
 
-
     public void checkAll(boolean check) {
         if (check) {
-            for (CheckAppInfo cai : mAppInfoList) {
+            Stream.of(mAppInfoList).forEach(cai -> {
                 if (mShowAll) {
                     cai.setChecked(true);
                 } else if (!cai.isHasCustomIcon()) {
                     cai.setChecked(true);
                 }
-            }
+            });
         } else {
-            for (CheckAppInfo cai : mAppInfoList) {
-                cai.setChecked(false);
-            }
+            Stream.of(mAppInfoList).forEach(cai -> cai.setChecked(false));
         }
         notifyDataSetChanged();
     }
 
     public void setShowAll(boolean isShowAll) {
         mShowAll = isShowAll;
-        List<CheckAppInfo> tmp = new ArrayList<>();
-        for (int i = 0; i < mAppInfoList.size(); i++) {
-            tmp.add(mAppInfoList.get(i));
-        }
+        List<CheckAppInfo> tmp = new ArrayList<>(mAppInfoList);
+//        for (int i = 0; i < mAppInfoList.size(); i++) {
+//            tmp.add(mAppInfoList.get(i));
+//        }
         mAppInfoList.clear();
         mAppInfoList.addAll(tmp);
         notifyDataSetChanged();

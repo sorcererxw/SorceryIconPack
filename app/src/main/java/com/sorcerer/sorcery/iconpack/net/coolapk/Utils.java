@@ -34,7 +34,9 @@ public class Utils {
     public static String getUserAgent() {
         StringBuilder stringBuilder = new StringBuilder();
         String str = System.getProperty("http.agent");
-        stringBuilder.append(str).append(" (#Build; ").append(Build.BRAND).append("; ").append(Build.MODEL).append("; ").append(Build.DISPLAY).append("; ").append(Build.VERSION.RELEASE).append(")");
+        stringBuilder.append(str).append(" (#Build; ").append(Build.BRAND).append("; ")
+                .append(Build.MODEL).append("; ").append(Build.DISPLAY).append("; ")
+                .append(Build.VERSION.RELEASE).append(")");
         stringBuilder.append(" +CoolMarket/7.3");
         return Html.escapeHtml(stringBuilder.toString());
     }

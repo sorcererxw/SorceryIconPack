@@ -135,7 +135,8 @@ public class Mod implements IXposedHookZygoteInit, IXposedHookLoadPackage,
         if (hasPrefFileChanged()) {
             this.XSharedPrefs.reload();
             this.mDisplayDpi = this.XSharedPrefs.getInt("display_dpi", 320);
-            if (!this.mThemePackage.equals(this.XSharedPrefs.getString("theme_package_name", null))) {
+            if (!this.mThemePackage
+                    .equals(this.XSharedPrefs.getString("theme_package_name", null))) {
                 this.mThemePackage = this.XSharedPrefs.getString("theme_package_name", null);
             }
             this.mThemePackagePath = this.XSharedPrefs.getString("theme_package_path", null);

@@ -37,13 +37,13 @@ import com.annimon.stream.function.Predicate;
 import com.google.gson.Gson;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.OpenSourceLibBean;
+import com.sorcerer.sorcery.iconpack.data.models.OpenSourceLibBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.CustomizeTabsAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.OpenSourceLibAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
-import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.OpenSourceLibInformations;
+import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.SimpleCallback;
@@ -51,14 +51,10 @@ import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.xposed.XposedUtils;
 import com.sorcerer.sorcery.iconpack.xposed.theme.IconReplacementItem;
 import com.sorcerer.sorcery.iconpack.xposed.theme.Util;
-import com.stericson.RootTools.RootTools;
-import com.stericson.RootTools.execution.Command;
-import com.stericson.RootTools.execution.CommandCapture;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -403,29 +399,31 @@ public class SettingsFragment extends PreferenceFragment {
 
     /* <----------------------------------------------> */
     private boolean tryAndApplyIcon(final ApplicationInfo themePackage) {
-        if (!RootTools.isAccessGiven()) {
-            try {
-                Toast.makeText(mActivity, "acquiring root...", Toast.LENGTH_SHORT).show();
-                RootTools.getShell(true).add(new CommandCapture(0, "echo Hello"));
-            } catch (Exception e) {
-                Timber.e(e);
-                return false;
-            }
-        }
-        if (!RootTools.isAccessGiven()) {
-            Toast.makeText(mActivity, "need root access!", Toast.LENGTH_SHORT).show();
-            return false;
-        } else {
-            mGlobalLoadDialog.show();
-            if (!new File(mActivity.getCacheDir().getAbsolutePath() + "/icons").exists()) {
-                try {
-                    RootTools.getShell(true).add(new CommandCapture(0,
-                            "mkdir " + mActivity.getCacheDir().getAbsolutePath() + "/icons",
-                            "chmod 777 " + mActivity.getCacheDir().getAbsolutePath() + "/icons"));
-                } catch (Exception e) {
-                    Timber.e(e);
-                }
-            }
+//        if (!RootTools.isAccessGiven()) {
+//            try {
+//                Toast.makeText(mActivity, "acquiring root...", Toast.LENGTH_SHORT).show();
+//                RootTools.getShell(true).add(new CommandCapture(0, "echo Hello"));
+//            } catch (Exception e) {
+//                Timber.e(e);
+//                return false;
+//            }
+//        }
+//        if (!RootTools.isAccessGiven()) {
+//            Toast.makeText(mActivity, "need root access!", Toast.LENGTH_SHORT).show();
+//            return false;
+//        } else {
+//            mGlobalLoadDialog.show();
+//            if (!new File(mActivity.getCacheDir().getAbsolutePath() + "/icons").exists()) {
+//                try {
+//                    RootTools.getShell(true).add(new CommandCapture(0,
+//                            "mkdir " + mActivity.getCacheDir().getAbsolutePath() + "/icons",
+//                            "chmod 777 " + mActivity.getCacheDir().getAbsolutePath() + "/icons"));
+//                } catch (Exception e) {
+//                    Timber.e(e);
+//                }
+//            }
+
+
 //            if (!appIsInstalledInMountASEC()) {
 //                try {
 //                    Runtime.getRuntime().exec(
@@ -435,9 +433,10 @@ public class SettingsFragment extends PreferenceFragment {
 //                }
 //            }
 
-            apply(themePackage);
-            return true;
-        }
+//            apply(themePackage);
+//            return true;
+//        }
+        return false;
     }
 
     private void apply(final ApplicationInfo themePackage) {
@@ -465,27 +464,27 @@ public class SettingsFragment extends PreferenceFragment {
                             new HashMap<>();
                     String themePackagePath = themePackage.sourceDir;
                     if (themePackage.sourceDir.contains("/data/app/")) {
-                        RootTools.getShell(true).add(new CommandCapture(0,
-                                "rm /data/data/" + mActivity.getPackageName()
-                                        + "/cache/icons/*",
-                                "rm " + mActivity.getExternalCacheDir()
-                                        .getAbsolutePath()
-                                        + "/current_theme.apk"));
+//                        RootTools.getShell(true).add(new CommandCapture(0,
+//                                "rm /data/data/" + mActivity.getPackageName()
+//                                        + "/cache/icons/*",
+//                                "rm " + mActivity.getExternalCacheDir()
+//                                        .getAbsolutePath()
+//                                        + "/current_theme.apk"));
                     } else {
-                        Command commandCapture = new CommandCapture(0,
-                                "rm /data/data/" + mActivity.getPackageName()
-                                        + "/cache/icons/*",
-                                "rm " + mActivity.getExternalCacheDir().getAbsolutePath()
-                                        + "/current_theme.apk",
-                                "cat \"" + themePackage.sourceDir + "\" > "
-                                        + mActivity.getExternalCacheDir()
-                                        .getAbsolutePath() + "/current_theme.apk",
-                                "chmod 644 " + mActivity.getExternalCacheDir().getAbsolutePath()
-                                        + "/current_theme.apk");
-                        RootTools.getShell(true).add(commandCapture);
-
-                        themePackagePath =
-                                mActivity.getExternalCacheDir() + "/current_theme.apk";
+//                        Command commandCapture = new CommandCapture(0,
+//                                "rm /data/data/" + mActivity.getPackageName()
+//                                        + "/cache/icons/*",
+//                                "rm " + mActivity.getExternalCacheDir().getAbsolutePath()
+//                                        + "/current_theme.apk",
+//                                "cat \"" + themePackage.sourceDir + "\" > "
+//                                        + mActivity.getExternalCacheDir()
+//                                        .getAbsolutePath() + "/current_theme.apk",
+//                                "chmod 644 " + mActivity.getExternalCacheDir().getAbsolutePath()
+//                                        + "/current_theme.apk");
+//                        RootTools.getShell(true).add(commandCapture);
+//
+//                        themePackagePath =
+//                                mActivity.getExternalCacheDir() + "/current_theme.apk";
                     }
                     PackageManager pm = mActivity.getPackageManager();
                     Resources r = mActivity.getPackageManager()

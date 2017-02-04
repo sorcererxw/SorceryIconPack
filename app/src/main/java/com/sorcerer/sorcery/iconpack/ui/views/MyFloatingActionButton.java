@@ -6,8 +6,6 @@ import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 
-import timber.log.Timber;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -35,32 +33,30 @@ public class MyFloatingActionButton extends FloatingActionButton {
 
     @Override
     public void show() {
-        if (!mShow) {
-            if (getVisibility() != VISIBLE) {
-                setScaleX(0);
-                setScaleY(0);
-            }
-            animate().scaleY(1).scaleX(1).setDuration(200).setListener(
-                    new AnimatorListenerAdapter() {
-                        @Override
-                        public void onAnimationStart(Animator animation) {
-                            super.onAnimationStart(animation);
-                            if (getVisibility() != VISIBLE) {
-                                setScaleX(0);
-                                setScaleY(0);
-                                setVisibility(VISIBLE);
-                            }
-                        }
-                    }).start();
+        setClickable(true);
+        if (getVisibility() != VISIBLE) {
+            setScaleX(0);
+            setScaleY(0);
         }
+        animate().scaleY(1).scaleX(1).setDuration(200).setListener(
+                new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        super.onAnimationStart(animation);
+                        if (getVisibility() != VISIBLE) {
+                            setScaleX(0);
+                            setScaleY(0);
+                            setVisibility(VISIBLE);
+                        }
+                    }
+                }).start();
         mShow = true;
     }
 
     @Override
     public void hide() {
-        if (mShow) {
-            animate().scaleY(0).scaleX(0).setDuration(200).start();
-        }
+        setClickable(false);
+        animate().scaleY(0).scaleX(0).setDuration(200).start();
         mShow = false;
     }
 }

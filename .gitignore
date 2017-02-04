@@ -9,6 +9,12 @@
 /captures
 private.xml
 /app/src/main/res/drawable-nodpi
-/app/src/main/java/com/sorcerer/sorcery/iconpack/utils/OtherUtil.java
 /keystore
 /dictionary-elder.txt
+/app/src/main/java/com/sorcerer/sorcery/iconpack/appliers/xposed
+/app/src/main/java/com/sorcerer/sorcery/iconpack/appliers/database
+/app/src/main/java/com/sorcerer/sorcery/iconpack/xposed
+/app/src/main/java/com/sorcerer/sorcery/iconpack/net/leancloud
+/app/src/main/java/com/sorcerer/sorcery/iconpack/net/avos
+/app/src/main/java/com/sorcerer/sorcery/iconpack/net/spiders
+

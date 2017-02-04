@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="icon_pack_new" translatable="false">
+    <string-array name="icon_pack_new"
+                  translatable="false">
         <item>@string/icon_label_added</item>
+        <item>twitch</item>
+        <item>hua_timetravel</item>
+        <item>backdrops</item>
+        <item>google_pixel_launcher</item>
+        <item>retrica</item>
+        <item>ticwear</item>
+        <item>google_android_wear</item>
+        <item>tv_plus</item>
+        <item>palabre</item>
+        <item>cpuz</item>
+        <item>arrow_launcher</item>
+        <item>smart_launcher</item>
+        <item>smart_launcher_pro</item>
         <item>blizzard_wow_armory</item>
         <item>blizzard_wow_helper</item>
         <item>guangdiu</item>
@@ -274,9 +288,11 @@
         <item>pianke</item>
         <item>lenovo_calendar</item>
         <item>flyme_music</item>
-
+        <item>telegram</item>
+        <item>google_now_launcher</item>
     </string-array>
-    <string-array name="icon_pack_ali" translatable="false">
+    <string-array name="icon_pack_ali"
+                  translatable="false">
         <item>alibaba</item>
         <item>alipay</item>
         <item>alipay_qr_code</item>
@@ -308,7 +324,8 @@
         <item>ali_zhineng</item>
     </string-array>
 
-    <string-array name="icon_pack_baidu" translatable="false">
+    <string-array name="icon_pack_baidu"
+                  translatable="false">
         <item>baidu</item>
         <item>baidu_appsearch</item>
         <item>baidu_browser</item>
@@ -337,7 +354,8 @@
         <item>baidu_yuedu</item>
     </string-array>
 
-    <string-array name="icon_pack_netease" translatable="false">
+    <string-array name="icon_pack_netease"
+                  translatable="false">
         <item>netease_cartoon_reader</item>
         <item>netease_cloudclass</item>
         <item>netease_cloudclass_alt</item>
@@ -370,7 +388,8 @@
         <item>netease_youxiangdashi</item>
     </string-array>
 
-    <string-array name="icon_pack_google" translatable="false">
+    <string-array name="icon_pack_google"
+                  translatable="false">
         <item>google</item>
         <item>google_allo</item>
         <item>google_android_pay</item>
@@ -454,12 +473,14 @@
         <item>google_youtube_music</item>
     </string-array>
 
-    <string-array name="icon_pack_htc" translatable="false">
+    <string-array name="icon_pack_htc"
+                  translatable="false">
         <item>htc_car</item>
         <item>htc_phone</item>
     </string-array>
 
-    <string-array name="icon_pack_lenovo" translatable="false">
+    <string-array name="icon_pack_lenovo"
+                  translatable="false">
         <item>lenovo_calendar</item>
         <item>lenovo_calendar_1</item>
         <item>lenovo_calendar_10</item>
@@ -495,16 +516,19 @@
         <item>lenovo_gt_browser</item>
     </string-array>
 
-    <string-array name="icon_pack_lg" translatable="false">
+    <string-array name="icon_pack_lg"
+                  translatable="false">
         <item>lg_health</item>
     </string-array>
 
-    <string-array name="icon_pack_moto" translatable="false">
+    <string-array name="icon_pack_moto"
+                  translatable="false">
         <item>moto_body</item>
         <item>moto_connect</item>
     </string-array>
 
-    <string-array name="icon_pack_microsoft" translatable="false">
+    <string-array name="icon_pack_microsoft"
+                  translatable="false">
         <item>microsoft_account</item>
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_keyboard</item>
@@ -530,7 +554,8 @@
         <item>microsoft_xbox_beta_alt</item>
     </string-array>
 
-    <string-array name="icon_pack_samsung" translatable="false">
+    <string-array name="icon_pack_samsung"
+                  translatable="false">
         <item>samsung_artcanvas</item>
         <item>samsung_calendar</item>
         <item>samsung_calendar_1</item>
@@ -590,7 +615,8 @@
         <item>samsung_write_on_pdf</item>
     </string-array>
 
-    <string-array name="icon_pack_sony" translatable="false">
+    <string-array name="icon_pack_sony"
+                  translatable="false">
         <item>sony_album</item>
         <item>sony_alpha_clock</item>
         <item>sony_ar_effect</item>
@@ -632,7 +658,8 @@
         <item>sony_xperia_clock</item>
     </string-array>
 
-    <string-array name="icon_pack_tencent" translatable="false">
+    <string-array name="icon_pack_tencent"
+                  translatable="false">
         <item>tencent_anime_comic</item>
         <item>tencent_app_market</item>
         <item>tencent_cf_sns</item>
@@ -669,10 +696,12 @@
         <item>tencent_wesync</item>
     </string-array>
 
-    <string-array name="icon_pack_miui" translatable="false">
+    <string-array name="icon_pack_miui"
+                  translatable="false">
     </string-array>
 
-    <string-array name="icon_pack_xiaomi" translatable="false">
+    <string-array name="icon_pack_xiaomi"
+                  translatable="false">
         <item>xiaomi_account</item>
         <item>xiaomi_account_alt</item>
         <item>xiaomi_app_market</item>
@@ -766,7 +795,8 @@
         <item>xiaomi_yidian_news</item>
     </string-array>
 
-    <string-array name="icon_pack_flyme" translatable="false">
+    <string-array name="icon_pack_flyme"
+                  translatable="false">
         <item>flyme</item>
         <item>flyme_account</item>
         <item>flyme_appcenter</item>
@@ -850,10 +880,12 @@
         <item>flyme_weather_alt</item>
     </string-array>
 
-    <string-array name="icon_pack_meizu" translatable="false">
+    <string-array name="icon_pack_meizu"
+                  translatable="false">
     </string-array>
 
-    <string-array name="icon_pack_oneplus" translatable="false">
+    <string-array name="icon_pack_oneplus"
+                  translatable="false">
         <item>oneplus_calculator</item>
         <item>oneplus_calculator_alt</item>
         <item>oneplus_calendar</item>
@@ -904,7 +936,8 @@
         <item>oneplus_weather_alt_sunny</item>
     </string-array>
 
-    <string-array name="icon_pack" translatable="false">
+    <string-array name="icon_pack"
+                  translatable="false">
         <item>*****</item>
         <item>a10086</item>
         <item>a115</item>

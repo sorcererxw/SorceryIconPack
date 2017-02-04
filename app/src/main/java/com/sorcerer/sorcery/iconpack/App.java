@@ -7,16 +7,6 @@ import android.content.Context;
 import com.sorcerer.sorcery.iconpack.net.leancloud.AVService;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.X509TrustManager;
-
 import rx_activity_result2.RxActivityResult;
 import timber.log.Timber;
 

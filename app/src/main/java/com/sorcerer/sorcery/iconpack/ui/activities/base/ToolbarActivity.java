@@ -3,12 +3,9 @@ package com.sorcerer.sorcery.iconpack.ui.activities.base;
 import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
 
 /**

@@ -9,7 +9,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
@@ -24,9 +23,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.util.TypedValue;
-
-import com.stericson.RootTools.RootTools;
-import com.stericson.RootTools.execution.CommandCapture;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -156,7 +152,7 @@ public class XposedUtils {
     }
 
     public static Bitmap themeIcon(Resources srcRes, Resources themeRes, int displayDpi,
-            int iconRes, int backRes, int maskRes, int upRes, float scale) {
+                                   int iconRes, int backRes, int maskRes, int upRes, float scale) {
         Bitmap sourceImage = getBitmapForDensity(srcRes, displayDpi, iconRes);
         Bitmap iconBack = null;
         if (backRes != 0) {
@@ -253,7 +249,7 @@ public class XposedUtils {
     }
 
     public static BitmapDrawable getCachedIcon(Resources res, String packageName, int resId,
-            Options opts) {
+                                               Options opts) {
         int displayDpi = res.getDisplayMetrics().densityDpi;
         Bitmap bitmap = BitmapFactory.decodeFile(getCacheFilePath(packageName, resId), opts);
         if (bitmap == null) {
@@ -282,22 +278,22 @@ public class XposedUtils {
     }
 
     public static void clearNovaCache() {
-        String launcherdb = "/data/data/com.teslacoilsw.launcher/databases/launcher.db";
-        String tmpdb = "/sdcard/nova_tmp.db";
-        try {
-            RootTools.getShell(true).add(new CommandCapture(0,
-                    "if [ -f /data/data/com.teslacoilsw.launcher/databases/launcher.db ]; then cat /data/data/com.teslacoilsw.launcher/databases/launcher.db > /sdcard/nova_tmp.db; fi;"))
-                    .waitForFinish();
-            SQLiteDatabase db = SQLiteDatabase.openDatabase("/sdcard/nova_tmp.db", null, 0);
-            db.execSQL("update allapps set icon = null; ");
-            db.close();
-            RootTools.getShell(true).add(new CommandCapture(0,
-                    "cat /sdcard/nova_tmp.db > /data/data/com.teslacoilsw.launcher/databases/launcher.db; owner=$(stat -c %u /data/data/com.teslacoilsw.launcher/databases/launcher.db-journal);chown $owner:$owner /data/data/com.teslacoilsw.launcher/databases/launcher.db; chmod 660 /data/data/com.teslacoilsw.launcher/databases/launcher.db; rm /sdcard/nova_tmp.db*;"))
-                    .waitForFinish();
-            Log.d(TAG, "Cleared Nova Launcher cache");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        String launcherdb = "/data/data/com.teslacoilsw.launcher/databases/launcher.db";
+//        String tmpdb = "/sdcard/nova_tmp.db";
+//        try {
+//            RootTools.getShell(true).add(new CommandCapture(0,
+//                    "if [ -f /data/data/com.teslacoilsw.launcher/databases/launcher.db ]; then cat /data/data/com.teslacoilsw.launcher/databases/launcher.db > /sdcard/nova_tmp.db; fi;"))
+//                    .waitForFinish();
+//            SQLiteDatabase db = SQLiteDatabase.openDatabase("/sdcard/nova_tmp.db", null, 0);
+//            db.execSQL("update allapps set icon = null; ");
+//            db.close();
+//            RootTools.getShell(true).add(new CommandCapture(0,
+//                    "cat /sdcard/nova_tmp.db > /data/data/com.teslacoilsw.launcher/databases/launcher.db; owner=$(stat -c %u /data/data/com.teslacoilsw.launcher/databases/launcher.db-journal);chown $owner:$owner /data/data/com.teslacoilsw.launcher/databases/launcher.db; chmod 660 /data/data/com.teslacoilsw.launcher/databases/launcher.db; rm /sdcard/nova_tmp.db*;"))
+//                    .waitForFinish();
+//            Log.d(TAG, "Cleared Nova Launcher cache");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     public static void killLauncher(PackageManager pm) {
@@ -309,9 +305,9 @@ public class XposedUtils {
                     .contains("teslacoilsw.launcher")) {
                 clearNovaCache();
             }
-            RootTools.getShell(true)
-                    .add(new CommandCapture(0, "am force-stop " + getCurrentHome(pm)))
-                    .waitForFinish();
+//            RootTools.getShell(true)
+//                    .add(new CommandCapture(0, "am force-stop " + getCurrentHome(pm)))
+//                    .waitForFinish();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -334,10 +330,10 @@ public class XposedUtils {
                 clearNovaCache();
             }
             Log.d(TAG, "forceStops: " + forceStops);
-            RootTools.getShell(true).add(new CommandCapture(0,
-                    forceStops + " & am force-stop " + PACKAGE_NAME + " && am start "
-                            + PACKAGE_NAME))
-                    .waitForFinish();
+//            RootTools.getShell(true).add(new CommandCapture(0,
+//                    forceStops + " & am force-stop " + PACKAGE_NAME + " && am start "
+//                            + PACKAGE_NAME))
+//                    .waitForFinish();
         } catch (Exception e) {
             e.printStackTrace();
         }

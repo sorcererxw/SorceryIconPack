@@ -282,8 +282,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                             final String name = dialog.getInputEditText().getText().toString();
                             if (checkName(name)) {
                                 new RxPermissions(FeedbackChatActivity.this)
-                                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                                Manifest.permission.READ_PHONE_STATE)
+                                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                                         .subscribe(aBoolean -> {
                                             if (aBoolean) {
                                                 send(name, CommentType.USER);
@@ -319,7 +318,8 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
 
     private void scrollToBottom() {
         mRecyclerView.post(
-                () -> mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount()));
+                () -> mRecyclerView
+                        .smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount()));
     }
 
     @Override

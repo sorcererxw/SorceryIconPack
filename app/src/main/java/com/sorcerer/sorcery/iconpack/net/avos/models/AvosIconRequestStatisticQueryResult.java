@@ -1,0 +1,144 @@
+package com.sorcerer.sorcery.iconpack.net.avos.models;
+
+import android.support.annotation.Keep;
+
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
+/**
+ * @description:
+ * @author: Sorcerer
+ * @date: 2017/2/3
+ */
+@Keep
+public class AvosIconRequestStatisticQueryResult {
+
+    @Keep
+    @SerializedName("results")
+    private List<ResultsBean> mResults;
+
+    public List<ResultsBean> getResults() {
+        return mResults;
+    }
+
+    public void setResults(List<ResultsBean> results) {
+        mResults = results;
+    }
+
+    @Keep
+    public static class ResultsBean {
+        /**
+         * zhName : Sorcery图标包
+         * package : com.sorcerer.sorcery.iconpack
+         * updatedAt : 2017-02-02T05:49:06.557Z
+         * enName : Sorcery Icons
+         * objectId : 57a898526be3ff006546d97a
+         * createdAt : 2016-08-08T14:33:54.613Z
+         * searchInfo : COM.SORCERER.SORCERY.ICONPACK|SORCERY 图标包|SORCERY ICONS|COM.SORCERER.SORCERY.ICONPACK/COM.SORCERER.SORCERY.ICONPACK.UI.ACTIVITIES.MAINACTIVITY|COM.SORCERER.SORCERY.ICONPACK/COM.SQUAREUP.LEAKCANARY.INTERNAL.DISPLAYLEAKACTIVITY|COM.SORCERER.SORCERY.ICONPACK|SORCERY 图标包|SORCERY ICONS|COM.SORCERER.SORCERY.ICONPACK/COM.SORCERER.SORCERY.ICONPACK.UI.ACTIVITIES.MAINACTIVITY|COM.SORCERER.SORCERY.ICONPACK/COM.SQUAREUP.LEAKCANARY.INTERNAL.DISPLAYLEAKACTIVITY|COM.SORCERER.SORCERY.ICONPACK|SORCERY 图标包|SORCERY ICONS|COM.SORCERER.SORCERY.ICONPACK/COM.SORCERER.SORCERY.ICONPACK.UI.ACTIVITIES.MAINACTIVITY|COM.SORCERER.SORCERY.ICONPACK/COM.SQUAREUP.LEAKCANARY.INTERNAL.DISPLAYLEAKACTIVITY|COM.SORCERER.SORCERY.ICONPACK|SORCERY 图标包|SORCERY ICONS|COM.SORCERER.SORCERY.ICONPACK/COM.SORCERER.SORCERY.ICONPACK.UI.ACTIVITIES.MAINACTIVITY|COM.SORCERER.SORCERY.ICONPACK/COM.SQUAREUP.LEAKCANARY.INTERNAL.DISPLAYLEAKACTIVITY|COM.SORCERER.SORCERY.ICONPACK|SORCERY 图标包|SORCERY ICONS|COM.SORCERER.SORCERY.ICONPACK/COM.SORCERER.SORCERY.ICONPACK.UI.ACTIVITIES.MAINACTIVITY|COM.SORCERER.SORCERY.ICONPACK/COM.SQUAREUP.LEAKCANARY.INTERNAL.DISPLAYLEAKACTIVITY|COM.SORCERER.SORCERY.ICONPACK|SORCERY 图标包|SORCERY ICONS|COM.SORCERER.SORCERY.ICONPACK/COM.SORCERER.SORCERY.ICONPACK.UI.ACTIVITIES.MAINACTIVITY|COM.SORCERER.SORCERY.ICONPACK/COM.SQUAREUP.LEAKCANARY.INTERNAL.DISPLAYLEAKACTIVITY
+         * components : ["com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.ui.activities.MainActivity","com.sorcerer.sorcery.iconpack/com.squareup.leakcanary.internal.DisplayLeakActivity"]
+         * count : 289
+         * devices : ["990005113804448","354994055666685","358099071112205","355709066545614","352787060456874","866462027058317","358995060054250","868046024172227","355867053249069","868048028569879","867981020857127","357555052983907","356489054243089","352584062276644","A000004E60C221","352571070550532","865473026550247","990005081179286","357872063558226","351952081304211","868349021002987","352430070782738","351623070105618","860046035565524","352944055678729","860046036212738","353347060178512","860046034771776","869630013537646","868017026879887","860046034897811","867615025694925","864587029286961","358094059884446","860046034736225","865267024441536","358971061390712","860046036994590","862057024820976","864587026967977","865982021834935","359596067861470","867271029425872","355180060344729","99000736623497","864587027956706","869161020552857","358096071332189","358096071206060","867905027260241","357784054419872","990004534065820","352189072142628","353254060555055","868773023776183","867905020201382","867271029828935","867979020817430","353765071052329","865932024872713","99000643175343","358394071959097","860046034975518","355709062354011","352323060673621","351831061132208","352189070819755","867880020300098","868048028645588","860046034130775","359583073933287","353254060612641","860046033460934","868930028026192","357585057511288","99000644612511","356156076371350","352430071769668","862305030464978","869949024318501","99000760313892","867271029781175","860954020054919","864219022627559","99000848133134","355709067979853","867068024629452","99000429448948","864085020943599","353347061306039","860046035894957","353347063350936","866769027599763","860046035949793","99000714563904","354187073230747","99000736994566","354282078842099","358096071033308","355905071964150","351624070817178","352575071901792","353608063733524","867905020423382","A000004FEBB1E8","867271029891024","864796020137905","358099070002845","99000554794936","99000736690702","860046036794396","352625063893869","860046036345751","359583073655823","868030020958144","869922027288880","861681031081388","355795056073857","355179062075703","867271029635132","352189072813871","867981020272194","866129021377650","99000529017168","359801053219786","352189072066884","869465020835034","867106022020272","357350073448969","864587027789412","99000709252902","866326024832992","35334706084056","862123039336661","357070051479873","358142033421882","356825057145807","352876060204911","357478061401839","990005779537084","866642020043214","866394024518730","864961026143816","860046034302556","860046033659659","862187037323492","860046037182435","864260029440182","99000736641883","35545506043433","869271021646184","352621065678424","863100030125987","9253347bb5239ae2","868048029272838","359320051057734","862493035419724","867271029295408","A100005425F264","867271029882536","867271028621067","357226064906993","868013021433267","860046033077019","861759032663485","868048029389913","868967025291403","A10000564CD8D9","357872063717541","352875082231001"]
+         */
+
+        @Keep
+        @SerializedName("zhName")
+        private String mZhName;
+        @Keep
+        @SerializedName("package")
+        private String mPackageX;
+        @Keep
+        @SerializedName("updatedAt")
+        private String mUpdatedAt;
+        @Keep
+        @SerializedName("enName")
+        private String mEnName;
+        @Keep
+        @SerializedName("objectId")
+        private String mObjectId;
+        @Keep
+        @SerializedName("createdAt")
+        private String mCreatedAt;
+        @Keep
+        @SerializedName("searchInfo")
+        private String mSearchInfo;
+        @Keep
+        @SerializedName("count")
+        private int mCount;
+        @Keep
+        @SerializedName("components")
+        private List<String> mComponents;
+
+        public String getZhName() {
+            return mZhName;
+        }
+
+        public void setZhName(String zhName) {
+            mZhName = zhName;
+        }
+
+        public String getPackageX() {
+            return mPackageX;
+        }
+
+        public void setPackageX(String packageX) {
+            mPackageX = packageX;
+        }
+
+        public String getUpdatedAt() {
+            return mUpdatedAt;
+        }
+
+        public void setUpdatedAt(String updatedAt) {
+            mUpdatedAt = updatedAt;
+        }
+
+        public String getEnName() {
+            return mEnName;
+        }
+
+        public void setEnName(String enName) {
+            mEnName = enName;
+        }
+
+        public String getObjectId() {
+            return mObjectId;
+        }
+
+        public void setObjectId(String objectId) {
+            mObjectId = objectId;
+        }
+
+        public String getCreatedAt() {
+            return mCreatedAt;
+        }
+
+        public void setCreatedAt(String createdAt) {
+            mCreatedAt = createdAt;
+        }
+
+        public String getSearchInfo() {
+            return mSearchInfo;
+        }
+
+        public void setSearchInfo(String searchInfo) {
+            mSearchInfo = searchInfo;
+        }
+
+        public int getCount() {
+            return mCount;
+        }
+
+        public void setCount(int count) {
+            mCount = count;
+        }
+
+        public List<String> getComponents() {
+            return mComponents;
+        }
+
+        public void setComponents(List<String> components) {
+            mComponents = components;
+        }
+    }
+}

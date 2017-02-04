@@ -3,20 +3,15 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -24,15 +19,9 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.SimpleTextWatcher;
 import com.wang.avi.AVLoadingIndicatorView;
-import com.wang.avi.Indicator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
  * @description:

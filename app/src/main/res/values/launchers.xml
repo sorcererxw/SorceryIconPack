@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="launchers" translatable="false">
+    <string-array name="launchers"
+                  translatable="false">
         <item>Action|com.actionlauncher.playstore</item>
         <!--<item>ADW|org.adw.launcher</item>-->
         <!--<item>ADW EX|org.adwfreak.launcher</item>-->
@@ -27,18 +28,25 @@
         <item>Unicon|sg.ruqqq.IconThemer</item>
     </string-array>
 
-    <string-array name="apply_systems" translatable="false">
+    <string-array name="apply_systems"
+                  translatable="false">
         <item>Flyme|com.meizu.customizecenter</item>
         <!--<item>MIUI|com.android.thememanager</item>-->
         <!--<item>CM Theme Engine|org.cyanogenmod.theme.chooser|org.cyanogenmod.theme.chooser2</item>-->
         <item>Unicon|sg.ruqqq.IconThemer</item>
     </string-array>
 
-    <string-array name="apply_launchers" translatable="false">
+    <string-array name="apply_launchers"
+                  translatable="false">
         <item>Action|com.actionlauncher.playstore</item>
         <item>Apex|com.anddoes.launcher</item>
         <item>Aviate|com.tul.aviate</item>
         <item>Nova|com.teslacoilsw.launcher</item>
+        <item>Google Now|com.google.android.launcher</item>
+        <item>Pixel|com.google.android.apps.nexuslauncher</item>
+        <item>Smart|ginlemon.flowerfree</item>
+        <item>Smart Pro|ginlemon.flowerpro</item>
+        <item>Arrow|com.microsoft.launcher</item>
         <!--<item>Launcher Lab|com.gtp.launcherlab</item>-->
     </string-array>
 </resources>

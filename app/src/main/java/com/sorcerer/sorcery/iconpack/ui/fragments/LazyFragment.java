@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AlphaAnimation;
@@ -149,7 +148,7 @@ public class LazyFragment extends LazyBaseFragment {
 
     }
 
-    protected void onResumeLazy(){
+    protected void onResumeLazy() {
     }
 
     protected void onPauseLazy() {

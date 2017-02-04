@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.RequestManager;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 
 import java.util.List;

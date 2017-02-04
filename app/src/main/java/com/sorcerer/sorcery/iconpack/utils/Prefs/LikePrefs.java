@@ -8,7 +8,7 @@ import android.content.Context;
  * @date: 2016/10/4
  */
 
-public class LikePrefs extends Prefs{
+public class LikePrefs extends Prefs {
 
     public LikePrefs(Context context) {
         super(context);
@@ -19,7 +19,7 @@ public class LikePrefs extends Prefs{
         return "ICON_LIKE";
     }
 
-    public SorceryPreference<Integer> like(String name){
+    public SorceryPreference<Integer> like(String name) {
         return new SorceryPreference<>(getPreferences(), name, 0);
     }
 }

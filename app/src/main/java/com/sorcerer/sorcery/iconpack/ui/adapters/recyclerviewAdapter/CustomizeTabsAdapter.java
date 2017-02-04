@@ -1,14 +1,11 @@
 package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -51,7 +48,8 @@ public class CustomizeTabsAdapter extends RecyclerView.Adapter<CustomizeTabsAdap
         holder.checkBox
                 .setChecked(mPrefs.isTabShow(mFlags[position].name().toLowerCase()).getValue());
         holder.checkBox.setOnCheckedChangeListener(
-                (compoundButton, b) -> mPrefs.isTabShow(mFlags[holder.getAdapterPosition()].name().toLowerCase())
+                (compoundButton, b) -> mPrefs
+                        .isTabShow(mFlags[holder.getAdapterPosition()].name().toLowerCase())
                         .setValue(b));
     }
 

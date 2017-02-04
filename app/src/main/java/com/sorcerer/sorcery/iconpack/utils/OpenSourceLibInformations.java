@@ -1,6 +1,6 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
-import com.sorcerer.sorcery.iconpack.models.OpenSourceLibBean;
+import com.sorcerer.sorcery.iconpack.data.models.OpenSourceLibBean;
 
 /**
  * @description:

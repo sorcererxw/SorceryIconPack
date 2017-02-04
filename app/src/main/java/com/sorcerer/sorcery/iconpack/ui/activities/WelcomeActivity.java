@@ -1,7 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.support.v7.app.AppCompatActivity;
-
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 

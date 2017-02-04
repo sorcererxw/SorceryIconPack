@@ -46,8 +46,8 @@ public abstract class Button extends CustomView {
 
     protected void setDefaultProperties() {
         // Min size
-        setMinimumHeight(DisplayUtil.dip2px(getContext(),minHeight));
-        setMinimumWidth(DisplayUtil.dip2px(getContext(),minWidth));
+        setMinimumHeight(DisplayUtil.dip2px(getContext(), minHeight));
+        setMinimumWidth(DisplayUtil.dip2px(getContext(), minWidth));
         // Background shape
         setBackgroundResource(background);
         setBackgroundColor(backgroundColor);
@@ -103,7 +103,7 @@ public abstract class Button extends CustomView {
 
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction,
-            Rect previouslyFocusedRect) {
+                                  Rect previouslyFocusedRect) {
         if (!gainFocus) {
             x = -1;
             y = -1;
@@ -118,8 +118,8 @@ public abstract class Button extends CustomView {
 
     public Bitmap makeCircle() {
         Bitmap output = Bitmap.createBitmap(
-                getWidth() - DisplayUtil.dip2px(getContext(),6), getHeight()
-                        - DisplayUtil.dip2px(getContext(),7), Config.ARGB_8888);
+                getWidth() - DisplayUtil.dip2px(getContext(), 6), getHeight()
+                        - DisplayUtil.dip2px(getContext(), 7), Config.ARGB_8888);
         Canvas canvas = new Canvas(output);
         canvas.drawARGB(0, 0, 0, 0);
         Paint paint = new Paint();

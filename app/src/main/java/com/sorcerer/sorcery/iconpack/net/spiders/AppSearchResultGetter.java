@@ -3,8 +3,8 @@ package com.sorcerer.sorcery.iconpack.net.spiders;
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.net.coolapk.CoolapkClient;
-import com.sorcerer.sorcery.iconpack.net.coolapk.CoolapkSearchResult;
-import com.sorcerer.sorcery.iconpack.net.coolapk.CoolapkSearchResult.CoolapkSearchBean;
+import com.sorcerer.sorcery.iconpack.net.coolapk.models.CoolapkSearchResult;
+import com.sorcerer.sorcery.iconpack.net.coolapk.models.CoolapkSearchResult.CoolapkSearchBean;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -44,6 +44,9 @@ public class AppSearchResultGetter {
                             CoolapkSearchResult coolapkSearchResult) throws Exception {
                         return Observable.fromIterable(coolapkSearchResult.getData());
                     }
+                })
+                .onErrorResumeNext(throwable -> {
+                    return Observable.fromIterable(new ArrayList<>());
                 })
                 .map(CoolapkSearchBean::getPackageName)
                 .toList()

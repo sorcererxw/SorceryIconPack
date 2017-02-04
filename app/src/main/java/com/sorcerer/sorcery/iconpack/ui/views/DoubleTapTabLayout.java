@@ -1,7 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.util.AttributeSet;
 

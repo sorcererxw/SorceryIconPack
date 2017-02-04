@@ -12,13 +12,13 @@ import android.view.Display;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
-import com.annimon.stream.function.Consumer;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.AppfilterItem;
-import com.sorcerer.sorcery.iconpack.models.IconBean;
+import com.sorcerer.sorcery.iconpack.data.models.AppfilterItem;
+import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.IconAdapter;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
@@ -32,7 +32,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
@@ -186,77 +185,25 @@ public class LazyIconFragment extends LazyFragment {
     }
 
     private void getIconBeanList(Flag flag) {
-        Observable.just(flag).map(new Function<Flag, List<IconBean>>() {
-            @Override
-            public List<IconBean> apply(Flag flag) {
-                List<IconBean> list = new ArrayList<>();
-                for (String name : getIconNames(getContext(), flag)) {
+        Observable.just(flag).map(fg -> Stream.of(getIconNames(getContext(), fg))
+                .map(name -> {
                     IconBean iconBean = new IconBean(name);
+                    if (name.startsWith("**")) {
+                        return iconBean;
+                    }
                     int res = getResources()
-                            .getIdentifier(name, "drawable", getContext().getPackageName());
+                            .getIdentifier(name, "drawable",
+                                    getContext().getPackageName());
                     if (res != 0) {
-                        final int thumbRes =
-                                getResources().getIdentifier(name, "drawable",
-                                        getContext().getPackageName());
-                        if (thumbRes != 0) {
-                            iconBean.setRes(thumbRes);
-                        } else {
-                            Timber.d("thumb = 0: %s", name);
-                        }
+                        iconBean.setRes(res);
+                        return iconBean;
+                    } else {
+                        Timber.e("thumb = 0: %s", name);
+                        return null;
                     }
-                    list.add(iconBean);
-                }
-                return list;
-            }
-
-            private String[] getIconNames(Context context, Flag flag) {
-                if (flag == Flag.INSTALLED) {
-                    List<String> list = new ArrayList<>();
-                    List<AppfilterItem> afList = PackageUtil.getAppfilterList(context);
-                    List<ResolveInfo> installedList = PackageUtil.getInstallApps(context);
-                    List<String> allIconList =
-                            Arrays.asList(ResourceUtil.getStringArray(context, "icon_pack"));
-                    Collections.sort(allIconList);
-
-                    for (ResolveInfo ri : installedList) {
-                        String comp = ri.activityInfo.packageName + "/" + ri.activityInfo.name;
-                        for (int i = 0; i < afList.size(); i++) {
-                            AppfilterItem ai = afList.get(i);
-                            if (comp.equals(ai.getComponent())) {
-                                String drawable = ai.getDrawable();
-                                list.add(drawable);
-                                int index = allIconList.indexOf(drawable);
-                                if (index < 0) {
-                                    break;
-                                }
-                                for (int j = index + 1; j < allIconList.size(); j++) {
-                                    if (allIconList.get(j).startsWith(drawable + "_alt") ||
-                                            (drawable.endsWith("calendar")
-                                                    && allIconList.get(j).startsWith(drawable))) {
-                                        list.add(allIconList.get(j));
-                                    } else {
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                    }
-                    String[] res = new String[list.size()];
-                    res = list.toArray(res);
-                    return res;
-                }
-                if (flag == Flag.ALL) {
-                    return ResourceUtil.getStringArray(context, "icon_pack");
-                }
-                String[] iconNames;
-                iconNames = ResourceUtil.getStringArray(
-                        context,
-                        "icon_pack_" + flag.toString().toLowerCase()
-                );
-                return iconNames;
-            }
-        })
+                })
+                .filter(value -> value != null)
+                .collect(Collectors.toList()))
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(list -> {
@@ -264,4 +211,55 @@ public class LazyIconFragment extends LazyFragment {
                     init();
                 }, Timber::e);
     }
+
+
+    private String[] getIconNames(Context context, Flag flag) {
+        if (flag == Flag.INSTALLED) {
+            List<String> list = new ArrayList<>();
+            List<AppfilterItem> afList = PackageUtil.getAppfilterList(context);
+            List<ResolveInfo> installedList = PackageUtil.getInstallApps(context);
+            List<String> allIconList =
+                    Arrays.asList(ResourceUtil.getStringArray(context, "icon_pack"));
+            Collections.sort(allIconList);
+
+            for (ResolveInfo ri : installedList) {
+                String comp = ri.activityInfo.packageName + "/" + ri.activityInfo.name;
+                for (int i = 0; i < afList.size(); i++) {
+                    AppfilterItem ai = afList.get(i);
+                    if (comp.equals(ai.getComponent())) {
+                        String drawable = ai.getDrawable();
+                        list.add(drawable);
+                        int index = allIconList.indexOf(drawable);
+                        if (index < 0) {
+                            break;
+                        }
+                        for (int j = index + 1; j < allIconList.size(); j++) {
+                            if (allIconList.get(j).startsWith(drawable + "_alt") ||
+                                    (drawable.endsWith("calendar")
+                                            && allIconList.get(j).startsWith(drawable))) {
+                                list.add(allIconList.get(j));
+                            } else {
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            Collections.sort(list);
+            String[] res = new String[list.size()];
+            res = list.toArray(res);
+            return res;
+        }
+        if (flag == Flag.ALL) {
+            return ResourceUtil.getStringArray(context, "icon_pack");
+        }
+        String[] iconNames;
+        iconNames = ResourceUtil.getStringArray(
+                context,
+                "icon_pack_" + flag.toString().toLowerCase()
+        );
+        return iconNames;
+    }
+
 }

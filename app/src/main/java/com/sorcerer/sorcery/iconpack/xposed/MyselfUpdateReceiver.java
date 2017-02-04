@@ -24,7 +24,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -67,7 +66,8 @@ public class MyselfUpdateReceiver extends BroadcastReceiver {
                         Resources origPkgRes;
                         Gson gson = new Gson();
                         ApplicationInfo themePackage =
-                                pm.getApplicationInfo(themePackageName, PackageManager.GET_META_DATA);
+                                pm.getApplicationInfo(themePackageName,
+                                        PackageManager.GET_META_DATA);
                         Resources r = pm.getResourcesForApplication(themePackage.packageName);
 
                         if (r.getIdentifier("appfilter", "xml", themePackage.packageName) == 0) {

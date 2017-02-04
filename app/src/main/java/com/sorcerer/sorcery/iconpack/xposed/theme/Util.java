@@ -13,8 +13,8 @@ public class Util {
     public static String TAG = "Util";
 
     public static List<IconReplacementItem> ParseIconReplacements(String packageName,
-                                                                       Resources resources,
-                                                                       XmlPullParser xrp)
+                                                                  Resources resources,
+                                                                  XmlPullParser xrp)
             throws XmlPullParserException, IOException {
         List<IconReplacementItem> iconReplacementItemArrayList = new ArrayList<>();
         xrp.next();

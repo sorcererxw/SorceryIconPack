@@ -17,7 +17,7 @@ import com.annimon.stream.Stream;
 import com.bumptech.glide.Glide;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.IconBean;
+import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.net.spiders.AppSearchResultGetter;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;

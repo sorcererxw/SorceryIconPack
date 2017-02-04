@@ -8,11 +8,6 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
-import com.sorcerer.sorcery.iconpack.R;
-
-import java.util.Random;
-
 import timber.log.Timber;
 
 /**
@@ -45,6 +40,11 @@ public class ResourceUtil {
         return ContextCompat.getDrawable(context, resId);
     }
 
+    public static int getResourceId(Context context, String name) {
+        return context.getResources()
+                .getIdentifier(name, "drawable", context.getPackageName());
+    }
+
     /**
      * @param context context
      * @param resId   resource id
@@ -71,7 +71,7 @@ public class ResourceUtil {
             int id = getResourceIdFromString(context, resName, "array");
             return context.getResources().getStringArray(id);
         } catch (Exception e) {
-           Timber.e(e);
+            Timber.e(e);
             return new String[]{"**load fail**"};
         }
     }

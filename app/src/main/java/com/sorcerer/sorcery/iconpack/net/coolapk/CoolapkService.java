@@ -1,5 +1,8 @@
 package com.sorcerer.sorcery.iconpack.net.coolapk;
 
+import com.sorcerer.sorcery.iconpack.net.coolapk.models.CoolapkAppDetail;
+import com.sorcerer.sorcery.iconpack.net.coolapk.models.CoolapkSearchResult;
+
 import io.reactivex.Observable;
 import retrofit2.adapter.rxjava2.Result;
 import retrofit2.http.GET;

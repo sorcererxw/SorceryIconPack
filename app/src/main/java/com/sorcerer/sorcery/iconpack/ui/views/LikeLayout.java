@@ -7,18 +7,13 @@ import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.net.leancloud.LikeBean;
 import com.sorcerer.sorcery.iconpack.utils.Prefs.LikePrefs;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -201,14 +196,14 @@ public class LikeLayout extends FrameLayout {
             mHandler.removeCallbacks(mLikeRunnable);
         }
 
-        final LikeBean likeBean = new LikeBean();
-        likeBean.setLike(like);
-        likeBean.setBuild(BuildConfig.VERSION_CODE + "");
-        likeBean.setDeviceId(deviceId);
-        likeBean.setIconName(name);
-
-        mLikeRunnable = likeBean::saveInBackground;
-
-        mHandler.postDelayed(mLikeRunnable, 1000);
+//        final LikeBean likeBean = new LikeBean();
+//        likeBean.setLike(like);
+//        likeBean.setBuild(BuildConfig.VERSION_CODE + "");
+//        likeBean.setDeviceId(deviceId);
+//        likeBean.setIconName(name);
+//
+//        mLikeRunnable = likeBean::saveInBackground;
+//
+//        mHandler.postDelayed(mLikeRunnable, 1000);
     }
 }

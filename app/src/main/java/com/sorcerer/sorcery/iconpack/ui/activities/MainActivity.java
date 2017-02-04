@@ -29,19 +29,17 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
-import com.mikepenz.materialize.Materialize;
-import com.mikepenz.materialize.MaterializeBuilder;
 import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.PermissionBean;
+import com.sorcerer.sorcery.iconpack.data.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
+import com.sorcerer.sorcery.iconpack.ui.anim.SearchTransitioner;
+import com.sorcerer.sorcery.iconpack.ui.anim.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
-import com.sorcerer.sorcery.iconpack.ui.others.SearchTransitioner;
-import com.sorcerer.sorcery.iconpack.ui.others.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
@@ -144,9 +142,14 @@ public class MainActivity extends BaseActivity {
         getWindow().setBackgroundDrawable(null);
 
         mLaunchIntent = getIntent();
-        String action = getIntent().getAction();
+        Timber.d(mLaunchIntent.toString());
+        if (mLaunchIntent.getExtras() != null) {
+            Timber.d(mLaunchIntent.getExtras().toString());
+        }
+//        String action = getIntent().getAction();
 
-        mCustomPicker = "com.novalauncher.THEME".equals(action);
+//        mCustomPicker = "com.novalauncher.THEME".equals(action);
+        mCustomPicker = getIntent().hasCategory("com.novalauncher.category.CUSTOM_ICON_PICKER");
 
         setSupportActionBar(mSearchToolbar);
 
@@ -176,7 +179,7 @@ public class MainActivity extends BaseActivity {
         mSearchToolbar.setTitle("Sorcery Icons");
 
         if (!mCustomPicker) {
-            showPermissionDialog();
+//            showPermissionDialog();
         } else {
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -392,7 +395,9 @@ public class MainActivity extends BaseActivity {
                             int height = dimensions.outHeight;
                             int width = dimensions.outWidth;
 
-                            height = height * drawerRecyclerView.getWidth() / width;
+                            height = (int) Math.ceil(
+                                    1.0 * height * drawerRecyclerView.getWidth() / width
+                            );
 
                             int titleBarHeight = UIUtils.getStatusBarHeight(MainActivity.this);
 

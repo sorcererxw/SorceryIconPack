@@ -5,7 +5,6 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Point;
 import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,20 +13,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.appliers.database.PixelLauncherApplier;
+import com.sorcerer.sorcery.iconpack.appliers.launcher.LauncherApplier;
+import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-import com.sorcerer.sorcery.iconpack.utils.LauncherIntents;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -44,13 +42,15 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
     @BindView(R.id.linearLayout_apply_commend_container)
     LinearLayout mRecommendLayout;
 
-    @BindViews({R.id.recyclerView_apply_recommend,
+    @BindViews({
+                       R.id.recyclerView_apply_recommend,
                        R.id.recyclerView_apply_system,
-                       R.id.recyclerView_apply_launcher})
+                       R.id.recyclerView_apply_launcher
+               })
     List<RecyclerView> mRecyclerViewList;
 
 
-    private ApplyAdapter[] mApply1Adapters = new ApplyAdapter[3];
+    private ApplyAdapter[] mApplyAdapters = new ApplyAdapter[3];
     private GridLayoutManager[] mGridLayoutManagers = new GridLayoutManager[3];
 
     private ApplyAdapter.OnApplyItemClickListener mOnApplyItemClickListener =
@@ -98,8 +98,10 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                     startActivity(intent);
                 } else if (item.getLabel().toLowerCase().equals("miui")) {
 
+                } else if (item.getLabel().toLowerCase().equals("pixel")) {
+                    new PixelLauncherApplier(ApplyActivity.this).apply();
                 } else {
-                    new LauncherIntents(ApplyActivity.this, item.getLabel());
+                    new LauncherApplier(ApplyActivity.this, item.getLabel());
                 }
             };
 
@@ -129,17 +131,17 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
             mRecommendLayout.setVisibility(View.GONE);
         }
 
-        mApply1Adapters[0] = new ApplyAdapter(this, recommendInfos, requestManager);
-        mApply1Adapters[1] = new ApplyAdapter(this, systemInfos, requestManager);
-        mApply1Adapters[2] = new ApplyAdapter(this, launcherInfos, requestManager);
+        mApplyAdapters[0] = new ApplyAdapter(this, recommendInfos, requestManager);
+        mApplyAdapters[1] = new ApplyAdapter(this, systemInfos, requestManager);
+        mApplyAdapters[2] = new ApplyAdapter(this, launcherInfos, requestManager);
 
         int span = calSpan(this);
         for (int i = 0; i < 3; i++) {
-            mApply1Adapters[i].setOnApplyItemClickListener(mOnApplyItemClickListener);
+            mApplyAdapters[i].setOnApplyItemClickListener(mOnApplyItemClickListener);
             mGridLayoutManagers[i] =
                     new GridLayoutManager(this, span, LinearLayoutManager.VERTICAL, false);
             mRecyclerViewList.get(i).setLayoutManager(mGridLayoutManagers[i]);
-            mRecyclerViewList.get(i).setAdapter(mApply1Adapters[i]);
+            mRecyclerViewList.get(i).setAdapter(mApplyAdapters[i]);
             mRecyclerViewList.get(i).setHasFixedSize(false);
             mRecyclerViewList.get(i).setNestedScrollingEnabled(false);
         }

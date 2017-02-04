@@ -28,7 +28,7 @@
     <string name="icon_request_send_success">发送成功, 感谢反馈</string>
     <string name="update_start">检查更新</string>
 
-    <string name="nav_item_apply">应用到启动器</string>
+    <string name="nav_item_apply">应用图标</string>
     <string name="nav_item_icon">图标</string>
     <string name="nav_item_feedback">反馈</string>
     <string name="nav_item_welcome">欢迎使用</string>

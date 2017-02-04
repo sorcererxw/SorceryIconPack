@@ -18,9 +18,9 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.AppInfo;
+import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.net.avos.AvosClient;
-import com.sorcerer.sorcery.iconpack.net.avos.AvosIconRequestBean;
+import com.sorcerer.sorcery.iconpack.net.avos.models.AvosIconRequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.RequestAdapter;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
@@ -37,7 +37,6 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
-import io.reactivex.SingleSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
@@ -61,14 +60,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     @OnClick(R.id.fab_app_select)
     void onFABClick() {
         save(mAdapter.getCheckedAppsList());
-//        new RxPermissions(this)
-//                .request(Manifest.permission.READ_PHONE_STATE,
-//                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                .subscribe(grant -> {
-//                    if (grant) {
-//                        save(mAdapter.getCheckedAppsList());
-//                    }
-//                }, Timber::e);
     }
 
     private RequestAdapter mAdapter;
@@ -230,8 +221,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         new Function<List<AvosIconRequestBean>, ObservableSource<List<Boolean>>>() {
                             @Override
                             public ObservableSource<List<Boolean>> apply(
-                                    List<AvosIconRequestBean> list)
-                                    throws Exception {
+                                    List<AvosIconRequestBean> list) throws Exception {
                                 return AvosClient.getInstance().postIconRequests(list);
                             }
                         })

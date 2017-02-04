@@ -19,7 +19,7 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.models.IconBean;
+import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 
@@ -208,7 +208,10 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             default:
                 layout = R.layout.item_icon_center;
         }
-        return new IconViewHolder(LayoutInflater.from(mContext).inflate(layout, parent, false));
+//        FrameLayout container = (FrameLayout)LayoutInflater.from(mContext).inflate(R.layout.item_icon_container,parent,false);
+        View content = LayoutInflater.from(mContext).inflate(layout, parent, false);
+//        container.addView(content,0);
+        return new IconViewHolder(content);
     }
 
     @Override
@@ -311,7 +314,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
             Slice slice = new Slice(iconHolder.mFrame);
             slice.setRadius(2);
-            slice.setRipple(4);
+            slice.setRipple(0);
 
             slice.showLeftBottomRect(!leftBottomRect);
             slice.showRightBottomRect(!rightBottomRect);

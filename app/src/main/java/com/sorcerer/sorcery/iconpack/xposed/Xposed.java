@@ -101,18 +101,18 @@ public class Xposed
                                                     int id)
                                                     throws Throwable {
                                                 return XposedUtils.getCachedIcon(
-                                                                res,
-                                                                res.getResourcePackageName(id),
-                                                                id);
+                                                        res,
+                                                        res.getResourcePackageName(id),
+                                                        id);
                                             }
                                         });
                             } else if (!it.hasNoCustomIcon()) {
                                 try {
                                     final Drawable icon = new BitmapDrawable(XResources.getSystem(),
                                             XposedUtils.getBitmapForDensity(
-                                                            themeRes,
-                                                            mDisplayDpi,
-                                                            it.getReplacementRes()));
+                                                    themeRes,
+                                                    mDisplayDpi,
+                                                    it.getReplacementRes()));
                                     XResources.setSystemWideReplacement(it.getOrigRes(),
                                             new XResources.DrawableLoader() {
                                                 public Drawable newDrawable(XResources res, int id)
