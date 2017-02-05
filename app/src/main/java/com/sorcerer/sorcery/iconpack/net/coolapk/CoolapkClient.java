@@ -12,6 +12,7 @@ import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -47,6 +48,11 @@ public class CoolapkClient {
                             .addHeader("X-App-Version", "7.3")
                             .addHeader("X-App-Code", "1701135")
                             .addHeader("X-Api-Version", "7").build();
+
+                    Timber.d(request.header("User-Agent"));
+                    Timber.d(request.header("X-Sdk-Locale"));
+                    Timber.d(request.header("X-App-Token"));
+
                     return chain.proceed(request);
                 }).build())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -69,7 +75,12 @@ public class CoolapkClient {
                     if (coolapkAppDetail.getStatus() != 0 || coolapkAppDetail.getData() == null) {
                         return "";
                     }
-                    return coolapkAppDetail.getData().getTitle();
+                    String title = coolapkAppDetail.getData().getTitle();
+                    String[] titles = title.split(":");
+                    if (titles.length == 2) {
+                        return titles[0];
+                    }
+                    return title;
                 });
     }
 }

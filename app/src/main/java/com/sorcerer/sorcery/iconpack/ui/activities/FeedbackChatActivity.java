@@ -514,6 +514,6 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     public void finish() {
         super.finish();
         KeyboardUtil.hideKeyboard(this);
-        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
+//        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
     }
 }

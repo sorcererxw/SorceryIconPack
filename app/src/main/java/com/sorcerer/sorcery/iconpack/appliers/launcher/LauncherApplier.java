@@ -20,6 +20,9 @@ public class LauncherApplier {
 
     public LauncherApplier(Context context, String launcherName) {
         switch (launcherName.toLowerCase()) {
+            case "arrow":
+                ArrowLauncher(context);
+                break;
             case "action":
                 ActionLauncher(context);
                 break;
@@ -95,18 +98,37 @@ public class LauncherApplier {
             case "launcher lab":
                 LauncherLab(context);
                 break;
+            case "evie":
+                EvieLauncher(context);
+                break;
             default:
                 Timber.d("No method for: %s", launcherName);
                 break;
         }
     }
 
+    private void ArrowLauncher(Context context) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setComponent(new ComponentName("com.microsoft.launcher",
+                "com.microsoft.launcher.setting.SettingActivity"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
+    private void EvieLauncher(Context context) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setComponent(new ComponentName("is.shortcut",
+                "com.voxel.simplesearchlauncher.settings.SettingsActivity"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
     private void LauncherLab(Context context) {
-//        context.startActivity(
-//                new Intent().setComponent(new ComponentName("com.gtp.launcherlab",
-//                        "com.gtp.launcherlab.settings.activity.DeskSettingSecondActivity")));
-//        Intent action = context.getPackageManager()
-//                .getLaunchIntentForPackage("com.gtp.launcherlab");
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setComponent(new ComponentName("com.gtp.launcherlab",
+                "com.gtp.launcherlab.settings.activity.DeskSettingMainActivity"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     private void ActionLauncher(Context context) {

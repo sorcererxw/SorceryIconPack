@@ -40,6 +40,11 @@ public class ResourceUtil {
         return ContextCompat.getDrawable(context, resId);
     }
 
+    @DrawableRes
+    public static int getDrawableRes(Context context, String name) {
+        return context.getResources().getIdentifier(name, "drawable", context.getPackageName());
+    }
+
     public static int getResourceId(Context context, String name) {
         return context.getResources()
                 .getIdentifier(name, "drawable", context.getPackageName());

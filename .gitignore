@@ -18,3 +18,5 @@ private.xml
 /app/src/main/java/com/sorcerer/sorcery/iconpack/net/avos
 /app/src/main/java/com/sorcerer/sorcery/iconpack/net/spiders
 
+.idea/dbnavigator.xml
+testProgram/

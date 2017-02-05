@@ -190,9 +190,6 @@ public class CoolapkSearchResult {
         @SerializedName("follownum")
         private String mFollownum;
         @Keep
-        @SerializedName("votenum")
-        private int mVotenum;
-        @Keep
         @SerializedName("favnum")
         private String mFavnum;
         @Keep
@@ -246,9 +243,6 @@ public class CoolapkSearchResult {
         @Keep
         @SerializedName("followCount")
         private String mFollowCount;
-        @Keep
-        @SerializedName("voteCount")
-        private int mVoteCount;
         @Keep
         @SerializedName("commentCount")
         private String mCommentCount;
@@ -532,14 +526,6 @@ public class CoolapkSearchResult {
             mFollownum = follownum;
         }
 
-        public int getVotenum() {
-            return mVotenum;
-        }
-
-        public void setVotenum(int votenum) {
-            mVotenum = votenum;
-        }
-
         public String getFavnum() {
             return mFavnum;
         }
@@ -682,14 +668,6 @@ public class CoolapkSearchResult {
 
         public void setFollowCount(String followCount) {
             mFollowCount = followCount;
-        }
-
-        public int getVoteCount() {
-            return mVoteCount;
-        }
-
-        public void setVoteCount(int voteCount) {
-            mVoteCount = voteCount;
         }
 
         public String getCommentCount() {

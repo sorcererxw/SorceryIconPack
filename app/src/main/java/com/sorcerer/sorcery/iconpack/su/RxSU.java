@@ -29,6 +29,16 @@ public class RxSU {
                 .map(integer -> Shell.SU.available());
     }
 
+    public Observable<List<String>> runAll(final String... commands) {
+        return su().map(aBoolean -> {
+            if (aBoolean) {
+                Timber.d("run: " + Arrays.toString(commands));
+                return Shell.SU.run(commands);
+            }
+            return null;
+        });
+    }
+
     public Observable<String> run(final String... commands) {
         return su().map(aBoolean -> {
             if (aBoolean) {

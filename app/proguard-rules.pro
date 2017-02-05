@@ -1,5 +1,4 @@
-# proguard.cfg
-
+##-----leancloud---------
 -keepattributes Signature
 -dontwarn com.jcraft.jzlib.**
 -keep class com.jcraft.jzlib.**  { *;}
@@ -47,9 +46,30 @@
 -keep class org.xbill.** { *;}
 
 -keepattributes *Annotation*
+##------------------------
 
-# above 4 avos
-# ------------------------
+##---------------Begin: proguard configuration for glide -----------
+
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+##-----------------------------------------------------
+
+##---------------Begin: proguard configuration for retrofit2  ----------
+# Platform calls Class.forName on types which do not exist on Android to determine platform.
+-dontnote retrofit2.Platform
+# Platform used when running on RoboVM on iOS. Will not be used at runtime.
+-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+# Platform used when running on Java 8 VMs. Will not be used at runtime.
+-dontwarn retrofit2.Platform$Java8
+# Retain generic type information for use by reflection by converters and adapters.
+-keepattributes Signature
+# Retain declared checked exceptions for use by a Proxy instance.
+-keepattributes Exceptions
+
+##---------------End: proguard configuration for retrofit2  ----------
 
 ##---------------Begin: proguard configuration for Gson  ----------
 # Gson uses generic type information stored in a class file when working with fields. Proguard
@@ -73,9 +93,28 @@
 -keep class * implements com.google.gson.JsonDeserializer
 
 ##---------------End: proguard configuration for Gson  ----------
+##---------------indicator------------
+-keep class com.wang.avi.** { *; }
+-keep class com.wang.avi.indicators.** { *; }
+##-----------------------------------
+##-------------butterknife----------------
+# butter knife
+# Retain generated class which implement ViewBinder.
+-keep public class * implements butterknife.internal.ViewBinder { public <init>(); }
+
+# Prevent obfuscation of types which use ButterKnife annotations since the simple name
+# is used to reflectively look up the generated ViewBinder.
+-keep class butterknife.*
+-keepclasseswithmembernames class * { @butterknife.* <methods>; }
+-keepclasseswithmembernames class * { @butterknife.* <fields>; }
+##----------------------------------------
+
+##------jsoup---------
+-keeppackagenames org.jsoup.nodes
+##-------------------
 
 #混淆时不使用大小写混合类名
--dontusemixedcaseclassnames
+#-dontusemixedcaseclassnames
 #不跳过library中的非public的类
 -dontskipnonpubliclibraryclasses
 #打印混淆的详细信息
@@ -144,22 +183,14 @@
     @android.support.annotation.Keep *;
 }
 
-# butter knife
-# Retain generated class which implement ViewBinder.
--keep public class * implements butterknife.internal.ViewBinder { public <init>(); }
-
-# Prevent obfuscation of types which use ButterKnife annotations since the simple name
-# is used to reflectively look up the generated ViewBinder.
--keep class butterknife.*
--keepclasseswithmembernames class * { @butterknife.* <methods>; }
--keepclasseswithmembernames class * { @butterknife.* <fields>; }
-
 -dontwarn java.lang.invoke.*
 
 -obfuscationdictionary dictionary-elder.txt
 
-#-keep class com.sorcerer.sorcery.iconpack.net.coolapk.models.** { *; }
-#-keep class com.sorcerer.sorcery.iconpack.net.avos.models.** { *; }
+-keepclassmembers class com.sorcerer.sorcery.iconpack.net.coolapk.models.** { *; }
+-keepclassmembers class com.sorcerer.sorcery.iconpack.net.avos.models.** { *; }
+-keepclassmembers class com.sorcerer.sorcery.iconpack.ui.activities.base.** { *; }
+-flattenpackagehierarchy 'com.sorcerer.sorcery.iconpack'
 
--keep class com.wang.avi.** { *; }
--keep class com.wang.avi.indicators.** { *; }
+
+

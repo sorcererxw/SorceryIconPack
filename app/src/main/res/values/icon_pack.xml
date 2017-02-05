@@ -3,6 +3,17 @@
     <string-array name="icon_pack_new"
                   translatable="false">
         <item>@string/icon_label_added</item>
+        <item>xingse</item>
+        <item>wordpress</item>
+        <item>boc_container</item>
+        <item>weishop</item>
+        <item>oneplus_settings</item>
+        <item>oneplus_browser</item>
+        <item>oneplus_sms</item>
+        <item>oneplus_dialer</item>
+        <item>game_reigns</item>
+        <item>airbrush</item>
+        <item>eusoft_ting</item>
         <item>twitch</item>
         <item>hua_timetravel</item>
         <item>backdrops</item>
@@ -99,9 +110,6 @@
         <item>game_dont_starve</item>
         <item>twilight</item>
         <item>sorcery_icons_winter_day</item>
-        <item>picsart_photo_studio</item>
-        <item>picsart_animator</item>
-        <item>picsart_color</item>
         <item>meituan</item>
         <item>meituan_alt</item>
         <item>dianping</item>
@@ -277,6 +285,7 @@
         <item>samsung_calendar_31</item>
 
         <item>@string/icon_label_updated</item>
+        <item>feedly</item>
         <item>tencent_weiyun</item>
         <item>jinritoutiao</item>
         <item>microsoft_solitaire</item>

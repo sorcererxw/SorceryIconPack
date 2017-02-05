@@ -146,9 +146,6 @@ public class MainActivity extends BaseActivity {
         if (mLaunchIntent.getExtras() != null) {
             Timber.d(mLaunchIntent.getExtras().toString());
         }
-//        String action = getIntent().getAction();
-
-//        mCustomPicker = "com.novalauncher.THEME".equals(action);
         mCustomPicker = getIntent().hasCategory("com.novalauncher.category.CUSTOM_ICON_PICKER");
 
         setSupportActionBar(mSearchToolbar);

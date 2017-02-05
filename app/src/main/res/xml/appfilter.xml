@@ -73,12 +73,14 @@
     <calendar
         component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}"
         prefix="samsung_calendar_"/>
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
     <item
         component="ComponentInfo{com.xwtec.sd.mobileclient/com.xwtec.sd.mobileclient.LoadingActivity}"
+        drawable="a10086"/>
+    <item
+        component="ComponentInfo{com.xwtec.sd.mobileclient/com.qihoo.util.StartActivity}"
         drawable="a10086"/>
     <item
         component="ComponentInfo{com.example.businesshall/com.businesshall.activity.NewLogoActivity}"
@@ -3552,6 +3554,9 @@
         component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmClock}"
         drawable="clock"/>
     <item
+        component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockMainActivity}"
+        drawable="clock"/>
+    <item
         component="ComponentInfo{com.sonymobile.androidapp.cameraaddon.areffect/com.sonymobile.androidapp.cameraaddon.areffect.AREffectApp}"
         drawable="sony_ar_effect"/>
     <item
@@ -5213,5 +5218,89 @@
     <item
         component="ComponentInfo{com.blizzard.wowcompanion/com.blizzard.wowcompanion.CompanionNativeActivity}"
         drawable="blizzard_wow_helper"/>
+    <item
+        component="ComponentInfo{tv.twitch.android.app/tv.twitch.android.app.core.LandingActivity}"
+        drawable="twitch"/>
+    <item
+        component="ComponentInfo{com.example.jiaqichen.timetravel/com.example.jiaqichen.timetravel.Dispatcher}"
+        drawable="hua_timetravel"/>
+    <item
+        component="ComponentInfo{com.backdrops.wallpapers/com.backdrops.wallpapers.WelcomeActivity}"
+        drawable="backdrops"/>
+    <item
+        component="ComponentInfo{com.venticake.retrica/com.venticake.retrica.camera.CameraActivity}"
+        drawable="retrica"/>
+    <item
+        component="ComponentInfo{com.mobvoi.companion/com.mobvoi.companion.StartEntry}"
+        drawable="ticwear"/>
+    <item
+        component="ComponentInfo{com.google.android.wearable.app.cn/com.google.android.clockwork.companion.StatusActivity}"
+        drawable="google_android_wear"/>
+    <item
+        component="ComponentInfo{com.google.android.wearable.app/com.google.android.clockwork.companion.StatusActivity}"
+        drawable="google_android_wear"/>
+    <item
+        component="ComponentInfo{com.google.android.wearable.app/com.google.android.clockwork.companion.launcher.LauncherActivity}"
+        drawable="google_android_wear"/>
+    <item
+        component="ComponentInfo{com.elinkway.tvlive2/com.elinkway.tvlive2.activity.SplashActivity}"
+        drawable="tv_plus"/>
+    <item
+        component="ComponentInfo{com.dianshijia.tvlive/com.dianshijia.tvlive.activities.SplashActivity}"
+        drawable="tv_plus"/>
+    <item
+        component="ComponentInfo{com.dianshijia.tvlive/com.qihoo.util.StartActivity}"
+        drawable="tv_plus"/>
+    <item
+        component="ComponentInfo{com.levelup.palabre/com.levelup.palabre.ui.activity.MainActivity}"
+        drawable="palabre"/>
+    <item
+        component="ComponentInfo{com.cpuid.cpu_z/com.cpuid.cpu_z.MainActivity}"
+        drawable="cpuz"/>
+    <item
+        component="ComponentInfo{ginlemon.flowerpro/ginlemon.flower.HomeScreen}"
+        drawable="smart_launcher_pro"/>
+    <item
+        component="ComponentInfo{cn.danatech.xingseapp/com.qihoo.util.StartActivity}"
+        drawable="xingse"/>
+    <item
+        component="ComponentInfo{cn.danatech.xingseapp/com.xingse.app.pages.startup.SplashScreenActivity}"
+        drawable="xingse"/>
+    <item
+        component="ComponentInfo{org.wordpress.android/org.wordpress.android.ui.WPLaunchActivity}"
+        drawable="wordpress"/>
+    <item
+        component="ComponentInfo{com.boc.bocop.container/com.boc.bocop.container.bocopshell.activity.ShellSplashActivity}"
+        drawable="boc_container"/>
+    <item
+        component="ComponentInfo{com.koudai.weishop/com.koudai.weishop.launch.ui.activity.SplashScreenActivity}"
+        drawable="weishop"/>
+    <item
+        component="ComponentInfo{com.android.contacts/com.oneplus.contacts.activities.OPDialtactsActivity}"
+        drawable="oneplus_dialer"/>
+    <item
+        component="ComponentInfo{com.android.contacts/com.oneplus.contacts.activities.OPPeopleActivity}"
+        drawable="oneplus_dialer"/>
+    <item
+        component="ComponentInfo{com.android.dialer/com.oneplus.contacts.activities.OPPeopleActivity}"
+        drawable="oneplus_dialer"/>
+    <item
+        component="ComponentInfo{com.android.dialer/com.oneplus.contacts.activities.OPDialtactsActivity}"
+        drawable="oneplus_dialer"/>
+    <item
+        component="ComponentInfo{com.devolver.reigns/com.muzhiwan.sdk.MzwShellActivity}"
+        drawable="game_reigns"/>
+    <item
+        component="ComponentInfo{com.devolver.reigns/com.unity3d.player.UnityPlayerActivity}"
+        drawable="game_reigns"/>
+    <item
+        component="ComponentInfo{com.magicv.airbrush/com.magicv.airbrush.StartupActivity}"
+        drawable="airbrush"/>
+    <item
+        component="ComponentInfo{com.eusoft.ting.en/com.eusoft.ting.ui.view.WelcomeActivity}"
+        drawable="eusoft_ting"/>
+    <item
+        component="ComponentInfo{com.eusoft.ting.en/com.eusoft.ting.ui.TabActivity}"
+        drawable="eusoft_ting"/>
 
 </resources>

@@ -191,8 +191,7 @@ public class LazyIconFragment extends LazyFragment {
                     if (name.startsWith("**")) {
                         return iconBean;
                     }
-                    int res = getResources()
-                            .getIdentifier(name, "drawable",
+                    int res = getResources().getIdentifier(name, "drawable",
                                     getContext().getPackageName());
                     if (res != 0) {
                         iconBean.setRes(res);

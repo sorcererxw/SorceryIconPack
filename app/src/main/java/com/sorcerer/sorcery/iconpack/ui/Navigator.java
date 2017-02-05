@@ -51,16 +51,16 @@ public class Navigator {
 
     public void toFeedbackChatActivity() {
         mActivity.startActivity(new Intent(mActivity, FeedbackChatActivity.class));
-        mActivity.overridePendingTransition(
-                R.anim.activity_in_bottom_to_top,
-                R.anim.activity_out_scale);
+//        mActivity.overridePendingTransition(
+//                R.anim.activity_in_bottom_to_top,
+//                R.anim.activity_out_scale);
     }
 
     public void toIconRequest() {
         mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
-        mActivity.overridePendingTransition(
-                R.anim.activity_in_bottom_to_top,
-                R.anim.activity_out_scale);
+//        mActivity.overridePendingTransition(
+//                R.anim.activity_in_bottom_to_top,
+//                R.anim.activity_out_scale);
     }
 
     public void toLabActivity() {

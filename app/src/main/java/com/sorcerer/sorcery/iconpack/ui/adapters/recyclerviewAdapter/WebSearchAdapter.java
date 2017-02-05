@@ -181,11 +181,10 @@ public class WebSearchAdapter extends RecyclerView.Adapter<WebSearchAdapter.Sear
                             .filter(packageName -> mPackageDrawableMap.containsKey(packageName))
                             .forEach(packageName -> {
                                 List<String> drawableList = mPackageDrawableMap.get(packageName);
-                                for (String drawable : drawableList) {
-                                    drawableSet.addAll(Stream.of(mAllDrawableList)
-                                            .filter(s -> s.contains(drawable))
-                                            .collect(Collectors.toList()));
-                                }
+                                Stream.of(drawableList).forEach(drawable ->
+                                        drawableSet.addAll(Stream.of(mAllDrawableList)
+                                                .filter(s -> s.contains(drawable))
+                                                .collect(Collectors.toList())));
                                 drawableSet.addAll(drawableList);
                             });
                     Timber.d(Arrays.toString(drawableSet.toArray()).replace(",", "\n"));

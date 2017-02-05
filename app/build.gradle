@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.0." + code + " Weekly20170127"
+        versionName "4.0." + code + " Weekly20170205"
         minSdkVersion 16
         targetSdkVersion 25
     }
@@ -121,29 +121,5 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.5'
     // su
     compile 'eu.chainfire:libsuperuser:1.0.0.201608240809'
-    // proguard
-    compile 'com.infstory:proguard-snippets:1.0.0'
-    compile 'com.github.yongjhih.android-proguards:retrofit2-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:glide-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:gson-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:mikepenz-android-iconics-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:tencent-bugly-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:sqlite-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:support-design-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:support-v7-appcompat-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:support-v7-cardview-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:google-auto-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:okhttp3-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:okhttp-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:okio-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:otto-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:retrolambda-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:android-view-animations-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:auto-parse-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:aws-1.7-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:aws-2.1.5-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:butterknife-6-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:butterknife-7-pro:-SNAPSHOT'
-    compile 'com.github.yongjhih.android-proguards:jsoup-pro:-SNAPSHOT'
 
 }

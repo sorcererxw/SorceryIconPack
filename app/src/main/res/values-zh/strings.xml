@@ -33,7 +33,8 @@
     <string name="nav_item_feedback">反馈</string>
     <string name="nav_item_welcome">欢迎使用</string>
     <string name="nav_item_update">检查更新</string>
-    <string name="donate_declaration_content">收款方为第三方支付服务商Bmob, 如有疑问请联系: feedback@sorcererxw.com</string>
+    <string name="donate_declaration_content">收款方为第三方支付服务商Bmob, 如有疑问请联系: feedback@sorcererxw.com
+    </string>
     <string name="alipay">支付宝</string>
     <string name="wechat">微信</string>
     <string name="donate_title">支持我们</string>
@@ -42,10 +43,11 @@
         并且愿意支持我们\n
         希望可以获得您的捐赠\n
         我们会向您表达由衷的感谢\n
-        谢谢:)</string>
+        谢谢:)
+    </string>
     <string name="nav_item_donate">捐赠</string>
     <string name="donate_dialog_title">选择金额</string>
-    <string name="thanks">感  谢</string>
+    <string name="thanks">感 谢</string>
     <string name="donate_success">捐赠成功</string>
     <string name="donate_fail">捐赠失败, 不过我还是很感动</string>
     <string name="open_alipay">正在打开支付宝</string>
@@ -59,7 +61,8 @@
     <string name="select_all">全选</string>
     <string name="no">不</string>
     <string name="xposed_tag">
-        全局加载Sorcery图标包, 勾选并去图标包设置里面打开</string>
+        全局加载Sorcery图标包, 勾选并去图标包设置里面打开
+    </string>
     <string name="nav_item_lab">实验室</string>
     <string name="global_detail">通过Xposed进行加载图标包以实现全局更换图标|你需要先root您的设备并且在Xposed框架中勾选此应用
     </string>
@@ -70,7 +73,8 @@
         #2. 请在所有手机后台管理应用中将这个应用纳入白名单|
         #3. 暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
         #4. 运行样本较少, 无法保证模块百分百运行正常|
-        #5. 启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需</string>
+        #5. 启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需
+    </string>
     <string name="global_state_active">已开启</string>
     <string name="global_state_label">当前状态</string>
     <string name="global_state_not_active">尚未开启</string>
@@ -100,7 +104,9 @@
     <string name="action_copy_to_clipboard">复制剪贴板</string>
     <string name="action_premium_request">付费申请</string>
     <string name="action_select_all">全选</string>
-    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现, 以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配|**拒绝适配游戏图标**|**拒绝适配游戏图标**|**拒绝适配游戏图标**</string>
+    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现,
+        以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配|**拒绝适配游戏图标**|**拒绝适配游戏图标**|**拒绝适配游戏图标**
+    </string>
     <string name="premium_request_title">付费申请</string>
     <string name="RMB">元</string>
     <string name="premium_alipay_title">Sorcery 付费申请图标</string>
@@ -127,8 +133,10 @@
     <string name="permission_request_title">申请权限</string>
     <string name="permission_write_external_storage">存储空间</string>
     <string name="permission_request_describe_write_external_storage">保存离线报告的缓存数据。</string>
-    <string name="permission_request_content">感谢使用。为了您更好的使用体验, 请授予应用权限。否则, 你可能无法正常使用一些功能。同时, 我还需要这些权限来获取分析应用运行状况, 谢谢您的支持。</string>
-    <string name="permission_request_read_phone_state">获取用户设备的ID，用来唯一的标识用户,  便于在服务器里面区分。</string>
+    <string name="permission_request_content">感谢使用。为了您更好的使用体验, 请授予应用权限。否则, 你可能无法正常使用一些功能。同时,
+        我还需要这些权限来获取分析应用运行状况, 谢谢您的支持。
+    </string>
+    <string name="permission_request_read_phone_state">获取用户设备的ID，用来唯一的标识用户, 便于在服务器里面区分。</string>
     <string name="permission_read_phone_state">电话</string>
     <string name="icon_request_times">共被申请 # 次</string>
     <string name="nav_item_wallpapers">壁纸</string>
@@ -189,4 +197,15 @@
     <string name="search_edit_hint">搜索图标…</string>
     <string name="about_dialog_slogan">让质感美化你的屏幕</string>
     <string name="about_dialog_icon_count">包含 %d 个图标</string>
+    <string name="apply_for_pixel_declaration_content">由于pixel launcher 本身并不支持用户去自定义图标, 所以Sorcery
+        Icons 会通过Root权限去修改这个launcher的数据|所以需要授予root权限和外部存储读写权限|由于只是修改了启动器的缓存文件, 所以图标可能在对应应用更新后恢复原样,
+        届时需要再一次进行替换操作
+    </string>
+    <string name="apply_for_pixel_declaration_title">说明</string>
+    <string name="apply_for_pixel_no_root_access">需要Root权限</string>
+    <string name="apply_for_pixel_success">操作成功</string>
+    <string name="apply_for_pixel_no_sdcard_permission">需要外部读写权限</string>
+    <string name="apply_for_pixel_fail">不好意思, 操作失败了</string>
+    <string name="apply_for_pixel_applying">请稍待片刻……</string>
+    <string name="error">错误</string>
 </resources>

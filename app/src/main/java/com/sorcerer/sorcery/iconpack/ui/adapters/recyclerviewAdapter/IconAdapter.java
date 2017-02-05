@@ -226,6 +226,9 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
 
             if (iconBean != null) {
                 iconHolder.itemView.setOnClickListener(view -> {
+                    if (mShowList.get(iconHolder.getAdapterPosition()).first.getRes() == 0) {
+                        return;
+                    }
                     if (!mCustomPicker) {
                         KeyboardUtil.hideKeyboard((Activity) mContext);
                         if (mClicked) {

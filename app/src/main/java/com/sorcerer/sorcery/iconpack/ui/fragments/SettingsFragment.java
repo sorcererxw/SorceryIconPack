@@ -499,11 +499,9 @@ public class SettingsFragment extends PreferenceFragment {
                         xrp = r.getXml(r
                                 .getIdentifier("appfilter", "xml", themePackage.packageName));
                     }
-                    for (Map.Entry<String, ?> entry : mSharedPreferences.getAll().entrySet()) {
-                        if (entry.getKey().contains("theme_icon_for_")) {
-                            editor.remove(entry.getKey());
-                        }
-                    }
+                    Stream.of(mSharedPreferences.getAll().entrySet())
+                            .filter(entry -> entry.getKey().contains("theme_icon_for_"))
+                            .forEach(entry -> editor.remove(entry.getKey()));
                     editor.commit();
                     DisplayMetrics metrics = new DisplayMetrics();
                     mActivity.getWindowManager().getDefaultDisplay()

@@ -42,11 +42,13 @@
         <item>Apex|com.anddoes.launcher</item>
         <item>Aviate|com.tul.aviate</item>
         <item>Nova|com.teslacoilsw.launcher</item>
-        <item>Google Now|com.google.android.launcher</item>
+        <!--<item>Google Now|com.google.android.googlequicksearchbox</item>-->
         <item>Pixel|com.google.android.apps.nexuslauncher</item>
         <item>Smart|ginlemon.flowerfree</item>
         <item>Smart Pro|ginlemon.flowerpro</item>
         <item>Arrow|com.microsoft.launcher</item>
+        <!--<item>Evie|is.shortcut</item>-->
+        <!--<item>Launcher Lab|com.gtp.launcherlab</item>-->
         <!--<item>Launcher Lab|com.gtp.launcherlab</item>-->
     </string-array>
 </resources>

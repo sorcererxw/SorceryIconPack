@@ -18,7 +18,9 @@ import com.sorcerer.sorcery.iconpack.data.models.AppfilterItem;
 import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
 
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -88,6 +90,45 @@ public class PackageUtil {
         } catch (Exception e) {
             return new ArrayList<>();
         }
+    }
+
+    public static Map<String, String> getComponentDrawableMap(Context context) {
+        Map<String, String> map = new HashMap<>();
+        XmlResourceParser parser = context.getResources().getXml(
+                context.getResources().getIdentifier("appfilter", "xml", context.getPackageName())
+        );
+        int eventType;
+        try {
+            eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        if (parser.getName().equals("item")) {
+                            String component = parser.getAttributeValue(null, "component");
+                            String drawable = parser.getAttributeValue(null, "drawable");
+                            if (component.startsWith(":")) {
+                                break;
+                            }
+                            try {
+                                map.put(component.substring(14, component.length() - 1), drawable);
+                            } catch (Exception e) {
+                                Timber.e(e);
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = parser.next();
+            }
+        } catch (XmlPullParserException e) {
+            Timber.e(e);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
     }
 
     public static List<AppfilterItem> getAppfilterList(Context context) {

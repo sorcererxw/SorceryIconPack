@@ -243,8 +243,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
                     @Override
                     public void onNext(List<Boolean> booleanList) {
-                        Stream.of(booleanList)
-                                .forEach(b -> Timber.d(String.valueOf(b)));
+                        Stream.of(booleanList).forEach(b -> Timber.d(String.valueOf(b)));
                     }
 
 
@@ -252,7 +251,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                     public void onError(Throwable e) {
                         Timber.e(e);
                         mProgressDialog.dismiss();
-                        Snackbar.make(mCoordinatorLayout, "Error", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(mCoordinatorLayout, R.string.error, Snackbar.LENGTH_LONG)
+                                .show();
                     }
 
                     @Override
@@ -260,7 +260,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         mProgressDialog.dismiss();
                         mAdapter.uncheckAfterSend();
                         showFab(false);
-                        Toast.makeText(AppSelectActivity.this, "success", Toast.LENGTH_SHORT)
+                        Toast.makeText(AppSelectActivity.this, R.string.icon_request_send_success,
+                                Toast.LENGTH_SHORT)
                                 .show();
                         AppSelectActivity.this.finish();
                     }
@@ -270,6 +271,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
+//        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
     }
 }

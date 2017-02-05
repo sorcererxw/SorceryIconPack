@@ -194,13 +194,6 @@ public class CoolapkAppDetail {
          * giftCount : 0
          * extendedMenus : [{"entityType":"menuCard","title":"","url":"/apk/moreRelated","entities":[{"entityType":"menuCard","title":"相关推荐","url":"#/apk/relatedAppList","entities":null},{"entityType":"menuCard","title":"相关应用集","url":"#/apk/relatedAlbumList","entities":null},{"entityType":"menuCard","title":"开发者更多应用","url":"#/apk/relatedDeveloperAppList","entities":null}]}]
          */
-
-        @SerializedName("id")
-        private int mId;
-        @SerializedName("apktype")
-        private int mApktype;
-        @SerializedName("catid")
-        private int mCatid;
         @SerializedName("title")
         private String mTitle;
         @SerializedName("version")
@@ -217,38 +210,14 @@ public class CoolapkAppDetail {
         private String mApkAlphaMd5;
         @SerializedName("apkversionname")
         private String mApkversionname;
-        @SerializedName("apkversioncode")
-        private int mApkversioncode;
         @SerializedName("apk_sign_md5")
         private String mApkSignMd5;
         @SerializedName("apk_sign_sha1")
         private String mApkSignSha1;
         @SerializedName("apksize")
         private String mApksize;
-        @SerializedName("apklength")
-        private int mApklength;
-        @SerializedName("sdkversion")
-        private int mSdkversion;
-        @SerializedName("maxsdkversion")
-        private int mMaxsdkversion;
         @SerializedName("romversion")
         private String mRomversion;
-        @SerializedName("ishp")
-        private int mIshp;
-        @SerializedName("ishot")
-        private int mIshot;
-        @SerializedName("isbiz")
-        private int mIsbiz;
-        @SerializedName("iscps")
-        private int mIscps;
-        @SerializedName("ispad")
-        private int mIspad;
-        @SerializedName("isofficial")
-        private int mIsofficial;
-        @SerializedName("recommend")
-        private int mRecommend;
-        @SerializedName("digest")
-        private int mDigest;
         @SerializedName("logo")
         private String mLogo;
         @SerializedName("url")
@@ -265,68 +234,20 @@ public class CoolapkAppDetail {
         private String mKeywords;
         @SerializedName("description")
         private String mDescription;
-        @SerializedName("developeruid")
-        private int mDeveloperuid;
         @SerializedName("developername")
         private String mDevelopername;
         @SerializedName("developermail")
         private String mDevelopermail;
-        @SerializedName("fromtype")
-        private int mFromtype;
         @SerializedName("fromname")
         private String mFromname;
-        @SerializedName("fromid")
-        private int mFromid;
-        @SerializedName("autoupdate")
-        private int mAutoupdate;
-        @SerializedName("star")
-        private int mStar;
-        @SerializedName("digg")
-        private int mDigg;
-        @SerializedName("bury")
-        private int mBury;
         @SerializedName("score")
         private String mScore;
-        @SerializedName("votescore")
-        private double mVotescore;
         @SerializedName("adminscore")
         private String mAdminscore;
-        @SerializedName("price")
-        private int mPrice;
-        @SerializedName("click")
-        private int mClick;
-        @SerializedName("downnum")
-        private int mDownnum;
-        @SerializedName("follownum")
-        private int mFollownum;
-        @SerializedName("votenum")
-        private int mVotenum;
-        @SerializedName("favnum")
-        private int mFavnum;
-        @SerializedName("commentnum")
-        private int mCommentnum;
-        @SerializedName("replynum")
-        private int mReplynum;
-        @SerializedName("albumnum")
-        private int mAlbumnum;
-        @SerializedName("creatoruid")
-        private int mCreatoruid;
         @SerializedName("creatorname")
         private String mCreatorname;
-        @SerializedName("createdate")
-        private int mCreatedate;
-        @SerializedName("updateruid")
-        private int mUpdateruid;
         @SerializedName("updatername")
         private String mUpdatername;
-        @SerializedName("pubdate")
-        private int mPubdate;
-        @SerializedName("lastupdate")
-        private int mLastupdate;
-        @SerializedName("rank_score")
-        private int mRankScore;
-        @SerializedName("status")
-        private int mStatus;
         @SerializedName("entityType")
         private String mEntityType;
         @SerializedName("packageName")
@@ -347,10 +268,6 @@ public class CoolapkAppDetail {
         private String mDownCount;
         @SerializedName("followCount")
         private String mFollowCount;
-        @SerializedName("voteCount")
-        private int mVoteCount;
-        @SerializedName("commentCount")
-        private int mCommentCount;
         @SerializedName("updateFlag")
         private String mUpdateFlag;
         @SerializedName("extraFlag")
@@ -363,16 +280,6 @@ public class CoolapkAppDetail {
         private String mPubStatusText;
         @SerializedName("language")
         private String mLanguage;
-        @SerializedName("votenum1")
-        private int mVotenum1;
-        @SerializedName("votenum2")
-        private int mVotenum2;
-        @SerializedName("votenum3")
-        private int mVotenum3;
-        @SerializedName("votenum4")
-        private int mVotenum4;
-        @SerializedName("votenum5")
-        private int mVotenum5;
         @SerializedName("softtype")
         private String mSofttype;
         @SerializedName("remark")
@@ -407,8 +314,6 @@ public class CoolapkAppDetail {
         private String mExtMenu3Url;
         @SerializedName("ext_menu3_content")
         private String mExtMenu3Content;
-        @SerializedName("aid")
-        private int mAid;
         @SerializedName("apkfile")
         private String mApkfile;
         @SerializedName("realfile")
@@ -431,8 +336,6 @@ public class CoolapkAppDetail {
         private String mApkDescription;
         @SerializedName("userAction")
         private UserActionBean mUserAction;
-        @SerializedName("giftCount")
-        private int mGiftCount;
         @SerializedName("tagList")
         private List<String> mTagList;
         @SerializedName("thumbList")
@@ -459,30 +362,6 @@ public class CoolapkAppDetail {
         private List<RatingRowsBean> mRatingRows;
         @SerializedName("extendedMenus")
         private List<ExtendedMenusBean> mExtendedMenus;
-
-        public int getId() {
-            return mId;
-        }
-
-        public void setId(int id) {
-            mId = id;
-        }
-
-        public int getApktype() {
-            return mApktype;
-        }
-
-        public void setApktype(int apktype) {
-            mApktype = apktype;
-        }
-
-        public int getCatid() {
-            return mCatid;
-        }
-
-        public void setCatid(int catid) {
-            mCatid = catid;
-        }
 
         public String getTitle() {
             return mTitle;
@@ -548,14 +427,6 @@ public class CoolapkAppDetail {
             mApkversionname = apkversionname;
         }
 
-        public int getApkversioncode() {
-            return mApkversioncode;
-        }
-
-        public void setApkversioncode(int apkversioncode) {
-            mApkversioncode = apkversioncode;
-        }
-
         public String getApkSignMd5() {
             return mApkSignMd5;
         }
@@ -580,30 +451,6 @@ public class CoolapkAppDetail {
             mApksize = apksize;
         }
 
-        public int getApklength() {
-            return mApklength;
-        }
-
-        public void setApklength(int apklength) {
-            mApklength = apklength;
-        }
-
-        public int getSdkversion() {
-            return mSdkversion;
-        }
-
-        public void setSdkversion(int sdkversion) {
-            mSdkversion = sdkversion;
-        }
-
-        public int getMaxsdkversion() {
-            return mMaxsdkversion;
-        }
-
-        public void setMaxsdkversion(int maxsdkversion) {
-            mMaxsdkversion = maxsdkversion;
-        }
-
         public String getRomversion() {
             return mRomversion;
         }
@@ -612,69 +459,6 @@ public class CoolapkAppDetail {
             mRomversion = romversion;
         }
 
-        public int getIshp() {
-            return mIshp;
-        }
-
-        public void setIshp(int ishp) {
-            mIshp = ishp;
-        }
-
-        public int getIshot() {
-            return mIshot;
-        }
-
-        public void setIshot(int ishot) {
-            mIshot = ishot;
-        }
-
-        public int getIsbiz() {
-            return mIsbiz;
-        }
-
-        public void setIsbiz(int isbiz) {
-            mIsbiz = isbiz;
-        }
-
-        public int getIscps() {
-            return mIscps;
-        }
-
-        public void setIscps(int iscps) {
-            mIscps = iscps;
-        }
-
-        public int getIspad() {
-            return mIspad;
-        }
-
-        public void setIspad(int ispad) {
-            mIspad = ispad;
-        }
-
-        public int getIsofficial() {
-            return mIsofficial;
-        }
-
-        public void setIsofficial(int isofficial) {
-            mIsofficial = isofficial;
-        }
-
-        public int getRecommend() {
-            return mRecommend;
-        }
-
-        public void setRecommend(int recommend) {
-            mRecommend = recommend;
-        }
-
-        public int getDigest() {
-            return mDigest;
-        }
-
-        public void setDigest(int digest) {
-            mDigest = digest;
-        }
 
         public String getLogo() {
             return mLogo;
@@ -740,14 +524,6 @@ public class CoolapkAppDetail {
             mDescription = description;
         }
 
-        public int getDeveloperuid() {
-            return mDeveloperuid;
-        }
-
-        public void setDeveloperuid(int developeruid) {
-            mDeveloperuid = developeruid;
-        }
-
         public String getDevelopername() {
             return mDevelopername;
         }
@@ -764,60 +540,12 @@ public class CoolapkAppDetail {
             mDevelopermail = developermail;
         }
 
-        public int getFromtype() {
-            return mFromtype;
-        }
-
-        public void setFromtype(int fromtype) {
-            mFromtype = fromtype;
-        }
-
         public String getFromname() {
             return mFromname;
         }
 
         public void setFromname(String fromname) {
             mFromname = fromname;
-        }
-
-        public int getFromid() {
-            return mFromid;
-        }
-
-        public void setFromid(int fromid) {
-            mFromid = fromid;
-        }
-
-        public int getAutoupdate() {
-            return mAutoupdate;
-        }
-
-        public void setAutoupdate(int autoupdate) {
-            mAutoupdate = autoupdate;
-        }
-
-        public int getStar() {
-            return mStar;
-        }
-
-        public void setStar(int star) {
-            mStar = star;
-        }
-
-        public int getDigg() {
-            return mDigg;
-        }
-
-        public void setDigg(int digg) {
-            mDigg = digg;
-        }
-
-        public int getBury() {
-            return mBury;
-        }
-
-        public void setBury(int bury) {
-            mBury = bury;
         }
 
         public String getScore() {
@@ -828,100 +556,12 @@ public class CoolapkAppDetail {
             mScore = score;
         }
 
-        public double getVotescore() {
-            return mVotescore;
-        }
-
-        public void setVotescore(double votescore) {
-            mVotescore = votescore;
-        }
-
         public String getAdminscore() {
             return mAdminscore;
         }
 
         public void setAdminscore(String adminscore) {
             mAdminscore = adminscore;
-        }
-
-        public int getPrice() {
-            return mPrice;
-        }
-
-        public void setPrice(int price) {
-            mPrice = price;
-        }
-
-        public int getClick() {
-            return mClick;
-        }
-
-        public void setClick(int click) {
-            mClick = click;
-        }
-
-        public int getDownnum() {
-            return mDownnum;
-        }
-
-        public void setDownnum(int downnum) {
-            mDownnum = downnum;
-        }
-
-        public int getFollownum() {
-            return mFollownum;
-        }
-
-        public void setFollownum(int follownum) {
-            mFollownum = follownum;
-        }
-
-        public int getVotenum() {
-            return mVotenum;
-        }
-
-        public void setVotenum(int votenum) {
-            mVotenum = votenum;
-        }
-
-        public int getFavnum() {
-            return mFavnum;
-        }
-
-        public void setFavnum(int favnum) {
-            mFavnum = favnum;
-        }
-
-        public int getCommentnum() {
-            return mCommentnum;
-        }
-
-        public void setCommentnum(int commentnum) {
-            mCommentnum = commentnum;
-        }
-
-        public int getReplynum() {
-            return mReplynum;
-        }
-
-        public void setReplynum(int replynum) {
-            mReplynum = replynum;
-        }
-
-        public int getAlbumnum() {
-            return mAlbumnum;
-        }
-
-        public void setAlbumnum(int albumnum) {
-            mAlbumnum = albumnum;
-        }
-
-        public int getCreatoruid() {
-            return mCreatoruid;
-        }
-
-        public void setCreatoruid(int creatoruid) {
-            mCreatoruid = creatoruid;
         }
 
         public String getCreatorname() {
@@ -932,60 +572,12 @@ public class CoolapkAppDetail {
             mCreatorname = creatorname;
         }
 
-        public int getCreatedate() {
-            return mCreatedate;
-        }
-
-        public void setCreatedate(int createdate) {
-            mCreatedate = createdate;
-        }
-
-        public int getUpdateruid() {
-            return mUpdateruid;
-        }
-
-        public void setUpdateruid(int updateruid) {
-            mUpdateruid = updateruid;
-        }
-
         public String getUpdatername() {
             return mUpdatername;
         }
 
         public void setUpdatername(String updatername) {
             mUpdatername = updatername;
-        }
-
-        public int getPubdate() {
-            return mPubdate;
-        }
-
-        public void setPubdate(int pubdate) {
-            mPubdate = pubdate;
-        }
-
-        public int getLastupdate() {
-            return mLastupdate;
-        }
-
-        public void setLastupdate(int lastupdate) {
-            mLastupdate = lastupdate;
-        }
-
-        public int getRankScore() {
-            return mRankScore;
-        }
-
-        public void setRankScore(int rankScore) {
-            mRankScore = rankScore;
-        }
-
-        public int getStatus() {
-            return mStatus;
-        }
-
-        public void setStatus(int status) {
-            mStatus = status;
         }
 
         public String getEntityType() {
@@ -1068,22 +660,6 @@ public class CoolapkAppDetail {
             mFollowCount = followCount;
         }
 
-        public int getVoteCount() {
-            return mVoteCount;
-        }
-
-        public void setVoteCount(int voteCount) {
-            mVoteCount = voteCount;
-        }
-
-        public int getCommentCount() {
-            return mCommentCount;
-        }
-
-        public void setCommentCount(int commentCount) {
-            mCommentCount = commentCount;
-        }
-
         public String getUpdateFlag() {
             return mUpdateFlag;
         }
@@ -1130,46 +706,6 @@ public class CoolapkAppDetail {
 
         public void setLanguage(String language) {
             mLanguage = language;
-        }
-
-        public int getVotenum1() {
-            return mVotenum1;
-        }
-
-        public void setVotenum1(int votenum1) {
-            mVotenum1 = votenum1;
-        }
-
-        public int getVotenum2() {
-            return mVotenum2;
-        }
-
-        public void setVotenum2(int votenum2) {
-            mVotenum2 = votenum2;
-        }
-
-        public int getVotenum3() {
-            return mVotenum3;
-        }
-
-        public void setVotenum3(int votenum3) {
-            mVotenum3 = votenum3;
-        }
-
-        public int getVotenum4() {
-            return mVotenum4;
-        }
-
-        public void setVotenum4(int votenum4) {
-            mVotenum4 = votenum4;
-        }
-
-        public int getVotenum5() {
-            return mVotenum5;
-        }
-
-        public void setVotenum5(int votenum5) {
-            mVotenum5 = votenum5;
         }
 
         public String getSofttype() {
@@ -1308,14 +844,6 @@ public class CoolapkAppDetail {
             mExtMenu3Content = extMenu3Content;
         }
 
-        public int getAid() {
-            return mAid;
-        }
-
-        public void setAid(int aid) {
-            mAid = aid;
-        }
-
         public String getApkfile() {
             return mApkfile;
         }
@@ -1402,14 +930,6 @@ public class CoolapkAppDetail {
 
         public void setUserAction(UserActionBean userAction) {
             mUserAction = userAction;
-        }
-
-        public int getGiftCount() {
-            return mGiftCount;
-        }
-
-        public void setGiftCount(int giftCount) {
-            mGiftCount = giftCount;
         }
 
         public List<String> getTagList() {
@@ -1684,8 +1204,6 @@ public class CoolapkAppDetail {
             private String mDownnum;
             @SerializedName("follownum")
             private String mFollownum;
-            @SerializedName("votenum")
-            private int mVotenum;
             @SerializedName("favnum")
             private String mFavnum;
             @SerializedName("commentnum")
@@ -1722,10 +1240,6 @@ public class CoolapkAppDetail {
             private String mDownCount;
             @SerializedName("followCount")
             private String mFollowCount;
-            @SerializedName("voteCount")
-            private int mVoteCount;
-            @SerializedName("commentCount")
-            private int mCommentCount;
             @SerializedName("updateFlag")
             private String mUpdateFlag;
             @SerializedName("extraFlag")
@@ -2001,14 +1515,6 @@ public class CoolapkAppDetail {
                 mFollownum = follownum;
             }
 
-            public int getVotenum() {
-                return mVotenum;
-            }
-
-            public void setVotenum(int votenum) {
-                mVotenum = votenum;
-            }
-
             public String getFavnum() {
                 return mFavnum;
             }
@@ -2151,22 +1657,6 @@ public class CoolapkAppDetail {
 
             public void setFollowCount(String followCount) {
                 mFollowCount = followCount;
-            }
-
-            public int getVoteCount() {
-                return mVoteCount;
-            }
-
-            public void setVoteCount(int voteCount) {
-                mVoteCount = voteCount;
-            }
-
-            public int getCommentCount() {
-                return mCommentCount;
-            }
-
-            public void setCommentCount(int commentCount) {
-                mCommentCount = commentCount;
             }
 
             public String getUpdateFlag() {

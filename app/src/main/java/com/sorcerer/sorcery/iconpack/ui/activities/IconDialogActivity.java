@@ -27,10 +27,13 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.net.spiders.AppNameGetter;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
+import com.sorcerer.sorcery.iconpack.utils.LocaleUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
+
+import java.util.Locale;
 
 import butterknife.BindView;
 import io.reactivex.Observable;
@@ -177,7 +180,8 @@ public class IconDialogActivity extends ToolbarActivity {
             return;
         }
         Timber.d(packageName);
-        AppNameGetter.getName(packageName)
+
+        AppNameGetter.getName(packageName, LocaleUtil.isChinese(this))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .filter(s -> s != null && !s.isEmpty())

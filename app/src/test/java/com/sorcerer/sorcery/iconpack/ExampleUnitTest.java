@@ -14,6 +14,7 @@ import com.sorcerer.sorcery.iconpack.utils.NetUtil;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
@@ -44,7 +45,7 @@ public class ExampleUnitTest {
 
     @Test
     public void appNameGetterTest() throws Exception {
-        AppNameGetter.getName("com.tiantonglaw.readlaw")
+        AppNameGetter.getName("com.tiantonglaw.readlaw", Locale.getDefault())
                 .subscribe(System.out::println, Throwable::printStackTrace);
     }
 

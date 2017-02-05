@@ -19,14 +19,16 @@ public class AppNameGetter {
     private static final String USER_AGENT =
             "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2";
 
-    public static Observable<String> getName(final String packageName) {
+    public static Observable<String> getName(final String packageName, boolean chinese) {
         return Observable.just("")
-                .flatMap(name -> name.isEmpty() ?
-                        CoolapkClient.getInstance().getAppName(packageName) : Observable.just(name))
-//                .flatMap(name -> name.isEmpty() ?
-//                        getNameFromCoolapk(packageName) : Observable.just(name))
-                .flatMap(name -> name.isEmpty() ?
-                        getNameFromQQ(packageName) : Observable.just(name))
+                .flatMap(name -> chinese ?
+                        (name.isEmpty() ?
+                                CoolapkClient.getInstance().getAppName(packageName) :
+                                Observable.just(name)
+                        ) : Observable.just(""))
+                .flatMap(name -> chinese ?
+                        (name.isEmpty() ? getNameFromQQ(packageName) : Observable.just(name)) :
+                        Observable.just(""))
                 .flatMap(name -> name.isEmpty() ?
                         getNameFromPlay(packageName) : Observable.just(name))
                 .map(String::trim);

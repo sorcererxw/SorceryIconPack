@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Sorcery Icons</string>
-    <string name="sorcery" translatable="false">Sorcery</string>
+    <string name="sorcery"
+            translatable="false">Sorcery
+    </string>
 
     <string name="language">en</string>
 
@@ -33,11 +35,17 @@
     <string name="action_soft_reboot">soft reboot</string>
 
     <string name="permission_request_title">Need Permission</string>
-    <string name="permission_request_content">For better experience with the app, please grant permissions to this app. Or you may can\'t use some function normally, such as icon request, icon like. I also need some permission to collect bug in the app, please support me, thanks.</string>
+    <string name="permission_request_content">For better experience with the app, please grant
+        permissions to this app. Or you may can\'t use some function normally, such as icon request,
+        icon like. I also need some permission to collect bug in the app, please support me, thanks.
+    </string>
     <string name="permission_write_external_storage">Write External Storage</string>
-    <string name="permission_request_describe_write_external_storage">To cache log and data.</string>
+    <string name="permission_request_describe_write_external_storage">To cache log and data.
+    </string>
     <string name="permission_read_phone_state">Read Phone State</string>
-    <string name="permission_request_read_phone_state">Get device id to distinguish different users in cloud engine.</string>
+    <string name="permission_request_read_phone_state">Get device id to distinguish different users
+        in cloud engine.
+    </string>
 
     <string name="select_an_icon">select an icon</string>
 
@@ -54,7 +62,7 @@
     <string name="no">no</string>
     <string name="ok">OK</string>
 
-    <string name="RMB"> yuan</string>
+    <string name="RMB">yuan</string>
 
     <string name="please_give_permission">please give it permission</string>
 
@@ -84,16 +92,22 @@
     <string name="is_last_version">It is the last version :)</string>
 
     <string name="icon_request_sending">icon request sending</string>
-    <string name="icon_request_send_success">send success</string>
+    <string name="icon_request_send_success">Request sent successfully</string>
     <string name="icon_request_send_fail">send fail</string>
     <string name="icon_request_times">Requested # times</string>
 
     <string name="apply_tip_only_flyme">Only for Flyme</string>
     <string name="apply_tip_only_miui">Only for MIUI</string>
-    <string name="apply_tip_no_launcher">This launcher is not installed. Whether to install from the store?</string>
+    <string name="apply_tip_no_launcher">This launcher is not installed. Whether to install from the
+        store?
+    </string>
 
-    <string name="nav_open" translatable="false">open</string>
-    <string name="nav_close" translatable="false">close</string>
+    <string name="nav_open"
+            translatable="false">open
+    </string>
+    <string name="nav_close"
+            translatable="false">close
+    </string>
 
     <string name="thanks">Thanks</string>
 
@@ -113,15 +127,18 @@
 
     <string name="donate_dialog_title">select amount</string>
     <string name="donate_declaration_content">powered by Bmob</string>
-    <string name="wechat_pay_plugin_content" translatable="false">由于使用Bmob的支付渠道, 启用微信支付需要安装安全插件, 插件只会在调用的时候运作, 不会留驻后台</string>
+    <string name="wechat_pay_plugin_content"
+            translatable="false">由于使用Bmob的支付渠道, 启用微信支付需要安装安全插件, 插件只会在调用的时候运作, 不会留驻后台
+    </string>
 
     <string name="donate_title">Support Us</string>
     <string name="donate_content">If you like my work\n
-    and\n
-    if you want to support us\n
-    please donate !\n
-    We would really appreciate that!\n
-    Thank you!</string>
+        and\n
+        if you want to support us\n
+        please donate !\n
+        We would really appreciate that!\n
+        Thank you!
+    </string>
 
     <string name="open_alipay">opening alipay</string>
     <string name="open_wechat">opening wechat</string>
@@ -139,9 +156,13 @@
 
     <string name="fail_open_premium">unable to open premium mode</string>
     <string name="premium_request_title">Premium Request</string>
-    <string name="premium_request_content">Pay some money(2￥/icon) to make sure this icon included in the next version.</string>
+    <string name="premium_request_content">Pay some money(2￥/icon) to make sure this icon included
+        in the next version.
+    </string>
     <string name="premium_send_title">confirm order</string>
-    <string name="premium_send_content" translatable="false">由于您开启了付费模式,  以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认并留下您的邮箱地址</string>
+    <string name="premium_send_content"
+            translatable="false">由于您开启了付费模式, 以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认并留下您的邮箱地址
+    </string>
     <string name="premium_alipay_title">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_label">Email</string>
     <string name="premium_send_dialog_note_label">Notes</string>
@@ -158,13 +179,19 @@
     <string name="open_source_lib">Open Source Libs</string>
 
     <string name="changelog">changelog</string>
-    <string name="changelog_content" translatable="false">1. 50个新图标|2. 修复开启优先申请失败问题|3. 加入Persistent搜索条|4. 修复部分launcher不支持问题|5. 界面细节调整</string>
+    <string name="changelog_content"
+            translatable="false">1. 50个新图标|2. 修复开启优先申请失败问题|3. 加入Persistent搜索条|4.
+        修复部分launcher不支持问题|5. 界面细节调整
+    </string>
     <string name="about_main">let 「material」\n
-        colorful your phone</string>
+        colorful your phone
+    </string>
 
     <string name="pref_global_load_title">global load</string>
     <string name="pref_global_load_summary">load by xposed instead of launcher</string>
-    <string name="pref_global_load_key" translatable="false">pref_global_load</string>
+    <string name="pref_global_load_key"
+            translatable="false">pref_global_load
+    </string>
     <string name="pref_global_hint">It is not able now!</string>
 
     <string name="global_detail">Loading this icon pack by xposed</string>
@@ -176,7 +203,9 @@
 
     <string name="global_load_package_add_notify">reboot to display sorcery icon of new app</string>
 
-    <string name="global_attention">you need to reboot phone after a new app installed and it do not supports nova launcher, you need to set icon pack by yourself in nova</string>
+    <string name="global_attention">you need to reboot phone after a new app installed and it do not
+        supports nova launcher, you need to set icon pack by yourself in nova
+    </string>
 
     <string name="xposed_tag">load sorcery icon pack globally</string>
 
@@ -205,12 +234,18 @@
     <string name="premium_alipay_describe">Sorcery Premium Request</string>
     <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
 
-    <string name="feedback_chat_welcome">Welcome to communicate with the developer, you can send the user experience and pictures to the developer.</string>
+    <string name="feedback_chat_welcome">Welcome to communicate with the developer, you can send the
+        user experience and pictures to the developer.
+    </string>
     <string name="feedback_chat_edit_hint">What want to say ?</string>
     <string name="feedback_chat_name_dialog_title">Need A Nickname</string>
-    <string name="feedback_chat_name_dialog_content">Please give me a nickname to easily distinguish between different respondents.</string>
+    <string name="feedback_chat_name_dialog_content">Please give me a nickname to easily distinguish
+        between different respondents.
+    </string>
     <string name="feedback_chat_name_dialog_hint">nickname</string>
-    <string name="feedback_chat_name_dialog_toast_hint">The length of nickname must be greater than 3</string>
+    <string name="feedback_chat_name_dialog_toast_hint">The length of nickname must be greater than
+        3
+    </string>
 
     <string name="about_dialog_slogan">Let material-design materialize your screen</string>
     <string name="about_dialog_icon_count">Includes %d icons</string>
@@ -229,7 +264,25 @@
     <string name="preference_about_app">Application information</string>
     <string name="preference_about_lib">Open source licenses</string>
     <string name="preference_general_customize_tabs">Customize icon tabs</string>
-    <string name="preference_general_customize_tabs_summary">Just keep icons pages you concern</string>
+    <string name="preference_general_customize_tabs_summary">Just keep icons pages you concern
+    </string>
     <string name="restart_to_take_effect">restart to take effect</string>
     <string name="search_hint_not_found">Oops…Not found</string>
+
+    <string name="apply_for_pixel_declaration_title">Declaration</string>
+    <string name="apply_for_pixel_declaration_content">Since the pixel launcher itself does not
+        support custom icons, Sorcery Icons will modify the launcher\'s data with root
+        privileges.|So you need to grant root privileges and external storage read and write
+        permissions.|Since it modified the cache file of the launcher, the icon may be restored
+        after the corresponding application updating, and the replacement operation will need to be
+        performed again.
+    </string>
+    <string name="apply_for_pixel_no_root_access">Root is required</string>
+    <string name="apply_for_pixel_no_sdcard_permission">External read and write permissions are
+        required
+    </string>
+    <string name="apply_for_pixel_fail">Sorry, operation failed</string>
+    <string name="apply_for_pixel_success">Success, enjoy it:)</string>
+    <string name="apply_for_pixel_applying">please wait a moment……</string>
+    <string name="error">Error</string>
 </resources>

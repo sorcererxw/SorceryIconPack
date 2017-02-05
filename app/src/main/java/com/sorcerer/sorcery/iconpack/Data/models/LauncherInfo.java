@@ -97,6 +97,9 @@ public class LauncherInfo implements Comparable {
             case "google now":
                 mIcon = R.drawable.google_now_launcher;
                 break;
+            case "evie":
+                mIcon = R.drawable.evie_launcher;
+                break;
             default:
                 Timber.d("%s: no such launcher", mLabel);
         }
