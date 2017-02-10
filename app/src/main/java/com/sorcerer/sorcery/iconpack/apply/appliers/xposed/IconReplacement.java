@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.appliers.xposed;
+package com.sorcerer.sorcery.iconpack.apply.appliers.xposed;
 
 /**
  * @description:

@@ -208,9 +208,7 @@ public class IconAdapter extends RecyclerView.Adapter<IconAdapter.IconItemViewHo
             default:
                 layout = R.layout.item_icon_center;
         }
-//        FrameLayout container = (FrameLayout)LayoutInflater.from(mContext).inflate(R.layout.item_icon_container,parent,false);
         View content = LayoutInflater.from(mContext).inflate(layout, parent, false);
-//        container.addView(content,0);
         return new IconViewHolder(content);
     }
 

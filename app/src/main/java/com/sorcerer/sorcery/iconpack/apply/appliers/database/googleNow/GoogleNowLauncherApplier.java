@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.appliers.database;
+package com.sorcerer.sorcery.iconpack.apply.appliers.database.googleNow;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
 
 import com.annimon.stream.Stream;
-import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
 import com.sorcerer.sorcery.iconpack.su.RxSU;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
@@ -26,38 +25,31 @@ import io.reactivex.functions.Function;
 /**
  * @description:
  * @author: Sorcerer
- * @date: 2017/2/2
+ * @date: 2017/2/4
  */
 
-public class PixelLauncherApplier {
-
-    private static final String LAUNCHER_PACKAGE = "com.google.android.apps.nexuslauncher";
+public class GoogleNowLauncherApplier {
+    private static final String LAUNCHER_PACKAGE = "com.google.android.googlequicksearchbox";
 
     private static final String APP_ICONS_PATH =
-            "/data/data/com.google.android.apps.nexuslauncher/databases/app_icons.db";
+            "/data/data/" + LAUNCHER_PACKAGE + "/databases/app_icons.db";
 
-    private static String CACHE_PATH;
+    private static String TMP_PATH;
 
     private Context mContext;
 
-    public PixelLauncherApplier(Context context) {
+    public GoogleNowLauncherApplier(Context context) {
         mContext = context;
-        CACHE_PATH = context.getExternalCacheDir() + "/app_icons.db";
+        TMP_PATH = context.getExternalCacheDir() + "/app_icons.db";
     }
 
     public Observable<List<String>> apply() {
-        return RxSU.getInstance().su().filter(grant -> {
-            if (!grant) {
-                throw new Exception(
-                        ResourceUtil.getString(mContext, R.string.apply_for_pixel_no_root_access));
-            }
-            return true;
-        })
+        return RxSU.getInstance().su().filter(grant -> grant)
                 .flatMap(new Function<Boolean, ObservableSource<List<String>>>() {
                     @Override
                     public ObservableSource<List<String>> apply(Boolean grant) throws Exception {
                         return RxSU.getInstance().runAll(
-                                "cp " + APP_ICONS_PATH + " " + CACHE_PATH
+                                "cp " + APP_ICONS_PATH + " " + TMP_PATH
                         );
                     }
                 })
@@ -66,9 +58,9 @@ public class PixelLauncherApplier {
                             PackageUtil.getComponentDrawableMap(mContext);
                     Map<String, String> todoMap = new HashMap<>();
 
-                    File file = new File(CACHE_PATH);
+                    File file = new File(TMP_PATH);
                     if (!file.exists()) {
-                        throw new Exception("No cache file found");
+                        throw new Exception();
                     }
                     SQLiteDatabase db = SQLiteDatabase
                             .openDatabase(file.getAbsolutePath(), null,
@@ -93,9 +85,8 @@ public class PixelLauncherApplier {
                         db.update("icons", values, "componentName=? and profileId=0",
                                 new String[]{entry.getKey()});
                     });
-                    db.close();
                     return RxSU.getInstance().runAll(
-                            "cp " + CACHE_PATH + " " + APP_ICONS_PATH,
+                            "cp " + TMP_PATH + " " + APP_ICONS_PATH,
                             "am force-stop " + LAUNCHER_PACKAGE);
                 });
     }

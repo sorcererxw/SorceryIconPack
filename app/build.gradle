@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.0." + code + " Weekly20170205"
+        versionName "4.0." + code + " Weekly20170210"
         minSdkVersion 16
         targetSdkVersion 25
     }
@@ -38,12 +38,14 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
+            buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'false'
         }
         release {
             minifyEnabled true
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
+            buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'true'
         }
     }
     buildTypes.each {
@@ -97,6 +99,7 @@ dependencies {
     compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
     compile 'com.mikepenz:material-design-iconic-typeface:2.2.0.2@aar'
     compile 'com.mikepenz:community-material-typeface:1.7.22.1@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.7.0.0@aar'
     // bugly
     compile 'com.tencent.bugly:crashreport:2.4.0'
     // slice
@@ -121,5 +124,7 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.5'
     // su
     compile 'eu.chainfire:libsuperuser:1.0.0.201608240809'
-
+    // bottom sheet
+    compile 'com.flipboard:bottomsheet-core:1.5.3'
+    compile 'com.flipboard:bottomsheet-commons:1.5.3' // optional
 }

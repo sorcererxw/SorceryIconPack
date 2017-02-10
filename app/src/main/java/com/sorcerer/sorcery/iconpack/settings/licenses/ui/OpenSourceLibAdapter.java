@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
+package com.sorcerer.sorcery.iconpack.settings.licenses.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.data.models.OpenSourceLibBean;
+import com.sorcerer.sorcery.iconpack.settings.licenses.models.OpenSourceLibBean;
 
 import java.util.List;
 

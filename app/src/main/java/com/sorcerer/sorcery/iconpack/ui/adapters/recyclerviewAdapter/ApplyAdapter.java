@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.RequestManager;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.apply.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 
 import java.util.List;
@@ -29,6 +29,8 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.ApplyViewHol
 
     public interface OnApplyItemClickListener {
         void click(LauncherInfo item);
+
+        void longClick(LauncherInfo item);
     }
 
     private OnApplyItemClickListener mOnApplyItemClickListener;
@@ -63,6 +65,14 @@ public class ApplyAdapter extends RecyclerView.Adapter<ApplyAdapter.ApplyViewHol
             if (mOnApplyItemClickListener != null) {
                 mOnApplyItemClickListener.click(mLauncherList.get(holder.getAdapterPosition()));
             }
+        });
+
+        holder.itemView.setOnLongClickListener(v -> {
+            if (mOnApplyItemClickListener != null) {
+                mOnApplyItemClickListener.longClick(mLauncherList.get(holder.getAdapterPosition()));
+                return true;
+            }
+            return false;
         });
 
         if (mLauncherList.get(position).isInstalled()) {

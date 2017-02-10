@@ -1,11 +1,12 @@
-package com.sorcerer.sorcery.iconpack.ui.activities;
+package com.sorcerer.sorcery.iconpack.settings;
 
 import android.view.MenuItem;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 
-public class SettingsActivity extends SlideInAndOutAppCompatActivity {
+public class SettingsActivity extends BaseSubActivity {
 
     @Override
     protected int provideLayoutId() {

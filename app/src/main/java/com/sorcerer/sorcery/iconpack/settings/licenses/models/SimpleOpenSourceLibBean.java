@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.data.models;
+package com.sorcerer.sorcery.iconpack.settings.licenses.models;
 
 /**
  * @description:
@@ -6,15 +6,15 @@ package com.sorcerer.sorcery.iconpack.data.models;
  * @date: 2016/11/10
  */
 
-public class OpenSourceLibBean {
+public class SimpleOpenSourceLibBean extends OpenSourceLibBean {
     private String mAuthor;
     private String mLink;
     private String mName;
     private String mLicense;
     private String mDescription;
 
-    public OpenSourceLibBean(String name, String author, String description, String link,
-                             String license) {
+    public SimpleOpenSourceLibBean(String name, String author, String description, String link,
+                                   String license) {
         mAuthor = author;
         mLink = link;
         mName = name;

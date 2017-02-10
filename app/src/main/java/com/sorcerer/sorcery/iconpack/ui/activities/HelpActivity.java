@@ -7,12 +7,13 @@ import android.view.Display;
 import android.view.MenuItem;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.HelpAdapter;
 
 import butterknife.BindView;
 
-public class HelpActivity extends SlideInAndOutAppCompatActivity {
+public class HelpActivity extends BaseSubActivity {
 
     @BindView(R.id.recyclerView_help)
     RecyclerView mRecyclerView;

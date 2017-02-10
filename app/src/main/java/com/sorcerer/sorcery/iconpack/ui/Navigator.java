@@ -1,9 +1,12 @@
 package com.sorcerer.sorcery.iconpack.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.test.TestActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.AppSelectActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.ApplyActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
@@ -12,7 +15,7 @@ import com.sorcerer.sorcery.iconpack.ui.activities.HelpActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.LabActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.SettingsActivity;
+import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
 
 import rx_activity_result2.RxActivityResult;
 
@@ -83,10 +86,21 @@ public class Navigator {
         mainActivityShift(SettingsActivity.class);
     }
 
+    public void toTestActivity() {
+        Intent intent = new Intent(mActivity, TestActivity.class);
+        mActivity.startActivity(intent);
+    }
+
     private void mainActivityShift(Class<?> cls) {
         Intent intent = new Intent(mActivity, cls);
         mActivity.startActivity(intent);
         mActivity.overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
+    }
+
+    public static void toWebpage(Context context,String url){
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        context.startActivity(i);
     }
 
 }

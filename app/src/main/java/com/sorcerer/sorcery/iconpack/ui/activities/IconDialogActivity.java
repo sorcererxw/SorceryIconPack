@@ -4,11 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Handler;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.transition.Fade;
 import android.util.TypedValue;
 import android.view.Menu;
@@ -16,30 +16,34 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.sorcerer.sorcery.iconpack.BuildConfig;
+import com.bumptech.glide.Glide;
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.net.spiders.AppNameGetter;
+import com.sorcerer.sorcery.iconpack.net.spiders.models.AppDisplayInfo;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.LikeLayout;
+import com.sorcerer.sorcery.iconpack.utils.AppDisplayInfoGetter;
 import com.sorcerer.sorcery.iconpack.utils.LocaleUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
 
-import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
 import io.reactivex.Observable;
-import io.reactivex.Observer;
+import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
@@ -140,95 +144,144 @@ public class IconDialogActivity extends ToolbarActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        Observable.just(mName).subscribeOn(Schedulers.newThread())
-                .map(name -> {
-                    String res = PackageUtil.getComponentByName(IconDialogActivity.this, name);
-                    if (res == null) {
-                        res = "";
+    protected void onStart() {
+        super.onStart();
+        Observable.just(mName)
+                .map(name -> PackageUtil.getComponentByName(this, name))
+                .filter(s -> !TextUtils.isEmpty(s))
+                .observeOn(Schedulers.newThread())
+                .flatMap(new Function<String, ObservableSource<AppDisplayInfo>>() {
+                    @Override
+                    public ObservableSource<AppDisplayInfo> apply(String component)
+                            throws Exception {
+                        mComponent = component;
+                        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
+                        Timber.d(mPackageName);
+                        return AppDisplayInfoGetter
+                                .getAppDisplayInfo(mPackageName, IconDialogActivity.this,
+                                        LocaleUtil.isChinese(IconDialogActivity.this));
                     }
-                    return res;
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(component -> {
-                    mComponent = component;
-                    mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-                    showRealName(mPackageName);
-                    if (mMenu != null) {
-                        onCreateOptionsMenu(mMenu);
+                .map(info -> {
+                    if (!TextUtils.isEmpty(info.getAppName())) {
+                        mTitleTextView.postDelayed(() -> showRealName(info.getAppName()), 100);
                     }
-                    if (false && BuildConfig.DEBUG) {
-                        new Handler().postDelayed(() -> {
-                            TextView componentTextView =
-                                    (TextView) View.inflate(IconDialogActivity.this,
-                                            R.layout.textview_dialog_icon_component_info,
-                                            null);
-                            componentTextView.setVisibility(View.VISIBLE);
-                            componentTextView.setText(
-                                    (component == null || component.isEmpty()) ?
-                                            "null" : component);
-                            mComponentContainer.addView(componentTextView);
-                        }, 500);
+                    onCreateOptionsMenu(mMenu);
+                    return info;
+                })
+                .observeOn(Schedulers.newThread())
+                .map(info -> {
+                    if (info.getIcon() == null && info.getIconUrl() != null) {
+                        try {
+                            info.setIcon(Glide.with(IconDialogActivity.this)
+                                    .load(info.getIconUrl()).into(-1, -1)
+                                    .get());
+                        } catch (InterruptedException | ExecutionException e) {
+                            Timber.e(e);
+                        }
                     }
-                });
+                    return info;
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(info -> mTitleTextView.postDelayed(() -> {
+                    if (mMenu != null && info.getIcon() != null) {
+                        MenuItem showOrigin = mMenu.add(Menu.NONE, Menu.NONE, Menu.FIRST,
+                                R.string.action_show_origin_icon);
+                        showOrigin.setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS);
+                        showOrigin.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+                        showOrigin.setIcon(
+                                new IconicsDrawable(mContext, GoogleMaterial.Icon.gmd_compare)
+                                        .sizeDp(24).paddingDp(2).color(Color.BLACK)
+                                        .alpha((int) (255 * 0.55)));
+                        showOrigin.setVisible(true);
+                        View actionView = findViewById(showOrigin.getItemId());
+                        showOrigin.setOnMenuItemClickListener(item -> {
+                            try {
+                                if (mOriginImage == null) {
+                                    mOriginImage = new ImageView(mContext);
+                                    mOriginImage.setImageDrawable(info.getIcon());
+
+                                    ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                                            (int) mContext.getResources().getDimension(
+                                                    R.dimen.dialog_icon_size),
+                                            (int) mContext.getResources().getDimension(
+                                                    R.dimen.dialog_icon_size)
+                                    );
+                                    mOriginImage.setLayoutParams(params);
+                                    mOriginImage.setPadding(dip2px(mContext, 8), 0, 0, 0);
+                                }
+                                if (mRoot.getChildCount() > 1) {
+                                    mRoot.removeView(mOriginImage);
+                                    if (actionView != null) {
+                                        actionView.setAlpha(1);
+                                    }
+                                } else {
+                                    mRoot.addView(mOriginImage);
+                                    if (actionView != null) {
+                                        actionView.setAlpha(0.5f);
+                                    }
+                                }
+                                return true;
+                            } catch (Exception e) {
+                                Timber.e(e);
+                            }
+                            return false;
+                        });
+                        if (actionView != null) {
+                            AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
+                            alphaAnimation.setDuration(300);
+                            actionView.startAnimation(alphaAnimation);
+                        }
+                    }
+                }, 100), Timber::e);
     }
 
-    private void showRealName(String packageName) {
-        if (packageName == null) {
-            return;
-        }
-        Timber.d(packageName);
+    private void showRealName(String name) {
+        mTitleTextView.setPivotX(0);
+        mTitleTextView.setPivotY(1);
 
-        AppNameGetter.getName(packageName, LocaleUtil.isChinese(this))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .filter(s -> s != null && !s.isEmpty())
-                .subscribe(new Observer<String>() {
+        mTitleTextView.animate()
+                .alpha(0.6f)
+                .scaleY(0.6f)
+                .scaleX(0.6f)
+                .setListener(new AnimatorListenerAdapter() {
                     @Override
-                    public void onSubscribe(Disposable d) {
-
+                    public void onAnimationStart(Animator animation) {
+                        TextView textView = new TextView(mContext);
+                        textView.setTextColor(
+                                ResourceUtil.getColor(mContext, R.color.title));
+                        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+                        textView.setText(name);
+                        LayoutParams layoutParams = new LayoutParams(
+                                ViewGroup.LayoutParams.MATCH_PARENT,
+                                ViewGroup.LayoutParams.WRAP_CONTENT);
+                        layoutParams.setMargins(0, dip2px(mContext, 8), 0, 0);
+                        textView.setLayoutParams(layoutParams);
+                        mTitleContainer.addView(textView, 0);
+                        mTitleContainer.requestLayout();
                     }
 
                     @Override
-                    public void onNext(final String appName) {
-                        mTitleTextView.setPivotX(0);
-                        mTitleTextView.setPivotY(1);
-                        mTitleTextView.animate()
-                                .alpha(0.6f)
-                                .scaleY(0.6f)
-                                .scaleX(0.6f)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationStart(Animator animation) {
-                                        TextView textView = new TextView(mContext);
-                                        textView.setTextColor(
-                                                ResourceUtil.getColor(mContext, R.color.title));
-                                        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-                                        textView.setText(appName);
-                                        LayoutParams layoutParams = new LayoutParams(
-                                                ViewGroup.LayoutParams.MATCH_PARENT,
-                                                ViewGroup.LayoutParams.WRAP_CONTENT);
-                                        layoutParams.setMargins(0, dip2px(mContext, 8), 0, 0);
-                                        textView.setLayoutParams(layoutParams);
-                                        mTitleContainer.addView(textView, 0);
-                                        mTitleContainer.requestLayout();
-                                    }
-                                })
-                                .start();
+                    public void onAnimationCancel(Animator animation) {
+                        super.onAnimationCancel(animation);
+                        Timber.d("canceled");
                     }
 
                     @Override
-                    public void onError(Throwable e) {
-                        Timber.e(e);
+                    public void onAnimationPause(Animator animation) {
+                        super.onAnimationPause(animation);
+                        Timber.d("paused");
                     }
 
                     @Override
-                    public void onComplete() {
-
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        mTitleTextView.requestLayout();
                     }
-                });
+                })
+                .setDuration(300)
+                .start();
     }
 
     @Override
@@ -251,21 +304,13 @@ public class IconDialogActivity extends ToolbarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        if (menu == null) {
+            return false;
+        }
         mMenu = menu;
         if (mComponent != null && !hasInitMenu) {
             hasInitMenu = true;
             getMenuInflater().inflate(R.menu.menu_icon_dialog, menu);
-
-            MenuItem showOrigin = menu.findItem(R.id.action_show_origin_icon);
-            if (PackageUtil.isPackageInstalled(mContext,
-                    StringUtil.componentInfoToPackageName(mComponent))) {
-                showOrigin.setVisible(true);
-                Drawable icon = showOrigin.getIcon();
-                icon.setAlpha((int) (255 * 0.5));
-                showOrigin.setIcon(icon);
-            } else {
-                showOrigin.setVisible(false);
-            }
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -284,33 +329,31 @@ public class IconDialogActivity extends ToolbarActivity {
                         Uri.parse("https://play.google.com/store/apps/details?id="
                                 + appPackageName)));
             }
-        } else if (id == R.id.action_show_origin_icon) {
-            try {
-                if (mOriginImage == null) {
-                    mOriginImage = new ImageView(mContext);
-                    mOriginImage.setImageDrawable(
-                            getPackageManager().getApplicationIcon(
-                                    StringUtil.componentInfoToPackageName(mComponent)
-                            )
-                    );
-
-                    ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
-                            (int) mContext.getResources()
-                                    .getDimension(R.dimen.dialog_icon_size),
-                            (int) mContext.getResources().getDimension(R.dimen.dialog_icon_size)
-                    );
-                    mOriginImage.setLayoutParams(params);
-                    mOriginImage.setPadding(dip2px(mContext, 8), 0, 0, 0);
-                }
-                if (mRoot.getChildCount() > 1) {
-                    mRoot.removeView(mOriginImage);
-                } else {
-                    mRoot.addView(mOriginImage);
-                }
-            } catch (Exception e) {
-                Timber.e(e);
-            }
-        } else if (id == R.id.action_create_shortcut) {
+        }
+//        else if (id == R.id.action_show_origin_icon) {
+//            try {
+//                if (mOriginImage == null) {
+//                    mOriginImage = new ImageView(mContext);
+//                    mOriginImage.setImageDrawable(mDisplayInfo.getIcon());
+//
+//                    ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+//                            (int) mContext.getResources()
+//                                    .getDimension(R.dimen.dialog_icon_size),
+//                            (int) mContext.getResources().getDimension(R.dimen.dialog_icon_size)
+//                    );
+//                    mOriginImage.setLayoutParams(params);
+//                    mOriginImage.setPadding(dip2px(mContext, 8), 0, 0, 0);
+//                }
+//                if (mRoot.getChildCount() > 1) {
+//                    mRoot.removeView(mOriginImage);
+//                } else {
+//                    mRoot.addView(mOriginImage);
+//                }
+//            } catch (Exception e) {
+//                Timber.e(e);
+//            }
+//        }
+        else if (id == R.id.action_create_shortcut) {
             Intent shortcutIntent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
             shortcutIntent.putExtra("duplicate", false);
             shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, mLabel);

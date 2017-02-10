@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
@@ -25,6 +26,17 @@ public class ImageUtil {
 
     public static void resetScale(ImageView imageView) {
         imageView.setColorFilter(null);
+    }
+
+    public static Bitmap getMarginBitmap(Bitmap origin, int marginTop, int marginRight,
+                                         int marginBottom, int marginLeft) {
+        Bitmap bmOverlay = Bitmap.createBitmap(
+                origin.getWidth() + marginLeft + marginRight,
+                origin.getHeight() + marginTop + marginBottom,
+                origin.getConfig());
+        Canvas canvas = new Canvas(bmOverlay);
+        canvas.drawBitmap(origin, marginLeft, marginTop, null);
+        return bmOverlay;
     }
 
     public static Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {
@@ -60,4 +72,14 @@ public class ImageUtil {
             return null;
         }
     }
+
+    public static Bitmap overlay(Bitmap bottom, Bitmap overlay) {
+        Bitmap bmOverlay =
+                Bitmap.createBitmap(bottom.getWidth(), bottom.getHeight(), bottom.getConfig());
+        Canvas canvas = new Canvas(bmOverlay);
+        canvas.drawBitmap(bottom, new Matrix(), null);
+        canvas.drawBitmap(overlay, new Matrix(), null);
+        return bmOverlay;
+    }
+
 }

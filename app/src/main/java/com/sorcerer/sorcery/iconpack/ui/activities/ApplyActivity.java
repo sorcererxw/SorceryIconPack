@@ -1,6 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -21,16 +20,19 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
+import com.flipboard.bottomsheet.BottomSheetLayout;
+import com.flipboard.bottomsheet.commons.MenuSheetView;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.appliers.database.GoogleNowLauncherApplier;
-import com.sorcerer.sorcery.iconpack.appliers.database.PixelLauncherApplier;
-import com.sorcerer.sorcery.iconpack.appliers.launcher.LauncherApplier;
-import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
-import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
+import com.sorcerer.sorcery.iconpack.apply.LauncherInfo;
+import com.sorcerer.sorcery.iconpack.apply.appliers.api.LauncherApplier;
+import com.sorcerer.sorcery.iconpack.apply.appliers.database.googleNow.GoogleNowLauncherApplier;
+import com.sorcerer.sorcery.iconpack.apply.appliers.database.pixel.PixelApplyActivity;
+import com.sorcerer.sorcery.iconpack.apply.appliers.database.smartisan.SmartisanApplyActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.ApplyAdapter.OnApplyItemClickListener;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +52,7 @@ import timber.log.Timber;
  * @date: 2016/12/2
  */
 
-public class ApplyActivity extends SlideInAndOutAppCompatActivity {
+public class ApplyActivity extends BaseSubActivity {
 
     @BindView(R.id.linearLayout_apply_commend_container)
     LinearLayout mRecommendLayout;
@@ -62,170 +64,170 @@ public class ApplyActivity extends SlideInAndOutAppCompatActivity {
                })
     List<RecyclerView> mRecyclerViewList;
 
+    @BindView(R.id.bottomSheetLayout)
+    BottomSheetLayout mBottomSheetLayout;
 
     private ApplyAdapter[] mApplyAdapters = new ApplyAdapter[3];
     private GridLayoutManager[] mGridLayoutManagers = new GridLayoutManager[3];
 
-    private ApplyAdapter.OnApplyItemClickListener mOnApplyItemClickListener = item -> {
-        if (!item.isInstalled()) {
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-            if (item.getLabel().toLowerCase().equals("flyme")) {
-                builder.content(R.string.apply_tip_only_flyme).positiveText(R.string.ok);
-            } else if (item.getLabel().toLowerCase().equals("miui")) {
-                builder.content(R.string.apply_tip_only_miui).positiveText(R.string.ok);
-            } else {
-                builder.content(R.string.apply_tip_no_launcher)
-                        .positiveText(R.string.ok).negativeText(R.string.cancel)
-                        .onPositive((dialog, which) -> {
-                            final String appPackageName = item.getPackageName();
-                            try {
-                                startActivity(new Intent(Intent.ACTION_VIEW,
-                                        Uri.parse("market://details?id="
-                                                + appPackageName)));
-                            } catch (android.content.ActivityNotFoundException e) {
-                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(
-                                        "https://play.google.com/store/apps/details?id="
-                                                + appPackageName)));
-                            }
-                        });
+    private OnApplyItemClickListener mOnApplyItemClickListener = new OnApplyItemClickListener() {
+        @Override
+        public void click(LauncherInfo item) {
+            if (!item.isInstalled()) {
+                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                if (item.getLabel().toLowerCase().equals("flyme")) {
+                    builder.content(R.string.apply_tip_only_flyme)
+                            .positiveText(R.string.ok);
+                } else if (item.getLabel().toLowerCase().equals("miui")) {
+                    builder.content(R.string.apply_tip_only_miui).positiveText(R.string.ok);
+                } else {
+                    builder.content(R.string.apply_tip_no_launcher)
+                            .positiveText(R.string.ok).negativeText(R.string.cancel)
+                            .onPositive((dialog, which) -> {
+                                final String appPackageName = item.getPackageName();
+                                try {
+                                    startActivity(new Intent(Intent.ACTION_VIEW,
+                                            Uri.parse("market://details?id="
+                                                    + appPackageName)));
+                                } catch (android.content.ActivityNotFoundException e) {
+                                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(
+                                            "https://play.google.com/store/apps/details?id="
+                                                    + appPackageName)));
+                                }
+                            });
+                }
+                builder.build().show();
+                return;
             }
-            builder.build().show();
-            return;
-        }
-        if (item.getLabel().toLowerCase().equals("flyme")) {
-            Intent intent = new Intent();
-            intent.setComponent(new ComponentName("com.meizu.customizecenter",
-                    "com.meizu.customizecenter.OnlineThemeActivity"));
-            intent.putExtra("ONLINE_THEME_WAY", "ONLINE_WAY_URL");
-            intent.putExtra("URL", "/themes/public/detail/3000115");
-            intent.putExtra("search_content_type", "themes");
-            intent.putExtra("position", 0);
-            intent.putExtra("search_action", "click_history_label");
-            intent.putExtra("event_path", "OneSearchActivity");
-            intent.putExtra("search_content", "Sorcery");
-            intent.putExtra("search_id", "cbe31a19-ac0f-4d86-b8a3-2077fc132088");
-            startActivity(intent);
-        } else if (item.getLabel().toLowerCase().equals("miui")) {
+            if (item.getLabel().toLowerCase().equals("flyme")) {
+                Intent intent = new Intent();
+                intent.setComponent(new ComponentName("com.meizu.customizecenter",
+                        "com.meizu.customizecenter.OnlineThemeActivity"));
+                intent.putExtra("ONLINE_THEME_WAY", "ONLINE_WAY_URL");
+                intent.putExtra("URL", "/themes/public/detail/3000115");
+                intent.putExtra("search_content_type", "themes");
+                intent.putExtra("position", 0);
+                intent.putExtra("search_action", "click_history_label");
+                intent.putExtra("event_path", "OneSearchActivity");
+                intent.putExtra("search_content", "Sorcery");
+                intent.putExtra("search_id", "cbe31a19-ac0f-4d86-b8a3-2077fc132088");
+                startActivity(intent);
+            } else if (item.getLabel().toLowerCase().equals("miui")) {
 
-        } else if (item.getLabel().toLowerCase().equals("pixel")) {
-            new MaterialDialog.Builder(this)
-                    .title(R.string.apply_for_pixel_declaration_title)
-                    .content(ResourceUtil
-                            .getString(mContext, R.string.apply_for_pixel_declaration_content)
-                            .replaceAll("\\|", "\n"))
-                    .positiveText(R.string.ok)
-                    .negativeText(R.string.cancel)
-                    .onPositive((dialog, which) -> {
-                        new RxPermissions(mActivity)
-                                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                                .subscribe(grant -> {
-                                    if (grant) {
-                                        dialog.dismiss();
-                                        applyToPixel();
-                                    } else {
-                                        Toast.makeText(mContext,
-                                                R.string.apply_for_pixel_no_sdcard_permission,
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                }, Timber::e);
-                    })
-                    .onNegative((dialog, which) -> dialog.dismiss())
-                    .autoDismiss(false)
-                    .build().show();
-        } else if (item.getLabel().toLowerCase().equals("google now")) {
-            new GoogleNowLauncherApplier(ApplyActivity.this).apply()
-                    .subscribeOn(Schedulers.newThread())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<List<String>>() {
-                        private ProgressDialog mDialog;
+            } else if (item.getLabel().toLowerCase().equals("pixel")) {
+                new MaterialDialog.Builder(ApplyActivity.this)
+                        .title(R.string.apply_by_database_declaration_title)
+                        .content(ResourceUtil
+                                .getString(mContext,
+                                        R.string.apply_by_database_declaration_content)
+                                .replaceAll("\\{\\}", "Pixel")
+                                .replaceAll("\\|", "\n"))
+                        .positiveText(R.string.ok)
+                        .negativeText(R.string.cancel)
+                        .onPositive((dialog, which) -> {
+                            PixelApplyActivity.apply(mContext, true);
+                        })
+                        .onNegative((dialog, which) -> dialog.dismiss())
+                        .build().show();
+            } else if (item.getLabel().toLowerCase().equals("smartisan")) {
+                new MaterialDialog.Builder(ApplyActivity.this)
+                        .title(R.string.apply_by_database_declaration_title)
+                        .content(ResourceUtil
+                                .getString(mContext,
+                                        R.string.apply_by_database_declaration_content)
+                                .replaceAll("\\{\\}", "Smartisan")
+                                .replaceAll("\\|", "\n"))
+                        .positiveText(R.string.ok)
+                        .negativeText(R.string.cancel)
+                        .onPositive((dialog, which) -> SmartisanApplyActivity.apply(mContext, true))
+                        .onNegative((dialog, which) -> dialog.dismiss())
+                        .build().show();
+            } else if (item.getLabel().toLowerCase().equals("google now")) {
+                new GoogleNowLauncherApplier(ApplyActivity.this).apply()
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<List<String>>() {
+                            private ProgressDialog mDialog;
 
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            mDialog = new ProgressDialog(ApplyActivity.this);
-                            mDialog.setMessage("applying");
-                            mDialog.show();
-                        }
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                mDialog = new ProgressDialog(ApplyActivity.this);
+                                mDialog.setMessage("applying");
+                                mDialog.show();
+                            }
 
-                        @Override
-                        public void onNext(List<String> list) {
+                            @Override
+                            public void onNext(List<String> list) {
 
-                        }
+                            }
 
-                        @Override
-                        public void onError(Throwable e) {
-                            Timber.e(e);
-                            mDialog.dismiss();
-                            Toast.makeText(mContext, "failed", Toast.LENGTH_SHORT).show();
-                        }
+                            @Override
+                            public void onError(Throwable e) {
+                                Timber.e(e);
+                                mDialog.dismiss();
+                                Toast.makeText(mContext, "failed", Toast.LENGTH_SHORT)
+                                        .show();
+                            }
 
-                        @Override
-                        public void onComplete() {
-                            mDialog.dismiss();
-                            Toast.makeText(mContext, "success!!!\nenjoy it:)", Toast.LENGTH_SHORT)
-                                    .show();
-                            mActivity.getWindow().getDecorView().postDelayed(() -> {
-                                Intent intent = new Intent(Intent.ACTION_MAIN);
-                                intent.setComponent(
-                                        new ComponentName("com.google.android.googlequicksearchbox",
-                                                "com.google.android.launcher.GEL"));
-                                startActivity(intent);
-                            }, 500);
-                        }
-                    });
-        } else {
-            new LauncherApplier(ApplyActivity.this, item.getLabel());
-        }
-    };
-
-    private void applyToPixel() {
-        new PixelLauncherApplier(ApplyActivity.this).apply()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<String>>() {
-                    private ProgressDialog mDialog;
-
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        mDialog = new ProgressDialog(
-                                ApplyActivity.this);
-                        mDialog.setMessage(ResourceUtil
-                                .getString(mContext, R.string.apply_for_pixel_applying));
-                        mDialog.show();
-                    }
-
-                    @Override
-                    public void onNext(List<String> list) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Timber.e(e);
-                        mDialog.dismiss();
-                        Toast.makeText(mContext,
-                                ResourceUtil.getString(mContext, R.string.apply_for_pixel_fail)
-                                        + "\n" + e.getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        mDialog.dismiss();
-                        Toast.makeText(mContext, R.string.apply_for_pixel_success,
-                                Toast.LENGTH_SHORT)
-                                .show();
-                        mActivity.getWindow().getDecorView()
-                                .postDelayed(() -> {
-                                    Intent intent = new Intent(
-                                            Intent.ACTION_MAIN);
-                                    intent.setComponent(new ComponentName(
-                                            "com.google.android.apps.nexuslauncher",
-                                            "com.google.android.apps.nexuslauncher.NexusLauncherActivity"));
+                            @Override
+                            public void onComplete() {
+                                mDialog.dismiss();
+                                Toast.makeText(mContext, "success!!!\nenjoy it:)",
+                                        Toast.LENGTH_SHORT)
+                                        .show();
+                                mActivity.getWindow().getDecorView().postDelayed(() -> {
+                                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                                    intent.setComponent(
+                                            new ComponentName(
+                                                    "com.google.android.googlequicksearchbox",
+                                                    "com.google.android.launcher.GEL"));
                                     startActivity(intent);
                                 }, 500);
+                            }
+                        });
+            } else {
+                new LauncherApplier(ApplyActivity.this, item.getLabel());
+            }
+        }
+
+        @Override
+        public void longClick(LauncherInfo item) {
+            if (item.isInstalled() && item.getLabel().toLowerCase().equals("pixel")) {
+                MenuSheetView menuSheetView = new MenuSheetView(ApplyActivity.this,
+                        MenuSheetView.MenuType.LIST,
+                        ResourceUtil.getString(mContext, R.string.options), menuItem -> {
+                    if (menuItem.getItemId() == R.id.action_restore) {
+                        PixelApplyActivity.apply(mContext, false);
+                    } else if (menuItem.getItemId() == R.id.action_apply_icons) {
+                        PixelApplyActivity.apply(mContext, true);
                     }
+                    mBottomSheetLayout.post(() -> mBottomSheetLayout.dismissSheet());
+                    return false;
                 });
-    }
+                menuSheetView.inflateMenu(R.menu.menu_apply_database);
+                mBottomSheetLayout.setShouldDimContentView(true);
+                mBottomSheetLayout.showWithSheetView(menuSheetView);
+            }else if(item.isInstalled() && item.getLabel().toLowerCase().equals("smartisan")){
+                MenuSheetView menuSheetView = new MenuSheetView(ApplyActivity.this,
+                        MenuSheetView.MenuType.LIST,
+                        ResourceUtil.getString(mContext, R.string.options), menuItem -> {
+                    if (menuItem.getItemId() == R.id.action_restore) {
+                        SmartisanApplyActivity.apply(mContext, false);
+                    } else if (menuItem.getItemId() == R.id.action_apply_icons) {
+                        SmartisanApplyActivity.apply(mContext, true);
+                    }
+                    mBottomSheetLayout.post(() -> mBottomSheetLayout.dismissSheet());
+                    return false;
+                });
+                menuSheetView.inflateMenu(R.menu.menu_apply_database);
+                mBottomSheetLayout.setShouldDimContentView(true);
+                mBottomSheetLayout.showWithSheetView(menuSheetView);
+            }
+            else {
+                click(item);
+            }
+        }
+    };
 
     @Override
     protected int provideLayoutId() {

@@ -13,9 +13,9 @@ import android.os.Build;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
+import com.sorcerer.sorcery.iconpack.apply.LauncherInfo;
 import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.data.models.AppfilterItem;
-import com.sorcerer.sorcery.iconpack.data.models.LauncherInfo;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -36,6 +36,17 @@ import timber.log.Timber;
  * @date: 2016/4/26
  */
 public class PackageUtil {
+    public static boolean isInstallFromPlay(Context context) {
+        try {
+            PackageManager pm = context.getApplicationContext().getPackageManager();
+            String installer = pm.getInstallerPackageName(context.getPackageName());
+            return "com.android.vending".equals(installer);
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+        return true;
+    }
+
     public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon)
             throws Exception {
         PackageManager pm = context.getApplicationContext().getPackageManager();

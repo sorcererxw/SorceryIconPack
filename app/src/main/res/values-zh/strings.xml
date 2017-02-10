@@ -197,15 +197,20 @@
     <string name="search_edit_hint">搜索图标…</string>
     <string name="about_dialog_slogan">让质感美化你的屏幕</string>
     <string name="about_dialog_icon_count">包含 %d 个图标</string>
-    <string name="apply_for_pixel_declaration_content">由于pixel launcher 本身并不支持用户去自定义图标, 所以Sorcery
+    <string name="apply_by_database_declaration_content">由于{} launcher 本身并不支持用户去自定义图标, 所以Sorcery
         Icons 会通过Root权限去修改这个launcher的数据|所以需要授予root权限和外部存储读写权限|由于只是修改了启动器的缓存文件, 所以图标可能在对应应用更新后恢复原样,
         届时需要再一次进行替换操作
     </string>
-    <string name="apply_for_pixel_declaration_title">说明</string>
-    <string name="apply_for_pixel_no_root_access">需要Root权限</string>
-    <string name="apply_for_pixel_success">操作成功</string>
-    <string name="apply_for_pixel_no_sdcard_permission">需要外部读写权限</string>
-    <string name="apply_for_pixel_fail">不好意思, 操作失败了</string>
-    <string name="apply_for_pixel_applying">请稍待片刻……</string>
+    <string name="apply_by_database_declaration_title">说明</string>
+    <string name="apply_by_database_no_root_access">需要Root权限</string>
+    <string name="apply_by_database_success">操作成功</string>
+    <string name="apply_by_database_no_sdcard_permission">需要外部读写权限</string>
+    <string name="apply_by_database_fail">不好意思, 操作失败了</string>
+    <string name="apply_by_database_applying">请稍待片刻……</string>
     <string name="error">错误</string>
+    <string name="action_restore_to_default">恢复默认</string>
+    <string name="action_apply_icons">应用图标</string>
+    <string name="options">选项</string>
+    <string name="shortcuts_apply_pixel_short_label">刷新Pixel图标</string>
+    <string name="shortcuts_apply_pixel_long_label">刷新Pixel启动器图标</string>
 </resources>

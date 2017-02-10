@@ -12,7 +12,7 @@
         android:layout_height="@dimen/medium_button_height"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
-        android:background="@color/alipay"
+        android:background="@color/color_alipay"
         android:text="@string/alipay"/>
 
     <com.sorcerer.sorcery.iconpack.ui.views.materialDesignLibrary.views.ButtonRectangle
@@ -21,7 +21,7 @@
         android:layout_height="@dimen/medium_button_height"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
-        android:background="@color/wechat"
+        android:background="@color/color_wechat"
         android:text="@string/wechat"
         android:visibility="gone"/>
 
@@ -32,7 +32,7 @@
         android:layout_height="@dimen/medium_button_height"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
-        android:background="@color/google_play"
+        android:background="@color/color_google_play"
         android:text="Google Play"/>
 
 </LinearLayout>

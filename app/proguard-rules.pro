@@ -113,6 +113,13 @@
 -keeppackagenames org.jsoup.nodes
 ##-------------------
 
+##--------Iconics-------
+-keep class .R
+-keep class **.R$* {
+    <fields>;
+}
+##---------------------
+
 #混淆时不使用大小写混合类名
 #-dontusemixedcaseclassnames
 #不跳过library中的非public的类

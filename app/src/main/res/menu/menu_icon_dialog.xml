@@ -7,11 +7,11 @@
         android:id="@+id/action_show_in_store"
         android:title="@string/action_show_in_store"/>
 
-    <item
-        android:id="@+id/action_show_origin_icon"
-        android:icon="@drawable/ic_compare_black_24dp"
-        android:title="@string/action_show_origin_icon"
-        app:showAsAction="always"/>
+    <!--<item-->
+        <!--android:id="@+id/action_show_origin_icon"-->
+        <!--android:icon="@drawable/ic_compare_black_24dp"-->
+        <!--android:title="@string/action_show_origin_icon"-->
+        <!--app:showAsAction="always"/>-->
 
     <item
         android:visible="false"

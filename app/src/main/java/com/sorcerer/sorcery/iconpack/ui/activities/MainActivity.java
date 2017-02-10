@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -139,6 +140,13 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void init() {
+        if (!PackageUtil.isInstallFromPlay(this) && BuildConfig.ONLY_FOR_PLAY) {
+            Toast.makeText(mContext, "This version can only be installed by google play to use",
+                    Toast.LENGTH_SHORT)
+                    .show();
+            finish();
+        }
+
         getWindow().setBackgroundDrawable(null);
 
         mLaunchIntent = getIntent();
@@ -175,9 +183,7 @@ public class MainActivity extends BaseActivity {
         });
         mSearchToolbar.setTitle("Sorcery Icons");
 
-        if (!mCustomPicker) {
-//            showPermissionDialog();
-        } else {
+        if (mCustomPicker) {
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 getSupportActionBar().setTitle(getString(R.string.select_an_icon));
@@ -343,6 +349,12 @@ public class MainActivity extends BaseActivity {
                         .withTextColorRes(textColorRes)
                         .withName(R.string.nav_item_lab));
             }
+            mDrawer.addItems(new PrimaryDrawerItem()
+                    .withSetSelected(false)
+                    .withSelectable(false)
+                    .withTag("test")
+                    .withTextColorRes(textColorRes)
+                    .withName("Test"));
         }
 
         mDrawer.setOnDrawerItemClickListener((view, position, drawerItem) -> {
@@ -367,6 +379,9 @@ public class MainActivity extends BaseActivity {
                     break;
                 case "suggest":
                     mNavigator.toFeedbackChatActivity();
+                    break;
+                case "test":
+                    mNavigator.toTestActivity();
                     break;
             }
             return false;

@@ -5,6 +5,7 @@ import android.os.Build;
 import com.coolapk.market.util.AuthUtils;
 import com.google.gson.GsonBuilder;
 import com.sorcerer.sorcery.iconpack.net.coolapk.models.CoolapkSearchResult;
+import com.sorcerer.sorcery.iconpack.net.spiders.models.AppDisplayInfo;
 
 import io.reactivex.Observable;
 import okhttp3.OkHttpClient;
@@ -67,6 +68,26 @@ public class CoolapkClient {
 
     public Observable<CoolapkSearchResult> search(String q) {
         return mService.search(q);
+    }
+
+    public Observable<AppDisplayInfo> getAppDisplayInfo(String packageName) {
+        return mService.getAppDetail(packageName)
+                .map(coolapkAppDetail -> {
+                    AppDisplayInfo info = new AppDisplayInfo();
+                    if (coolapkAppDetail.getStatus() != 0 || coolapkAppDetail.getData() == null) {
+                        return info;
+                    }
+                    String title = coolapkAppDetail.getData().getTitle();
+                    String[] titles = title.split(":");
+                    if (titles.length == 2) {
+                        info.setAppName(titles[0]);
+                    } else {
+                        info.setAppName(title);
+                    }
+                    String icon = coolapkAppDetail.getData().getLogo();
+                    info.setIconUrl(icon);
+                    return info;
+                });
     }
 
     public Observable<String> getAppName(String packageName) {

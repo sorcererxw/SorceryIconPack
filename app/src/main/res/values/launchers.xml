@@ -31,7 +31,7 @@
     <string-array name="apply_systems"
                   translatable="false">
         <item>Flyme|com.meizu.customizecenter</item>
-        <!--<item>MIUI|com.android.thememanager</item>-->
+        <item>MIUI|com.android.thememanager</item>
         <!--<item>CM Theme Engine|org.cyanogenmod.theme.chooser|org.cyanogenmod.theme.chooser2</item>-->
         <item>Unicon|sg.ruqqq.IconThemer</item>
     </string-array>
@@ -44,6 +44,7 @@
         <item>Nova|com.teslacoilsw.launcher</item>
         <!--<item>Google Now|com.google.android.googlequicksearchbox</item>-->
         <item>Pixel|com.google.android.apps.nexuslauncher</item>
+        <item>Smartisan|com.smartisanos.home</item>
         <item>Smart|ginlemon.flowerfree</item>
         <item>Smart Pro|ginlemon.flowerpro</item>
         <item>Arrow|com.microsoft.launcher</item>

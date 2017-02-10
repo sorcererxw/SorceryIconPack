@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
+import android.text.TextUtils;
+
 import timber.log.Timber;
 
 /**
@@ -8,10 +10,6 @@ import timber.log.Timber;
  * @date: 2016/4/26
  */
 public class StringUtil {
-    public static boolean isNullOrEmpty(String s) {
-        return s == null || s.isEmpty();
-    }
-
     public static boolean isMail(String mail) {
         return mail.matches("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\\.[a-zA-Z0_9_-]{2,3}){1,2})$");
     }

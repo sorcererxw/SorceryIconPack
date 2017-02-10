@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -13,7 +14,7 @@ import butterknife.BindView;
  */
 public abstract class UniversalToolbarActivity extends ToolbarActivity {
     @BindView(R.id.toolbar_universal)
-    Toolbar mToolbar;
+    protected Toolbar mToolbar;
 
     @Override
     protected Toolbar provideToolbar() {

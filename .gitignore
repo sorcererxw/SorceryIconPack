@@ -11,12 +11,13 @@ private.xml
 /app/src/main/res/drawable-nodpi
 /keystore
 /dictionary-elder.txt
-/app/src/main/java/com/sorcerer/sorcery/iconpack/appliers/xposed
-/app/src/main/java/com/sorcerer/sorcery/iconpack/appliers/database
-/app/src/main/java/com/sorcerer/sorcery/iconpack/xposed
-/app/src/main/java/com/sorcerer/sorcery/iconpack/net/leancloud
-/app/src/main/java/com/sorcerer/sorcery/iconpack/net/avos
-/app/src/main/java/com/sorcerer/sorcery/iconpack/net/spiders
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/appliers/xposed
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/appliers/database
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/xposed
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/net/leancloud
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/net/avos
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/net/spiders
+#/app/src/main/java/com/sorcerer/sorcery/iconpack/test
 
 .idea/dbnavigator.xml
 testProgram/

@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.data.models;
+package com.sorcerer.sorcery.iconpack.apply;
 
 import android.content.Context;
 import android.support.annotation.DrawableRes;
@@ -99,6 +99,9 @@ public class LauncherInfo implements Comparable {
                 break;
             case "evie":
                 mIcon = R.drawable.evie_launcher;
+                break;
+            case "smartisan":
+                mIcon = R.drawable.smartisan_launcher;
                 break;
             default:
                 Timber.d("%s: no such launcher", mLabel);

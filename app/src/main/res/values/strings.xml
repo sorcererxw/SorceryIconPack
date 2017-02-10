@@ -33,6 +33,8 @@
     <string name="action_know_what_doing">I know what I\'m doing</string>
     <string name="action_later">Maybe later</string>
     <string name="action_soft_reboot">soft reboot</string>
+    <string name="action_restore_to_default">Restore to default</string>
+    <string name="action_apply_icons">Apply icons</string>
 
     <string name="permission_request_title">Need Permission</string>
     <string name="permission_request_content">For better experience with the app, please grant
@@ -61,6 +63,7 @@
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="ok">OK</string>
+    <string name="options">Options</string>
 
     <string name="RMB">yuan</string>
 
@@ -254,6 +257,9 @@
     <string name="shortcuts_request_icon_long_label">Request Icon</string>
     <string name="shortcuts_request_icon_short_label">Request Icon</string>
 
+    <string name="shortcuts_apply_pixel_long_label">Refrsh Pixel Launcher Icons</string>
+    <string name="shortcuts_apply_pixel_short_label">Refresh Pixel Icons</string>
+
     <string name="preference_group_general">General</string>
     <string name="preference_general_clear_cache">Clear cache</string>
 
@@ -269,20 +275,20 @@
     <string name="restart_to_take_effect">restart to take effect</string>
     <string name="search_hint_not_found">Oops…Not found</string>
 
-    <string name="apply_for_pixel_declaration_title">Declaration</string>
-    <string name="apply_for_pixel_declaration_content">Since the pixel launcher itself does not
+    <string name="apply_by_database_declaration_title">Declaration</string>
+    <string name="apply_by_database_declaration_content">Since the {} launcher itself does not
         support custom icons, Sorcery Icons will modify the launcher\'s data with root
         privileges.|So you need to grant root privileges and external storage read and write
         permissions.|Since it modified the cache file of the launcher, the icon may be restored
         after the corresponding application updating, and the replacement operation will need to be
         performed again.
     </string>
-    <string name="apply_for_pixel_no_root_access">Root is required</string>
-    <string name="apply_for_pixel_no_sdcard_permission">External read and write permissions are
+    <string name="apply_by_database_no_root_access">Root is required</string>
+    <string name="apply_by_database_no_sdcard_permission">External read and write permissions are
         required
     </string>
-    <string name="apply_for_pixel_fail">Sorry, operation failed</string>
-    <string name="apply_for_pixel_success">Success, enjoy it:)</string>
-    <string name="apply_for_pixel_applying">please wait a moment……</string>
+    <string name="apply_by_database_fail">Sorry, operation failed</string>
+    <string name="apply_by_database_success">Success, enjoy it:)</string>
+    <string name="apply_by_database_applying">please wait a moment……</string>
     <string name="error">Error</string>
 </resources>

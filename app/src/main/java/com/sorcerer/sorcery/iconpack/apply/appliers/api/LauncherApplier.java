@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.appliers.launcher;
+package com.sorcerer.sorcery.iconpack.apply.appliers.api;
 
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -100,6 +100,9 @@ public class LauncherApplier {
                 break;
             case "evie":
                 EvieLauncher(context);
+                break;
+            case "solid":
+                solidLauncher(context);
                 break;
             default:
                 Timber.d("No method for: %s", launcherName);
@@ -329,6 +332,13 @@ public class LauncherApplier {
         unicon.addCategory("android.intent.category.LAUNCHER");
         unicon.setPackage("sg.ruqqq.IconThemer");
         context.startActivity(unicon);
+    }
+
+    private void solidLauncher(Context context) {
+        Intent intent = new Intent("com.majeur.launcher.intent.action.CHANGE_ICON_PACK");
+        intent.putExtra("com.majeur.launcher.intent.extra.ICON_PACK_PACKAGE",
+                context.getPackageName());
+        context.startActivity(intent);
     }
 
     //for theme support

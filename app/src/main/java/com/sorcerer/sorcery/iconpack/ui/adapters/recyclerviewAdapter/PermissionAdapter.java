@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +60,7 @@ public class PermissionAdapter
 
     @Override
     public void onBindViewHolder(PermissionViewHolder holder, int position) {
-        if (StringUtil.isNullOrEmpty(mPermissionBeanList.get(position).getTitle())) {
+        if (TextUtils.isEmpty(mPermissionBeanList.get(position).getTitle())) {
             holder.title.setVisibility(View.GONE);
             holder.describe.setTextSize(16);
         } else {
