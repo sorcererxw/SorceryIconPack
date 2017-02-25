@@ -16,10 +16,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 
 import butterknife.BindView;
 import butterknife.OnClick;

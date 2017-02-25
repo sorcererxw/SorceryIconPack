@@ -4,8 +4,11 @@ import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.ViewPropertyAnimator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Scroller;
+
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 
 /**
  * @description:
@@ -36,6 +39,8 @@ public class QCardView extends CardView {
     public QCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mScroller = new Scroller(context);
+        setTranslationZ(DisplayUtil.dip2px(context, 2));
+
     }
 
     public boolean isTouchable() {
@@ -76,6 +81,14 @@ public class QCardView extends CardView {
                 }
                 lastX = x;
                 lastY = y;
+
+//                if (Build.VERSION.SDK_INT >= 21) {
+//                    animate().translationZ(DisplayUtil.dip2px(getContext(), 8))
+//                            .setDuration(200)
+//                            .setInterpolator(new OvershootInterpolator())
+//                            .start();
+//                }
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 int offsetX = x - lastX;
@@ -88,9 +101,13 @@ public class QCardView extends CardView {
                 if (mTouchCallBack != null) {
                     mTouchCallBack.onUp();
                 }
-                animate().translationX(0)
-                        .translationY(0)
-                        .setDuration(500)
+
+                ViewPropertyAnimator animatorUp = animate().translationX(0)
+                        .translationY(0);
+//                if (Build.VERSION.SDK_INT >= 21) {
+//                    animatorUp.translationZ(DisplayUtil.dip2px(getContext(), 2));
+//                }
+                animatorUp.setDuration(500)
                         .setInterpolator(new OvershootInterpolator())
                         .start();
                 break;

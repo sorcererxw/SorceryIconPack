@@ -21,6 +21,6 @@ public class PixelApplySingleInstanceActivity extends PixelApplyActivity {
 
     @Override
     protected void doFinish() {
-        new Handler().postDelayed(this::finish,5000);
+        new Handler().postDelayed(this::finish, 5000);
     }
 }

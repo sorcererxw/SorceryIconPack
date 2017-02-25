@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 
+import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 
@@ -15,14 +16,16 @@ import timber.log.Timber;
  * @date: 2016/1/24 0024
  */
 public class LauncherInfo implements Comparable {
-    private boolean mIsInstalled;
+    private boolean mIsInstalled = true;
     private String mLabel;
     private int mIcon;
-    private String mPackageName;
+    private String[] mPackageNames;
 
-    public LauncherInfo(Context context, String packageName, String label) {
-        mPackageName = packageName;
-        mIsInstalled = PackageUtil.isLauncherInstalled(context, packageName);
+    public LauncherInfo(Context context, String label, String... packageNames) {
+        mPackageNames = packageNames;
+        Stream.of(packageNames)
+                .map(packageName -> PackageUtil.isLauncherInstalled(context, packageName))
+                .forEach(installed -> mIsInstalled = mIsInstalled & installed);
         mLabel = label;
         setIcon();
     }
@@ -52,11 +55,7 @@ public class LauncherInfo implements Comparable {
     }
 
     public String getPackageName() {
-        return mPackageName;
-    }
-
-    public void setPackageName(String packageName) {
-        mPackageName = packageName;
+        return mPackageNames[0];
     }
 
     private void setIcon() {
@@ -102,6 +101,12 @@ public class LauncherInfo implements Comparable {
                 break;
             case "smartisan":
                 mIcon = R.drawable.smartisan_launcher;
+                break;
+            case "solid":
+                mIcon = R.drawable.solid_launcher;
+                break;
+            case "xposed":
+                mIcon = R.drawable.xposed;
                 break;
             default:
                 Timber.d("%s: no such launcher", mLabel);

@@ -1,5 +1,9 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
+import android.content.Context;
+import android.net.wifi.WifiManager;
+import android.text.format.Formatter;
+
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -9,6 +13,8 @@ import java.security.cert.X509Certificate;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.X509TrustManager;
+
+import static android.content.Context.WIFI_SERVICE;
 
 /**
  * @description:
@@ -35,5 +41,10 @@ public class NetUtil {
             }
         }}, new SecureRandom());
         HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());
+    }
+
+    public static String getIpAddress(Context context) {
+        WifiManager wm = (WifiManager) context.getSystemService(WIFI_SERVICE);
+        return Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
     }
 }

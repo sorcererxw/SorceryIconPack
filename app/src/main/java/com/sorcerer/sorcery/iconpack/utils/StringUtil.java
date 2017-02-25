@@ -1,7 +1,5 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
-import android.text.TextUtils;
-
 import timber.log.Timber;
 
 /**
@@ -25,8 +23,8 @@ public class StringUtil {
             return componentInfo.split("/")[0].split("\\{")[1];
         } catch (Exception e) {
             Timber.e(e);
-            return null;
         }
+        return null;
     }
 
 }

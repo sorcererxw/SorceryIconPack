@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.avos.avoscloud.AVAnalytics;
 
@@ -21,17 +20,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Context mContext = this;
     protected Activity mActivity = this;
 
-    protected final String TAG = this.getClass().getSimpleName();
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hookBeforeSetContentView();
-        Log.i(TAG, "onCreate");
-        long setContentViewTime = System.currentTimeMillis();
         setContentView(provideLayoutId());
-        Log.d("timer",
-                "setContentViewTime: " + (System.currentTimeMillis() - setContentViewTime));
         ButterKnife.bind(this);
         init();
     }

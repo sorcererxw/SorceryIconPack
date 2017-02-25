@@ -8,7 +8,6 @@ import android.view.MenuItem;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.base.SlideInAndOutAppCompatActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.HelpAdapter;
 
 import butterknife.BindView;

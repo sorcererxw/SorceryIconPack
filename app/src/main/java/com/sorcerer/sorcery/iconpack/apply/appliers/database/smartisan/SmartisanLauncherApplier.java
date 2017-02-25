@@ -9,11 +9,12 @@ import android.graphics.BitmapFactory;
 
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.apply.appliers.database.base.ILauncherApplier;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
-import com.sorcerer.sorcery.iconpack.su.RxSU;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.su.RxSU;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ import timber.log.Timber;
  * @date: 2017/2/10
  */
 
-public class SmartisanLauncherApplier {
+class SmartisanLauncherApplier implements ILauncherApplier {
 
     private static final String LAUNCHER_PACKAGE = "com.smartisanos.home";
 

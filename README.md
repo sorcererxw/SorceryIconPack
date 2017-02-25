@@ -9,3 +9,5 @@ A custom icon pack
 [link](https://github.com/sorcererXW/SorceryIconPack/blob/master/Plan.md)
 
 ## LICENSE
+
+[licence](https://github.com/sorcererXW/SorceryIconPack/blob/master/LICENSE)

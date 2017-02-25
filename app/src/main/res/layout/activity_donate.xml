@@ -81,7 +81,6 @@
                 android:layout_marginTop="16dp"
                 android:visibility="gone"
                 app:cardCornerRadius="6dp"
-                app:cardElevation="8dp"
                 tools:layout_height="100dp"
                 tools:layout_width="304dp">
 

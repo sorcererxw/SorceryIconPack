@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sorcery 图标包</string>
+    <string name="app_name">Sorcery图标</string>
 
     <string name="action_feedback">反馈</string>
     <string name="action_welcome">感谢使用</string>
@@ -213,4 +213,23 @@
     <string name="options">选项</string>
     <string name="shortcuts_apply_pixel_short_label">刷新Pixel图标</string>
     <string name="shortcuts_apply_pixel_long_label">刷新Pixel启动器图标</string>
+    <string name="nav_item_custom_workshop">自定义工坊</string>
+    <string name="action_disable_round_icon">禁用圆形图标</string>
+    <string name="nav_item_apply_xposed">全局加载</string>
+    <string name="preference_apply_xposed_refresh_icons">刷新图标</string>
+    <string name="preference_apply_xposed_clear_nova_cache">清除Nova启动器的图标缓存</string>
+    <string name="preference_apply_xposed_options">选项</string>
+    <string name="preference_apply_xposed_clear_nova_cache_summary">如果全局加载无法在Nova启动器上生效, 请尝试清除缓存
+    </string>
+    <string name="preference_apply_xposed_reboot_summary">重启以生效</string>
+    <string name="preference_apply_xposed_reboot">重启设备</string>
+    <string name="apply_by_xposed_success_dialog_title">成功</string>
+    <string name="apply_by_xposed_success_dialog_positive">重启</string>
+    <string name="apply_by_xposed_success_dialog_negative">稍后</string>
+    <string name="apply_by_xposed_success_dialog_content">重启后才可生效</string>
+    <string name="apply_by_xposed_no_xposed">需要Xposed框架</string>
+    <string name="preference_apply_xposed_selinux">关于SELinux</string>
+    <string name="preference_apply_xposed_selinux_summary">全局加载可能无法在SELinux执行的环境下正常运行, 点击了解详情
+    </string>
+    <string name="preference_apply_xposed_selinux_executing">SELinux正在执行</string>
 </resources>

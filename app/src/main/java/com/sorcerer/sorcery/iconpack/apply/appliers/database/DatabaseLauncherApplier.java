@@ -8,10 +8,10 @@ import android.graphics.BitmapFactory;
 
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
-import com.sorcerer.sorcery.iconpack.su.RxSU;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.su.RxSU;
 
 import java.io.File;
 import java.util.HashMap;

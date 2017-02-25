@@ -9,7 +9,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.os.Build;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
@@ -23,6 +22,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -368,7 +368,8 @@ public class PackageUtil {
         return Stream.of(launchers)
                 .map(launcher -> {
                     String[] tmp = launcher.split("\\|");
-                    return new LauncherInfo(context, tmp[1], tmp[0]);
+                    String[] packageNames = Arrays.copyOfRange(tmp, 1, tmp.length);
+                    return new LauncherInfo(context, tmp[0], packageNames);
                 })
                 .collect(Collectors.toList());
     }
@@ -389,11 +390,7 @@ public class PackageUtil {
             if (appInfo != null) {
                 Configuration config = new Configuration();
 
-                if (Build.VERSION.SDK_INT >= 17) {
-                    config.setLocale(locale);
-                } else {
-                    config.locale = locale;
-                }
+                config.setLocale(locale);
 
                 final Resources appRes = pm.getResourcesForApplication(packageName);
 

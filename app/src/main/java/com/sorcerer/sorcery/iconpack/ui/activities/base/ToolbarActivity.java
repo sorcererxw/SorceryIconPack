@@ -14,22 +14,18 @@ import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
  * @date: 2016/5/30 0030
  */
 public abstract class ToolbarActivity extends BaseActivity {
-    protected abstract Toolbar provideToolbar();
+    protected abstract Toolbar getToolbar();
 
     @Override
     protected void init() {
-        assert provideToolbar() != null;
-        setSupportActionBar(provideToolbar());
+        assert this.getToolbar() != null;
+        setSupportActionBar(this.getToolbar());
     }
 
     protected void setToolbarText(String s) {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(s);
         }
-    }
-
-    protected Toolbar getToolbar() {
-        return provideToolbar();
     }
 
     protected void setToolbarCloseIndicator() {
@@ -55,7 +51,7 @@ public abstract class ToolbarActivity extends BaseActivity {
                 this,
                 new ToolbarOnGestureListener(listener)
         );
-        provideToolbar().setOnTouchListener((v, event) -> {
+        this.getToolbar().setOnTouchListener((v, event) -> {
             detector.onTouchEvent(event);
             return true;
         });

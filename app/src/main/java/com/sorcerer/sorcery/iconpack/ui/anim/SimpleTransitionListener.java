@@ -1,7 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.anim;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.transition.Transition;
 
 /**
@@ -10,7 +8,6 @@ import android.transition.Transition;
  * @date: 2016/11/4
  */
 
-@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class SimpleTransitionListener implements Transition.TransitionListener {
     @Override
     public void onTransitionStart(Transition transition) {

@@ -2,9 +2,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/relativeLayout_icon_gird"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
 
     <android.support.v7.widget.RecyclerView
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
         android:id="@+id/recyclerView_icon_gird"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,4 +18,9 @@
         android:overScrollMode="never"
         android:scrollbars="none"/>
 
+    <!--<com.turingtechnologies.materialscrollbar.DragScrollBar-->
+    <!--android:id="@+id/dragScrollBar"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--app:msb_lightOnTouch="true"-->
+    <!--android:layout_height="match_parent" />-->
 </RelativeLayout>

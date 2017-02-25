@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.apply.appliers.database.pixel;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,11 +10,12 @@ import android.graphics.BitmapFactory;
 
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.apply.appliers.database.base.ILauncherApplier;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
-import com.sorcerer.sorcery.iconpack.su.RxSU;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.su.RxSU;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -31,13 +33,11 @@ import timber.log.Timber;
  * @date: 2017/2/2
  */
 
-public class PixelLauncherApplier {
+class PixelLauncherApplier implements ILauncherApplier {
 
     private static final String LAUNCHER_PACKAGE = "com.google.android.apps.nexuslauncher";
 
-    private static final String LAUNCHER_PATH =
-            "/data/data/com.google.android.apps.nexuslauncher/databases/launcher.db";
-
+    @SuppressLint("SdCardPath")
     private static final String APP_ICONS_PATH =
             "/data/data/com.google.android.apps.nexuslauncher/databases/app_icons.db";
 
@@ -54,7 +54,8 @@ public class PixelLauncherApplier {
         return RxSU.getInstance().su().filter(grant -> {
             if (!grant) {
                 throw new Exception(
-                        ResourceUtil.getString(mContext, R.string.apply_by_database_no_root_access));
+                        ResourceUtil
+                                .getString(mContext, R.string.apply_by_database_no_root_access));
             }
             return true;
         })
@@ -104,7 +105,7 @@ public class PixelLauncherApplier {
                                         ResourceUtil.getDrawableRes(mContext, icon.getDrawable()))
                                         .copy(Bitmap.Config.ARGB_8888, true),
                                 192, 192);
-                        if (icon.getProfileId() == 10) {
+                        if (icon.getProfileId() != 0) {
                             bitmap = ImageUtil.overlay(bitmap, androidWorkIndicator);
                         }
                         byte[] flatBitmap = ImageUtil.flattenBitmap(bitmap);
@@ -137,7 +138,7 @@ public class PixelLauncherApplier {
         private String mDrawable;
         private int mProfileId;
 
-        public IconReplacement(String component, String drawable, int profileId) {
+        IconReplacement(String component, String drawable, int profileId) {
             mComponent = component;
             mDrawable = drawable;
             mProfileId = profileId;

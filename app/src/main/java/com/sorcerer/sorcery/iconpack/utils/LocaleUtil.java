@@ -11,7 +11,7 @@ import com.sorcerer.sorcery.iconpack.R;
  */
 
 public class LocaleUtil {
-    public static boolean isChinese(Context context){
+    public static boolean isChinese(Context context) {
         return context.getResources().getString(R.string.language).equals("zh");
     }
 }

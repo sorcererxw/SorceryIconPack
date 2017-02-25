@@ -12,6 +12,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sorcerer.sorcery.iconpack.test.TestActivity">
 
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <Button android:id="@+id/test_button_shortcut_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="create"/>
+
+        <Button android:id="@+id/test_button_shortcut_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="change"/>
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/test_imageView"
         android:layout_width="wrap_content"

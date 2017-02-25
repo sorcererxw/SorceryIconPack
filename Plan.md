@@ -8,10 +8,10 @@
     - [x] Modify `2016-11-20`
     - [x] Commit again `2016-11-20`
 - [ ] Better universal icon loading
-    - [ ] Fix bugs
+    - [x] Fix bugs
     - [ ] Enable to select which icon to load
-- [ ] Better search bar
-    - [ ] Chinese support
+- [x] Better search bar
+    - [x] Chinese support
     - [x] Dialer-like Search transition
         - [x] Search bar transition `2016-11-6`
         - [x] Response of search `2016-11-8`
@@ -21,6 +21,6 @@
 - [x] Waterfall-flow-layout in help list `2016-11-9`
 - [ ] Google Play pay support
 - [ ] Feedback reply notification
-- [ ] MIUI theme
+- [x] MIUI theme
 - [ ] User guide
 - [ ] ~~Hot Fix support~~

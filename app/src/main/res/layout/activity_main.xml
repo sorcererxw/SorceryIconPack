@@ -20,13 +20,13 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar
-                android:foreground="?attr/selectableItemBackground"
                 android:id="@+id/exposedSearchToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/padding_tight"
                 android:elevation="@dimen/toolbar_elevation"
+                android:foreground="?attr/selectableItemBackground"
                 app:layout_scrollFlags="scroll|enterAlways"/>
         </FrameLayout>
     </android.support.design.widget.AppBarLayout>
@@ -53,6 +53,7 @@
             android:id="@+id/viewPager_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

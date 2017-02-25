@@ -10,10 +10,14 @@
 
     <include layout="@layout/toolbar_universal"/>
 
-    <fragment
-        android:id="@+id/fragment_settings"
-        android:name="com.sorcerer.sorcery.iconpack.settings.SettingsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <FrameLayout android:id="@+id/frameLayout_settings_fragment_container"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"/>
+
+    <!--<fragment-->
+    <!--android:id="@+id/fragment_settings"-->
+    <!--android:name="com.sorcerer.sorcery.iconpack.settings.SettingsFragment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
 
 </LinearLayout>

@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.LikePrefs;
+import com.sorcerer.sorcery.iconpack.settings.prefs.LikePrefs;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindView;

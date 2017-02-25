@@ -335,10 +335,15 @@ public class LauncherApplier {
     }
 
     private void solidLauncher(Context context) {
-        Intent intent = new Intent("com.majeur.launcher.intent.action.CHANGE_ICON_PACK");
-        intent.putExtra("com.majeur.launcher.intent.extra.ICON_PACK_PACKAGE",
-                context.getPackageName());
-        context.startActivity(intent);
+        try {
+            Intent intent = new Intent("com.majeur.launcher.intent.action.CHANGE_ICON_PACK");
+            intent.putExtra("com.majeur.launcher.intent.extra.ICON_PACK_PACKAGE",
+                    context.getPackageName());
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        } catch (Exception e) {
+            Timber.e(e);
+        }
     }
 
     //for theme support

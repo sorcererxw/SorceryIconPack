@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.net.Uri;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.test.TestActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.AppSelectActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.ApplyActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.FeedbackChatActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.HelpActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.LabActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.SearchActivity;
+import com.sorcerer.sorcery.iconpack.apply.ApplyActivity;
+import com.sorcerer.sorcery.iconpack.customWorkshop.CustomWorkshopActivity;
+import com.sorcerer.sorcery.iconpack.feedback.chat.FeedbackChatActivity;
+import com.sorcerer.sorcery.iconpack.feedback.request.AppSelectActivity;
+import com.sorcerer.sorcery.iconpack.search.SearchActivity;
 import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
+import com.sorcerer.sorcery.iconpack.test.TestActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.HelpActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 
 import rx_activity_result2.RxActivityResult;
 
@@ -40,11 +40,10 @@ public class Navigator {
                     .startIntent(new Intent(mActivity, SearchActivity.class)
                             .addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                             .putExtra("custom picker", mainActivity.isCustomPicker()))
+                    .filter(activityResult -> activityResult.data() != null)
                     .subscribe(result -> {
-                        if (result.data() != null) {
-                            mainActivity.onReturnCustomPickerRes(
-                                    result.data().getIntExtra("icon res", 0));
-                        }
+                        mainActivity.onReturnCustomPickerRes(
+                                result.data().getIntExtra("icon res", 0));
                     });
         } else {
             mActivity.startActivity(new Intent(mActivity, SearchActivity.class)
@@ -66,10 +65,6 @@ public class Navigator {
 //                R.anim.activity_out_scale);
     }
 
-    public void toLabActivity() {
-        mainActivityShift(LabActivity.class);
-    }
-
     public void toAppleActivity() {
         mainActivityShift(ApplyActivity.class);
     }
@@ -86,6 +81,10 @@ public class Navigator {
         mainActivityShift(SettingsActivity.class);
     }
 
+    public void toCustomWorkshopActivity() {
+        mainActivityShift(CustomWorkshopActivity.class);
+    }
+
     public void toTestActivity() {
         Intent intent = new Intent(mActivity, TestActivity.class);
         mActivity.startActivity(intent);
@@ -97,7 +96,7 @@ public class Navigator {
         mActivity.overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
     }
 
-    public static void toWebpage(Context context,String url){
+    public static void toWebpage(Context context, String url) {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         context.startActivity(i);

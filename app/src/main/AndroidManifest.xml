@@ -10,9 +10,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS"/>
+
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
     <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+
+    <uses-sdk xmlns:tools="http://schemas.android.com/tools"
+              tools:overrideLibrary="android.support.v14.preference"/>
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -166,22 +169,23 @@
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PICK"/>
-                <action android:name="android.intent.action.GET_CONTENT"/>
 
-                <category android:name="android.intent.category.OPENABLE"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.PICK"/>-->
+            <!--<action android:name="android.intent.action.GET_CONTENT"/>-->
 
-                <data android:mimeType="image/*"/>
-            </intent-filter>
+            <!--<category android:name="android.intent.category.OPENABLE"/>-->
+            <!--<category android:name="android.intent.category.DEFAULT"/>-->
+
+            <!--<data android:mimeType="image/*"/>-->
+            <!--</intent-filter>-->
 
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts"/>
         </activity>
         <activity
-            android:name=".ui.activities.ApplyActivity"
+            android:name=".apply.ApplyActivity"
             android:label="@string/nav_item_apply"
             android:theme="@style/SubActivity"/>
         <activity
@@ -189,12 +193,12 @@
             android:label="@string/nav_item_donate"
             android:theme="@style/SubActivity"/>
         <activity
-            android:name=".ui.activities.AppSelectActivity"
+            android:name=".feedback.request.AppSelectActivity"
             android:exported="true"
             android:label="@string/request"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".ui.activities.FeedbackChatActivity"
+            android:name=".feedback.chat.FeedbackChatActivity"
             android:label="@string/suggest"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize"/>
@@ -209,7 +213,8 @@
             android:theme="@style/SubActivity">
         </activity>
         <activity
-            android:name=".ui.activities.IconDialogActivity"
+            android:name=".iconShowCase.detail.IconDialogActivity"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.Dialog"/>
         <activity
             android:name=".ui.activities.base.PhotoViewActivity"
@@ -227,7 +232,7 @@
             android:value="30"/>
 
         <activity
-            android:name=".ui.activities.SearchActivity"
+            android:name=".search.SearchActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/SubActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
@@ -236,21 +241,35 @@
             android:name=".settings.SettingsActivity"
             android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity"/>
+        <activity android:name=".customWorkshop.CustomWorkshopActivity"
+                  android:label="@string/nav_item_custom_workshop"
+                  android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.WelcomeActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".appShortcuts.AppShortcutsReceiverActivity"
+        <activity android:name=".shortcuts.AppShortcutsReceiverActivity"
                   android:launchMode="singleInstance"
                   android:theme="@style/Theme.AppCompat.Translucent"/>
         <activity android:name=".apply.appliers.database.pixel.PixelApplyActivity"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
         <activity android:name=".apply.appliers.database.smartisan.SmartisanApplyActivity"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity android:name=".apply.appliers.database.googleNow.GoogleNowApplyActivity"
+                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
         <activity android:name=".apply.appliers.database.pixel.PixelApplySingleInstanceActivity"
                   android:launchMode="singleInstance"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".test.TestActivity">
-        </activity>
+        <activity android:name=".test.TestActivity"/>
+
+        <receiver android:name=".receivers.PackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

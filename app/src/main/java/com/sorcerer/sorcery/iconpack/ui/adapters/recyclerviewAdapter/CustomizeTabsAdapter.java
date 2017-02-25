@@ -9,8 +9,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
+import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconFlag;
+import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import butterknife.BindView;
@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class CustomizeTabsAdapter extends RecyclerView.Adapter<CustomizeTabsAdapter.TabViewHolder> {
 
-    private LazyIconFragment.Flag[] mFlags = LazyIconFragment.Flag.values();
+    private IconFlag[] mFlags = IconFlag.values();
 
     private Context mContext;
 

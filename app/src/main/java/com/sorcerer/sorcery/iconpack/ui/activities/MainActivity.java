@@ -13,11 +13,13 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -34,18 +36,18 @@ import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.PermissionBean;
+import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconFragment;
+import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconViewPageAdapter;
+import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.ViewPageAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
 import com.sorcerer.sorcery.iconpack.ui.anim.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.anim.ViewFader;
-import com.sorcerer.sorcery.iconpack.ui.fragments.LazyIconFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-import com.sorcerer.sorcery.iconpack.utils.Prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -57,6 +59,7 @@ import timber.log.Timber;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
  * Created by Sorcerer on 2016/6/1 0001.
@@ -88,34 +91,33 @@ public class MainActivity extends BaseActivity {
 
     public static final int REQUEST_ICON_DIALOG = 100;
 
-    public static Intent mLaunchIntent;
-    private ViewPageAdapter mPageAdapter;
+    private IconViewPageAdapter mPageAdapter;
     private boolean mCustomPicker = false;
-    private ViewPager.OnPageChangeListener mPageChangeListener =
-            new ViewPager.OnPageChangeListener() {
-
-                @Override
-                public void onPageScrolled(int position, float positionOffset,
-                                           int positionOffsetPixels) {
-                    if (position == 0 && positionOffsetPixels == 0) {
-                        times++;
-                        if (times >= 3) {
-                            openDrawer();
-                        }
-                    }
+    private OnPageChangeListener mPageChangeListener = new OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset,
+                                   int positionOffsetPixels) {
+            if (position == 0 && positionOffsetPixels == 0) {
+                times++;
+                if (times >= 3) {
+                    openDrawer();
                 }
+            }
+        }
 
-                int times = 0;
+        int times = 0;
 
-                @Override
-                public void onPageSelected(int position) {
-                }
+        @Override
+        public void onPageSelected(int position) {
+            mPageAdapter.getItem(mViewPager.getCurrentItem()).onSelected();
+        }
 
-                @Override
-                public void onPageScrollStateChanged(int state) {
-                    times = 0;
-                }
-            };
+        @Override
+        public void onPageScrollStateChanged(int state) {
+            times = 0;
+            mPageAdapter.getItem(mViewPager.getCurrentItem()).onStateChange(state);
+        }
+    };
     private Navigator mNavigator;
     private SearchTransitioner mSearchTransitioner;
     private SorceryPrefs mPrefs;
@@ -142,19 +144,38 @@ public class MainActivity extends BaseActivity {
     protected void init() {
         if (!PackageUtil.isInstallFromPlay(this) && BuildConfig.ONLY_FOR_PLAY) {
             Toast.makeText(mContext, "This version can only be installed by google play to use",
-                    Toast.LENGTH_SHORT)
-                    .show();
+                    Toast.LENGTH_SHORT).show();
             finish();
         }
 
+//        new MaterializeBuilder()
+//                .withActivity(this)
+//                .withStatusBarPadding(true)
+//                .build();
+
+//        SorceryPrefs.getInstance(this)
+//                .enableTransparentNavBar().asObservable()
+//                .subscribe(enable -> {
+//                    Window window = getWindow();
+//                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//                    if (enable) {
+//                        window.getDecorView()
+//                                .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+//                    }
+//                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//                    window.setStatusBarColor(Color.TRANSPARENT);
+//                    window.setNavigationBarColor(enable ? 0x33000000 : 0xff000000);
+//                    new MaterializeBuilder().withActivity(this)
+////                            .withStatusBarPadding(true)
+//                            .withTransparentStatusBar(true)
+//                            .withTranslucentStatusBarProgrammatically(true)
+//                            .withTransparentNavigationBar(enable)
+//                            .withTranslucentNavigationBarProgrammatically(enable).build();
+//                });
+
         getWindow().setBackgroundDrawable(null);
 
-        mLaunchIntent = getIntent();
-        Timber.d(mLaunchIntent.toString());
-        if (mLaunchIntent.getExtras() != null) {
-            Timber.d(mLaunchIntent.getExtras().toString());
-        }
-        mCustomPicker = getIntent().hasCategory("com.novalauncher.category.CUSTOM_ICON_PICKER");
+        mCustomPicker = isCustomPicker(getIntent());
 
         setSupportActionBar(mSearchToolbar);
 
@@ -224,13 +245,9 @@ public class MainActivity extends BaseActivity {
                 builder.adapter(new PermissionAdapter(this, list),
                         new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
                 builder.onPositive((materialDialog, dialogAction) -> {
-                    rxPermissions.request(READ_PHONE_STATE,
-                            WRITE_EXTERNAL_STORAGE)
-                            .subscribe(grant -> {
-                                if (!grant) {
-                                    showPermissionDialog();
-                                }
-                            });
+                    rxPermissions.request(READ_PHONE_STATE, WRITE_EXTERNAL_STORAGE)
+                            .filter(grant -> !grant)
+                            .subscribe(grant -> showPermissionDialog());
                     materialDialog.dismiss();
                 });
                 builder.positiveText(
@@ -246,7 +263,7 @@ public class MainActivity extends BaseActivity {
         mViewPager.addOnPageChangeListener(mPageChangeListener);
         mViewPager.setPageMargin(DisplayUtil.dip2px(mContext, 16));
 
-        mPageAdapter = new ViewPageAdapter(this, getSupportFragmentManager(), mCustomPicker);
+        mPageAdapter = new IconViewPageAdapter(this, getSupportFragmentManager(), mCustomPicker);
 
         mViewPager.setAdapter(mPageAdapter);
 
@@ -255,8 +272,8 @@ public class MainActivity extends BaseActivity {
 
         mTabLayout.setOnTabDoubleTapListener(() -> {
             int index = mViewPager.getCurrentItem();
-            ViewPageAdapter adapter = (ViewPageAdapter) mViewPager.getAdapter();
-            LazyIconFragment fragment = (LazyIconFragment) adapter.getItem(index);
+            IconViewPageAdapter adapter = (IconViewPageAdapter) mViewPager.getAdapter();
+            IconFragment fragment = (IconFragment) adapter.getItem(index);
             if (fragment.getRecyclerView() != null) {
                 fragment.getRecyclerView().smoothScrollToPosition(0);
             }
@@ -339,16 +356,13 @@ public class MainActivity extends BaseActivity {
         }
 
         if (BuildConfig.DEBUG) {
-            if (PackageUtil.isXposedInstalled(this)) {
-                mDrawer.addItem(new PrimaryDrawerItem()
-                        .withSetSelected(false)
-                        .withSelectable(false)
-                        .withTag("lab")
-                        .withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_settings)
-                                .sizeDp(24).color(Color.BLACK).alpha(iconAlpha))
-                        .withTextColorRes(textColorRes)
-                        .withName(R.string.nav_item_lab));
-            }
+            mDrawer.addItemAtPosition(new PrimaryDrawerItem()
+                    .withSetSelected(false)
+                    .withSelectable(false)
+                    .withTag("custom")
+                    .withIcon(GoogleMaterial.Icon.gmd_create)
+                    .withTextColorRes(textColorRes)
+                    .withName(R.string.nav_item_custom_workshop), 1);
             mDrawer.addItems(new PrimaryDrawerItem()
                     .withSetSelected(false)
                     .withSelectable(false)
@@ -361,9 +375,6 @@ public class MainActivity extends BaseActivity {
             switch ((String) drawerItem.getTag()) {
                 case "apply":
                     mNavigator.toAppleActivity();
-                    break;
-                case "lab":
-                    mNavigator.toLabActivity();
                     break;
                 case "settings":
                     mNavigator.toSettingsActivity();
@@ -383,6 +394,9 @@ public class MainActivity extends BaseActivity {
                 case "test":
                     mNavigator.toTestActivity();
                     break;
+                case "custom":
+                    mNavigator.toCustomWorkshopActivity();
+                    break;
             }
             return false;
         });
@@ -393,69 +407,56 @@ public class MainActivity extends BaseActivity {
 
         ViewTreeObserver viewTreeObserver = drawerRecyclerView.getViewTreeObserver();
         if (viewTreeObserver.isAlive()) {
-            viewTreeObserver.addOnGlobalLayoutListener(
-                    new ViewTreeObserver.OnGlobalLayoutListener() {
-                        @Override
-                        public void onGlobalLayout() {
-                            drawerRecyclerView.getViewTreeObserver()
-                                    .removeOnGlobalLayoutListener(this);
+            viewTreeObserver.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    drawerRecyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
-                            BitmapFactory.Options dimensions = new BitmapFactory.Options();
-                            dimensions.inJustDecodeBounds = true;
-                            BitmapFactory.decodeResource(getResources(), R.drawable.drawer_head,
-                                    dimensions);
-                            int height = dimensions.outHeight;
-                            int width = dimensions.outWidth;
+                    BitmapFactory.Options dimensions = new BitmapFactory.Options();
+                    dimensions.inJustDecodeBounds = true;
+                    BitmapFactory.decodeResource(getResources(), R.drawable.drawer_head,
+                            dimensions);
+                    int height = dimensions.outHeight;
+                    int width = dimensions.outWidth;
 
-                            height = (int) Math.ceil(
-                                    1.0 * height * drawerRecyclerView.getWidth() / width
-                            );
+                    height = (int) Math.ceil(1.0 * height * drawerRecyclerView.getWidth() / width);
 
-                            int titleBarHeight = UIUtils.getStatusBarHeight(MainActivity.this);
+                    int titleBarHeight = UIUtils.getStatusBarHeight(MainActivity.this);
 
-                            View view = View.inflate(MainActivity.this, R.layout.layout_drawer_head,
-                                    null);
-                            ImageView image =
-                                    (ImageView) view.findViewById(R.id.imageView_drawer_head);
-                            image.setImageResource(R.drawable.drawer_head);
-                            ViewGroup.LayoutParams imageLayoutParams = image.getLayoutParams();
-                            if (imageLayoutParams == null) {
-                                imageLayoutParams = new ViewGroup.LayoutParams(
-                                        ViewGroup.LayoutParams.MATCH_PARENT, height);
-                            } else {
-                                imageLayoutParams.height = height;
-                            }
-                            image.setLayoutParams(imageLayoutParams);
+                    View view = View.inflate(MainActivity.this, R.layout.layout_drawer_head, null);
+                    ImageView image = (ImageView) view.findViewById(R.id.imageView_drawer_head);
+                    image.setImageResource(R.drawable.drawer_head);
+                    LayoutParams imageLayoutParams = image.getLayoutParams();
+                    if (imageLayoutParams == null) {
+                        imageLayoutParams = new LayoutParams(MATCH_PARENT, height);
+                    } else {
+                        imageLayoutParams.height = height;
+                    }
+                    image.setLayoutParams(imageLayoutParams);
 
-                            View topSpace = view.findViewById(R.id.view_drawer_head_space_top);
-                            ViewGroup.LayoutParams topSpaceLayoutParams =
-                                    topSpace.getLayoutParams();
-                            if (topSpaceLayoutParams == null) {
-                                topSpaceLayoutParams = new ViewGroup.LayoutParams(
-                                        ViewGroup.LayoutParams.MATCH_PARENT, titleBarHeight);
-                            } else {
-                                topSpaceLayoutParams.height = titleBarHeight;
-                            }
-                            topSpace.setLayoutParams(topSpaceLayoutParams);
+                    View topSpace = view.findViewById(R.id.view_drawer_head_space_top);
+                    LayoutParams topSpaceLayoutParams = topSpace.getLayoutParams();
+                    if (topSpaceLayoutParams == null) {
+                        topSpaceLayoutParams = new LayoutParams(MATCH_PARENT, titleBarHeight);
+                    } else {
+                        topSpaceLayoutParams.height = titleBarHeight;
+                    }
+                    topSpace.setLayoutParams(topSpaceLayoutParams);
 
-                            View bottomSpace =
-                                    view.findViewById(R.id.view_drawer_head_space_bottom);
-                            ViewGroup.LayoutParams bottomSpaceLayoutParams =
-                                    bottomSpace.getLayoutParams();
-                            int bottomPadding = Math.max(0,
-                                    DisplayUtil.dip2px(MainActivity.this, 178) - titleBarHeight
-                                            - height);
-                            if (bottomSpaceLayoutParams == null) {
-                                bottomSpaceLayoutParams = new ViewGroup.LayoutParams(
-                                        ViewGroup.LayoutParams.MATCH_PARENT, bottomPadding);
-                            } else {
-                                bottomSpaceLayoutParams.height = bottomPadding;
-                            }
-                            bottomSpace.setLayoutParams(bottomSpaceLayoutParams);
+                    View bottomSpace = view.findViewById(R.id.view_drawer_head_space_bottom);
+                    LayoutParams bottomSpaceLayoutParams = bottomSpace.getLayoutParams();
+                    int bottomPadding = Math.max(0,
+                            DisplayUtil.dip2px(MainActivity.this, 178) - titleBarHeight - height);
+                    if (bottomSpaceLayoutParams == null) {
+                        bottomSpaceLayoutParams = new LayoutParams(MATCH_PARENT, bottomPadding);
+                    } else {
+                        bottomSpaceLayoutParams.height = bottomPadding;
+                    }
+                    bottomSpace.setLayoutParams(bottomSpaceLayoutParams);
 
-                            mDrawer.setHeader(view, false, false);
-                        }
-                    });
+                    mDrawer.setHeader(view, false, false);
+                }
+            });
         }
     }
 
@@ -467,7 +468,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getWindow().getDecorView().postDelayed(() -> mSearchTransitioner.onActivityResumed(), 100);
+        getWindow().getDecorView().postDelayed(() -> {
+            mSearchTransitioner.onActivityResumed();
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                getWindow().getDecorView().setSystemUiVisibility(0);
+//            }
+        }, 100);
     }
 
     @Override
@@ -521,4 +527,9 @@ public class MainActivity extends BaseActivity {
         }
         finish();
     }
+
+    private static boolean isCustomPicker(Intent intent) {
+        return intent.hasCategory("com.novalauncher.category.CUSTOM_ICON_PICKER");
+    }
 }
+

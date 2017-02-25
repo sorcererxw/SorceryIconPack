@@ -1,6 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
-import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -17,7 +16,7 @@ public abstract class UniversalToolbarActivity extends ToolbarActivity {
     protected Toolbar mToolbar;
 
     @Override
-    protected Toolbar provideToolbar() {
+    public Toolbar getToolbar() {
         return mToolbar;
     }
 }

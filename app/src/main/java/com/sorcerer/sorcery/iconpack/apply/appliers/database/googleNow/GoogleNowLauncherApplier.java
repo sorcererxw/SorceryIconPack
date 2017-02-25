@@ -4,17 +4,20 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import com.annimon.stream.Stream;
+import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.apply.appliers.database.base.ILauncherApplier;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
-import com.sorcerer.sorcery.iconpack.su.RxSU;
 import com.sorcerer.sorcery.iconpack.utils.ImageUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.su.RxSU;
 
 import java.io.File;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,19 +31,19 @@ import io.reactivex.functions.Function;
  * @date: 2017/2/4
  */
 
-public class GoogleNowLauncherApplier {
+class GoogleNowLauncherApplier implements ILauncherApplier {
     private static final String LAUNCHER_PACKAGE = "com.google.android.googlequicksearchbox";
 
     private static final String APP_ICONS_PATH =
             "/data/data/" + LAUNCHER_PACKAGE + "/databases/app_icons.db";
 
-    private static String TMP_PATH;
+    private static String CACHE_PATH;
 
     private Context mContext;
 
     public GoogleNowLauncherApplier(Context context) {
         mContext = context;
-        TMP_PATH = context.getExternalCacheDir() + "/app_icons.db";
+        CACHE_PATH = context.getExternalCacheDir() + "/app_icons.db";
     }
 
     public Observable<List<String>> apply() {
@@ -49,45 +52,123 @@ public class GoogleNowLauncherApplier {
                     @Override
                     public ObservableSource<List<String>> apply(Boolean grant) throws Exception {
                         return RxSU.getInstance().runAll(
-                                "cp " + APP_ICONS_PATH + " " + TMP_PATH
+                                "cp " + APP_ICONS_PATH + " " + CACHE_PATH
+//                                "rm -f " + APP_ICONS_PATH
                         );
                     }
                 })
                 .flatMap(list -> {
                     Map<String, String> componentDrawableMap =
                             PackageUtil.getComponentDrawableMap(mContext);
-                    Map<String, String> todoMap = new HashMap<>();
+                    List<IconReplacement> todoList = new ArrayList<>();
 
-                    File file = new File(TMP_PATH);
+                    File file = new File(CACHE_PATH);
                     if (!file.exists()) {
-                        throw new Exception();
+                        throw new Exception("No cache file found");
                     }
                     SQLiteDatabase db = SQLiteDatabase
                             .openDatabase(file.getAbsolutePath(), null,
                                     SQLiteDatabase.OPEN_READWRITE);
-                    Cursor cursor = db.query("icons", new String[]{"componentName"},
+                    Cursor cursor = db.query("icons", new String[]{"componentName", "profileId"},
                             null, null, null, null, null);
                     while (cursor.moveToNext()) {
                         String cp = Db.getString(cursor, "componentName");
+                        int pi = Db.getInt(cursor, "profileId");
+
                         if (componentDrawableMap.containsKey(cp)) {
-                            todoMap.put(cp, componentDrawableMap.get(cp));
+                            todoList.add(new IconReplacement(cp, componentDrawableMap.get(cp), pi));
                         }
                     }
                     cursor.close();
 
-                    Stream.of(todoMap.entrySet()).forEach(entry -> {
+                    Bitmap androidWorkIndicator = ImageUtil.getResizedBitmap(
+                            BitmapFactory.decodeResource(
+                                    mContext.getResources(), R.drawable.android_for_work_indicator)
+                                    .copy(Bitmap.Config.ARGB_8888, true),
+                            192, 192);
+
+                    Stream.of(todoList).forEach(icon -> {
+//                        Timber.d(icon.toString());
                         ContentValues values = new ContentValues();
-                        byte[] bitmap = ImageUtil.flattenBitmap(BitmapFactory
-                                .decodeResource(mContext.getResources(),
-                                        ResourceUtil.getDrawableRes(mContext, entry.getValue())));
-                        values.put("icon", bitmap);
-                        values.put("icon_low_res", bitmap);
-                        db.update("icons", values, "componentName=? and profileId=0",
-                                new String[]{entry.getKey()});
+                        Bitmap bitmap = ImageUtil.getResizedBitmap(
+                                BitmapFactory.decodeResource(mContext.getResources(),
+                                        ResourceUtil.getDrawableRes(mContext, icon.getDrawable()))
+                                        .copy(Bitmap.Config.ARGB_8888, true),
+                                192, 192);
+                        if (icon.getProfileId() != 0) {
+                            bitmap = ImageUtil.overlay(bitmap, androidWorkIndicator);
+                        }
+                        byte[] flatBitmap = ImageUtil.flattenBitmap(bitmap);
+                        values.put("icon", flatBitmap);
+                        values.put("icon_low_res", flatBitmap);
+                        db.update("icons", values, "componentName=? and profileId=?",
+                                new String[]{icon.getComponent(), icon.getProfileId() + ""});
                     });
+                    db.close();
+
                     return RxSU.getInstance().runAll(
-                            "cp " + TMP_PATH + " " + APP_ICONS_PATH,
-                            "am force-stop " + LAUNCHER_PACKAGE);
+                            "cp " + CACHE_PATH + " " + APP_ICONS_PATH,
+                            "rm -f " + CACHE_PATH,
+                            "am force-stop " + LAUNCHER_PACKAGE,
+                            "am force-stop " + "com.google.android.launcher");
                 });
+    }
+
+    public Observable<List<String>> restore() {
+        return RxSU.getInstance().su().filter(grant -> grant)
+                .flatMap(new Function<Boolean, ObservableSource<List<String>>>() {
+                    @Override
+                    public ObservableSource<List<String>> apply(Boolean aBoolean) throws Exception {
+                        return RxSU.getInstance().runAll(
+                                "rm -f " + APP_ICONS_PATH,
+                                "am force-stop " + LAUNCHER_PACKAGE,
+                                "am force-stop " + "com.google.android.launcher");
+                    }
+                });
+    }
+
+    private static class IconReplacement {
+        private String mComponent;
+        private String mDrawable;
+        private int mProfileId;
+
+        public IconReplacement(String component, String drawable, int profileId) {
+            mComponent = component;
+            mDrawable = drawable;
+            mProfileId = profileId;
+        }
+
+        public String getDrawable() {
+            return mDrawable;
+        }
+
+        public void setDrawable(String drawable) {
+            mDrawable = drawable;
+        }
+
+        public int getProfileId() {
+            return mProfileId;
+        }
+
+        public void setProfileId(int profileId) {
+            mProfileId = profileId;
+        }
+
+        public String getComponent() {
+            return mComponent;
+        }
+
+        public void setComponent(String component) {
+            mComponent = component;
+        }
+
+        @Override
+        public String toString() {
+            return "IconReplacement{" +
+                    "\nmComponent='" + mComponent + '\'' +
+                    "\n, mDrawable='" + mDrawable + '\'' +
+                    "\n, mProfileId=" + mProfileId +
+                    "\n}";
+        }
     }
 }

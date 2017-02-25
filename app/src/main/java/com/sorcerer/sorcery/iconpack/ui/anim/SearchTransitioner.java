@@ -1,8 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.anim;
 
 import android.app.Activity;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.transition.Transition;
 import android.transition.TransitionManager;
@@ -49,16 +47,12 @@ public class SearchTransitioner {
         if (mTransitioning) {
             return;
         }
-        if (supportTransitions()) {
-            Transition transition = FadeOutTransition.withAction(navigateToSearchWhenDone());
-            TransitionManager.beginDelayedTransition(mSearchToolbar, transition);
-            expandToolbar();
-            mViewFader.hideContentOf(mSearchToolbar);
-            mTabLayout.animate().translationYBy(-mTabLayout.getHeight()).setDuration(250).start();
-            mActivityContent.animate().alpha(0).setDuration(250).start();
-        } else {
-            mNavigator.toSearch();
-        }
+        Transition transition = FadeOutTransition.withAction(navigateToSearchWhenDone());
+        TransitionManager.beginDelayedTransition(mSearchToolbar, transition);
+        expandToolbar();
+        mViewFader.hideContentOf(mSearchToolbar);
+        mTabLayout.animate().translationYBy(-mTabLayout.getHeight()).setDuration(250).start();
+        mActivityContent.animate().alpha(0).setDuration(250).start();
     }
 
     private void expandToolbar() {
@@ -68,7 +62,6 @@ public class SearchTransitioner {
         mSearchToolbar.setLayoutParams(layoutParams);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private Transition.TransitionListener navigateToSearchWhenDone() {
         return new SimpleTransitionListener() {
             @Override
@@ -85,22 +78,18 @@ public class SearchTransitioner {
         };
     }
 
-    public static boolean supportTransitions() {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-    }
-
     public void onActivityResumed() {
-        if (supportTransitions()) {
-            TransitionManager
-                    .beginDelayedTransition(mSearchToolbar, FadeInTransition.createTransition());
-            FrameLayout.LayoutParams layoutParams =
-                    (FrameLayout.LayoutParams) mSearchToolbar.getLayoutParams();
-            layoutParams.setMargins(mToolbarMargin, mToolbarMargin, mToolbarMargin, mToolbarMargin);
-            mViewFader.showContent(mSearchToolbar);
-            mSearchToolbar.setLayoutParams(layoutParams);
-            mTabLayout.animate().translationY(0).setDuration(250).start();
-            mActivityContent.animate().alpha(1).setDuration(250).start();
-        }
+
+        TransitionManager
+                .beginDelayedTransition(mSearchToolbar, FadeInTransition.createTransition());
+        FrameLayout.LayoutParams layoutParams =
+                (FrameLayout.LayoutParams) mSearchToolbar.getLayoutParams();
+        layoutParams.setMargins(mToolbarMargin, mToolbarMargin, mToolbarMargin, mToolbarMargin);
+        mViewFader.showContent(mSearchToolbar);
+        mSearchToolbar.setLayoutParams(layoutParams);
+        mTabLayout.animate().translationY(0).setDuration(250).start();
+        mActivityContent.animate().alpha(1).setDuration(250).start();
+
     }
 
 }

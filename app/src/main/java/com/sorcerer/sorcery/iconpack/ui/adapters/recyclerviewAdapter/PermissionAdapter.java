@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
-import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 
 import java.util.List;
 
