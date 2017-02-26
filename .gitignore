@@ -12,11 +12,27 @@ private.xml
 /keystore
 /dictionary-elder.txt
 /.gitignore
+/checkstyle.xml
 
-/app/src/main/java/com/sorcerer/sorcery/iconpack/iconShowCase
-/app/src/main/java/com/sorcerer/sorcery/iconpack/net
-/app/src/main/java/com/sorcerer/sorcery/iconpack/apply
-/app/src/main/java/com/sorcerer/sorcery/iconpack/test
 
 .idea/dbnavigator.xml
 testProgram/
+
+app/src/main/java/com/sorcerer/sorcery/iconpack/net
+app/src/main/java/com/sorcerer/sorcery/iconpack/apply
+app/src/main/java/com/sorcerer/sorcery/iconpack/iconShowCase
+
+
+app/src/main/jni/
+app/src/main/jniLibs/
+app/src/main/res/drawable-hdpi/ic_shortcut_color_lens.png
+app/src/main/res/drawable-hdpi/ic_shortcut_request.png
+app/src/main/res/drawable-mdpi/ic_shortcut_color_lens.png
+app/src/main/res/drawable-mdpi/ic_shortcut_request.png
+app/src/main/res/drawable-xhdpi/ic_shortcut_color_lens.png
+app/src/main/res/drawable-xhdpi/ic_shortcut_request.png
+app/src/main/res/drawable-xxhdpi/ic_shortcut_color_lens.png
+app/src/main/res/drawable-xxhdpi/ic_shortcut_request.png
+app/src/main/res/drawable-xxxhdpi/ic_shortcut_color_lens.png
+app/src/main/res/drawable-xxxhdpi/ic_shortcut_request.png
+app/src/main/res/drawable/ic_remove_circle_grey_600_24dp.xml
