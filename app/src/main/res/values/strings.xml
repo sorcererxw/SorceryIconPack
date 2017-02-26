@@ -1,0 +1,319 @@
+<resources>
+    <string name="app_name">Sorcery Icons</string>
+    <string name="sorcery" translatable="false">Sorcery</string>
+
+    <string name="language">en</string>
+
+    <string name="action_feedback">feedback</string>
+    <string name="action_welcome">welcome</string>
+    <string name="action_apply">apply</string>
+    <string name="action_update">update</string>
+    <string name="action_close">close</string>
+    <string name="action_refresh">refresh</string>
+    <string name="action_reboot">reboot</string>
+    <string name="action_search">search</string>
+    <string name="action_like">like</string>
+    <string name="action_dislike">dislike</string>
+    <string name="action_dismiss">dismiss</string>
+    <string name="action_join_google_plus">Join G+ group of the app</string>
+    <string name="action_copy">copy</string>
+    <string name="action_copy_to_clipboard">copy to clipboard</string>
+    <string name="action_premium_request">premium request</string>
+    <string name="action_select_all">select all</string>
+    <string name="action_show_in_store">show in store</string>
+    <string name="action_show_origin_icon">show origin icon</string>
+    <string name="action_give_permission">authorize</string>
+    <string name="action_install">install</string>
+    <string name="action_refuse">refuse</string>
+    <string name="action_grant_permission">grant</string>
+    <string name="action_report_info">report info</string>
+    <string name="action_leave">leave</string>
+    <string name="action_know_what_doing">I know what I\'m doing</string>
+    <string name="action_later">Maybe later</string>
+    <string name="action_soft_reboot">soft reboot</string>
+    <string name="action_restore_to_default">Restore to default</string>
+    <string name="action_disable_round_icon">Disable round style</string>
+    <string name="action_apply_icons">Apply icons</string>
+
+    <string name="permission_request_title">Need Permission</string>
+    <string name="permission_request_content">For better experience with the app, please grant
+        permissions to this app. Or you may can\'t use some function normally, such as icon request,
+        icon like. I also need some permission to collect bug in the app, please support me, thanks.
+    </string>
+    <string name="permission_write_external_storage">Write External Storage</string>
+    <string name="permission_request_describe_write_external_storage">To cache log and data.
+    </string>
+    <string name="permission_read_phone_state">Read Phone State</string>
+    <string name="permission_request_read_phone_state">Get device id to distinguish different users
+        in cloud engine.
+    </string>
+
+    <string name="select_an_icon">select an icon</string>
+
+
+    <string name="search_edit_hint">Search icons…</string>
+    <string name="search_hint_only_letter">Sorry, searching support letter and number only.</string>
+
+
+    <string name="pay_success">pay successfully</string>
+    <string name="pay_fail">fail</string>
+
+    <string name="attention">Attention</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="ok">OK</string>
+    <string name="options">Options</string>
+
+    <string name="RMB">yuan</string>
+
+    <string name="please_give_permission">please give it permission</string>
+
+    <string name="request">Request icon</string>
+    <string name="suggest">Talk with developer</string>
+
+    <string name="choose_mail_app">please choose a mail app</string>
+
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_body">If there is any problem, search answer in FAQ</string>
+    <string name="welcome_close">OK</string>
+
+    <string name="apply_recommend">Recommend</string>
+    <string name="apply_supported_system">Apply to system</string>
+    <string name="apply_supported_launcher">Apply to launcher</string>
+
+    <string name="installed">installed</string>
+    <string name="not_installed">not installed</string>
+
+    <string name="find_new_version">found a new version</string>
+    <string name="download">download</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="version_name">version name</string>
+    <string name="update_start">finding new version</string>
+    <string name="update_fail">update failed, please check network</string>
+    <string name="is_last_version">It is the last version :)</string>
+
+    <string name="icon_request_sending">icon request sending</string>
+    <string name="icon_request_send_success">Request sent successfully</string>
+    <string name="icon_request_send_fail">send fail</string>
+    <string name="icon_request_times">Requested # times</string>
+
+    <string name="apply_tip_only_flyme">Only for Flyme</string>
+    <string name="apply_tip_only_miui">Only for MIUI</string>
+    <string name="apply_tip_no_launcher">This launcher is not installed. Whether to install from the
+        store?
+    </string>
+
+    <string name="nav_open"
+            translatable="false">open
+    </string>
+    <string name="nav_close"
+            translatable="false">close
+    </string>
+
+    <string name="thanks">Thanks</string>
+
+    <string name="version">Version</string>
+
+    <string name="nav_item_icon">Icons</string>
+    <string name="nav_item_apply">Apply</string>
+    <string name="nav_item_feedback">Feedback</string>
+    <string name="nav_item_settings">Settings</string>
+    <string name="nav_item_lab">Lab</string>
+    <string name="nav_item_update">Update</string>
+    <string name="nav_item_welcome">Welcome</string>
+    <string name="nav_item_donate">Donate</string>
+    <string name="nav_item_about">About</string>
+    <string name="nav_item_help">FAQ</string>
+    <string name="nav_item_wallpapers">Wallpapers</string>
+    <string name="nav_item_custom_workshop">Custom Workshop</string>
+    <string name="nav_item_apply_xposed">Apply globally</string>
+
+    <string name="donate_dialog_title">select amount</string>
+    <string name="donate_declaration_content">powered by Bmob</string>
+    <string name="wechat_pay_plugin_content"
+            translatable="false">由于使用Bmob的支付渠道, 启用微信支付需要安装安全插件, 插件只会在调用的时候运作, 不会留驻后台
+    </string>
+
+    <string name="donate_title">Support Us</string>
+    <string name="donate_content">If you like my work\n
+        and\n
+        if you want to support us\n
+        please donate !\n
+        We would really appreciate that!\n
+        Thank you!
+    </string>
+
+    <string name="open_alipay">opening alipay</string>
+    <string name="open_wechat">opening wechat</string>
+
+    <string name="donate_success">donate success</string>
+    <string name="donate_fail">donate fail</string>
+
+    <string name="alipay">alipay</string>
+    <string name="wechat">wechat</string>
+
+    <string name="select_all">select all</string>
+    <string name="just_show_without_custom">just show without custom icon</string>
+    <string name="select_app">Select Apps</string>
+    <string name="cancel_request">cancel request?</string>
+
+    <string name="fail_open_premium">unable to open premium mode</string>
+    <string name="premium_request_title">Premium Request</string>
+    <string name="premium_request_content">Pay some money(2￥/icon) to make sure this icon included
+        in the next version.
+    </string>
+    <string name="premium_send_title">confirm order</string>
+    <string name="premium_send_content"
+            translatable="false">由于您开启了付费模式, 以下图标以一个2元的价格收取费用并确保会出现在近期的新版里面, 请确认并留下您的邮箱地址
+    </string>
+    <string name="premium_alipay_title">Sorcery Premium Request</string>
+    <string name="premium_send_dialog_mail_label">Email</string>
+    <string name="premium_send_dialog_note_label">Notes</string>
+    <string name="premium_send_dialog_note_hint">Leave your message to developer</string>
+    <string name="please_input_right_mail_address">please input right mail address</string>
+
+    <string name="icon_label_added">**Added**</string>
+    <string name="icon_label_updated">**Updated**</string>
+    <string name="icon_label_please_leave_baidu">**please leave Baidu**</string>
+
+    <string name="contributor">Contributor</string>
+    <string name="job_developer">Developer</string>
+    <string name="job_icon_design">Icon designer</string>
+    <string name="open_source_lib">Open Source Libs</string>
+
+    <string name="changelog">changelog</string>
+    <string name="changelog_content"
+            translatable="false">1. 50个新图标|2. 修复开启优先申请失败问题|3. 加入Persistent搜索条|4.
+        修复部分launcher不支持问题|5. 界面细节调整
+    </string>
+    <string name="about_main">let 「material」\n
+        colorful your phone
+    </string>
+
+    <string name="pref_global_load_title">global load</string>
+    <string name="pref_global_load_summary">load by xposed instead of launcher</string>
+    <string name="pref_global_load_key"
+            translatable="false">pref_global_load
+    </string>
+    <string name="pref_global_hint">It is not able now!</string>
+
+    <string name="global_detail">Loading this icon pack by xposed</string>
+
+    <string name="global_state_label">state</string>
+    <string name="global_state_active">active</string>
+    <string name="global_state_not_root">not root</string>
+    <string name="global_state_not_active">not active</string>
+
+    <string name="global_load_package_add_notify">reboot to display sorcery icon of new app</string>
+
+    <string name="global_attention">you need to reboot phone after a new app installed and it do not
+        supports nova launcher, you need to set icon pack by yourself in nova
+    </string>
+
+    <string name="xposed_tag">load sorcery icon pack globally</string>
+
+    <string name="tab_new">New</string>
+    <string name="tab_installed">Installed</string>
+    <string name="tab_all">All</string>
+    <string name="tab_ali">ALi</string>
+    <string name="tab_baidu">Baidu</string>
+    <string name="tab_netease">Netease</string>
+    <string name="tab_google">Google</string>
+    <string name="tab_htc">HTC</string>
+    <string name="tab_lenovo">Lenovo</string>
+    <string name="tab_lg">LG</string>
+    <string name="tab_moto">Moto</string>
+    <string name="tab_microsoft">Microsoft</string>
+    <string name="tab_samsung">Samsung</string>
+    <string name="tab_sony">SONY</string>
+    <string name="tab_xiaomi">Xiaomi</string>
+    <string name="tab_miui">Xiaomi</string>
+    <string name="tab_meizu">Meizu</string>
+    <string name="tab_flyme">Meizu</string>
+    <string name="tab_oneplus">Oneplus</string>
+    <string name="tab_tencent">Tencent</string>
+
+    <bool name="config_iconpack">true</bool>
+    <string name="premium_alipay_describe">Sorcery Premium Request</string>
+    <string name="premium_send_dialog_mail_hint">Please leave your mail address(must)</string>
+
+    <string name="feedback_chat_welcome">Welcome to communicate with the developer, you can send the
+        user experience and pictures to the developer.
+    </string>
+    <string name="feedback_chat_edit_hint">What want to say ?</string>
+    <string name="feedback_chat_name_dialog_title">Need A Nickname</string>
+    <string name="feedback_chat_name_dialog_content">Please give me a nickname to easily distinguish
+        between different respondents.
+    </string>
+    <string name="feedback_chat_name_dialog_hint">nickname</string>
+    <string name="feedback_chat_name_dialog_toast_hint">The length of nickname must be greater than
+        3
+    </string>
+
+    <string name="about_dialog_slogan">Let material-design materialize your screen</string>
+    <string name="about_dialog_icon_count">Includes %d icons</string>
+
+    <string name="shortcuts_request_icon_disable_message">Request Icon</string>
+    <string name="shortcuts_request_icon_long_label">Request Icon</string>
+    <string name="shortcuts_request_icon_short_label">Request Icon</string>
+
+    <string name="shortcuts_apply_pixel_long_label">Refrsh Pixel Launcher Icons</string>
+    <string name="shortcuts_apply_pixel_short_label">Refresh Pixel Icons</string>
+
+    <string name="preference_group_general">General</string>
+    <string name="preference_general_clear_cache">Clear cache</string>
+
+    <string name="preference_group_laboratory">Experimental</string>
+    <string name="preference_laboratory_global_load">Global load</string>
+
+    <string name="preference_group_about">About</string>
+    <string name="preference_about_app">Application information</string>
+    <string name="preference_about_lib">Open source licenses</string>
+    <string name="preference_general_customize_tabs">Customize icon tabs</string>
+    <string name="preference_general_customize_tabs_summary">Just keep icons pages you concern
+    </string>
+    <string name="restart_to_take_effect">restart to take effect</string>
+    <string name="search_hint_not_found">Oops…Not found</string>
+
+    <string name="apply_by_database_declaration_title">Declaration</string>
+    <string name="apply_by_database_declaration_content">Since the {} launcher itself does not
+        support custom icons, Sorcery Icons will modify the launcher\'s data with root
+        privileges.|So you need to grant root privileges and external storage read and write
+        permissions.|Since it modified the cache file of the launcher, the icon may be restored
+        after the corresponding application updating, and the replacement operation will need to be
+        performed again.
+    </string>
+    <string name="apply_by_database_no_root_access">Root is required</string>
+    <string name="apply_by_database_no_sdcard_permission">External read and write permissions are
+        required
+    </string>
+    <string name="apply_by_database_fail">Sorry, operation failed</string>
+    <string name="apply_by_database_success">Success, enjoy it:)</string>
+    <string name="apply_by_database_applying">please wait a moment……</string>
+    <string name="error">Error</string>
+
+    <string name="apply_by_xposed_success_dialog_title">Success</string>
+    <string name="apply_by_xposed_success_dialog_content">The icons will be effected after
+        rebooting.
+    </string>
+    <string name="apply_by_xposed_success_dialog_negative">Later</string>
+    <string name="apply_by_xposed_success_dialog_positive">Reboot</string>
+    <string name="apply_by_xposed_no_xposed">Need Xposed framework.</string>
+
+    <string name="preference_apply_xposed_options">Options</string>
+    <string name="preference_apply_xposed_refresh_icons">Refresh icons</string>
+    <string name="preference_apply_xposed_clear_nova_cache">Clear Nova launcher icon cache</string>
+    <string name="preference_apply_xposed_clear_nova_cache_summary">If it is not work for your Nova
+        launcher, try it
+    </string>
+    <string name="preference_apply_xposed_reboot">Reboot</string>
+    <string name="preference_apply_xposed_reboot_summary">Reboot to effect</string>
+
+    <string name="preference_apply_xposed_selinux">About SELinux</string>
+    <string name="preference_apply_xposed_selinux_summary">The globally applying may not effect with
+        SELinux executing. Click for more information.
+    </string>
+    <string name="preference_apply_xposed_selinux_executing">SELinux is executing!
+    </string>
+</resources>

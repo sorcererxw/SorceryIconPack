@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerView_donate_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/root_background"
+    android:orientation="vertical"
+    tools:context="com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity">
+
+    <include layout="@layout/toolbar_universal"/>
+
+    <ScrollView
+        android:id="@+id/scrollView_donate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/linearLayout_donate_docker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView_donate_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="32dp"
+                android:text="@string/donate_title"
+                android:textColor="@color/title"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView_donate_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_donate_title"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingTop="16dp"
+                android:text="@string/donate_content"
+                android:textColor="@color/content"
+                android:textSize="16sp"/>
+
+            <include
+                android:id="@+id/layout_button_donates"
+                layout="@layout/layout_donate_button_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_donate_content"/>
+
+            <ImageView
+                android:id="@+id/imageView_donate_heart"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_below="@+id/layout_button_donates"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/heart"
+                android:visibility="gone"
+                tools:src="@drawable/heart"/>
+
+            <com.sorcerer.sorcery.iconpack.ui.views.QCardView
+                android:id="@+id/cardView_donate_thank"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_button_donates"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="6dp"
+                tools:layout_height="100dp"
+                tools:layout_width="304dp">
+
+                <ImageView
+                    android:id="@+id/imageView_donate_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="216dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:elevation="4dp"
+                    android:text="@string/thanks"
+                    android:textColor="@color/palette_white"
+                    android:textSize="40sp"
+                    android:textStyle="bold"/>
+            </com.sorcerer.sorcery.iconpack.ui.views.QCardView>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
+

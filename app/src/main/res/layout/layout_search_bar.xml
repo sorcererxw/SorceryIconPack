@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_height="56dp">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/layout_container"
+        android:layout_toStartOf="@+id/layout_container"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:imeOptions="actionSearch|flagNoExtractUi"
+        android:maxLines="1"
+        android:singleLine="true"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_container"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="center"
+            android:visibility="gone"/>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/indicatorView"
+            style="AVLoadingIndicatorView.Small"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorAccent"
+            app:indicatorName="BallClipRotateIndicator"/>
+    </RelativeLayout>
+</RelativeLayout>

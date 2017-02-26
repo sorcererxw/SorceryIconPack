@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.sorcerer.sorcery.iconpack">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+
+    <uses-sdk xmlns:tools="http://schemas.android.com/tools"
+              tools:overrideLibrary="android.support.v14.preference"/>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false"/>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/sorcery_icons_winter_day"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.apps.nexuslauncher.icons"
+            android:resource="@xml/icons"/>
+
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.adw.launcher.THEMES"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sonymobile.home.ICON_PACK"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.anddoes.launcher.THEME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dlto.atom.launcher.THEME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.teslacoilsw.launcher.THEME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.novalauncher.THEME"/>
+
+                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.fede.launcher.THEME_ICONPACK"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.gtp.nextlauncher.theme"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.tsf.shell.themes"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ginlemon.smartlauncher.THEMES"/>
+                <action android:name="ginlemon.smartlauncher.BUBBLESTYLE"/>
+                <action android:name="ginlemon.smartlauncher.BUBBLEICONS"/>
+                <action android:name="ginlemon.smartlauncher.CLOCKS"/>
+                <action android:name="ginlemon.smartlauncher.CLOCKFONTS"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.gridappsinc.launcher.theme.apk_action"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="org.adw.launcher.THEMES"/>
+                <action android:name="mobi.bbase.ahome.THEME"/>
+                <action android:name="com.rogro.GDE.THEME.1"/>
+                <action android:name="com.android.dxtop.launcher.THEME"/>
+
+                <category android:name="com.fede.launcher.THEME_ICONPACK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON"/>
+                <action android:name="mobi.bbase.ahome.THEME"/>
+                <action android:name="com.rogro.GDE.THEME.1"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="cdproductions.crazyicons.TWO"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.daeva112.manager.MAIN"/>
+
+                <category android:name="com.daeva112.manager.THEME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.gau.go.launcherex.theme"/>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.THEME_SCENE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.INFO"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="home.solo.launcher.free.THEMES"/>
+                <action android:name="home.solo.launcher.free.ACTION_ICON"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.lge.launcher2.THEME"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.PICK"/>-->
+            <!--<action android:name="android.intent.action.GET_CONTENT"/>-->
+
+            <!--<category android:name="android.intent.category.OPENABLE"/>-->
+            <!--<category android:name="android.intent.category.DEFAULT"/>-->
+
+            <!--<data android:mimeType="image/*"/>-->
+            <!--</intent-filter>-->
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:name=".apply.ApplyActivity"
+            android:label="@string/nav_item_apply"
+            android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".ui.activities.DonateActivity"
+            android:label="@string/nav_item_donate"
+            android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".feedback.request.AppSelectActivity"
+            android:exported="true"
+            android:label="@string/request"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".feedback.chat.FeedbackChatActivity"
+            android:label="@string/suggest"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".ui.activities.LabActivity"
+            android:label="@string/nav_item_lab"
+            android:theme="@style/SubActivity">
+        </activity>
+        <activity
+            android:name=".ui.activities.HelpActivity"
+            android:label="@string/nav_item_help"
+            android:theme="@style/SubActivity">
+        </activity>
+        <activity
+            android:name=".iconShowCase.detail.IconDialogActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:name=".ui.activities.base.PhotoViewActivity"
+            android:label="big image"
+            android:theme="@style/AppTheme.PhotoView"/>
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true"/>
+        <meta-data
+            android:name="xposeddescription"
+            android:value="全局加载Sorcery图标包, 勾选并去图标包设置里面打开"/>
+        <meta-data
+            android:name="xposedminversion"
+            android:value="30"/>
+
+        <activity
+            android:name=".search.SearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/SubActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/nav_item_settings"
+            android:theme="@style/SubActivity"/>
+        <activity android:name=".customWorkshop.CustomWorkshopActivity"
+                  android:label="@string/nav_item_custom_workshop"
+                  android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".ui.activities.WelcomeActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".shortcuts.AppShortcutsReceiverActivity"
+                  android:launchMode="singleInstance"
+                  android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity android:name=".apply.appliers.database.pixel.PixelApplyActivity"
+                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity android:name=".apply.appliers.database.smartisan.SmartisanApplyActivity"
+                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity android:name=".apply.appliers.database.googleNow.GoogleNowApplyActivity"
+                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity android:name=".apply.appliers.database.pixel.PixelApplySingleInstanceActivity"
+                  android:launchMode="singleInstance"
+                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity android:name=".test.TestActivity"/>
+
+        <receiver android:name=".receivers.PackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

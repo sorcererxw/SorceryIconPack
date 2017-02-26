@@ -1,0 +1,235 @@
+<resources>
+    <string name="app_name">Sorcery图标</string>
+
+    <string name="action_feedback">反馈</string>
+    <string name="action_welcome">感谢使用</string>
+
+    <string name="request">申请图标</string>
+    <string name="suggest">提出建议与疑问</string>
+
+    <string name="choose_mail_app">请选择邮箱</string>
+
+    <string name="welcome_title">感谢使用</string>
+    <string name="welcome_body">如果有任何问题请先在左侧抽屉中的 常见问题 中寻找答案</string>
+    <string name="welcome_close">好的</string>
+    <string name="installed">已安装</string>
+    <string name="not_installed">未安装</string>
+    <string name="update_fail">获取失败, 请检查网络</string>
+    <string name="find_new_version">发现新版</string>
+    <string name="ok">好的</string>
+    <string name="download">下载</string>
+    <string name="cancel">取消</string>
+    <string name="action_apply">应用</string>
+    <string name="is_last_version">当前已为最新版本, 无需更新</string>
+    <string name="icon_request_sending">正在发送</string>
+    <string name="version_name">版本名</string>
+    <string name="action_update">检查更新</string>
+    <string name="icon_request_send_fail">发送失败, 请通过邮箱方式反馈</string>
+    <string name="icon_request_send_success">发送成功, 感谢反馈</string>
+    <string name="update_start">检查更新</string>
+
+    <string name="nav_item_apply">应用图标</string>
+    <string name="nav_item_icon">图标</string>
+    <string name="nav_item_feedback">反馈</string>
+    <string name="nav_item_welcome">欢迎使用</string>
+    <string name="nav_item_update">检查更新</string>
+    <string name="donate_declaration_content">收款方为第三方支付服务商Bmob, 如有疑问请联系: feedback@sorcererxw.com
+    </string>
+    <string name="alipay">支付宝</string>
+    <string name="wechat">微信</string>
+    <string name="donate_title">支持我们</string>
+    <string name="donate_content">
+        如果您喜欢这款应用\n
+        并且愿意支持我们\n
+        希望可以获得您的捐赠\n
+        我们会向您表达由衷的感谢\n
+        谢谢:)
+    </string>
+    <string name="nav_item_donate">捐赠</string>
+    <string name="donate_dialog_title">选择金额</string>
+    <string name="thanks">感 谢</string>
+    <string name="donate_success">捐赠成功</string>
+    <string name="donate_fail">捐赠失败, 不过我还是很感动</string>
+    <string name="open_alipay">正在打开支付宝</string>
+    <string name="nav_item_settings">设置</string>
+    <string name="pref_global_load_summary">不依赖启动器, 使用xposed加载图标</string>
+    <string name="pref_global_load_title">全局加载</string>
+    <string name="pref_global_hint">目前还在测试, 将在下个大版本更新中启用</string>
+    <string name="cancel_request">离开图标申请?</string>
+    <string name="yes">是</string>
+    <string name="select_app">选择应用</string>
+    <string name="select_all">全选</string>
+    <string name="no">不</string>
+    <string name="xposed_tag">
+        全局加载Sorcery图标包, 勾选并去图标包设置里面打开
+    </string>
+    <string name="nav_item_lab">实验室</string>
+    <string name="global_detail">通过Xposed进行加载图标包以实现全局更换图标|你需要先root您的设备并且在Xposed框架中勾选此应用
+    </string>
+
+    <string name="global_attention">
+        说明:|
+        #1. 应用之后需要重启设备以更换图标|
+        #2. 请在所有手机后台管理应用中将这个应用纳入白名单|
+        #3. 暂不支持热刷新, 安装了新的应用需要重启以使图标变更|
+        #4. 运行样本较少, 无法保证模块百分百运行正常|
+        #5. 启用并重启之前, 可以在手机中放一份rom卡刷包或者系统备份, 以备不时之需
+    </string>
+    <string name="global_state_active">已开启</string>
+    <string name="global_state_label">当前状态</string>
+    <string name="global_state_not_active">尚未开启</string>
+    <string name="global_state_not_root">未root</string>
+    <string name="action_close">关闭</string>
+    <string name="just_show_without_custom">仅显示未适配图标</string>
+    <string name="nav_item_about">关于</string>
+    <string name="open_source_lib">开源库</string>
+    <string name="job_developer">开发者</string>
+    <string name="job_icon_design">图标设计</string>
+    <string name="contributor">贡献者</string>
+    <string name="action_refresh">强制刷新</string>
+    <string name="global_load_package_add_notify">重启以显示新应用的sorcery图标</string>
+    <string name="action_soft_reboot">软重启</string>
+    <string name="action_reboot">重启设备</string>
+    <string name="action_search">搜索</string>
+    <string name="action_like">赞</string>
+    <string name="action_dislike">踩</string>
+    <string name="about_main">用「material」妆点你的手机</string>
+    <string name="select_an_icon">选择一个图标</string>
+    <string name="nav_item_help">帮助</string>
+    <string name="please_give_permission">请给予权限</string>
+    <string name="changelog">更新日志</string>
+    <string name="action_dismiss">关闭</string>
+    <string name="action_join_google_plus">加入本应用的G+社群</string>
+    <string name="action_copy">复制</string>
+    <string name="action_copy_to_clipboard">复制剪贴板</string>
+    <string name="action_premium_request">付费申请</string>
+    <string name="action_select_all">全选</string>
+    <string name="premium_request_content">由于需要适配的图标很多, 不可能一下子都是适配, 您可以通过付费来确保一个图标能在下个版本中出现,
+        以2元一个图标的价格进行收费, 不强制, 用付费来换取优先适配|**拒绝适配游戏图标**|**拒绝适配游戏图标**|**拒绝适配游戏图标**
+    </string>
+    <string name="premium_request_title">付费申请</string>
+    <string name="RMB">元</string>
+    <string name="premium_alipay_title">Sorcery 付费申请图标</string>
+    <string name="premium_alipay_describe">Sorcery 付费申请图标</string>
+    <string name="premium_send_title">确认付费</string>
+    <string name="pay_fail">付款失败</string>
+    <string name="pay_success">付款成功</string>
+    <string name="fail_open_premium">无法开启付费模式</string>
+    <string name="premium_send_dialog_mail_label">邮箱</string>
+    <string name="premium_send_dialog_mail_hint">请留下您的邮箱(必填)</string>
+    <string name="premium_send_dialog_note_hint">捎句话…</string>
+    <string name="premium_send_dialog_note_label">备注</string>
+    <string name="please_input_right_mail_address">请输入正确的邮箱地址</string>
+    <string name="icon_label_added">**最近添加**</string>
+    <string name="icon_label_updated">**调整更新**</string>
+    <string name="action_show_in_store">前往商店</string>
+    <string name="action_give_permission">授权</string>
+    <string name="action_show_origin_icon">显示原图标</string>
+    <string name="icon_label_please_leave_baidu">**请远离百度**</string>
+    <string name="open_wechat">正在打开微信支付</string>
+    <string name="action_install">安装</string>
+    <string name="action_grant_permission">授权</string>
+    <string name="action_refuse">拒绝</string>
+    <string name="permission_request_title">申请权限</string>
+    <string name="permission_write_external_storage">存储空间</string>
+    <string name="permission_request_describe_write_external_storage">保存离线报告的缓存数据。</string>
+    <string name="permission_request_content">感谢使用。为了您更好的使用体验, 请授予应用权限。否则, 你可能无法正常使用一些功能。同时,
+        我还需要这些权限来获取分析应用运行状况, 谢谢您的支持。
+    </string>
+    <string name="permission_request_read_phone_state">获取用户设备的ID，用来唯一的标识用户, 便于在服务器里面区分。</string>
+    <string name="permission_read_phone_state">电话</string>
+    <string name="icon_request_times">共被申请 # 次</string>
+    <string name="nav_item_wallpapers">壁纸</string>
+    <string name="version">版本</string>
+    <string name="feedback_chat_name_dialog_title">想一个昵称</string>
+    <string name="feedback_chat_name_dialog_toast_hint">昵称的长度需要大于3</string>
+    <string name="feedback_chat_welcome">Hi, 我是开发者。随时欢迎来向我反馈你的任何问题和使用感受, 同时也可发送图片给我。</string>
+    <string name="feedback_chat_name_dialog_hint">昵称</string>
+    <string name="feedback_chat_name_dialog_content">请提供一个昵称给我, 以方便我来区分不同的反馈者。</string>
+    <string name="feedback_chat_edit_hint">想说什么?</string>
+    <string name="action_report_info">报告信息</string>
+    <string name="action_leave">离开</string>
+    <string name="shortcuts_request_icon_short_label">申请图标</string>
+    <string name="shortcuts_request_icon_long_label">申请图标</string>
+    <string name="shortcuts_request_icon_disable_message">申请图标</string>
+    <string name="preference_about_app">应用信息</string>
+    <string name="preference_about_lib">开源许可</string>
+    <string name="preference_group_about">关于</string>
+    <string name="action_later">暂不</string>
+    <string name="action_know_what_doing">我知道我在干什么</string>
+    <string name="attention">警告</string>
+    <string name="search_hint_not_found">额…似乎没找到</string>
+    <string name="search_hint_only_letter">不好意思, 搜索暂时只支持英文和数字</string>
+    <string name="preference_group_general">常规</string>
+    <string name="preference_general_clear_cache">清除缓存</string>
+    <string name="preference_group_laboratory">实验室</string>
+    <string name="preference_laboratory_global_load">全局加载</string>
+    <string name="language">zh</string>
+    <string name="tab_ali">阿里</string>
+    <string name="tab_all">所有</string>
+    <string name="tab_baidu">百度</string>
+    <string name="tab_google">谷歌</string>
+    <string name="tab_htc">HTC</string>
+    <string name="tab_lenovo">联想</string>
+    <string name="tab_lg">LG</string>
+    <string name="tab_meizu">魅族</string>
+    <string name="tab_microsoft">微软</string>
+    <string name="tab_moto">摩托</string>
+    <string name="tab_netease">网易</string>
+    <string name="tab_new">最新</string>
+    <string name="tab_oneplus">一加</string>
+    <string name="tab_samsung">三星</string>
+    <string name="tab_sony">索尼</string>
+    <string name="tab_tencent">腾讯</string>
+    <string name="tab_xiaomi">小米</string>
+    <string name="tab_flyme">魅族</string>
+    <string name="tab_miui">小米</string>
+    <string name="preference_general_customize_tabs">自定义图标页</string>
+    <string name="preference_general_customize_tabs_summary">仅显示你关注的图标页</string>
+    <string name="restart_to_take_effect">重启以生效</string>
+    <string name="tab_installed">已安装</string>
+    <string name="apply_recommend">推荐</string>
+    <string name="apply_supported_launcher">应用到启动器</string>
+    <string name="apply_supported_system">应用到系统</string>
+    <string name="apply_tip_no_launcher">尚未安装启动器, 是否前往商店安装?</string>
+    <string name="apply_tip_only_flyme">仅支持Flyme</string>
+    <string name="apply_tip_only_miui">仅支持MIUI</string>
+    <string name="search_edit_hint">搜索图标…</string>
+    <string name="about_dialog_slogan">让质感美化你的屏幕</string>
+    <string name="about_dialog_icon_count">包含 %d 个图标</string>
+    <string name="apply_by_database_declaration_content">由于{} launcher 本身并不支持用户去自定义图标, 所以Sorcery
+        Icons 会通过Root权限去修改这个launcher的数据|所以需要授予root权限和外部存储读写权限|由于只是修改了启动器的缓存文件, 所以图标可能在对应应用更新后恢复原样,
+        届时需要再一次进行替换操作
+    </string>
+    <string name="apply_by_database_declaration_title">说明</string>
+    <string name="apply_by_database_no_root_access">需要Root权限</string>
+    <string name="apply_by_database_success">操作成功</string>
+    <string name="apply_by_database_no_sdcard_permission">需要外部读写权限</string>
+    <string name="apply_by_database_fail">不好意思, 操作失败了</string>
+    <string name="apply_by_database_applying">请稍待片刻……</string>
+    <string name="error">错误</string>
+    <string name="action_restore_to_default">恢复默认</string>
+    <string name="action_apply_icons">应用图标</string>
+    <string name="options">选项</string>
+    <string name="shortcuts_apply_pixel_short_label">刷新Pixel图标</string>
+    <string name="shortcuts_apply_pixel_long_label">刷新Pixel启动器图标</string>
+    <string name="nav_item_custom_workshop">自定义工坊</string>
+    <string name="action_disable_round_icon">禁用圆形图标</string>
+    <string name="nav_item_apply_xposed">全局加载</string>
+    <string name="preference_apply_xposed_refresh_icons">刷新图标</string>
+    <string name="preference_apply_xposed_clear_nova_cache">清除Nova启动器的图标缓存</string>
+    <string name="preference_apply_xposed_options">选项</string>
+    <string name="preference_apply_xposed_clear_nova_cache_summary">如果全局加载无法在Nova启动器上生效, 请尝试清除缓存
+    </string>
+    <string name="preference_apply_xposed_reboot_summary">重启以生效</string>
+    <string name="preference_apply_xposed_reboot">重启设备</string>
+    <string name="apply_by_xposed_success_dialog_title">成功</string>
+    <string name="apply_by_xposed_success_dialog_positive">重启</string>
+    <string name="apply_by_xposed_success_dialog_negative">稍后</string>
+    <string name="apply_by_xposed_success_dialog_content">重启后才可生效</string>
+    <string name="apply_by_xposed_no_xposed">需要Xposed框架</string>
+    <string name="preference_apply_xposed_selinux">关于SELinux</string>
+    <string name="preference_apply_xposed_selinux_summary">全局加载可能无法在SELinux执行的环境下正常运行, 点击了解详情
+    </string>
+    <string name="preference_apply_xposed_selinux_executing">SELinux正在执行</string>
+</resources>
