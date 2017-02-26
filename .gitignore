@@ -39,3 +39,6 @@ app/src/main/res/drawable-xxhdpi/ic_shortcut_request.png
 app/src/main/res/drawable-xxxhdpi/ic_shortcut_color_lens.png
 app/src/main/res/drawable-xxxhdpi/ic_shortcut_request.png
 app/src/main/res/drawable/ic_remove_circle_grey_600_24dp.xml
+src/androidTest/
+src/main/java/com/sorcerer/sorcery/iconpack/App.java
+src/test/
