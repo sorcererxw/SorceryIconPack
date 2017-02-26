@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="icon_grid_item_size">96dp</dimen>
-    <dimen name="dialog_icon_size">160dp</dimen>
-</resources>
