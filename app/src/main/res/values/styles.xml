@@ -32,8 +32,7 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowTranslucentStatus">true</item>
 
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-
+        <item name="preferenceTheme">@style/MyPreferenceThemeOverlay</item>
     </style>
 
 
@@ -123,11 +122,13 @@
     </style>
 
     <!--<style name="AppTheme.BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">-->
-        <!--<item name="bottomSheetStyle">@style/AppTheme.BottomSheetStyle</item>-->
+    <!--<item name="bottomSheetStyle">@style/AppTheme.BottomSheetStyle</item>-->
     <!--</style>-->
 
     <!--<style name="AppTheme.BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">-->
-        <!--<item name="behavior_hideable">true</item>-->
-        <!--<item name="behavior_skipCollapsed">true</item>-->
+    <!--<item name="behavior_hideable">true</item>-->
+    <!--<item name="behavior_skipCollapsed">true</item>-->
     <!--</style>-->
+
+
 </resources>

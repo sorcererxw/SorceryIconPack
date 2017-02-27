@@ -4,26 +4,32 @@
     android:key="preference_screen">
 
     <PreferenceCategory
+        android:layout="@layout/layout_preference_category_card"
         android:enabled="false"
         android:key="preference_category_options"
         android:title="@string/preference_apply_xposed_options">
         <Preference
+            android:layout="@layout/layout_preference_card"
             android:key="preference_refresh"
             android:title="@string/preference_apply_xposed_refresh_icons"/>
 
         <Preference
+            android:layout="@layout/layout_preference_card"
             android:key="preference_clear_nova_cache"
             android:summary="@string/preference_apply_xposed_clear_nova_cache_summary"
             android:title="@string/preference_apply_xposed_clear_nova_cache"/>
 
         <Preference
+            android:layout="@layout/layout_preference_card"
+            android:key="preference_selinux"
+            android:summary="@string/preference_apply_xposed_selinux_summary"
+            android:title="@string/preference_apply_xposed_selinux"/>
+
+        <Preference
+            android:layout="@layout/layout_preference_card_last"
             android:key="preference_reboot"
             android:summary="@string/preference_apply_xposed_reboot_summary"
             android:title="@string/preference_apply_xposed_reboot"/>
 
-        <Preference
-            android:key="preference_selinux"
-            android:summary="@string/preference_apply_xposed_selinux_summary"
-            android:title="@string/preference_apply_xposed_selinux"/>
     </PreferenceCategory>
 </PreferenceScreen>

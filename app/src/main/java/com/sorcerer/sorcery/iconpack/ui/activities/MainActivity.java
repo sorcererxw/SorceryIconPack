@@ -266,6 +266,7 @@ public class MainActivity extends BaseActivity {
         mPageAdapter = new IconViewPageAdapter(this, getSupportFragmentManager(), mCustomPicker);
 
         mViewPager.setAdapter(mPageAdapter);
+        mViewPager.setPageMargin(DisplayUtil.dip2px(mContext, -4));
 
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);

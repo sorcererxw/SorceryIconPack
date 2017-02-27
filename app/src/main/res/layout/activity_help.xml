@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sorcerer.sorcery.iconpack.ui.activities.HelpActivity">
+    tools:context="com.sorcerer.sorcery.iconpack.help.HelpActivity">
 
     <include layout="@layout/toolbar_universal"/>
 

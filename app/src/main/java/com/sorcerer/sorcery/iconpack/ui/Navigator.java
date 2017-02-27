@@ -14,7 +14,7 @@ import com.sorcerer.sorcery.iconpack.search.SearchActivity;
 import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.test.TestActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.HelpActivity;
+import com.sorcerer.sorcery.iconpack.help.HelpActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 
 import rx_activity_result2.RxActivityResult;

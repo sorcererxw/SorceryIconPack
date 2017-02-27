@@ -5,7 +5,6 @@
              android:id="@+id/frameLayout_item_icon_container"
              android:layout_height="wrap_content">
 
-
     <ImageView
         android:id="@+id/imageView_item_icon"
         android:layout_width="@dimen/icon_grid_item_size"
@@ -15,5 +14,6 @@
         android:layout_marginLeft="@dimen/icon_grid_item_margin"
         android:layout_marginRight="@dimen/icon_grid_item_margin_double"
         android:layout_marginTop="@dimen/icon_grid_item_margin"/>
+
 </FrameLayout>
 

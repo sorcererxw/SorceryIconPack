@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 public abstract class BaseRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseViewHolder, M>
         extends RecyclerView.Adapter<VH> {
 
-    public class BaseViewHolder extends RecyclerView.ViewHolder {
+    public static class BaseViewHolder extends RecyclerView.ViewHolder {
         public BaseViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

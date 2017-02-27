@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.activities;
+package com.sorcerer.sorcery.iconpack.help;
 
 import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,6 @@ import android.view.MenuItem;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.HelpAdapter;
 
 import butterknife.BindView;
 
@@ -31,12 +30,13 @@ public class HelpActivity extends BaseSubActivity {
 
         setToolbarBackIndicator();
 
-        mLayoutManager = new StaggeredGridLayoutManager(calcNumOfRows(),
-                StaggeredGridLayoutManager.VERTICAL);
+        int rows = calcNumOfRows();
+
+        mLayoutManager = new StaggeredGridLayoutManager(rows, StaggeredGridLayoutManager.VERTICAL);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new HelpAdapter(this, calcNumOfRows());
+        mAdapter = new HelpAdapter(this, rows);
 
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);

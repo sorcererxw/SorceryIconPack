@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter;
+package com.sorcerer.sorcery.iconpack.help;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -23,9 +23,9 @@ import butterknife.BindView;
  * @author: Sorcerer
  * @date: 2016/3/8 0008
  */
-public class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHolder, String> {
+class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHolder, String> {
 
-    public HelpAdapter(Context context, int span) {
+    HelpAdapter(Context context, int span) {
         super(context, Arrays.asList(context.getResources().getStringArray(R.array.help_list)),
                 span);
     }
@@ -70,9 +70,8 @@ public class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHo
             builder.onPositive((dialog, which) -> {
                 ClipboardManager clipboard = (ClipboardManager) mContext
                         .getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip =
-                        ClipData.newPlainText(getTitle(holder.getAdapterPosition()),
-                                getContent(holder.getAdapterPosition()));
+                ClipData clip = ClipData.newPlainText(getTitle(holder.getAdapterPosition()),
+                        getContent(holder.getAdapterPosition()));
                 clipboard.setPrimaryClip(clip);
             });
             builder.show();

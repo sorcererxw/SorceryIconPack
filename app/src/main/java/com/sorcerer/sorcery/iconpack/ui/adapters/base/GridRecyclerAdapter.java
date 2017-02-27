@@ -38,26 +38,26 @@ public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseVie
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
         params.setMargins(
-                times * dp2px(itemMargin.left),
-                times * dp2px(itemMargin.top),
-                times * dp2px(itemMargin.right),
-                times * dp2px(itemMargin.bottom)
+                times * dp2px((int)itemMargin.left),
+                times * dp2px((int)itemMargin.top),
+                times * dp2px((int)itemMargin.right),
+                times * dp2px((int)itemMargin.bottom)
         );
         target.setLayoutParams(params);
     }
 
     private class ItemMargin {
-        ItemMargin(int left, int top, int right, int bottom) {
+        ItemMargin(double left, double top, double right, double bottom) {
             this.left = 2 * left;
             this.top = 2 * top;
             this.right = 2 * right;
             this.bottom = 2 * bottom;
         }
 
-        int left;
-        int right;
-        int top;
-        int bottom;
+        double left;
+        double right;
+        double top;
+        double bottom;
     }
 
     enum ItemPosType {
@@ -83,11 +83,11 @@ public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseVie
     private ItemMargin getItemMargin(ItemPosType type) {
         switch (type) {
             case ONE_COL_TOP:
-                return new ItemMargin(2, 2, 2, 1);
+                return new ItemMargin(-0.5, 0, -0.5, 1);
             case ONE_COL_MID:
-                return new ItemMargin(2, 1, 2, 1);
+                return new ItemMargin(-0.5, 1, -0.5, 1);
             case ONE_COL_BOTTOM:
-                return new ItemMargin(2, 1, 2, 2);
+                return new ItemMargin(-0.5, 1, -0.5, 2);
             case ONE_ROW_LEFT:
                 return new ItemMargin(2, 2, 1, 2);
             case ONE_ROW_MID:

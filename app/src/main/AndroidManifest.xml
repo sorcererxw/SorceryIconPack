@@ -208,7 +208,7 @@
             android:theme="@style/SubActivity">
         </activity>
         <activity
-            android:name=".ui.activities.HelpActivity"
+            android:name=".help.HelpActivity"
             android:label="@string/nav_item_help"
             android:theme="@style/SubActivity">
         </activity>

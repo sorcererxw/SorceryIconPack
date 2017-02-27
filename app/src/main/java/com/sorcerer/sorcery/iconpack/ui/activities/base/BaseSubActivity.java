@@ -17,8 +17,6 @@ public abstract class BaseSubActivity extends SlideInAndOutAppCompatActivity {
                 .withTransparentStatusBar(true)
                 .withTintedStatusBar(false)
                 .withTranslucentStatusBarProgrammatically(true)
-//                .withTintedStatusBar(true)
-//                .withStatusBarColor(ResourceUtil.getColor(this, R.color.primary_dark))
                 .build();
     }
 }

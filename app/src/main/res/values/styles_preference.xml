@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyPreferenceThemeOverlay" parent="PreferenceThemeOverlay.v14.Material">
+        <item name="preferenceFragmentCompatStyle">@style/MyPreferenceFragment</item>
+        <item name="preferenceFragmentStyle">@style/MyPreferenceFragment</item>
+    </style>
+
+    <style name="MyPreferenceFragment">
+        <item name="android:divider">@null</item>
+    </style>
+</resources>

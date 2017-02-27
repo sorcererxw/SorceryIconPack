@@ -17,11 +17,12 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.settings.about.AboutDialog;
-import com.sorcerer.sorcery.iconpack.settings.licenses.ui.OpenSourceLibDialog;
+import com.sorcerer.sorcery.iconpack.settings.licenses.ui.OpenSourceLibFragment;
 import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.CustomizeTabsAdapter;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -183,7 +184,8 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
         mAboutLibPreference = findPreference(KEY_ABOUT_LIB);
         mAboutLibPreference.setOnPreferenceClickListener(preference -> {
-            OpenSourceLibDialog.show(getActivity());
+            ((SettingsActivity) getActivity())
+                    .addFragment(new OpenSourceLibFragment());
             return true;
         });
     }
@@ -209,5 +211,11 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                         Timber.e(throwable);
                     }
                 });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().setTitle(ResourceUtil.getString(getContext(), R.string.nav_item_settings));
     }
 }

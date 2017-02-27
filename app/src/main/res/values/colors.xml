@@ -26,6 +26,6 @@
 
     <color name="dialog_background_scrim">#99000000</color>
 
-    <color name="root_background">@color/palette_grey_200</color>
+    <color name="root_background">@color/palette_grey_100</color>
 
 </resources>

@@ -4,17 +4,16 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseFragmentSubActivity;
 
 import butterknife.BindView;
 
-public class SettingsActivity extends BaseSubActivity {
+public class SettingsActivity extends BaseFragmentSubActivity {
 
     @BindView(R.id.frameLayout_settings_fragment_container)
-    FrameLayout mFragmentContiner;
+    FrameLayout mFragmentContainer;
 
     @Override
     protected int provideLayoutId() {
@@ -22,36 +21,18 @@ public class SettingsActivity extends BaseSubActivity {
     }
 
     @Override
+    protected int provideFragmentContainer() {
+        return R.id.frameLayout_settings_fragment_container;
+    }
+
+    @Override
+    protected Fragment provideInitFragment() {
+        return SettingsFragment.newInstance();
+    }
+
+    @Override
     protected void init() {
         super.init();
         setToolbarBackIndicator();
-
-        addFragment(SettingsFragment.newInstance());
-    }
-
-    public void addFragment(@NonNull Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.frameLayout_settings_fragment_container, fragment)
-                .addToBackStack(fragment.getClass().getSimpleName())
-                .commitAllowingStateLoss();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-        }
-        return false;
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
-            getSupportFragmentManager().popBackStack();
-        } else {
-            finish();
-        }
     }
 }

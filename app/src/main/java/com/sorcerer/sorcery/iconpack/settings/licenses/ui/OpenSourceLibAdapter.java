@@ -24,13 +24,13 @@ import butterknife.ButterKnife;
  * @date: 2016/11/10
  */
 
-public class OpenSourceLibAdapter
+class OpenSourceLibAdapter
         extends RecyclerView.Adapter<OpenSourceLibAdapter.OpenSourceLibViewHolder> {
     private Context mContext;
 
     private List<OpenSourceLibBean> mDataList;
 
-    public OpenSourceLibAdapter(Context context, List<OpenSourceLibBean> dataList) {
+    OpenSourceLibAdapter(Context context, List<OpenSourceLibBean> dataList) {
         mContext = context;
         mDataList = dataList;
     }
