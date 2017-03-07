@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.sorcerer.sorcery.iconpack.apply.appliers.xposed.XposedInstaller;
+import com.sorcerer.sorcery.iconpack.apply.xposed.XposedInstaller;
 
 /**
  * @description:

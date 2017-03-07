@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
  * @date: 2016/1/21 0021
  */
 public class AppInfo {
-    public AppInfo() {
+    protected AppInfo() {
     }
 
     public int getRequestedTimes() {
@@ -80,4 +80,5 @@ public class AppInfo {
                 + ", mHasCustomIcon=" + mHasCustomIcon
                 + '}';
     }
+
 }

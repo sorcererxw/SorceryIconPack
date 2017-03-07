@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="preference_screen">
+
+    <PreferenceCategory
+        android:order="1"
+        android:key="preference_category_system"
+        android:layout="@layout/layout_preference_category_card"
+        android:title="@string/apply_supported_system">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:order="2"
+        android:key="preference_category_launcher"
+        android:layout="@layout/layout_preference_category_card"
+        android:title="@string/apply_supported_launcher">
+
+    </PreferenceCategory>
+</PreferenceScreen>

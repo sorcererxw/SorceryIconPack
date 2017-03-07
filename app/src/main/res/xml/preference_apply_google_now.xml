@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="preference_screen">
+
+    <PreferenceCategory
+        android:key="preference_category_options"
+        android:layout="@layout/layout_preference_category_card"
+        android:title="@string/options">
+
+        <Preference
+            android:icon="@drawable/ic_color_lens_grey_600_24dp"
+            android:key="preference_apply"
+            android:layout="@layout/layout_preference_card"
+            android:title="@string/action_apply_icons"/>
+
+        <Preference
+            android:icon="@drawable/ic_restore_grey_600_24dp"
+            android:key="preference_restore"
+            android:layout="@layout/layout_preference_card"
+            android:title="@string/action_restore_to_default"/>
+
+        <SwitchPreference
+            android:icon="@drawable/ic_work_grey_600_24dp"
+            android:key="preference_disable_work"
+            android:layout="@layout/layout_preference_card_last"
+            android:summary="@string/apply_disable_work_summary"
+            android:title="@string/apply_disable_work_title"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

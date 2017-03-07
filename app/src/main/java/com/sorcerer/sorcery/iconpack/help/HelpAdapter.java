@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseFastRecyclerAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.StaggeredGridRecyclerAdapter;
 
 import java.util.Arrays;
@@ -30,7 +30,7 @@ class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHolder, S
                 span);
     }
 
-    public final class ViewHolder extends BaseRecyclerAdapter.BaseViewHolder {
+    public final class ViewHolder extends BaseFastRecyclerAdapter.BaseViewHolder {
 
         @BindView(R.id.cardView_help_card_item)
         CardView card;

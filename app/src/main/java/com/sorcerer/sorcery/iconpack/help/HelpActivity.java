@@ -71,5 +71,4 @@ public class HelpActivity extends BaseSubActivity {
         float s = getResources().getDimension(R.dimen.help_item_size);
         return Math.max(1, (int) (size.x / s));
     }
-
 }

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.1." + code/* + " Weekly" + new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))*/
+        versionName "4.1." + code + " Weekly" + new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
         minSdkVersion 21
         targetSdkVersion 25
         multiDexEnabled true
@@ -35,7 +35,7 @@ android {
     }
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
@@ -46,7 +46,7 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
-            buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'false'
+            buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'true'
         }
     }
     buildTypes.each {
@@ -63,8 +63,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
     testCompile 'junit:junit:4.12'
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
     compile 'com.android.support:support-v4:25.2.0'
@@ -74,10 +78,10 @@ dependencies {
     compile 'com.android.support:support-fragment:25.2.0'
 
     // material dialog
-    compile 'com.afollestad.material-dialogs:core:0.9.2.3'
-    compile 'com.afollestad.material-dialogs:commons:0.9.2.3'
+    compile 'com.afollestad.material-dialogs:core:0.9.3.0'
+    compile 'com.afollestad.material-dialogs:commons:0.9.3.0'
     // material drawer
-    compile('com.mikepenz:materialdrawer:5.8.1@aar') {
+    compile('com.mikepenz:materialdrawer:5.8.2@aar') {
         transitive = true
     }
     // indicator
@@ -119,7 +123,7 @@ dependencies {
     // photo view
     compile 'com.github.chrisbanes:PhotoView:1.3.1'
     // gson
-    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.google.code.gson:gson:2.7'
     // jsoup
     compile 'org.jsoup:jsoup:1.10.2'
     // stream on java7
@@ -141,8 +145,10 @@ dependencies {
     // fastscroll
     compile 'com.github.turing-tech:MaterialScrollBar:12.3.1'
     // kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
+//    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // dagger
+    compile 'com.google.dagger:dagger:2.10-rc2'
+    apt 'com.google.dagger:dagger-compiler:2.10-rc2'
 }
 repositories {
     mavenCentral()

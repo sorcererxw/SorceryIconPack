@@ -1,8 +1,7 @@
 package com.sorcerer.sorcery.iconpack.settings;
 
-import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
-import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -11,6 +10,9 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseFragmentSubActivity;
 import butterknife.BindView;
 
 public class SettingsActivity extends BaseFragmentSubActivity {
+
+    @BindView(R.id.coordinatorLayout_settings)
+    CoordinatorLayout mRootCoordinatorLayout;
 
     @BindView(R.id.frameLayout_settings_fragment_container)
     FrameLayout mFragmentContainer;
@@ -28,6 +30,11 @@ public class SettingsActivity extends BaseFragmentSubActivity {
     @Override
     protected Fragment provideInitFragment() {
         return SettingsFragment.newInstance();
+    }
+
+    @Override
+    protected CoordinatorLayout provideRootView() {
+        return mRootCoordinatorLayout;
     }
 
     @Override

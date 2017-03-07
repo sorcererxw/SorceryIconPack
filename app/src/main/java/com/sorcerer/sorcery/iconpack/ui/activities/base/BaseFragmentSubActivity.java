@@ -1,8 +1,13 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
+
+import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.ui.fragments.IOnBackFragment;
 
 /**
  * @description:
@@ -15,10 +20,23 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
 
     protected abstract Fragment provideInitFragment();
 
+    protected abstract CoordinatorLayout provideRootView();
+
+    public CoordinatorLayout getRootView() {
+        return provideRootView();
+    }
+
     public void addFragment(@NonNull Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out,
-                        android.R.anim.fade_in, android.R.anim.fade_out)
+        addFragment(fragment, true);
+    }
+
+    public void addFragment(@NonNull Fragment fragment, boolean anim) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if (anim) {
+            transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left,
+                    R.anim.slide_in_left, R.anim.slide_out_right);
+        }
+        transaction
                 .replace(provideFragmentContainer(), fragment)
                 .addToBackStack(fragment.getClass().getSimpleName())
                 .commitAllowingStateLoss();
@@ -28,7 +46,7 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
     protected void init() {
         super.init();
         if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
-            addFragment(provideInitFragment());
+            addFragment(provideInitFragment(), false);
         }
     }
 
@@ -45,6 +63,11 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
     @Override
     public void onBackPressed() {
         if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            Fragment currentFragment =
+                    getSupportFragmentManager().findFragmentById(provideFragmentContainer());
+            if (currentFragment != null && currentFragment instanceof IOnBackFragment) {
+                ((IOnBackFragment) currentFragment).onBackPress();
+            }
             getSupportFragmentManager().popBackStack();
         } else {
             finish();

@@ -13,13 +13,15 @@ import android.widget.ImageView;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
+import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.Glide;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
-import com.sorcerer.sorcery.iconpack.net.spiders.AppSearchResultGetter;
+import com.sorcerer.sorcery.iconpack.network.spiders.AppSearchResultGetter;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
+import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,11 +47,11 @@ import timber.log.Timber;
  * @date: 2017/1/6
  */
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
+class SearchAdapter extends BaseRecyclerViewAdapter<SearchAdapter.SearchViewHolder> {
 
     private SearchActivity.SearchCallback mSearchCallback;
 
-    public void setSearchCallback(SearchActivity.SearchCallback callback) {
+    void setSearchCallback(SearchActivity.SearchCallback callback) {
         mSearchCallback = callback;
     }
 
@@ -58,9 +60,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     private List<String> mAllDrawableList = new ArrayList<>();
 
     private Activity mActivity;
+    private boolean mLessAnim = false;
 
-    public SearchAdapter(Activity activity) {
+    SearchAdapter(Activity activity) {
+        super(activity);
         mActivity = activity;
+
+        mPrefs.lessAnim().asObservable()
+                .subscribe(lessAnim -> mLessAnim = lessAnim);
+
         Observable.just(activity.getResources().getStringArray(R.array.icon_pack))
                 .map(Arrays::asList)
                 .map(list -> Stream.of(list)
@@ -74,7 +82,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 }, Timber::e);
     }
 
-    public void setPackageDrawableMap(Map<String, List<String>> map) {
+    void setPackageDrawableMap(Map<String, List<String>> map) {
         mPackageDrawableMap = map;
     }
 
@@ -87,9 +95,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     @Override
     public void onBindViewHolder(final SearchViewHolder holder, int position) {
         if (position < mShowList.size()) {
-            Glide.with(mActivity)
-                    .load(mShowList.get(position).getRes())
-                    .into(holder.icon);
+            DrawableTypeRequest<Integer> request = Glide.with(mActivity)
+                    .load(mShowList.get(position).getRes());
+            if (mLessAnim) {
+                request.dontAnimate();
+            }
+            request.into(holder.icon);
 
             if (mCustomPicker) {
                 holder.itemView.setOnClickListener(view -> {
@@ -132,23 +143,28 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         intent.putExtra(IconDialogActivity.EXTRA_RES, iconBean.getRes());
         intent.putExtra(IconDialogActivity.EXTRA_NAME, iconBean.getName());
         intent.putExtra(IconDialogActivity.EXTRA_LABEL, iconBean.getLabel());
-        mActivity.startActivityForResult(
-                intent,
-                MainActivity.REQUEST_ICON_DIALOG,
-                ActivityOptions.makeSceneTransitionAnimation(
-                        mActivity,
-                        icon,
-                        "icon"
-                ).toBundle()
-        );
+        intent.putExtra(IconDialogActivity.EXTRA_LESS_ANIM, mLessAnim);
+
+        if (mLessAnim) {
+            mActivity.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
+        } else {
+            mActivity.startActivityForResult(
+                    intent,
+                    MainActivity.REQUEST_ICON_DIALOG,
+                    ActivityOptions.makeSceneTransitionAnimation(
+                            mActivity,
+                            icon,
+                            "icon"
+                    ).toBundle()
+            );
+        }
     }
 
     private boolean mCustomPicker = false;
 
-    public void setCustomPicker(boolean customPicker) {
+    void setCustomPicker(boolean customPicker) {
         mCustomPicker = customPicker;
     }
-
 
     private Disposable mDisposable;
 

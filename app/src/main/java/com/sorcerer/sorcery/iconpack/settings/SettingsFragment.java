@@ -2,24 +2,17 @@ package com.sorcerer.sorcery.iconpack.settings;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.settings.about.AboutDialog;
+import com.sorcerer.sorcery.iconpack.settings.general.tab.CustomizeTabsFragment;
 import com.sorcerer.sorcery.iconpack.settings.licenses.ui.OpenSourceLibFragment;
-import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
-import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.CustomizeTabsAdapter;
+import com.sorcerer.sorcery.iconpack.ui.fragments.BasePreferenceFragmentCompat;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
@@ -32,8 +25,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
-import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -41,12 +32,10 @@ import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
  */
 
 @SuppressWarnings("ALL")
-public class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends BasePreferenceFragmentCompat {
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
     }
-
-    private SorceryPrefs mPrefs;
 
     private static final String KEY_PREFERENCE_SCREEN = "preference_screen";
     private PreferenceScreen mPreferenceScreen;
@@ -83,7 +72,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mPrefs = SorceryPrefs.getInstance(activity);
     }
 
     private void initGeneral() {
@@ -94,27 +82,8 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 new Preference.OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
-                        RecyclerView recyclerView = new RecyclerView(getContext());
-                        CustomizeTabsAdapter ctAdapter = new CustomizeTabsAdapter(getContext());
-                        recyclerView.setAdapter(ctAdapter);
-                        recyclerView.setLayoutParams(new RecyclerView.LayoutParams(
-                                ViewGroup.LayoutParams.MATCH_PARENT,
-                                ViewGroup.LayoutParams.MATCH_PARENT));
-                        recyclerView.setLayoutManager(
-                                new LinearLayoutManager(getContext(), VERTICAL, false));
-                        new MaterialDialog.Builder(getContext())
-                                .customView(recyclerView, false)
-                                .title(getString(R.string.preference_general_customize_tabs))
-                                .positiveText(getString(R.string.action_apply))
-                                .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                    @Override
-                                    public void onClick(@NonNull MaterialDialog dialog,
-                                                        @NonNull DialogAction which) {
-                                        Toast.makeText(getContext(),
-                                                getString(R.string.restart_to_take_effect),
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                }).build().show();
+                        ((SettingsActivity) getActivity())
+                                .addFragment(new CustomizeTabsFragment());
                         return true;
                     }
                 });
@@ -145,18 +114,24 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 });
     }
 
+    private SwitchPreference mUiLessAnimPreference;
+
     private void initUi() {
         mUiNavBarPreference = (SwitchPreference) findPreference(KEY_UI_TRANSPARENT_NAV_BAR);
 
         mUiNavBarPreference.setChecked(mPrefs.enableTransparentNavBar().get());
-        mUiNavBarPreference.setOnPreferenceClickListener(
-                new Preference.OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        mPrefs.enableTransparentNavBar().set(mUiNavBarPreference.isChecked());
-                        return true;
-                    }
-                });
+        mUiNavBarPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+            mPrefs.enableTransparentNavBar().set((Boolean) newValue);
+            return true;
+        });
+
+        mUiLessAnimPreference = (SwitchPreference) findPreference("preference_ui_less_anim");
+
+        mUiLessAnimPreference.setChecked(mPrefs.lessAnim().get());
+        mUiLessAnimPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+            mPrefs.lessAnim().set((Boolean) newValue);
+            return true;
+        });
     }
 
     private void initDevOps() {

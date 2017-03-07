@@ -22,7 +22,7 @@ import java.util.Collections;
 @TargetApi(25)
 public class AppShortcutsHelper {
     public static final boolean ENABLE_SHORTCUT = Build.VERSION.SDK_INT >= 25;
-    
+
     private Context mContext;
 
     private ShortcutManager mShortcutManager;

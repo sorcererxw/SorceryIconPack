@@ -452,6 +452,7 @@
     <item drawable="gamecores"/>
     <item drawable="game_altos_adventure"/>
     <item drawable="game_arrow_io"/>
+    <item drawable="game_asphalt_8"/>
     <item drawable="game_bob_qiuqiudazuozhan"/>
     <item drawable="game_carrot_3"/>
     <item drawable="game_clash_of_clans"/>
@@ -460,6 +461,7 @@
     <item drawable="game_dots_and_co"/>
     <item drawable="game_dots_out"/>
     <item drawable="game_heartstone"/>
+    <item drawable="game_human_resource_machine"/>
     <item drawable="game_maestria"/>
     <item drawable="game_mekorama"/>
     <item drawable="game_mihoyo_bh_3"/>
@@ -487,9 +489,7 @@
     <item drawable="google_allo"/>
     <item drawable="google_android_pay"/>
     <item drawable="google_android_wear"/>
-    <item drawable="google_arts"/>
     <item drawable="google_arts_culture"/>
-    <item drawable="google_arts_culture_alt"/>
     <item drawable="google_authenticator"/>
     <item drawable="google_calendar"/>
     <item drawable="google_calendar_1"/>
@@ -687,6 +687,7 @@
     <item drawable="kugou"/>
     <item drawable="kuwo_music_player"/>
     <category title="L"/>
+    <item drawable="lagatgram"/>
     <item drawable="lagou"/>
     <item drawable="lanrenzhoumo"/>
     <item drawable="lantern"/>
@@ -752,6 +753,7 @@
     <item drawable="luyinbao"/>
     <item drawable="lvmamalvyou"/>
     <category title="M"/>
+    <item drawable="maidanba"/>
     <item drawable="maimai"/>
     <item drawable="mangguo_tv"/>
     <item drawable="maoyan"/>
@@ -961,10 +963,13 @@
     <item drawable="picsart_color"/>
     <item drawable="picsart_photo_studio"/>
     <item drawable="picture_mix"/>
+    <item drawable="pingan_ccms"/>
     <item drawable="pinglide"/>
     <item drawable="pinterest"/>
     <item drawable="pixiv"/>
     <item drawable="pizzahut"/>
+    <item drawable="plus_messenger"/>
+    <item drawable="plus_messenger_alt"/>
     <item drawable="pocket"/>
     <item drawable="pocket_casts"/>
     <item drawable="poem"/>
@@ -979,6 +984,7 @@
     <item drawable="powertoggle"/>
     <item drawable="power_clean"/>
     <item drawable="ppiicc"/>
+    <item drawable="ppsspp"/>
     <item drawable="pptv"/>
     <item drawable="pp_assistant"/>
     <item drawable="press"/>
@@ -1004,6 +1010,7 @@
     <item drawable="recently"/>
     <item drawable="renrenmeiju"/>
     <item drawable="retrica"/>
+    <item drawable="rikkagram"/>
     <item drawable="ringtone_maker"/>
     <item drawable="rippple"/>
     <item drawable="root_explorer"/>
@@ -1237,6 +1244,7 @@
     <item drawable="sunrise_7"/>
     <item drawable="sunrise_8"/>
     <item drawable="sunrise_9"/>
+    <item drawable="supergram"/>
     <item drawable="supersu_emblem"/>
     <item drawable="supersu_material"/>
     <item drawable="swiftkey_keyboard"/>
@@ -1295,6 +1303,7 @@
     <item drawable="timi"/>
     <item drawable="titanium_backup"/>
     <item drawable="tmri_jiaoguan_12123"/>
+    <item drawable="tongcheng"/>
     <item drawable="tonghuashun"/>
     <item drawable="touchpal_keyboard"/>
     <item drawable="toughwo"/>
@@ -1378,6 +1387,7 @@
     <item drawable="wunderlist"/>
     <category title="X"/>
     <item drawable="xcurrency"/>
+    <item drawable="xda_labs"/>
     <item drawable="xda_labs_forum"/>
     <item drawable="xiachufang"/>
     <item drawable="xiami"/>
@@ -1446,7 +1456,6 @@
     <item drawable="xiaomi_gallery_alt"/>
     <item drawable="xiaomi_gamecenter"/>
     <item drawable="xiaomi_game_alt"/>
-    <item drawable="xiaomi_icon_folder"/>
     <item drawable="xiaomi_live"/>
     <item drawable="xiaomi_mail"/>
     <item drawable="xiaomi_map"/>
@@ -1466,6 +1475,7 @@
     <item drawable="xiaomi_smarthome_alt"/>
     <item drawable="xiaomi_sms_message"/>
     <item drawable="xiaomi_sms_message_alt"/>
+    <item drawable="xiaomi_support"/>
     <item drawable="xiaomi_theme"/>
     <item drawable="xiaomi_updater"/>
     <item drawable="xiaomi_updater_alt"/>
@@ -1534,6 +1544,7 @@
     <item drawable="zhiboba"/>
     <item drawable="zhihu"/>
     <item drawable="zhihu_ribao"/>
+    <item drawable="zhilianzhaopin"/>
     <item drawable="zhimibeidanci"/>
     <item drawable="zhiqu_weather"/>
     <item drawable="zhixing"/>

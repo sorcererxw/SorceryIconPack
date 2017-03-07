@@ -12,11 +12,25 @@
             android:summary="@string/preference_general_customize_tabs_summary"
             android:title="@string/preference_general_customize_tabs"/>
 
+        <SwitchPreference
+            android:key="preference_ui_less_anim"
+            android:layout="@layout/layout_preference_card"
+            android:summary="@string/preference_ui_less_anim_summary"
+            android:title="@string/preference_ui_less_anim_title"/>
+
         <Preference
             android:key="preference_general_clear_cache"
             android:layout="@layout/layout_preference_card_last"
             android:title="@string/preference_general_clear_cache"/>
+
     </PreferenceCategory>
+
+    <!--<PreferenceCategory-->
+        <!--android:layout="@layout/layout_preference_category_card"-->
+        <!--android:title="@string/preference_group_ui">-->
+
+        <!---->
+    <!--</PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="preference_group_dev"

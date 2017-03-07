@@ -11,23 +11,23 @@ import com.f2prateek.rx.preferences2.RxSharedPreferences;
  * @date: 2016/10/3
  */
 
-abstract class Prefs {
+public abstract class Prefs {
 
     private final SharedPreferences mPreferences;
     private final RxSharedPreferences mRxSharedPreferences;
 
     protected abstract String providePreferenceName();
 
-    Prefs(Context context) {
+    public Prefs(Context context) {
         mPreferences = context.getSharedPreferences(providePreferenceName(), Context.MODE_PRIVATE);
         mRxSharedPreferences = RxSharedPreferences.create(mPreferences);
     }
 
-    SharedPreferences getPreferences() {
+    public SharedPreferences getPreferences() {
         return mPreferences;
     }
 
-    RxSharedPreferences getRxSharedPreferences() {
+    public RxSharedPreferences getRxSharedPreferences() {
         return mRxSharedPreferences;
     }
 

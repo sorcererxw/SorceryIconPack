@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 
@@ -35,7 +34,7 @@ public class DonateActivity extends BaseSubActivity {
     protected void onResume() {
         super.onResume();
 
-        boolean isDonated = SorceryPrefs.getInstance(this).donated().getValue();
+        boolean isDonated = mPrefs.donated().getValue();
 
         if (isDonated) {
             mThankCard.post(this::showThanksCard);
@@ -52,7 +51,7 @@ public class DonateActivity extends BaseSubActivity {
         try {
 
             startActivity(intent);
-            SorceryPrefs.getInstance(this).donated().setValue(true);
+            mPrefs.donated().setValue(true);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
             Timber.e(e);

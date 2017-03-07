@@ -16,9 +16,9 @@ public class SorceryPreference<T> {
     private String mKey;
     private SharedPreferences mPreferences;
 
-    SorceryPreference(SharedPreferences sharedPreferences,
-                      String key,
-                      @NonNull T defaultValue) {
+    public SorceryPreference(SharedPreferences sharedPreferences,
+                             String key,
+                             @NonNull T defaultValue) {
         mDefaultValue = defaultValue;
         mKey = key;
         mPreferences = sharedPreferences;

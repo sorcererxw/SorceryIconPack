@@ -7,14 +7,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Vibrator;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -24,9 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
@@ -35,30 +31,20 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.data.models.PermissionBean;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconFragment;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconViewPageAdapter;
-import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.recyclerviewAdapter.PermissionAdapter;
 import com.sorcerer.sorcery.iconpack.ui.anim.SearchTransitioner;
 import com.sorcerer.sorcery.iconpack.ui.anim.ViewFader;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.tbruyelle.rxpermissions2.RxPermissions;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import timber.log.Timber;
 
-import static android.Manifest.permission.READ_PHONE_STATE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
@@ -120,14 +106,13 @@ public class MainActivity extends BaseActivity {
     };
     private Navigator mNavigator;
     private SearchTransitioner mSearchTransitioner;
-    private SorceryPrefs mPrefs;
 
     private static final boolean ENABLE_GUIDE = false;
 
     @Override
     protected void hookBeforeSetContentView() {
         super.hookBeforeSetContentView();
-        mPrefs = SorceryPrefs.getInstance(this);
+
         if (ENABLE_GUIDE && !mPrefs.userGuideShowed().getValue()) {
             startActivity(new Intent(this, WelcomeActivity.class));
             overridePendingTransition(0, 0);
@@ -212,53 +197,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    private void showPermissionDialog() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            final RxPermissions rxPermissions = new RxPermissions(this);
-            if (!rxPermissions.isGranted(READ_PHONE_STATE)
-                    || !rxPermissions.isGranted(WRITE_EXTERNAL_STORAGE)) {
-                MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
-                builder.title(ResourceUtil.getString(this, R.string.permission_request_title));
-                List<PermissionBean> list = new ArrayList<>();
-                list.add(new PermissionBean(null,
-                        ResourceUtil.getString(this, R.string.permission_request_content),
-                        null));
-                if (!rxPermissions.isGranted(READ_PHONE_STATE)) {
-                    list.add(new PermissionBean(
-                            ResourceUtil.getString(this, R.string.permission_read_phone_state),
-                            ResourceUtil.getString(this,
-                                    R.string.permission_request_read_phone_state),
-                            new IconicsDrawable(this, GoogleMaterial.Icon.gmd_smartphone)
-                                    .sizeDp(24).color(Color.BLACK))
-                    );
-                }
-                if (!rxPermissions.isGranted(WRITE_EXTERNAL_STORAGE)) {
-                    list.add(new PermissionBean(
-                            ResourceUtil.getString(this,
-                                    R.string.permission_write_external_storage),
-                            ResourceUtil.getString(this,
-                                    R.string.permission_request_describe_write_external_storage),
-                            new IconicsDrawable(this, GoogleMaterial.Icon.gmd_folder)
-                                    .color(Color.BLACK).sizeDp(24))
-                    );
-                }
-                builder.adapter(new PermissionAdapter(this, list),
-                        new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-                builder.onPositive((materialDialog, dialogAction) -> {
-                    rxPermissions.request(READ_PHONE_STATE, WRITE_EXTERNAL_STORAGE)
-                            .filter(grant -> !grant)
-                            .subscribe(grant -> showPermissionDialog());
-                    materialDialog.dismiss();
-                });
-                builder.positiveText(
-                        ResourceUtil.getString(this, R.string.action_grant_permission));
-                builder.negativeText(ResourceUtil.getString(this, R.string.action_refuse));
-                builder.canceledOnTouchOutside(false);
-                builder.build().show();
-            }
-        }
-    }
-
     private void initTabAndPager() {
         mViewPager.addOnPageChangeListener(mPageChangeListener);
         mViewPager.setPageMargin(DisplayUtil.dip2px(mContext, 16));
@@ -274,19 +212,17 @@ public class MainActivity extends BaseActivity {
         mTabLayout.setOnTabDoubleTapListener(() -> {
             int index = mViewPager.getCurrentItem();
             IconViewPageAdapter adapter = (IconViewPageAdapter) mViewPager.getAdapter();
-            IconFragment fragment = (IconFragment) adapter.getItem(index);
+            IconFragment fragment = adapter.getItem(index);
             if (fragment.getRecyclerView() != null) {
                 fragment.getRecyclerView().smoothScrollToPosition(0);
             }
         });
-
     }
 
     private void initDrawer() {
 
         int textColorRes = R.color.palette_grey_800;
         int subTextColorRes = R.color.palette_grey_600;
-        int iconAlpha = 128;
         mDrawer = new DrawerBuilder()
                 .withSliderBackgroundColor(Color.WHITE)
                 .withCloseOnClick(true)
@@ -533,4 +469,3 @@ public class MainActivity extends BaseActivity {
         return intent.hasCategory("com.novalauncher.category.CUSTOM_ICON_PICKER");
     }
 }
-

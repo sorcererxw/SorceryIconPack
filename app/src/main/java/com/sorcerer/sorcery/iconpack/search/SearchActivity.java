@@ -35,7 +35,6 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -67,7 +66,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private ViewFader mViewFader = new ViewFader();
 
-    public interface SearchCallback {
+    interface SearchCallback {
         void call(int code);
     }
 
@@ -250,12 +249,9 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void initAdapterData() {
-        Observable.create(new ObservableOnSubscribe<Map<String, List<String>>>() {
-            @Override
-            public void subscribe(ObservableEmitter<Map<String, List<String>>> e) throws Exception {
-                e.onNext(PackageUtil.getPackageWithDrawableList(SearchActivity.this));
-            }
-        })
+        Observable.create((ObservableOnSubscribe<Map<String, List<String>>>)
+                e -> e.onNext(PackageUtil.getPackageWithDrawableList(SearchActivity.this))
+        )
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(stringStringMap -> {

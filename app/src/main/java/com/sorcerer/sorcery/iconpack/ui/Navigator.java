@@ -10,11 +10,11 @@ import com.sorcerer.sorcery.iconpack.apply.ApplyActivity;
 import com.sorcerer.sorcery.iconpack.customWorkshop.CustomWorkshopActivity;
 import com.sorcerer.sorcery.iconpack.feedback.chat.FeedbackChatActivity;
 import com.sorcerer.sorcery.iconpack.feedback.request.AppSelectActivity;
+import com.sorcerer.sorcery.iconpack.help.HelpActivity;
 import com.sorcerer.sorcery.iconpack.search.SearchActivity;
 import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.test.TestActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
-import com.sorcerer.sorcery.iconpack.help.HelpActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 
 import rx_activity_result2.RxActivityResult;
@@ -53,16 +53,10 @@ public class Navigator {
 
     public void toFeedbackChatActivity() {
         mActivity.startActivity(new Intent(mActivity, FeedbackChatActivity.class));
-//        mActivity.overridePendingTransition(
-//                R.anim.activity_in_bottom_to_top,
-//                R.anim.activity_out_scale);
     }
 
     public void toIconRequest() {
         mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
-//        mActivity.overridePendingTransition(
-//                R.anim.activity_in_bottom_to_top,
-//                R.anim.activity_out_scale);
     }
 
     public void toAppleActivity() {
@@ -96,10 +90,9 @@ public class Navigator {
         mActivity.overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
     }
 
-    public static void toWebpage(Context context, String url) {
+    public static void toWebPage(Context context, String url) {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         context.startActivity(i);
     }
-
 }

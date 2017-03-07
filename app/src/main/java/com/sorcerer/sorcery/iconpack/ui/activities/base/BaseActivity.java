@@ -7,6 +7,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.avos.avoscloud.AVAnalytics;
+import com.sorcerer.sorcery.iconpack.App;
+import com.sorcerer.sorcery.iconpack.SorceryPrefs;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
@@ -16,16 +20,20 @@ import butterknife.ButterKnife;
  * @date: 2016/5/28 0028
  */
 public abstract class BaseActivity extends AppCompatActivity {
-
+    @Inject
+    protected SorceryPrefs mPrefs;
     protected Context mContext = this;
     protected Activity mActivity = this;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((App) getApplication()).getAppComponent().inject(this);
         hookBeforeSetContentView();
-        setContentView(provideLayoutId());
-        ButterKnife.bind(this);
+        if (provideLayoutId() != 0) {
+            setContentView(provideLayoutId());
+            ButterKnife.bind(this);
+        }
         init();
     }
 

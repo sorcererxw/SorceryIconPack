@@ -13,7 +13,7 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
-import com.sorcerer.sorcery.iconpack.net.avos.AvosClient;
+import com.sorcerer.sorcery.iconpack.network.avos.AvosClient;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import java.util.ArrayList;

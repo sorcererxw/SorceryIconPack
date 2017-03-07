@@ -14,8 +14,8 @@ import java.util.List;
  * @author: Sorcerer
  * @date: 2016/6/4 0004
  */
-public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseViewHolder, M>
-        extends BaseRecyclerAdapter<VH, M> {
+public abstract class GridRecyclerAdapter<VH extends BaseFastRecyclerAdapter.BaseViewHolder, M>
+        extends BaseFastRecyclerAdapter<VH, M> {
 
     protected int mSpan;
 
@@ -38,10 +38,10 @@ public abstract class GridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseVie
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
         params.setMargins(
-                times * dp2px((int)itemMargin.left),
-                times * dp2px((int)itemMargin.top),
-                times * dp2px((int)itemMargin.right),
-                times * dp2px((int)itemMargin.bottom)
+                times * dp2px((int) itemMargin.left),
+                times * dp2px((int) itemMargin.top),
+                times * dp2px((int) itemMargin.right),
+                times * dp2px((int) itemMargin.bottom)
         );
         target.setLayoutParams(params);
     }

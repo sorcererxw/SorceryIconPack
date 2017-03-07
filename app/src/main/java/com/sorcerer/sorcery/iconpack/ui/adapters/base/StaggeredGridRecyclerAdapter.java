@@ -28,7 +28,7 @@ import static com.sorcerer.sorcery.iconpack.ui.adapters.base.GridRecyclerAdapter
  * @date: 2016/11/9
  */
 
-public abstract class StaggeredGridRecyclerAdapter<VH extends BaseRecyclerAdapter.BaseViewHolder, M>
+public abstract class StaggeredGridRecyclerAdapter<VH extends BaseFastRecyclerAdapter.BaseViewHolder, M>
         extends GridRecyclerAdapter<VH, M> {
     public StaggeredGridRecyclerAdapter(Context context, List<M> dataList, int defaultSpan) {
         super(context, dataList, defaultSpan);

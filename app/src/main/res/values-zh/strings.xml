@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sorcery图标</string>
+    <string name="app_name">Sorcery 图标</string>
 
     <string name="action_feedback">反馈</string>
     <string name="action_welcome">感谢使用</string>
@@ -232,4 +232,19 @@
     <string name="preference_apply_xposed_selinux_summary">全局加载可能无法在SELinux执行的环境下正常运行, 点击了解详情
     </string>
     <string name="preference_apply_xposed_selinux_executing">SELinux正在执行</string>
+    <string name="apply_pixel_title">应用到Pixel启动器</string>
+    <string name="apply_pixel_disable_round_summary">移除Pixel风格的图标圆形背景</string>
+    <string name="apply_google_now_title">应用到Google Now启动器</string>
+    <string name="apply_smartisan_title">应用到锤子桌面</string>
+    <string name="apply_disable_work_summary">移除Android Work图标标识</string>
+    <string name="apply_disable_work_title">禁用工作模式图标</string>
+    <string name="apply_option_reapply_hint">重新应用以生效</string>
+    <string name="apply_normalize_icon_size_title">标准化图标大小</string>
+    <string name="apply_normalize_icon_size_summary">缩小大图标以匹配质感设计风格</string>
+    <string name="preference_ui_less_anim_title">更少的动画效果</string>
+    <string name="preference_ui_less_anim_summary">动画效果可能造成部分设备的卡顿</string>
+    <string name="preference_group_ui">界面</string>
+    <string name="apply_skip_summary">决定哪些应用不被替换</string>
+    <string name="apply_skip_title">跳过部分图标</string>
+    <string name="tab_game">游戏</string>
 </resources>

@@ -22,12 +22,6 @@ public abstract class ToolbarActivity extends BaseActivity {
         setSupportActionBar(this.getToolbar());
     }
 
-    protected void setToolbarText(String s) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(s);
-        }
-    }
-
     protected void setToolbarCloseIndicator() {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

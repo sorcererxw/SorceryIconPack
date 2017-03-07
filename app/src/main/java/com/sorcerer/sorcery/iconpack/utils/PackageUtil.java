@@ -9,6 +9,8 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.graphics.drawable.Drawable;
+import android.util.DisplayMetrics;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
@@ -45,6 +47,37 @@ public class PackageUtil {
             Timber.e(e);
         }
         return true;
+    }
+
+    public static Drawable getAppIcon(PackageManager pm, String packageName)
+            throws PackageManager.NameNotFoundException {
+        return getAppIcon(pm, packageName, DisplayMetrics.DENSITY_XXHIGH);
+    }
+
+    public static Drawable getAppIcon(PackageManager pm, String packageName, int density)
+            throws PackageManager.NameNotFoundException {
+        ApplicationInfo applicationInfo =
+                pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+
+        Resources res = pm.getResourcesForApplication(applicationInfo);
+
+        return res.getDrawableForDensity(applicationInfo.icon, density, null);
+    }
+
+    public static Drawable getAppRoundIcon(PackageManager pm, String packageName, int density)
+            throws PackageManager.NameNotFoundException {
+        ApplicationInfo applicationInfo =
+                pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+
+        Resources res = pm.getResourcesForApplication(applicationInfo);
+
+        int roundIconId = res.getIdentifier("ic_round_launcher", "drawable", packageName);
+
+        if (roundIconId > 0) {
+            return res.getDrawableForDensity(roundIconId, density, null);
+        } else {
+            return res.getDrawableForDensity(applicationInfo.icon, density, null);
+        }
     }
 
     public static List<AppInfo> getComponentInfo(Context context, boolean withHasCustomIcon)
@@ -90,6 +123,14 @@ public class PackageUtil {
             Timber.e(e);
         }
         return "";
+    }
+
+    public static List<ApplicationInfo> getInstallApplications(Context context) {
+        return getInstallApplications(context.getPackageManager());
+    }
+
+    public static List<ApplicationInfo> getInstallApplications(PackageManager pm) {
+        return pm.getInstalledApplications(PackageManager.GET_META_DATA);
     }
 
     public static List<ResolveInfo> getInstallApps(Context context) {

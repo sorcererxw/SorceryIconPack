@@ -13,7 +13,7 @@
 
     </style>
 
-    <style name="SubActivity" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="SubActivity" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -120,15 +120,6 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
-
-    <!--<style name="AppTheme.BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">-->
-    <!--<item name="bottomSheetStyle">@style/AppTheme.BottomSheetStyle</item>-->
-    <!--</style>-->
-
-    <!--<style name="AppTheme.BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">-->
-    <!--<item name="behavior_hideable">true</item>-->
-    <!--<item name="behavior_skipCollapsed">true</item>-->
-    <!--</style>-->
 
 
 </resources>

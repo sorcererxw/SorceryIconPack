@@ -233,6 +233,7 @@
     <string name="tab_flyme">Meizu</string>
     <string name="tab_oneplus">Oneplus</string>
     <string name="tab_tencent">Tencent</string>
+    <string name="tab_game">Game</string>
 
     <bool name="config_iconpack">true</bool>
     <string name="premium_alipay_describe">Sorcery Premium Request</string>
@@ -258,7 +259,7 @@
     <string name="shortcuts_request_icon_long_label">Request Icon</string>
     <string name="shortcuts_request_icon_short_label">Request Icon</string>
 
-    <string name="shortcuts_apply_pixel_long_label">Refrsh Pixel Launcher Icons</string>
+    <string name="shortcuts_apply_pixel_long_label">Refresh Pixel Launcher Icons</string>
     <string name="shortcuts_apply_pixel_short_label">Refresh Pixel Icons</string>
 
     <string name="preference_group_general">General</string>
@@ -266,6 +267,11 @@
 
     <string name="preference_group_laboratory">Experimental</string>
     <string name="preference_laboratory_global_load">Global load</string>
+
+    <string name="preference_group_ui">UI</string>
+    <string name="preference_ui_less_anim_title">Less animation</string>
+    <string name="preference_ui_less_anim_summary">Animation may make some device lag</string>
+
 
     <string name="preference_group_about">About</string>
     <string name="preference_about_app">Application information</string>
@@ -308,12 +314,32 @@
         launcher, try it
     </string>
     <string name="preference_apply_xposed_reboot">Reboot</string>
-    <string name="preference_apply_xposed_reboot_summary">Reboot to effect</string>
+    <string name="preference_apply_xposed_reboot_summary">Reboot to take effect</string>
 
     <string name="preference_apply_xposed_selinux">About SELinux</string>
-    <string name="preference_apply_xposed_selinux_summary">The globally applying may not effect with
+    <string name="preference_apply_xposed_selinux_summary">The globally applying may not be effected with
         SELinux executing. Click for more information.
     </string>
     <string name="preference_apply_xposed_selinux_executing">SELinux is executing!
     </string>
+
+    <string name="apply_smartisan_title">Apply to Smartisan launcher</string>
+    <string name="apply_google_now_title">Apply to Google Now launcher</string>
+    <string name="apply_pixel_title">Apply to Pixel launcher</string>
+    <string name="apply_pixel_disable_round_summary">Remove Pixel-style round background of icons
+    </string>
+
+    <string name="apply_disable_work_summary">Remove Android for work icons identification</string>
+    <string name="apply_disable_work_title">Disable work mode icon</string>
+
+    <string name="apply_skip_title">Skip some icons</string>
+    <string name="apply_skip_summary">Choose which icons to not be replaced</string>
+
+    <string name="apply_option_reapply_hint">Apply again to take effect</string>
+
+    <string name="apply_normalize_icon_size_title">Normalize icon size</string>
+    <string name="apply_normalize_icon_size_summary">Scale large icons down to match Material
+        guidelines
+    </string>
+
 </resources>

@@ -45,13 +45,13 @@ public class AboutDialog {
         }
 
         view.findViewById(R.id.imageView_about_dialog_social_google_plus)
-                .setOnClickListener(v -> Navigator.toWebpage(activity,
+                .setOnClickListener(v -> Navigator.toWebPage(activity,
                         "https://plus.google.com/communities/115317471515103046699"));
         view.findViewById(R.id.imageView_about_dialog_social_github)
-                .setOnClickListener(v -> Navigator.toWebpage(activity,
+                .setOnClickListener(v -> Navigator.toWebPage(activity,
                         "https://github.com/sorcererXW/SorceryIconPack"));
         view.findViewById(R.id.imageView_about_dialog_social_coolapk)
-                .setOnClickListener(v -> Navigator.toWebpage(activity,
+                .setOnClickListener(v -> Navigator.toWebPage(activity,
                         "http://www.coolapk.com/apk/com.sorcerer.sorcery.iconpack"));
         TextView versionTextView = (TextView) view.findViewById(R.id.textView_about_dialog_version);
         TextView titleTextView = (TextView) view.findViewById(R.id.textView_about_dialog_title);

@@ -30,6 +30,7 @@
         android:xlargeScreens="true"/>
 
     <application
+
         android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -203,11 +204,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".ui.activities.LabActivity"
-            android:label="@string/nav_item_lab"
-            android:theme="@style/SubActivity">
-        </activity>
-        <activity
             android:name=".help.HelpActivity"
             android:label="@string/nav_item_help"
             android:theme="@style/SubActivity">
@@ -250,13 +246,13 @@
         <activity android:name=".shortcuts.AppShortcutsReceiverActivity"
                   android:launchMode="singleInstance"
                   android:theme="@style/Theme.AppCompat.Translucent"/>
-        <activity android:name=".apply.appliers.database.pixel.PixelApplyActivity"
+        <activity android:name=".apply.database.pixel.PixelApplyProgressActivity"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".apply.appliers.database.smartisan.SmartisanApplyActivity"
+        <activity android:name=".apply.database.smartisan.SmartisanApplyProgressActivity"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".apply.appliers.database.googleNow.GoogleNowApplyActivity"
+        <activity android:name=".apply.database.googleNow.GoogleNowApplyProgressActivity"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".apply.appliers.database.pixel.PixelApplySingleInstanceActivity"
+        <activity android:name=".apply.database.pixel.PixelApplySingleInstanceProgressActivity"
                   android:launchMode="singleInstance"
                   android:theme="@style/AppTheme.Dialog.NoScrim"/>
         <activity android:name=".test.TestActivity"/>

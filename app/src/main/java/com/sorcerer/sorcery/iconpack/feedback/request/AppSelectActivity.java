@@ -18,9 +18,8 @@ import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
-import com.sorcerer.sorcery.iconpack.net.avos.AvosClient;
-import com.sorcerer.sorcery.iconpack.net.avos.models.AvosIconRequestBean;
-import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPrefs;
+import com.sorcerer.sorcery.iconpack.network.avos.AvosClient;
+import com.sorcerer.sorcery.iconpack.network.avos.models.AvosIconRequestBean;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
 import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
@@ -32,7 +31,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
@@ -87,12 +85,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
         menuEnable = false;
 
-        Observable.create(new ObservableOnSubscribe<List<AppInfo>>() {
-            @Override
-            public void subscribe(ObservableEmitter<List<AppInfo>> e) throws Exception {
-                e.onNext(PackageUtil.getComponentInfo(AppSelectActivity.this, true));
-            }
-        })
+        Observable.create((ObservableOnSubscribe<List<AppInfo>>)
+                e -> e.onNext(PackageUtil.getComponentInfo(AppSelectActivity.this, true)))
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(list -> {
@@ -193,7 +187,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     }
 
     private void save(final List<AppInfo> list) {
-        String deviceId = SorceryPrefs.getInstance(AppSelectActivity.this).getUUID().getValue();
+        String deviceId = mPrefs.getUUID().getValue();
         SharedPreferences sharedPreferences = getSharedPreferences("request package", MODE_PRIVATE);
         Observable.fromIterable(list)
                 .filter(appInfo -> deviceId != null

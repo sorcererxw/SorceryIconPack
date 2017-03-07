@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.sorcerer.sorcery.iconpack.apply.appliers.database.pixel.PixelApplySingleInstanceActivity;
+import com.sorcerer.sorcery.iconpack.apply.database.pixel.PixelApplySingleInstanceProgressActivity;
 
 /**
  * @description:
@@ -23,7 +23,7 @@ public class AppShortcutsReceiverActivity extends AppCompatActivity {
         String action = intent.getAction();
         switch (action) {
             case ACTION_APPLY_PIXEL:
-                PixelApplySingleInstanceActivity.apply(this, true);
+                PixelApplySingleInstanceProgressActivity.apply(this, true);
                 break;
         }
         finish();
