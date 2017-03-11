@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.apply.ApplyActivity;
 import com.sorcerer.sorcery.iconpack.customWorkshop.CustomWorkshopActivity;
 import com.sorcerer.sorcery.iconpack.feedback.chat.FeedbackChatActivity;
@@ -16,6 +18,8 @@ import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.test.TestActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
+
+import javax.inject.Inject;
 
 import rx_activity_result2.RxActivityResult;
 
@@ -29,8 +33,12 @@ import rx_activity_result2.RxActivityResult;
 public class Navigator {
     private Activity mActivity;
 
+    @Inject
+    SorceryPrefs mPrefs;
+
     public Navigator(Activity activity) {
         mActivity = activity;
+        App.getInstance().getAppComponent().inject(this);
     }
 
     public void toSearch() {
@@ -87,7 +95,13 @@ public class Navigator {
     private void mainActivityShift(Class<?> cls) {
         Intent intent = new Intent(mActivity, cls);
         mActivity.startActivity(intent);
-        mActivity.overridePendingTransition(R.anim.slide_right_in, android.R.anim.fade_out);
+
+        Boolean lessAnim = mPrefs.lessAnim().get();
+        if (lessAnim != null && lessAnim) {
+            mActivity.overridePendingTransition(0, 0);
+        } else {
+            mActivity.overridePendingTransition(R.anim.slide_right_in, 0);
+        }
     }
 
     public static void toWebPage(Context context, String url) {

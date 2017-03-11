@@ -31,7 +31,7 @@ import java.util.UUID;
  */
 public class Utils {
 
-    public static String getUserAgent() {
+    static String getUserAgent() {
         StringBuilder stringBuilder = new StringBuilder();
         String str = System.getProperty("http.agent");
         stringBuilder.append(str).append(" (#Build; ").append(Build.BRAND).append("; ")
@@ -41,13 +41,13 @@ public class Utils {
         return Html.escapeHtml(stringBuilder.toString());
     }
 
-    public static String getLocaleString() {
+    static String getLocaleString() {
         Locale locale = Locale.getDefault();
         return locale.getLanguage() + "-" + locale.getCountry();
     }
 
-    public static String getUUID() {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(App.getContext());
+    static String getUUID() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(App.getInstance());
         if (sp.contains("uuid")) {
             return sp.getString("uuid", "");
         }

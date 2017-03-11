@@ -2,6 +2,13 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
+        <item>google_voice</item>
+        <item>tencent_tgp_wzry</item>
+        <item>tencent_tgp</item>
+        <item>xfplay</item>
+        <item>sohu_tv</item>
+        <item>dir</item>
+        <item>everything_done</item>
         <item>zhilianzhaopin</item>
         <item>rikkagram</item>
         <item>tongcheng</item>
@@ -23,6 +30,10 @@
         <item>coolapk</item>
         <item>pocket_casts</item>
         <item>qunar</item>
+        <item>tencent_qq_tim</item>
+        <item>google_inbox</item>
+        <item>amap</item>
+        <item>download</item>
     </string-array>
 
     <string-array name="icon_pack" translatable="false">
@@ -316,6 +327,7 @@
         <item>didi</item>
         <item>didi_alt</item>
         <item>dingxiangyisheng</item>
+        <item>dir</item>
         <item>ditietong</item>
         <item>domino_pizza</item>
         <item>domino_pizza_alt</item>
@@ -352,6 +364,7 @@
         <item>evernote</item>
         <item>evernote_alt</item>
         <item>evernote_alt_2</item>
+        <item>everything_done</item>
         <item>every_wiki</item>
         <item>evie_launcher</item>
         <item>express_100</item>
@@ -596,6 +609,7 @@
         <item>google_snapseed</item>
         <item>google_spotlight_stories</item>
         <item>google_translate</item>
+        <item>google_voice</item>
         <item>google_voice_search</item>
         <item>google_wallpapers</item>
         <item>google_wallpapers_alt</item>
@@ -1171,6 +1185,7 @@
         <item>snaptube</item>
         <item>snap_vpn</item>
         <item>sogou_chat</item>
+        <item>sohu_tv</item>
         <item>soild_explorer</item>
         <item>solid_launcher</item>
         <item>songguo_guokr</item>
@@ -1309,6 +1324,8 @@
         <item>tencent_qq_sport</item>
         <item>tencent_qq_tim</item>
         <item>tencent_qzone</item>
+        <item>tencent_tgp</item>
+        <item>tencent_tgp_wzry</item>
         <item>tencent_ttpic</item>
         <item>tencent_video</item>
         <item>tencent_webank</item>
@@ -1414,6 +1431,7 @@
         <item>xcurrency</item>
         <item>xda_labs</item>
         <item>xda_labs_forum</item>
+        <item>xfplay</item>
         <item>xiachufang</item>
         <item>xiami</item>
         <item>xiami_alt</item>

@@ -20,6 +20,6 @@ public abstract class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public BaseRecyclerViewHolder(View itemView) {
         super(itemView);
-        ((App) itemView.getContext().getApplicationContext()).getAppComponent().inject(this);
+        App.getInstance().getAppComponent().inject(this);
     }
 }

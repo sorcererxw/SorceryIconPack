@@ -9,8 +9,8 @@
         android:icon="@drawable/ic_restore_grey_600_24dp"
         android:title="@string/action_restore_to_default"/>
     <!--<item-->
-        <!--android:id="@+id/action_disable_round"-->
-        <!--android:checkable="true"-->
-        <!--android:icon="@drawable/ic_remove_circle_grey_600_24dp"-->
-        <!--android:title="@string/action_disable_round_icon"/>-->
+    <!--android:id="@+id/action_disable_round"-->
+    <!--android:checkable="true"-->
+    <!--android:icon="@drawable/ic_remove_circle_grey_600_24dp"-->
+    <!--android:title="@string/action_disable_round_icon"/>-->
 </menu>

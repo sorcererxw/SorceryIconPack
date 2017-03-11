@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Vibrator;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -133,31 +135,6 @@ public class MainActivity extends BaseActivity {
             finish();
         }
 
-//        new MaterializeBuilder()
-//                .withActivity(this)
-//                .withStatusBarPadding(true)
-//                .build();
-
-//        SorceryPrefs.getInstance(this)
-//                .enableTransparentNavBar().asObservable()
-//                .subscribe(enable -> {
-//                    Window window = getWindow();
-//                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//                    if (enable) {
-//                        window.getDecorView()
-//                                .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-//                    }
-//                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//                    window.setStatusBarColor(Color.TRANSPARENT);
-//                    window.setNavigationBarColor(enable ? 0x33000000 : 0xff000000);
-//                    new MaterializeBuilder().withActivity(this)
-////                            .withStatusBarPadding(true)
-//                            .withTransparentStatusBar(true)
-//                            .withTranslucentStatusBarProgrammatically(true)
-//                            .withTransparentNavigationBar(enable)
-//                            .withTranslucentNavigationBarProgrammatically(enable).build();
-//                });
-
         getWindow().setBackgroundDrawable(null);
 
         mCustomPicker = isCustomPicker(getIntent());
@@ -167,7 +144,20 @@ public class MainActivity extends BaseActivity {
         mNavigator = new Navigator(this);
 
         initTabAndPager();
-        initDrawer();
+
+        mDrawer = new DrawerBuilder()
+                .withSliderBackgroundColor(Color.WHITE)
+                .withCloseOnClick(true)
+                .withToolbar(mSearchToolbar)
+                .withActionBarDrawerToggleAnimated(true)
+                .withOnDrawerNavigationListener(view -> {
+                    openDrawer();
+                    return true;
+                })
+                .withActivity(mActivity)
+                .build();
+
+        new Handler(Looper.getMainLooper()).postDelayed(this::initDrawer, 1500);
 
         mSearchTransitioner = new SearchTransitioner(this,
                 new Navigator(this),
@@ -223,17 +213,6 @@ public class MainActivity extends BaseActivity {
 
         int textColorRes = R.color.palette_grey_800;
         int subTextColorRes = R.color.palette_grey_600;
-        mDrawer = new DrawerBuilder()
-                .withSliderBackgroundColor(Color.WHITE)
-                .withCloseOnClick(true)
-                .withToolbar(mSearchToolbar)
-                .withActionBarDrawerToggleAnimated(true)
-                .withOnDrawerNavigationListener(view -> {
-                    openDrawer();
-                    return false;
-                })
-                .withActivity(mActivity)
-                .build();
 
         mDrawer.addItems(
                 new PrimaryDrawerItem()
@@ -398,18 +377,10 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         getWindow().getDecorView().postDelayed(() -> {
             mSearchTransitioner.onActivityResumed();
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                getWindow().getDecorView().setSystemUiVisibility(0);
-//            }
         }, 100);
     }
 

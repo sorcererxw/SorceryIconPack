@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.sorcerer.sorcery.iconpack.help.HelpActivity">
-
-    <include layout="@layout/toolbar_universal"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_help"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+    >
 
-    </android.support.v7.widget.RecyclerView>
+        <include layout="@layout/toolbar_universal"/>
 
-</LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_help"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

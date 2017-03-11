@@ -22,6 +22,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((App) getContext().getApplicationContext()).getAppComponent().inject(this);
+        App.getInstance().getAppComponent().inject(this);
     }
 }

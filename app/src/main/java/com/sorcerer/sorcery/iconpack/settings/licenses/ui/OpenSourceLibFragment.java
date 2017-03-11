@@ -51,7 +51,8 @@ public class OpenSourceLibFragment extends Fragment {
             new OpenSourceLibInformation.GsonInfoBean(),
             new OpenSourceLibInformation.JsoupInfoBean(),
             new OpenSourceLibInformation.LightweightStreamApiInfoBean(),
-            new OpenSourceLibInformation.MaterializeInfoBean()
+            new OpenSourceLibInformation.MaterializeInfoBean(),
+            new OpenSourceLibInformation.DaggerInfoBean()
     );
 
     @Nullable

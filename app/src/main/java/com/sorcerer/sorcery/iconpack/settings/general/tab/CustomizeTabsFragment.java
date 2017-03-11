@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.settings.general.tab;
 
 import android.os.Bundle;
 import android.support.v14.preference.SwitchPreference;
-import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.PreferenceScreen;
 
 import com.sorcerer.sorcery.iconpack.R;
@@ -24,9 +23,8 @@ public class CustomizeTabsFragment extends BasePreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        mPreferenceScreen = new PreferenceManager(getContext())
-                .createPreferenceScreen(getContext());
-        setPreferenceScreen(mPreferenceScreen);
+        setPreferencesFromResource(R.xml.preference_settings_customize_tabs, rootKey);
+        mPreferenceScreen = (PreferenceScreen) findPreference("preference_screen");
     }
 
     @Override
@@ -34,7 +32,10 @@ public class CustomizeTabsFragment extends BasePreferenceFragmentCompat {
         super.onCreate(savedInstanceState);
         IconFlag[] flags = IconFlag.values();
         for (int i = 0; i < flags.length; i++) {
-            SwitchPreference switchPreference = new SwitchPreference(getContext());
+            SwitchPreference switchPreference =
+                    new SwitchPreference(mPreferenceScreen.getContext());
+
+            switchPreference.setKey("switchPreference_" + flags[i].name());
 
             mPrefs.isTabShow(flags[i].name().toLowerCase())
                     .asObservable().subscribeOn(Schedulers.io())
@@ -50,8 +51,7 @@ public class CustomizeTabsFragment extends BasePreferenceFragmentCompat {
             }
             int index = i;
             switchPreference.setOnPreferenceChangeListener((preference, newValue) -> {
-                mPrefs.isTabShow(flags[index].name().toLowerCase())
-                        .set((Boolean) newValue);
+                mPrefs.isTabShow(flags[index].name().toLowerCase()).set((Boolean) newValue);
                 return true;
             });
             mPreferenceScreen.addPreference(switchPreference);

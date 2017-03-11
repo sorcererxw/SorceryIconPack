@@ -24,10 +24,10 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.1." + code + " Weekly" + new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+        versionName "4.2." + code
+/* + " Weekly" + new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))*/
         minSdkVersion 21
         targetSdkVersion 25
-        multiDexEnabled true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -35,6 +35,7 @@ android {
     }
     buildTypes {
         debug {
+            multiDexEnabled false
             minifyEnabled true
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -42,11 +43,12 @@ android {
             buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'false'
         }
         release {
+            multiDexEnabled false
             minifyEnabled true
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
-            buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'true'
+            buildConfigField 'boolean', 'ONLY_FOR_PLAY', 'false'
         }
     }
     buildTypes.each {
@@ -144,8 +146,6 @@ dependencies {
     compile 'com.flipboard:bottomsheet-commons:1.5.3'
     // fastscroll
     compile 'com.github.turing-tech:MaterialScrollBar:12.3.1'
-    // kotlin
-//    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     // dagger
     compile 'com.google.dagger:dagger:2.10-rc2'
     apt 'com.google.dagger:dagger-compiler:2.10-rc2'

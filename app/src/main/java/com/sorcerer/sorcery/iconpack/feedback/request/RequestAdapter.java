@@ -30,7 +30,7 @@ import timber.log.Timber;
  * @author: Sorcerer
  * @date: 2016/8/18
  */
-public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHolder> {
+class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHolder> {
 
     private Context mContext;
     private List<CheckAppInfo> mAppInfoList;
@@ -63,7 +63,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
 
     private OnCheckListener mOnCheckListener;
 
-    public interface OnCheckListener {
+    interface OnCheckListener {
         void OnEmpty();
 
         void OnUnEmpty();
@@ -104,7 +104,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         }
     }
 
-    public RequestAdapter(Context context, List<AppInfo> appInfoList) {
+    RequestAdapter(Context context, List<AppInfo> appInfoList) {
         mContext = context;
         mAppInfoList = new ArrayList<>();
         mAppInfoList.addAll(Stream.range(0, appInfoList.size())
@@ -192,15 +192,15 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         return pos;
     }
 
-    public void setOnCheckListener(OnCheckListener onCheckListener) {
+    void setOnCheckListener(OnCheckListener onCheckListener) {
         mOnCheckListener = onCheckListener;
     }
 
-    public List<AppInfo> getCheckedAppsList() {
+    List<AppInfo> getCheckedAppsList() {
         return Stream.of(mAppInfoList).filter(CheckAppInfo::isChecked).collect(Collectors.toList());
     }
 
-    public void uncheckAfterSend() {
+    void uncheckAfterSend() {
         Stream.of(mAppInfoList).filter(CheckAppInfo::isChecked).forEach(cai -> {
             cai.setChecked(false);
             cai.setRequestedTimes(-1);
@@ -208,7 +208,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         notifyDataSetChanged();
     }
 
-    public void checkAll(boolean check) {
+    void checkAll(boolean check) {
         if (check) {
             Stream.of(mAppInfoList).forEach(cai -> {
                 if (mShowAll) {
@@ -223,12 +223,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemV
         notifyDataSetChanged();
     }
 
-    public void setShowAll(boolean isShowAll) {
+    void setShowAll(boolean isShowAll) {
         mShowAll = isShowAll;
         List<CheckAppInfo> tmp = new ArrayList<>(mAppInfoList);
-//        for (int i = 0; i < mAppInfoList.size(); i++) {
-//            tmp.add(mAppInfoList.get(i));
-//        }
+
         mAppInfoList.clear();
         mAppInfoList.addAll(tmp);
         notifyDataSetChanged();

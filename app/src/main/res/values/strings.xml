@@ -317,7 +317,8 @@
     <string name="preference_apply_xposed_reboot_summary">Reboot to take effect</string>
 
     <string name="preference_apply_xposed_selinux">About SELinux</string>
-    <string name="preference_apply_xposed_selinux_summary">The globally applying may not be effected with
+    <string name="preference_apply_xposed_selinux_summary">The globally applying may not be effected
+        with
         SELinux executing. Click for more information.
     </string>
     <string name="preference_apply_xposed_selinux_executing">SELinux is executing!

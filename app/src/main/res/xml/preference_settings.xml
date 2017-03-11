@@ -26,10 +26,10 @@
     </PreferenceCategory>
 
     <!--<PreferenceCategory-->
-        <!--android:layout="@layout/layout_preference_category_card"-->
-        <!--android:title="@string/preference_group_ui">-->
+    <!--android:layout="@layout/layout_preference_category_card"-->
+    <!--android:title="@string/preference_group_ui">-->
 
-        <!---->
+    <!---->
     <!--</PreferenceCategory>-->
 
     <PreferenceCategory

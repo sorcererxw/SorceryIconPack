@@ -261,6 +261,5 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     @Override
     public void finish() {
         super.finish();
-//        overridePendingTransition(R.anim.activity_in_scale, R.anim.activity_out_top_to_bottom);
     }
 }

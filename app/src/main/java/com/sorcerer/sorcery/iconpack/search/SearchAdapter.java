@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.Glide;
+import com.jakewharton.rxbinding.view.RxView;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.IconBean;
@@ -63,7 +65,7 @@ class SearchAdapter extends BaseRecyclerViewAdapter<SearchAdapter.SearchViewHold
     private boolean mLessAnim = false;
 
     SearchAdapter(Activity activity) {
-        super(activity);
+        super();
         mActivity = activity;
 
         mPrefs.lessAnim().asObservable()
@@ -92,6 +94,8 @@ class SearchAdapter extends BaseRecyclerViewAdapter<SearchAdapter.SearchViewHold
                 LayoutInflater.from(mActivity).inflate(R.layout.item_icon_center, parent, false));
     }
 
+    private static boolean sLock = false;
+
     @Override
     public void onBindViewHolder(final SearchViewHolder holder, int position) {
         if (position < mShowList.size()) {
@@ -102,18 +106,25 @@ class SearchAdapter extends BaseRecyclerViewAdapter<SearchAdapter.SearchViewHold
             }
             request.into(holder.icon);
 
-            if (mCustomPicker) {
-                holder.itemView.setOnClickListener(view -> {
-                    mActivity.setResult(Activity.RESULT_OK,
-                            new Intent().putExtra("icon res",
-                                    mShowList.get(holder.getAdapterPosition()).getRes()));
-                    mActivity.finish();
-                });
-            } else {
-                holder.itemView.setOnClickListener(
-                        view -> showIconDialog(holder.icon,
-                                mShowList.get(holder.getAdapterPosition())));
-            }
+            RxView.clicks(holder.itemView)
+                    .filter(click -> !sLock)
+                    .subscribe(click -> {
+                        sLock = true;
+                        new Handler().postDelayed(() -> sLock = false, 1000);
+                        if (mCustomPicker) {
+                            holder.itemView.setOnClickListener(view -> {
+                                mActivity.setResult(Activity.RESULT_OK,
+                                        new Intent().putExtra("icon res",
+                                                mShowList.get(holder.getAdapterPosition())
+                                                        .getRes()));
+                                mActivity.finish();
+                            });
+                        } else {
+                            showIconDialog(
+                                    holder.icon,
+                                    mShowList.get(holder.getAdapterPosition()));
+                        }
+                    }, Timber::e);
         }
     }
 

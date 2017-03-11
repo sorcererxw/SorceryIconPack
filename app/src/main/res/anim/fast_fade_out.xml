@@ -23,4 +23,4 @@
        android:fromAlpha="1.0"
        android:interpolator="@android:interpolator/decelerate_quad"
        android:toAlpha="0.0"
-    />
+/>

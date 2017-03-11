@@ -291,6 +291,7 @@
     <item drawable="didi"/>
     <item drawable="didi_alt"/>
     <item drawable="dingxiangyisheng"/>
+    <item drawable="dir"/>
     <item drawable="ditietong"/>
     <item drawable="domino_pizza"/>
     <item drawable="domino_pizza_alt"/>
@@ -327,6 +328,7 @@
     <item drawable="evernote"/>
     <item drawable="evernote_alt"/>
     <item drawable="evernote_alt_2"/>
+    <item drawable="everything_done"/>
     <item drawable="every_wiki"/>
     <item drawable="evie_launcher"/>
     <item drawable="express_100"/>
@@ -571,6 +573,7 @@
     <item drawable="google_snapseed"/>
     <item drawable="google_spotlight_stories"/>
     <item drawable="google_translate"/>
+    <item drawable="google_voice"/>
     <item drawable="google_voice_search"/>
     <item drawable="google_wallpapers"/>
     <item drawable="google_wallpapers_alt"/>
@@ -1146,6 +1149,7 @@
     <item drawable="snaptube"/>
     <item drawable="snap_vpn"/>
     <item drawable="sogou_chat"/>
+    <item drawable="sohu_tv"/>
     <item drawable="soild_explorer"/>
     <item drawable="solid_launcher"/>
     <item drawable="songguo_guokr"/>
@@ -1284,6 +1288,8 @@
     <item drawable="tencent_qq_sport"/>
     <item drawable="tencent_qq_tim"/>
     <item drawable="tencent_qzone"/>
+    <item drawable="tencent_tgp"/>
+    <item drawable="tencent_tgp_wzry"/>
     <item drawable="tencent_ttpic"/>
     <item drawable="tencent_video"/>
     <item drawable="tencent_webank"/>
@@ -1389,6 +1395,7 @@
     <item drawable="xcurrency"/>
     <item drawable="xda_labs"/>
     <item drawable="xda_labs_forum"/>
+    <item drawable="xfplay"/>
     <item drawable="xiachufang"/>
     <item drawable="xiami"/>
     <item drawable="xiami_alt"/>

@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
-import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
@@ -28,10 +27,10 @@ public class App extends Application {
     private AppComponent mAppComponent;
 
     @SuppressLint("StaticFieldLeak")
-    private static Context sContext;
+    private static App sApp;
 
-    public static Context getContext() {
-        return sContext;
+    public static App getInstance() {
+        return sApp;
     }
 
     @Override
@@ -45,9 +44,14 @@ public class App extends Application {
             CrashReport.initCrashReport(this, "900053240", false);
         }
         RxActivityResult.register(this);
-        Timber.plant(new Timber.DebugTree());
+        Timber.plant(new Timber.DebugTree() {
+            @Override
+            public void e(String message, Object... args) {
+                super.e(message, args);
+            }
+        });
 
-        sContext = getApplicationContext();
+        sApp = this;
 
         try {
             NetUtil.enableSSLSocket();

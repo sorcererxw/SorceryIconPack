@@ -20,7 +20,7 @@ public abstract class BasePreferenceFragmentCompat extends PreferenceFragmentCom
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ((App) getContext().getApplicationContext()).getAppComponent().inject(this);
+        App.getInstance().getAppComponent().inject(this);
         super.onCreate(savedInstanceState);
     }
 }

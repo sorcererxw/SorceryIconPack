@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack;
 
 import com.sorcerer.sorcery.iconpack.apply.database.base.BaseLauncherApplier;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconViewPageAdapter;
+import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewHolder;
@@ -35,4 +36,7 @@ public interface AppComponent {
     void inject(IconViewPageAdapter adapter);
 
     void inject(BaseRecyclerViewAdapter.InjectorHelper injectorHelper);
+
+    void inject(Navigator navigator);
+
 }

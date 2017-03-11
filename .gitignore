@@ -20,7 +20,6 @@ testProgram/
 
 app/src/main/java/com/sorcerer/sorcery/iconpack/net
 app/src/main/java/com/sorcerer/sorcery/iconpack/apply
-app/src/main/java/com/sorcerer/sorcery/iconpack/iconShowCase
 app/src/main/java/com/sorcerer/sorcery/iconpack/test
 app/dictionary-elder.txt
 app/proguard-rules.pro

@@ -29,7 +29,7 @@ class CustomizeTabsAdapter extends BaseRecyclerViewAdapter<CustomizeTabsAdapter.
     private Context mContext;
 
     public CustomizeTabsAdapter(Context context) {
-        super(context);
+        super();
         mContext = context;
     }
 

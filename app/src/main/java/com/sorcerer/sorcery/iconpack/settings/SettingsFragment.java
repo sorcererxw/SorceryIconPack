@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.settings;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
@@ -37,36 +38,30 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
         return new SettingsFragment();
     }
 
-    private static final String KEY_PREFERENCE_SCREEN = "preference_screen";
     private PreferenceScreen mPreferenceScreen;
 
-    private static final String KEY_GENERAL_CUSTOMIZE_TABS = "preference_general_customize_tabs";
     private Preference mGeneralCustomizeTabs;
 
-    private static final String KEY_GENERAL_CLEAR_CACHE = "preference_general_clear_cache";
     private Preference mGeneralClearCachePreference;
 
-    private static final String KEY_UI_TRANSPARENT_NAV_BAR =
-            "preference_switch_ui_transparent_nav_bar";
     private SwitchPreference mUiNavBarPreference;
 
-    private static final String KEY_DEV_GROUP = "preference_group_dev";
     private PreferenceGroup mDevPreferenceGroup;
 
-    private static final String KEY_ABOUT_APP = "preference_about_app";
     private Preference mAboutAppPreference;
 
-    private static final String KEY_ABOUT_LIB = "preference_about_lib";
     private Preference mAboutLibPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_settings, rootKey);
-        mPreferenceScreen = (PreferenceScreen) findPreference(KEY_PREFERENCE_SCREEN);
-        initGeneral();
-        initUi();
-        initDevOps();
-        initAbout();
+        mPreferenceScreen = (PreferenceScreen) findPreference("preference_screen");
+        new Handler().post(() -> {
+            initGeneral();
+            initUi();
+            initDevOps();
+            initAbout();
+        });
     }
 
     @Override
@@ -75,9 +70,9 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     }
 
     private void initGeneral() {
-        mGeneralClearCachePreference = findPreference(KEY_GENERAL_CLEAR_CACHE);
+        mGeneralClearCachePreference = findPreference("preference_general_clear_cache");
 
-        mGeneralCustomizeTabs = findPreference(KEY_GENERAL_CUSTOMIZE_TABS);
+        mGeneralCustomizeTabs = findPreference("preference_general_customize_tabs");
         mGeneralCustomizeTabs.setOnPreferenceClickListener(
                 new Preference.OnPreferenceClickListener() {
                     @Override
@@ -117,7 +112,8 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     private SwitchPreference mUiLessAnimPreference;
 
     private void initUi() {
-        mUiNavBarPreference = (SwitchPreference) findPreference(KEY_UI_TRANSPARENT_NAV_BAR);
+        mUiNavBarPreference =
+                (SwitchPreference) findPreference("preference_switch_ui_transparent_nav_bar");
 
         mUiNavBarPreference.setChecked(mPrefs.enableTransparentNavBar().get());
         mUiNavBarPreference.setOnPreferenceChangeListener((preference, newValue) -> {
@@ -135,14 +131,14 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     }
 
     private void initDevOps() {
-        mDevPreferenceGroup = (PreferenceGroup) findPreference(KEY_DEV_GROUP);
+        mDevPreferenceGroup = (PreferenceGroup) findPreference("preference_group_dev");
         if (!mPrefs.devOptionsOpened().getValue()) {
             mPreferenceScreen.removePreference(mDevPreferenceGroup);
         }
     }
 
     private void initAbout() {
-        mAboutAppPreference = findPreference(KEY_ABOUT_APP);
+        mAboutAppPreference = findPreference("preference_about_app");
         mAboutAppPreference.setOnPreferenceClickListener(preference -> {
             if (!mPrefs.devOptionsOpened().getValue()) {
                 AboutDialog.show(getActivity(), new OnMultiTouchListener(5, () -> {
@@ -157,7 +153,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
             return true;
         });
 
-        mAboutLibPreference = findPreference(KEY_ABOUT_LIB);
+        mAboutLibPreference = findPreference("preference_about_lib");
         mAboutLibPreference.setOnPreferenceClickListener(preference -> {
             ((SettingsActivity) getActivity())
                     .addFragment(new OpenSourceLibFragment());

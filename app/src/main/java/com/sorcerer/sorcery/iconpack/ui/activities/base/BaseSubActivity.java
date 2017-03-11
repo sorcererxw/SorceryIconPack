@@ -1,7 +1,5 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
-import com.mikepenz.materialize.MaterializeBuilder;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -13,10 +11,13 @@ public abstract class BaseSubActivity extends SlideInAndOutAppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        new MaterializeBuilder(this)
-                .withTransparentStatusBar(true)
-                .withTintedStatusBar(false)
-                .withTranslucentStatusBarProgrammatically(true)
-                .build();
+//        new MaterializeBuilder(this)
+//                .withTransparentStatusBar(false)
+//                .withTintedStatusBar(true)
+//                .withStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))
+//                .withTranslucentStatusBarProgrammatically(true)
+//                .build();
+
+        mPrefs.lessAnim().asObservable().subscribe(lessAnim -> setSwipeEnabled(!lessAnim));
     }
 }

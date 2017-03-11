@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.settings;
 
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
-import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseFragmentSubActivity;
@@ -13,9 +12,6 @@ public class SettingsActivity extends BaseFragmentSubActivity {
 
     @BindView(R.id.coordinatorLayout_settings)
     CoordinatorLayout mRootCoordinatorLayout;
-
-    @BindView(R.id.frameLayout_settings_fragment_container)
-    FrameLayout mFragmentContainer;
 
     @Override
     protected int provideLayoutId() {

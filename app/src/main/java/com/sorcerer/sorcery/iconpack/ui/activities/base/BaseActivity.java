@@ -28,7 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((App) getApplication()).getAppComponent().inject(this);
+        App.getInstance().getAppComponent().inject(this);
         hookBeforeSetContentView();
         if (provideLayoutId() != 0) {
             setContentView(provideLayoutId());

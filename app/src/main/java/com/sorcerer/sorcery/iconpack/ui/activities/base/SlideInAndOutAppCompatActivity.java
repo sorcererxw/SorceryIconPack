@@ -7,6 +7,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -36,14 +37,8 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
 
     protected SwipeLayout mSwipeLayout;
 
-    /**
-     * 是否可以滑动关闭页面
-     */
     private boolean mSwipeEnabled = true;
 
-    /**
-     * 是否可以在页面任意位置右滑关闭页面，如果是false则从左边滑才可以关闭。
-     */
     private boolean mSwipeAnyWhere = true;
 
     @Override
@@ -100,13 +95,18 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
         } else {
             mSwipeLayout.cancelPotentialAnimation();
             super.finish();
-            overridePendingTransition(0, R.anim.slide_right_out);
+
+            Boolean lessAnim = mPrefs.lessAnim().get();
+            if (lessAnim != null && lessAnim) {
+                overridePendingTransition(0, 0);
+            } else {
+                overridePendingTransition(0, R.anim.slide_right_out);
+            }
         }
     }
 
     class SwipeLayout extends FrameLayout {
 
-        //private View backgroundLayer;用来设置滑动时的背景色
         private Drawable leftShadow;
 
         public SwipeLayout(Context context) {
@@ -284,6 +284,7 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
             }
         }
 
+        @Keep
         public void setContentX(float x) {
             int ix = (int) x;
             content.setX(ix);
