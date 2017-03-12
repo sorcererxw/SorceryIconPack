@@ -230,7 +230,7 @@
         <activity
             android:name=".search.SearchActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/SubActivity"
+            android:theme="@style/SearchActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
         <activity

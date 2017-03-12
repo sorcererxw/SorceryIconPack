@@ -149,6 +149,8 @@ dependencies {
     // dagger
     compile 'com.google.dagger:dagger:2.10-rc2'
     apt 'com.google.dagger:dagger-compiler:2.10-rc2'
+
+    compile 'me.grantland:autofittextview:0.2.1'
 }
 repositories {
     mavenCentral()

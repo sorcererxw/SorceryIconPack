@@ -1,39 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="icon_pack_new" translatable="false">
-        <item>@string/icon_label_added</item>
-        <item>google_voice</item>
-        <item>tencent_tgp_wzry</item>
-        <item>tencent_tgp</item>
-        <item>xfplay</item>
-        <item>sohu_tv</item>
-        <item>dir</item>
-        <item>everything_done</item>
-        <item>zhilianzhaopin</item>
-        <item>rikkagram</item>
-        <item>tongcheng</item>
-        <item>pingan_ccms</item>
-        <item>maidanba</item>
-        <item>xda_labs</item>
-        <item>supergram</item>
-        <item>ppsspp</item>
-        <item>plus_messenger</item>
-        <item>plus_messenger_alt</item>
-        <item>lagatgram</item>
-        <item>game_human_resource_machine</item>
-        <item>game_asphalt_8</item>
-        <item>xiaomi_support</item>
+        <!--<item>@string/icon_label_added</item>-->
 
         <item>@string/icon_label_updated</item>
-        <item>hangout_dialer</item>
-        <item>google_drive</item>
-        <item>coolapk</item>
-        <item>pocket_casts</item>
-        <item>qunar</item>
-        <item>tencent_qq_tim</item>
-        <item>google_inbox</item>
-        <item>amap</item>
-        <item>download</item>
+        <item>jotterpad</item>
     </string-array>
 
     <string-array name="icon_pack" translatable="false">
