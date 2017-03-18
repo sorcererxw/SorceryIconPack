@@ -13,8 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/linearLayout_feedback_chat_toolbar"
-        android:layout_below="@+id/include"
-        android:background="#eee"/>
+        android:layout_below="@+id/include"/>
 
     <LinearLayout
         android:id="@+id/linearLayout_feedback_chat_toolbar"
@@ -23,7 +22,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#fff"
+        android:background="?attr/colorCard"
         android:orientation="horizontal">
 
         <EditText
@@ -39,6 +38,8 @@
             android:background="@android:color/transparent"
             android:hint="@string/feedback_chat_edit_hint"
             android:inputType="textMultiLine"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textColorHint="?android:attr/textColorSecondary"
             tools:text="111"/>
 
         <RelativeLayout
@@ -53,18 +54,14 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_centerInParent="true"
-                android:alpha="0.3"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_attach_file_black_36dp"/>
+                android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
             <ImageView
                 android:id="@+id/imageView_feedback_chat_send_button"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_centerInParent="true"
-                android:alpha="0.3"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_send_black_36dp"
                 android:visibility="gone"/>
         </RelativeLayout>
     </LinearLayout>

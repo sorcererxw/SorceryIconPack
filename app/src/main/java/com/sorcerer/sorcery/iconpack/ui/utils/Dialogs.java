@@ -3,6 +3,8 @@ package com.sorcerer.sorcery.iconpack.ui.utils;
 import android.content.Context;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
  * @description:
@@ -11,6 +13,11 @@ import com.afollestad.materialdialogs.MaterialDialog;
  */
 
 public class Dialogs {
+    public static MaterialDialog.Builder builder(Context context) {
+        return new MaterialDialog.Builder(context)
+                .backgroundColor(ResourceUtil.getAttrColor(context, R.attr.colorCard));
+    }
+
     public static MaterialDialog indeterminateProgressDialog(Context context,
                                                              String message) {
         return new MaterialDialog.Builder(context)

@@ -42,8 +42,8 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
     private boolean mSwipeAnyWhere = true;
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
         mSwipeLayout = new SwipeLayout(this);
     }
 
@@ -72,10 +72,6 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         mSwipeLayout.replaceLayer(this);
-        View view = findViewById(android.R.id.content);
-        if (view != null) {
-            view.setBackgroundColor(ResourceUtil.getColor(mContext, R.color.root_background));
-        }
     }
 
     public static int getScreenWidth(Context context) {

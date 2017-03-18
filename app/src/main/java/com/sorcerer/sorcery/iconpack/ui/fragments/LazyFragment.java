@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.widget.FrameLayout;
 
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.wang.avi.AVLoadingIndicatorView;
 
 /**
  * @description:
@@ -43,6 +45,11 @@ public class LazyFragment extends LazyBaseFragment {
 
                 View view = View.inflate(getApplicationContext(),
                         R.layout.fragment_lazy_loading, null);
+
+                AVLoadingIndicatorView indicator =
+                        (AVLoadingIndicatorView) view.findViewById(R.id.indicator);
+                indicator.setIndicatorColor(
+                        ResourceUtil.getAttrColor(getContext(), android.R.attr.colorAccent));
 
                 layout.addView(view);
                 super.setContentView(layout);

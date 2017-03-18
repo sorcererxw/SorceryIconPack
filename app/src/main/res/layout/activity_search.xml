@@ -5,9 +5,9 @@
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".search.SearchActivity">
 
     <com.sorcerer.sorcery.iconpack.ui.views.SearchBar
@@ -16,6 +16,7 @@
         android:layout_height="@dimen/toolbar_semi_expanded_height"
         android:elevation="4dp"
         android:gravity="top"
+        android:background="?attr/colorCard"
         android:minHeight="@dimen/toolbar_semi_expanded_height"/>
 
     <RelativeLayout
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="16sp"
             android:visibility="gone"/>
 

@@ -867,6 +867,9 @@
         component="ComponentInfo{com.fitbit.FitbitMobile/com.qihoo.util.StartActivity}"
         drawable="fitbit"/>
     <item
+        component="ComponentInfo{com.fitbit.FitbitMobile/com.fitbit.FirstActivity}"
+        drawable="fitbit"/>
+    <item
         component="ComponentInfo{com.thefancy.app/com.thefancy.app.common.Main}"
         drawable="fancy"/>
     <item
@@ -5622,12 +5625,6 @@
         component="ComponentInfo{com.xda.labs/com.xda.labs.ForumLauncher}"
         drawable="xda_labs_forum"/>
     <item
-        component="ComponentInfo{com.xda.labs/com.xda.labs.LabsLauncher}"
-        drawable="xda_labs_forum"/>
-    <item
-        component="ComponentInfo{com.xda.labs/com.xda.labs.MainActivity}"
-        drawable="xda_labs_forum"/>
-    <item
         component="ComponentInfo{com.tencent.qqmusiclocalplayer/com.tencent.qqmusiclocalplayer.app.activity.AppStarterActivity}"
         drawable="tencent_qq_music_local_player"/>
     <item
@@ -5741,5 +5738,77 @@
     <item
         component="ComponentInfo{com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity}"
         drawable="google_voice"/>
+    <item
+        component="ComponentInfo{com.google.android.apps.fitness/com.google.android.apps.fitness.welcome.WelcomeActivity}"
+        drawable="google_fit"/>
+    <item
+        component="ComponentInfo{com.ichi2.anki/com.ichi2.anki.IntentHandler}"
+        drawable="ankidroid"/>
+    <item
+        component="ComponentInfo{com.booking/com.booking.activity.StartActivity}"
+        drawable="booking"/>
+    <item
+        component="ComponentInfo{com.booking/com.booking.activity.StartActivity-default-name}"
+        drawable="booking"/>
+    <item
+        component="ComponentInfo{com.bilibili.app.blue/tv.danmaku.bili.ui.splash.SplashActivity}"
+        drawable="bilibili_blue"/>
+    <item
+        component="ComponentInfo{com.xda.labs/com.xda.labs.MainActivity}"
+        drawable="xda_labs"/>
+    <item
+        component="ComponentInfo{com.xda.labs/com.xda.labs.LabsLauncher}"
+        drawable="xda_labs"/>
+    <item
+        component="ComponentInfo{obdv.cf.tool.musicassistant/obdv.cf.tool.musicassistant.SplashActivity}"
+        drawable="siyue_musicassistant"/>
+    <item
+        component="ComponentInfo{com.kevin.videoplay/com.qihoo.util.StartActivity}"
+        drawable="sayu_videoplay"/>
+    <item
+        component="ComponentInfo{com.kevin.videoplay/com.kevin.videoplay.module.common.SplashActivity}"
+        drawable="sayu_videoplay"/>
+    <item
+        component="ComponentInfo{com.job.android/com.job.android.pages.common.OpenImageActivity}"
+        drawable="a51job"/>
+    <item
+        component="ComponentInfo{net.dinglisch.android.taskerm/net.dinglisch.android.taskerm.Tasker}"
+        drawable="tasker"/>
+    <item
+        component="ComponentInfo{com.intlime.mark/com.intlime.mark.activitys.SplashActivity}"
+        drawable="mark"/>
+    <item
+        component="ComponentInfo{ml.puredark.hviewer/ml.puredark.hviewer.activities.MainActivity}"
+        drawable="hviewer"/>
+    <item
+        component="ComponentInfo{ml.puredark.hviewer/ml.puredark.hviewer.ui.activities.MainActivity}"
+        drawable="hviewer"/>
+    <item
+        component="ComponentInfo{com.goplaycn.googleinstall/com.goplaycn.googleinstall.activity.SplashActivity}"
+        drawable="go_google_installer"/>
+    <item
+        component="ComponentInfo{com.gmail.heagoo.apkeditor.pro/com.gmail.heagoo.apkeditor.MainActivity-New1}"
+        drawable="apk_editor"/>
+    <item
+        component="ComponentInfo{com.gmail.heagoo.apkeditor.pro/com.gmail.heagoo.apkeditor.MainActivity-Old}"
+        drawable="apk_editor"/>
+    <item
+        component="ComponentInfo{com.gmail.heagoo.apkeditor.pro/com.gmail.heagoo.apkeditor.MainActivity-New4}"
+        drawable="apk_editor"/>
+    <item
+        component="ComponentInfo{com.gmail.heagoo.apkeditor.pro/com.gmail.heagoo.apkeditor.MainActivity-New2}"
+        drawable="apk_editor"/>
+    <item
+        component="ComponentInfo{kr.co.vcnc.android.couple/kr.co.vcnc.android.couple.feature.LaunchActivity}"
+        drawable="between"/>
+    <item
+        component="ComponentInfo{com.linguee.linguee/com.linguee.linguee.MainActivity}"
+        drawable="linguee"/>
+    <item
+        component="ComponentInfo{com.qianyan.eudic/com.eusoft.dict.activity.SplashActivity}"
+        drawable="eudic"/>
+    <item
+        component="ComponentInfo{com.sorcerer.sorcery.iconpack/com.sorcerer.sorcery.iconpack.MainActivity}"
+        drawable="sorcery_icons_winter_day"/>
 
 </resources>

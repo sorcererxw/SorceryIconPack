@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="?attr/colorCard"
     app:cardCornerRadius="0dp"
     app:cardElevation="@dimen/list_card_elevation">
 
@@ -20,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:textColor="@color/primary_text"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -29,14 +30,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:textColor="@color/primary_text"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="14sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:background="#f7f7f7"
+            android:background="?android:attr/colorBackground"
             android:orientation="vertical"
             android:padding="4dp">
 
@@ -45,16 +46,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textColor="@color/secondary_text"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="12sp"/>
 
             <ImageView
                 android:id="@+id/imageView_item_openSourceLib_arrow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:alpha="0.2"
-                android:src="@drawable/ic_keyboard_arrow_down_black_24dp"/>
+                android:layout_gravity="center_horizontal"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

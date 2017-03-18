@@ -139,7 +139,7 @@ public class IconFragment extends LazyFragment implements IViewPageFragment {
         mGridView.setHasFixedSize(true);
 
         if (customPicker) {
-            mIconAdapter.setCustomPicker(mHoldingActivity, true);
+            mIconAdapter.setCustomPicker(getActivity(), true);
         }
         mGridView.setAdapter(mIconAdapter);
         if (mNeedResize) {

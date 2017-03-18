@@ -13,12 +13,15 @@ import com.f2prateek.rx.preferences2.RxSharedPreferences;
 
 public abstract class Prefs {
 
+    protected Context mContext;
+
     private final SharedPreferences mPreferences;
     private final RxSharedPreferences mRxSharedPreferences;
 
     protected abstract String providePreferenceName();
 
     public Prefs(Context context) {
+        mContext = context;
         mPreferences = context.getSharedPreferences(providePreferenceName(), Context.MODE_PRIVATE);
         mRxSharedPreferences = RxSharedPreferences.create(mPreferences);
     }

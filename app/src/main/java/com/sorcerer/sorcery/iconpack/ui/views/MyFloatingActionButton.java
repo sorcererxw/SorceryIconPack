@@ -3,8 +3,11 @@ package com.sorcerer.sorcery.iconpack.ui.views;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
+
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
  * @description:
@@ -17,14 +20,22 @@ public class MyFloatingActionButton extends FloatingActionButton {
 
     public MyFloatingActionButton(Context context) {
         super(context);
+        init();
     }
 
     public MyFloatingActionButton(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public MyFloatingActionButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    private void init() {
+        setBackgroundTintList(ColorStateList.valueOf(
+                ResourceUtil.getAttrColor(getContext(), android.R.attr.colorAccent)));
     }
 
     public boolean isShow() {

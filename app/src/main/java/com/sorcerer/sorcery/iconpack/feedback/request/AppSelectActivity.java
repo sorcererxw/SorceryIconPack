@@ -2,6 +2,7 @@ package com.sorcerer.sorcery.iconpack.feedback.request;
 
 import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -10,9 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
@@ -65,19 +66,18 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     private Menu mMenu;
 
     @Override
+    protected ViewGroup rootView() {
+        return mCoordinatorLayout;
+    }
+
+    @Override
     protected int provideLayoutId() {
         return R.layout.activity_app_select;
     }
 
     @Override
-    protected void hookBeforeSetContentView() {
-        super.hookBeforeSetContentView();
-        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-    }
-
-    @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
 
         setToolbarCloseIndicator();
 
@@ -139,20 +139,14 @@ public class AppSelectActivity extends UniversalToolbarActivity {
 
     @Override
     public void onBackPressed() {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+        MaterialDialog.Builder builder = Dialogs.builder(this);
         builder.content(getString(R.string.cancel_request));
-        builder.onAny((dialog, which) -> {
-            if (which == DialogAction.POSITIVE) {
-                back();
-            }
+        builder.onPositive((dialog, which) -> {
+            super.onBackPressed();
         });
         builder.positiveText(getString(R.string.yes));
         builder.negativeText(getString(R.string.no));
         builder.show();
-    }
-
-    private void back() {
-        super.onBackPressed();
     }
 
     @Override
@@ -256,10 +250,5 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         AppSelectActivity.this.finish();
                     }
                 });
-    }
-
-    @Override
-    public void finish() {
-        super.finish();
     }
 }

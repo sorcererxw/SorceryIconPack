@@ -2,6 +2,8 @@ package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.sorcerer.sorcery.iconpack.R;
@@ -28,12 +30,17 @@ public class PhotoViewActivity extends BaseActivity {
     PhotoView mPhotoView;
 
     @Override
+    protected ViewGroup rootView() {
+        return null;
+    }
+
+    @Override
     protected int provideLayoutId() {
         return R.layout.activity_photo_view;
     }
 
     @Override
-    protected void init() {
+    protected void init(Bundle savedInstanceState) {
         String url = getIntent().getStringExtra(KEY_URL);
         Glide.with(this)
                 .load(url)

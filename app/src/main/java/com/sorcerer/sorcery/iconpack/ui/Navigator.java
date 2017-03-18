@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 
 import com.sorcerer.sorcery.iconpack.App;
+import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.apply.ApplyActivity;
@@ -17,7 +18,6 @@ import com.sorcerer.sorcery.iconpack.search.SearchActivity;
 import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.test.TestActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 
 import javax.inject.Inject;
 

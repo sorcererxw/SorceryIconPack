@@ -9,11 +9,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -21,6 +21,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,10 +34,13 @@ import com.avos.avoscloud.feedback.Comment;
 import com.avos.avoscloud.feedback.Comment.CommentType;
 import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.avos.avoscloud.feedback.FeedbackThread;
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
+import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -85,8 +89,8 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
                 if (comment == null) {
                     continue;
                 }
-                if (comment.getCommentType() == CommentType.DEV && comment.getContent()
-                        .equals(COMMAND_INFO)) {
+                if (comment.getCommentType() == CommentType.DEV
+                        && comment.getContent().equals(COMMAND_INFO)) {
                     reportInformation();
                 }
             }
@@ -181,20 +185,18 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     }
 
     @Override
+    protected ViewGroup rootView() {
+        return mRecyclerView;
+    }
+
+    @Override
     protected int provideLayoutId() {
         return R.layout.activity_feedback_chat;
     }
 
     @Override
-    protected void hookBeforeSetContentView() {
-        super.hookBeforeSetContentView();
-        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-
-    }
-
-    @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
         setToolbarCloseIndicator();
         mFeedbackAgent = new FeedbackAgent(this);
         mFeedbackThread = mFeedbackAgent.getDefaultThread();
@@ -247,14 +249,21 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
             welcome();
         }
 
-        Observable.interval(1, TimeUnit.SECONDS)
-                .subscribe(aLong -> {
-                    mFeedbackThread.sync(mSyncCallback);
-                });
+        mSendButton.setImageDrawable(
+                new IconicsDrawable(this, GoogleMaterial.Icon.gmd_send).sizeDp(48)
+                        .color(ResourceUtil.getAttrColor(this, android.R.attr.textColorSecondary)));
+
+        mFileButton.setImageDrawable(
+                new IconicsDrawable(this, GoogleMaterial.Icon.gmd_attach_file).sizeDp(48)
+                        .color(ResourceUtil.getAttrColor(this, android.R.attr.textColorSecondary)));
+
+        Observable.interval(1, TimeUnit.SECONDS).subscribe(aLong -> {
+            mFeedbackThread.sync(mSyncCallback);
+        });
     }
 
     private void welcome() {
-        new MaterialDialog.Builder(this)
+        Dialogs.builder(this)
                 .title(ResourceUtil.getString(mContext, R.string.feedback_chat_name_dialog_title))
                 .content(ResourceUtil
                         .getString(mContext, R.string.feedback_chat_name_dialog_content))
@@ -351,7 +360,7 @@ public class FeedbackChatActivity extends UniversalToolbarActivity {
     private void showButton(final View show, final View hide) {
         show.animate().cancel();
         hide.animate().cancel();
-        final float defaultAlpha = 0.3f;
+        final float defaultAlpha = 1;
         final int animDuration = 200;
         final TimeInterpolator interpolator = new AccelerateDecelerateInterpolator();
         hide.animate().alpha(0)

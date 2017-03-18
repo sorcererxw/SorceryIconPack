@@ -19,6 +19,7 @@ import com.avos.avoscloud.feedback.FeedbackThread;
 import com.bumptech.glide.Glide;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.PhotoViewActivity;
+import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
@@ -32,7 +33,7 @@ import io.github.mthli.slice.Slice;
  * @date: 2016/10/2
  */
 
-public class FeedbackChatAdapter
+class FeedbackChatAdapter
         extends RecyclerView.Adapter<FeedbackChatAdapter.FeedbackViewHolder> {
 
     static class FeedbackViewHolder extends RecyclerView.ViewHolder {
@@ -59,7 +60,7 @@ public class FeedbackChatAdapter
 
     private FeedbackThread mFeedbackThread;
 
-    public FeedbackChatAdapter(Context context, FeedbackThread feedbackThread) {
+    FeedbackChatAdapter(Context context, FeedbackThread feedbackThread) {
         mContext = context;
         mFeedbackThread = feedbackThread;
     }
@@ -67,7 +68,7 @@ public class FeedbackChatAdapter
     private static final int TYPE_USER = 0x01;
     private static final int TYPE_DEV = 0x02;
 
-    public Comment getItem(int position) {
+    Comment getItem(int position) {
         return mFeedbackThread.getCommentsList().get(position);
     }
 
@@ -83,9 +84,8 @@ public class FeedbackChatAdapter
 
     @Override
     public FeedbackViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new FeedbackViewHolder(
-                LayoutInflater.from(mContext)
-                        .inflate(R.layout.item_feedback_chat, parent, false));
+        return new FeedbackViewHolder(LayoutInflater.from(mContext)
+                .inflate(R.layout.item_feedback_chat, parent, false));
     }
 
     @Override
@@ -172,7 +172,7 @@ public class FeedbackChatAdapter
             holder.mTextView.setVisibility(View.VISIBLE);
             holder.mTextView.setText(comment.getContent());
             holder.mFrame.setOnLongClickListener(v -> {
-                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+                MaterialDialog.Builder builder = Dialogs.builder(mContext);
                 builder.title(
                         mContext.getString(R.string.action_copy_to_clipboard) + " ?");
                 builder.positiveText(mContext.getString(R.string.action_copy));

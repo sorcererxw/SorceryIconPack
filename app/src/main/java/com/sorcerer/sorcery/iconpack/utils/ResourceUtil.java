@@ -1,12 +1,14 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.util.TypedValue;
 
 import timber.log.Timber;
 
@@ -95,5 +97,13 @@ public class ResourceUtil {
         Drawable drawableFromTheme = ta.getDrawable(0);
         ta.recycle();
         return drawableFromTheme;
+    }
+
+    public static int getAttrColor(Context context, int attrId) {
+        Resources.Theme theme = context.getTheme();
+        TypedValue typedValue = new TypedValue();
+        theme.resolveAttribute(attrId, typedValue, true);
+        return typedValue.data;
+
     }
 }

@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
@@ -20,10 +21,10 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
 
     protected abstract Fragment provideInitFragment();
 
-    protected abstract CoordinatorLayout provideRootView();
+    protected abstract CoordinatorLayout rootView();
 
     public CoordinatorLayout getRootView() {
-        return provideRootView();
+        return rootView();
     }
 
     public void addFragment(@NonNull Fragment fragment) {
@@ -43,8 +44,8 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
     }
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
         if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
             addFragment(provideInitFragment(), false);
         }

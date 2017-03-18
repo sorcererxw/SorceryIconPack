@@ -1,5 +1,6 @@
 package com.sorcerer.sorcery.iconpack.settings;
 
+import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 
@@ -29,13 +30,13 @@ public class SettingsActivity extends BaseFragmentSubActivity {
     }
 
     @Override
-    protected CoordinatorLayout provideRootView() {
+    protected CoordinatorLayout rootView() {
         return mRootCoordinatorLayout;
     }
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
         setToolbarBackIndicator();
     }
 }

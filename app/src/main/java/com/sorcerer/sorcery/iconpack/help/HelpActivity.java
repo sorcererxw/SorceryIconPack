@@ -1,10 +1,13 @@
 package com.sorcerer.sorcery.iconpack.help;
 
 import android.graphics.Point;
+import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Display;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
@@ -12,6 +15,9 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import butterknife.BindView;
 
 public class HelpActivity extends BaseSubActivity {
+
+    @BindView(R.id.coordinatorLayout_help)
+    CoordinatorLayout mCoordinatorLayout;
 
     @BindView(R.id.recyclerView_help)
     RecyclerView mRecyclerView;
@@ -25,8 +31,8 @@ public class HelpActivity extends BaseSubActivity {
     private StaggeredGridLayoutManager mLayoutManager;
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
 
         setToolbarBackIndicator();
 
@@ -46,6 +52,11 @@ public class HelpActivity extends BaseSubActivity {
     protected void onResume() {
         super.onResume();
         resize();
+    }
+
+    @Override
+    protected ViewGroup rootView() {
+        return mCoordinatorLayout;
     }
 
     @Override

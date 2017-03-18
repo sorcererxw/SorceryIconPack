@@ -2,10 +2,12 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_preference"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/preference_card_space"
     app:cardCornerRadius="0dp"
+    app:cardBackgroundColor="?attr/colorCard"
     app:cardElevation="@dimen/preference_card_elevation">
 
     <include layout="@layout/layout_preference"/>

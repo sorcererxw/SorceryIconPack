@@ -18,11 +18,11 @@ import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.Glide;
 import com.jakewharton.rxbinding.view.RxView;
 import com.mikepenz.materialize.util.KeyboardUtil;
+import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.network.spiders.AppSearchResultGetter;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 
 import java.util.ArrayList;

@@ -44,7 +44,7 @@
             android:resource="@xml/icons"/>
 
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:label="@string/app_name"
@@ -197,11 +197,11 @@
             android:name=".feedback.request.AppSelectActivity"
             android:exported="true"
             android:label="@string/request"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/SubActivity"/>
         <activity
             android:name=".feedback.chat.FeedbackChatActivity"
             android:label="@string/suggest"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/SubActivity"
             android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".help.HelpActivity"

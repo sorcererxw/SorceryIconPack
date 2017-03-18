@@ -22,12 +22,13 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.jakewharton.rxbinding.view.RxView;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.mikepenz.materialize.util.UIUtils;
+import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewHolder;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.turingtechnologies.materialscrollbar.ICustomAdapter;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
 
@@ -177,6 +178,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         return mShowList.get(position).second;
     }
 
+    @Override
     public IconItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_FOOTER) {
             return new FooterViewHolder(new View(parent.getContext()));
@@ -241,11 +243,13 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         } else if (type == TYPE_HEADER) {
             HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(iconBean.getName()));
+
+//            mThemeManager.primaryTextColor().subscribe(
+//                    color -> headerHolder.mHeader.setTextColor(color));
         } else {
             IconViewHolder iconHolder = (IconViewHolder) holder;
             if (iconBean != null) {
                 RxView.clicks(iconHolder.itemView)
-//                        .throttleFirst(2000, TimeUnit.MILLISECONDS)
                         .filter(click ->
                                 mShowList.get(iconHolder.getAdapterPosition()).first.getRes() != 0
                                         && !sLock)
@@ -323,6 +327,10 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
             slice.showRightBottomRect(!rightBottomRect);
             slice.showLeftTopRect(!leftTopRect);
             slice.showRightTopRect(!rightTopRect);
+
+            slice.setColor(ResourceUtil.getAttrColor(mContext, R.attr.colorCard));
+
+//            mThemeManager.cardColor().subscribe(slice::setColor);
         }
     }
 

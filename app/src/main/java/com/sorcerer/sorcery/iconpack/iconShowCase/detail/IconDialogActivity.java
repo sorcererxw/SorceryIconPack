@@ -4,8 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.transition.Transition;
@@ -21,11 +21,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.network.spiders.models.AppDisplayInfo;
-import com.sorcerer.sorcery.iconpack.ui.activities.MainActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
 import com.sorcerer.sorcery.iconpack.utils.LocaleUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
@@ -43,6 +42,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
+import static com.mikepenz.google_material_typeface_library.GoogleMaterial.Icon.gmd_compare;
 import static com.sorcerer.sorcery.iconpack.utils.DisplayUtil.dip2px;
 
 /**
@@ -103,7 +103,7 @@ public class IconDialogActivity extends ToolbarActivity {
     }
 
     @Override
-    protected void init() {
+    protected void init(Bundle savedInstanceState) {
 
 
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
@@ -266,14 +266,13 @@ public class IconDialogActivity extends ToolbarActivity {
                     public void onAnimationStart(Animator animation) {
 
                         TextView textView = new TextView(mContext);
-                        textView.setTextColor(
-                                ResourceUtil.getColor(mContext, R.color.title));
+                        textView.setTextColor(ResourceUtil.getAttrColor(mContext,
+                                android.R.attr.textColorPrimary));
                         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
                         textView.setText(name);
                         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                                 RelativeLayout.LayoutParams.WRAP_CONTENT);
-//                        layoutParams.addRule(RelativeLayout.ALIGN_TOP, mTitleTextView.getId());
                         layoutParams.addRule(RelativeLayout.ABOVE, mTitleTextView.getId());
                         layoutParams.setMargins(0, dip2px(mContext, 8), 0, 0);
                         textView.setLayoutParams(layoutParams);
@@ -315,6 +314,11 @@ public class IconDialogActivity extends ToolbarActivity {
     }
 
     @Override
+    protected ViewGroup rootView() {
+        return null;
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         finish();
@@ -343,11 +347,11 @@ public class IconDialogActivity extends ToolbarActivity {
             mShowOriginMenuItem = menu.findItem(R.id.action_show_origin_icon);
             mShowOriginMenuItem.setCheckable(false);
             findViewById(mShowOriginMenuItem.getItemId()).setAlpha(0);
-            mShowOriginMenuItem.setIcon(
-                    new IconicsDrawable(mContext,
-                            GoogleMaterial.Icon.gmd_compare)
-                            .sizeDp(24).paddingDp(2).color(Color.BLACK)
-                            .alpha((int) (255 * 0.55)));
+            mShowOriginMenuItem.setIcon(new IconicsDrawable(mContext, gmd_compare)
+                    .sizeDp(24).paddingDp(2)
+                    .color(ResourceUtil
+                            .getAttrColor(mContext, android.R.attr.textColorSecondary))
+            );
         }
         return super.onCreateOptionsMenu(menu);
     }

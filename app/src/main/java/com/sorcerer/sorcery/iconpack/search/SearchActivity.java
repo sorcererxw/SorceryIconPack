@@ -13,6 +13,7 @@ import android.transition.TransitionManager;
 import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.anim.FadeInTransition;
 import com.sorcerer.sorcery.iconpack.ui.anim.FadeOutTransition;
 import com.sorcerer.sorcery.iconpack.ui.anim.SimpleTransitionListener;
@@ -45,7 +47,10 @@ import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends BaseActivity {
+
+    @BindView(R.id.activity_search)
+    ViewGroup mRootView;
 
     @BindView(R.id.imageView_search_graphic)
     ImageView mSearchGraphic;
@@ -109,11 +114,17 @@ public class SearchActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-        ButterKnife.bind(this);
+    protected ViewGroup rootView() {
+        return mRootView;
+    }
 
+    @Override
+    protected int provideLayoutId() {
+        return R.layout.activity_search;
+    }
+
+    @Override
+    protected void init(Bundle savedInstanceState) {
         setSupportActionBar(mSearchBar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -208,9 +219,6 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-//        }
     }
 
     @Override

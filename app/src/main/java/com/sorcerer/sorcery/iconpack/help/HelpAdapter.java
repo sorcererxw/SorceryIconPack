@@ -13,6 +13,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseFastRecyclerAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.StaggeredGridRecyclerAdapter;
+import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 
 import java.util.Arrays;
 
@@ -63,7 +64,7 @@ class HelpAdapter extends StaggeredGridRecyclerAdapter<HelpAdapter.ViewHolder, S
         setViewMargin(holder.card, holder.getAdapterPosition(), 2, holder);
 
         holder.card.setOnLongClickListener(v -> {
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
+            MaterialDialog.Builder builder = Dialogs.builder(mContext);
             builder.title(mContext.getString(R.string.action_copy_to_clipboard) + " ?");
             builder.positiveText(mContext.getString(R.string.action_copy));
             builder.negativeText(mContext.getString(R.string.cancel));

@@ -271,7 +271,8 @@
     <string name="preference_group_ui">UI</string>
     <string name="preference_ui_less_anim_title">Less animation</string>
     <string name="preference_ui_less_anim_summary">Animation may make some device lag</string>
-
+    <string name="preference_drak_mode_title">Dark mode</string>
+    <string name="preference_drak_mode_summary">Dark style user interface</string>
 
     <string name="preference_group_about">About</string>
     <string name="preference_about_app">Application information</string>

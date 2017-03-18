@@ -247,4 +247,6 @@
     <string name="apply_skip_summary">决定哪些应用不被替换</string>
     <string name="apply_skip_title">跳过部分图标</string>
     <string name="tab_game">游戏</string>
+    <string name="preference_drak_mode_summary">暗色的用户界面</string>
+    <string name="preference_drak_mode_title">暗色模式</string>
 </resources>

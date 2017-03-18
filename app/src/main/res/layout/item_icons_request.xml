@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              xmlns:tools="http://schemas.android.com/tools"
               android:background="?attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="8dp">
 
         <ImageView
-            tools:src="@mipmap/ic_launcher"
             android:id="@+id/imageVIew_icon_request_icon"
             android:layout_width="@dimen/app_select_icon_size"
             android:layout_height="@dimen/app_select_icon_size"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            tools:src="@mipmap/ic_launcher"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="4dp"
-            android:gravity="center_vertical"
+            android:layout_marginLeft="12dp"
             android:layout_toEndOf="@+id/imageVIew_icon_request_icon"
             android:layout_toRightOf="@+id/imageVIew_icon_request_icon"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
-                tools:text="Sorcery"
                 android:id="@+id/textView_icon_request_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/title"
-                android:textSize="16sp"/>
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"
+                tools:text="Sorcery"/>
 
             <TextView
-                android:text="......"
                 android:id="@+id/textView_icon_request_times"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/secondary_text"
+                android:text="......"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="12sp"/>
         </LinearLayout>
 

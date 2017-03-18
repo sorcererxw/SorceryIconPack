@@ -10,8 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.settings.licenses.models.OpenSourceLibBean;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import java.util.List;
 
@@ -93,6 +96,11 @@ class OpenSourceLibAdapter
         OpenSourceLibViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            arrow.setImageDrawable(new IconicsDrawable(itemView.getContext(),
+                    GoogleMaterial.Icon.gmd_keyboard_arrow_down)
+                    .sizeDp(12)
+                    .color(ResourceUtil.getAttrColor(itemView.getContext(),
+                            android.R.attr.textColorSecondary)));
         }
     }
 }

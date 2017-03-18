@@ -1,8 +1,10 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Application;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.util.DisplayMetrics;
 
 import com.sorcerer.sorcery.iconpack.network.leancloud.AVService;
@@ -11,6 +13,8 @@ import com.tencent.bugly.crashreport.CrashReport;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import rx_activity_result2.RxActivityResult;
@@ -33,6 +37,8 @@ public class App extends Application {
         return sApp;
     }
 
+    private List<Activity> mActivityList;
+
     @Override
     public void onCreate() {
         mAppComponent = DaggerAppComponent.builder()
@@ -53,6 +59,9 @@ public class App extends Application {
 
         sApp = this;
 
+        mActivityList = new ArrayList<>();
+        registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks);
+
         try {
             NetUtil.enableSSLSocket();
         } catch (KeyManagementException | NoSuchAlgorithmException e) {
@@ -68,7 +77,56 @@ public class App extends Application {
         }
     }
 
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        unregisterActivityLifecycleCallbacks(mActivityLifecycleCallbacks);
+        mActivityList = null;
+    }
+
     public AppComponent getAppComponent() {
         return mAppComponent;
     }
+
+    public List<Activity> getActivityList() {
+        return mActivityList;
+    }
+
+    private ActivityLifecycleCallbacks mActivityLifecycleCallbacks =
+            new ActivityLifecycleCallbacks() {
+                @Override
+                public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+                    mActivityList.add(activity);
+                }
+
+                @Override
+                public void onActivityStarted(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityResumed(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityPaused(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityStopped(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+                }
+
+                @Override
+                public void onActivityDestroyed(Activity activity) {
+                    mActivityList.remove(activity);
+                }
+            };
 }

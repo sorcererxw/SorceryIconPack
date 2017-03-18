@@ -17,6 +17,7 @@ import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.Navigator;
+import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
@@ -26,17 +27,12 @@ import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
  */
 
 public class AboutDialog {
-    private static Dialog sDialog;
 
     public static void show(Activity activity) {
         show(activity, null);
     }
 
     public static void show(Activity activity, View.OnTouchListener logoOnTouchListener) {
-//        if (sDialog != null) {
-//            sDialog.show();
-//            return;
-//        }
         View view = View.inflate(activity, R.layout.layout_about_dialog, null);
         ImageView logoImageView = (ImageView) view.findViewById(R.id.imageView_about_dialog_logo);
 
@@ -80,6 +76,7 @@ public class AboutDialog {
                 ("<a>" + ResourceUtil.getString(activity, R.string.contributor) + "</a><br>");
         htmlBuilder += ("<a href=\"https://github.com/sorcererxw\">SorcererXW</a><br>");
         htmlBuilder += ("<a href=\"http://weibo.com/mozartjac\">翟宅宅Jack</a><br>");
+        htmlBuilder += ("<a href=\"http://www.coolapk.com/u/432987\">Tarrant Yan</a><br>");
         htmlBuilder += ("<a>nako liu</a>");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             creditsTextView.setText(Html.fromHtml(htmlBuilder, Html.FROM_HTML_MODE_LEGACY));
@@ -87,7 +84,7 @@ public class AboutDialog {
             creditsTextView.setText(Html.fromHtml(htmlBuilder));
         }
         creditsTextView.setMovementMethod(LinkMovementMethod.getInstance());
-        sDialog = new MaterialDialog.Builder(activity)
+        Dialog sDialog = Dialogs.builder(activity)
                 .customView(view, true)
                 .build();
 

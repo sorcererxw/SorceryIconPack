@@ -38,6 +38,7 @@ public class ExposedSearchToolbar extends Toolbar {
 
     private void init(Context context) {
         setBackgroundResource(R.drawable.card_noshadow);
+
         initTitle(context);
     }
 
@@ -46,7 +47,9 @@ public class ExposedSearchToolbar extends Toolbar {
     private void initTitle(Context context) {
         super.setTitle("");
         mTitleTextView = new TextView(context);
-        mTitleTextView.setTextColor(ResourceUtil.getColor(context, R.color.palette_grey_500));
+        mTitleTextView.setTextColor(
+                ResourceUtil.getAttrColor(context, android.R.attr.textColorSecondary));
+        mTitleTextView.setAlpha(0.8f);
         mTitleTextView.setTextSize(20);
         mTitleTextView.setLayoutParams(new ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
         mTitleTextView

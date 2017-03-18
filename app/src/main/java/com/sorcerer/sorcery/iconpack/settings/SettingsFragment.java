@@ -1,20 +1,26 @@
 package com.sorcerer.sorcery.iconpack.settings;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.widget.Toast;
 
+import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.settings.about.AboutDialog;
 import com.sorcerer.sorcery.iconpack.settings.general.tab.CustomizeTabsFragment;
 import com.sorcerer.sorcery.iconpack.settings.licenses.ui.OpenSourceLibFragment;
 import com.sorcerer.sorcery.iconpack.ui.fragments.BasePreferenceFragmentCompat;
 import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
+import com.sorcerer.sorcery.iconpack.ui.theme.DarkTheme;
+import com.sorcerer.sorcery.iconpack.ui.theme.LightTheme;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
@@ -25,6 +31,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
+
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 
 /**
  * @description:
@@ -56,12 +65,10 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_settings, rootKey);
         mPreferenceScreen = (PreferenceScreen) findPreference("preference_screen");
-        new Handler().post(() -> {
-            initGeneral();
-            initUi();
-            initDevOps();
-            initAbout();
-        });
+        initGeneral();
+        initUi();
+        initDevOps();
+        initAbout();
     }
 
     @Override
@@ -107,7 +114,42 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                         return false;
                     }
                 });
+
+        SwitchPreference themePreference =
+                (SwitchPreference) findPreference("preference_general_theme");
+
+        themePreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (mChangingTheme) {
+                    return false;
+                }
+                mChangingTheme = true;
+                if ((Boolean) newValue) {
+                    mThemeManager.setTheme(new DarkTheme());
+                } else {
+                    mThemeManager.setTheme(new LightTheme());
+                }
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    getActivity().finish();
+                    final Intent intent = new Intent(getContext(), MainActivity.class);
+                    getActivity().startActivity(intent.addFlags(FLAG_ACTIVITY_NO_ANIMATION)
+                            .addFlags(FLAG_ACTIVITY_CLEAR_TOP)
+                    );
+                },100);
+//                List<Activity> activityList = App.getInstance().getActivityList();
+//                for (int i = 0; i < activityList.size() - 1; i++) {
+//                    Activity activity = activityList.get(i);
+//                    if (activity instanceof BaseActivity) {
+//                        ((BaseActivity) activity).resetContentView();
+//                    }
+//                }
+                return true;
+            }
+        });
     }
+
+    private boolean mChangingTheme = false;
 
     private SwitchPreference mUiLessAnimPreference;
 
@@ -122,7 +164,6 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
         });
 
         mUiLessAnimPreference = (SwitchPreference) findPreference("preference_ui_less_anim");
-
         mUiLessAnimPreference.setChecked(mPrefs.lessAnim().get());
         mUiLessAnimPreference.setOnPreferenceChangeListener((preference, newValue) -> {
             mPrefs.lessAnim().set((Boolean) newValue);
@@ -188,5 +229,73 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     public void onResume() {
         super.onResume();
         getActivity().setTitle(ResourceUtil.getString(getContext(), R.string.nav_item_settings));
+    }
+
+    private void initThemeCallback() {
+//        mThemeManager.cardColor().subscribe(new Consumer<Integer>() {
+//            @Override
+//            public void accept(Integer color) throws Exception {
+//                RecyclerView listView = getListView();
+//                int count = listView.getChildCount();
+//                for (int i = 0; i < count; i++) {
+//                    View view = listView.getLayoutManager().findViewByPosition(i);
+//                    if (view instanceof CardView) {
+//                        CardView cardView = (CardView) view;
+//                        if (cardView != null) {
+//                            cardView.setCardBackgroundColor(color);
+//                        }
+//                    }
+//                }
+//            }
+//        }, Timber::e);
+
+//        mThemeManager.primaryTextColor().subscribe(new Consumer<Integer>() {
+//            @Override
+//            public void accept(Integer color) throws Exception {
+//                RecyclerView listView = getListView();
+//                int count = listView.getChildCount();
+//                for (int i = 0; i < count; i++) {
+//                    if (getPreferenceScreen().getPreference(i) instanceof PreferenceCategory) {
+//                        continue;
+//                    }
+//
+//                    View view = listView.getLayoutManager().findViewByPosition(i);
+//                    TextView textView = (TextView) view.findViewById(android.R.id.title);
+//                    if (textView != null) {
+//                        textView.setTextColor(color);
+//                    }
+//                }
+//            }
+//        }, Timber::e);
+
+//        mThemeManager.secondaryTextColor().subscribe(new Consumer<Integer>() {
+//            @Override
+//            public void accept(Integer color) throws Exception {
+//                RecyclerView listView = getListView();
+//                int count = listView.getChildCount();
+//                for (int i = 0; i < count; i++) {
+//                    View view = listView.getLayoutManager().findViewByPosition(i);
+//                    TextView textView = (TextView) view.findViewById(android.R.id.summary);
+//                    if (textView != null) {
+//                        textView.setTextColor(color);
+//                    }
+//                }
+//            }
+//        }, Timber::e);
+
+//        mThemeManager.accentColor().subscribe(new Consumer<Integer>() {
+//            @Override
+//            public void accept(Integer color) throws Exception {
+//                RecyclerView listView = getListView();
+//                int count = listView.getChildCount();
+//                for (int i = 0; i < count; i++) {
+//                    View view = listView.getLayoutManager().findViewByPosition(i);
+//                    TextView textView = (TextView) view.findViewById(android.R.id.title);
+//                    if (textView != null) {
+//                        textView.setTextColor(color);
+//                    }
+//                }
+//            }
+//        }, Timber::e);
     }
 }

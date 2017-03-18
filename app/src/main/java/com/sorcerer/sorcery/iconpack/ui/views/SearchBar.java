@@ -63,7 +63,8 @@ public class SearchBar extends Toolbar {
         addView(view);
         ButterKnife.bind(this, this);
 
-        setBackgroundColor(Color.WHITE);
+        setBackgroundColor(ResourceUtil.getAttrColor(getContext(), R.attr.colorCard));
+
         addTintedUpNavigation();
         mEditText.setOnEditorActionListener((textView, actionId, keyEvent) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -95,8 +96,8 @@ public class SearchBar extends Toolbar {
 
         mActionIcon.setImageDrawable(
                 new IconicsDrawable(getContext(), GoogleMaterial.Icon.gmd_clear)
-                        .color(Color.BLACK)
-                        .alpha(52)
+                        .color(ResourceUtil
+                                .getAttrColor(getContext(), android.R.attr.textColorSecondary))
                         .sizeDp(14)
         );
         mActionIcon.setOnClickListener(v -> mEditText.setText(""));
@@ -125,11 +126,10 @@ public class SearchBar extends Toolbar {
     }
 
     private void addTintedUpNavigation() {
-        Drawable drawable =
-                new IconicsDrawable(getContext(), GoogleMaterial.Icon.gmd_arrow_back)
-                        .sizeDp(24)
-                        .paddingDp(4)
-                        .color(ResourceUtil.getColor(getContext(), R.color.palette_grey_600));
+        Drawable drawable = new IconicsDrawable(getContext(), GoogleMaterial.Icon.gmd_arrow_back)
+                .sizeDp(24)
+                .paddingDp(4)
+                .color(ResourceUtil.getAttrColor(getContext(), android.R.attr.textColorSecondary));
         setNavigationIcon(drawable);
     }
 

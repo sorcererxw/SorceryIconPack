@@ -2,6 +2,8 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.content.Context;
 
+import com.sorcerer.sorcery.iconpack.ui.theme.ThemeManager;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -31,5 +33,11 @@ class AppModule {
     @Singleton
     SorceryPrefs provideSorceryPrefs() {
         return new SorceryPrefs(mApp);
+    }
+
+    @Provides
+    @Singleton
+    ThemeManager provideThemeManager() {
+        return new ThemeManager(mApp);
     }
 }

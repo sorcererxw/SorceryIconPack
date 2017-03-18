@@ -3,15 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout_donate"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
     <LinearLayout
-
         android:id="@+id/recyclerView_donate_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/root_background"
         android:orientation="vertical"
         tools:context="com.sorcerer.sorcery.iconpack.ui.activities.DonateActivity">
 
@@ -37,7 +36,7 @@
                     android:gravity="center"
                     android:paddingTop="32dp"
                     android:text="@string/donate_title"
-                    android:textColor="@color/title"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
 
@@ -50,7 +49,7 @@
                     android:lineSpacingMultiplier="1.2"
                     android:paddingTop="16dp"
                     android:text="@string/donate_content"
-                    android:textColor="@color/content"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="16sp"/>
 
                 <include

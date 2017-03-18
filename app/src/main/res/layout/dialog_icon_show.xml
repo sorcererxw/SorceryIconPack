@@ -17,6 +17,7 @@
         android:layout_marginRight="16dp"
         android:minWidth="300dp"
         android:transitionName="dialog_icon"
+        app:cardBackgroundColor="?attr/colorCard"
         app:cardElevation="16dp">
 
         <LinearLayout
@@ -36,12 +37,13 @@
                 android:layout_marginTop="4dp"
                 android:title="">
 
-                <FrameLayout android:layout_width="match_parent"
-                             android:layout_height="wrap_content">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                     <RelativeLayout
                         android:id="@+id/linearLayout_dialog_title_container"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="58dp"
                         android:animateLayoutChanges="true"
                         android:gravity="center_vertical"
                         android:minHeight="60dp">
@@ -52,7 +54,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
                             android:maxLines="1"
-                            android:textColor="@color/title"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="20dp"
                             tools:text="sorcery"/>
                     </RelativeLayout>

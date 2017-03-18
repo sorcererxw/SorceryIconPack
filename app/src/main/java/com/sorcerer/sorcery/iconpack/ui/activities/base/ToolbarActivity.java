@@ -1,12 +1,15 @@
 package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener;
+import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 /**
  * @description:
@@ -17,9 +20,12 @@ public abstract class ToolbarActivity extends BaseActivity {
     protected abstract Toolbar getToolbar();
 
     @Override
-    protected void init() {
+    protected void init(Bundle savedInstanceState) {
         assert this.getToolbar() != null;
         setSupportActionBar(this.getToolbar());
+
+        getToolbar().setBackground(
+                new ColorDrawable(ResourceUtil.getAttrColor(this, android.R.attr.colorPrimary)));
     }
 
     protected void setToolbarCloseIndicator() {

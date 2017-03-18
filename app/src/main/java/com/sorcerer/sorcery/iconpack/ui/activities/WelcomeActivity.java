@@ -1,5 +1,8 @@
 package com.sorcerer.sorcery.iconpack.ui.activities;
 
+import android.os.Bundle;
+import android.view.ViewGroup;
+
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
@@ -11,12 +14,17 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 
 public class WelcomeActivity extends BaseActivity {
     @Override
+    protected ViewGroup rootView() {
+        return null;
+    }
+
+    @Override
     protected int provideLayoutId() {
         return R.layout.activity_welcome;
     }
 
     @Override
-    protected void init() {
+    protected void init(Bundle savedInstanceState) {
 
     }
 }

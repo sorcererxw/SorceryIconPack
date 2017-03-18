@@ -29,7 +29,7 @@
             android:fontFamily="sans-serif-condensed"
             android:text="Sorcery"
             android:textAllCaps="true"
-            android:textColor="@color/title"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="28sp"
             android:textStyle="bold"/>
 
@@ -40,7 +40,7 @@
             android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="@string/about_dialog_slogan"
-            android:textColor="@color/content"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="16sp"/>
 
         <TextView
@@ -49,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:gravity="center"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"/>
 
         <LinearLayout android:layout_width="match_parent"
@@ -88,7 +89,7 @@
             android:background="?attr/selectableItemBackground"
             android:gravity="center"
             android:padding="16dp"
-            android:textColor="@color/content"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             android:typeface="monospace"/>
 
@@ -100,7 +101,8 @@
             android:clickable="true"
             android:gravity="center_horizontal"
             android:lineSpacingExtra="6dp"
-            android:textColorLink="?attr/colorAccent"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textColorLink="?android:attr/colorAccent"
             android:textStyle="italic"/>
 
     </LinearLayout>
@@ -111,9 +113,10 @@
         android:layout_below="@+id/linearLayout_dialog_icon_show_root"
         android:layout_marginBottom="4dp"
         android:layout_marginTop="8dp"
+        android:alpha="0.8"
         android:gravity="center_horizontal"
         android:text="©2016-2017 SorcererXW.com. All rights reserved."
-        android:textColor="#9e9e9e"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="10sp"/>
 
 </RelativeLayout>

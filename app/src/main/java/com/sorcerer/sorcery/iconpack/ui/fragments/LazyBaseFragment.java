@@ -17,14 +17,13 @@ import java.lang.reflect.Field;
  * @author: Sorcerer
  * @date: 2016/8/10
  */
-public class LazyBaseFragment extends Fragment {
+public class LazyBaseFragment extends BaseFragment {
     protected final String TAG = getClass().getSimpleName();
 
     protected LayoutInflater mInflater;
     private View mContentView;
     private Context mContext;
     private ViewGroup mContainer;
-    protected BaseActivity mHoldingActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,21 +73,13 @@ public class LazyBaseFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mHoldingActivity = (BaseActivity) activity;
-    }
-
-    @Override
     public void onDetach() {
         super.onDetach();
         try {
             Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
             childFragmentManager.setAccessible(true);
             childFragmentManager.set(this, null);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
+        } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }

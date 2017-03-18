@@ -5,9 +5,12 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -39,6 +42,11 @@ public class DonateActivity extends BaseSubActivity {
         if (isDonated) {
             mThankCard.post(this::showThanksCard);
         }
+    }
+
+    @Override
+    protected ViewGroup rootView() {
+        return mCoordinatorLayout;
     }
 
     @OnClick(R.id.button_donate_alipay)
@@ -75,14 +83,17 @@ public class DonateActivity extends BaseSubActivity {
     @BindView(R.id.imageView_donate_card)
     ImageView mCardImage;
 
+    @BindView(R.id.coordinatorLayout_donate)
+    CoordinatorLayout mCoordinatorLayout;
+
     @Override
     protected int provideLayoutId() {
         return R.layout.activity_donate;
     }
 
     @Override
-    protected void init() {
-        super.init();
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
 
         setToolbarBackIndicator();
     }
