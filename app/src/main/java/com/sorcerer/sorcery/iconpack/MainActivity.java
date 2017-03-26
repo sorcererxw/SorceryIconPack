@@ -119,8 +119,6 @@ public class MainActivity extends BaseActivity {
                     openDrawer();
                     return true;
                 })
-//                .withDisplayBelowStatusBar(true)
-//                .withTranslucentStatusBar(true)
                 .withActivity(mActivity)
                 .build();
 
@@ -342,20 +340,24 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
         if (mIconTabFragment == null) {
             mIconTabFragment = IconTabFragment.newInstance(mCustomPicker);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.linearLayout_content_main, mIconTabFragment)
                     .commitNow();
+            mSearchTransitioner = new SearchTransitioner(this,
+                    new Navigator(this),
+                    mIconTabFragment.getTabLayout(),
+                    mIconTabFragment.getViewPager(),
+                    mSearchToolbar,
+                    new ViewFader());
         }
-        mSearchTransitioner = new SearchTransitioner(this,
-                new Navigator(this),
-                mIconTabFragment.getTabLayout(),
-                mIconTabFragment.getViewPager(),
-                mSearchToolbar,
-                new ViewFader());
+
         getWindow().getDecorView().postDelayed(() -> {
-            mSearchTransitioner.onActivityResumed();
+            if (mSearchTransitioner != null) {
+                mSearchTransitioner.onActivityResumed();
+            }
         }, 100);
     }
 

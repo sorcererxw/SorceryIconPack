@@ -115,7 +115,7 @@
         android:layout_marginTop="8dp"
         android:alpha="0.8"
         android:gravity="center_horizontal"
-        android:text="©2016-2017 SorcererXW.com. All rights reserved."
+        android:text="©2016-2017 SorcererXW. All rights reserved."
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="10sp"/>
 

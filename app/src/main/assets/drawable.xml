@@ -48,6 +48,7 @@
     <item drawable="a3dmark"/>
     <item drawable="a500px"/>
     <item drawable="a500px_alt"/>
+    <item drawable="a51job"/>
     <item drawable="a51offer"/>
     <item drawable="a51_credit_card_manager"/>
     <item drawable="a5sing"/>
@@ -78,6 +79,7 @@
     <item drawable="advance_download_manager"/>
     <item drawable="aibizhi"/>
     <item drawable="aida64"/>
+    <item drawable="aimp"/>
     <item drawable="airbnb"/>
     <item drawable="airbrush"/>
     <item drawable="airdroid"/>
@@ -118,20 +120,26 @@
     <item drawable="aloha"/>
     <item drawable="amap"/>
     <item drawable="amazon_alexa"/>
+    <item drawable="amazon_cloud"/>
     <item drawable="amazon_shopping"/>
     <item drawable="ami_album"/>
     <item drawable="ampere"/>
+    <item drawable="android_authority"/>
+    <item drawable="android_central"/>
     <item drawable="android_nify"/>
     <item drawable="anime_taste"/>
+    <item drawable="ankidroid"/>
     <item drawable="anydo"/>
     <item drawable="anydo_calendar"/>
     <item drawable="anyview"/>
     <item drawable="apex_launcher"/>
     <item drawable="apkpure"/>
+    <item drawable="apk_editor"/>
     <item drawable="appchina_yingyonghui_market"/>
     <item drawable="appenv"/>
     <item drawable="apple_music"/>
     <item drawable="appso"/>
+    <item drawable="app_backup_restore_transfer"/>
     <item drawable="app_drawer"/>
     <item drawable="app_drawer_alt"/>
     <item drawable="app_lock"/>
@@ -185,9 +193,11 @@
     <item drawable="battlefield_companion_alt"/>
     <item drawable="behance"/>
     <item drawable="beiyue"/>
+    <item drawable="between"/>
     <item drawable="biaozhunribenyu"/>
     <item drawable="bilibili"/>
     <item drawable="bilibili_alt"/>
+    <item drawable="bilibili_blue"/>
     <item drawable="bilibili_live"/>
     <item drawable="birthday_manager"/>
     <item drawable="bittorrent_sync"/>
@@ -200,6 +210,7 @@
     <item drawable="blued"/>
     <item drawable="bluelight_filter"/>
     <item drawable="boc_container"/>
+    <item drawable="booking"/>
     <item drawable="book_mark_life"/>
     <item drawable="boomerang"/>
     <item drawable="boost_plus"/>
@@ -222,6 +233,7 @@
     <item drawable="caller_info"/>
     <item drawable="call_vibrator"/>
     <item drawable="camera"/>
+    <item drawable="camera_fv_5"/>
     <item drawable="cam_card"/>
     <item drawable="cam_scanner"/>
     <item drawable="card_news"/>
@@ -299,6 +311,7 @@
     <item drawable="dongmanzhijia"/>
     <item drawable="dongqiudi"/>
     <item drawable="douban"/>
+    <item drawable="douban_daily"/>
     <item drawable="douban_fm"/>
     <item drawable="douban_movie"/>
     <item drawable="douban_read"/>
@@ -349,6 +362,7 @@
     <item drawable="fenqile"/>
     <item drawable="fetion"/>
     <item drawable="fifth_third_bank"/>
+    <item drawable="file_commander"/>
     <item drawable="firefox"/>
     <item drawable="firefox_beta"/>
     <item drawable="fitbit"/>
@@ -470,7 +484,9 @@
     <item drawable="game_minecraft"/>
     <item drawable="game_mini_metro"/>
     <item drawable="game_netease_onmyoji"/>
+    <item drawable="game_olo"/>
     <item drawable="game_prune"/>
+    <item drawable="game_reaper"/>
     <item drawable="game_reigns"/>
     <item drawable="game_snake"/>
     <item drawable="game_solitaire_decked_out"/>
@@ -536,6 +552,7 @@
     <item drawable="google_drive"/>
     <item drawable="google_duo"/>
     <item drawable="google_earth"/>
+    <item drawable="google_fit"/>
     <item drawable="google_gmail"/>
     <item drawable="google_hangouts"/>
     <item drawable="google_inbox"/>
@@ -579,6 +596,7 @@
     <item drawable="google_wallpapers_alt"/>
     <item drawable="google_youtube"/>
     <item drawable="google_youtube_music"/>
+    <item drawable="go_google_installer"/>
     <item drawable="go_host"/>
     <item drawable="gravity_box"/>
     <item drawable="greenify"/>
@@ -590,20 +608,18 @@
     <item drawable="guokr_fenda"/>
     <category title="H"/>
     <item drawable="h5_browser"/>
-    <item drawable="hai360"/>
     <item drawable="haibei_music"/>
     <item drawable="haici_dict"/>
     <item drawable="handle_external_storage"/>
     <item drawable="hanglvzongheng"/>
     <item drawable="hangout_dialer"/>
+    <item drawable="hangzhou_smk"/>
     <item drawable="haodaifu"/>
     <item drawable="himail"/>
     <item drawable="hiwifi"/>
     <item drawable="hj_word_games"/>
     <item drawable="homelink"/>
     <item drawable="houzz"/>
-    <item drawable="htc_car"/>
-    <item drawable="htc_phone"/>
     <item drawable="huaban"/>
     <item drawable="huawei_appmarket"/>
     <item drawable="huawei_backup"/>
@@ -617,6 +633,7 @@
     <item drawable="huochaihe"/>
     <item drawable="huputiyu"/>
     <item drawable="huya"/>
+    <item drawable="hviewer"/>
     <item drawable="hydrogen_wallpager"/>
     <category title="I"/>
     <item drawable="ia_writer"/>
@@ -655,6 +672,7 @@
     <item drawable="jiecao_news"/>
     <item drawable="jiemian_news"/>
     <item drawable="jike"/>
+    <item drawable="jike_alt"/>
     <item drawable="jingdong_reader"/>
     <item drawable="jinritoutiao"/>
     <item drawable="jinsanciba"/>
@@ -744,6 +762,7 @@
     <item drawable="line_deco"/>
     <item drawable="line_dict"/>
     <item drawable="lingshengduoduo"/>
+    <item drawable="linguee"/>
     <item drawable="lingxi"/>
     <item drawable="linkedin"/>
     <item drawable="lizhi_fm"/>
@@ -760,6 +779,7 @@
     <item drawable="maimai"/>
     <item drawable="mangguo_tv"/>
     <item drawable="maoyan"/>
+    <item drawable="mark"/>
     <item drawable="max_plus"/>
     <item drawable="mayiwo_roadbook"/>
     <item drawable="mbalib_wiki"/>
@@ -884,7 +904,6 @@
     <item drawable="office_suite"/>
     <item drawable="ofo_bicycler"/>
     <item drawable="okey_dokey"/>
-    <item drawable="olo"/>
     <item drawable="olympus_image_share"/>
     <item drawable="one"/>
     <item drawable="oneplus_browser"/>
@@ -1009,7 +1028,6 @@
     <item drawable="quora"/>
     <category title="R"/>
     <item drawable="readlaw"/>
-    <item drawable="reaper"/>
     <item drawable="recently"/>
     <item drawable="renrenmeiju"/>
     <item drawable="retrica"/>
@@ -1078,6 +1096,7 @@
     <item drawable="samsung_voice_recorder"/>
     <item drawable="samsung_write_on_pdf"/>
     <item drawable="sanguliupo"/>
+    <item drawable="sayu_videoplay"/>
     <item drawable="scanbot"/>
     <item drawable="scientific_calculator"/>
     <item drawable="screener"/>
@@ -1103,6 +1122,7 @@
     <item drawable="shuqi_alt"/>
     <item drawable="sim_toolkit"/>
     <item drawable="sina_tianqitong"/>
+    <item drawable="siyue_musicassistant"/>
     <item drawable="skype"/>
     <item drawable="sleep_as_android"/>
     <item drawable="smartisan_calendar"/>
@@ -1256,6 +1276,7 @@
     <item drawable="t66y"/>
     <item drawable="tantan"/>
     <item drawable="taptap"/>
+    <item drawable="tasker"/>
     <item drawable="taskman"/>
     <item drawable="teamviewer_host_for_samsung"/>
     <item drawable="team_viewer_remote_control"/>
@@ -1305,6 +1326,7 @@
     <item drawable="tianyashequ"/>
     <item drawable="ticktick"/>
     <item drawable="ticwear"/>
+    <item drawable="tieba_yijiandingshiqiandao"/>
     <item drawable="tieba_zhushou"/>
     <item drawable="timi"/>
     <item drawable="titanium_backup"/>
@@ -1535,6 +1557,7 @@
     <item drawable="yuedong_sport"/>
     <item drawable="yuelaiyuehao"/>
     <item drawable="yunduo_nighttools"/>
+    <item drawable="yyets_movie"/>
     <category title="Z"/>
     <item drawable="zaker"/>
     <item drawable="zank"/>

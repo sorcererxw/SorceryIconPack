@@ -104,4 +104,8 @@ public class SorceryPrefs extends Prefs {
     public Preference<Boolean> enableTransparentNavBar() {
         return getRxSharedPreferences().getBoolean("enable_transparent_nav_bar", false);
     }
+
+    public SorceryPreference<Boolean> hideItself() {
+        return new SorceryPreference<>(getPreferences(), "hide_itself", false);
+    }
 }

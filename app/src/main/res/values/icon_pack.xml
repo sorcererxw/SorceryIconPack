@@ -16,11 +16,29 @@
         <item>hviewer</item>
         <item>go_google_installer</item>
         <item>bilibili_blue</item>
+        <item>douban_daily</item>
+        <item>jike</item>
+        <item>hangzhou_smk</item>
+        <item>yyets_movie</item>
+        <item>tieba_yijiandingshiqiandao</item>
+        <item>file_commander</item>
+        <item>camera_fv_5</item>
+        <item>app_backup_restore_transfer</item>
+        <item>android_central</item>
+        <item>android_authority</item>
+        <item>amazon_cloud</item>
+        <item>aimp</item>
 
         <item>@string/icon_label_updated</item>
         <item>jotterpad</item>
+        <item>couplete</item>
+        <item>google_camera</item>
+        <item>google_play_music</item>
         <item>shanbay</item>
+        <item>netease_yanxuan</item>
         <item>bilibili</item>
+        <item>kaoyanbang</item>
+        <item>nga_player_community</item>
     </string-array>
 
     <string-array name="icon_pack" translatable="false">
@@ -71,6 +89,7 @@
         <item>a3dmark</item>
         <item>a500px</item>
         <item>a500px_alt</item>
+        <item>a51job</item>
         <item>a51offer</item>
         <item>a51_credit_card_manager</item>
         <item>a5sing</item>
@@ -101,6 +120,7 @@
         <item>advance_download_manager</item>
         <item>aibizhi</item>
         <item>aida64</item>
+        <item>aimp</item>
         <item>airbnb</item>
         <item>airbrush</item>
         <item>airdroid</item>
@@ -141,20 +161,26 @@
         <item>aloha</item>
         <item>amap</item>
         <item>amazon_alexa</item>
+        <item>amazon_cloud</item>
         <item>amazon_shopping</item>
         <item>ami_album</item>
         <item>ampere</item>
+        <item>android_authority</item>
+        <item>android_central</item>
         <item>android_nify</item>
         <item>anime_taste</item>
+        <item>ankidroid</item>
         <item>anydo</item>
         <item>anydo_calendar</item>
         <item>anyview</item>
         <item>apex_launcher</item>
         <item>apkpure</item>
+        <item>apk_editor</item>
         <item>appchina_yingyonghui_market</item>
         <item>appenv</item>
         <item>apple_music</item>
         <item>appso</item>
+        <item>app_backup_restore_transfer</item>
         <item>app_drawer</item>
         <item>app_drawer_alt</item>
         <item>app_lock</item>
@@ -208,9 +234,11 @@
         <item>battlefield_companion_alt</item>
         <item>behance</item>
         <item>beiyue</item>
+        <item>between</item>
         <item>biaozhunribenyu</item>
         <item>bilibili</item>
         <item>bilibili_alt</item>
+        <item>bilibili_blue</item>
         <item>bilibili_live</item>
         <item>birthday_manager</item>
         <item>bittorrent_sync</item>
@@ -223,6 +251,7 @@
         <item>blued</item>
         <item>bluelight_filter</item>
         <item>boc_container</item>
+        <item>booking</item>
         <item>book_mark_life</item>
         <item>boomerang</item>
         <item>boost_plus</item>
@@ -245,6 +274,7 @@
         <item>caller_info</item>
         <item>call_vibrator</item>
         <item>camera</item>
+        <item>camera_fv_5</item>
         <item>cam_card</item>
         <item>cam_scanner</item>
         <item>card_news</item>
@@ -322,6 +352,7 @@
         <item>dongmanzhijia</item>
         <item>dongqiudi</item>
         <item>douban</item>
+        <item>douban_daily</item>
         <item>douban_fm</item>
         <item>douban_movie</item>
         <item>douban_read</item>
@@ -372,6 +403,7 @@
         <item>fenqile</item>
         <item>fetion</item>
         <item>fifth_third_bank</item>
+        <item>file_commander</item>
         <item>firefox</item>
         <item>firefox_beta</item>
         <item>fitbit</item>
@@ -493,7 +525,9 @@
         <item>game_minecraft</item>
         <item>game_mini_metro</item>
         <item>game_netease_onmyoji</item>
+        <item>game_olo</item>
         <item>game_prune</item>
+        <item>game_reaper</item>
         <item>game_reigns</item>
         <item>game_snake</item>
         <item>game_solitaire_decked_out</item>
@@ -559,6 +593,7 @@
         <item>google_drive</item>
         <item>google_duo</item>
         <item>google_earth</item>
+        <item>google_fit</item>
         <item>google_gmail</item>
         <item>google_hangouts</item>
         <item>google_inbox</item>
@@ -602,6 +637,7 @@
         <item>google_wallpapers_alt</item>
         <item>google_youtube</item>
         <item>google_youtube_music</item>
+        <item>go_google_installer</item>
         <item>go_host</item>
         <item>gravity_box</item>
         <item>greenify</item>
@@ -613,20 +649,18 @@
         <item>guokr_fenda</item>
         <item>**H**</item>
         <item>h5_browser</item>
-        <item>hai360</item>
         <item>haibei_music</item>
         <item>haici_dict</item>
         <item>handle_external_storage</item>
         <item>hanglvzongheng</item>
         <item>hangout_dialer</item>
+        <item>hangzhou_smk</item>
         <item>haodaifu</item>
         <item>himail</item>
         <item>hiwifi</item>
         <item>hj_word_games</item>
         <item>homelink</item>
         <item>houzz</item>
-        <item>htc_car</item>
-        <item>htc_phone</item>
         <item>huaban</item>
         <item>huawei_appmarket</item>
         <item>huawei_backup</item>
@@ -640,6 +674,7 @@
         <item>huochaihe</item>
         <item>huputiyu</item>
         <item>huya</item>
+        <item>hviewer</item>
         <item>hydrogen_wallpager</item>
         <item>**I**</item>
         <item>ia_writer</item>
@@ -678,6 +713,7 @@
         <item>jiecao_news</item>
         <item>jiemian_news</item>
         <item>jike</item>
+        <item>jike_alt</item>
         <item>jingdong_reader</item>
         <item>jinritoutiao</item>
         <item>jinsanciba</item>
@@ -767,6 +803,7 @@
         <item>line_deco</item>
         <item>line_dict</item>
         <item>lingshengduoduo</item>
+        <item>linguee</item>
         <item>lingxi</item>
         <item>linkedin</item>
         <item>lizhi_fm</item>
@@ -783,6 +820,7 @@
         <item>maimai</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
+        <item>mark</item>
         <item>max_plus</item>
         <item>mayiwo_roadbook</item>
         <item>mbalib_wiki</item>
@@ -907,7 +945,6 @@
         <item>office_suite</item>
         <item>ofo_bicycler</item>
         <item>okey_dokey</item>
-        <item>olo</item>
         <item>olympus_image_share</item>
         <item>one</item>
         <item>oneplus_browser</item>
@@ -1032,7 +1069,6 @@
         <item>quora</item>
         <item>**R**</item>
         <item>readlaw</item>
-        <item>reaper</item>
         <item>recently</item>
         <item>renrenmeiju</item>
         <item>retrica</item>
@@ -1101,6 +1137,7 @@
         <item>samsung_voice_recorder</item>
         <item>samsung_write_on_pdf</item>
         <item>sanguliupo</item>
+        <item>sayu_videoplay</item>
         <item>scanbot</item>
         <item>scientific_calculator</item>
         <item>screener</item>
@@ -1126,6 +1163,7 @@
         <item>shuqi_alt</item>
         <item>sim_toolkit</item>
         <item>sina_tianqitong</item>
+        <item>siyue_musicassistant</item>
         <item>skype</item>
         <item>sleep_as_android</item>
         <item>smartisan_calendar</item>
@@ -1279,6 +1317,7 @@
         <item>t66y</item>
         <item>tantan</item>
         <item>taptap</item>
+        <item>tasker</item>
         <item>taskman</item>
         <item>teamviewer_host_for_samsung</item>
         <item>team_viewer_remote_control</item>
@@ -1328,6 +1367,7 @@
         <item>tianyashequ</item>
         <item>ticktick</item>
         <item>ticwear</item>
+        <item>tieba_yijiandingshiqiandao</item>
         <item>tieba_zhushou</item>
         <item>timi</item>
         <item>titanium_backup</item>
@@ -1558,6 +1598,7 @@
         <item>yuedong_sport</item>
         <item>yuelaiyuehao</item>
         <item>yunduo_nighttools</item>
+        <item>yyets_movie</item>
         <item>**Z**</item>
         <item>zaker</item>
         <item>zank</item>

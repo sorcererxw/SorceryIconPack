@@ -84,7 +84,8 @@ public class IconTabFragment extends BaseFragment {
         mViewPager.addOnPageChangeListener(mPageChangeListener);
         mViewPager.setPageMargin(DisplayUtil.dip2px(getContext(), 16));
 
-        mPageAdapter = new IconViewPageAdapter(getContext(), getFragmentManager(), mCustomPicker);
+        mPageAdapter = new IconViewPageAdapter(
+                getContext(), getChildFragmentManager(), mCustomPicker);
 
         mViewPager.setAdapter(mPageAdapter);
         mViewPager.setPageMargin(DisplayUtil.dip2px(getContext(), -4));

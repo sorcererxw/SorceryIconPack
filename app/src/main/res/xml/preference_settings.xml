@@ -44,8 +44,13 @@
         android:title="Dev options">
         <SwitchPreference
             android:key="preference_switch_ui_transparent_nav_bar"
-            android:layout="@layout/layout_preference_card_last"
+            android:layout="@layout/layout_preference_card"
             android:title="Transparent navigation bar"/>
+
+        <SwitchPreference
+            android:key="preference_switch_hide_itself"
+            android:layout="@layout/layout_preference_card_last"
+            android:title="Hide itself"/>
     </PreferenceCategory>
 
     <PreferenceCategory

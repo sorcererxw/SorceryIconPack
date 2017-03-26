@@ -1,7 +1,9 @@
 package com.sorcerer.sorcery.iconpack.settings;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -67,7 +69,13 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
         mPreferenceScreen = (PreferenceScreen) findPreference("preference_screen");
         initGeneral();
         initUi();
-        initDevOps();
+
+        mDevPreferenceGroup = (PreferenceGroup) findPreference("preference_group_dev");
+        if (!mPrefs.devOptionsOpened().getValue()) {
+            mPreferenceScreen.removePreference(mDevPreferenceGroup);
+        } else {
+            initDevOps();
+        }
         initAbout();
     }
 
@@ -136,7 +144,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                     getActivity().startActivity(intent.addFlags(FLAG_ACTIVITY_NO_ANIMATION)
                             .addFlags(FLAG_ACTIVITY_CLEAR_TOP)
                     );
-                },100);
+                }, 100);
 //                List<Activity> activityList = App.getInstance().getActivityList();
 //                for (int i = 0; i < activityList.size() - 1; i++) {
 //                    Activity activity = activityList.get(i);
@@ -172,10 +180,29 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     }
 
     private void initDevOps() {
-        mDevPreferenceGroup = (PreferenceGroup) findPreference("preference_group_dev");
-        if (!mPrefs.devOptionsOpened().getValue()) {
-            mPreferenceScreen.removePreference(mDevPreferenceGroup);
-        }
+        SwitchPreference hideItselfPreference =
+                (SwitchPreference) findPreference("preference_switch_hide_itself");
+        hideItselfPreference.setChecked(mPrefs.hideItself().getValue());
+        hideItselfPreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                PackageManager pm = getContext().getPackageManager();
+                ComponentName componentName =
+                        new ComponentName(getContext(), MainActivity.class);
+                if ((Boolean) newValue) {
+                    mPrefs.hideItself().setValue(true);
+                    pm.setComponentEnabledSetting(componentName,
+                            PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                            PackageManager.DONT_KILL_APP);
+                } else {
+                    mPrefs.hideItself().setValue(false);
+                    pm.setComponentEnabledSetting(componentName,
+                            PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                            PackageManager.DONT_KILL_APP);
+                }
+                return true;
+            }
+        });
     }
 
     private void initAbout() {
@@ -186,6 +213,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                     Toast.makeText(getContext(), "Dev-options is opened", Toast.LENGTH_SHORT)
                             .show();
                     mPreferenceScreen.addPreference(mDevPreferenceGroup);
+                    initDevOps();
                     mPrefs.devOptionsOpened().setValue(true);
                 }));
             } else {
@@ -196,8 +224,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
 
         mAboutLibPreference = findPreference("preference_about_lib");
         mAboutLibPreference.setOnPreferenceClickListener(preference -> {
-            ((SettingsActivity) getActivity())
-                    .addFragment(new OpenSourceLibFragment());
+            ((SettingsActivity) getActivity()).addFragment(new OpenSourceLibFragment());
             return true;
         });
     }
@@ -229,73 +256,5 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     public void onResume() {
         super.onResume();
         getActivity().setTitle(ResourceUtil.getString(getContext(), R.string.nav_item_settings));
-    }
-
-    private void initThemeCallback() {
-//        mThemeManager.cardColor().subscribe(new Consumer<Integer>() {
-//            @Override
-//            public void accept(Integer color) throws Exception {
-//                RecyclerView listView = getListView();
-//                int count = listView.getChildCount();
-//                for (int i = 0; i < count; i++) {
-//                    View view = listView.getLayoutManager().findViewByPosition(i);
-//                    if (view instanceof CardView) {
-//                        CardView cardView = (CardView) view;
-//                        if (cardView != null) {
-//                            cardView.setCardBackgroundColor(color);
-//                        }
-//                    }
-//                }
-//            }
-//        }, Timber::e);
-
-//        mThemeManager.primaryTextColor().subscribe(new Consumer<Integer>() {
-//            @Override
-//            public void accept(Integer color) throws Exception {
-//                RecyclerView listView = getListView();
-//                int count = listView.getChildCount();
-//                for (int i = 0; i < count; i++) {
-//                    if (getPreferenceScreen().getPreference(i) instanceof PreferenceCategory) {
-//                        continue;
-//                    }
-//
-//                    View view = listView.getLayoutManager().findViewByPosition(i);
-//                    TextView textView = (TextView) view.findViewById(android.R.id.title);
-//                    if (textView != null) {
-//                        textView.setTextColor(color);
-//                    }
-//                }
-//            }
-//        }, Timber::e);
-
-//        mThemeManager.secondaryTextColor().subscribe(new Consumer<Integer>() {
-//            @Override
-//            public void accept(Integer color) throws Exception {
-//                RecyclerView listView = getListView();
-//                int count = listView.getChildCount();
-//                for (int i = 0; i < count; i++) {
-//                    View view = listView.getLayoutManager().findViewByPosition(i);
-//                    TextView textView = (TextView) view.findViewById(android.R.id.summary);
-//                    if (textView != null) {
-//                        textView.setTextColor(color);
-//                    }
-//                }
-//            }
-//        }, Timber::e);
-
-//        mThemeManager.accentColor().subscribe(new Consumer<Integer>() {
-//            @Override
-//            public void accept(Integer color) throws Exception {
-//                RecyclerView listView = getListView();
-//                int count = listView.getChildCount();
-//                for (int i = 0; i < count; i++) {
-//                    View view = listView.getLayoutManager().findViewByPosition(i);
-//                    TextView textView = (TextView) view.findViewById(android.R.id.title);
-//                    if (textView != null) {
-//                        textView.setTextColor(color);
-//                    }
-//                }
-//            }
-//        }, Timber::e);
     }
 }

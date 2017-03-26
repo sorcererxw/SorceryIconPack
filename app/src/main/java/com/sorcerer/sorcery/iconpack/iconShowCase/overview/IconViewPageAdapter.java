@@ -41,7 +41,7 @@ public class IconViewPageAdapter extends FragmentStatePagerAdapter {
 
     private boolean mCustomPicker;
 
-    public IconViewPageAdapter(Context context, FragmentManager fm, boolean customPicker) {
+    IconViewPageAdapter(Context context, FragmentManager fm, boolean customPicker) {
         super(fm);
         App.getInstance().getAppComponent().inject(this);
 
