@@ -11,6 +11,8 @@ import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -63,6 +65,10 @@ public class LazyFragment extends LazyBaseFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
+        Timber.d("isVisibleToUser: " + isVisibleToUser);
+        Timber.d("isInit: " + isInit);
+        Timber.d("getContentView: " + (getContentView() != null));
+
         if (isVisibleToUser && !isInit && getContentView() != null) {
             // visible but not init
             onCreateViewLazy(savedInstanceState);

@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +31,7 @@ import com.sorcerer.sorcery.iconpack.utils.LocaleUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.sorcerer.sorcery.iconpack.utils.StringUtil;
+import com.sorcerer.sorcery.iconpack.utils.TextWeightUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
 
 import java.util.concurrent.ExecutionException;
@@ -121,6 +123,7 @@ public class IconDialogActivity extends ToolbarActivity {
         }
 
         mTitleTextView.setText(mLabel);
+        TextWeightUtil.medium(mTitleTextView);
 
         mIconImageView.setImageResource(mRes);
 
@@ -255,10 +258,10 @@ public class IconDialogActivity extends ToolbarActivity {
 
     private void showRealName(String name) {
         mTitleTextView.setPivotX(0);
-        mTitleTextView.setPivotY(1);
+        mTitleTextView.setPivotY(0.2f*mTitleTextView.getHeight());
 
         mTitleTextView.animate()
-                .alpha(0.6f)
+                .alpha(0.5f)
                 .scaleY(0.6f)
                 .scaleX(0.6f)
                 .setListener(new AnimatorListenerAdapter() {
@@ -266,6 +269,7 @@ public class IconDialogActivity extends ToolbarActivity {
                     public void onAnimationStart(Animator animation) {
 
                         TextView textView = new TextView(mContext);
+                        TextWeightUtil.medium(textView);
                         textView.setTextColor(ResourceUtil.getAttrColor(mContext,
                                 android.R.attr.textColorPrimary));
                         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);

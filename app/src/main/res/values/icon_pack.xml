@@ -28,6 +28,55 @@
         <item>android_authority</item>
         <item>amazon_cloud</item>
         <item>aimp</item>
+        <item>movieheaven</item>
+        <item>fasthub</item>
+        <item>droidddle</item>
+        <item>ebay</item>
+        <item>cnn_news</item>
+        <item>citymapper</item>
+        <item>camera_mx</item>
+        <item>camera_360</item>
+        <item>best_buy</item>
+        <item>behance_display</item>
+        <item>acdisplay</item>
+        <item>accuweather</item>
+        <item>icebox_alt</item>
+        <item>google_weather</item>
+        <item>todoist</item>
+        <item>a3c_system_tunner</item>
+        <item>a3c_system_tunner_pro</item>
+        <item>a3c_toolbox</item>
+        <item>a3c_toolbox_pro</item>
+        <item>chromer</item>
+        <item>force_doze</item>
+        <item>ben_colorpicker</item>
+        <item>everphoto</item>
+        <item>xmvideoplayer</item>
+        <item>sorcery_icons_spring</item>
+        <item>english_tick</item>
+        <item>soutushenqi</item>
+        <item>renren</item>
+        <item>xyz_hanks_note</item>
+        <item>antutu_3d</item>
+        <item>wps_note</item>
+        <item>uc_news</item>
+        <item>mixplorer</item>
+        <item>antutu_benchmark</item>
+        <item>google_maps_local_guide</item>
+        <item>game_shadowmatic</item>
+        <item>huawei_honor_read</item>
+        <item>huawei_health</item>
+        <item>huawei_hicloud</item>
+        <item>huawei_hireader</item>
+        <item>huawei_higame</item>
+        <item>huawei_phone_clone</item>
+        <item>huawei_video</item>
+<item>huawei_hilives</item>
+        <item>huawei_vmall</item>
+        <item>huawei_hiwallet</item>
+        <item>huawei_hilink</item>
+        <item>tesla_motors</item>
+        <item>google_earth</item>
 
         <item>@string/icon_label_updated</item>
         <item>jotterpad</item>
@@ -39,6 +88,35 @@
         <item>bilibili</item>
         <item>kaoyanbang</item>
         <item>nga_player_community</item>
+        <item>tencent_wechat</item>
+        <item>acfun</item>
+        <item>samsung_galaxy_apps</item>
+        <item>tencent_app_market</item>
+        <item>huawei_appmarket</item>
+        <item>myersplash</item>
+        <item>google_maps</item>
+        <item>behance</item>
+        <item>momo</item>
+        <item>renrenmeiju</item>
+        <item>xunlei</item>
+        <item>zhuanxin</item>
+        <item>los_changelog</item>
+        <item>wolfram_alpha</item>
+        <item>ted</item>
+        <item>chelaile</item>
+        <item>seed</item>
+        <item>wunderlist</item>
+        <item>netease_cloudclass</item>
+        <item>zarchiver</item>
+        <item>huawei_appmarket</item>
+        <item>momobeidanci</item>
+        <item>tianyashequ</item>
+        <item>moon_phase</item>
+        <item>zhonghuawannianli</item>
+        <item>pptv</item>
+        <item>panda_tv</item>
+        <item>suibiji</item>
+        <item>zhihu_ribao</item>
     </string-array>
 
     <string-array name="icon_pack" translatable="false">
@@ -86,6 +164,10 @@
         <item>a365_calendar_7</item>
         <item>a365_calendar_8</item>
         <item>a365_calendar_9</item>
+        <item>a3c_system_tunner</item>
+        <item>a3c_system_tunner_pro</item>
+        <item>a3c_toolbox</item>
+        <item>a3c_toolbox_pro</item>
         <item>a3dmark</item>
         <item>a500px</item>
         <item>a500px_alt</item>
@@ -96,8 +178,9 @@
         <item>a94_percent</item>
         <item>**A**</item>
         <item>abcchina_bank</item>
+        <item>accuweather</item>
+        <item>acdisplay</item>
         <item>acfun</item>
-        <item>acfun_alt</item>
         <item>action_launcher</item>
         <item>adaway</item>
         <item>adobe_acrobat</item>
@@ -145,7 +228,6 @@
         <item>ali_qua</item>
         <item>ali_taobao</item>
         <item>ali_taobao_dianying</item>
-        <item>ali_taobao_dianying_alt</item>
         <item>ali_taobao_etao</item>
         <item>ali_taobao_nongcun</item>
         <item>ali_tmall</item>
@@ -170,6 +252,8 @@
         <item>android_nify</item>
         <item>anime_taste</item>
         <item>ankidroid</item>
+        <item>antutu_3d</item>
+        <item>antutu_benchmark</item>
         <item>anydo</item>
         <item>anydo_calendar</item>
         <item>anyview</item>
@@ -233,7 +317,10 @@
         <item>battlefield_companion</item>
         <item>battlefield_companion_alt</item>
         <item>behance</item>
+        <item>behance_display</item>
         <item>beiyue</item>
+        <item>ben_colorpicker</item>
+        <item>best_buy</item>
         <item>between</item>
         <item>biaozhunribenyu</item>
         <item>bilibili</item>
@@ -274,7 +361,9 @@
         <item>caller_info</item>
         <item>call_vibrator</item>
         <item>camera</item>
+        <item>camera_360</item>
         <item>camera_fv_5</item>
+        <item>camera_mx</item>
         <item>cam_card</item>
         <item>cam_scanner</item>
         <item>card_news</item>
@@ -288,9 +377,11 @@
         <item>chaojishipin</item>
         <item>chaojishipin_alt</item>
         <item>chelaile</item>
+        <item>chromer</item>
         <item>chufaba</item>
         <item>cib_bank</item>
         <item>cilikanpian</item>
+        <item>citymapper</item>
         <item>clean_master</item>
         <item>clean_master_lite</item>
         <item>clipboard_plus</item>
@@ -300,6 +391,7 @@
         <item>cmbchina_bank</item>
         <item>cmbc_bank</item>
         <item>cmcc_wifi</item>
+        <item>cnn_news</item>
         <item>cntv</item>
         <item>contacts</item>
         <item>contacts_alt</item>
@@ -361,11 +453,13 @@
         <item>douyu</item>
         <item>download</item>
         <item>dreamdays</item>
+        <item>droidddle</item>
         <item>duckduckgo</item>
         <item>duduribao</item>
         <item>duitang</item>
         <item>duokan</item>
         <item>**E**</item>
+        <item>ebay</item>
         <item>echo</item>
         <item>echo_alt</item>
         <item>ecitic_bank</item>
@@ -373,6 +467,7 @@
         <item>eleme</item>
         <item>eleme_alt</item>
         <item>email</item>
+        <item>english_tick</item>
         <item>enjoy</item>
         <item>esbook_read</item>
         <item>es_explorer</item>
@@ -382,6 +477,7 @@
         <item>evernote</item>
         <item>evernote_alt</item>
         <item>evernote_alt_2</item>
+        <item>everphoto</item>
         <item>everything_done</item>
         <item>every_wiki</item>
         <item>evie_launcher</item>
@@ -396,6 +492,7 @@
         <item>fancy</item>
         <item>fangdai_calculator</item>
         <item>fanliwang</item>
+        <item>fasthub</item>
         <item>feedly</item>
         <item>feichangzhun</item>
         <item>fenghuang</item>
@@ -500,6 +597,7 @@
         <item>flyme_weather_alt</item>
         <item>fm_radio</item>
         <item>foodie</item>
+        <item>force_doze</item>
         <item>forest</item>
         <item>fulimanman</item>
         <item>funny_tools_video</item>
@@ -529,6 +627,7 @@
         <item>game_prune</item>
         <item>game_reaper</item>
         <item>game_reigns</item>
+        <item>game_shadowmatic</item>
         <item>game_snake</item>
         <item>game_solitaire_decked_out</item>
         <item>game_tencent_hlddz</item>
@@ -593,6 +692,7 @@
         <item>google_drive</item>
         <item>google_duo</item>
         <item>google_earth</item>
+        <item>google_earth_alt</item>
         <item>google_fit</item>
         <item>google_gmail</item>
         <item>google_hangouts</item>
@@ -602,6 +702,7 @@
         <item>google_keep_alt</item>
         <item>google_keyboard</item>
         <item>google_maps</item>
+        <item>google_maps_local_guide</item>
         <item>google_messenger</item>
         <item>google_messenger_alt</item>
         <item>google_messenger_alt_2</item>
@@ -635,13 +736,13 @@
         <item>google_voice_search</item>
         <item>google_wallpapers</item>
         <item>google_wallpapers_alt</item>
+        <item>google_weather</item>
         <item>google_youtube</item>
         <item>google_youtube_music</item>
         <item>go_google_installer</item>
         <item>go_host</item>
         <item>gravity_box</item>
         <item>greenify</item>
-        <item>green_vpn</item>
         <item>guaguamanhua</item>
         <item>guangdiu</item>
         <item>gudong</item>
@@ -665,8 +766,19 @@
         <item>huawei_appmarket</item>
         <item>huawei_backup</item>
         <item>huawei_file_manager_hidisk</item>
+        <item>huawei_health</item>
+        <item>huawei_hicloud</item>
+        <item>huawei_higame</item>
+        <item>huawei_hilink</item>
+        <item>huawei_hilives</item>
+        <item>huawei_hireader</item>
+        <item>huawei_hiwallet</item>
+        <item>huawei_honor_read</item>
+        <item>huawei_phone_clone</item>
         <item>huawei_phone_manager</item>
         <item>huawei_phone_service</item>
+        <item>huawei_video</item>
+        <item>huawei_vmall</item>
         <item>huaxia_bank</item>
         <item>huaxiong</item>
         <item>hua_timetravel</item>
@@ -681,6 +793,7 @@
         <item>icbc_bank</item>
         <item>icbc_bank_im</item>
         <item>icebox</item>
+        <item>icebox_alt</item>
         <item>icourse163</item>
         <item>ifanr</item>
         <item>ifanr_sudu</item>
@@ -870,6 +983,7 @@
         <item>mioji_trip</item>
         <item>misfit</item>
         <item>miwifi</item>
+        <item>mixplorer</item>
         <item>mi_remote</item>
         <item>mobike</item>
         <item>mojian</item>
@@ -884,6 +998,7 @@
         <item>mora</item>
         <item>moto_body</item>
         <item>moto_connect</item>
+        <item>movieheaven</item>
         <item>mt_filemanager</item>
         <item>music</item>
         <item>mxplayer</item>
@@ -894,7 +1009,6 @@
         <item>**N**</item>
         <item>netease_cartoon_reader</item>
         <item>netease_cloudclass</item>
-        <item>netease_cloudclass_alt</item>
         <item>netease_epay</item>
         <item>netease_epay_alt</item>
         <item>netease_finance</item>
@@ -909,7 +1023,6 @@
         <item>netease_music</item>
         <item>netease_music_alt</item>
         <item>netease_news</item>
-        <item>netease_news_alt</item>
         <item>netease_open_class</item>
         <item>netease_pris</item>
         <item>netease_super_calculator</item>
@@ -1070,6 +1183,7 @@
         <item>**R**</item>
         <item>readlaw</item>
         <item>recently</item>
+        <item>renren</item>
         <item>renrenmeiju</item>
         <item>retrica</item>
         <item>rikkagram</item>
@@ -1255,11 +1369,13 @@
         <item>sony_xperia_clock</item>
         <item>sorcery_icons</item>
         <item>sorcery_icons_christmas</item>
+        <item>sorcery_icons_spring</item>
         <item>sorcery_icons_winter_day</item>
         <item>sougou_keyboard</item>
         <item>sougou_wallpaper</item>
         <item>sound_cloud</item>
         <item>sound_recorder</item>
+        <item>soutushenqi</item>
         <item>spdbccc</item>
         <item>spd_bank</item>
         <item>spoon</item>
@@ -1362,6 +1478,7 @@
         <item>tencent_wesync</item>
         <item>terminal</item>
         <item>terminal_emulator</item>
+        <item>tesla_motors</item>
         <item>theinitium</item>
         <item>tianshidongman</item>
         <item>tianyashequ</item>
@@ -1372,6 +1489,7 @@
         <item>timi</item>
         <item>titanium_backup</item>
         <item>tmri_jiaoguan_12123</item>
+        <item>todoist</item>
         <item>tongcheng</item>
         <item>tonghuashun</item>
         <item>touchpal_keyboard</item>
@@ -1396,6 +1514,7 @@
         <item>uber</item>
         <item>uber_partner</item>
         <item>uc_browser</item>
+        <item>uc_news</item>
         <item>udacity</item>
         <item>unicom</item>
         <item>unicon</item>
@@ -1422,7 +1541,6 @@
         <item>vue</item>
         <item>**W**</item>
         <item>wandoujia</item>
-        <item>wandoujia_alt</item>
         <item>wandoujia_eyepetizer</item>
         <item>wandoujia_qingzhuomian</item>
         <item>wandoujia_tongzhiqingli</item>
@@ -1451,6 +1569,7 @@
         <item>wolfram_alpha</item>
         <item>wordpress</item>
         <item>wps</item>
+        <item>wps_note</item>
         <item>wuba</item>
         <item>wuba_zhuanzhuan</item>
         <item>wunderlist</item>
@@ -1564,6 +1683,7 @@
         <item>xingzhe</item>
         <item>xinpinget</item>
         <item>xinternalsd</item>
+        <item>xmvideoplayer</item>
         <item>xposed</item>
         <item>xqs_background</item>
         <item>xqs_background_alt</item>
@@ -1573,6 +1693,7 @@
         <item>xunlei</item>
         <item>xunlei_kuainiao</item>
         <item>xykey</item>
+        <item>xyz_hanks_note</item>
         <item>**Y**</item>
         <item>yangqi</item>
         <item>yaokongjingling</item>
@@ -1588,7 +1709,6 @@
         <item>yi_live</item>
         <item>yoho_buy</item>
         <item>youku</item>
-        <item>youku_alt</item>
         <item>youyaoqimanhua</item>
         <item>yuantiku_gaokao</item>
         <item>yuantiku_gongkao</item>

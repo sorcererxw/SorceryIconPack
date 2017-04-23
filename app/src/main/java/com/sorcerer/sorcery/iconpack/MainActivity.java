@@ -30,7 +30,6 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconTabFragment;
-import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.activities.WelcomeActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.anim.SearchTransitioner;
@@ -241,7 +240,7 @@ public class MainActivity extends BaseActivity {
                     mNavigator.toSettingsActivity();
                     break;
                 case "help":
-                    mNavigator.toHelpActivity();
+                    mNavigator.toHelpMarkdownActivity();
                     break;
                 case "donate":
                     mNavigator.toDonateActivity();
@@ -275,7 +274,7 @@ public class MainActivity extends BaseActivity {
 
                     BitmapFactory.Options dimensions = new BitmapFactory.Options();
                     dimensions.inJustDecodeBounds = true;
-                    BitmapFactory.decodeResource(getResources(), R.drawable.drawer_head,
+                    BitmapFactory.decodeResource(getResources(), R.drawable.drawer_head_simple,
                             dimensions);
                     int height = dimensions.outHeight;
                     int width = dimensions.outWidth;
@@ -286,7 +285,7 @@ public class MainActivity extends BaseActivity {
 
                     View view = View.inflate(MainActivity.this, R.layout.layout_drawer_head, null);
                     ImageView image = (ImageView) view.findViewById(R.id.imageView_drawer_head);
-                    image.setImageResource(R.drawable.drawer_head);
+                    image.setImageResource(R.drawable.drawer_head_simple);
                     LayoutParams imageLayoutParams = image.getLayoutParams();
                     if (imageLayoutParams == null) {
                         imageLayoutParams = new LayoutParams(MATCH_PARENT, height);
@@ -295,22 +294,9 @@ public class MainActivity extends BaseActivity {
                     }
                     image.setLayoutParams(imageLayoutParams);
 
+
                     if (mThemeManager.getCurrentTheme().isDark()) {
                         image.setImageDrawable(new ColorDrawable(
-                                ResourceUtil.getAttrColor(mContext, R.attr.colorCard)));
-                    }
-
-                    View topSpace = view.findViewById(R.id.view_drawer_head_space_top);
-                    LayoutParams topSpaceLayoutParams = topSpace.getLayoutParams();
-                    if (topSpaceLayoutParams == null) {
-                        topSpaceLayoutParams = new LayoutParams(MATCH_PARENT, titleBarHeight);
-                    } else {
-                        topSpaceLayoutParams.height = titleBarHeight;
-                    }
-                    topSpace.setLayoutParams(topSpaceLayoutParams);
-
-                    if (mThemeManager.getCurrentTheme().isDark()) {
-                        topSpace.setBackground(new ColorDrawable(
                                 ResourceUtil.getAttrColor(mContext, R.attr.colorCard)));
                     }
 

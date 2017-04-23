@@ -39,7 +39,7 @@ public abstract class SlideInAndOutAppCompatActivity extends UniversalToolbarAct
 
     private boolean mSwipeEnabled = true;
 
-    private boolean mSwipeAnyWhere = true;
+    private boolean mSwipeAnyWhere = false;
 
     @Override
     protected void init(Bundle savedInstanceState) {

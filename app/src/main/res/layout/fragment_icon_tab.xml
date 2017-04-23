@@ -5,13 +5,16 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
     <com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout
         android:id="@+id/tabLayout_icon"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:background="?android:attr/colorPrimary"
         android:elevation="4dp"
         app:tabIndicatorColor="?android:attr/colorAccent"
+        app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/palette_white"
         app:tabTextAppearance="@style/TabTextAppearance"
         app:tabTextColor="#C3E4C5"/>

@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.2." + code
+        versionName "4.3." + code
 /* + " Weekly" + new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))*/
         minSdkVersion 21
         targetSdkVersion 25
@@ -71,19 +71,19 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
     //noinspection GradleCompatible
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support:design:25.3.0'
-    compile 'com.android.support:support-v4:25.3.0'
-    compile 'com.android.support:cardview-v7:25.3.0'
-    compile 'com.android.support:recyclerview-v7:25.3.0'
-    compile 'com.android.support:preference-v14:25.3.0'
-    compile 'com.android.support:support-fragment:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:preference-v14:25.3.1'
+    compile 'com.android.support:support-fragment:25.3.1'
 
     // material dialog
-    compile 'com.afollestad.material-dialogs:core:0.9.3.0'
-    compile 'com.afollestad.material-dialogs:commons:0.9.3.0'
+    compile 'com.afollestad.material-dialogs:core:0.9.4.3'
+    compile 'com.afollestad.material-dialogs:commons:0.9.4.3'
     // material drawer
-    compile('com.mikepenz:materialdrawer:5.8.2@aar') {
+    compile('com.mikepenz:materialdrawer:5.9.0@aar') {
         transitive = true
     }
     // indicator
@@ -105,18 +105,18 @@ dependencies {
     compile 'cn.leancloud.android:avoscloud-feedback:v3.+@aar'
     // rx
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.4'
-    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.1'
-    compile 'com.github.VictorAlbertos:RxActivityResult:0.4.0-2.x'
-    compile 'com.jakewharton.rxbinding:rxbinding:1.0.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.8'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
+    compile 'com.github.VictorAlbertos:RxActivityResult:0.4.1-2.x'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC1'
     // timber
     compile 'com.jakewharton.timber:timber:4.5.1'
     // iconics
     compile 'com.mikepenz:iconics-core:2.8.2@aar'
-    compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
+    compile 'com.mikepenz:google-material-typeface:3.0.1.0.original@aar'
     compile 'com.mikepenz:material-design-iconic-typeface:2.2.0.2@aar'
-    compile 'com.mikepenz:community-material-typeface:1.7.22.1@aar'
+    compile 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
     compile 'com.mikepenz:fontawesome-typeface:4.7.0.0@aar'
     // bugly
     compile 'com.tencent.bugly:crashreport:2.4.0'
@@ -129,7 +129,7 @@ dependencies {
     // jsoup
     compile 'org.jsoup:jsoup:1.10.2'
     // stream on java7
-    compile 'com.annimon:stream:1.1.4'
+    compile 'com.annimon:stream:1.1.7'
     // materialize
     compile 'com.mikepenz:materialize:1.0.0'
     // retrofit
@@ -151,6 +151,10 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.10-rc2'
 
     compile 'me.grantland:autofittextview:0.2.1'
+
+    compile 'com.github.tiagohm.MarkdownView:library:0.16.0'
+
+    compile 'com.oasisfeng.condom:library:1.0.2'
 }
 repositories {
     mavenCentral()

@@ -23,7 +23,8 @@ public enum IconFlag {
     XIAOMI(11),
     FLYME(12),
     ONEPLUS(13),
-    GAME(14);
+    HUAWEI(14),
+    GAME(15);
 
     private int mOrder;
 

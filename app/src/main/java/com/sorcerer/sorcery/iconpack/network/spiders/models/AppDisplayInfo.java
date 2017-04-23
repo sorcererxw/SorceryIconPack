@@ -3,6 +3,8 @@ package com.sorcerer.sorcery.iconpack.network.spiders.models;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
+import timber.log.Timber;
+
 /**
  * @description:
  * @author: Sorcerer
@@ -18,8 +20,11 @@ public class AppDisplayInfo {
     }
 
     public boolean needAddition() {
-        return TextUtils.isEmpty(mAppName) ||
-                (mIcon == null && TextUtils.isEmpty(mIconUrl));
+        Timber.d("AppName: " + getAppName());
+        Timber.d("iconUrl: " + getIconUrl());
+        Timber.d("icon: " + (getIcon() != null));
+
+        return TextUtils.isEmpty(mAppName) || (mIcon == null && TextUtils.isEmpty(mIconUrl));
     }
 
     public void add(AppDisplayInfo info) {

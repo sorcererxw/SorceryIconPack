@@ -364,10 +364,11 @@ public class PackageUtil {
             pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
             return true;
         } catch (Exception e) {
-//            Timber.e(e);
-            Timber.d("not installed: %s", packageName);
+            return false;
+//            Timber.w("not installed: %s", packageName);
+//            return Stream.of(PackageUtil.getInstallApps(context))
+//                    .anyMatch(value -> value.activityInfo.packageName.equals(packageName));
         }
-        return false;
     }
 
     /**

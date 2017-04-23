@@ -7,8 +7,8 @@ import android.transition.TransitionManager;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.sorcerer.sorcery.iconpack.Navigator;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar;
 
 /**

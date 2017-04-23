@@ -96,12 +96,28 @@ class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHold
 
         void setTimes(int count) {
             if (count >= 0) {
-                String t = mPrefixTimes + count + mSuffixTimes;
+                String t = mPrefixTimes + getCountString(count) + mSuffixTimes;
                 times.setText(t);
             } else {
                 times.setText("......");
             }
         }
+
+        private static String getCountString(int count) {
+            if (count == 0) {
+                return "0";
+            }
+            for (int i = 0; i < TIMES_POINT.length - 1; i++) {
+                if (count >= TIMES_POINT[i] && count < TIMES_POINT[i + 1]) {
+                    return TIMES_POINT[i] + "~" + TIMES_POINT[i + 1];
+                }
+            }
+            return TIMES_POINT[TIMES_POINT.length - 1] + "+";
+        }
+
+        private static final int[] TIMES_POINT = {
+                1, 10, 50, 100, 500, 1000, 2000, 5000, 10000
+        };
     }
 
     RequestAdapter(Context context, List<AppInfo> appInfoList) {

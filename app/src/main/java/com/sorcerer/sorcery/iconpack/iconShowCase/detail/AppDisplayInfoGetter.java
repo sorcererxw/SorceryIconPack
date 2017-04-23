@@ -33,6 +33,7 @@ class AppDisplayInfoGetter {
                     public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)
                             throws Exception {
                         if (PackageUtil.isPackageInstalled(context, packageName)) {
+                            Timber.d("installed " + packageName);
                             try {
                                 PackageManager pm =
                                         context.getApplicationContext().getPackageManager();
@@ -46,6 +47,8 @@ class AppDisplayInfoGetter {
                             } catch (Exception e) {
                                 Timber.e(e);
                             }
+                        } else {
+                            Timber.d("not installed " + packageName);
                         }
                         return Observable.just(info);
                     }
@@ -67,22 +70,22 @@ class AppDisplayInfoGetter {
                         }
                     }
                 })
-                .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
-                    @Override
-                    public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)
-                            throws Exception {
-                        if (chinese && info.needAddition()) {
-                            Timber.d("get from qq");
-                            return AppDisplayInfoSpider.getNameFromQQ(packageName)
-                                    .map(newInfo -> {
-                                        info.add(newInfo);
-                                        return info;
-                                    });
-                        } else {
-                            return Observable.just(info);
-                        }
-                    }
-                })
+//                .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
+//                    @Override
+//                    public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)
+//                            throws Exception {
+//                        if (chinese && info.needAddition()) {
+//                            Timber.d("get from qq");
+//                            return AppDisplayInfoSpider.getNameFromQQ(packageName)
+//                                    .map(newInfo -> {
+//                                        info.add(newInfo);
+//                                        return info;
+//                                    });
+//                        } else {
+//                            return Observable.just(info);
+//                        }
+//                    }
+//                })
                 .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
                     @Override
                     public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)

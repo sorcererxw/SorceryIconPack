@@ -90,7 +90,6 @@ public class IconTabFragment extends BaseFragment {
         mViewPager.setAdapter(mPageAdapter);
         mViewPager.setPageMargin(DisplayUtil.dip2px(getContext(), -4));
 
-        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.setupWithViewPager(mViewPager);
 
         mTabLayout.setOnTabDoubleTapListener(() -> {

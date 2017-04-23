@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
+import com.oasisfeng.condom.CondomContext;
 import com.sorcerer.sorcery.iconpack.network.leancloud.AVService;
 import com.sorcerer.sorcery.iconpack.utils.NetUtil;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -45,9 +46,10 @@ public class App extends Application {
                 .appModule(new AppModule(this))
                 .build();
         super.onCreate();
-        AVService.init(this);
+        AVService.init(CondomContext.wrap(this, "av service"));
         if (!BuildConfig.DEBUG) {
-            CrashReport.initCrashReport(this, "900053240", false);
+            CrashReport.initCrashReport(
+                    CondomContext.wrap(this, "crash report"), "900053240", false);
         }
         RxActivityResult.register(this);
         Timber.plant(new Timber.DebugTree() {

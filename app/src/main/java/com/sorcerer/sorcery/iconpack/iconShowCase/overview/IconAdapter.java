@@ -19,7 +19,7 @@ import com.annimon.stream.Stream;
 import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.jakewharton.rxbinding.view.RxView;
+import com.jakewharton.rxbinding2.view.RxView;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.MainActivity;
@@ -29,6 +29,7 @@ import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewHolder;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+import com.sorcerer.sorcery.iconpack.utils.TextWeightUtil;
 import com.turingtechnologies.materialscrollbar.ICustomAdapter;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
 
@@ -243,7 +244,6 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         } else if (type == TYPE_HEADER) {
             HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(iconBean.getName()));
-
 //            mThemeManager.primaryTextColor().subscribe(
 //                    color -> headerHolder.mHeader.setTextColor(color));
         } else {

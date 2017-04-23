@@ -12,11 +12,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
+import com.sorcerer.sorcery.iconpack.Navigator;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.ui.Navigator;
 import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 

@@ -56,7 +56,6 @@
     <category title="A"/>
     <item drawable="abcchina_bank"/>
     <item drawable="acfun"/>
-    <item drawable="acfun_alt"/>
     <item drawable="action_launcher"/>
     <item drawable="adaway"/>
     <item drawable="adobe_acrobat"/>
@@ -104,7 +103,6 @@
     <item drawable="ali_qua"/>
     <item drawable="ali_taobao"/>
     <item drawable="ali_taobao_dianying"/>
-    <item drawable="ali_taobao_dianying_alt"/>
     <item drawable="ali_taobao_etao"/>
     <item drawable="ali_taobao_nongcun"/>
     <item drawable="ali_tmall"/>
@@ -868,7 +866,6 @@
     <item drawable="netease_music"/>
     <item drawable="netease_music_alt"/>
     <item drawable="netease_news"/>
-    <item drawable="netease_news_alt"/>
     <item drawable="netease_open_class"/>
     <item drawable="netease_pris"/>
     <item drawable="netease_super_calculator"/>
