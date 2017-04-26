@@ -125,6 +125,7 @@
     <string name="nav_item_donate">Donate</string>
     <string name="nav_item_about">About</string>
     <string name="nav_item_help">FAQ</string>
+    <string name="nav_item_help_description">Prepare for the novice</string>
     <string name="nav_item_wallpapers">Wallpapers</string>
     <string name="nav_item_custom_workshop">Custom Workshop</string>
     <string name="nav_item_apply_xposed">Apply globally</string>

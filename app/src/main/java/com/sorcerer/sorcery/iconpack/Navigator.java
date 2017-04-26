@@ -9,8 +9,6 @@ import com.sorcerer.sorcery.iconpack.apply.ApplyActivity;
 import com.sorcerer.sorcery.iconpack.customWorkshop.CustomWorkshopActivity;
 import com.sorcerer.sorcery.iconpack.feedback.chat.FeedbackChatActivity;
 import com.sorcerer.sorcery.iconpack.feedback.request.AppSelectActivity;
-import com.sorcerer.sorcery.iconpack.help.HelpActivity;
-import com.sorcerer.sorcery.iconpack.help.HelpMarkdownActivity;
 import com.sorcerer.sorcery.iconpack.search.SearchActivity;
 import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.test.TestActivity;
@@ -27,6 +25,7 @@ import rx_activity_result2.RxActivityResult;
  * @date: 2016/11/4
  */
 
+@SuppressWarnings("WeakerAccess")
 public class Navigator {
     private Activity mActivity;
 
@@ -73,10 +72,6 @@ public class Navigator {
     }
 
     public void toHelpMarkdownActivity() {
-        mainActivityShift(HelpMarkdownActivity.class);
-    }
-
-    public void toHelpActivity() {
         mainActivityShift(HelpActivity.class);
     }
 
@@ -109,5 +104,17 @@ public class Navigator {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         context.startActivity(i);
+    }
+
+    public static void toMail(Context context, String receiver, String subject, String content) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{receiver});
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, content);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            context.startActivity(intent);
+        }
     }
 }

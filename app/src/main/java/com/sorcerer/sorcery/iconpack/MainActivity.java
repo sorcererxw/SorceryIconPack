@@ -25,9 +25,8 @@ import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconTabFragment;
 import com.sorcerer.sorcery.iconpack.ui.activities.WelcomeActivity;
@@ -39,7 +38,11 @@ import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
+import java.util.concurrent.TimeUnit;
+
 import butterknife.BindView;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
@@ -141,6 +144,7 @@ public class MainActivity extends BaseActivity {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 getSupportActionBar().setTitle(getString(R.string.select_an_icon));
             }
+        } else {
         }
     }
 
@@ -160,31 +164,15 @@ public class MainActivity extends BaseActivity {
                                 .color(iconColor).sizeDp(iconSize))
                         .withTextColor(textColor)
                         .withName(R.string.nav_item_apply),
-                new ExpandableDrawerItem()
+                new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
-                        .withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_mail)
+                        .withTag("request")
+                        .withIcon(new IconicsDrawable(this,
+                                GoogleMaterial.Icon.gmd_playlist_add_check)
                                 .color(iconColor).sizeDp(iconSize))
                         .withTextColor(textColor)
-                        .withName(R.string.nav_item_feedback)
-                        .withTag("")
-                        .withArrowColor(iconColor)
-                        .withSubItems(
-                                new SecondaryDrawerItem()
-                                        .withLevel(3)
-                                        .withSetSelected(false)
-                                        .withSelectable(false)
-                                        .withName(R.string.request)
-                                        .withTextColor(subTextColor)
-                                        .withTag("request"),
-                                new SecondaryDrawerItem()
-                                        .withLevel(3)
-                                        .withSetSelected(false)
-                                        .withSelectable(false)
-                                        .withTextColor(subTextColor)
-                                        .withName(R.string.suggest)
-                                        .withTag("suggest")
-                        ),
+                        .withName(R.string.request),
                 new PrimaryDrawerItem()
                         .withSetSelected(false)
                         .withSelectable(false)
@@ -201,6 +189,8 @@ public class MainActivity extends BaseActivity {
                                 .color(iconColor).sizeDp(iconSize))
                         .withTextColor(textColor)
                         .withName(R.string.nav_item_help)
+                        .withDescription(R.string.nav_item_help_description)
+                        .withDescriptionTextColor(subTextColor)
         );
 
         if (PackageUtil.isAlipayInstalled(this)) {
@@ -213,6 +203,13 @@ public class MainActivity extends BaseActivity {
                     .withTextColor(textColor)
                     .withName(R.string.nav_item_donate));
         }
+        mDrawer.addItem(new DividerDrawerItem());
+        mDrawer.addItem(new PrimaryDrawerItem()
+                .withSetSelected(false)
+                .withSelectable(false)
+                .withTag("suggest")
+                .withTextColor(subTextColor)
+                .withName(R.string.nav_item_feedback));
 
         if (BuildConfig.DEBUG) {
             mDrawer.addItemAtPosition(new PrimaryDrawerItem()
@@ -223,11 +220,11 @@ public class MainActivity extends BaseActivity {
                             .color(iconColor).sizeDp(iconSize))
                     .withTextColor(textColor)
                     .withName(R.string.nav_item_custom_workshop), 1);
-            mDrawer.addItems(new PrimaryDrawerItem()
+            mDrawer.addItem(new PrimaryDrawerItem()
                     .withSetSelected(false)
                     .withSelectable(false)
                     .withTag("test")
-                    .withTextColor(textColor)
+                    .withTextColor(subTextColor)
                     .withName("Test"));
         }
 
@@ -249,7 +246,10 @@ public class MainActivity extends BaseActivity {
                     mNavigator.toIconRequest();
                     break;
                 case "suggest":
-                    mNavigator.toFeedbackChatActivity();
+                    Navigator.toMail(MainActivity.this,
+                            "feedback@sorcererxw.com",
+                            "Sorcery Icons feedback",
+                            "");
                     break;
                 case "test":
                     mNavigator.toTestActivity();
@@ -312,6 +312,16 @@ public class MainActivity extends BaseActivity {
                     bottomSpace.setLayoutParams(bottomSpaceLayoutParams);
 
                     mDrawer.setHeader(view, false, false);
+
+                    mPrefs.firstTimeLaunch().asObservable()
+                            .filter(firstTime -> firstTime)
+                            .observeOn(Schedulers.newThread())
+                            .delay(2000, TimeUnit.MILLISECONDS)
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(firstTime -> {
+                                mDrawer.openDrawer();
+                                mPrefs.firstTimeLaunch().set(false);
+                            }, Timber::e);
                 }
             });
         }

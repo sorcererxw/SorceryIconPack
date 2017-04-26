@@ -108,4 +108,8 @@ public class SorceryPrefs extends Prefs {
     public SorceryPreference<Boolean> hideItself() {
         return new SorceryPreference<>(getPreferences(), "hide_itself", false);
     }
+
+    public Preference<Boolean> firstTimeLaunch() {
+        return getRxSharedPreferences().getBoolean("first_time_launch", true);
+    }
 }

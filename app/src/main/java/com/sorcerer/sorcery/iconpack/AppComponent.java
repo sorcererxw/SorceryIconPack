@@ -17,6 +17,7 @@ import dagger.Component;
  * @author: Sorcerer
  * @date: 2017/3/6
  */
+@SuppressWarnings("WeakerAccess")
 @Singleton
 @Component(modules = {
         AppModule.class

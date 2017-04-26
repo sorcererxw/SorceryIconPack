@@ -250,4 +250,5 @@
     <string name="preference_drak_mode_summary">暗色的用户界面</string>
     <string name="preference_drak_mode_title">暗色模式</string>
     <string name="tab_huawei">华为</string>
+    <string name="nav_item_help_description">新手请读</string>
 </resources>

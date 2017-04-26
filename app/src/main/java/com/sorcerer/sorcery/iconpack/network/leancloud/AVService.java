@@ -2,9 +2,6 @@ package com.sorcerer.sorcery.iconpack.network.leancloud;
 
 import android.content.Context;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.sorcerer.sorcery.iconpack.BuildConfig;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -12,7 +9,7 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
  */
 public class AVService {
     public static void init(Context context) {
-        AVOSCloud.initialize(context, BuildConfig.LEANCLOUD_ID, BuildConfig.LEANCLOUD_KEY);
-        AVOSCloud.useAVCloudCN();
+//        AVOSCloud.initialize(context, BuildConfig.LEANCLOUD_ID, BuildConfig.LEANCLOUD_KEY);
+//        AVOSCloud.useAVCloudCN();
     }
 }

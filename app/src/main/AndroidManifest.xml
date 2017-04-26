@@ -208,12 +208,7 @@
             android:theme="@style/SubActivity"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".help.HelpActivity"
-            android:label="@string/nav_item_help"
-            android:theme="@style/SubActivity">
-        </activity>
-        <activity
-            android:name=".help.HelpMarkdownActivity"
+            android:name=".HelpActivity"
             android:label="@string/nav_item_help"
             android:theme="@style/SubActivity">
         </activity>

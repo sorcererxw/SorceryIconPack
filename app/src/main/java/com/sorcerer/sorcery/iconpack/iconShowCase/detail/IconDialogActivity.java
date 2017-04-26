@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -258,7 +257,7 @@ public class IconDialogActivity extends ToolbarActivity {
 
     private void showRealName(String name) {
         mTitleTextView.setPivotX(0);
-        mTitleTextView.setPivotY(0.2f*mTitleTextView.getHeight());
+        mTitleTextView.setPivotY(0);
 
         mTitleTextView.animate()
                 .alpha(0.5f)
@@ -367,12 +366,14 @@ public class IconDialogActivity extends ToolbarActivity {
             final String appPackageName = StringUtil.componentInfoToPackageName(mComponent);
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("market://details?id=" + appPackageName)));
+                        Uri.parse("market://details?id=" + appPackageName))
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 onBackPressed();
             } catch (ActivityNotFoundException e) {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://play.google.com/store/apps/details?id="
-                                + appPackageName)));
+                                + appPackageName))
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         } else if (id == R.id.action_create_shortcut) {
             Intent shortcutIntent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");

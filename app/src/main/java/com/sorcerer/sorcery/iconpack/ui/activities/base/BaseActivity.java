@@ -12,7 +12,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 
-import com.avos.avoscloud.AVAnalytics;
 import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.ui.theme.ThemeManager;
@@ -69,13 +68,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        AVAnalytics.onPause(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        AVAnalytics.onResume(this);
 
         try {
             PackageManager pm = getPackageManager();

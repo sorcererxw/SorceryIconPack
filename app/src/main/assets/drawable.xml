@@ -45,6 +45,10 @@
     <item drawable="a365_calendar_7"/>
     <item drawable="a365_calendar_8"/>
     <item drawable="a365_calendar_9"/>
+    <item drawable="a3c_system_tunner"/>
+    <item drawable="a3c_system_tunner_pro"/>
+    <item drawable="a3c_toolbox"/>
+    <item drawable="a3c_toolbox_pro"/>
     <item drawable="a3dmark"/>
     <item drawable="a500px"/>
     <item drawable="a500px_alt"/>
@@ -55,6 +59,8 @@
     <item drawable="a94_percent"/>
     <category title="A"/>
     <item drawable="abcchina_bank"/>
+    <item drawable="accuweather"/>
+    <item drawable="acdisplay"/>
     <item drawable="acfun"/>
     <item drawable="action_launcher"/>
     <item drawable="adaway"/>
@@ -127,6 +133,8 @@
     <item drawable="android_nify"/>
     <item drawable="anime_taste"/>
     <item drawable="ankidroid"/>
+    <item drawable="antutu_3d"/>
+    <item drawable="antutu_benchmark"/>
     <item drawable="anydo"/>
     <item drawable="anydo_calendar"/>
     <item drawable="anyview"/>
@@ -190,7 +198,10 @@
     <item drawable="battlefield_companion"/>
     <item drawable="battlefield_companion_alt"/>
     <item drawable="behance"/>
+    <item drawable="behance_display"/>
     <item drawable="beiyue"/>
+    <item drawable="ben_colorpicker"/>
+    <item drawable="best_buy"/>
     <item drawable="between"/>
     <item drawable="biaozhunribenyu"/>
     <item drawable="bilibili"/>
@@ -231,7 +242,9 @@
     <item drawable="caller_info"/>
     <item drawable="call_vibrator"/>
     <item drawable="camera"/>
+    <item drawable="camera_360"/>
     <item drawable="camera_fv_5"/>
+    <item drawable="camera_mx"/>
     <item drawable="cam_card"/>
     <item drawable="cam_scanner"/>
     <item drawable="card_news"/>
@@ -245,9 +258,11 @@
     <item drawable="chaojishipin"/>
     <item drawable="chaojishipin_alt"/>
     <item drawable="chelaile"/>
+    <item drawable="chromer"/>
     <item drawable="chufaba"/>
     <item drawable="cib_bank"/>
     <item drawable="cilikanpian"/>
+    <item drawable="citymapper"/>
     <item drawable="clean_master"/>
     <item drawable="clean_master_lite"/>
     <item drawable="clipboard_plus"/>
@@ -257,6 +272,7 @@
     <item drawable="cmbchina_bank"/>
     <item drawable="cmbc_bank"/>
     <item drawable="cmcc_wifi"/>
+    <item drawable="cnn_news"/>
     <item drawable="cntv"/>
     <item drawable="contacts"/>
     <item drawable="contacts_alt"/>
@@ -318,11 +334,13 @@
     <item drawable="douyu"/>
     <item drawable="download"/>
     <item drawable="dreamdays"/>
+    <item drawable="droidddle"/>
     <item drawable="duckduckgo"/>
     <item drawable="duduribao"/>
     <item drawable="duitang"/>
     <item drawable="duokan"/>
     <category title="E"/>
+    <item drawable="ebay"/>
     <item drawable="echo"/>
     <item drawable="echo_alt"/>
     <item drawable="ecitic_bank"/>
@@ -330,6 +348,7 @@
     <item drawable="eleme"/>
     <item drawable="eleme_alt"/>
     <item drawable="email"/>
+    <item drawable="english_tick"/>
     <item drawable="enjoy"/>
     <item drawable="esbook_read"/>
     <item drawable="es_explorer"/>
@@ -339,6 +358,7 @@
     <item drawable="evernote"/>
     <item drawable="evernote_alt"/>
     <item drawable="evernote_alt_2"/>
+    <item drawable="everphoto"/>
     <item drawable="everything_done"/>
     <item drawable="every_wiki"/>
     <item drawable="evie_launcher"/>
@@ -353,6 +373,7 @@
     <item drawable="fancy"/>
     <item drawable="fangdai_calculator"/>
     <item drawable="fanliwang"/>
+    <item drawable="fasthub"/>
     <item drawable="feedly"/>
     <item drawable="feichangzhun"/>
     <item drawable="fenghuang"/>
@@ -457,6 +478,7 @@
     <item drawable="flyme_weather_alt"/>
     <item drawable="fm_radio"/>
     <item drawable="foodie"/>
+    <item drawable="force_doze"/>
     <item drawable="forest"/>
     <item drawable="fulimanman"/>
     <item drawable="funny_tools_video"/>
@@ -486,6 +508,7 @@
     <item drawable="game_prune"/>
     <item drawable="game_reaper"/>
     <item drawable="game_reigns"/>
+    <item drawable="game_shadowmatic"/>
     <item drawable="game_snake"/>
     <item drawable="game_solitaire_decked_out"/>
     <item drawable="game_tencent_hlddz"/>
@@ -550,6 +573,7 @@
     <item drawable="google_drive"/>
     <item drawable="google_duo"/>
     <item drawable="google_earth"/>
+    <item drawable="google_earth_alt"/>
     <item drawable="google_fit"/>
     <item drawable="google_gmail"/>
     <item drawable="google_hangouts"/>
@@ -559,6 +583,7 @@
     <item drawable="google_keep_alt"/>
     <item drawable="google_keyboard"/>
     <item drawable="google_maps"/>
+    <item drawable="google_maps_local_guide"/>
     <item drawable="google_messenger"/>
     <item drawable="google_messenger_alt"/>
     <item drawable="google_messenger_alt_2"/>
@@ -592,13 +617,13 @@
     <item drawable="google_voice_search"/>
     <item drawable="google_wallpapers"/>
     <item drawable="google_wallpapers_alt"/>
+    <item drawable="google_weather"/>
     <item drawable="google_youtube"/>
     <item drawable="google_youtube_music"/>
     <item drawable="go_google_installer"/>
     <item drawable="go_host"/>
     <item drawable="gravity_box"/>
     <item drawable="greenify"/>
-    <item drawable="green_vpn"/>
     <item drawable="guaguamanhua"/>
     <item drawable="guangdiu"/>
     <item drawable="gudong"/>
@@ -622,8 +647,19 @@
     <item drawable="huawei_appmarket"/>
     <item drawable="huawei_backup"/>
     <item drawable="huawei_file_manager_hidisk"/>
+    <item drawable="huawei_health"/>
+    <item drawable="huawei_hicloud"/>
+    <item drawable="huawei_higame"/>
+    <item drawable="huawei_hilink"/>
+    <item drawable="huawei_hilives"/>
+    <item drawable="huawei_hireader"/>
+    <item drawable="huawei_hiwallet"/>
+    <item drawable="huawei_honor_read"/>
+    <item drawable="huawei_phone_clone"/>
     <item drawable="huawei_phone_manager"/>
     <item drawable="huawei_phone_service"/>
+    <item drawable="huawei_video"/>
+    <item drawable="huawei_vmall"/>
     <item drawable="huaxia_bank"/>
     <item drawable="huaxiong"/>
     <item drawable="hua_timetravel"/>
@@ -638,6 +674,7 @@
     <item drawable="icbc_bank"/>
     <item drawable="icbc_bank_im"/>
     <item drawable="icebox"/>
+    <item drawable="icebox_alt"/>
     <item drawable="icourse163"/>
     <item drawable="ifanr"/>
     <item drawable="ifanr_sudu"/>
@@ -827,6 +864,7 @@
     <item drawable="mioji_trip"/>
     <item drawable="misfit"/>
     <item drawable="miwifi"/>
+    <item drawable="mixplorer"/>
     <item drawable="mi_remote"/>
     <item drawable="mobike"/>
     <item drawable="mojian"/>
@@ -841,6 +879,7 @@
     <item drawable="mora"/>
     <item drawable="moto_body"/>
     <item drawable="moto_connect"/>
+    <item drawable="movieheaven"/>
     <item drawable="mt_filemanager"/>
     <item drawable="music"/>
     <item drawable="mxplayer"/>
@@ -851,7 +890,6 @@
     <category title="N"/>
     <item drawable="netease_cartoon_reader"/>
     <item drawable="netease_cloudclass"/>
-    <item drawable="netease_cloudclass_alt"/>
     <item drawable="netease_epay"/>
     <item drawable="netease_epay_alt"/>
     <item drawable="netease_finance"/>
@@ -1026,6 +1064,7 @@
     <category title="R"/>
     <item drawable="readlaw"/>
     <item drawable="recently"/>
+    <item drawable="renren"/>
     <item drawable="renrenmeiju"/>
     <item drawable="retrica"/>
     <item drawable="rikkagram"/>
@@ -1211,11 +1250,13 @@
     <item drawable="sony_xperia_clock"/>
     <item drawable="sorcery_icons"/>
     <item drawable="sorcery_icons_christmas"/>
+    <item drawable="sorcery_icons_spring"/>
     <item drawable="sorcery_icons_winter_day"/>
     <item drawable="sougou_keyboard"/>
     <item drawable="sougou_wallpaper"/>
     <item drawable="sound_cloud"/>
     <item drawable="sound_recorder"/>
+    <item drawable="soutushenqi"/>
     <item drawable="spdbccc"/>
     <item drawable="spd_bank"/>
     <item drawable="spoon"/>
@@ -1318,6 +1359,7 @@
     <item drawable="tencent_wesync"/>
     <item drawable="terminal"/>
     <item drawable="terminal_emulator"/>
+    <item drawable="tesla_motors"/>
     <item drawable="theinitium"/>
     <item drawable="tianshidongman"/>
     <item drawable="tianyashequ"/>
@@ -1328,6 +1370,7 @@
     <item drawable="timi"/>
     <item drawable="titanium_backup"/>
     <item drawable="tmri_jiaoguan_12123"/>
+    <item drawable="todoist"/>
     <item drawable="tongcheng"/>
     <item drawable="tonghuashun"/>
     <item drawable="touchpal_keyboard"/>
@@ -1352,6 +1395,7 @@
     <item drawable="uber"/>
     <item drawable="uber_partner"/>
     <item drawable="uc_browser"/>
+    <item drawable="uc_news"/>
     <item drawable="udacity"/>
     <item drawable="unicom"/>
     <item drawable="unicon"/>
@@ -1378,7 +1422,6 @@
     <item drawable="vue"/>
     <category title="W"/>
     <item drawable="wandoujia"/>
-    <item drawable="wandoujia_alt"/>
     <item drawable="wandoujia_eyepetizer"/>
     <item drawable="wandoujia_qingzhuomian"/>
     <item drawable="wandoujia_tongzhiqingli"/>
@@ -1407,6 +1450,7 @@
     <item drawable="wolfram_alpha"/>
     <item drawable="wordpress"/>
     <item drawable="wps"/>
+    <item drawable="wps_note"/>
     <item drawable="wuba"/>
     <item drawable="wuba_zhuanzhuan"/>
     <item drawable="wunderlist"/>
@@ -1520,6 +1564,7 @@
     <item drawable="xingzhe"/>
     <item drawable="xinpinget"/>
     <item drawable="xinternalsd"/>
+    <item drawable="xmvideoplayer"/>
     <item drawable="xposed"/>
     <item drawable="xqs_background"/>
     <item drawable="xqs_background_alt"/>
@@ -1529,6 +1574,7 @@
     <item drawable="xunlei"/>
     <item drawable="xunlei_kuainiao"/>
     <item drawable="xykey"/>
+    <item drawable="xyz_hanks_note"/>
     <category title="Y"/>
     <item drawable="yangqi"/>
     <item drawable="yaokongjingling"/>
@@ -1544,7 +1590,6 @@
     <item drawable="yi_live"/>
     <item drawable="yoho_buy"/>
     <item drawable="youku"/>
-    <item drawable="youku_alt"/>
     <item drawable="youyaoqimanhua"/>
     <item drawable="yuantiku_gaokao"/>
     <item drawable="yuantiku_gongkao"/>
@@ -1596,4 +1641,3 @@
     <item drawable="zuzhiyunxing"/>
     <item drawable="zzenglish"/>
 </resources>
-
