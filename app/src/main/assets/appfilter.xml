@@ -75,8 +75,6 @@
         component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}"
         prefix="samsung_calendar_"/>
 
-
-
     <item
         component="ComponentInfo{com.sh.cm.busihall/com.richeninfo.cm.busihall.SplashActivity}"
         drawable="a10086"/>
@@ -2448,15 +2446,6 @@
         component="ComponentInfo{com.pomotodo/com.qihoo.util.StartActivity}"
         drawable="pomotodo"/>
     <item
-        component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.MainTabActivity}"
-        drawable="shoujileyuan"/>
-    <item
-        component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.MainActivity}"
-        drawable="shoujileyuan"/>
-    <item
-        component="ComponentInfo{cn.com.shouji.market/com.qihoo.util.StartActivity}"
-        drawable="shoujileyuan"/>
-    <item
         component="ComponentInfo{com.xinshuru.inputmethod/com.xinshuru.inputmethod.FTInputSplashActivity}"
         drawable="shouxin_keyboard"/>
     <item
@@ -2659,6 +2648,9 @@
         drawable="tencent_weiyun"/>
     <item
         component="ComponentInfo{com.tencent.weread/com.tencent.weread.presenter.LauncherActivity}"
+        drawable="tencent_weread"/>
+    <item
+        component="ComponentInfo{com.tencent.weread/com.tencent.weread.LauncherActivity}"
         drawable="tencent_weread"/>
     <item
         component="ComponentInfo{com.android.terminal/com.android.terminal.TerminalActivity}"
@@ -4341,6 +4333,9 @@
         component="ComponentInfo{com.android.stk/com.android.stk.StkMain2}"
         drawable="sim_toolkit"/>
     <item
+        component="ComponentInfo{com.android.stk/com.android.stk.StkMain1}"
+        drawable="sim_toolkit"/>
+    <item
         component="ComponentInfo{com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity}"
         drawable="titanium_backup"/>
     <item
@@ -4528,6 +4523,9 @@
         drawable="xiaomi_fit"/>
     <item
         component="ComponentInfo{com.cyanogenmod.filemanager/com.cyanogenmod.filemanager.activities.NavigationActivity}"
+        drawable="cyanogenmod_file_manager"/>
+    <item
+        component="ComponentInfo{com.cyanogenmod.filemanager/com.cyanogenmod.filemanager.activities.LoadActivity}"
         drawable="cyanogenmod_file_manager"/>
     <item
         component="ComponentInfo{com.tencent.mtt.intl/com.tencent.mtt.SplashActivity}"
@@ -5481,6 +5479,9 @@
         component="ComponentInfo{com.mojang.minecraftpe/com.qihoo.util.StartActivity}"
         drawable="game_minecraft"/>
     <item
+        component="ComponentInfo{com.mojang.minecraftpe/com.aiwu.Splash}"
+        drawable="game_minecraft"/>
+    <item
         component="ComponentInfo{com.spdbccc.app/com.spdbccc.app.activity.SplashActivity}"
         drawable="spdbccc"/>
     <item
@@ -5546,6 +5547,9 @@
     <item
         component="ComponentInfo{com.teslamotors.tesla/com.teslamotors.TeslaApp.MainActivity}"
         drawable="tesla_motors"/>
+    <item
+        component="ComponentInfo{com.supercell.clashroyale.lenovo/com.lenovo.lsf.gamesdk.ui.WelcomeActivity}"
+        drawable="game_clash_royale"/>
     <item
         component="ComponentInfo{com.supercell.clashofclans.wdj/com.supercell.clashofclans.GameAppKunlun}"
         drawable="game_clash_of_clans"/>
@@ -5818,6 +5822,9 @@
         drawable="dir"/>
     <item
         component="ComponentInfo{kh.android.dir/kh.android.dir.ui.activities.CleanActivity}"
+        drawable="dir"/>
+    <item
+        component="ComponentInfo{kh.android.dir/kh.android.dir.ui.activities.MDMainActivity}"
         drawable="dir"/>
     <item
         component="ComponentInfo{com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity}"
@@ -6126,6 +6133,9 @@
         component="ComponentInfo{com.mixplorer/com.mixplorer.activities.BrowseActivity}"
         drawable="mixplorer"/>
     <item
+        component="ComponentInfo{com.mixplorer/com.mixplorer.activities.TextEditorActivity}"
+        drawable="mixplorer"/>
+    <item
         component="ComponentInfo{com.huawei.wallet/com.huawei.wallet.view.MainActivity}"
         drawable="huawei_hiwallet"/>
     <item
@@ -6182,5 +6192,74 @@
     <item
         component="ComponentInfo{org.getlantern.lantern/com.qihoo.util.StartActivity}"
         drawable="lantern"/>
+    <item
+        component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.MainTabActivity}"
+        drawable="shoujileyuan"/>
+    <item
+        component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.MainActivity}"
+        drawable="shoujileyuan"/>
+    <item
+        component="ComponentInfo{cn.com.shouji.market/com.qihoo.util.StartActivity}"
+        drawable="shoujileyuan"/>
+    <item
+        component="ComponentInfo{cn.com.shouji.market/cn.com.shouji.market.LogoActivity}"
+        drawable="shoujileyuan"/>
+    <item
+        component="ComponentInfo{com.supercell.clashroyale.baidu/com.supercell.clashroyale.GameAppKunlun}"
+        drawable="game_clash_royale"/>
+    <item
+        component="ComponentInfo{com.supercell.clashroyale.guopan/com.xx.proxy.demo.MainActivityProxy}"
+        drawable="game_clash_royale"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.baidu/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.m4399/com.netease.onmyoji.Launcher}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.netease.onmyoji.kaopu.xmw/com.kaopu.splash.splashActivity}"
+        drawable="game_netease_onmyoji"/>
+    <item
+        component="ComponentInfo{com.tencent.tmgp.sgame_cm/com.tencent.tmgp.sgame.SGameActivity}"
+        drawable="game_wangzherongyao"/>
+    <item
+        component="ComponentInfo{com.gamersky/com.gamersky.ui.WelcomeActivity}"
+        drawable="gamersky"/>
+    <item
+        component="ComponentInfo{com.lbe.security.prime/com.lbe.security.ui.SplashActivity}"
+        drawable="lbe"/>
+    <item
+        component="ComponentInfo{com.shanbay.speak/com.shanbay.speak.startup.activity.SplashActivity}"
+        drawable="shanbay_speak"/>
+    <item
+        component="ComponentInfo{com.shanbay.reader/com.shanbay.reader.activity.SplashActivity}"
+        drawable="shanbay_reader"/>
+    <item
+        component="ComponentInfo{com.yyets.pro/com.qihoo.util.StartActivity}"
+        drawable="renrenmeiju"/>
+    <item
+        component="ComponentInfo{com.sonkwoapp/com.sonkwoapp.MainActivity}"
+        drawable="sonkwoapp_game"/>
+    <item
+        component="ComponentInfo{com.sonkwoapp/com.qihoo.util.StartActivity}"
+        drawable="sonkwoapp_game"/>
+    <item
+        component="ComponentInfo{com.tencent.qpaint/com.tencent.qpaint.gallery.GalleryActivity}"
+        drawable="tencent_qpaint"/>
+    <item
+        component="ComponentInfo{ztc1997.hideablenavbar/ztc1997.hideablenavbar.SettingsActivity-LAUNCHER}"
+        drawable="hideable_vav_bar"/>
+    <item
+        component="ComponentInfo{com.huawei.deveco.crowdtest/com.huawei.activity.WelcomeBetaActivity}"
+        drawable="huawei_crowdtest"/>
+    <item
+        component="ComponentInfo{com.huawei.fans/com.huawei.fans.activity.MainActivity}"
+        drawable="huawei_club"/>
+    <item
+        component="ComponentInfo{com.android.mediacenter/com.android.mediacenter.PageActivity}"
+        drawable="huawei_music"/>
+    <item
+        component="ComponentInfo{com.ubisoft.uplay/com.ubisoft.uplay.MainProxyActivity}"
+        drawable="ubisoft_club"/>
 
 </resources>

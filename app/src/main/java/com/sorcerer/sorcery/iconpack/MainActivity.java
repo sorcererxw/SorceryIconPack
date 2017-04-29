@@ -5,12 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +31,6 @@ import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconTabFragment;
 import com.sorcerer.sorcery.iconpack.ui.activities.WelcomeActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
@@ -112,18 +115,6 @@ public class MainActivity extends BaseActivity {
 
         mNavigator = new Navigator(this);
 
-        mDrawer = new DrawerBuilder()
-                .withSliderBackgroundColor(ResourceUtil.getAttrColor(this, R.attr.colorCard))
-                .withCloseOnClick(true)
-                .withToolbar(mSearchToolbar)
-                .withActionBarDrawerToggleAnimated(true)
-                .withOnDrawerNavigationListener(view -> {
-                    openDrawer();
-                    return true;
-                })
-                .withActivity(mActivity)
-                .build();
-
         initDrawer();
 
         mSearchToolbar.setOnClickListener(view -> {
@@ -149,6 +140,18 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initDrawer() {
+
+        mDrawer = new DrawerBuilder()
+                .withSliderBackgroundColor(ResourceUtil.getAttrColor(this, R.attr.colorCard))
+                .withCloseOnClick(false)
+                .withToolbar(mSearchToolbar)
+                .withActionBarDrawerToggleAnimated(true)
+                .withOnDrawerNavigationListener(view -> {
+                    openDrawer();
+                    return true;
+                })
+                .withActivity(mActivity)
+                .build();
 
         int textColor = ResourceUtil.getAttrColor(this, android.R.attr.textColorPrimary);
         int subTextColor = ResourceUtil.getAttrColor(this, android.R.attr.textColorSecondary);
@@ -229,6 +232,8 @@ public class MainActivity extends BaseActivity {
         }
 
         mDrawer.setOnDrawerItemClickListener((view, position, drawerItem) -> {
+            boolean needCloseDrawer = true;
+
             switch ((String) drawerItem.getTag()) {
                 case "apply":
                     mNavigator.toAppleActivity();
@@ -246,10 +251,20 @@ public class MainActivity extends BaseActivity {
                     mNavigator.toIconRequest();
                     break;
                 case "suggest":
-                    Navigator.toMail(MainActivity.this,
+                    if (!Navigator.toMail(MainActivity.this,
                             "feedback@sorcererxw.com",
                             "Sorcery Icons feedback",
-                            "");
+                            "")) {
+                        Snackbar.make(mDrawer.getDrawerLayout(),
+                                R.string.feedback_need_mailbox,
+                                Snackbar.LENGTH_LONG)
+                                .setAction(R.string.action_install,
+                                        v -> Navigator.toAppMarketSearchResult(this,
+                                                ResourceUtil.getString(this,
+                                                        R.string.market_search_mail)))
+                                .show();
+                        needCloseDrawer = false;
+                    }
                     break;
                 case "test":
                     mNavigator.toTestActivity();
@@ -257,6 +272,9 @@ public class MainActivity extends BaseActivity {
                 case "custom":
                     mNavigator.toCustomWorkshopActivity();
                     break;
+            }
+            if (needCloseDrawer) {
+                new Handler().post(this::closeDrawer);
             }
             return false;
         });
@@ -281,11 +299,27 @@ public class MainActivity extends BaseActivity {
 
                     height = (int) Math.ceil(1.0 * height * drawerRecyclerView.getWidth() / width);
 
-                    int titleBarHeight = UIUtils.getStatusBarHeight(MainActivity.this);
-
                     View view = View.inflate(MainActivity.this, R.layout.layout_drawer_head, null);
                     ImageView image = (ImageView) view.findViewById(R.id.imageView_drawer_head);
-                    image.setImageResource(R.drawable.drawer_head_simple);
+
+                    Drawable drawable = ResourceUtil
+                            .getDrawable(MainActivity.this, R.drawable.drawer_head_simple);
+//                    if (mThemeManager.getCurrentTheme().isDark()) {
+//                        /**
+//                         * Color matrix that flips the components (<code>-1.0f * c + 255 = 255 - c</code>)
+//                         * and keeps the alpha intact.
+//                         */
+//                        float[] NEGATIVE = {
+//                                -1.0f, 0, 0, 0, 255, // red
+//                                0, -1.0f, 0, 0, 255, // green
+//                                0, 0, -1.0f, 0, 255, // blue
+//                                0, 0, 0, 1.0f, 0  // alpha
+//                        };
+//
+//                        drawable.setColorFilter(new ColorMatrixColorFilter(NEGATIVE));
+//                        image.setAlpha(0);
+//                    }
+                    image.setImageDrawable(drawable);
                     LayoutParams imageLayoutParams = image.getLayoutParams();
                     if (imageLayoutParams == null) {
                         imageLayoutParams = new LayoutParams(MATCH_PARENT, height);
@@ -303,7 +337,7 @@ public class MainActivity extends BaseActivity {
                     View bottomSpace = view.findViewById(R.id.view_drawer_head_space_bottom);
                     LayoutParams bottomSpaceLayoutParams = bottomSpace.getLayoutParams();
                     int bottomPadding = Math.max(0,
-                            DisplayUtil.dip2px(MainActivity.this, 178) - titleBarHeight - height);
+                            DisplayUtil.dip2px(MainActivity.this, 178) - height);
                     if (bottomSpaceLayoutParams == null) {
                         bottomSpaceLayoutParams = new LayoutParams(MATCH_PARENT, bottomPadding);
                     } else {

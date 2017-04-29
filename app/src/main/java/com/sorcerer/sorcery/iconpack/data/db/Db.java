@@ -1,8 +1,15 @@
 package com.sorcerer.sorcery.iconpack.data.db;
 
+import android.content.Context;
 import android.database.Cursor;
 
+import com.squareup.sqlbrite.BriteDatabase;
+import com.squareup.sqlbrite.SqlBrite;
+
 import java.util.Date;
+
+import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -11,15 +18,24 @@ import java.util.Date;
  */
 
 public class Db {
-//    private BriteDatabase mDatabase;
-//
-//    public Db(Context context) {
-//        mDatabase = new SqlBrite.Builder()
-//                .logger(Timber::d)
-//                .build()
-//                .wrapDatabaseHelper(new DbOpenHelper(context), Schedulers.immediate());
-//    }
-//
+    private BriteDatabase mDatabase;
+
+    public Db(Context context) {
+        mDatabase = new SqlBrite.Builder()
+                .logger(Timber::d)
+                .build()
+                .wrapDatabaseHelper(new DbOpenHelper(context), Schedulers.immediate());
+    }
+
+    private RequestDbManager mRequestDbManager;
+
+    public RequestDbManager requestDbManager() {
+        if (mRequestDbManager == null) {
+            mRequestDbManager = new RequestDbManager(mDatabase);
+        }
+        return mRequestDbManager;
+    }
+
     /* --------------- Some DB getter ---------------- */
 
     public static String getString(Cursor cursor, String columnName) {

@@ -203,11 +203,6 @@
             android:label="@string/request"
             android:theme="@style/SubActivity"/>
         <activity
-            android:name=".feedback.chat.FeedbackChatActivity"
-            android:label="@string/suggest"
-            android:theme="@style/SubActivity"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity
             android:name=".HelpActivity"
             android:label="@string/nav_item_help"
             android:theme="@style/SubActivity">

@@ -251,4 +251,7 @@
     <string name="preference_drak_mode_title">暗色模式</string>
     <string name="tab_huawei">华为</string>
     <string name="nav_item_help_description">新手请读</string>
+    <string name="market_search_mail">邮箱</string>
+    <string name="feedback_need_mailbox">请先安装邮箱应用</string>
+    <string name="icon_request_requested">已申请</string>
 </resources>

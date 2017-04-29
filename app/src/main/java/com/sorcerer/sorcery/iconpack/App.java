@@ -3,6 +3,7 @@ package com.sorcerer.sorcery.iconpack;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -10,6 +11,7 @@ import android.util.DisplayMetrics;
 import com.sorcerer.sorcery.iconpack.utils.NetUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 
+import java.lang.reflect.Method;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -66,13 +68,15 @@ public class App extends Application {
             Timber.e(e);
         }
 
-        if (BuildConfig.DEBUG) {
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            android.content.res.Configuration conf = res.getConfiguration();
-            conf.locale = new Locale("zh");
-            res.updateConfiguration(conf, dm);
-        }
+//        if (BuildConfig.DEBUG) {
+//            Resources res = getResources();
+//            DisplayMetrics dm = res.getDisplayMetrics();
+//            android.content.res.Configuration conf = res.getConfiguration();
+//            conf.locale = new Locale("zh");
+//            res.updateConfiguration(conf, dm);
+//        }
+
+        showDebugDBAddressLogToast(this);
     }
 
     @Override
@@ -127,4 +131,18 @@ public class App extends Application {
                     mActivityList.remove(activity);
                 }
             };
+
+    public static void showDebugDBAddressLogToast(Context context) {
+        if (BuildConfig.DEBUG) {
+            try {
+                Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
+                Method getAddressLog = debugDB.getMethod("getAddressLog");
+                Object value = getAddressLog.invoke(null);
+                Timber.d("showDebugDBAddressLogToast: " + value.toString());
+//                Toast.makeText(context, (String) value, Toast.LENGTH_LONG).show();
+            } catch (Exception ignore) {
+
+            }
+        }
+    }
 }

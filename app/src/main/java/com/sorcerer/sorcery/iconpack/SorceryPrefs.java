@@ -16,6 +16,7 @@ import java.util.UUID;
  * @date: 2016/10/4
  */
 
+@SuppressWarnings("WeakerAccess")
 public class SorceryPrefs extends Prefs {
 
     SorceryPrefs(Context context) {

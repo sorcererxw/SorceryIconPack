@@ -34,4 +34,8 @@ public class AvosIconRequestBean {
         this.deviceId = deviceId;
     }
 
+    public String getComponent(){
+        return component;
+    }
+
 }

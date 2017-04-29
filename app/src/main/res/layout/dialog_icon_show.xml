@@ -69,6 +69,8 @@
                 android:layout_marginTop="12dp"
                 android:animateLayoutChanges="true"
                 android:gravity="center"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
                 android:orientation="horizontal">
 
                 <ImageView

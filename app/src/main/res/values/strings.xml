@@ -97,6 +97,7 @@
     <string name="icon_request_send_success">Request sent successfully</string>
     <string name="icon_request_send_fail">send fail</string>
     <string name="icon_request_times">Requested # times</string>
+    <string name="icon_request_requested">Requested</string>
 
     <string name="apply_tip_only_flyme">Only for Flyme</string>
     <string name="apply_tip_only_miui">Only for MIUI</string>
@@ -346,4 +347,7 @@
         guidelines
     </string>
 
+    <string name="market_search_mail">mail</string>
+
+    <string name="feedback_need_mailbox">Please install mailbox application first</string>
 </resources>

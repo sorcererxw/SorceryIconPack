@@ -1,13 +1,13 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
 import com.sorcerer.sorcery.iconpack.apply.ApplyActivity;
 import com.sorcerer.sorcery.iconpack.customWorkshop.CustomWorkshopActivity;
-import com.sorcerer.sorcery.iconpack.feedback.chat.FeedbackChatActivity;
 import com.sorcerer.sorcery.iconpack.feedback.request.AppSelectActivity;
 import com.sorcerer.sorcery.iconpack.search.SearchActivity;
 import com.sorcerer.sorcery.iconpack.settings.SettingsActivity;
@@ -55,12 +55,9 @@ public class Navigator {
         }
     }
 
-    public void toFeedbackChatActivity() {
-        mActivity.startActivity(new Intent(mActivity, FeedbackChatActivity.class));
-    }
-
     public void toIconRequest() {
-        mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
+        mainActivityShift(AppSelectActivity.class);
+//        mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
     }
 
     public void toAppleActivity() {
@@ -106,7 +103,7 @@ public class Navigator {
         context.startActivity(i);
     }
 
-    public static void toMail(Context context, String receiver, String subject, String content) {
+    public static boolean toMail(Context context, String receiver, String subject, String content) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{receiver});
@@ -115,6 +112,21 @@ public class Navigator {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void toAppMarketSearchResult(Context context, String query) {
+        try {
+            context.startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("market://search?q=" + query + "&c=apps"))
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        } catch (ActivityNotFoundException e) {
+            context.startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/search?q=" + query + "&c=apps"))
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
 }

@@ -3,9 +3,6 @@ package com.sorcerer.sorcery.iconpack.ui.preference;
 import android.content.Context;
 import android.support.v14.preference.SwitchPreference;
 import android.util.AttributeSet;
-import android.view.View;
-
-import com.sorcerer.sorcery.iconpack.R;
 
 /**
  * @description:

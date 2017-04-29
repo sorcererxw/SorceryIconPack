@@ -16,7 +16,8 @@ public class TextWeightUtil {
             if (font != null) {
                 textView.setTypeface(font);
             }
-        } catch (Exception ignore) {}
+        } catch (Exception ignore) {
+        }
     }
 
     public static void regular(TextView textView) {
@@ -25,7 +26,8 @@ public class TextWeightUtil {
             if (font != null) {
                 textView.setTypeface(font);
             }
-        } catch (Exception ignore) {}
+        } catch (Exception ignore) {
+        }
     }
 
     public static void light(TextView textView) {
@@ -34,6 +36,7 @@ public class TextWeightUtil {
             if (font != null) {
                 textView.setTypeface(font);
             }
-        } catch (Exception ignore) {}
+        } catch (Exception ignore) {
+        }
     }
 }

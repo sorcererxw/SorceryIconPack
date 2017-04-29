@@ -29,7 +29,6 @@ import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewHolder;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-import com.sorcerer.sorcery.iconpack.utils.TextWeightUtil;
 import com.turingtechnologies.materialscrollbar.ICustomAdapter;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
 

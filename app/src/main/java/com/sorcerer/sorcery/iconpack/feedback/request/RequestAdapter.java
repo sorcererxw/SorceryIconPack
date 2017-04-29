@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.data.db.RequestDbManager;
 import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.network.avos.AvosClient;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
@@ -116,12 +117,26 @@ class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHold
         }
 
         private static final int[] TIMES_POINT = {
-                1, 10, 50, 100, 500, 1000, 2000, 5000, 10000
+                1, 10, 50, 100, 200, 500, 1000, 2000, 5000, 10000
         };
+
+        void setEnable(boolean enable) {
+            if (enable) {
+                itemView.setEnabled(true);
+                check.setEnabled(true);
+            } else {
+                itemView.setEnabled(false);
+                check.setChecked(false);
+                check.setEnabled(false);
+            }
+        }
     }
 
-    RequestAdapter(Context context, List<AppInfo> appInfoList) {
+    private RequestDbManager mRequestDbManager;
+
+    RequestAdapter(Context context, List<AppInfo> appInfoList, RequestDbManager requestDbManager) {
         mContext = context;
+        mRequestDbManager = requestDbManager;
         mAppInfoList = new ArrayList<>();
         mAppInfoList.addAll(Stream.range(0, appInfoList.size())
                 .map(i -> new CheckAppInfo(appInfoList.get(i), false))
@@ -141,7 +156,6 @@ class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHold
 
         holder.itemView.setOnClickListener(v -> holder.check.setChecked(!holder.check.isChecked()));
         holder.check.setOnCheckedChangeListener(null);
-        holder.check.setChecked(mAppInfoList.get(realPos).isChecked());
         holder.check.setOnCheckedChangeListener((buttonView, isChecked) -> {
             mAppInfoList.get(realPos).setChecked(isChecked);
             if (isChecked) {
@@ -156,19 +170,34 @@ class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHold
         });
         holder.label.setText(mAppInfoList.get(realPos).getName());
         holder.icon.setImageDrawable(mAppInfoList.get(realPos).getIcon());
-        if (mAppInfoList.get(realPos).getRequestedTimes() == -1) {
-            holder.setTimes(-1);
-            AvosClient.getInstance()
-                    .getAppRequestedTime(mAppInfoList.get(realPos).getPackage())
-                    .subscribeOn(Schedulers.newThread())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(times -> {
-                        mAppInfoList.get(realPos).setRequestedTimes(times);
-                        holder.setTimes(times);
-                    }, Timber::e);
-        } else {
-            holder.setTimes(mAppInfoList.get(realPos).getRequestedTimes());
-        }
+
+        holder.check.setChecked(mAppInfoList.get(realPos).isChecked());
+
+        mRequestDbManager.isRequest(mAppInfoList.get(realPos).getCode())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(requested -> {
+                    if (requested) {
+                        holder.setEnable(false);
+
+                        holder.times.setText(R.string.icon_request_requested);
+                    } else {
+                        holder.setEnable(true);
+
+                        if (mAppInfoList.get(realPos).getRequestedTimes() == -1) {
+                            holder.setTimes(-1);
+                            AvosClient.getInstance()
+                                    .getAppRequestedTime(mAppInfoList.get(realPos).getPackage())
+                                    .subscribeOn(Schedulers.newThread())
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(times -> {
+                                        mAppInfoList.get(realPos).setRequestedTimes(times);
+                                        holder.setTimes(times);
+                                    }, Timber::e);
+                        } else {
+                            holder.setTimes(mAppInfoList.get(realPos).getRequestedTimes());
+                        }
+                    }
+                });
     }
 
     @Override

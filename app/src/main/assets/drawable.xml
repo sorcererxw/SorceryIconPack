@@ -486,6 +486,7 @@
     <category title="G"/>
     <item drawable="gallery"/>
     <item drawable="gamecores"/>
+    <item drawable="gamersky"/>
     <item drawable="game_altos_adventure"/>
     <item drawable="game_arrow_io"/>
     <item drawable="game_asphalt_8"/>
@@ -638,6 +639,7 @@
     <item drawable="hangout_dialer"/>
     <item drawable="hangzhou_smk"/>
     <item drawable="haodaifu"/>
+    <item drawable="hideable_vav_bar"/>
     <item drawable="himail"/>
     <item drawable="hiwifi"/>
     <item drawable="hj_word_games"/>
@@ -646,6 +648,9 @@
     <item drawable="huaban"/>
     <item drawable="huawei_appmarket"/>
     <item drawable="huawei_backup"/>
+    <item drawable="huawei_backup_alt"/>
+    <item drawable="huawei_club"/>
+    <item drawable="huawei_crowdtest"/>
     <item drawable="huawei_file_manager_hidisk"/>
     <item drawable="huawei_health"/>
     <item drawable="huawei_hicloud"/>
@@ -655,6 +660,8 @@
     <item drawable="huawei_hireader"/>
     <item drawable="huawei_hiwallet"/>
     <item drawable="huawei_honor_read"/>
+    <item drawable="huawei_huaying_club"/>
+    <item drawable="huawei_music"/>
     <item drawable="huawei_phone_clone"/>
     <item drawable="huawei_phone_manager"/>
     <item drawable="huawei_phone_service"/>
@@ -1151,6 +1158,8 @@
     <item drawable="shanbay"/>
     <item drawable="shanbay_listen"/>
     <item drawable="shanbay_news"/>
+    <item drawable="shanbay_reader"/>
+    <item drawable="shanbay_speak"/>
     <item drawable="shihuo"/>
     <item drawable="shoujileyuan"/>
     <item drawable="shouxin_keyboard"/>
@@ -1209,6 +1218,7 @@
     <item drawable="soild_explorer"/>
     <item drawable="solid_launcher"/>
     <item drawable="songguo_guokr"/>
+    <item drawable="sonkwoapp_game"/>
     <item drawable="sony_album"/>
     <item drawable="sony_alpha_clock"/>
     <item drawable="sony_ar_effect"/>
@@ -1329,6 +1339,7 @@
     <item drawable="tencent_news"/>
     <item drawable="tencent_ps_play"/>
     <item drawable="tencent_qie_fm"/>
+    <item drawable="tencent_qpaint"/>
     <item drawable="tencent_qq"/>
     <item drawable="tencent_qqpimsecure"/>
     <item drawable="tencent_qq_browser"/>
@@ -1394,6 +1405,7 @@
     <category title="U"/>
     <item drawable="uber"/>
     <item drawable="uber_partner"/>
+    <item drawable="ubisoft_club"/>
     <item drawable="uc_browser"/>
     <item drawable="uc_news"/>
     <item drawable="udacity"/>
@@ -1641,3 +1653,4 @@
     <item drawable="zuzhiyunxing"/>
     <item drawable="zzenglish"/>
 </resources>
+

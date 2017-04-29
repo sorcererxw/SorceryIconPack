@@ -5,8 +5,8 @@
     android:id="@+id/coordinatorLayout_help"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="?android:attr/colorBackground"
+    android:fitsSystemWindows="true"
     tools:context="com.sorcerer.sorcery.iconpack.HelpActivity">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,7 +17,7 @@
 
         <include layout="@layout/toolbar_universal"/>
 
-        <br.tiagohm.markdownview.MarkdownView
+        <com.sorcerer.sorcery.iconpack.ui.views.markdown.AsynMarkdownView
             android:id="@+id/markdownView_help"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

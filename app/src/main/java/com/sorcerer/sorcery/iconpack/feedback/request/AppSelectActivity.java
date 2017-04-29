@@ -5,23 +5,22 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.data.db.RequestDbManager;
 import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.network.avos.AvosClient;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosIconRequestBean;
-import com.sorcerer.sorcery.iconpack.ui.activities.base.UniversalToolbarActivity;
+import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
@@ -41,9 +40,9 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
-public class AppSelectActivity extends UniversalToolbarActivity {
+public class AppSelectActivity extends BaseSubActivity {
 
-    @BindView(R.id.coordinatorLayout_app_select)
+    @BindView(R.id.coordinatorLayout_request)
     CoordinatorLayout mCoordinatorLayout;
 
     @BindView(R.id.recyclerView_app_select)
@@ -65,6 +64,8 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     private boolean menuEnable;
     private Menu mMenu;
 
+    private RequestDbManager mRequestDbManager;
+
     @Override
     protected ViewGroup rootView() {
         return mCoordinatorLayout;
@@ -79,14 +80,20 @@ public class AppSelectActivity extends UniversalToolbarActivity {
     protected void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
 
-        setToolbarCloseIndicator();
+        setToolbarBackIndicator();
 
         setToolbarDoubleTapListener(() -> mRecyclerView.smoothScrollToPosition(0));
 
         menuEnable = false;
 
-        Observable.create((ObservableOnSubscribe<List<AppInfo>>)
-                e -> e.onNext(PackageUtil.getComponentInfo(AppSelectActivity.this, true)))
+        mRequestDbManager = mDb.requestDbManager();
+
+        Observable.create(
+                (ObservableOnSubscribe<List<AppInfo>>) e -> e
+                        .onNext(PackageUtil.getComponentInfo(AppSelectActivity.this, true)))
+                .doOnNext(appInfos -> mRequestDbManager
+                        .saveComponent(Stream.of(appInfos).map(AppInfo::getCode)
+                                .collect(Collectors.toList())))
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(list -> {
@@ -106,7 +113,7 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(
                 new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-        mAdapter = new RequestAdapter(mContext, appInfoList);
+        mAdapter = new RequestAdapter(mContext, appInfoList, mRequestDbManager);
         mAdapter.setOnCheckListener(new RequestAdapter.OnCheckListener() {
             @Override
             public void OnEmpty() {
@@ -135,18 +142,6 @@ public class AppSelectActivity extends UniversalToolbarActivity {
         } else {
             mFAB.hide();
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-        MaterialDialog.Builder builder = Dialogs.builder(this);
-        builder.content(getString(R.string.cancel_request));
-        builder.onPositive((dialog, which) -> {
-            super.onBackPressed();
-        });
-        builder.positiveText(getString(R.string.yes));
-        builder.negativeText(getString(R.string.no));
-        builder.show();
     }
 
     @Override
@@ -207,6 +202,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                             @Override
                             public ObservableSource<List<Boolean>> apply(
                                     List<AvosIconRequestBean> list) throws Exception {
+                                mRequestDbManager.setRequested(Stream.of(list).map(
+                                        AvosIconRequestBean::getComponent)
+                                        .collect(Collectors.toList()));
                                 return AvosClient.getInstance().postIconRequests(list);
                             }
                         })
@@ -244,10 +242,9 @@ public class AppSelectActivity extends UniversalToolbarActivity {
                         mProgressDialog.dismiss();
                         mAdapter.uncheckAfterSend();
                         showFab(false);
-                        Toast.makeText(AppSelectActivity.this, R.string.icon_request_send_success,
-                                Toast.LENGTH_SHORT)
+                        Snackbar.make(mCoordinatorLayout, R.string.icon_request_send_success,
+                                Snackbar.LENGTH_SHORT)
                                 .show();
-                        AppSelectActivity.this.finish();
                     }
                 });
     }

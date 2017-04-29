@@ -2,121 +2,23 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>booking</item>
-        <item>ankidroid</item>
-        <item>linguee</item>
-        <item>google_fit</item>
-        <item>between</item>
-        <item>apk_editor</item>
-        <item>siyue_musicassistant</item>
-        <item>sayu_videoplay</item>
-        <item>a51job</item>
-        <item>tasker</item>
-        <item>mark</item>
-        <item>hviewer</item>
-        <item>go_google_installer</item>
-        <item>bilibili_blue</item>
-        <item>douban_daily</item>
-        <item>jike</item>
-        <item>hangzhou_smk</item>
-        <item>yyets_movie</item>
-        <item>tieba_yijiandingshiqiandao</item>
-        <item>file_commander</item>
-        <item>camera_fv_5</item>
-        <item>app_backup_restore_transfer</item>
-        <item>android_central</item>
-        <item>android_authority</item>
-        <item>amazon_cloud</item>
-        <item>aimp</item>
-        <item>movieheaven</item>
-        <item>fasthub</item>
-        <item>droidddle</item>
-        <item>ebay</item>
-        <item>cnn_news</item>
-        <item>citymapper</item>
-        <item>camera_mx</item>
-        <item>camera_360</item>
-        <item>best_buy</item>
-        <item>behance_display</item>
-        <item>acdisplay</item>
-        <item>accuweather</item>
-        <item>icebox_alt</item>
-        <item>google_weather</item>
-        <item>todoist</item>
-        <item>a3c_system_tunner</item>
-        <item>a3c_system_tunner_pro</item>
-        <item>a3c_toolbox</item>
-        <item>a3c_toolbox_pro</item>
-        <item>chromer</item>
-        <item>force_doze</item>
-        <item>ben_colorpicker</item>
-        <item>everphoto</item>
-        <item>xmvideoplayer</item>
-        <item>sorcery_icons_spring</item>
-        <item>english_tick</item>
-        <item>soutushenqi</item>
-        <item>renren</item>
-        <item>xyz_hanks_note</item>
-        <item>antutu_3d</item>
-        <item>wps_note</item>
-        <item>uc_news</item>
-        <item>mixplorer</item>
-        <item>antutu_benchmark</item>
-        <item>google_maps_local_guide</item>
-        <item>game_shadowmatic</item>
-        <item>huawei_honor_read</item>
-        <item>huawei_health</item>
-        <item>huawei_hicloud</item>
-        <item>huawei_hireader</item>
-        <item>huawei_higame</item>
-        <item>huawei_phone_clone</item>
-        <item>huawei_video</item>
-<item>huawei_hilives</item>
-        <item>huawei_vmall</item>
-        <item>huawei_hiwallet</item>
-        <item>huawei_hilink</item>
-        <item>tesla_motors</item>
-        <item>google_earth</item>
+        <item>tencent_qpaint</item>
+        <item>sonkwoapp_game</item>
+        <item>hideable_vav_bar</item>
+        <item>huawei_crowdtest</item>
+        <item>huawei_music</item>
+        <item>huawei_huaying_club</item>
+        <item>huawei_club</item>
+        <item>huawei_backup</item>
+        <item>ubisoft_club</item>
+        <item>shanbay_reader</item>
+        <item>shanbay_speak</item>
+        <item>gamersky</item>
 
         <item>@string/icon_label_updated</item>
-        <item>jotterpad</item>
-        <item>couplete</item>
-        <item>google_camera</item>
-        <item>google_play_music</item>
-        <item>shanbay</item>
-        <item>netease_yanxuan</item>
-        <item>bilibili</item>
-        <item>kaoyanbang</item>
-        <item>nga_player_community</item>
-        <item>tencent_wechat</item>
-        <item>acfun</item>
-        <item>samsung_galaxy_apps</item>
-        <item>tencent_app_market</item>
-        <item>huawei_appmarket</item>
-        <item>myersplash</item>
-        <item>google_maps</item>
-        <item>behance</item>
-        <item>momo</item>
-        <item>renrenmeiju</item>
-        <item>xunlei</item>
-        <item>zhuanxin</item>
-        <item>los_changelog</item>
-        <item>wolfram_alpha</item>
-        <item>ted</item>
-        <item>chelaile</item>
-        <item>seed</item>
-        <item>wunderlist</item>
-        <item>netease_cloudclass</item>
-        <item>zarchiver</item>
-        <item>huawei_appmarket</item>
-        <item>momobeidanci</item>
-        <item>tianyashequ</item>
-        <item>moon_phase</item>
-        <item>zhonghuawannianli</item>
-        <item>pptv</item>
-        <item>panda_tv</item>
-        <item>suibiji</item>
-        <item>zhihu_ribao</item>
+        <item>google_play_store</item>
+        <item>ali_trip</item>
+
     </string-array>
 
     <string-array name="icon_pack" translatable="false">
@@ -605,6 +507,7 @@
         <item>**G**</item>
         <item>gallery</item>
         <item>gamecores</item>
+        <item>gamersky</item>
         <item>game_altos_adventure</item>
         <item>game_arrow_io</item>
         <item>game_asphalt_8</item>
@@ -757,6 +660,7 @@
         <item>hangout_dialer</item>
         <item>hangzhou_smk</item>
         <item>haodaifu</item>
+        <item>hideable_vav_bar</item>
         <item>himail</item>
         <item>hiwifi</item>
         <item>hj_word_games</item>
@@ -765,6 +669,9 @@
         <item>huaban</item>
         <item>huawei_appmarket</item>
         <item>huawei_backup</item>
+        <item>huawei_backup_alt</item>
+        <item>huawei_club</item>
+        <item>huawei_crowdtest</item>
         <item>huawei_file_manager_hidisk</item>
         <item>huawei_health</item>
         <item>huawei_hicloud</item>
@@ -774,6 +681,8 @@
         <item>huawei_hireader</item>
         <item>huawei_hiwallet</item>
         <item>huawei_honor_read</item>
+        <item>huawei_huaying_club</item>
+        <item>huawei_music</item>
         <item>huawei_phone_clone</item>
         <item>huawei_phone_manager</item>
         <item>huawei_phone_service</item>
@@ -1270,6 +1179,8 @@
         <item>shanbay</item>
         <item>shanbay_listen</item>
         <item>shanbay_news</item>
+        <item>shanbay_reader</item>
+        <item>shanbay_speak</item>
         <item>shihuo</item>
         <item>shoujileyuan</item>
         <item>shouxin_keyboard</item>
@@ -1328,6 +1239,7 @@
         <item>soild_explorer</item>
         <item>solid_launcher</item>
         <item>songguo_guokr</item>
+        <item>sonkwoapp_game</item>
         <item>sony_album</item>
         <item>sony_alpha_clock</item>
         <item>sony_ar_effect</item>
@@ -1448,6 +1360,7 @@
         <item>tencent_news</item>
         <item>tencent_ps_play</item>
         <item>tencent_qie_fm</item>
+        <item>tencent_qpaint</item>
         <item>tencent_qq</item>
         <item>tencent_qqpimsecure</item>
         <item>tencent_qq_browser</item>
@@ -1513,6 +1426,7 @@
         <item>**U**</item>
         <item>uber</item>
         <item>uber_partner</item>
+        <item>ubisoft_club</item>
         <item>uc_browser</item>
         <item>uc_news</item>
         <item>udacity</item>

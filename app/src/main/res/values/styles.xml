@@ -21,12 +21,7 @@
         <item name="android:windowBackground">@drawable/bg_starting_window</item>
     </style>
 
-    <style name="SubActivity" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <!--<item name="colorPrimary">?android:attr/colorPrimary</item>-->
-        <!--<item name="colorPrimaryDark">?android:attr/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">?android:attr/colorAccent</item>-->
-        <!--<item name="android:statusBarColor">@color/palette_transparent</item>-->
+    <style name="SubActivity" parent="MaterialDrawerTheme.Light.DarkToolbar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 

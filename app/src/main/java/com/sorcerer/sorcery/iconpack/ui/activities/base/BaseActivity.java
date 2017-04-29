@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
+import com.sorcerer.sorcery.iconpack.data.db.Db;
 import com.sorcerer.sorcery.iconpack.ui.theme.ThemeManager;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
@@ -31,6 +32,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected SorceryPrefs mPrefs;
     @Inject
     protected ThemeManager mThemeManager;
+    @Inject
+    protected Db mDb;
+
     protected Context mContext = this;
     protected Activity mActivity = this;
 
