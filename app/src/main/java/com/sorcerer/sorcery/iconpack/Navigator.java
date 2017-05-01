@@ -57,7 +57,6 @@ public class Navigator {
 
     public void toIconRequest() {
         mainActivityShift(AppSelectActivity.class);
-//        mActivity.startActivity(new Intent(mActivity, AppSelectActivity.class));
     }
 
     public void toAppleActivity() {

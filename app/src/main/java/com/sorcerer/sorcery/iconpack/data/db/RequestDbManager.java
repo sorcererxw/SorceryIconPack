@@ -9,8 +9,7 @@ import com.squareup.sqlbrite.BriteDatabase;
 
 import java.util.List;
 
-import hu.akarnokd.rxjava.interop.RxJavaInterop;
-import io.reactivex.Observable;
+import rx.Observable;
 
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.COMPONENT;
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.REQUESTED;
@@ -29,13 +28,20 @@ public class RequestDbManager {
         mDatabase = database;
     }
 
+//    public Observable<Boolean> isRequest(String component) {
+//        return RxJavaInterop.toV2Observable(
+//                mDatabase.createQuery(TABLE,
+//                        "SELECT * FROM " + TABLE + " where " + COMPONENT + " = ?", component)
+//                        .mapToList(cursor -> Db.getBoolean(cursor, REQUESTED))
+//                        .map(list -> list.get(0))
+//        );
+//    }
+
     public Observable<Boolean> isRequest(String component) {
-        return RxJavaInterop.toV2Observable(
-                mDatabase.createQuery(TABLE,
-                        "SELECT * FROM " + TABLE + " where " + COMPONENT + " = ?", component)
-                        .mapToList(cursor -> Db.getBoolean(cursor, REQUESTED))
-                        .map(list -> list.get(0))
-        );
+        return mDatabase.createQuery(TABLE,
+                "SELECT * FROM " + TABLE + " where " + COMPONENT + " = ?", component)
+                .mapToList(cursor -> Db.getBoolean(cursor, REQUESTED))
+                .map(list -> list.get(0));
     }
 
     public void saveComponent(List<String> components) {

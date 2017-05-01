@@ -174,7 +174,8 @@ class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.AppItemViewHold
         holder.check.setChecked(mAppInfoList.get(realPos).isChecked());
 
         mRequestDbManager.isRequest(mAppInfoList.get(realPos).getCode())
-                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(rx.android.schedulers.AndroidSchedulers.mainThread())
+//                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(requested -> {
                     if (requested) {
                         holder.setEnable(false);

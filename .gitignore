@@ -32,3 +32,4 @@ app/src/main/jniLibs/
 src/androidTest/
 src/main/java/com/sorcerer/sorcery/iconpack/App.java
 src/test/
+/packtools/src/main/java/com/sorcererxw/sorcery/icons/packtools/Config.java

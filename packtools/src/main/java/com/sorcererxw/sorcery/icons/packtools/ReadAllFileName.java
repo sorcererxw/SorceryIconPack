@@ -1,14 +1,15 @@
 package com.sorcererxw.sorcery.icons.packtools;
 
-import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 /**
- * Created by "+Constant.userName+" on 2016/2/9 0009.
+ * @description:
+ * @author: "+Constant.userName+"
+ * @date: 2016/2/9 0009
  */
 public class ReadAllFileName {
 
@@ -16,51 +17,25 @@ public class ReadAllFileName {
 
     public static void main(String[] args) {
 
-        // This is the path where the file's name you want to take.
-        String path = "C:\\Users\\" + Constant.userName +
-                "\\AndroidStudioProjects\\SorceryIconPack\\app\\src\\main\\res\\drawable-nodpi";
-        writeFile("C:\\Users\\" + Constant.userName +
+        writeFile("C:\\Users\\" + Config.userName +
                 "\\AndroidStudioProjects\\SorceryIconPack\\testProgram\\iconpack.txt", getFile());
 
+
         try {
-            java.awt.Desktop.getDesktop().open(new File("C:\\Users\\" + Constant.userName +
+            java.awt.Desktop.getDesktop().open(new File("C:\\Users\\" + Config.userName +
                     "\\AndroidStudioProjects\\SorceryIconPack\\testProgram\\iconpack.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    static String pre = "**";
-
     private static String getFile() {
-        String[] a = {
-//                "ali",
-//                "baidu",
-//                "netease",
-//                "google",
-//                "htc",
-//                "lenovo",
-//                "lg",
-//                "moto",
-//                "microsoft",
-//                "samsung",
-//                "sony",
-//                "tencent",
-//                "miui",
-//                "xiaomi",
-//                "flyme",
-//                "meizu",
-//                "oneplus",
-                ""
-        };
 
         String res = "";
-        for (String s : a) {
-            tag = s;
-            res += getFile("C:\\Users\\" + Constant.userName +
-                    "\\AndroidStudioProjects\\SorceryIconPack\\app\\src\\main\\res\\drawable-nodpi");
-            res += "\n\n";
-        }
+        tag = "";
+        res += getFile("C:\\Users\\" + Config.userName +
+                "\\AndroidStudioProjects\\SorceryIconPack\\app\\src\\main\\res\\drawable-nodpi");
+        res += "\n\n";
         return res;
     }
 
@@ -69,35 +44,33 @@ public class ReadAllFileName {
         File file = new File(path);
         File[] array = file.listFiles();
         String res = "";
-        char now;
+        char nowCate = 0;
+        String pre = "**";
         if (tag.isEmpty()) {
-            now = 0;
             res += ("<item>" + pre + "*" + pre + "</item>" + "\n");
-        } else {
-            now = 254;
         }
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].isFile()) {
-                String tmp = array[i].getName();
-                if(tmp.startsWith("_")){
-                    continue;
-                }
-                tmp = tmp.substring(0, tmp.indexOf('.'));
-                if (tmp.startsWith(tag)) {
-                    if (tmp.charAt(0) > now && tmp.length() >= 2 && !isStartNumber(tmp)) {
-                        now = tmp.charAt(0);
-                        res += ("   <item>" + pre + Character.toUpperCase(now) + pre + "</item>" + "\n");
-                    }
-                    res += ("   <item>" + tmp + "</item>" + "\n");
-                }
-            } else if (array[i].isDirectory()) {
-//                getFile(array[i].getPath());
+        assert array != null;
+        for (File icon : array) {
+            if (!icon.isFile()) {
+                continue;
             }
+            if (icon.getName().startsWith("_")) {
+                continue;
+            }
+            String tmp = icon.getName();
+            tmp = tmp.substring(0, tmp.indexOf('.'));
+            if (tmp.charAt(0) > nowCate && tmp.length() >= 2 && !isStartNumber(tmp)) {
+                nowCate = tmp.charAt(0);
+                res += ("   <item>" + pre + Character.toUpperCase(nowCate) + pre + "</item>"
+                        + "\n");
+            }
+            res += ("   <item>" + tmp + "</item>" + "\n");
         }
         StringBuilder builder = new StringBuilder(res);
         builder.insert(0,
-                "<string-array name=\"icon_pack" + (tag.equals("") ? "" : "_") + tag + "\" translatable=\"false\">\n");
+                "<string-array name=\"icon_pack" + (tag.equals("") ? "" : "_") + tag
+                        + "\" translatable=\"false\">\n");
         builder.append("</string-array>");
         return builder.toString();
     }
