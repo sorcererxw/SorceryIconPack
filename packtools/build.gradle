@@ -8,6 +8,7 @@ dependencies {
     compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     compile 'org.jsoup:jsoup:1.10.2'
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'com.luhuiguo', name: 'chinese-utils', version: '1.0'
 }
 
 sourceCompatibility = "1.8"

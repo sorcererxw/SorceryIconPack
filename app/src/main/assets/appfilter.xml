@@ -2090,4 +2090,5 @@
 <item component="ComponentInfo{com.miHoYo.bh3rdJP/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="game_mihoyo_bh_3"/>
 <item component="ComponentInfo{com.psyone.brainmusic/com.psyone.brainmusic.SplashActivity}" drawable="little_sleep"/>
 <item component="ComponentInfo{com.bookmark.money/com.zoostudio.moneylover.ui.ActivitySplash}" drawable="money_lover"/>
+<item component="ComponentInfo{fm.castbox.audiobook.radio.podcast/fm.castbox.audio.radio.podcast.ui.main.MainActivity}" drawable="castbox_audiobook"/>
 </resources>

@@ -1,9 +1,11 @@
 package com.sorcererxw.sorcery.icons.packtools;
 
+import com.luhuiguo.chinese.ChineseUtils;
 import com.sorcererxw.sorcery.icons.packtools.leancloud.LeancloudClient;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class PackTools {
      * 2. generate all icon array
      * 3. generate drawable.xml
      * 4. generate appfilter.xml
+     * 5. zhCN -> zhTW
      */
 
     public static void pack() {
@@ -55,6 +58,23 @@ public class PackTools {
             System.out.println("appfilter write failed");
             e.printStackTrace();
         }
+
+        try {
+            String s = ChineseUtils.toTraditional(
+                    Utils.readFile(new File(
+                            Config.PROJECT_MAIN_PATH + "\\res\\values-zh-rCN\\strings.xml")
+                    )
+            );
+            Utils.writeFile(
+                    new File(Config.PROJECT_MAIN_PATH + "\\res\\values-zh-rHK\\strings.xml"),
+                    s);
+            Utils.writeFile(new File(Config.PROJECT_MAIN_PATH + "\\res\\values-zh-rTW\\strings.xml"),
+                    s);
+            System.out.println("strings-cn successfully written");
+        } catch (IOException e) {
+            System.out.println("strings-cn write failed");
+            e.printStackTrace();
+        }
     }
 
     private static void copyIcons() throws IOException {
@@ -73,7 +93,8 @@ public class PackTools {
 
     private static void handleIconsArray() throws IOException {
         File iconPack = new File(Config.PROJECT_MAIN_PATH + "\\res\\values\\icon_pack.xml");
-        String res = Jsoup.parse(Utils.readFile(iconPack)).getElementsByTag("string-array").stream()
+        Document document = Jsoup.parse(Utils.readFile(iconPack));
+        String res = document.getElementsByTag("string-array").stream()
                 .map(element -> {
                     if (element.attr("name").equals("icon_pack")) {
                         final char[] now = {0};
@@ -93,7 +114,8 @@ public class PackTools {
                                             }
                                         } else {
                                             now[0] = s.charAt(0);
-                                            return "<item>**" + now[0] + "**</item>\n"
+                                            return "<item>**" + Character.toUpperCase(now[0])
+                                                    + "**</item>\n"
                                                     + "<item>" + s + "</item>";
                                         }
                                     }
@@ -109,7 +131,7 @@ public class PackTools {
         Utils.writeFile(iconPack,
                 "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
                         + "<resources>\n"
-                        + res
+                        + res.replaceAll(">\\s+", ">").replaceAll("\\s+<", "<")
                         + "</resources>");
     }
 

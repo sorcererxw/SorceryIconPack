@@ -250,6 +250,7 @@
    <item drawable="card_news"/>
    <item drawable="careland"/>
    <item drawable="castbox"/>
+   <item drawable="castbox_audiobook"/>
    <item drawable="ccb_atm_mobilepay"/>
    <item drawable="ccb_bank"/>
    <item drawable="ccleaner"/>

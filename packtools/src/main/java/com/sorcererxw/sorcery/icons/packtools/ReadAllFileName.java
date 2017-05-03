@@ -3,7 +3,6 @@ package com.sorcererxw.sorcery.icons.packtools;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 /**
@@ -16,25 +15,17 @@ public class ReadAllFileName {
     static String tag = "";
 
     public static void main(String[] args) {
-
-        writeFile("C:\\Users\\" + Config.userName +
-                "\\AndroidStudioProjects\\SorceryIconPack\\testProgram\\iconpack.txt", getFile());
-
-
-        try {
-            java.awt.Desktop.getDesktop().open(new File("C:\\Users\\" + Config.userName +
-                    "\\AndroidStudioProjects\\SorceryIconPack\\testProgram\\iconpack.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//
+//        writeFile("C:\\Users\\" + Config.userName +
+//                "\\AndroidStudioProjects\\SorceryIconPack\\testProgram\\iconpack.txt", getFile());
+//
     }
 
     private static String getFile() {
 
         String res = "";
         tag = "";
-        res += getFile("C:\\Users\\" + Config.userName +
-                "\\AndroidStudioProjects\\SorceryIconPack\\app\\src\\main\\res\\drawable-nodpi");
+        res += getFile(Config.ICON_SOURCE_PATH);
         res += "\n\n";
         return res;
     }

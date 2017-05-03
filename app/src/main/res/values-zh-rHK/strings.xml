@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sorcery 表徵圖</string>
+
+    <string name="action_feedback">反饋</string>
+    <string name="action_welcome">感謝使用</string>
+
+    <string name="request">申請表徵圖</string>
+    <string name="suggest">提出建議與疑問</string>
+
+    <string name="choose_mail_app">請選擇郵箱</string>
+
+    <string name="welcome_title">感謝使用</string>
+    <string name="welcome_body">如果有任何問題請先在左側抽屜中的 常見問題 中尋找答案</string>
+    <string name="welcome_close">好的</string>
+    <string name="installed">已安裝</string>
+    <string name="not_installed">未安裝</string>
+    <string name="update_fail">獲取失敗, 請檢查網路</string>
+    <string name="find_new_version">發現新版</string>
+    <string name="ok">好的</string>
+    <string name="download">下載</string>
+    <string name="cancel">取消</string>
+    <string name="action_apply">應用</string>
+    <string name="is_last_version">當前已為最新版本, 無需更新</string>
+    <string name="icon_request_sending">正在發送</string>
+    <string name="version_name">版本名</string>
+    <string name="action_update">檢查更新</string>
+    <string name="icon_request_send_fail">發送失敗, 請通過郵箱方式反饋</string>
+    <string name="icon_request_send_success">發送成功, 感謝反饋</string>
+    <string name="update_start">檢查更新</string>
+
+    <string name="nav_item_apply">應用表徵圖</string>
+    <string name="nav_item_icon">表徵圖</string>
+    <string name="nav_item_feedback">反饋</string>
+    <string name="nav_item_welcome">歡迎使用</string>
+    <string name="nav_item_update">檢查更新</string>
+    <string name="donate_declaration_content">收款方為第三方支付服務商Bmob, 如有疑問請聯繫: feedback@sorcererxw.com
+    </string>
+    <string name="alipay">支付寶</string>
+    <string name="wechat">微信</string>
+    <string name="donate_title">支援我們</string>
+    <string name="donate_content">
+        如果您喜歡這款應用\n
+        並且願意支援我們\n
+        希望可以獲得您的捐贈\n
+        我們會向您表達由衷的感謝\n
+        謝謝:)
+    </string>
+    <string name="nav_item_donate">捐贈</string>
+    <string name="donate_dialog_title">選擇金額</string>
+    <string name="thanks">感 謝</string>
+    <string name="donate_success">捐贈成功</string>
+    <string name="donate_fail">捐贈失敗, 不過我還是很感動</string>
+    <string name="open_alipay">正在開啟支付寶</string>
+    <string name="nav_item_settings">設置</string>
+    <string name="pref_global_load_summary">不依賴啟動器, 使用xposed載入表徵圖</string>
+    <string name="pref_global_load_title">全局載入</string>
+    <string name="pref_global_hint">目前還在測試, 將在下個大版本更新中啟用</string>
+    <string name="cancel_request">離開表徵圖申請?</string>
+    <string name="yes">是</string>
+    <string name="select_app">選擇應用</string>
+    <string name="select_all">全選</string>
+    <string name="no">不</string>
+    <string name="xposed_tag">
+        全局載入Sorcery表徵圖包, 勾選並去表徵圖包設置裡面開啟
+    </string>
+    <string name="nav_item_lab">實驗室</string>
+    <string name="global_detail">通過Xposed進行載入表徵圖包以實現全局更換表徵圖|你需要先root您的設備並且在Xposed框架中勾選此應用
+    </string>
+
+    <string name="global_attention">
+        說明:|
+        #1. 應用之後需要重啟設備以更換表徵圖|
+        #2. 請在所有手機後台管理應用中將這個應用納入白名單|
+        #3. 暫不支援熱刷新, 安裝了新的應用需要重啟以使表徵圖變更|
+        #4. 運行樣本較少, 無法保證模組百分百運行正常|
+        #5. 啟用並重啟之前, 可以在手機中放一份rom卡刷包或者系統備份, 以備不時之需
+    </string>
+    <string name="global_state_active">已開啟</string>
+    <string name="global_state_label">當前狀態</string>
+    <string name="global_state_not_active">尚未開啟</string>
+    <string name="global_state_not_root">未root</string>
+    <string name="action_close">關閉</string>
+    <string name="just_show_without_custom">僅顯示未適配表徵圖</string>
+    <string name="nav_item_about">關於</string>
+    <string name="open_source_lib">開源庫</string>
+    <string name="job_developer">開發者</string>
+    <string name="job_icon_design">表徵圖設計</string>
+    <string name="contributor">貢獻者</string>
+    <string name="action_refresh">強制刷新</string>
+    <string name="global_load_package_add_notify">重啟以顯示新應用的sorcery表徵圖</string>
+    <string name="action_soft_reboot">軟重啟</string>
+    <string name="action_reboot">重啟設備</string>
+    <string name="action_search">搜索</string>
+    <string name="action_like">贊</string>
+    <string name="action_dislike">踩</string>
+    <string name="about_main">用「material」妝點你的手機</string>
+    <string name="select_an_icon">選擇一個表徵圖</string>
+    <string name="nav_item_help">幫助</string>
+    <string name="please_give_permission">請給予許可權</string>
+    <string name="changelog">更新日誌</string>
+    <string name="action_dismiss">關閉</string>
+    <string name="action_join_google_plus">加入本應用的G+社群</string>
+    <string name="action_copy">複製</string>
+    <string name="action_copy_to_clipboard">複製剪貼板</string>
+    <string name="action_premium_request">付費申請</string>
+    <string name="action_select_all">全選</string>
+    <string name="premium_request_content">由於需要適配的表徵圖很多, 不可能一下子都是適配, 您可以通過付費來確保一個表徵圖能在下個版本中出現,
+        以2元一個表徵圖的價格進行收費, 不強制, 用付費來換取優先適配|**拒絕適配遊戲表徵圖**|**拒絕適配遊戲表徵圖**|**拒絕適配遊戲表徵圖**
+    </string>
+    <string name="premium_request_title">付費申請</string>
+    <string name="RMB">元</string>
+    <string name="premium_alipay_title">Sorcery 付費申請表徵圖</string>
+    <string name="premium_alipay_describe">Sorcery 付費申請表徵圖</string>
+    <string name="premium_send_title">確認付費</string>
+    <string name="pay_fail">付款失敗</string>
+    <string name="pay_success">付款成功</string>
+    <string name="fail_open_premium">無法開啟付費模式</string>
+    <string name="premium_send_dialog_mail_label">郵箱</string>
+    <string name="premium_send_dialog_mail_hint">請留下您的郵箱(必填)</string>
+    <string name="premium_send_dialog_note_hint">捎句話…</string>
+    <string name="premium_send_dialog_note_label">備註</string>
+    <string name="please_input_right_mail_address">請輸入正確的郵箱地址</string>
+    <string name="icon_label_added">**最近添加**</string>
+    <string name="icon_label_updated">**調整更新**</string>
+    <string name="action_show_in_store">前往商店</string>
+    <string name="action_give_permission">授權</string>
+    <string name="action_show_origin_icon">顯示原表徵圖</string>
+    <string name="icon_label_please_leave_baidu">**請遠離百度**</string>
+    <string name="open_wechat">正在開啟微信支付</string>
+    <string name="action_install">安裝</string>
+    <string name="action_grant_permission">授權</string>
+    <string name="action_refuse">拒絕</string>
+    <string name="permission_request_title">申請許可權</string>
+    <string name="permission_write_external_storage">存儲空間</string>
+    <string name="permission_request_describe_write_external_storage">保存離線報告的緩存數據。</string>
+    <string name="permission_request_content">感謝使用。為了您更好的使用體驗, 請授予應用許可權。否則, 你可能無法正常使用一些功能。同時,
+        我還需要這些許可權來獲取分析應用運行狀況, 謝謝您的支援。
+    </string>
+    <string name="permission_request_read_phone_state">獲取用戶設備的ID，用來唯一的標識用戶, 便於在伺服器裡面區分。</string>
+    <string name="permission_read_phone_state">電話</string>
+    <string name="icon_request_times">共被申請 # 次</string>
+    <string name="nav_item_wallpapers">壁紙</string>
+    <string name="version">版本</string>
+    <string name="feedback_chat_name_dialog_title">想一個昵稱</string>
+    <string name="feedback_chat_name_dialog_toast_hint">昵稱的長度需要大於3</string>
+    <string name="feedback_chat_welcome">Hi, 我是開發者。隨時歡迎來向我反饋你的任何問題和使用感受, 同時也可發送圖片給我。</string>
+    <string name="feedback_chat_name_dialog_hint">昵稱</string>
+    <string name="feedback_chat_name_dialog_content">請提供一個昵稱給我, 以方便我來區分不同的反饋者。</string>
+    <string name="feedback_chat_edit_hint">想說什麼?</string>
+    <string name="action_report_info">報告資訊</string>
+    <string name="action_leave">離開</string>
+    <string name="shortcuts_request_icon_short_label">申請表徵圖</string>
+    <string name="shortcuts_request_icon_long_label">申請表徵圖</string>
+    <string name="shortcuts_request_icon_disable_message">申請表徵圖</string>
+    <string name="preference_about_app">應用資訊</string>
+    <string name="preference_about_lib">開源許可</string>
+    <string name="preference_group_about">關於</string>
+    <string name="action_later">暫不</string>
+    <string name="action_know_what_doing">我知道我在幹什麼</string>
+    <string name="attention">警告</string>
+    <string name="search_hint_not_found">額…似乎沒找到</string>
+    <string name="search_hint_only_letter">不好意思, 搜索暫時只支援英文和數字</string>
+    <string name="preference_group_general">常規</string>
+    <string name="preference_general_clear_cache">清除緩存</string>
+    <string name="preference_group_laboratory">實驗室</string>
+    <string name="preference_laboratory_global_load">全局載入</string>
+    <string name="language">zh</string>
+    <string name="tab_ali">阿里</string>
+    <string name="tab_all">所有</string>
+    <string name="tab_baidu">百度</string>
+    <string name="tab_google">穀歌</string>
+    <string name="tab_htc">HTC</string>
+    <string name="tab_lenovo">聯想</string>
+    <string name="tab_lg">LG</string>
+    <string name="tab_meizu">魅族</string>
+    <string name="tab_microsoft">微軟</string>
+    <string name="tab_moto">摩托</string>
+    <string name="tab_netease">網易</string>
+    <string name="tab_new">最新</string>
+    <string name="tab_oneplus">一加</string>
+    <string name="tab_samsung">三星</string>
+    <string name="tab_sony">索尼</string>
+    <string name="tab_tencent">騰訊</string>
+    <string name="tab_xiaomi">小米</string>
+    <string name="tab_flyme">魅族</string>
+    <string name="tab_miui">小米</string>
+    <string name="preference_general_customize_tabs">自定義表徵圖頁</string>
+    <string name="preference_general_customize_tabs_summary">僅顯示你關注的表徵圖頁</string>
+    <string name="restart_to_take_effect">重啟以生效</string>
+    <string name="tab_installed">已安裝</string>
+    <string name="apply_recommend">推薦</string>
+    <string name="apply_supported_launcher">應用到啟動器</string>
+    <string name="apply_supported_system">應用到系統</string>
+    <string name="apply_tip_no_launcher">尚未安裝啟動器, 是否前往商店安裝?</string>
+    <string name="apply_tip_only_flyme">僅支援Flyme</string>
+    <string name="apply_tip_only_miui">僅支援MIUI</string>
+    <string name="search_edit_hint">搜索表徵圖…</string>
+    <string name="about_dialog_slogan">讓質感美化你的屏幕</string>
+    <string name="about_dialog_icon_count">包含 %d 個表徵圖</string>
+    <string name="apply_by_database_declaration_content">由於{} launcher 本身並不支援用戶去自定義表徵圖, 所以Sorcery
+        Icons 會通過Root許可權去修改這個launcher的數據|所以需要授予root許可權和外部存儲讀寫許可權|由於只是修改了啟動器的緩存檔案, 所以表徵圖可能在對應應用更新後恢複原樣,
+        屆時需要再一次進行替換操作
+    </string>
+    <string name="apply_by_database_declaration_title">說明</string>
+    <string name="apply_by_database_no_root_access">需要Root許可權</string>
+    <string name="apply_by_database_success">操作成功</string>
+    <string name="apply_by_database_no_sdcard_permission">需要外部讀寫許可權</string>
+    <string name="apply_by_database_fail">不好意思, 操作失敗了</string>
+    <string name="apply_by_database_applying">請稍待片刻……</string>
+    <string name="error">錯誤</string>
+    <string name="action_restore_to_default">恢複預設</string>
+    <string name="action_apply_icons">應用表徵圖</string>
+    <string name="options">選項</string>
+    <string name="shortcuts_apply_pixel_short_label">刷新Pixel表徵圖</string>
+    <string name="shortcuts_apply_pixel_long_label">刷新Pixel啟動器表徵圖</string>
+    <string name="nav_item_custom_workshop">自定義工坊</string>
+    <string name="action_disable_round_icon">禁用圓形表徵圖</string>
+    <string name="nav_item_apply_xposed">全局載入</string>
+    <string name="preference_apply_xposed_refresh_icons">刷新表徵圖</string>
+    <string name="preference_apply_xposed_clear_nova_cache">清除Nova啟動器的表徵圖緩存</string>
+    <string name="preference_apply_xposed_options">選項</string>
+    <string name="preference_apply_xposed_clear_nova_cache_summary">如果全局載入無法在Nova啟動器上生效, 請嘗試清除緩存
+    </string>
+    <string name="preference_apply_xposed_reboot_summary">重啟以生效</string>
+    <string name="preference_apply_xposed_reboot">重啟設備</string>
+    <string name="apply_by_xposed_success_dialog_title">成功</string>
+    <string name="apply_by_xposed_success_dialog_positive">重啟</string>
+    <string name="apply_by_xposed_success_dialog_negative">稍後</string>
+    <string name="apply_by_xposed_success_dialog_content">重啟後才可生效</string>
+    <string name="apply_by_xposed_no_xposed">需要Xposed框架</string>
+    <string name="preference_apply_xposed_selinux">關於SELinux</string>
+    <string name="preference_apply_xposed_selinux_summary">全局載入可能無法在SELinux執行的環境下正常運行, 點擊了解詳情
+    </string>
+    <string name="preference_apply_xposed_selinux_executing">SELinux正在執行</string>
+    <string name="apply_pixel_title">應用到Pixel啟動器</string>
+    <string name="apply_pixel_disable_round_summary">移除Pixel風格的表徵圖圓形背景</string>
+    <string name="apply_google_now_title">應用到Google Now啟動器</string>
+    <string name="apply_smartisan_title">應用到鎚子案頭</string>
+    <string name="apply_disable_work_summary">移除Android Work表徵圖標識</string>
+    <string name="apply_disable_work_title">禁用工作模式表徵圖</string>
+    <string name="apply_option_reapply_hint">重新應用以生效</string>
+    <string name="apply_normalize_icon_size_title">標準化表徵圖大小</string>
+    <string name="apply_normalize_icon_size_summary">縮小大表徵圖以匹配質感設計風格</string>
+    <string name="preference_ui_less_anim_title">更少的動畫效果</string>
+    <string name="preference_ui_less_anim_summary">動畫效果可能造成部分設備的卡頓</string>
+    <string name="preference_group_ui">界面</string>
+    <string name="apply_skip_summary">決定哪些應用不被替換</string>
+    <string name="apply_skip_title">跳過部分表徵圖</string>
+    <string name="tab_game">遊戲</string>
+    <string name="preference_drak_mode_summary">暗色的用戶界面</string>
+    <string name="preference_drak_mode_title">暗色模式</string>
+    <string name="tab_huawei">華為</string>
+    <string name="nav_item_help_description">新手請讀</string>
+    <string name="market_search_mail">郵箱</string>
+    <string name="feedback_need_mailbox">請先安裝郵箱應用</string>
+    <string name="icon_request_requested">已申請</string>
+</resources>
