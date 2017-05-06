@@ -1,6 +1,7 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.content.Context;
+import android.provider.Settings;
 
 import com.f2prateek.rx.preferences2.Preference;
 import com.sorcerer.sorcery.iconpack.settings.prefs.Prefs;
@@ -9,6 +10,8 @@ import com.sorcerer.sorcery.iconpack.settings.prefs.SorceryPreference;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import timber.log.Timber;
 
 /**
  * @description:
@@ -70,9 +73,21 @@ public class SorceryPrefs extends Prefs {
     }
 
     public SorceryPreference<String> getUUID() {
+
+
         SorceryPreference<String> uuid = new SorceryPreference<>(getPreferences(), "uuid", "");
         if (uuid.getValue().isEmpty()) {
-            String id = UUID.randomUUID().toString();
+            String id;
+            try {
+                id = Settings.Secure.getString(mContext.getContentResolver(),
+                        Settings.Secure.ANDROID_ID);
+                if (id == null || id.isEmpty()) {
+                    id = UUID.randomUUID().toString();
+                }
+            } catch (Exception e) {
+                Timber.e(e);
+                id = UUID.randomUUID().toString();
+            }
             uuid.setValue(id, true);
         }
         return uuid;

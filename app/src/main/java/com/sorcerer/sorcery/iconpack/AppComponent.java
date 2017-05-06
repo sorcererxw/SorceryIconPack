@@ -1,8 +1,8 @@
 package com.sorcerer.sorcery.iconpack;
 
 import com.sorcerer.sorcery.iconpack.apply.database.base.BaseLauncherApplier;
-import com.sorcerer.sorcery.iconpack.data.db.Db;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconViewPageAdapter;
+import com.sorcerer.sorcery.iconpack.network.avos.AvosStatisticManager;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewHolder;
@@ -39,4 +39,6 @@ public interface AppComponent {
     void inject(BaseRecyclerViewAdapter.InjectorHelper injectorHelper);
 
     void inject(Navigator navigator);
+
+    void inject(AvosStatisticManager avosStatisticManager);
 }

@@ -11,6 +11,6 @@ public class Config {
     public static final String ICON_SOURCE_PATH =
             "C:\\Users\\Sorcerer\\Google 云端硬盘\\drawable-nodpi";
 
-    public static final String LEANCLOUD_ID = "740H3GFA2IOWSuXPg5bJ8aLJ-gzGzoHsz";
-    public static final String LEANCLOUD_KEY = "KzupF723lmKzpAcIu6uGznqK,master";
+    public static final String LEANCLOUD_ID = "x9pUfLctSyBF50CVBuMidfHP-gzGzoHsz";
+    public static final String LEANCLOUD_KEY = "tHipRfEx5CzmQO2QN2v6XG1e,master";
 }

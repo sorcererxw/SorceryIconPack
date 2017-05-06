@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -32,6 +31,7 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconTabFragment;
+import com.sorcerer.sorcery.iconpack.network.avos.AvosStatisticManager;
 import com.sorcerer.sorcery.iconpack.ui.activities.WelcomeActivity;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
 import com.sorcerer.sorcery.iconpack.ui.anim.SearchTransitioner;
@@ -105,6 +105,10 @@ public class MainActivity extends BaseActivity {
             Toast.makeText(mContext, "This version can only be installed by google play to use",
                     Toast.LENGTH_SHORT).show();
             finish();
+        }
+
+        if (!BuildConfig.DEBUG) {
+            new AvosStatisticManager(this).post();
         }
 
         getWindow().setBackgroundDrawable(null);

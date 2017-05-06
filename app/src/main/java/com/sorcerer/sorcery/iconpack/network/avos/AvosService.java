@@ -4,6 +4,8 @@ import com.sorcerer.sorcery.iconpack.network.avos.models.AvosBatchRequest;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosBatchResult;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosCreateObjectResult;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosIconRequestStatisticQueryResult;
+import com.sorcerer.sorcery.iconpack.network.avos.models.AvosStatisticData;
+import com.sorcerer.sorcery.iconpack.network.avos.models.EmptyBean;
 
 import java.util.List;
 
@@ -36,4 +38,6 @@ interface AvosService {
     Observable<AvosIconRequestStatisticQueryResult> queryRequestStatistic(
             @Query("where") String where, @Query("keys") String keys);
 
+    @POST("1.1/stats/open/collect")
+    Observable<EmptyBean> postStatistic(@Body AvosStatisticData data);
 }

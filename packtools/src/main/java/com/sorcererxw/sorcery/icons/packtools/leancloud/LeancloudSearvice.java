@@ -11,13 +11,13 @@ import retrofit2.http.Query;
  */
 
 public interface LeancloudSearvice {
-    @GET("1.1/scan/classes/IconTableTest")
+    @GET("1.1/scan/classes/IconTable")
     Observable<IconTableItem> scanIconTable(@Query("limit") int limit,
                                             @Query("cursor") String cursor);
 
-    @GET("1.1/scan/classes/IconTableTest")
+    @GET("1.1/scan/classes/IconTable")
     Observable<IconTableItem> scanIconTable(@Query("cursor") String cursor);
 
-    @GET("1.1/scan/classes/IconTableTest")
+    @GET("1.1/scan/classes/IconTable")
     Observable<IconTableItem> scanIconTable();
 }

@@ -9,6 +9,8 @@ import com.sorcerer.sorcery.iconpack.network.avos.models.AvosBatchResult;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosIconRequestBean;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosQuerySelection;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosRequest;
+import com.sorcerer.sorcery.iconpack.network.avos.models.AvosStatisticData;
+import com.sorcerer.sorcery.iconpack.network.avos.models.EmptyBean;
 
 import java.util.List;
 
@@ -106,5 +108,9 @@ public class AvosClient {
                     }
                     return 0;
                 });
+    }
+
+    public Observable<EmptyBean> pustStatistic(AvosStatisticData data) {
+        return mAvosService.postStatistic(data);
     }
 }

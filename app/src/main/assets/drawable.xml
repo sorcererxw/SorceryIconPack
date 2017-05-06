@@ -258,6 +258,7 @@
    <item drawable="chaojikechengbiao"/>
    <item drawable="chaojishipin"/>
    <item drawable="chaojishipin_alt"/>
+   <item drawable="charity_miles"/>
    <item drawable="chelaile"/>
    <item drawable="chromer"/>
    <item drawable="chufaba"/>
@@ -317,8 +318,10 @@
    <item drawable="didaqingdan"/>
    <item drawable="didi"/>
    <item drawable="didi_alt"/>
+   <item drawable="digit"/>
    <item drawable="dingxiangyisheng"/>
    <item drawable="dir"/>
+   <item drawable="discord"/>
    <item drawable="ditietong"/>
    <item drawable="domino_pizza"/>
    <item drawable="domino_pizza_alt"/>
@@ -346,6 +349,7 @@
    <item drawable="echo_alt"/>
    <item drawable="ecitic_bank"/>
    <item drawable="edx"/>
+   <item drawable="ehviewer"/>
    <item drawable="eleme"/>
    <item drawable="eleme_alt"/>
    <item drawable="email"/>
@@ -365,10 +369,12 @@
    <item drawable="evie_launcher"/>
    <item drawable="express_100"/>
    <category title="F"/>
+   <item drawable="fabulous"/>
    <item drawable="facebook"/>
    <item drawable="facebook_lite"/>
    <item drawable="facebook_messenger"/>
    <item drawable="facebook_messenger_lite"/>
+   <item drawable="faceq"/>
    <item drawable="faceu"/>
    <item drawable="fake_baidu_yun"/>
    <item drawable="fancy"/>
@@ -481,6 +487,7 @@
    <item drawable="foodie"/>
    <item drawable="force_doze"/>
    <item drawable="forest"/>
+   <item drawable="foursquare"/>
    <item drawable="fulimanman"/>
    <item drawable="funny_tools_video"/>
    <item drawable="fx_file_explorer"/>
@@ -644,7 +651,9 @@
    <item drawable="himail"/>
    <item drawable="hiwifi"/>
    <item drawable="hj_word_games"/>
+   <item drawable="holo"/>
    <item drawable="homelink"/>
+   <item drawable="hooked"/>
    <item drawable="houzz"/>
    <item drawable="huaban"/>
    <item drawable="huawei_appmarket"/>
@@ -703,6 +712,7 @@
    <item drawable="iqiyi_alt"/>
    <item drawable="ireader"/>
    <item drawable="island"/>
+   <item drawable="issuu"/>
    <item drawable="it_home"/>
    <category title="J"/>
    <item drawable="jandan"/>
@@ -741,6 +751,7 @@
    <item drawable="kingmaster"/>
    <item drawable="kingroot"/>
    <item drawable="kitchen_stories"/>
+   <item drawable="kkbox"/>
    <item drawable="kmplayer"/>
    <item drawable="kmplayer_pro"/>
    <item drawable="koudaijizhang"/>
@@ -797,6 +808,7 @@
    <item drawable="letv"/>
    <item drawable="letv_sport"/>
    <item drawable="lg_health"/>
+   <item drawable="lifesum"/>
    <item drawable="lightning_wall"/>
    <item drawable="line"/>
    <item drawable="lineageos_recorder"/>
@@ -1003,6 +1015,8 @@
    <item drawable="oneplus_weather_alt_cloudy"/>
    <item drawable="oneplus_weather_alt_cloudy_dark"/>
    <item drawable="oneplus_weather_alt_sunny"/>
+   <item drawable="one_wood_letter"/>
+   <item drawable="one_wood_translator"/>
    <item drawable="ookla_speedtest"/>
    <item drawable="open_gapps"/>
    <item drawable="open_vpn"/>
@@ -1062,11 +1076,13 @@
    <item drawable="qdaily"/>
    <item drawable="qidian_reader"/>
    <item drawable="qingting_fm"/>
+   <item drawable="qiyu_browser"/>
    <item drawable="quanminkge"/>
    <item drawable="quanneng_toolbox"/>
    <item drawable="quark_browser"/>
    <item drawable="qufenqi"/>
    <item drawable="quickpic"/>
+   <item drawable="quik"/>
    <item drawable="quizlet"/>
    <item drawable="qunar"/>
    <item drawable="qunidaye_browser"/>
@@ -1081,6 +1097,7 @@
    <item drawable="ringtone_maker"/>
    <item drawable="rippple"/>
    <item drawable="root_explorer"/>
+   <item drawable="runtastic"/>
    <category title="S"/>
    <item drawable="same"/>
    <item drawable="samsung_artcanvas"/>
@@ -1162,6 +1179,7 @@
    <item drawable="shanbay_news"/>
    <item drawable="shanbay_reader"/>
    <item drawable="shanbay_speak"/>
+   <item drawable="share_weibo"/>
    <item drawable="shayu_videoplay"/>
    <item drawable="shihuo"/>
    <item drawable="shoujileyuan"/>
@@ -1479,6 +1497,7 @@
    <item drawable="xiami_alt"/>
    <item drawable="xiaoenai"/>
    <item drawable="xiaohongshu"/>
+   <item drawable="xiaoji_emulator"/>
    <item drawable="xiaokaxiu"/>
    <item drawable="xiaomi_account"/>
    <item drawable="xiaomi_account_alt"/>
@@ -1614,6 +1633,7 @@
    <item drawable="yuedong_sport"/>
    <item drawable="yuelaiyuehao"/>
    <item drawable="yunduo_nighttools"/>
+   <item drawable="yy"/>
    <item drawable="yyets_movie"/>
    <category title="Z"/>
    <item drawable="zaker"/>
