@@ -81,6 +81,15 @@
         <item>hideable_vav_bar</item>
         <item>huawei_crowdtest</item>
         <item>huawei_music</item>
+        <item>huawei_theme</item>
+        <item>huawei_camera</item>
+        <item>huawei_updater</item>
+        <item>huawei_weather</item>
+        <item>huawei_memo</item>
+        <item>huawei_flashlight</item>
+        <item>huawei_voice_assist</item>
+        <item>huawei_payment_center</item>
+        <item>huawei_compass</item>
         <item>huawei_huaying_club</item>
         <item>huawei_club</item>
         <item>huawei_backup</item>
@@ -104,6 +113,13 @@
         <item>one_wood_translator</item>
         <item>xiaoji_emulator</item>
         <item>yy</item>
+        <item>trello</item>
+        <item>bridge</item>
+        <item>smartisan_clcok</item>
+        <item>weather_m8</item>
+        <item>netflix</item>
+        <item>seven</item>
+        <item>substratum</item>
         <item>qiyu_browser</item>
         <item>share_weibo</item>
         <item>issuu</item>
@@ -112,10 +128,57 @@
         <item>ehviewer</item>
         <item>one_wood_letter</item>
         <item>gamersky</item>
+        <item>habitica</item>
+        <item>game_sometimes_you_die</item>
+        <item>microsoft_hyperlapse</item>
+        <item>hello_english</item>
+        <item>mori_journal</item>
+        <item>huobi</item>
+        <item>ruler</item>
+        <item>barcode_scanner</item>
+        <item>a36kr</item>
+        <item>noisli</item>
+        <item>glasswire</item>
+        <item>nhk_easy_news_japan</item>
+        <item>vocabulary</item>
+        <item>period_tracker</item>
         <item>@string/icon_label_updated</item>
+        <item>tencent_qq_tim</item>
         <item>google_play_store</item>
         <item>ali_trip</item>
         <item>gravity_box</item>
+        <item>google_calendar</item>
+        <item>google_calendar_1</item>
+        <item>google_calendar_2</item>
+        <item>google_calendar_3</item>
+        <item>google_calendar_4</item>
+        <item>google_calendar_5</item>
+        <item>google_calendar_6</item>
+        <item>google_calendar_7</item>
+        <item>google_calendar_8</item>
+        <item>google_calendar_9</item>
+        <item>google_calendar_10</item>
+        <item>google_calendar_11</item>
+        <item>google_calendar_12</item>
+        <item>google_calendar_13</item>
+        <item>google_calendar_14</item>
+        <item>google_calendar_15</item>
+        <item>google_calendar_16</item>
+        <item>google_calendar_17</item>
+        <item>google_calendar_18</item>
+        <item>google_calendar_19</item>
+        <item>google_calendar_20</item>
+        <item>google_calendar_21</item>
+        <item>google_calendar_22</item>
+        <item>google_calendar_23</item>
+        <item>google_calendar_24</item>
+        <item>google_calendar_25</item>
+        <item>google_calendar_26</item>
+        <item>google_calendar_27</item>
+        <item>google_calendar_28</item>
+        <item>google_calendar_29</item>
+        <item>google_calendar_30</item>
+        <item>google_calendar_31</item>
     </string-array>
     <string-array name="icon_pack" translatable="false">
         <item>*****</item>
@@ -162,6 +225,7 @@
         <item>a365_calendar_7</item>
         <item>a365_calendar_8</item>
         <item>a365_calendar_9</item>
+        <item>a36kr</item>
         <item>a3c_system_tunner</item>
         <item>a3c_system_tunner_pro</item>
         <item>a3c_toolbox</item>
@@ -311,6 +375,7 @@
         <item>banciyuan</item>
         <item>bank_of_china</item>
         <item>bank_of_communications</item>
+        <item>barcode_scanner</item>
         <item>battery_taskmaster</item>
         <item>battlefield_companion</item>
         <item>battlefield_companion_alt</item>
@@ -346,6 +411,7 @@
         <item>box</item>
         <item>breadtrip</item>
         <item>brevent</item>
+        <item>bridge</item>
         <item>browser</item>
         <item>bu_bei_lang_easy_lexis</item>
         <item>budingdonghua</item>
@@ -633,6 +699,7 @@
         <item>game_shadowmatic</item>
         <item>game_snake</item>
         <item>game_solitaire_decked_out</item>
+        <item>game_sometimes_you_die</item>
         <item>game_tencent_hlddz</item>
         <item>game_tencent_xiangqi</item>
         <item>game_the_last_banacat</item>
@@ -645,6 +712,7 @@
         <item>gewala_movie</item>
         <item>gg_assistant</item>
         <item>gitskarios</item>
+        <item>glasswire</item>
         <item>globalcash</item>
         <item>go_google_installer</item>
         <item>go_host</item>
@@ -751,6 +819,7 @@
         <item>guokr_fenda</item>
         <item>**H**</item>
         <item>h5_browser</item>
+        <item>habitica</item>
         <item>haibei_music</item>
         <item>haici_dict</item>
         <item>handle_external_storage</item>
@@ -758,6 +827,7 @@
         <item>hangout_dialer</item>
         <item>hangzhou_smk</item>
         <item>haodaifu</item>
+        <item>hello_english</item>
         <item>hideable_vav_bar</item>
         <item>himail</item>
         <item>hj_word_games</item>
@@ -770,9 +840,12 @@
         <item>huawei_appmarket</item>
         <item>huawei_backup</item>
         <item>huawei_backup_alt</item>
+        <item>huawei_camera</item>
         <item>huawei_club</item>
+        <item>huawei_compass</item>
         <item>huawei_crowdtest</item>
         <item>huawei_file_manager_hidisk</item>
+        <item>huawei_flashlight</item>
         <item>huawei_health</item>
         <item>huawei_hicloud</item>
         <item>huawei_higame</item>
@@ -782,15 +855,22 @@
         <item>huawei_hiwallet</item>
         <item>huawei_honor_read</item>
         <item>huawei_huaying_club</item>
+        <item>huawei_memo</item>
         <item>huawei_music</item>
+        <item>huawei_payment_center</item>
         <item>huawei_phone_clone</item>
         <item>huawei_phone_manager</item>
         <item>huawei_phone_service</item>
+        <item>huawei_theme</item>
+        <item>huawei_updater</item>
         <item>huawei_video</item>
         <item>huawei_vmall</item>
+        <item>huawei_voice_assist</item>
+        <item>huawei_weather</item>
         <item>huaxia_bank</item>
         <item>huaxiong</item>
         <item>huluxia_gametools</item>
+        <item>huobi</item>
         <item>huochaihe</item>
         <item>huputiyu</item>
         <item>hviewer</item>
@@ -972,6 +1052,7 @@
         <item>microsoft_cortana</item>
         <item>microsoft_cortana_alt</item>
         <item>microsoft_groove_music</item>
+        <item>microsoft_hyperlapse</item>
         <item>microsoft_mimicker_alarm</item>
         <item>microsoft_office_excel</item>
         <item>microsoft_office_lens</item>
@@ -1006,6 +1087,7 @@
         <item>moonreader</item>
         <item>moonreader_pro</item>
         <item>mora</item>
+        <item>mori_journal</item>
         <item>moto_body</item>
         <item>moto_connect</item>
         <item>movieheaven</item>
@@ -1045,16 +1127,19 @@
         <item>netease_youqian</item>
         <item>netease_youxiangdashi</item>
         <item>netfits_vpn</item>
+        <item>netflix</item>
         <item>network_speed_indicator</item>
         <item>newsfold</item>
         <item>nfc_emulator</item>
         <item>nfc_emulator_alt</item>
         <item>nga_player_community</item>
+        <item>nhk_easy_news_japan</item>
         <item>nice</item>
         <item>nico_stytool_nilimengmeng</item>
         <item>night_screen</item>
         <item>nike_running</item>
         <item>nissan</item>
+        <item>noisli</item>
         <item>noisyfox</item>
         <item>notify_clean</item>
         <item>nova_launcher</item>
@@ -1136,6 +1221,7 @@
         <item>pengyouyingxiang</item>
         <item>perfect_color_bar</item>
         <item>perfmon</item>
+        <item>period_tracker</item>
         <item>periscope</item>
         <item>phhhoto</item>
         <item>phonograph</item>
@@ -1200,6 +1286,7 @@
         <item>ringtone_maker</item>
         <item>rippple</item>
         <item>root_explorer</item>
+        <item>ruler</item>
         <item>runtastic</item>
         <item>**S**</item>
         <item>same</item>
@@ -1274,6 +1361,7 @@
         <item>settings</item>
         <item>settings_alt_pixel_blue</item>
         <item>settings_editor</item>
+        <item>seven</item>
         <item>sfly</item>
         <item>shadowsocks</item>
         <item>shadowsocksr</item>
@@ -1328,6 +1416,7 @@
         <item>smartisan_calendar_7</item>
         <item>smartisan_calendar_8</item>
         <item>smartisan_calendar_9</item>
+        <item>smartisan_clcok</item>
         <item>smartisan_launcher</item>
         <item>smartisan_note</item>
         <item>smartisan_reader</item>
@@ -1403,6 +1492,7 @@
         <item>star_walk_2</item>
         <item>starbucks</item>
         <item>steam</item>
+        <item>substratum</item>
         <item>suibiji</item>
         <item>suishouji</item>
         <item>suning</item>
@@ -1509,6 +1599,7 @@
         <item>touchpal_keyboard</item>
         <item>toughwo</item>
         <item>tp_link</item>
+        <item>trello</item>
         <item>trip_suitcase</item>
         <item>ttbook</item>
         <item>ttpod</item>
@@ -1550,6 +1641,7 @@
         <item>viper_fx</item>
         <item>vipshop</item>
         <item>vlc</item>
+        <item>vocabulary</item>
         <item>vsco</item>
         <item>vst</item>
         <item>vue</item>
@@ -1562,6 +1654,7 @@
         <item>wandoujia_yilan</item>
         <item>wandoujia_youxiribao</item>
         <item>wannengyingshi</item>
+        <item>weather_m8</item>
         <item>weather_timeline</item>
         <item>wechat_trace</item>
         <item>wechatui</item>

@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.utils.su;
+package com.sorcerer.sorcery.iconpack.utils;
 
 import java.util.Arrays;
 import java.util.List;

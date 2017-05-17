@@ -37,8 +37,7 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
             transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left,
                     R.anim.slide_in_left, R.anim.slide_out_right);
         }
-        transaction
-                .replace(provideFragmentContainer(), fragment)
+        transaction.replace(provideFragmentContainer(), fragment)
                 .addToBackStack(fragment.getClass().getSimpleName())
                 .commitAllowingStateLoss();
     }

@@ -35,6 +35,15 @@ public enum IconFlag {
     public int getOrder() {
         return mOrder;
     }
+
+
+    @Override
+    public String toString() {
+        if (this == GAME) {
+            return "game_";
+        }
+        return super.toString();
+    }
 }
 
 class IconFlagComparator implements Comparator<IconFlag> {

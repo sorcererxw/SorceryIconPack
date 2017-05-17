@@ -63,21 +63,16 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
     private static final int TYPE_ICON_SINGLE_LINE_CENTER = 0xB;
     private static final int TYPE_ICON_SINGLE_LINE_RIGHT = 0xC;
     private static final int TYPE_FOOTER = 0xD;
-
+    private static boolean sLock = false;
     private Activity mActivity;
     private boolean mCustomPicker = false;
     private Context mContext;
-
     private List<List<IconBean>> mIconBeanLists = new ArrayList<>();
     private List<Pair<IconBean, Integer>> mShowList;
-
     private RequestManager mGlideRequestManager;
-
     private int mSpan;
-
     private RecyclerView mRecyclerView;
     private GridLayoutManager mLayoutManager;
-
     private boolean mLessAnim = false;
 
     IconAdapter(Activity activity, Context context,
@@ -171,6 +166,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
                     }
                 });
         mShowList.add(new Pair<>(null, TYPE_FOOTER));
+
     }
 
     @Override
@@ -232,8 +228,6 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         View content = LayoutInflater.from(mContext).inflate(layout, parent, false);
         return new IconViewHolder(content);
     }
-
-    private static boolean sLock = false;
 
     @Override
     public void onBindViewHolder(IconItemViewHolder holder, int position) {
