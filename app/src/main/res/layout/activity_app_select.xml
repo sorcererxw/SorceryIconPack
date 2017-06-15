@@ -1,57 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.design.widget.CoordinatorLayout
-    android:id="@+id/coordinatorLayout_request"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout_request"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:background="?android:attr/colorBackground"
     android:fitsSystemWindows="true"
-    tools:context=".feedback.request.AppSelectActivity">
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/toolbar_universal"/>
-
-    <RelativeLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AppSelectActivity">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_universal"/>
 
-        <com.wang.avi.AVLoadingIndicatorView
-            android:id="@+id/avLoadingIndicatorView_icon_select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="visible"
-            app:indicatorColor="?android:attr/colorAccent"
-            app:indicatorName="LineScaleIndicator"/>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_app_select"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="none"
-            android:visibility="gone"/>
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton
-            android:id="@+id/fab_app_select"
-            android:layout_width="@dimen/fab_size"
-            android:layout_height="@dimen/fab_size"
-            android:layout_gravity="bottom|end"
-            android:src="@drawable/ic_done_white_24dp"
-            android:visibility="gone"
-            tools:visibility="visible"
-            app:layout_behavior="com.sorcerer.sorcery.iconpack.ui.views.ScrollAwareFABBehavior"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="35dp"/>
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avLoadingIndicatorView_icon_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                app:indicatorColor="?android:attr/colorAccent"
+                app:indicatorName="LineScaleIndicator"/>
 
-    </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_app_select"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:visibility="gone"/>
 
+            <com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton
+                android:id="@+id/fab_app_select"
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_done_white_24dp"
+                android:visibility="gone"
+                app:layout_behavior="com.sorcerer.sorcery.iconpack.ui.views.ScrollAwareFABBehavior"
+                tools:visibility="visible"/>
+
+        </RelativeLayout>
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

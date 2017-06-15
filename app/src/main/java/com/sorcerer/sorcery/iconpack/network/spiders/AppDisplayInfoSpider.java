@@ -105,6 +105,10 @@ public class AppDisplayInfoSpider {
                         Element imgElement = element.getElementsByClass("cover-image").get(0);
                         String url = imgElement.attr("src");
                         if (!TextUtils.isEmpty(url)) {
+                            if (url.startsWith("//")) {
+//                                url = url.substring(2);
+                                url = "https:" + url;
+                            }
                             info.setIconUrl(url);
                         }
                     } catch (Exception e) {

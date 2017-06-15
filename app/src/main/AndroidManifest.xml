@@ -3,6 +3,11 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.sorcerer.sorcery.iconpack">
 
+    <uses-sdk
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:overrideLibrary="android.support.v14.preference"/>
+
+    <uses-permission android:name="com.android.vending.BILLING"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -11,12 +16,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
     <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
-
-    <uses-sdk xmlns:tools="http://schemas.android.com/tools"
-              tools:overrideLibrary="android.support.v14.preference"/>
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -175,30 +176,32 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.PICK"/>-->
-            <!--<action android:name="android.intent.action.GET_CONTENT"/>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.PICK"/> -->
+            <!-- <action android:name="android.intent.action.GET_CONTENT"/> -->
 
-            <!--<category android:name="android.intent.category.OPENABLE"/>-->
-            <!--<category android:name="android.intent.category.DEFAULT"/>-->
 
-            <!--<data android:mimeType="image/*"/>-->
-            <!--</intent-filter>-->
+            <!-- <category android:name="android.intent.category.OPENABLE"/> -->
+            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+
+
+            <!-- <data android:mimeType="image/*"/> -->
+            <!-- </intent-filter> -->
 
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts"/>
         </activity>
         <activity
-            android:name=".apply.ApplyActivity"
+            android:name=".ApplyActivity"
             android:label="@string/nav_item_apply"
             android:theme="@style/SubActivity"/>
         <activity
-            android:name=".ui.activities.DonateActivity"
+            android:name=".DonateActivity"
             android:label="@string/nav_item_donate"
             android:theme="@style/SubActivity"/>
         <activity
-            android:name=".feedback.request.AppSelectActivity"
+            android:name=".AppSelectActivity"
             android:exported="true"
             android:label="@string/request"
             android:theme="@style/SubActivity"/>
@@ -211,10 +214,6 @@
             android:name=".iconShowCase.detail.IconDialogActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.Dialog"/>
-        <activity
-            android:name=".ui.activities.base.PhotoViewActivity"
-            android:label="big image"
-            android:theme="@style/AppTheme.PhotoView"/>
 
         <meta-data
             android:name="xposedmodule"
@@ -227,35 +226,43 @@
             android:value="30"/>
 
         <activity
-            android:name=".search.SearchActivity"
+            android:name=".SearchActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/SearchActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
         <activity
-            android:name=".settings.SettingsActivity"
+            android:name=".SettingsActivity"
             android:exported="true"
             android:label="@string/nav_item_settings"
             android:theme="@style/SubActivity"/>
-        <activity android:name=".customWorkshop.CustomWorkshopActivity"
-                  android:label="@string/nav_item_custom_workshop"
-                  android:theme="@style/SubActivity"/>
+        <activity
+            android:name=".customWorkshop.CustomWorkshopActivity"
+            android:label="@string/nav_item_custom_workshop"
+            android:theme="@style/SubActivity"/>
         <activity
             android:name=".ui.activities.WelcomeActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".shortcuts.AppShortcutsReceiverActivity"
-                  android:launchMode="singleInstance"
-                  android:theme="@style/Theme.AppCompat.Translucent"/>
-        <activity android:name=".apply.database.pixel.PixelApplyProgressActivity"
-                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".apply.database.smartisan.SmartisanApplyProgressActivity"
-                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".apply.database.googleNow.GoogleNowApplyProgressActivity"
-                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".apply.database.pixel.PixelApplySingleInstanceProgressActivity"
-                  android:launchMode="singleInstance"
-                  android:theme="@style/AppTheme.Dialog.NoScrim"/>
-        <activity android:name=".test.TestActivity"/>
+        <activity
+            android:name=".shortcuts.AppShortcutsReceiverActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity
+            android:name=".apply.database.pixel.PixelApplyProgressActivity"
+            android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity
+            android:name=".apply.database.smartisan.SmartisanApplyProgressActivity"
+            android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity
+            android:name=".apply.database.googleNow.GoogleNowApplyProgressActivity"
+            android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity
+            android:name=".apply.database.pixel.PixelApplySingleInstanceProgressActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.Dialog.NoScrim"/>
+        <activity
+            android:name=".test.TestActivity"
+            android:theme="@style/AppTheme.Transparent"/>
 
         <receiver android:name=".receivers.PackageReceiver">
             <intent-filter>
@@ -263,9 +270,11 @@
                 <action android:name="android.intent.action.PACKAGE_ADDED"/>
                 <action android:name="android.intent.action.PACKAGE_REMOVED"/>
                 <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+
                 <data android:scheme="package"/>
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

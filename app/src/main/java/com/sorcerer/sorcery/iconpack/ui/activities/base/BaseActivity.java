@@ -6,11 +6,9 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.ViewGroup;
 
 import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
@@ -42,31 +40,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         App.getInstance().getAppComponent().inject(this);
         mThemeManager.setTheme(this);
+        hookBeforeSuperOnCreate();
         super.onCreate(savedInstanceState);
         hookBeforeSetContentView();
         if (provideLayoutId() != 0) {
             setContentView(provideLayoutId());
             ButterKnife.bind(this);
         }
-        if (rootView() != null) {
-            rootView().setBackground(new ColorDrawable(
-                    ResourceUtil.getAttrColor(this, android.R.attr.colorBackground)));
-        }
-        init(savedInstanceState);
-    }
-
-    public void resetContentView() {
-        mThemeManager.setTheme(this);
-        hookBeforeSetContentView();
-        if (provideLayoutId() != 0) {
-            setContentView(provideLayoutId());
-            ButterKnife.bind(this);
-        }
-        if (rootView() != null) {
-            rootView().setBackground(new ColorDrawable(
-                    ResourceUtil.getAttrColor(this, android.R.attr.colorBackground)));
-        }
-        init(null);
     }
 
     @Override
@@ -94,8 +74,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    protected abstract ViewGroup rootView();
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -103,9 +81,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract int provideLayoutId();
 
-    protected abstract void init(Bundle savedInstanceState);
-
     protected void hookBeforeSetContentView() {
+
+    }
+
+    protected void hookBeforeSuperOnCreate() {
 
     }
 }

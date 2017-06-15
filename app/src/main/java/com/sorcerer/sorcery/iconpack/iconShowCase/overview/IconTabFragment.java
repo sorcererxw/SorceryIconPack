@@ -26,42 +26,12 @@ import butterknife.ButterKnife;
 
 public class IconTabFragment extends BaseFragment {
     private static final String KEY_CUSTOM_PICKER = "CUSTOM_PICKER";
-
-    public static IconTabFragment newInstance(boolean customPicker) {
-        IconTabFragment iconTabFragment = new IconTabFragment();
-        Bundle args = new Bundle();
-        args.putBoolean(KEY_CUSTOM_PICKER, customPicker);
-        iconTabFragment.setArguments(args);
-        return iconTabFragment;
-    }
-
-    private boolean mCustomPicker;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mCustomPicker = getArguments().getBoolean(KEY_CUSTOM_PICKER);
-    }
-
     @BindView(R.id.viewPager_icon)
     ViewPager mViewPager;
-
     @BindView(R.id.tabLayout_icon)
     DoubleTapTabLayout mTabLayout;
-
+    private boolean mCustomPicker;
     private IconViewPageAdapter mPageAdapter;
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_icon_tab, container, false);
-        ButterKnife.bind(this, view);
-        initTabAndPager();
-        mTabLayout.setTabTextColors(UIUtils.adjustAlpha(Color.WHITE, 204), Color.WHITE);
-        return view;
-    }
-
     private ViewPager.OnPageChangeListener mPageChangeListener =
             new ViewPager.OnPageChangeListener() {
                 @Override
@@ -80,15 +50,40 @@ public class IconTabFragment extends BaseFragment {
                 }
             };
 
+    public static IconTabFragment newInstance(boolean customPicker) {
+        IconTabFragment iconTabFragment = new IconTabFragment();
+        Bundle args = new Bundle();
+        args.putBoolean(KEY_CUSTOM_PICKER, customPicker);
+        iconTabFragment.setArguments(args);
+        return iconTabFragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mCustomPicker = getArguments().getBoolean(KEY_CUSTOM_PICKER);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_icon_tab, container, false);
+        ButterKnife.bind(this, view);
+        initTabAndPager();
+        mTabLayout.setTabTextColors(UIUtils.adjustAlpha(Color.WHITE, 204), Color.WHITE);
+        return view;
+    }
+
     private void initTabAndPager() {
         mViewPager.addOnPageChangeListener(mPageChangeListener);
-        mViewPager.setPageMargin(DisplayUtil.dip2px(getContext(), 16));
+        mViewPager.setPageMargin(DisplayUtil.INSTANCE.dip2px(getContext(), 16));
 
         mPageAdapter = new IconViewPageAdapter(
                 getContext(), getChildFragmentManager(), mCustomPicker);
 
         mViewPager.setAdapter(mPageAdapter);
-        mViewPager.setPageMargin(DisplayUtil.dip2px(getContext(), -4));
+        mViewPager.setPageMargin(DisplayUtil.INSTANCE.dip2px(getContext(), -4));
 
         mTabLayout.setupWithViewPager(mViewPager);
 

@@ -13,8 +13,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import timber.log.Timber;
 
 /**
@@ -28,46 +26,37 @@ class AppDisplayInfoGetter {
                                                         Context context,
                                                         boolean chinese) {
         return Observable.just(new AppDisplayInfo())
-                .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
-                    @Override
-                    public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)
-                            throws Exception {
-                        if (PackageUtil.isPackageInstalled(context, packageName)) {
-                            Timber.d("installed " + packageName);
+                .flatMap(info -> {
+                    if (PackageUtil.isPackageInstalled(context, packageName)) {
+                        Timber.d("installed " + packageName);
+                        try {
+                            PackageManager pm =
+                                    context.getApplicationContext().getPackageManager();
                             try {
-                                PackageManager pm =
-                                        context.getApplicationContext().getPackageManager();
-                                try {
-                                    ApplicationInfo ai = pm.getApplicationInfo(packageName, 0);
-                                    info.setAppName((String) pm.getApplicationLabel(ai));
-                                    info.setIcon(pm.getApplicationIcon(ai));
-                                } catch (final PackageManager.NameNotFoundException e) {
-                                    Timber.e(e);
-                                }
-                            } catch (Exception e) {
+                                ApplicationInfo ai = pm.getApplicationInfo(packageName, 0);
+                                info.setAppName((String) pm.getApplicationLabel(ai));
+                                info.setIcon(pm.getApplicationIcon(ai));
+                            } catch (final PackageManager.NameNotFoundException e) {
                                 Timber.e(e);
                             }
-                        } else {
-                            Timber.d("not installed " + packageName);
+                        } catch (Exception e) {
+                            Timber.e(e);
                         }
-                        return Observable.just(info);
+                    } else {
+                        Timber.d("not installed " + packageName);
                     }
+                    return Observable.just(info);
                 })
-                .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
-                    @Override
-                    public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)
-                            throws Exception {
-
-                        if (chinese && info.needAddition()) {
-                            Timber.d("get from coolapk");
-                            return CoolapkClient.getInstance().getAppDisplayInfo(packageName)
-                                    .map(newInfo -> {
-                                        info.add(newInfo);
-                                        return info;
-                                    });
-                        } else {
-                            return Observable.just(info);
-                        }
+                .flatMap(info -> {
+                    if (chinese && info.needAddition()) {
+                        Timber.d("get from coolapk");
+                        return CoolapkClient.getInstance().getAppDisplayInfo(packageName)
+                                .map(newInfo -> {
+                                    info.add(newInfo);
+                                    return info;
+                                });
+                    } else {
+                        return Observable.just(info);
                     }
                 })
 //                .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
@@ -86,20 +75,16 @@ class AppDisplayInfoGetter {
 //                        }
 //                    }
 //                })
-                .flatMap(new Function<AppDisplayInfo, ObservableSource<AppDisplayInfo>>() {
-                    @Override
-                    public ObservableSource<AppDisplayInfo> apply(AppDisplayInfo info)
-                            throws Exception {
-                        if (info.needAddition()) {
-                            Timber.d("get from play");
-                            return AppDisplayInfoSpider.getNameFromPlay(packageName)
-                                    .map(newInfo -> {
-                                        info.add(newInfo);
-                                        return info;
-                                    });
-                        } else {
-                            return Observable.just(info);
-                        }
+                .flatMap(info -> {
+                    if (info.needAddition()) {
+                        Timber.d("get from play");
+                        return AppDisplayInfoSpider.getNameFromPlay(packageName)
+                                .map(newInfo -> {
+                                    info.add(newInfo);
+                                    return info;
+                                });
+                    } else {
+                        return Observable.just(info);
                     }
                 })
                 .map(info -> {

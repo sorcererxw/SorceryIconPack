@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
@@ -34,6 +35,7 @@ public class ResourceUtil {
         }
     }
 
+    @ColorInt
     public static int getColor(Context context, @ColorRes int resId) {
         return ContextCompat.getColor(context, resId);
     }

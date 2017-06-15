@@ -10,11 +10,11 @@ import android.transition.Transition;
  */
 
 public class FadeInTransition extends AutoTransition {
+    private static final int FADE_IN_DURATION = 250;
+
     private FadeInTransition() {
 
     }
-
-    private static final int FADE_IN_DURATION = 250;
 
     public static Transition createTransition() {
         AutoTransition transition = new AutoTransition();

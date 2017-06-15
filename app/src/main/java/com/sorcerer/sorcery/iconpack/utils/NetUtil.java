@@ -4,6 +4,10 @@ import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.text.format.Formatter;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -46,5 +50,24 @@ public class NetUtil {
     public static String getIpAddress(Context context) {
         WifiManager wm = (WifiManager) context.getSystemService(WIFI_SERVICE);
         return Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+    }
+
+    public static String readContent(String url) throws Exception {
+        URL website = new URL(url);
+        URLConnection connection = website.openConnection();
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(
+                        connection.getInputStream()));
+
+        StringBuilder response = new StringBuilder();
+        String inputLine;
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine).append("\n");
+        }
+
+        in.close();
+
+        return response.toString();
     }
 }

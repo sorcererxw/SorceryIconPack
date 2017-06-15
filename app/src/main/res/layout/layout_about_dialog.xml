@@ -26,12 +26,11 @@
             android:id="@+id/textView_about_dialog_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="@font/rockwell_std"
             android:text="Sorcery"
             android:textAllCaps="true"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:textSize="28sp"/>
 
         <TextView
             android:id="@+id/textView_about_dialog_slogan"
@@ -79,7 +78,8 @@
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/coolapk_svg"/>
+                android:src="@drawable/coolapk_svg"
+                android:visibility="gone"/>
         </LinearLayout>
 
         <TextView

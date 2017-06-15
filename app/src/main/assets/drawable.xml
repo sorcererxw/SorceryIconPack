@@ -670,7 +670,9 @@
    <item drawable="huawei_club"/>
     <item drawable="huawei_compass"/>
    <item drawable="huawei_crowdtest"/>
+    <item drawable="huawei_driving_mode"/>
    <item drawable="huawei_file_manager_hidisk"/>
+    <item drawable="huawei_find_my_phone"/>
     <item drawable="huawei_flashlight"/>
    <item drawable="huawei_health"/>
    <item drawable="huawei_hicloud"/>
@@ -692,6 +694,7 @@
    <item drawable="huawei_video"/>
    <item drawable="huawei_vmall"/>
     <item drawable="huawei_voice_assist"/>
+    <item drawable="huawei_wear"/>
     <item drawable="huawei_weather"/>
    <item drawable="huaxia_bank"/>
    <item drawable="huaxiong"/>
@@ -898,6 +901,7 @@
    <item drawable="microsoft_xbox_alt"/>
    <item drawable="microsoft_xbox_beta"/>
    <item drawable="microsoft_xbox_beta_alt"/>
+    <item drawable="mindly"/>
    <item drawable="minecraft_toolbox"/>
    <item drawable="minminguard"/>
    <item drawable="mioji_trip"/>
@@ -1211,6 +1215,7 @@
    <item drawable="shouxin_keyboard"/>
    <item drawable="shuqi"/>
    <item drawable="shuqi_alt"/>
+    <item drawable="simple_mind"/>
    <item drawable="sim_toolkit"/>
    <item drawable="sina_tianqitong"/>
    <item drawable="siyue_musicassistant"/>
@@ -1483,6 +1488,7 @@
    <item drawable="vst"/>
    <item drawable="vue"/>
    <category title="W"/>
+    <item drawable="wacai"/>
    <item drawable="wandoujia"/>
    <item drawable="wandoujia_eyepetizer"/>
    <item drawable="wandoujia_qingzhuomian"/>

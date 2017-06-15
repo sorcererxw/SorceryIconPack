@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.GridLayoutManager;
@@ -16,9 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.annimon.stream.Stream;
-import com.bumptech.glide.DrawableTypeRequest;
+import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.mikepenz.materialize.util.KeyboardUtil;
 import com.mikepenz.materialize.util.UIUtils;
@@ -237,8 +240,6 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         } else if (type == TYPE_HEADER) {
             HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(iconBean.getName()));
-//            mThemeManager.primaryTextColor().subscribe(
-//                    color -> headerHolder.mHeader.setTextColor(color));
         } else {
             IconViewHolder iconHolder = (IconViewHolder) holder;
             if (iconBean != null) {
@@ -259,13 +260,14 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
                                                 .getRes());
                             }
                         });
-
-                DrawableTypeRequest<Integer> request = mGlideRequestManager
+                RequestBuilder<Drawable> request = mGlideRequestManager
                         .load(iconBean.getRes());
                 if (mLessAnim) {
-                    request.dontAnimate();
+                    request.apply(RequestOptions.noAnimation());
+                } else {
+                    request.transition(new DrawableTransitionOptions().crossFade());
                 }
-                request.diskCacheStrategy(DiskCacheStrategy.NONE)
+                request.apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
                         .into(iconHolder.mIcon);
             } else {
                 iconHolder.itemView.setOnClickListener(null);
@@ -389,7 +391,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         } else {
             mActivity.startActivityForResult(
                     intent,
-                    MainActivity.REQUEST_ICON_DIALOG,
+                    MainActivity.Companion.getREQUEST_ICON_DIALOG(),
                     ActivityOptions.makeSceneTransitionAnimation(
                             mActivity,
                             holder.mIcon,

@@ -5,6 +5,7 @@
     android:id="@+id/coordinatorLayout_settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
     android:fitsSystemWindows="true">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,8 +13,8 @@
         android:id="@+id/activity_settings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:fitsSystemWindows="true"
+        android:orientation="vertical"
         tools:context="com.sorcerer.sorcery.iconpack.settings.SettingsActivity">
 
         <android.support.design.widget.AppBarLayout
@@ -25,11 +26,11 @@
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar
-                android:fitsSystemWindows="true"
                 android:id="@+id/toolbar_universal"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="4dp"
+                android:fitsSystemWindows="true"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
         </android.support.design.widget.AppBarLayout>
 

@@ -2196,4 +2196,21 @@
     <item component="ComponentInfo{com.huobi/com.huobi.activity.StartFlashActivity}"
           drawable="huobi"/>
     <item component="ComponentInfo{com.huobi/com.qihoo.util.StartActivity}" drawable="huobi"/>
+    <item component="ComponentInfo{com.modelmakertools.simplemindfree/com.modelmakertools.simplemindfree.SimpleMindFreeEditorActivity}"
+          drawable="simple_mind"/>
+    <item component="ComponentInfo{com.modelmakertools.simplemindpro/com.modelmakertools.simplemindpro.SimpleMindProEditorActivity}"
+          drawable="simple_mind"/>
+    <item component="ComponentInfo{com.wacai365/com.wacai365.LauncherActivity}" drawable="wacai"/>
+    <item component="ComponentInfo{com.huawei.vdrive/com.huawei.vdrive.ui.VDriveActivity}"
+          drawable="huawei_driving_mode"/>
+    <item component="ComponentInfo{com.huawei.android.remotecontrol/com.huawei.android.remotecontrol.ui.PhoneFinderActivity}"
+          drawable="huawei_find_my_phone"/>
+    <item component="ComponentInfo{com.huawei.android.remotecontrol/com.huawei.android.remotecontrol.ui.PFMainActivity}"
+          drawable="huawei_find_my_phone"/>
+    <item component="ComponentInfo{com.huawei.bone/com.huawei.bone.ui.SplashActivity}"
+          drawable="huawei_wear"/>
+    <item component="ComponentInfo{com.huawei.bone/com.huawei.bone.root.SplashActivity}"
+          drawable="huawei_wear"/>
+    <item component="ComponentInfo{com.dripgrind.mindly/com.dripgrind.mindly.highlights.MainActivity}"
+          drawable="mindly"/>
 </resources>

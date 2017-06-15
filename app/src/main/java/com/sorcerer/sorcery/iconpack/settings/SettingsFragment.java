@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
+import com.sorcerer.sorcery.iconpack.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.settings.about.AboutDialog;
 import com.sorcerer.sorcery.iconpack.settings.general.tab.CustomizeTabsFragment;
 import com.sorcerer.sorcery.iconpack.settings.licenses.ui.OpenSourceLibFragment;
@@ -45,23 +46,19 @@ import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 
 @SuppressWarnings("ALL")
 public class SettingsFragment extends BasePreferenceFragmentCompat {
+    private PreferenceScreen mPreferenceScreen;
+    private Preference mGeneralCustomizeTabs;
+    private Preference mGeneralClearCachePreference;
+    private SwitchPreference mUiNavBarPreference;
+    private PreferenceGroup mDevPreferenceGroup;
+    private Preference mAboutAppPreference;
+    private Preference mAboutLibPreference;
+    private boolean mChangingTheme = false;
+    private SwitchPreference mUiLessAnimPreference;
+
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
     }
-
-    private PreferenceScreen mPreferenceScreen;
-
-    private Preference mGeneralCustomizeTabs;
-
-    private Preference mGeneralClearCachePreference;
-
-    private SwitchPreference mUiNavBarPreference;
-
-    private PreferenceGroup mDevPreferenceGroup;
-
-    private Preference mAboutAppPreference;
-
-    private Preference mAboutLibPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -157,10 +154,6 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
         });
     }
 
-    private boolean mChangingTheme = false;
-
-    private SwitchPreference mUiLessAnimPreference;
-
     private void initUi() {
         mUiNavBarPreference =
                 (SwitchPreference) findPreference("preference_switch_ui_transparent_nav_bar");
@@ -209,7 +202,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
         mAboutAppPreference = findPreference("preference_about_app");
         mAboutAppPreference.setOnPreferenceClickListener(preference -> {
             if (!mPrefs.devOptionsOpened().getValue()) {
-                AboutDialog.show(getActivity(), new OnMultiTouchListener(5, () -> {
+                AboutDialog.INSTANCE.show(getActivity(), new OnMultiTouchListener(5, () -> {
                     Toast.makeText(getContext(), "Dev-options is opened", Toast.LENGTH_SHORT)
                             .show();
                     mPreferenceScreen.addPreference(mDevPreferenceGroup);
@@ -217,7 +210,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                     mPrefs.devOptionsOpened().setValue(true);
                 }));
             } else {
-                AboutDialog.show(getActivity());
+                AboutDialog.INSTANCE.show(getActivity());
             }
             return true;
         });

@@ -10,11 +10,11 @@ import android.transition.Transition;
  */
 
 public class FadeOutTransition extends AutoTransition {
+    private static final int FADE_OUT_DURATION = 250;
+
     private FadeOutTransition() {
 
     }
-
-    private static final int FADE_OUT_DURATION = 250;
 
     public static Transition withAction(TransitionListener finishingAction) {
         AutoTransition transition = new AutoTransition();

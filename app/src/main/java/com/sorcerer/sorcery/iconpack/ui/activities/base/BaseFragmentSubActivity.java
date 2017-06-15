@@ -2,7 +2,7 @@ package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
@@ -21,11 +21,11 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
 
     protected abstract Fragment provideInitFragment();
 
-    protected abstract CoordinatorLayout rootView();
-
-    public CoordinatorLayout getRootView() {
-        return rootView();
-    }
+//    protected abstract CoordinatorLayout rootView();
+//
+//    public CoordinatorLayout getRootView() {
+//        return rootView();
+//    }
 
     public void addFragment(@NonNull Fragment fragment) {
         addFragment(fragment, true);
@@ -43,12 +43,18 @@ public abstract class BaseFragmentSubActivity extends BaseSubActivity {
     }
 
     @Override
-    protected void init(Bundle savedInstanceState) {
-        super.init(savedInstanceState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
             addFragment(provideInitFragment(), false);
         }
     }
+
+//    @Override
+//    protected void init(Bundle savedInstanceState) {
+//        super.init(savedInstanceState);
+//
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

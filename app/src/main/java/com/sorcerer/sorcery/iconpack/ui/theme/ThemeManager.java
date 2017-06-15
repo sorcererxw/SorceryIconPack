@@ -15,11 +15,11 @@ import timber.log.Timber;
  */
 
 public class ThemeManager {
-    private BaseTheme mCurrentTheme;
-
     private final ThemePrefs mThemePrefs;
-
+    private BaseTheme mCurrentTheme;
     private Context mContext;
+    private final Function<Integer, Integer> COLOR_MAPPER =
+            color -> ContextCompat.getColor(mContext, color);
 
     public ThemeManager(Context context) {
         mContext = context;
@@ -32,7 +32,7 @@ public class ThemeManager {
 
     public Observable<BaseTheme> theme() {
         return mThemePrefs.theme().asObservable().map(s -> {
-            if (s.equals(DarkTheme.NAME)) {
+            if (s.equals(DarkTheme.Companion.getNAME())) {
                 return new DarkTheme();
             } else {
                 return new LightTheme();
@@ -119,7 +119,4 @@ public class ThemeManager {
     public BaseTheme getCurrentTheme() {
         return mCurrentTheme;
     }
-
-    private final Function<Integer, Integer> COLOR_MAPPER =
-            color -> ContextCompat.getColor(mContext, color);
 }

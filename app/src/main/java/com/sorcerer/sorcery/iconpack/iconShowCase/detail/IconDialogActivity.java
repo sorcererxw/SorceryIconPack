@@ -2,10 +2,13 @@ package com.sorcerer.sorcery.iconpack.iconShowCase.detail;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.transition.Transition;
@@ -24,8 +27,8 @@ import com.bumptech.glide.Glide;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.network.spiders.models.AppDisplayInfo;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
+import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.LocaleUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
@@ -37,14 +40,11 @@ import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 import static com.mikepenz.google_material_typeface_library.GoogleMaterial.Icon.gmd_compare;
-import static com.sorcerer.sorcery.iconpack.utils.DisplayUtil.dip2px;
 
 /**
  * @description:
@@ -53,32 +53,24 @@ import static com.sorcerer.sorcery.iconpack.utils.DisplayUtil.dip2px;
  */
 
 public class IconDialogActivity extends ToolbarActivity {
-    @BindView(R.id.toolbar_icon_dialog)
-    Toolbar mToolbar;
-
-    @BindView(R.id.textView_dialog_title)
-    TextView mTitleTextView;
-
-    @BindView(R.id.imageView_dialog_icon)
-    ImageView mIconImageView;
-
-    @BindView(R.id.relativeLayout_icon_dialog_background)
-    View mBackground;
-
-    @BindView(R.id.linearLayout_dialog_icon_show)
-    ViewGroup mRoot;
-
-    @BindView(R.id.frameLayout_dialog_icon_component_info_container)
-    FrameLayout mComponentContainer;
-
-    @BindView(R.id.linearLayout_dialog_title_container)
-    ViewGroup mTitleContainer;
-
     public static final String EXTRA_RES = "EXTRA_RES";
     public static final String EXTRA_NAME = "EXTRA_NAME";
     public static final String EXTRA_LABEL = "EXTRA_LABEL";
     public static final String EXTRA_LESS_ANIM = "EXTRA_LESS_ANIM";
-
+    @BindView(R.id.toolbar_icon_dialog)
+    Toolbar mToolbar;
+    @BindView(R.id.textView_dialog_title)
+    TextView mTitleTextView;
+    @BindView(R.id.imageView_dialog_icon)
+    ImageView mIconImageView;
+    @BindView(R.id.relativeLayout_icon_dialog_background)
+    View mBackground;
+    @BindView(R.id.linearLayout_dialog_icon_show)
+    ViewGroup mRoot;
+    @BindView(R.id.frameLayout_dialog_icon_component_info_container)
+    FrameLayout mComponentContainer;
+    @BindView(R.id.linearLayout_dialog_title_container)
+    ViewGroup mTitleContainer;
     private String mLabel;
     private String mName;
     private int mRes;
@@ -88,6 +80,9 @@ public class IconDialogActivity extends ToolbarActivity {
     private ImageView mOriginImage;
 
     private boolean mLessAnim = false;
+    private Menu mMenu;
+    private MenuItem mShowOriginMenuItem;
+    private boolean hasInitMenu = false;
 
     @Override
     protected int provideLayoutId() {
@@ -103,10 +98,10 @@ public class IconDialogActivity extends ToolbarActivity {
         return mToolbar;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
-    protected void init(Bundle savedInstanceState) {
-
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         mLabel = getIntent().getStringExtra(EXTRA_LABEL);
         mName = getIntent().getStringExtra(EXTRA_NAME);
         mRes = getIntent().getIntExtra(EXTRA_RES, 0);
@@ -119,15 +114,17 @@ public class IconDialogActivity extends ToolbarActivity {
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("");
+            getSupportActionBar().setBackgroundDrawable(
+                    new ColorDrawable(ResourceUtil.getColor(this, R.color.palette_transparent)));
         }
 
         mTitleTextView.setText(mLabel);
-        TextWeightUtil.medium(mTitleTextView);
+        TextWeightUtil.INSTANCE.medium(mTitleTextView);
 
         mIconImageView.setImageResource(mRes);
 
         mBackground.setOnTouchListener((v, event) -> {
-            if (!ViewUtil.isPointInsideView(event.getX(),
+            if (!ViewUtil.INSTANCE.isPointInsideView(event.getX(),
                     event.getY(),
                     findViewById(R.id.cardView_icon_dialog_card))) {
                 onBackPressed();
@@ -167,22 +164,23 @@ public class IconDialogActivity extends ToolbarActivity {
         });
     }
 
+//    @Override
+//    protected ViewGroup rootView() {
+//        return null;
+//    }
+
     private void showDetail() {
         Observable.just(mName)
                 .observeOn(Schedulers.newThread())
                 .map(name -> PackageUtil.getComponentByName(mContext, name))
                 .filter(s -> !TextUtils.isEmpty(s))
-                .flatMap(new Function<String, ObservableSource<AppDisplayInfo>>() {
-                    @Override
-                    public ObservableSource<AppDisplayInfo> apply(String component)
-                            throws Exception {
-                        mComponent = component;
-                        mPackageName = StringUtil.componentInfoToPackageName(mComponent);
-                        Timber.d(mPackageName);
-                        return AppDisplayInfoGetter
-                                .getAppDisplayInfo(mPackageName, IconDialogActivity.this,
-                                        LocaleUtil.isChinese(IconDialogActivity.this));
-                    }
+                .flatMap(component -> {
+                    mComponent = component;
+                    mPackageName = StringUtil.INSTANCE.componentInfoToPackageName(mComponent);
+                    Timber.d(mPackageName);
+                    return AppDisplayInfoGetter
+                            .getAppDisplayInfo(mPackageName, IconDialogActivity.this,
+                                    LocaleUtil.isChinese(IconDialogActivity.this));
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(info -> {
@@ -196,9 +194,16 @@ public class IconDialogActivity extends ToolbarActivity {
                 .map(info -> {
                     if (info.getIcon() == null && info.getIconUrl() != null) {
                         try {
+//                            Glide.with(IconDialogActivity.this)
+//                                    .load(info.getIconUrl()).into()
+                            Timber.d(info.getIconUrl());
                             info.setIcon(Glide.with(IconDialogActivity.this)
-                                    .load(info.getIconUrl()).into(-1, -1)
+                                    .load(info.getIconUrl())
+                                    .submit()
                                     .get());
+//                            info.setIcon(Glide.with(IconDialogActivity.this)
+//                                    .load(info.getIconUrl())
+//                                    .get());
                         } catch (InterruptedException | ExecutionException e) {
                             Timber.e(e);
                         }
@@ -225,7 +230,9 @@ public class IconDialogActivity extends ToolbarActivity {
                                                                     R.dimen.dialog_icon_size)
                                             );
                                     mOriginImage.setLayoutParams(params);
-                                    mOriginImage.setPadding(dip2px(mContext, 8), 0, 0, 0);
+                                    mOriginImage
+                                            .setPadding(DisplayUtil.INSTANCE.dip2px(mContext, 8), 0,
+                                                    0, 0);
                                 }
                                 if (mRoot.getChildCount() > 1) {
                                     mRoot.removeView(mOriginImage);
@@ -268,7 +275,7 @@ public class IconDialogActivity extends ToolbarActivity {
                     public void onAnimationStart(Animator animation) {
 
                         TextView textView = new TextView(mContext);
-                        TextWeightUtil.medium(textView);
+                        TextWeightUtil.INSTANCE.medium(textView);
                         textView.setTextColor(ResourceUtil.getAttrColor(mContext,
                                 android.R.attr.textColorPrimary));
                         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
@@ -277,7 +284,7 @@ public class IconDialogActivity extends ToolbarActivity {
                                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                                 RelativeLayout.LayoutParams.WRAP_CONTENT);
                         layoutParams.addRule(RelativeLayout.ABOVE, mTitleTextView.getId());
-                        layoutParams.setMargins(0, dip2px(mContext, 8), 0, 0);
+                        layoutParams.setMargins(0, DisplayUtil.INSTANCE.dip2px(mContext, 8), 0, 0);
                         textView.setLayoutParams(layoutParams);
                         mTitleContainer.addView(textView, 0);
                         mTitleContainer.requestLayout();
@@ -317,11 +324,6 @@ public class IconDialogActivity extends ToolbarActivity {
     }
 
     @Override
-    protected ViewGroup rootView() {
-        return null;
-    }
-
-    @Override
     protected void onStop() {
         super.onStop();
         finish();
@@ -332,11 +334,6 @@ public class IconDialogActivity extends ToolbarActivity {
         setResult(RESULT_OK, getIntent());
         super.finish();
     }
-
-    private Menu mMenu;
-    private MenuItem mShowOriginMenuItem;
-
-    private boolean hasInitMenu = false;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -363,7 +360,8 @@ public class IconDialogActivity extends ToolbarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_show_in_store) {
-            final String appPackageName = StringUtil.componentInfoToPackageName(mComponent);
+            final String appPackageName =
+                    StringUtil.INSTANCE.componentInfoToPackageName(mComponent);
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("market://details?id=" + appPackageName))

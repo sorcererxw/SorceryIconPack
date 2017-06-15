@@ -15,16 +15,13 @@ import java.util.Scanner;
  */
 
 public class Utils {
-    public static String readFile(File file) throws FileNotFoundException {
+    static String readFile(File file) throws FileNotFoundException {
         return new Scanner(file).useDelimiter("\\Z").next();
     }
 
-    public static void writeFile(File file,String s) throws IOException {
-        FileUtils.write(file,s, Charset.defaultCharset(),false);
+    static void writeFile(File file, String s) throws IOException {
+//        FileUtils.writeStringToFile(file,s,"UTF-8");
+        FileUtils.write(file, s, Charset.defaultCharset(), false);
     }
 
-    public static void main(String... args) throws FileNotFoundException {
-        System.out.println(readFile(new File(
-                "C:\\Users\\Sorcerer\\AndroidStudioProjects\\SorceryIconPack\\app\\src\\main\\res\\xml\\appfilter.xml")));
-    }
 }

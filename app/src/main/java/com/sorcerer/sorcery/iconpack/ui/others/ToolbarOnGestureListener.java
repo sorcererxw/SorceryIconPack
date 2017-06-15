@@ -11,11 +11,6 @@ import android.widget.AbsListView;
  */
 public class ToolbarOnGestureListener extends GestureDetector.SimpleOnGestureListener {
     private AbsListView mScrollTarget;
-
-    public interface DoubleTapListener {
-        void onDoubleTap();
-    }
-
     private DoubleTapListener mDoubleTapListener;
 
     public ToolbarOnGestureListener() {
@@ -40,5 +35,9 @@ public class ToolbarOnGestureListener extends GestureDetector.SimpleOnGestureLis
             mScrollTarget.smoothScrollToPosition(0);
         }
         return super.onDoubleTap(e);
+    }
+
+    public interface DoubleTapListener {
+        void onDoubleTap();
     }
 }

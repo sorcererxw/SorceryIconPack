@@ -46,40 +46,6 @@ public abstract class GridRecyclerAdapter<VH extends BaseFastRecyclerAdapter.Bas
         target.setLayoutParams(params);
     }
 
-    private class ItemMargin {
-        ItemMargin(double left, double top, double right, double bottom) {
-            this.left = 2 * left;
-            this.top = 2 * top;
-            this.right = 2 * right;
-            this.bottom = 2 * bottom;
-        }
-
-        double left;
-        double right;
-        double top;
-        double bottom;
-    }
-
-    enum ItemPosType {
-        ONE_COL_TOP,
-        ONE_COL_MID,
-        ONE_COL_BOTTOM,
-
-        ONE_ROW_LEFT,
-        ONE_ROW_MID,
-        ONE_ROW_RIGHT,
-
-        TOP_LEFT,
-        TOP_RIGHT,
-        BOTTOM_LEFT,
-        BOTTOM_RIGHT,
-        EDGE_TOP,
-        EDGE_BOTTOM,
-        EDGE_LEFT,
-        EDGE_RIGHT,
-        CENTER
-    }
-
     private ItemMargin getItemMargin(ItemPosType type) {
         switch (type) {
             case ONE_COL_TOP:
@@ -175,7 +141,41 @@ public abstract class GridRecyclerAdapter<VH extends BaseFastRecyclerAdapter.Bas
         if (dp == 1) {
             return 1;
         }
-        return DisplayUtil.dip2px(mContext, dp);
+        return DisplayUtil.INSTANCE.dip2px(mContext, dp);
+    }
+
+    enum ItemPosType {
+        ONE_COL_TOP,
+        ONE_COL_MID,
+        ONE_COL_BOTTOM,
+
+        ONE_ROW_LEFT,
+        ONE_ROW_MID,
+        ONE_ROW_RIGHT,
+
+        TOP_LEFT,
+        TOP_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_RIGHT,
+        EDGE_TOP,
+        EDGE_BOTTOM,
+        EDGE_LEFT,
+        EDGE_RIGHT,
+        CENTER
+    }
+
+    private class ItemMargin {
+        double left;
+        double right;
+        double top;
+        double bottom;
+
+        ItemMargin(double left, double top, double right, double bottom) {
+            this.left = 2 * left;
+            this.top = 2 * top;
+            this.right = 2 * right;
+            this.bottom = 2 * bottom;
+        }
     }
 
 }

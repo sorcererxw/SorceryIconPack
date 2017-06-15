@@ -193,6 +193,14 @@ public class AsynMarkdownView extends RelativeLayout {
         return this;
     }
 
+    public void setLoading(boolean loading) {
+        if (loading) {
+            mProgressBar.setVisibility(VISIBLE);
+        } else {
+            mProgressBar.setVisibility(GONE);
+        }
+    }
+
     public AsynMarkdownView replaceStyleSheet(StyleSheet oldStyle, StyleSheet newStyle) {
         if (oldStyle != newStyle) {
             if (newStyle == null) {

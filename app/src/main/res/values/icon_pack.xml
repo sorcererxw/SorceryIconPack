@@ -140,12 +140,21 @@
         <item>noisli</item>
         <item>glasswire</item>
         <item>nhk_easy_news_japan</item>
+        <item>mindly</item>
+        <item>wacai</item>
         <item>vocabulary</item>
+        <item>huawei_driving_mode</item>
+        <item>huawei_wear</item>
+        <item>simple_mind</item>
+        <item>ofo_bicycler</item>
+        <item>huawei_find_my_phone</item>
         <item>period_tracker</item>
         <item>@string/icon_label_updated</item>
         <item>tencent_qq_tim</item>
         <item>google_play_store</item>
         <item>ali_trip</item>
+        <item>flyme_clock</item>
+        <item>oneplus_camera_oxygen</item>
         <item>gravity_box</item>
         <item>google_calendar</item>
         <item>google_calendar_1</item>
@@ -844,7 +853,9 @@
         <item>huawei_club</item>
         <item>huawei_compass</item>
         <item>huawei_crowdtest</item>
+        <item>huawei_driving_mode</item>
         <item>huawei_file_manager_hidisk</item>
+        <item>huawei_find_my_phone</item>
         <item>huawei_flashlight</item>
         <item>huawei_health</item>
         <item>huawei_hicloud</item>
@@ -866,6 +877,7 @@
         <item>huawei_video</item>
         <item>huawei_vmall</item>
         <item>huawei_voice_assist</item>
+        <item>huawei_wear</item>
         <item>huawei_weather</item>
         <item>huaxia_bank</item>
         <item>huaxiong</item>
@@ -1069,6 +1081,7 @@
         <item>microsoft_xbox_alt</item>
         <item>microsoft_xbox_beta</item>
         <item>microsoft_xbox_beta_alt</item>
+        <item>mindly</item>
         <item>minecraft_toolbox</item>
         <item>minminguard</item>
         <item>mioji_trip</item>
@@ -1378,6 +1391,7 @@
         <item>shuqi</item>
         <item>shuqi_alt</item>
         <item>sim_toolkit</item>
+        <item>simple_mind</item>
         <item>sina_tianqitong</item>
         <item>siyue_musicassistant</item>
         <item>skype</item>
@@ -1646,6 +1660,7 @@
         <item>vst</item>
         <item>vue</item>
         <item>**W**</item>
+        <item>wacai</item>
         <item>wandoujia</item>
         <item>wandoujia_eyepetizer</item>
         <item>wandoujia_qingzhuomian</item>

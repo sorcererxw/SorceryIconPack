@@ -51,6 +51,28 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  */
 public class IconFragment extends LazyFragment implements IViewPageFragment {
 
+    private static final String mArgFlagKey = "flag";
+    private static final String mArgCustomPickerKey = "custom picker";
+    @BindView(R.id.relativeLayout_icon_gird)
+    RelativeLayout mRoot;
+    @BindView(R.id.recyclerView_icon_gird)
+    RecyclerView mGridView;
+    private List<IconBean> mIconBeanList;
+    private DragScrollBar mScrollBar;
+    private IconAdapter mIconAdapter;
+    private GridLayoutManager mGridLayoutManager;
+    private boolean mNeedResize = false;
+    private int mNumOfRows;
+
+    public static IconFragment newInstance(IconFlag flag, boolean customPicker) {
+        IconFragment fragment = new IconFragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(mArgFlagKey, flag);
+        bundle.putBoolean(mArgCustomPickerKey, customPicker);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
     @Override
     public void onSelected() {
 
@@ -68,33 +90,6 @@ public class IconFragment extends LazyFragment implements IViewPageFragment {
             }
         }
     }
-
-    private List<IconBean> mIconBeanList;
-
-    @BindView(R.id.relativeLayout_icon_gird)
-    RelativeLayout mRoot;
-
-    @BindView(R.id.recyclerView_icon_gird)
-    RecyclerView mGridView;
-
-    private DragScrollBar mScrollBar;
-
-    public static IconFragment newInstance(IconFlag flag, boolean customPicker) {
-        IconFragment fragment = new IconFragment();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(mArgFlagKey, flag);
-        bundle.putBoolean(mArgCustomPickerKey, customPicker);
-        fragment.setArguments(bundle);
-        return fragment;
-    }
-
-    private static final String mArgFlagKey = "flag";
-    private static final String mArgCustomPickerKey = "custom picker";
-
-    private IconAdapter mIconAdapter;
-    private GridLayoutManager mGridLayoutManager;
-
-    private boolean mNeedResize = false;
 
     @Override
     protected void onCreateViewLazy(Bundle savedInstance) {
@@ -173,8 +168,6 @@ public class IconFragment extends LazyFragment implements IViewPageFragment {
             mNeedResize = true;
         }
     }
-
-    private int mNumOfRows;
 
     private void calcNumOfRows() {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
@@ -280,7 +273,7 @@ public class IconFragment extends LazyFragment implements IViewPageFragment {
         params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         params.addRule(RelativeLayout.ALIGN_PARENT_END);
         mScrollBar.setLayoutParams(params);
-        mScrollBar.setScrollBarSize(DisplayUtil.dip2px(getContext(), 100));
+        mScrollBar.setScrollBarSize(DisplayUtil.INSTANCE.dip2px(getContext(), 100));
         Indicator indicator = new AlphabetIndicator(getContext());
         mScrollBar.setIndicator(indicator, true);
         mScrollBar.setFitsSystemWindows(true);

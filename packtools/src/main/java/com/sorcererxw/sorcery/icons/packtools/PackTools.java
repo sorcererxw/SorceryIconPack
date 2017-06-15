@@ -25,7 +25,7 @@ public class PackTools {
      * 5. zhCN -> zhTW
      */
 
-    public static void pack() {
+    private static void pack() {
         try {
             copyIcons();
             System.out.println("copying icons successfully");
@@ -68,7 +68,8 @@ public class PackTools {
             Utils.writeFile(
                     new File(Config.PROJECT_MAIN_PATH + "\\res\\values-zh-rHK\\strings.xml"),
                     s);
-            Utils.writeFile(new File(Config.PROJECT_MAIN_PATH + "\\res\\values-zh-rTW\\strings.xml"),
+            Utils.writeFile(
+                    new File(Config.PROJECT_MAIN_PATH + "\\res\\values-zh-rTW\\strings.xml"),
                     s);
             System.out.println("strings-cn successfully written");
         } catch (IOException e) {

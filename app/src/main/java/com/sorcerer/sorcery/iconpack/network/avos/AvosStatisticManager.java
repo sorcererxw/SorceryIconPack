@@ -39,7 +39,7 @@ public class AvosStatisticManager {
     public void post() {
         AvosStatisticData data = new AvosStatisticData();
         AvosStatisticData.ClientBean clientBean = new AvosStatisticData.ClientBean();
-        clientBean.setId(mPrefs.getUUID().getValue());
+        clientBean.setId(mPrefs.getUuid().getValue());
         clientBean.setPlatform("Android");
         clientBean.setOsVersion(Build.VERSION.SDK_INT + "");
         clientBean.setAppVersion(BuildConfig.VERSION_NAME);

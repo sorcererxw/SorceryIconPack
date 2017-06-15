@@ -24,10 +24,6 @@ public class QCardView extends CardView {
 
     private boolean mTouchable = false;
 
-    public void setTouchCallBack(TouchCallBack touchCallBack) {
-        mTouchCallBack = touchCallBack;
-    }
-
     public QCardView(Context context) {
         this(context, null);
     }
@@ -39,8 +35,12 @@ public class QCardView extends CardView {
     public QCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mScroller = new Scroller(context);
-        setTranslationZ(DisplayUtil.dip2px(context, 2));
+        setTranslationZ(DisplayUtil.INSTANCE.dip2px(context, 2));
 
+    }
+
+    public void setTouchCallBack(TouchCallBack touchCallBack) {
+        mTouchCallBack = touchCallBack;
     }
 
     public boolean isTouchable() {
@@ -49,12 +49,6 @@ public class QCardView extends CardView {
 
     public void setTouchable(boolean touchable) {
         mTouchable = touchable;
-    }
-
-    public interface TouchCallBack {
-        void onDown();
-
-        void onUp();
     }
 
     @Override
@@ -113,6 +107,12 @@ public class QCardView extends CardView {
                 break;
         }
         return true;
+    }
+
+    public interface TouchCallBack {
+        void onDown();
+
+        void onUp();
     }
 
 }

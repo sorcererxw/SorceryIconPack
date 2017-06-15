@@ -1,1 +1,1 @@
-include ':app', ':dashboard', ':packtools'
+include ':app', ':packtools'

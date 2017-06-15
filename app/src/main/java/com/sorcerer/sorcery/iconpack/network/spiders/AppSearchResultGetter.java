@@ -3,19 +3,15 @@ package com.sorcerer.sorcery.iconpack.network.spiders;
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.sorcerer.sorcery.iconpack.network.coolapk.CoolapkClient;
-import com.sorcerer.sorcery.iconpack.network.coolapk.models.CoolapkSearchResult;
 import com.sorcerer.sorcery.iconpack.network.coolapk.models.CoolapkSearchResult.CoolapkSearchBean;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import timber.log.Timber;
 
 /**
@@ -38,13 +34,8 @@ public class AppSearchResultGetter {
 
     public static Observable<List<String>> searchViaApi(String text, int page) {
         return CoolapkClient.getInstance().search(text, page)
-                .flatMap(new Function<CoolapkSearchResult, ObservableSource<CoolapkSearchBean>>() {
-                    @Override
-                    public ObservableSource<CoolapkSearchBean> apply(
-                            CoolapkSearchResult coolapkSearchResult) throws Exception {
-                        return Observable.fromIterable(coolapkSearchResult.getData());
-                    }
-                })
+                .flatMap(coolapkSearchResult -> Observable
+                        .fromIterable(coolapkSearchResult.getData()))
                 .onErrorResumeNext(throwable -> {
                     return Observable.fromIterable(new ArrayList<>());
                 })
@@ -53,7 +44,6 @@ public class AppSearchResultGetter {
                 .toObservable();
     }
 
-    @SuppressWarnings("unchecked")
     public static Observable<List<String>> search(String text) {
         return Observable.zip(
                 searchApkOnCoolapk(text),
@@ -75,23 +65,21 @@ public class AppSearchResultGetter {
                                                             int page) {
         return Observable.just(searchText)
                 .map(text -> "http://www.coolapk.com/" + type + "/search?q=" + text + "&p=" + page)
-                .flatMap(new Function<String, Observable<Element>>() {
-                    public Observable<Element> apply(String url) {
-                        try {
-                            Document document = Jsoup
-                                    .connect(url)
-                                    .header("User-Agent",
-                                            "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
-                                    .timeout(3000)
-                                    .get();
-                            return Observable.fromIterable(document
-                                    .getElementsByClass("media-list ex-card-app-list").get(0)
-                                    .getElementsByTag("li"));
-                        } catch (Exception e) {
-                            Timber.e(e);
-                        }
-                        return Observable.fromIterable(new ArrayList<>());
+                .flatMap(url -> {
+                    try {
+                        Document document = Jsoup
+                                .connect(url)
+                                .header("User-Agent",
+                                        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2")
+                                .timeout(3000)
+                                .get();
+                        return Observable.fromIterable(document
+                                .getElementsByClass("media-list ex-card-app-list").get(0)
+                                .getElementsByTag("li"));
+                    } catch (Exception e) {
+                        Timber.e(e);
                     }
+                    return Observable.fromIterable(new ArrayList<>());
                 })
                 .map(element -> element
                         .getElementsByClass("media-body").get(0)

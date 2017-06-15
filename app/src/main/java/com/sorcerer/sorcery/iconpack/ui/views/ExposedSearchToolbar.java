@@ -1,17 +1,13 @@
 package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.annotation.StringRes;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
-import android.view.ViewGroup;
+import android.view.View;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
-
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * @description:
@@ -20,6 +16,8 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  */
 
 public class ExposedSearchToolbar extends Toolbar {
+
+    private TextView mTitleTextView;
 
     public ExposedSearchToolbar(Context context) {
         super(context);
@@ -42,18 +40,9 @@ public class ExposedSearchToolbar extends Toolbar {
         initTitle(context);
     }
 
-    private TextView mTitleTextView;
-
     private void initTitle(Context context) {
         super.setTitle("");
-        mTitleTextView = new TextView(context);
-        mTitleTextView.setTextColor(
-                ResourceUtil.getAttrColor(context, android.R.attr.textColorSecondary));
-        mTitleTextView.setAlpha(0.8f);
-        mTitleTextView.setTextSize(20);
-        mTitleTextView.setLayoutParams(new ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
-        mTitleTextView
-                .setTypeface(Typeface.createFromAsset(context.getAssets(), "RockwellStd.otf"));
+        mTitleTextView = (TextView) View.inflate(context, R.layout.layout_searchbar_logo, null);
         addView(mTitleTextView);
     }
 
