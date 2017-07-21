@@ -20,7 +20,6 @@ public class Utils {
     }
 
     static void writeFile(File file, String s) throws IOException {
-//        FileUtils.writeStringToFile(file,s,"UTF-8");
         FileUtils.write(file, s, Charset.defaultCharset(), false);
     }
 

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import br.tiagohm.markdownview.css.styles.Github
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity
-import com.sorcerer.sorcery.iconpack.ui.views.markdown.AsynMarkdownView
+import com.sorcerer.sorcery.iconpack.ui.views.AsynMarkdownView
 import com.sorcerer.sorcery.iconpack.utils.NetUtil
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

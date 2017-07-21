@@ -13,7 +13,6 @@ import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.fragments.BaseFragment;
 import com.sorcerer.sorcery.iconpack.ui.views.DoubleTapTabLayout;
-import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,13 +76,13 @@ public class IconTabFragment extends BaseFragment {
 
     private void initTabAndPager() {
         mViewPager.addOnPageChangeListener(mPageChangeListener);
-        mViewPager.setPageMargin(DisplayUtil.INSTANCE.dip2px(getContext(), 16));
+        mViewPager.setPageMargin((int) UIUtils.convertDpToPixel(16, getContext()));
 
         mPageAdapter = new IconViewPageAdapter(
                 getContext(), getChildFragmentManager(), mCustomPicker);
 
         mViewPager.setAdapter(mPageAdapter);
-        mViewPager.setPageMargin(DisplayUtil.INSTANCE.dip2px(getContext(), -4));
+        mViewPager.setPageMargin((int) UIUtils.convertDpToPixel(-4, getContext()));
 
         mTabLayout.setupWithViewPager(mViewPager);
 

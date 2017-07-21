@@ -23,6 +23,7 @@ import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
+import com.mikepenz.materialize.util.UIUtils
 import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconTabFragment
 import com.sorcerer.sorcery.iconpack.network.avos.AvosStatisticManager
 import com.sorcerer.sorcery.iconpack.ui.activities.WelcomeActivity
@@ -30,7 +31,6 @@ import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity
 import com.sorcerer.sorcery.iconpack.ui.anim.SearchTransitioner
 import com.sorcerer.sorcery.iconpack.ui.anim.ViewFader
 import com.sorcerer.sorcery.iconpack.ui.views.ExposedSearchToolbar
-import com.sorcerer.sorcery.iconpack.utils.DisplayUtil
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -100,6 +100,7 @@ class MainActivity : BaseActivity() {
         }
         mSearchToolbar!!.setOnLongClickListener {
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            @Suppress("DEPRECATION")
             vibrator.vibrate(200)
             mAppBarLayout!!.setExpanded(true, true)
             mAppBarLayout!!.post { mSearchTransitioner!!.transitionToSearch() }
@@ -209,35 +210,16 @@ class MainActivity : BaseActivity() {
         }
 
         mDrawer!!.setOnDrawerItemClickListener { _, _, drawerItem ->
-            var needCloseDrawer = true
-
             when (drawerItem.tag as String) {
                 "apply" -> mNavigator!!.toAppleActivity()
                 "settings" -> mNavigator!!.toSettingsActivity()
                 "help" -> mNavigator!!.toHelpMarkdownActivity()
                 "donate" -> mNavigator!!.toDonateActivity()
                 "request" -> mNavigator!!.toIconRequest()
-                "suggest" -> if (!Navigator.toMail(this@MainActivity,
-                        "feedback@sorcererxw.com",
-                        "Sorcery Icons feedback",
-                        "")) {
-                    Snackbar.make(mDrawer!!.drawerLayout,
-                            R.string.feedback_need_mailbox,
-                            Snackbar.LENGTH_LONG)
-                            .setAction(R.string.action_install
-                            ) {
-                                Navigator.toAppMarketSearchResult(this,
-                                        ResourceUtil.getString(this, R.string.market_search_mail))
-                            }
-                            .show()
-                    needCloseDrawer = false
-                }
+                "suggest" -> showFeedbackOptionPanel()
                 "test" -> mNavigator!!.toTestActivity()
-                "custom" -> mNavigator!!.toCustomWorkshopActivity()
             }
-            if (needCloseDrawer) {
-                Handler().post { this.closeDrawer() }
-            }
+            Handler().post { this.closeDrawer() }
             false
         }
 
@@ -266,21 +248,6 @@ class MainActivity : BaseActivity() {
 
                     val drawable = ResourceUtil
                             .getDrawable(this@MainActivity, R.drawable.drawer_head_simple)
-                    //                    if (mThemeManager.getCurrentTheme().isDark()) {
-                    //                        /**
-                    //                         * Color matrix that flips the components (<code>-1.0f * c + 255 = 255 - c</code>)
-                    //                         * and keeps the alpha intact.
-                    //                         */
-                    //                        float[] NEGATIVE = {
-                    //                                -1.0f, 0, 0, 0, 255, // red
-                    //                                0, -1.0f, 0, 0, 255, // green
-                    //                                0, 0, -1.0f, 0, 255, // blue
-                    //                                0, 0, 0, 1.0f, 0  // alpha
-                    //                        };
-                    //
-                    //                        drawable.setColorFilter(new ColorMatrixColorFilter(NEGATIVE));
-                    //                        image.setAlpha(0);
-                    //                    }
                     image.setImageDrawable(drawable)
                     var imageLayoutParams: LayoutParams? = image.layoutParams
                     if (imageLayoutParams == null) {
@@ -291,7 +258,7 @@ class MainActivity : BaseActivity() {
                     image.layoutParams = imageLayoutParams
 
 
-                    if (mThemeManager.currentTheme.isDark) {
+                    if (mPrefs.nightMode()) {
                         image.setImageDrawable(ColorDrawable(
                                 ResourceUtil.getAttrColor(mContext, R.attr.colorCard)))
                     }
@@ -299,7 +266,8 @@ class MainActivity : BaseActivity() {
                     val bottomSpace = view.findViewById<View>(R.id.view_drawer_head_space_bottom)
                     var bottomSpaceLayoutParams: LayoutParams? = bottomSpace.layoutParams
                     val bottomPadding = Math.max(0,
-                            DisplayUtil.dip2px(this@MainActivity, 178f) - height)
+                            UIUtils.convertDpToPixel(178f, this@MainActivity).toInt() - height
+                    )
                     if (bottomSpaceLayoutParams == null) {
                         bottomSpaceLayoutParams = LayoutParams(MATCH_PARENT, bottomPadding)
                     } else {
@@ -365,6 +333,25 @@ class MainActivity : BaseActivity() {
             return true
         }
         return false
+    }
+
+    private fun showFeedbackOptionPanel() {
+        if (!Navigator.toMail(this@MainActivity,
+                "feedback@sorcererxw.com",
+                "Sorcery Icons feedback",
+                "")) {
+            Snackbar.make(mDrawer!!.drawerLayout,
+                    R.string.feedback_need_mailbox,
+                    Snackbar.LENGTH_LONG)
+                    .setAction(R.string.action_install
+                    ) {
+                        Navigator.toAppMarketSearchResult(this,
+                                ResourceUtil.getString(this, R.string.market_search_mail))
+                    }
+                    .show()
+        }
+//        var builder = BottomSheetDialogBuilder(this)
+//        builder.build().show()
     }
 
     fun onReturnCustomPickerRes(res: Int) {

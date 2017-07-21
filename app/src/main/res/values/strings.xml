@@ -351,4 +351,14 @@
     <string name="market_search_mail">mail</string>
 
     <string name="feedback_need_mailbox">Please install mailbox application first</string>
+
+    <string name="feedback_bug" translatable="false">Report Bug</string>
+    <string name="feedback_suggest" translatable="false">Improvement suggestions</string>
+    <string name="feedback_need_icon" translatable="false">Icon requests</string>
+    <string name="feedback_dislike_icon" translatable="false">Dislike icons</string>
+
+    <string name="feedback_template_bug" translatable="false">BUG</string>
+    <string name="feedback_template_suggest" translatable="false">SUGGEST</string>
+    <string name="feedback_template_need_icon" translatable="false">NEED iCON</string>
+    <string name="feedback_template_dislike_icon" translatable="false">DISLIKE ICON</string>
 </resources>

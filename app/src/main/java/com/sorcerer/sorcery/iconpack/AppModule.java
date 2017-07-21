@@ -3,7 +3,6 @@ package com.sorcerer.sorcery.iconpack;
 import android.content.Context;
 
 import com.sorcerer.sorcery.iconpack.data.db.Db;
-import com.sorcerer.sorcery.iconpack.ui.theme.ThemeManager;
 
 import javax.inject.Singleton;
 
@@ -34,12 +33,6 @@ class AppModule {
     @Singleton
     SorceryPrefs provideSorceryPrefs() {
         return new SorceryPrefs(mApp);
-    }
-
-    @Provides
-    @Singleton
-    ThemeManager provideThemeManager() {
-        return new ThemeManager(mApp);
     }
 
     @Provides

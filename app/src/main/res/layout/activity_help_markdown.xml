@@ -17,7 +17,7 @@
 
         <include layout="@layout/toolbar_universal"/>
 
-        <com.sorcerer.sorcery.iconpack.ui.views.markdown.AsynMarkdownView
+        <com.sorcerer.sorcery.iconpack.ui.views.AsynMarkdownView
             android:id="@+id/markdownView_help"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

@@ -1,5 +1,7 @@
 package com.sorcererxw.sorcery.icons.packtools;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
 import com.luhuiguo.chinese.ChineseUtils;
 import com.sorcererxw.sorcery.icons.packtools.leancloud.LeancloudClient;
 
@@ -9,8 +11,6 @@ import org.jsoup.nodes.Document;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class PackTools {
     public static void main(String... args) {
@@ -25,7 +25,7 @@ public class PackTools {
      * 5. zhCN -> zhTW
      */
 
-    private static void pack() {
+    public static void pack() {
         try {
             copyIcons();
             System.out.println("copying icons successfully");
@@ -82,7 +82,7 @@ public class PackTools {
         File fileDestDir = new File(Config.PROJECT_MAIN_PATH + "\\res\\drawable-nodpi");
         FileUtils.cleanDirectory(fileDestDir);
         File iconSourceDir = new File(Config.ICON_SOURCE_PATH);
-        Arrays.stream(iconSourceDir.listFiles())
+        Stream.of(iconSourceDir.listFiles())
                 .forEach(file -> {
                     try {
                         FileUtils.copyFileToDirectory(file, fileDestDir);
@@ -95,12 +95,12 @@ public class PackTools {
     private static void handleIconsArray() throws IOException {
         File iconPack = new File(Config.PROJECT_MAIN_PATH + "\\res\\values\\icon_pack.xml");
         Document document = Jsoup.parse(Utils.readFile(iconPack));
-        String res = document.getElementsByTag("string-array").stream()
+        String res = Stream.of(document.getElementsByTag("string-array"))
                 .map(element -> {
                     if (element.attr("name").equals("icon_pack")) {
                         final char[] now = {0};
                         return "<string-array name=\"icon_pack\" translatable=\"false\">\n"
-                                + Arrays.stream(new File(Config.ICON_SOURCE_PATH).listFiles())
+                                + Stream.of(new File(Config.ICON_SOURCE_PATH).listFiles())
                                 .filter(file -> file.isFile()
                                         && file.getName().matches("[a-z][a-z0-9_]+.png"))
                                 .map(file -> file.getName().split("\\.")[0])
@@ -110,13 +110,13 @@ public class PackTools {
                                         if (s.matches("a[0-9].*")) {
                                             if (now[0] == 0) {
                                                 now[0] = 1;
-                                                return "<item>*****</item>\n"
+                                                return "<item>*****</item>"
                                                         + "<item>" + s + "</item>";
                                             }
                                         } else {
                                             now[0] = s.charAt(0);
                                             return "<item>**" + Character.toUpperCase(now[0])
-                                                    + "**</item>\n"
+                                                    + "**</item>"
                                                     + "<item>" + s + "</item>";
                                         }
                                     }
@@ -133,6 +133,7 @@ public class PackTools {
                 "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
                         + "<resources>\n"
                         + res.replaceAll(">\\s+", ">").replaceAll("\\s+<", "<")
+                        .replaceAll("</item>", "</item>\n")
                         + "</resources>");
     }
 

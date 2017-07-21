@@ -7,7 +7,6 @@ import com.sorcerer.sorcery.iconpack.BuildConfig;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosBatchRequest;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosBatchResult;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosIconRequestBean;
-import com.sorcerer.sorcery.iconpack.network.avos.models.AvosQuerySelection;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosRequest;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosStatisticData;
 import com.sorcerer.sorcery.iconpack.network.avos.models.EmptyBean;
@@ -15,7 +14,6 @@ import com.sorcerer.sorcery.iconpack.network.avos.models.EmptyBean;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import retrofit2.Retrofit;
@@ -31,14 +29,6 @@ import timber.log.Timber;
 
 public class AvosClient {
     private static AvosClient sAvosClient;
-
-    public static AvosClient getInstance() {
-        if (sAvosClient == null) {
-            sAvosClient = new AvosClient();
-        }
-        return sAvosClient;
-    }
-
     private AvosService mAvosService;
 
     private AvosClient() {
@@ -59,6 +49,13 @@ public class AvosClient {
                 .create(AvosService.class);
     }
 
+    public static AvosClient getInstance() {
+        if (sAvosClient == null) {
+            sAvosClient = new AvosClient();
+        }
+        return sAvosClient;
+    }
+
     public Observable<Boolean> postIconRequest(AvosIconRequestBean iconRequestBean) {
         return mAvosService
                 .createObject(AvosIconRequestBean.REQUEST_TABLE, iconRequestBean)
@@ -75,14 +72,7 @@ public class AvosClient {
                                 "/1.1/classes/RequestTable",
                                 iconRequestBean))
                         .collect(Collectors.toList())))
-                .flatMap(
-                        new io.reactivex.functions.Function<List<AvosBatchResult>, ObservableSource<AvosBatchResult>>() {
-                            @Override
-                            public ObservableSource<AvosBatchResult> apply(
-                                    List<AvosBatchResult> avosBatchResults) throws Exception {
-                                return Observable.fromIterable(avosBatchResults);
-                            }
-                        })
+                .flatMap(Observable::fromIterable)
                 .doOnEach(avosBatchResultNotification -> {
                     Timber.d(new Gson().toJson(avosBatchResultNotification));
                 })
@@ -94,20 +84,6 @@ public class AvosClient {
 
     public Observable<List<AvosBatchResult>> postBatch(AvosBatchRequest request) {
         return mAvosService.batch(request);
-    }
-
-    public Observable<Integer> getAppRequestedTime(String packageName) {
-        AvosQuerySelection selection = new AvosQuerySelection();
-        selection.setSelection("package", packageName);
-        return mAvosService.queryRequestStatistic(selection.toString(), "count")
-                .map(result -> {
-                    if (result.getResults() != null
-                            && result.getResults().size() >= 1
-                            && result.getResults().get(0) != null) {
-                        return result.getResults().get(0).getCount();
-                    }
-                    return 0;
-                });
     }
 
     public Observable<EmptyBean> pustStatistic(AvosStatisticData data) {

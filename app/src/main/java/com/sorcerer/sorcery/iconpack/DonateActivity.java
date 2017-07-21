@@ -2,14 +2,10 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.animation.Animator;
 import android.content.ActivityNotFoundException;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.DisplayMetrics;
@@ -20,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.android.vending.billing.IInAppBillingService;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -28,11 +23,6 @@ import com.bumptech.glide.request.transition.Transition;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.views.QCardView;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -54,8 +44,8 @@ public class DonateActivity extends BaseSubActivity {
     ImageView mCardImage;
     @BindView(R.id.coordinatorLayout_donate)
     CoordinatorLayout mCoordinatorLayout;
-    private IInAppBillingService mService;
-    private ServiceConnection mServiceConnection;
+//    private IInAppBillingService mService;
+//    private ServiceConnection mServiceConnection;
 
     @Override
     protected void onStart() {
@@ -85,44 +75,44 @@ public class DonateActivity extends BaseSubActivity {
             startActivity(intent);
             mPrefs.donated().setValue(true);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(mActivity, "no alipay", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "no alipay", Toast.LENGTH_SHORT).show();
             Timber.e(e);
         }
     }
 
     @OnClick(R.id.button_donate_play)
     void onPlayClick() {
-        try {
-            ArrayList<String> skuList = new ArrayList<>();
-            Bundle querySkus = new Bundle();
-            querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
-            Bundle skuDetails = mService.getSkuDetails(3, getPackageName(), "inapp", querySkus);
-            if (skuDetails.getInt("RESPONSE_CODE") == 0) {
-                ArrayList<String> responseList
-                        = skuDetails.getStringArrayList("DETAILS_LIST");
-
-                assert responseList != null;
-                for (String thisResponse : responseList) {
-                    JSONObject object = new JSONObject(thisResponse);
-                    String sku = object.getString("productId");
-                    String price = object.getString("price");
-                    Timber.d(sku + " : " + price);
-//                    if (sku.equals("premiumUpgrade")) {
-//                        mPremiumUpgradePrice = price;
-//                    } else if (sku.equals("gas")) {
-//                        mGasPrice = price;
-//                    }
-                }
-            }
-        } catch (RemoteException | JSONException e) {
-            e.printStackTrace();
-        }
 //        try {
-//            Bundle buyIntentBundle =
-//                    mService.getBuyIntent(3, getPackageName(), "donate_1.99", "inapp", "");
-//        } catch (RemoteException e) {
+//            ArrayList<String> skuList = new ArrayList<>();
+//            Bundle querySkus = new Bundle();
+//            querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
+//            Bundle skuDetails = mService.getSkuDetails(3, getPackageName(), "inapp", querySkus);
+//            if (skuDetails.getInt("RESPONSE_CODE") == 0) {
+//                ArrayList<String> responseList
+//                        = skuDetails.getStringArrayList("DETAILS_LIST");
+//
+//                assert responseList != null;
+//                for (String thisResponse : responseList) {
+//                    JSONObject object = new JSONObject(thisResponse);
+//                    String sku = object.getString("productId");
+//                    String price = object.getString("price");
+//                    Timber.d(sku + " : " + price);
+////                    if (sku.equals("premiumUpgrade")) {
+////                        mPremiumUpgradePrice = price;
+////                    } else if (sku.equals("gas")) {
+////                        mGasPrice = price;
+////                    }
+//                }
+//            }
+//        } catch (RemoteException | JSONException e) {
 //            e.printStackTrace();
 //        }
+////        try {
+////            Bundle buyIntentBundle =
+////                    mService.getBuyIntent(3, getPackageName(), "donate_1.99", "inapp", "");
+////        } catch (RemoteException e) {
+////            e.printStackTrace();
+////        }
     }
 
     @Override
@@ -135,37 +125,36 @@ public class DonateActivity extends BaseSubActivity {
         super.onCreate(savedInstanceState);
         setToolbarBackIndicator();
 
-
         if (PackageUtil.isAlipayInstalled(this)) {
             mAlipayButton.setVisibility(View.VISIBLE);
         }
-        if (PackageUtil.isInstallFromPlay(this) || BuildConfig.DEBUG) {
-            mPlayButton.setVisibility(View.VISIBLE);
-            mServiceConnection = new ServiceConnection() {
-                @Override
-                public void onServiceConnected(ComponentName name, IBinder service) {
-                    mService = IInAppBillingService.Stub.asInterface(service);
-                }
-
-                @Override
-                public void onServiceDisconnected(ComponentName name) {
-                    mService = null;
-                }
-            };
-
-            Intent serviceIntent =
-                    new Intent("com.android.vending.billing.InAppBillingService.BIND");
-            serviceIntent.setPackage("com.android.vending");
-            bindService(serviceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        if (PackageUtil.isInstallFromPlay(this) && BuildConfig.DEBUG) {
+//            mPlayButton.setVisibility(View.VISIBLE);
+//            mServiceConnection = new ServiceConnection() {
+//                @Override
+//                public void onServiceConnected(ComponentName name, IBinder service) {
+//                    mService = IInAppBillingService.Stub.asInterface(service);
+//                }
+//
+//                @Override
+//                public void onServiceDisconnected(ComponentName name) {
+//                    mService = null;
+//                }
+//            };
+//
+//            Intent serviceIntent =
+//                    new Intent("com.android.vending.billing.InAppBillingService.BIND");
+//            serviceIntent.setPackage("com.android.vending");
+//            bindService(serviceIntent, mServiceConnection, BIND_AUTO_CREATE);
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mService != null) {
-            unbindService(mServiceConnection);
-        }
+//        if (mService != null) {
+//            unbindService(mServiceConnection);
+//        }
     }
 
     @Override
@@ -207,33 +196,30 @@ public class DonateActivity extends BaseSubActivity {
                                                 Transition<? super Drawable> transition) {
                         mCardImage.setImageDrawable(resource);
 
-                        mThankCard.animate()
-                                .setListener(new Animator.AnimatorListener() {
-                                    @Override
-                                    public void onAnimationStart(Animator animation) {
-                                        mThankCard.setVisibility(View.VISIBLE);
-                                        mThankCard.setTouchable(false);
-                                    }
+                        mThankCard.animate().setListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+                                mThankCard.setVisibility(View.VISIBLE);
+                                mThankCard.setTouchable(false);
+                            }
 
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        mHeart.setVisibility(View.VISIBLE);
-                                        mThankCard.setTouchable(true);
-                                    }
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                mHeart.setVisibility(View.VISIBLE);
+                                mThankCard.setTouchable(true);
+                            }
 
-                                    @Override
-                                    public void onAnimationCancel(Animator animation) {
-                                    }
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+                            }
 
-                                    @Override
-                                    public void onAnimationRepeat(Animator animation) {
-                                    }
-                                })
-                                .setDuration(1000)
-                                .translationX(0)
-                                .start();
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+                            }
+                        }).setDuration(1000).translationX(0).start();
                     }
                 });
     }
+
 
 }

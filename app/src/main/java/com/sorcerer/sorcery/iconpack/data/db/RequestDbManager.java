@@ -5,11 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.annimon.stream.Stream;
-import com.squareup.sqlbrite.BriteDatabase;
+import com.squareup.sqlbrite2.BriteDatabase;
 
 import java.util.List;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.COMPONENT;
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.REQUESTED;

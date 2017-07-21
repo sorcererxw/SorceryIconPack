@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.others
+package com.sorcerer.sorcery.iconpack.ui.callbacks
 
 import android.view.MotionEvent
 import android.view.View

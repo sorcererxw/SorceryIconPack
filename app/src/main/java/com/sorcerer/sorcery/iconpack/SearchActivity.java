@@ -30,6 +30,7 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.mikepenz.materialize.util.KeyboardUtil;
@@ -332,6 +333,8 @@ public class SearchActivity extends BaseActivity {
                         .load(mShowList.get(position).getRes());
                 if (mLessAnim) {
                     request.apply(RequestOptions.noAnimation());
+                } else {
+                    request.transition(new DrawableTransitionOptions().crossFade());
                 }
                 request.into(holder.icon);
 

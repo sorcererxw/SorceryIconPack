@@ -2,7 +2,6 @@ package com.sorcerer.sorcery.iconpack.ui.activities.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.sorcerer.sorcery.iconpack.R;
 
@@ -14,7 +13,7 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
  * @date: 2017/5/17
  */
 
-public abstract class BaseSwipeBackActivity extends AppCompatActivity
+public abstract class BaseSwipeBackActivity extends BaseActivity
         implements BGASwipeBackHelper.Delegate {
     protected BGASwipeBackHelper mSwipeBackHelper;
 

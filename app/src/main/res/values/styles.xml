@@ -4,7 +4,13 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="android:colorAccent">#6d4c41</item>
+        <item name="android:colorControlActivated">#6d4c41</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorCard">@color/palette_white</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -16,16 +22,13 @@
     </style>
 
     <style name="AppTheme.MainActivity" parent="AppTheme.NoActionBar">
-        <!--<item name="android:windowTranslucentNavigation">true</item>-->
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowBackground">@drawable/bg_starting_window</item>
     </style>
 
-    <style name="SubActivity" parent="MaterialDrawerTheme.Light.DarkToolbar">
+    <style name="SubActivity" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-
-        <!--<item name="android:windowTranslucentStatus">false</item>-->
 
         <item name="preferenceTheme">@style/MyPreferenceThemeOverlay</item>
 

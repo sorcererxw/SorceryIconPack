@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.mikepenz.materialize.util.UIUtils;
 
 import java.util.List;
 
@@ -141,7 +141,7 @@ public abstract class GridRecyclerAdapter<VH extends BaseFastRecyclerAdapter.Bas
         if (dp == 1) {
             return 1;
         }
-        return DisplayUtil.INSTANCE.dip2px(mContext, dp);
+        return (int) UIUtils.convertDpToPixel(dp, mContext);
     }
 
     enum ItemPosType {

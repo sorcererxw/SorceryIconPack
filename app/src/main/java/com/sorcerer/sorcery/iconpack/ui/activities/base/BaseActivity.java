@@ -9,16 +9,17 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 
 import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
-import com.sorcerer.sorcery.iconpack.ui.theme.ThemeManager;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 /**
  * @description:
@@ -29,8 +30,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Inject
     protected SorceryPrefs mPrefs;
     @Inject
-    protected ThemeManager mThemeManager;
-    @Inject
     protected Db mDb;
 
     protected Context mContext = this;
@@ -39,7 +38,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         App.getInstance().getAppComponent().inject(this);
-        mThemeManager.setTheme(this);
+        if (mPrefs.nightMode()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         hookBeforeSuperOnCreate();
         super.onCreate(savedInstanceState);
         hookBeforeSetContentView();
@@ -69,7 +72,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             );
             setTaskDescription(taskDescription);
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            Timber.e(e);
         }
 
     }

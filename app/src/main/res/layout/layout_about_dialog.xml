@@ -78,8 +78,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/coolapk_svg"
-                android:visibility="gone"/>
+                android:src="@drawable/coolapk_svg"/>
         </LinearLayout>
 
         <TextView

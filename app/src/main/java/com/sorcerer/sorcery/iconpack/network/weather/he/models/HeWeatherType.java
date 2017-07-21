@@ -1,8 +1,5 @@
 package com.sorcerer.sorcery.iconpack.network.weather.he.models;
 
-import com.annimon.stream.Stream;
-import com.sorcerer.sorcery.iconpack.customWorkshop.weather.data.WeatherType;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -63,27 +60,15 @@ public enum HeWeatherType {
     UNKNOWN(999);
 
 
-    private int mCode;
-
-    HeWeatherType(int code) {
-        mCode = code;
-    }
-
-    public int getCode() {
-        return mCode;
-    }
-
     private static final HeWeatherType[] SUNNY_CODES = new HeWeatherType[]{
             SUNNY, CALM, HOT, CLOUDY, UNKNOWN
     };
-
     private static final HeWeatherType[] WINDY_CODES = new HeWeatherType[]{
             WINDY, LIGHT_BREEZE, GENTLE_BREEZE, FRESH_BREEZE,
             STRONG_BREEZE, HIGH_WIND, GALE, STRONG_GALE,
             STORM, VIOLENT_STORM, HURRICANE, TORNADO,
             TROPICAL_STORM,
     };
-
     private static final HeWeatherType[] RAIN_CODES = new HeWeatherType[]{
             SHOWER_RAIN, HEAVY_SHOWER_RAIN, THUNDERSHOWER,
             HEAVY_THUNDERSTORM, HAIL,
@@ -93,48 +78,51 @@ public enum HeWeatherType {
             HEAVY_STORM_RAIN, SEVERE_STORM_RAIN,
             FREEZING_RAIN,
     };
-
     private static final HeWeatherType[] SNOW_CODES = new HeWeatherType[]{
             LIGHT_SNOW, MODERATE_SNOW, HEAVY_SNOW,
             SNOWSTORM, SLEET,
             RAIN_AND_SNOW, SHOWER_SNOW,
             SNOW_FLURRY,
     };
-
     private static final HeWeatherType[] CLOUDY_CODES = new HeWeatherType[]{
             CLOUDY, FEW_CLOUDS, PARTLY_CLOUDY, OVERCAST
     };
+    private static final HeWeatherType[] HAZE_CODES = new HeWeatherType[]{
+            MIST, FOGGY, HAZE, SAND, DUST, DUSTSTORM, SANDSTORM
+    };
+    private int mCode;
+
+    HeWeatherType(int code) {
+        mCode = code;
+    }
 
 //    private static final HeWeatherType[] THUNDER_CODES = new HeWeatherType[]{
 //
 //    };
 
-    private static final HeWeatherType[] HAZE_CODES = new HeWeatherType[]{
-            MIST, FOGGY, HAZE, SAND, DUST, DUSTSTORM, SANDSTORM
-    };
-
-    public WeatherType getWeatherType() {
-        if (Stream.of(SUNNY_CODES).anyMatch(value -> mCode == value.mCode)) {
-            return WeatherType.SUNNY;
-        }
-        if (Stream.of(WINDY_CODES).anyMatch(value -> mCode == value.mCode)) {
-            return WeatherType.WINDY;
-        }
-        if (Stream.of(RAIN_CODES).anyMatch(value -> mCode == value.mCode)) {
-            return WeatherType.RAIN;
-        }
-//        if (Stream.of(THUNDER_CODES).anyMatch(value -> mCode == value.mCode)) {
-//            return WeatherType.THUNDER;
-//        }
-        if (Stream.of(HAZE_CODES).anyMatch(value -> mCode == value.mCode)) {
-            return WeatherType.HAZE;
-        }
-        if (Stream.of(CLOUDY_CODES).anyMatch(value -> mCode == value.mCode)) {
-            return WeatherType.CLOUDY;
-        }
-        if (Stream.of(SNOW_CODES).anyMatch(value -> mCode == value.mCode)) {
-            return WeatherType.SNOW;
-        }
-        return WeatherType.SUNNY;
+    public int getCode() {
+        return mCode;
     }
+
+//    public WeatherType getWeatherType() {
+//        if (Stream.of(SUNNY_CODES).anyMatch(value -> mCode == value.mCode)) {
+//            return WeatherType.SUNNY;
+//        }
+//        if (Stream.of(WINDY_CODES).anyMatch(value -> mCode == value.mCode)) {
+//            return WeatherType.WINDY;
+//        }
+//        if (Stream.of(RAIN_CODES).anyMatch(value -> mCode == value.mCode)) {
+//            return WeatherType.RAIN;
+//        }
+//        if (Stream.of(HAZE_CODES).anyMatch(value -> mCode == value.mCode)) {
+//            return WeatherType.HAZE;
+//        }
+//        if (Stream.of(CLOUDY_CODES).anyMatch(value -> mCode == value.mCode)) {
+//            return WeatherType.CLOUDY;
+//        }
+//        if (Stream.of(SNOW_CODES).anyMatch(value -> mCode == value.mCode)) {
+//            return WeatherType.SNOW;
+//        }
+//        return WeatherType.SUNNY;
+//    }
 }

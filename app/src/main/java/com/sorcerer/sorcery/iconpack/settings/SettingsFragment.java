@@ -20,10 +20,8 @@ import com.sorcerer.sorcery.iconpack.SettingsActivity;
 import com.sorcerer.sorcery.iconpack.settings.about.AboutDialog;
 import com.sorcerer.sorcery.iconpack.settings.general.tab.CustomizeTabsFragment;
 import com.sorcerer.sorcery.iconpack.settings.licenses.ui.OpenSourceLibFragment;
+import com.sorcerer.sorcery.iconpack.ui.callbacks.OnMultiTouchListener;
 import com.sorcerer.sorcery.iconpack.ui.fragments.BasePreferenceFragmentCompat;
-import com.sorcerer.sorcery.iconpack.ui.others.OnMultiTouchListener;
-import com.sorcerer.sorcery.iconpack.ui.theme.DarkTheme;
-import com.sorcerer.sorcery.iconpack.ui.theme.LightTheme;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
@@ -130,25 +128,19 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                     return false;
                 }
                 mChangingTheme = true;
-                if ((Boolean) newValue) {
-                    mThemeManager.setTheme(new DarkTheme());
-                } else {
-                    mThemeManager.setTheme(new LightTheme());
-                }
+                mPrefs.nightMode((Boolean) newValue);
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
                     getActivity().finish();
                     final Intent intent = new Intent(getContext(), MainActivity.class);
                     getActivity().startActivity(intent.addFlags(FLAG_ACTIVITY_NO_ANIMATION)
                             .addFlags(FLAG_ACTIVITY_CLEAR_TOP)
                     );
+                    getActivity().finish();
+                    getActivity().overridePendingTransition(
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out
+                    );
                 }, 100);
-//                List<Activity> activityList = App.getInstance().getActivityList();
-//                for (int i = 0; i < activityList.size() - 1; i++) {
-//                    Activity activity = activityList.get(i);
-//                    if (activity instanceof BaseActivity) {
-//                        ((BaseActivity) activity).resetContentView();
-//                    }
-//                }
                 return true;
             }
         });

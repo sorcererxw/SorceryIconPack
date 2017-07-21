@@ -106,6 +106,5 @@ public class ResourceUtil {
         TypedValue typedValue = new TypedValue();
         theme.resolveAttribute(attrId, typedValue, true);
         return typedValue.data;
-
     }
 }

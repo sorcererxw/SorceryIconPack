@@ -1,9 +1,6 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
 
 import com.sorcerer.sorcery.iconpack.utils.NetUtil;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -11,7 +8,6 @@ import com.tencent.bugly.crashreport.CrashReport;
 import java.lang.reflect.Method;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Locale;
 
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackManager;
 import rx_activity_result2.RxActivityResult;
@@ -32,7 +28,7 @@ public class App extends Application {
         return sApp;
     }
 
-    public static void showDebugDBAddressLogToast(Context context) {
+    public static void showDebugDBAddressLogToast() {
         if (BuildConfig.DEBUG) {
             try {
                 Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
@@ -70,17 +66,13 @@ public class App extends Application {
             Timber.e(e);
         }
 
-        if (BuildConfig.DEBUG) {
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            android.content.res.Configuration conf = res.getConfiguration();
-            conf.locale = new Locale("zh");
-            res.updateConfiguration(conf, dm);
-        }
+//        if (BuildConfig.DEBUG) {
+//            LocaleUtil.INSTANCE.forceChinese(this);
+//        }
 
         BGASwipeBackManager.getInstance().init(this);
 
-        showDebugDBAddressLogToast(this);
+        showDebugDBAddressLogToast();
     }
 
     public AppComponent getAppComponent() {

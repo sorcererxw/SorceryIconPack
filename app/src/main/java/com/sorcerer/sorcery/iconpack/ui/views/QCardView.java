@@ -8,7 +8,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Scroller;
 
-import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
+import com.mikepenz.materialize.util.UIUtils;
 
 /**
  * @description:
@@ -35,7 +35,7 @@ public class QCardView extends CardView {
     public QCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mScroller = new Scroller(context);
-        setTranslationZ(DisplayUtil.INSTANCE.dip2px(context, 2));
+        setTranslationZ(UIUtils.convertDpToPixel(2, context));
 
     }
 

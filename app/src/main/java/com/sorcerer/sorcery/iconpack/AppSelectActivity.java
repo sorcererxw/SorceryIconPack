@@ -24,6 +24,8 @@ import com.sorcerer.sorcery.iconpack.data.db.RequestDbManager;
 import com.sorcerer.sorcery.iconpack.data.models.AppInfo;
 import com.sorcerer.sorcery.iconpack.network.avos.AvosClient;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosIconRequestBean;
+import com.sorcerer.sorcery.iconpack.network.sorcery.SorceryClient;
+import com.sorcerer.sorcery.iconpack.network.sorcery.models.SorceryRequestStatistic;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseSubActivity;
 import com.sorcerer.sorcery.iconpack.ui.utils.Dialogs;
 import com.sorcerer.sorcery.iconpack.ui.views.MyFloatingActionButton;
@@ -303,8 +305,7 @@ public class AppSelectActivity extends BaseSubActivity {
             holder.check.setChecked(mAppInfoList.get(realPos).isChecked());
 
             mRequestDbManager.isRequest(mAppInfoList.get(realPos).getCode())
-                    .observeOn(rx.android.schedulers.AndroidSchedulers.mainThread())
-//                .observeOn(AndroidSchedulers.mainThread())
+                    .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(requested -> {
                         if (requested) {
                             holder.setEnable(false);
@@ -315,8 +316,9 @@ public class AppSelectActivity extends BaseSubActivity {
 
                             if (mAppInfoList.get(realPos).getRequestedTimes() == -1) {
                                 holder.setTimes(-1);
-                                AvosClient.getInstance()
-                                        .getAppRequestedTime(mAppInfoList.get(realPos).getPackage())
+                                SorceryClient.getInstance()
+                                        .getRequestStatistic(mAppInfoList.get(realPos).getPackage())
+                                        .map(SorceryRequestStatistic::getCount)
                                         .subscribeOn(Schedulers.newThread())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe(times -> {

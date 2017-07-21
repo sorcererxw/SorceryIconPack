@@ -98,4 +98,14 @@ class SorceryPrefs internal constructor(context: Context) : Prefs(context) {
     fun firstTimeLaunch(): Preference<Boolean> {
         return rxSharedPreferences.getBoolean("first_time_launch", true)
     }
+
+    fun nightMode(): Boolean {
+        val nightMode: Boolean? = rxSharedPreferences.getBoolean("night_mode", false).get()
+                ?: return false
+        return nightMode!!
+    }
+
+    fun nightMode(enable: Boolean) {
+        rxSharedPreferences.getBoolean("night_mode").set(enable)
+    }
 }

@@ -95,7 +95,7 @@ public class AppDisplayInfoSpider {
                                 .getElementsByClass("info-container").get(0);
                     } catch (Exception e) {
                         Timber.e("Google play: failed");
-//                        Timber.e(e);
+                        Timber.e(e);
                     }
                     return new Element("<p></p>");
                 })

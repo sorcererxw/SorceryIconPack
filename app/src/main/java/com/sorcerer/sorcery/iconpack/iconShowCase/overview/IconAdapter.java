@@ -324,8 +324,6 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
             slice.showRightTopRect(!rightTopRect);
 
             slice.setColor(ResourceUtil.getAttrColor(mContext, R.attr.colorCard));
-
-//            mThemeManager.cardColor().subscribe(slice::setColor);
         }
     }
 

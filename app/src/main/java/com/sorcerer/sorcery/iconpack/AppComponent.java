@@ -39,8 +39,6 @@ public interface AppComponent {
 
     void inject(BaseRecyclerViewAdapter.InjectorHelper injectorHelper);
 
-//    void inject(Navigator navigator);
-
     void inject(AvosStatisticManager avosStatisticManager);
 
     void inject(BaseSubActivity baseSubActivity);

@@ -25,10 +25,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.ToolbarActivity;
-import com.sorcerer.sorcery.iconpack.utils.DisplayUtil;
 import com.sorcerer.sorcery.iconpack.utils.LocaleUtil;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
@@ -180,7 +180,7 @@ public class IconDialogActivity extends ToolbarActivity {
                     Timber.d(mPackageName);
                     return AppDisplayInfoGetter
                             .getAppDisplayInfo(mPackageName, IconDialogActivity.this,
-                                    LocaleUtil.isChinese(IconDialogActivity.this));
+                                    LocaleUtil.INSTANCE.isChinese(IconDialogActivity.this));
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(info -> {
@@ -230,9 +230,9 @@ public class IconDialogActivity extends ToolbarActivity {
                                                                     R.dimen.dialog_icon_size)
                                             );
                                     mOriginImage.setLayoutParams(params);
-                                    mOriginImage
-                                            .setPadding(DisplayUtil.INSTANCE.dip2px(mContext, 8), 0,
-                                                    0, 0);
+                                    mOriginImage.setPadding(
+                                            (int) UIUtils.convertDpToPixel(8, mContext),
+                                            0, 0, 0);
                                 }
                                 if (mRoot.getChildCount() > 1) {
                                     mRoot.removeView(mOriginImage);
@@ -284,7 +284,8 @@ public class IconDialogActivity extends ToolbarActivity {
                                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                                 RelativeLayout.LayoutParams.WRAP_CONTENT);
                         layoutParams.addRule(RelativeLayout.ABOVE, mTitleTextView.getId());
-                        layoutParams.setMargins(0, DisplayUtil.INSTANCE.dip2px(mContext, 8), 0, 0);
+                        layoutParams
+                                .setMargins(0, (int) UIUtils.convertDpToPixel(8, mContext), 0, 0);
                         textView.setLayoutParams(layoutParams);
                         mTitleContainer.addView(textView, 0);
                         mTitleContainer.requestLayout();

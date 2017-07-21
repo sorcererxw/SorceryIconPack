@@ -21,8 +21,8 @@ android {
             storePassword sourcesStorePassword
         }
     }
-    compileSdkVersion 'android-O'
-    buildToolsVersion '26.0.0 rc2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
 
     int code = buildCode()
 
@@ -31,7 +31,7 @@ android {
         versionCode code
         versionName "4.4." + code
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 26
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -40,7 +40,7 @@ android {
     buildTypes {
         debug {
             multiDexEnabled false
-            minifyEnabled false
+            minifyEnabled true
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
@@ -57,9 +57,6 @@ android {
         it.buildConfigField 'String', 'LEANCLOUD_ID', leancloudId
         it.buildConfigField 'String', 'LEANCLOUD_KEY', leancloudKey
         it.buildConfigField 'String', 'HE_WEATHER_KEY', heWeatherKey
-    }
-    packagingOptions {
-        exclude 'META-INF/rxjava.properties'
     }
 }
 
@@ -83,7 +80,7 @@ dependencies {
     compile 'com.afollestad.material-dialogs:commons:0.9.4.5'
 
     // material drawer
-    compile('com.mikepenz:materialdrawer:5.9.2@aar') {
+    compile('com.mikepenz:materialdrawer:5.9.3@aar') {
         transitive = true
     }
 
@@ -99,28 +96,24 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
     // glide
-    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
 
     // rx
-    compile 'com.artemzin.rxjava:proguard-rules:1.2.10.0'
-    compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile "io.reactivex.rxjava2:rxjava:$rxjava2_version"
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-    compile 'com.github.VictorAlbertos:RxActivityResult:0.4.4-2.x'
+    compile 'com.github.VictorAlbertos:RxActivityResult:0.4.5-2.x'
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC1'
-    compile 'com.squareup.sqlbrite:sqlbrite:1.1.1'
+    compile 'com.squareup.sqlbrite2:sqlbrite:2.0.0-SNAPSHOT'
 
     // timber
     compile 'com.jakewharton.timber:timber:4.5.1'
 
     // iconics
-    compile 'com.mikepenz:iconics-core:2.8.6@aar'
+    compile 'com.mikepenz:iconics-core:2.8.7@aar'
     compile 'com.mikepenz:google-material-typeface:3.0.1.0.original@aar'
-    compile 'com.mikepenz:material-design-iconic-typeface:2.2.0.2@aar'
-    compile 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
     compile 'com.mikepenz:fontawesome-typeface:4.7.0.0@aar'
 
     // bugly
@@ -163,18 +156,14 @@ dependencies {
 
     // markdownView
     compile 'com.github.tiagohm.MarkdownView:library:0.16.0'
-
+    // db debug
     debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
+    // swipe layout
     compile 'cn.bingoogolapple:bga-swipebacklayout:1.0.8@aar'
+    // status bar
     compile 'com.jaeger.statusbarutil:library:1.4.0'
+    // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
-    // For Lifecycles, LiveData, and ViewModel
-    compile 'android.arch.lifecycle:runtime:1.0.0-alpha2'
-    compile 'android.arch.lifecycle:extensions:1.0.0-alpha2'
-    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha2"
-
-    // For Room
-    compile 'android.arch.persistence.room:runtime:1.0.0-alpha2'
-    annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha2"
+    // pack tool
+    debugCompile project(':packtools')
 }

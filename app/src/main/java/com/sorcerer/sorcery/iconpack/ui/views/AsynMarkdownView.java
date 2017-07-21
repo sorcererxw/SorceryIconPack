@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.ui.views.markdown;
+package com.sorcerer.sorcery.iconpack.ui.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;

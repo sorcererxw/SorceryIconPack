@@ -32,5 +32,4 @@ public abstract class Prefs {
     public RxSharedPreferences getRxSharedPreferences() {
         return mRxSharedPreferences;
     }
-
 }

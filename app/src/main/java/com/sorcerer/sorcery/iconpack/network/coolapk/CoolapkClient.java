@@ -23,16 +23,8 @@ import timber.log.Timber;
 
 public class CoolapkClient {
 
+    private static volatile CoolapkClient sCoolapkClient;
     private CoolapkService mService;
-
-    private static CoolapkClient sCoolapkClient;
-
-    public static CoolapkClient getInstance() {
-        if (sCoolapkClient == null) {
-            sCoolapkClient = new CoolapkClient();
-        }
-        return sCoolapkClient;
-    }
 
     private CoolapkClient() {
         mService = new Retrofit.Builder()
@@ -60,6 +52,17 @@ public class CoolapkClient {
                 .addConverterFactory(GsonConverterFactory.create(
                         new GsonBuilder().create()))
                 .build().create(CoolapkService.class);
+    }
+
+    public static CoolapkClient getInstance() {
+        if (sCoolapkClient == null) {
+            synchronized (CoolapkClient.class) {
+                if (sCoolapkClient == null) {
+                    sCoolapkClient = new CoolapkClient();
+                }
+            }
+        }
+        return sCoolapkClient;
     }
 
     public Observable<CoolapkSearchResult> search(String q, int page) {

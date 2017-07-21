@@ -1,193 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="icon_pack_google_play_awards" translatable="false">
-        <item>**Standout Indie**</item>
-        <item>Causality</item>
-        <item>Kingdom: New Lands</item>
-        <item>Mars: Mars</item>
-        <item>Mushroom 11</item>
-        <item>Reigns</item>
-        <item>**Standout Startup**</item>
-        <item>CastBox</item>
-        <item>Digit</item>
-        <item>Discord</item>
-        <item>HOOKED</item>
-        <item>Simple Habit</item>
-        <item>**Best Android Wear Experience**</item>
-        <item>Bring!</item>
-        <item>Foursquare City Guide</item>
-        <item>Lifesum</item>
-        <item>Runtastic Running Fitness</item>
-        <item>Seven</item>
-        <item>**Best TV Experience**</item>
-        <item>Abema TV</item>
-        <item>Haystack TV</item>
-        <item>KKBox</item>
-        <item>Netflix</item>
-        <item>Red Bull TV</item>
-        <item>**Best VR Experience**</item>
-        <item>Gunjack 2: End of Shift</item>
-        <item>Mekorama VR</item>
-        <item>The Arcslinger</item>
-        <item>The Turning Forest</item>
-        <item>Virtual Virtual Reality</item>
-        <item>**Best AR Experience**</item>
-        <item>Crayola Color Blaster</item>
-        <item>Dinosaurs Among Us</item>
-        <item>Holo</item>
-        <item>Wayfair View</item>
-        <item>WOORLD</item>
-        <item>**Best App for Kids**</item>
-        <item>Animal Jam – Play Wild!</item>
-        <item>Hot Wheels: Race Off</item>
-        <item>Teeny Titans</item>
-        <item>Think! Think!</item>
-        <item>Toca Life: Vacation</item>
-        <item>**Best Multiplayer Game**</item>
-        <item>Dawn of Titans</item>
-        <item>FIFA Mobile</item>
-        <item>Hearthstone</item>
-        <item>Lords Mobile</item>
-        <item>Modern Strike Online!</item>
-        <item>**Best App**</item>
-        <item>Citymapper</item>
-        <item>Fabulous</item>
-        <item>Memrise</item>
-        <item>Money Lover</item>
-        <item>Quik</item>
-        <item>**Best Game**</item>
-        <item>Choices</item>
-        <item>Fire Emblem Heroes</item>
-        <item>Lineage 2 Revolution</item>
-        <item>Pokémon Go</item>
-        <item>Transformers: Forged to Fight</item>
-        <item>**Best accessibility Experience**</item>
-        <item>A Blind Legend</item>
-        <item>Eye-D</item>
-        <item>IFTTT</item>
-        <item>Open Sesame</item>
-        <item>Swiftkey Symbols</item>
-        <item>**Best Social Impact**</item>
-        <item>Charity Miles</item>
-        <item>Peek Acuity</item>
-        <item>Prodeaf</item>
-        <item>Sea Hero Quest</item>
-        <item>ShareTheMeal</item>
-    </string-array>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>tencent_qpaint</item>
-        <item>sonkwoapp_game</item>
-        <item>hideable_vav_bar</item>
-        <item>huawei_crowdtest</item>
-        <item>huawei_music</item>
-        <item>huawei_theme</item>
-        <item>huawei_camera</item>
-        <item>huawei_updater</item>
-        <item>huawei_weather</item>
-        <item>huawei_memo</item>
-        <item>huawei_flashlight</item>
-        <item>huawei_voice_assist</item>
-        <item>huawei_payment_center</item>
-        <item>huawei_compass</item>
-        <item>huawei_huaying_club</item>
-        <item>huawei_club</item>
-        <item>huawei_backup</item>
-        <item>ubisoft_club</item>
-        <item>shanbay_reader</item>
-        <item>shanbay_speak</item>
-        <item>money_lover</item>
-        <item>castbox_audiobook</item>
-        <item>little_sleep</item>
-        <item>lifesum</item>
-        <item>seven</item>
-        <item>runtastic</item>
-        <item>foursquare</item>
-        <item>kkbox</item>
-        <item>discord</item>
-        <item>quik</item>
-        <item>holo</item>
-        <item>hooked</item>
-        <item>digit</item>
-        <item>fabulous</item>
-        <item>one_wood_translator</item>
-        <item>xiaoji_emulator</item>
-        <item>yy</item>
-        <item>trello</item>
-        <item>bridge</item>
-        <item>smartisan_clcok</item>
-        <item>weather_m8</item>
-        <item>netflix</item>
-        <item>seven</item>
-        <item>substratum</item>
-        <item>qiyu_browser</item>
-        <item>share_weibo</item>
-        <item>issuu</item>
-        <item>charity_miles</item>
-        <item>faceq</item>
-        <item>ehviewer</item>
-        <item>one_wood_letter</item>
-        <item>gamersky</item>
-        <item>habitica</item>
-        <item>game_sometimes_you_die</item>
-        <item>microsoft_hyperlapse</item>
-        <item>hello_english</item>
-        <item>mori_journal</item>
-        <item>huobi</item>
-        <item>ruler</item>
-        <item>barcode_scanner</item>
-        <item>a36kr</item>
-        <item>noisli</item>
-        <item>glasswire</item>
-        <item>nhk_easy_news_japan</item>
-        <item>mindly</item>
-        <item>wacai</item>
-        <item>vocabulary</item>
-        <item>huawei_driving_mode</item>
-        <item>huawei_wear</item>
-        <item>simple_mind</item>
-        <item>ofo_bicycler</item>
-        <item>huawei_find_my_phone</item>
-        <item>period_tracker</item>
+        <item>rar</item>
+        <item>game_tencent_cf</item>
+        <item>gifmaker</item>
+        <item>essay_joke</item>
+        <item>netease_uu</item>
+        <item>sina_news</item>
+        <item>sina_finance</item>
+        <item>green</item>
+        <item>bluegogo</item>
+        <item>huanleshuke</item>
+        <item>sony_xperia_transfer</item>
+        <item>cyanogenmod_browser_gello</item>
+        <item>type_machine</item>
+        <item>dedao</item>
+        <item>busuu_en</item>
+        <item>busuu</item>
+        <item>dehelper</item>
+        <item>oneplus_camera</item>
+        <item>fooview_alpha</item>
+        <item>x_browser</item>
+        <item>bmap</item>
+        <item>game_fatego</item>
+        <item>magisk_manager</item>
+        <item>medium_alt</item>
+        <item>mix</item>
+        <item>qpay</item>
+        <item>netease_snailread</item>
+        <item>blizzard_authenticator</item>
         <item>@string/icon_label_updated</item>
-        <item>tencent_qq_tim</item>
-        <item>google_play_store</item>
-        <item>ali_trip</item>
-        <item>flyme_clock</item>
-        <item>oneplus_camera_oxygen</item>
-        <item>gravity_box</item>
-        <item>google_calendar</item>
-        <item>google_calendar_1</item>
-        <item>google_calendar_2</item>
-        <item>google_calendar_3</item>
-        <item>google_calendar_4</item>
-        <item>google_calendar_5</item>
-        <item>google_calendar_6</item>
-        <item>google_calendar_7</item>
-        <item>google_calendar_8</item>
-        <item>google_calendar_9</item>
-        <item>google_calendar_10</item>
-        <item>google_calendar_11</item>
-        <item>google_calendar_12</item>
-        <item>google_calendar_13</item>
-        <item>google_calendar_14</item>
-        <item>google_calendar_15</item>
-        <item>google_calendar_16</item>
-        <item>google_calendar_17</item>
-        <item>google_calendar_18</item>
-        <item>google_calendar_19</item>
-        <item>google_calendar_20</item>
-        <item>google_calendar_21</item>
-        <item>google_calendar_22</item>
-        <item>google_calendar_23</item>
-        <item>google_calendar_24</item>
-        <item>google_calendar_25</item>
-        <item>google_calendar_26</item>
-        <item>google_calendar_27</item>
-        <item>google_calendar_28</item>
-        <item>google_calendar_29</item>
-        <item>google_calendar_30</item>
-        <item>google_calendar_31</item>
+        <item>gallery</item>
+        <item>tencent_video</item>
+        <item>it_home</item>
+        <item>oneplus_community</item>
     </string-array>
     <string-array name="icon_pack" translatable="false">
         <item>*****</item>
@@ -388,6 +235,7 @@
         <item>battery_taskmaster</item>
         <item>battlefield_companion</item>
         <item>battlefield_companion_alt</item>
+        <item>battlenet_authenticator</item>
         <item>behance</item>
         <item>behance_display</item>
         <item>beiyue</item>
@@ -408,7 +256,9 @@
         <item>block_launcher_pro</item>
         <item>blud_mail</item>
         <item>blued</item>
+        <item>bluegogo</item>
         <item>bluelight_filter</item>
+        <item>bmap</item>
         <item>boc_container</item>
         <item>book_mark_life</item>
         <item>booking</item>
@@ -427,6 +277,8 @@
         <item>bughd</item>
         <item>bukamanhua</item>
         <item>burgerking</item>
+        <item>busuu</item>
+        <item>busuu_en</item>
         <item>**C**</item>
         <item>calc_plus</item>
         <item>calculator</item>
@@ -485,6 +337,7 @@
         <item>current_activity</item>
         <item>custom_share</item>
         <item>cyanogenmod_audiofx</item>
+        <item>cyanogenmod_browser_gello</item>
         <item>cyanogenmod_camera</item>
         <item>cyanogenmod_camera_alt</item>
         <item>cyanogenmod_file_manager</item>
@@ -500,6 +353,8 @@
         <item>days_matter</item>
         <item>ddcat</item>
         <item>dealmoon</item>
+        <item>dedao</item>
+        <item>dehelper</item>
         <item>deviantart</item>
         <item>dgtle</item>
         <item>dialer</item>
@@ -547,6 +402,7 @@
         <item>enjoy</item>
         <item>es_explorer</item>
         <item>esbook_read</item>
+        <item>essay_joke</item>
         <item>eudic</item>
         <item>eusoft_ting</item>
         <item>evermemo</item>
@@ -675,6 +531,7 @@
         <item>flyme_weather_alt</item>
         <item>fm_radio</item>
         <item>foodie</item>
+        <item>fooview_alpha</item>
         <item>force_doze</item>
         <item>forest</item>
         <item>foursquare</item>
@@ -693,8 +550,10 @@
         <item>game_dont_starve</item>
         <item>game_dots_and_co</item>
         <item>game_dots_out</item>
+        <item>game_fatego</item>
         <item>game_heartstone</item>
         <item>game_human_resource_machine</item>
+        <item>game_line_bubble_2</item>
         <item>game_maestria</item>
         <item>game_mekorama</item>
         <item>game_mihoyo_bh_3</item>
@@ -709,6 +568,7 @@
         <item>game_snake</item>
         <item>game_solitaire_decked_out</item>
         <item>game_sometimes_you_die</item>
+        <item>game_tencent_cf</item>
         <item>game_tencent_hlddz</item>
         <item>game_tencent_xiangqi</item>
         <item>game_the_last_banacat</item>
@@ -720,6 +580,7 @@
         <item>geometric_weather</item>
         <item>gewala_movie</item>
         <item>gg_assistant</item>
+        <item>gifmaker</item>
         <item>gitskarios</item>
         <item>glasswire</item>
         <item>globalcash</item>
@@ -820,6 +681,7 @@
         <item>google_youtube</item>
         <item>google_youtube_music</item>
         <item>gravity_box</item>
+        <item>green</item>
         <item>greenify</item>
         <item>guaguamanhua</item>
         <item>guangdiu</item>
@@ -846,6 +708,7 @@
         <item>houzz</item>
         <item>hua_timetravel</item>
         <item>huaban</item>
+        <item>huanleshuke</item>
         <item>huawei_appmarket</item>
         <item>huawei_backup</item>
         <item>huawei_backup_alt</item>
@@ -1024,6 +887,7 @@
         <item>little_sleep</item>
         <item>lizhi_fm</item>
         <item>lol</item>
+        <item>longshot</item>
         <item>los_changelog</item>
         <item>love_best_wallpapers</item>
         <item>lucky_patcher</item>
@@ -1031,6 +895,7 @@
         <item>luobo_shuzhai</item>
         <item>lvmamalvyou</item>
         <item>**M**</item>
+        <item>magisk_manager</item>
         <item>maidanba</item>
         <item>maimai</item>
         <item>mangguo_tv</item>
@@ -1043,6 +908,7 @@
         <item>mctools</item>
         <item>media_converter</item>
         <item>medium</item>
+        <item>medium_alt</item>
         <item>mega</item>
         <item>meiriyiwen</item>
         <item>meiriyujia</item>
@@ -1087,6 +953,7 @@
         <item>mioji_trip</item>
         <item>misfit</item>
         <item>miwifi</item>
+        <item>mix</item>
         <item>mixplorer</item>
         <item>mobike</item>
         <item>moji_weather</item>
@@ -1129,7 +996,9 @@
         <item>netease_news</item>
         <item>netease_open_class</item>
         <item>netease_pris</item>
+        <item>netease_snailread</item>
         <item>netease_super_calculator</item>
+        <item>netease_uu</item>
         <item>netease_yanxuan</item>
         <item>netease_yixin</item>
         <item>netease_youdao_dict</item>
@@ -1204,6 +1073,7 @@
         <item>oneplus_calendar_7</item>
         <item>oneplus_calendar_8</item>
         <item>oneplus_calendar_9</item>
+        <item>oneplus_camera</item>
         <item>oneplus_camera_oxygen</item>
         <item>oneplus_card</item>
         <item>oneplus_community</item>
@@ -1279,6 +1149,7 @@
         <item>qidian_reader</item>
         <item>qingting_fm</item>
         <item>qiyu_browser</item>
+        <item>qpay</item>
         <item>quanminkge</item>
         <item>quanneng_toolbox</item>
         <item>quark_browser</item>
@@ -1290,6 +1161,7 @@
         <item>qunidaye_browser</item>
         <item>quora</item>
         <item>**R**</item>
+        <item>rar</item>
         <item>readlaw</item>
         <item>recently</item>
         <item>renren</item>
@@ -1392,6 +1264,8 @@
         <item>shuqi_alt</item>
         <item>sim_toolkit</item>
         <item>simple_mind</item>
+        <item>sina_finance</item>
+        <item>sina_news</item>
         <item>sina_tianqitong</item>
         <item>siyue_musicassistant</item>
         <item>skype</item>
@@ -1484,6 +1358,7 @@
         <item>sony_whats_new</item>
         <item>sony_xhs_lounge</item>
         <item>sony_xperia_clock</item>
+        <item>sony_xperia_transfer</item>
         <item>sorcery_icons</item>
         <item>sorcery_icons_christmas</item>
         <item>sorcery_icons_spring</item>
@@ -1629,6 +1504,7 @@
         <item>twitter</item>
         <item>twrp_official</item>
         <item>txvpn</item>
+        <item>type_machine</item>
         <item>**U**</item>
         <item>uber</item>
         <item>uber_partner</item>
@@ -1695,6 +1571,7 @@
         <item>wuba_zhuanzhuan</item>
         <item>wunderlist</item>
         <item>**X**</item>
+        <item>x_browser</item>
         <item>xcurrency</item>
         <item>xda_labs</item>
         <item>xda_labs_forum</item>

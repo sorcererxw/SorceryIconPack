@@ -8,7 +8,7 @@ import android.view.GestureDetector
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.iconics.IconicsDrawable
-import com.sorcerer.sorcery.iconpack.ui.others.ToolbarOnGestureListener
+import com.sorcerer.sorcery.iconpack.ui.callbacks.ToolbarOnGestureListener
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil
 
 /**
@@ -28,7 +28,6 @@ abstract class ToolbarActivity : BaseActivity() {
 
         toolbar!!.background = ColorDrawable(
                 ResourceUtil.getAttrColor(this, android.R.attr.colorPrimary))
-
     }
 
     protected fun setToolbarCloseIndicator() {

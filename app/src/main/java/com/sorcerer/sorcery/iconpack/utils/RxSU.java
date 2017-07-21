@@ -5,7 +5,6 @@ import java.util.List;
 
 import eu.chainfire.libsuperuser.Shell;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 import timber.log.Timber;
 
 /**
@@ -25,44 +24,26 @@ public class RxSU {
     }
 
     public Observable<Boolean> su() {
-        return Observable.just(0)
-                .map(new Function<Integer, Boolean>() {
-                    @Override
-                    public Boolean apply(Integer integer) throws Exception {
-                        return Shell.SU.available();
-                    }
-                });
+        return Observable.just(0).map(integer -> Shell.SU.available());
     }
 
     public Observable<List<String>> runAll(final String... commands) {
-        return su().map(new Function<Boolean, List<String>>() {
-            @Override
-            public List<String> apply(Boolean aBoolean) throws Exception {
-                if (aBoolean) {
-                    Timber.d("run: " + Arrays.toString(commands));
-                    return Shell.SU.run(commands);
-                }
-                return null;
+        return su().map(aBoolean -> {
+            if (aBoolean) {
+                Timber.d("run: " + Arrays.toString(commands));
+                return Shell.SU.run(commands);
             }
+            return null;
         });
     }
 
     public Observable<String> run(final String... commands) {
-        return su().map(new Function<Boolean, List<String>>() {
-            @Override
-            public List<String> apply(Boolean aBoolean) throws Exception {
-                if (aBoolean) {
-                    Timber.d("run: " + Arrays.toString(commands));
-                    return Shell.SU.run(commands);
-                }
-                return null;
+        return su().map(aBoolean -> {
+            if (aBoolean) {
+                Timber.d("run: " + Arrays.toString(commands));
+                return Shell.SU.run(commands);
             }
-        })
-                .flatMap(new Function<List<String>, Observable<String>>() {
-                    @Override
-                    public Observable<String> apply(List<String> list) {
-                        return Observable.fromIterable(list);
-                    }
-                });
+            return null;
+        }).flatMap(Observable::fromIterable);
     }
 }

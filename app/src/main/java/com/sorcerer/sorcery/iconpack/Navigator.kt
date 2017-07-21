@@ -5,7 +5,6 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.sorcerer.sorcery.iconpack.customWorkshop.CustomWorkshopActivity
 import com.sorcerer.sorcery.iconpack.test.TestActivity
 import rx_activity_result2.RxActivityResult
 
@@ -56,10 +55,6 @@ class Navigator(private val mActivity: Activity) {
 
     fun toSettingsActivity() {
         mainActivityShift(SettingsActivity::class.java)
-    }
-
-    fun toCustomWorkshopActivity() {
-        mainActivityShift(CustomWorkshopActivity::class.java)
     }
 
     fun toTestActivity() {
