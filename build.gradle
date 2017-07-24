@@ -14,6 +14,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0-alpha7'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.chenenyu:img-optimizer:1.1.1'
     }
 
 }

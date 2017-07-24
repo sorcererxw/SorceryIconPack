@@ -28,6 +28,8 @@
         <item>medium_alt</item>
         <item>mix</item>
         <item>qpay</item>
+        <item>flamingo</item>
+        <item>zeronet</item>
         <item>netease_snailread</item>
         <item>blizzard_authenticator</item>
         <item>@string/icon_label_updated</item>
@@ -439,6 +441,7 @@
         <item>firefox_beta</item>
         <item>fit_time</item>
         <item>fitbit</item>
+        <item>flamingo</item>
         <item>flat_style_bar_indicators</item>
         <item>flat_style_colored_bars</item>
         <item>flickr</item>
@@ -1726,6 +1729,7 @@
         <item>zealer</item>
         <item>zedge</item>
         <item>zero</item>
+        <item>zeronet</item>
         <item>zhangyu_keyboard</item>
         <item>zhanqi_tv</item>
         <item>zhengdian_naozhong</item>

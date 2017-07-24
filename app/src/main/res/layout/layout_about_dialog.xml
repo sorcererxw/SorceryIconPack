@@ -20,7 +20,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginTop="16dp"
-            android:src="@mipmap/sorcery_icons_winter_day"/>
+            android:src="@mipmap/ic_launcher"/>
 
         <TextView
             android:id="@+id/textView_about_dialog_title"

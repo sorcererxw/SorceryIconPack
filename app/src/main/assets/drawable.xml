@@ -405,6 +405,7 @@
    <item drawable="firefox_beta"/>
    <item drawable="fitbit"/>
    <item drawable="fit_time"/>
+    <item drawable="flamingo"/>
    <item drawable="flat_style_bar_indicators"/>
    <item drawable="flat_style_colored_bars"/>
    <item drawable="flickr"/>
@@ -1709,6 +1710,7 @@
    <item drawable="zealer"/>
    <item drawable="zedge"/>
    <item drawable="zero"/>
+    <item drawable="zeronet"/>
    <item drawable="zhangshangshenghuo"/>
    <item drawable="zhangyu_keyboard"/>
    <item drawable="zhanqi_tv"/>

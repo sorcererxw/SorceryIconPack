@@ -215,6 +215,8 @@
 <item component="ComponentInfo{com.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}" drawable="dialer"/>
 <item component="ComponentInfo{com.android.dialer/com.android.dialer.calllog.CallLogActivity}" drawable="dialer"/>
 <item component="ComponentInfo{com.android.dialer/com.android.dialer.activities.DialtactsActivity}" drawable="dialer"/>
+    <item component="ComponentInfo{com.android.dialer/com.android.dialer.dialpad}"
+          drawable="dialer"/>
 <item component="ComponentInfo{com.tc.cm/com.tc.cm.activity.CMCoverActivity}" drawable="ditietong"/>
 <item component="ComponentInfo{cn.dxy.android.aspirin/cn.dxy.android.aspirin.ui.activity.StartupActivity}" drawable="dingxiangyisheng"/>
 <item component="ComponentInfo{org.idaxiang.app/org.idaxiang.app.AppStart}" drawable="daxianggonghui"/>
@@ -549,6 +551,8 @@
           drawable="lantern"/>
 <item component="ComponentInfo{com.ss.android.article.news/com.ss.android.article.news.activity.SplashActivity}" drawable="jinritoutiao"/>
 <item component="ComponentInfo{com.ss.android.article.news/com.ss.android.article.news.activity.MainActivity}" drawable="jinritoutiao"/>
+    <item component="ComponentInfo{com.ss.android.article.news/com.ss.android.article.news.MainActivityBadge0}"
+          drawable="jinritoutiao"/>
 <item component="ComponentInfo{com.kingsoft/com.kingsoft.StartActivity}" drawable="jinsanciba"/>
 <item component="ComponentInfo{com.cmcm.multiaccount/com.cmcm.multiaccount.HomeActivity}" drawable="kaixiaohao"/>
 <item component="ComponentInfo{com.kugou.android/com.kugou.android.app.splash.SplashActivity}" drawable="kugou"/>
@@ -791,6 +795,8 @@
 <item component="ComponentInfo{com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.ApplanetActivity}" drawable="root_explorer"/>
 <item component="ComponentInfo{com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.DefaultActivity}" drawable="root_explorer"/>
 <item component="ComponentInfo{com.speedsoftware.rootexplorer/com.speedsoftware.rootexplorer.SplashActivity}" drawable="root_explorer"/>
+    <item component="ComponentInfo{com.speedsoftware.rootexplorer/com.SplashActivity}"
+          drawable="root_explorer"/>
 <item component="ComponentInfo{com.shuqi.controller/com.shuqi.activity.SplashActivity}" drawable="shuqi"/>
 <item component="ComponentInfo{com.neuralprisma/com.prisma.activity.CameraActivity}" drawable="prisma"/>
 <item component="ComponentInfo{com.neuralprisma/com.prisma.ui.starter.StarterActivity}" drawable="prisma"/>
@@ -1308,6 +1314,12 @@
 <item component="ComponentInfo{com.android.settings/com.android.settings.Settings$BlacklistSettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.meizu.settings.ContainerActivity}" drawable="settings"/>
     <item component="ComponentInfo{com.android.settings/com.android.settings.MainSettingsActivity}"
+          drawable="settings"/>
+    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings$SprdManageApplicationsActivity}"
+          drawable="settings"/>
+    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings$DataUsageSummaryActivity}"
+          drawable="settings"/>
+    <item component="ComponentInfo{com.android.settings/com.android.settings.wfd.WifiDisplaySettingsActivity}"
           drawable="settings"/>
 <item component="ComponentInfo{com.wepie.snake/com.wepie.snake.activity.StartActivity}" drawable="game_snake"/>
 <item component="ComponentInfo{com.wepie.snake/com.wepie.snake.base.StartActivity}" drawable="game_snake"/>
@@ -2015,6 +2027,8 @@
 <item component="ComponentInfo{com.gameloft.android.ANMP.GloftA8HM/com.gameloft.android.ANMP.GloftA8HM.MainActivity}" drawable="game_asphalt_8"/>
 <item component="ComponentInfo{com.gameloft.android.ANMP.GloftA8HM/com.game.god.FaActivity}" drawable="game_asphalt_8"/>
 <item component="ComponentInfo{com.gameloft.android.ANMP.GloftA8HM/com.gameloft.android.ANMP.GloftA8HM.MainActivity}" drawable="game_asphalt_8"/>
+    <item component="ComponentInfo{com.gameloft.android.ANMP.GloftA8HM/com.qiqiersan.sdk.QqesShellActivity}"
+          drawable="game_asphalt_8"/>
 <item component="ComponentInfo{com.gameloft.android.GAND.GloftA8SS/com.gameloft.android.GAND.GloftA8SS.Game}" drawable="game_asphalt_8"/>
 <item component="ComponentInfo{com.tomorrowcorporation.humanresourcemachine/com.tomorrowcorporation.humanresourcemachine.HRMActivity}" drawable="game_human_resource_machine"/>
 <item component="ComponentInfo{com.tencent.tgp/com.tencent.tgp.login.LaunchActivity}" drawable="tencent_tgp"/>
@@ -2388,4 +2402,12 @@
           drawable="netease_snailread"/>
     <item component="ComponentInfo{fi.rojekti.typemachine/fi.rojekti.typemachine.activity.EventListActivity}"
           drawable="type_machine"/>
+    <item component="ComponentInfo{net.mkg20001.zeronet/org.kivy.android.PythonActivity}"
+          drawable="zeronet"/>
+    <item component="ComponentInfo{com.ss.android.article.lite/com.ss.android.article.lite.activity.SplashActivity}"
+          drawable="jinritoutiao"/>
+    <item component="ComponentInfo{com.samruston.twitter/com.samruston.twitter.MainActivity}"
+          drawable="flamingo"/>
+    <item component="ComponentInfo{com.samruston.twitter/com.samruston.twitter.Launcher1}"
+          drawable="flamingo"/>
 </resources>

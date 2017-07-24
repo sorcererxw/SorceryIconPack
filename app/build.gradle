@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'img-optimizer'
 
 def buildCode() {
     Properties versionProps = new Properties()
@@ -10,6 +11,11 @@ def buildCode() {
     versionProps['VERSION_CODE'] = code.toString()
     versionProps.store(versionPropsFile.newWriter(), null)
     return code
+}
+
+optimizerOptions {
+    triggerSize 10 // kb
+    type "lossy"
 }
 
 android {
