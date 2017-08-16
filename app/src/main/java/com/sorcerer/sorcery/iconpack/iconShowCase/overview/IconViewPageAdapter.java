@@ -16,8 +16,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import timber.log.Timber;
 
@@ -30,20 +28,15 @@ import static io.reactivex.schedulers.Schedulers.newThread;
  */
 public class IconViewPageAdapter extends FragmentStatePagerAdapter {
 
-    private List<IconFlag> mFlagList = new ArrayList<>();
-
-    private Map<String, IconFragment> mFragmentMap = new ArrayMap<>();
-
-    private Context mContext;
-
-    @Inject
     protected SorceryPrefs mPrefs;
-
+    private List<IconFlag> mFlagList = new ArrayList<>();
+    private Map<String, IconFragment> mFragmentMap = new ArrayMap<>();
+    private Context mContext;
     private boolean mCustomPicker;
 
     IconViewPageAdapter(Context context, FragmentManager fm, boolean customPicker) {
         super(fm);
-        App.getInstance().getAppComponent().inject(this);
+        mPrefs = App.getInstance().prefs();
 
         mContext = context;
         mCustomPicker = customPicker;

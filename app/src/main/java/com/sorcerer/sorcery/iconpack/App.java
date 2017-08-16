@@ -2,8 +2,8 @@ package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
 
+import com.sorcerer.sorcery.iconpack.data.db.Db;
 import com.sorcerer.sorcery.iconpack.utils.NetUtil;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import java.lang.reflect.Method;
 import java.security.KeyManagementException;
@@ -22,7 +22,9 @@ import timber.log.Timber;
 public class App extends Application {
 
     private static App sApp;
-    private AppComponent mAppComponent;
+
+    private SorceryPrefs mPrefs;
+    private Db mDb;
 
     public static App getInstance() {
         return sApp;
@@ -43,13 +45,7 @@ public class App extends Application {
 
     @Override
     public void onCreate() {
-        mAppComponent = DaggerAppComponent.builder()
-                .appModule(new AppModule(this))
-                .build();
         super.onCreate();
-        if (!BuildConfig.DEBUG) {
-            CrashReport.initCrashReport(this, "900053240", false);
-        }
         RxActivityResult.register(this);
         Timber.plant(new Timber.DebugTree() {
             @Override
@@ -60,22 +56,32 @@ public class App extends Application {
 
         sApp = this;
 
+        mPrefs = new SorceryPrefs(this);
+        mDb = new Db(this);
+
         try {
             NetUtil.enableSSLSocket();
         } catch (KeyManagementException | NoSuchAlgorithmException e) {
             Timber.e(e);
         }
 
-//        if (BuildConfig.DEBUG) {
-//            LocaleUtil.INSTANCE.forceChinese(this);
-//        }
-
         BGASwipeBackManager.getInstance().init(this);
 
         showDebugDBAddressLogToast();
     }
 
-    public AppComponent getAppComponent() {
-        return mAppComponent;
+    public SorceryPrefs prefs() {
+        if (mPrefs == null) {
+            mPrefs = new SorceryPrefs(this);
+        }
+        return mPrefs;
     }
+
+    public Db db() {
+        if (mDb == null) {
+            mDb = new Db(this);
+        }
+        return mDb;
+    }
+
 }

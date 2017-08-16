@@ -202,7 +202,7 @@
             android:label="@string/nav_item_donate"
             android:theme="@style/SubActivity"/>
         <activity
-            android:name=".AppSelectActivity"
+            android:name=".IconRequestActivity"
             android:exported="true"
             android:label="@string/request"
             android:theme="@style/SubActivity"/>

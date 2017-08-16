@@ -31,6 +31,4 @@
         <!-- if true, delays calls to OnClickListeners until ripple effect ends -->
         <attr name="clickAfterRipple" format="boolean"/>
     </declare-styleable>
-
-
 </resources>

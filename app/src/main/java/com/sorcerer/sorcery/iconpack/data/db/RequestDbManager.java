@@ -13,6 +13,7 @@ import io.reactivex.Observable;
 
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.COMPONENT;
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.REQUESTED;
+import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.SELECTED;
 import static com.sorcerer.sorcery.iconpack.data.db.RequestTable.TABLE;
 
 /**
@@ -28,20 +29,22 @@ public class RequestDbManager {
         mDatabase = database;
     }
 
-//    public Observable<Boolean> isRequest(String component) {
-//        return RxJavaInterop.toV2Observable(
-//                mDatabase.createQuery(TABLE,
-//                        "SELECT * FROM " + TABLE + " where " + COMPONENT + " = ?", component)
-//                        .mapToList(cursor -> Db.getBoolean(cursor, REQUESTED))
-//                        .map(list -> list.get(0))
-//        );
-//    }
-
     public Observable<Boolean> isRequest(String component) {
         return mDatabase.createQuery(TABLE,
                 "SELECT * FROM " + TABLE + " where " + COMPONENT + " = ?", component)
                 .mapToList(cursor -> Db.getBoolean(cursor, REQUESTED))
                 .map(list -> list.get(0));
+    }
+
+    public void selectAll(boolean isSelect) {
+        try (BriteDatabase.Transaction transaction = mDatabase.newTransaction()) {
+            ContentValues values = new ContentValues();
+            values.put(SELECTED, isSelect);
+            mDatabase.update(TABLE, values, SQLiteDatabase.CONFLICT_IGNORE,
+                    REQUESTED + "=?",
+                    "" + 0);
+            transaction.markSuccessful();
+        }
     }
 
     public void saveComponent(List<String> components) {

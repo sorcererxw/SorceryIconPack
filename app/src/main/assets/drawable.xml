@@ -136,6 +136,7 @@
    <item drawable="ankidroid"/>
    <item drawable="antutu_3d"/>
    <item drawable="antutu_benchmark"/>
+    <item drawable="anydesk"/>
    <item drawable="anydo"/>
    <item drawable="anydo_calendar"/>
    <item drawable="anyview"/>
@@ -200,6 +201,7 @@
    <item drawable="battlefield_companion"/>
    <item drawable="battlefield_companion_alt"/>
     <item drawable="battlenet_authenticator"/>
+    <item drawable="bbm"/>
    <item drawable="behance"/>
    <item drawable="behance_display"/>
    <item drawable="beiyue"/>
@@ -235,6 +237,7 @@
    <item drawable="breadtrip"/>
    <item drawable="brevent"/>
     <item drawable="bridge"/>
+    <item drawable="brown_pic"/>
    <item drawable="browser"/>
    <item drawable="budingdonghua"/>
    <item drawable="bughd"/>
@@ -284,6 +287,8 @@
    <item drawable="cmcc_wifi"/>
    <item drawable="cnn_news"/>
    <item drawable="cntv"/>
+    <item drawable="coinbase"/>
+    <item drawable="colorful_clouds"/>
    <item drawable="contacts"/>
    <item drawable="contacts_alt"/>
    <item drawable="convertbee"/>
@@ -301,6 +306,7 @@
    <item drawable="ct_client"/>
    <item drawable="current_activity"/>
    <item drawable="custom_share"/>
+    <item drawable="cuto_wallpaper"/>
    <item drawable="cyanogenmod_audiofx"/>
     <item drawable="cyanogenmod_browser_gello"/>
    <item drawable="cyanogenmod_camera"/>
@@ -314,6 +320,7 @@
    <item drawable="dangdang"/>
    <item drawable="dangle"/>
    <item drawable="daxianggonghui"/>
+    <item drawable="daydaycook"/>
    <item drawable="dayima"/>
    <item drawable="days_matter"/>
    <item drawable="ddcat"/>
@@ -413,6 +420,7 @@
    <item drawable="flipboard_china"/>
    <item drawable="flipboard_lite"/>
    <item drawable="floatify"/>
+    <item drawable="flower_care"/>
    <item drawable="flow_bank"/>
    <item drawable="flux"/>
    <item drawable="flyme"/>
@@ -469,12 +477,15 @@
    <item drawable="flyme_life"/>
    <item drawable="flyme_lifekit"/>
    <item drawable="flyme_lifekit_alt"/>
+    <item drawable="flyme_log_report"/>
+    <item drawable="flyme_mall"/>
    <item drawable="flyme_map"/>
    <item drawable="flyme_map_alt"/>
    <item drawable="flyme_music"/>
    <item drawable="flyme_notepaper"/>
    <item drawable="flyme_painter"/>
    <item drawable="flyme_painter_alt"/>
+    <item drawable="flyme_pedometer"/>
    <item drawable="flyme_read"/>
    <item drawable="flyme_read_alt"/>
    <item drawable="flyme_safe"/>
@@ -541,6 +552,7 @@
    <item drawable="game_tencent_hlddz"/>
    <item drawable="game_tencent_xiangqi"/>
    <item drawable="game_the_last_banacat"/>
+    <item drawable="game_topsoil"/>
    <item drawable="game_vainglory"/>
    <item drawable="game_virtua_tennis"/>
    <item drawable="game_wangzherongyao"/>
@@ -552,6 +564,7 @@
    <item drawable="gitskarios"/>
     <item drawable="glasswire"/>
    <item drawable="globalcash"/>
+    <item drawable="gms_installer"/>
    <item drawable="golden_dict"/>
    <item drawable="google"/>
    <item drawable="google_allo"/>
@@ -594,8 +607,10 @@
    <item drawable="google_camera"/>
    <item drawable="google_chrome"/>
    <item drawable="google_chrome_beta"/>
+    <item drawable="google_chrome_canary"/>
    <item drawable="google_chrome_dev"/>
    <item drawable="google_chromium"/>
+    <item drawable="google_cloud_console"/>
    <item drawable="google_device_policy"/>
    <item drawable="google_docs"/>
    <item drawable="google_docs_alt"/>
@@ -725,6 +740,8 @@
    <item drawable="hydrogen_wallpager"/>
    <category title="I"/>
    <item drawable="ia_writer"/>
+    <item drawable="ibook_star"/>
+    <item drawable="ibook_star_pro"/>
    <item drawable="icbc_bank"/>
    <item drawable="icbc_bank_im"/>
    <item drawable="icebox"/>
@@ -739,7 +756,9 @@
    <item drawable="ifttt_alt"/>
    <item drawable="ikea"/>
    <item drawable="ilike_cartoon"/>
+    <item drawable="imgur"/>
    <item drawable="imooc"/>
+    <item drawable="in"/>
    <item drawable="ingress"/>
    <item drawable="ingress_alt"/>
    <item drawable="inoreader"/>
@@ -751,6 +770,7 @@
    <item drawable="island"/>
    <item drawable="issuu"/>
    <item drawable="it_home"/>
+    <item drawable="ixigua"/>
    <category title="J"/>
    <item drawable="jandan"/>
    <item drawable="jd"/>
@@ -762,10 +782,12 @@
    <item drawable="jiecao_news"/>
    <item drawable="jiemian_news"/>
    <item drawable="jike"/>
+    <item drawable="jikexueyuan"/>
    <item drawable="jike_alt"/>
    <item drawable="jingdong_reader"/>
    <item drawable="jinritoutiao"/>
    <item drawable="jinsanciba"/>
+    <item drawable="jixianglianmeng"/>
    <item drawable="jotterpad"/>
    <item drawable="jotterpad_alt"/>
    <item drawable="journey"/>
@@ -809,6 +831,7 @@
    <item drawable="lbe_parallel_space"/>
    <item drawable="ledongli"/>
    <item drawable="ledongli_run"/>
+    <item drawable="left_below_icon"/>
    <item drawable="lenovo_calendar"/>
    <item drawable="lenovo_calendar_1"/>
    <item drawable="lenovo_calendar_10"/>
@@ -858,6 +881,7 @@
    <item drawable="lingxi"/>
    <item drawable="linkedin"/>
    <item drawable="little_sleep"/>
+    <item drawable="liulishuo_eng"/>
    <item drawable="lizhi_fm"/>
    <item drawable="lol"/>
     <item drawable="longshot"/>
@@ -866,12 +890,14 @@
    <item drawable="luckymoney"/>
    <item drawable="lucky_patcher"/>
    <item drawable="luobo_shuzhai"/>
+    <item drawable="luoo"/>
    <item drawable="luyinbao"/>
    <item drawable="lvmamalvyou"/>
    <category title="M"/>
     <item drawable="magisk_manager"/>
    <item drawable="maidanba"/>
    <item drawable="maimai"/>
+    <item drawable="make_image_qin"/>
    <item drawable="mangguo_tv"/>
    <item drawable="maoyan"/>
    <item drawable="mark"/>
@@ -953,6 +979,7 @@
    <item drawable="myandroidtools_xposed"/>
    <item drawable="myersplash"/>
    <item drawable="myscript_calculator"/>
+    <item drawable="mysplash"/>
    <category title="N"/>
    <item drawable="netease_cartoon_reader"/>
    <item drawable="netease_cloudclass"/>
@@ -1070,6 +1097,7 @@
    <item drawable="ookla_speedtest"/>
    <item drawable="open_gapps"/>
    <item drawable="open_vpn"/>
+    <item drawable="originalwish_icon"/>
    <category title="P"/>
    <item drawable="package_tracker"/>
    <item drawable="packet_capture"/>
@@ -1085,6 +1113,7 @@
     <item drawable="period_tracker"/>
    <item drawable="periscope"/>
    <item drawable="phhhoto"/>
+    <item drawable="philm"/>
    <item drawable="phonograph"/>
    <item drawable="photomath"/>
    <item drawable="photo_editor"/>
@@ -1120,6 +1149,7 @@
    <item drawable="pptv"/>
    <item drawable="pp_assistant"/>
    <item drawable="press"/>
+    <item drawable="prevent"/>
    <item drawable="prisma"/>
    <item drawable="psiphon"/>
    <item drawable="pure_weather"/>
@@ -1132,6 +1162,7 @@
    <item drawable="quanminkge"/>
    <item drawable="quanneng_toolbox"/>
    <item drawable="quark_browser"/>
+    <item drawable="quark_browser_alt"/>
    <item drawable="qufenqi"/>
    <item drawable="quickpic"/>
    <item drawable="quik"/>
@@ -1222,6 +1253,7 @@
    <item drawable="search_lite"/>
    <item drawable="secoo"/>
    <item drawable="seed"/>
+    <item drawable="send_anywhere"/>
    <item drawable="settings"/>
    <item drawable="settings_alt_pixel_blue"/>
    <item drawable="settings_editor"/>
@@ -1249,6 +1281,7 @@
    <item drawable="siyue_musicassistant"/>
    <item drawable="skype"/>
    <item drawable="sleep_as_android"/>
+    <item drawable="smartisan_bbs"/>
    <item drawable="smartisan_calendar"/>
    <item drawable="smartisan_calendar_1"/>
    <item drawable="smartisan_calendar_10"/>
@@ -1314,6 +1347,7 @@
    <item drawable="sony_live_on_youtube"/>
    <item drawable="sony_mail"/>
    <item drawable="sony_messaging"/>
+    <item drawable="sony_messaging_alt"/>
    <item drawable="sony_motionshot"/>
    <item drawable="sony_movie_maker"/>
    <item drawable="sony_music"/>
@@ -1470,6 +1504,7 @@
    <item drawable="toughwo"/>
    <item drawable="tp_link"/>
     <item drawable="trello"/>
+    <item drawable="trip_advisor"/>
    <item drawable="trip_suitcase"/>
    <item drawable="ttbook"/>
    <item drawable="ttpod"/>
@@ -1705,6 +1740,7 @@
    <category title="Z"/>
    <item drawable="zaker"/>
    <item drawable="zank"/>
+    <item drawable="zaozuo"/>
    <item drawable="zarchiver"/>
    <item drawable="zcamera"/>
    <item drawable="zealer"/>

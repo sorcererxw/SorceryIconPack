@@ -6,8 +6,6 @@ import android.support.v7.preference.PreferenceFragmentCompat;
 import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 
-import javax.inject.Inject;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -15,12 +13,11 @@ import javax.inject.Inject;
  */
 
 public abstract class BasePreferenceFragmentCompat extends PreferenceFragmentCompat {
-    @Inject
     protected SorceryPrefs mPrefs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        App.getInstance().getAppComponent().inject(this);
+        mPrefs = App.getInstance().prefs();
         super.onCreate(savedInstanceState);
     }
 }

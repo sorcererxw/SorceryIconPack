@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "552243180757",
+    "firebase_url": "https://sorcery-icons.firebaseio.com",
+    "project_id": "sorcery-icons",
+    "storage_bucket": "sorcery-icons.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552243180757:android:97eff0df1eecb736",
+        "android_client_info": {
+          "package_name": "com.sorcerer.sorcery.iconpack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552243180757-rs9n256a9r7mkmtr8jai5toukcmfbkg6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sorcerer.sorcery.iconpack",
+            "certificate_hash": "b64011de3f5516f353bf145825db6a0bbfc45124"
+          }
+        },
+        {
+          "client_id": "552243180757-4vjd4aafq7dnrjnnf6nefsrthk6g0fr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB1Bui3UTIx_56_w5ykCDtgMJ06ZtQXR4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552243180757-4vjd4aafq7dnrjnnf6nefsrthk6g0fr5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,11 +15,16 @@ public class RequestTable {
 
     public static final String REQUESTED = "requested";
 
+    public static final String REQUEST_TIME = "requestTime";
+
+    public static final String SELECTED = "selected";
+
     public static void onCreate(SQLiteDatabase db) {
         db.execSQL(new TableBuilder(TABLE)
                 .addTextColumn(COMPONENT, TableBuilder.FLAG_NOT_NULL)
                 .addBooleanColumn(REQUESTED)
                 .addPrimaryKeyColumn(COMPONENT)
+                .addBooleanColumn(SELECTED)
                 .build()
         );
     }

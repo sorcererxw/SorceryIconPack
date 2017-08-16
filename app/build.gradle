@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 apply plugin: 'img-optimizer'
 
 def buildCode() {
@@ -28,14 +27,14 @@ android {
         }
     }
     compileSdkVersion 26
-    buildToolsVersion '26.0.0'
+    buildToolsVersion '26.0.1'
 
     int code = buildCode()
 
     defaultConfig {
         applicationId "com.sorcerer.sorcery.iconpack"
         versionCode code
-        versionName "4.4." + code
+        versionName "4.5." + code
         minSdkVersion 21
         targetSdkVersion 26
     }
@@ -45,8 +44,8 @@ android {
     }
     buildTypes {
         debug {
-            multiDexEnabled false
-            minifyEnabled true
+//            multiDexEnabled true
+            minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.SorceryKey
@@ -64,6 +63,10 @@ android {
         it.buildConfigField 'String', 'LEANCLOUD_KEY', leancloudKey
         it.buildConfigField 'String', 'HE_WEATHER_KEY', heWeatherKey
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -72,14 +75,17 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    compile "com.android.support:appcompat-v7:$support_library_version"
-    compile "com.android.support:design:$support_library_version"
-    compile "com.android.support:support-v4:$support_library_version"
-    compile "com.android.support:cardview-v7:$support_library_version"
-    compile "com.android.support:recyclerview-v7:$support_library_version"
-    compile "com.android.support:preference-v14:$support_library_version"
-    compile "com.android.support:support-fragment:$support_library_version"
-    compile "com.android.support:support-v13:$support_library_version"
+    // pack tool
+    testCompile project(':packtools')
+
+    compile 'com.android.support:appcompat-v7:26.0.1'
+    compile 'com.android.support:design:26.0.1'
+    compile 'com.android.support:support-v4:26.0.1'
+    compile 'com.android.support:cardview-v7:26.0.1'
+    compile 'com.android.support:recyclerview-v7:26.0.1'
+    compile 'com.android.support:preference-v14:26.0.1'
+    compile 'com.android.support:support-fragment:26.0.1'
+    compile 'com.android.support:support-v13:26.0.1'
 
     // material dialog
     compile 'com.afollestad.material-dialogs:core:0.9.4.5'
@@ -98,8 +104,8 @@ dependencies {
     provided 'de.robv.android.xposed:api:82:sources'
 
     // butterknife
-    compile 'com.jakewharton:butterknife:8.6.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // glide
     compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
@@ -107,7 +113,7 @@ dependencies {
 
     // rx
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile "io.reactivex.rxjava2:rxjava:$rxjava2_version"
+    compile "io.reactivex.rxjava2:rxjava:2.1.1"
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     compile 'com.github.VictorAlbertos:RxActivityResult:0.4.5-2.x'
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
@@ -122,9 +128,6 @@ dependencies {
     compile 'com.mikepenz:google-material-typeface:3.0.1.0.original@aar'
     compile 'com.mikepenz:fontawesome-typeface:4.7.0.0@aar'
 
-    // bugly
-    compile 'com.tencent.bugly:crashreport:2.4.0'
-
     // slice
     compile 'com.github.mthli:Slice:v1.2'
 
@@ -138,9 +141,9 @@ dependencies {
     compile 'com.annimon:stream:1.1.7'
 
     // retrofit
-    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
-    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    compile "com.squareup.retrofit2:retrofit:2.3.0"
+    compile "com.squareup.retrofit2:converter-gson:2.3.0"
+    compile "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
 
     // autoValue
     provided 'com.google.auto.value:auto-value:1.3'
@@ -156,10 +159,6 @@ dependencies {
     // fastscroll
     compile 'com.github.turing-tech:MaterialScrollBar:12.3.1'
 
-    // dagger
-    compile 'com.google.dagger:dagger:2.11-rc2'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11-rc2'
-
     // markdownView
     compile 'com.github.tiagohm.MarkdownView:library:0.16.0'
     // db debug
@@ -168,8 +167,4 @@ dependencies {
     compile 'cn.bingoogolapple:bga-swipebacklayout:1.0.8@aar'
     // status bar
     compile 'com.jaeger.statusbarutil:library:1.4.0'
-    // kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    // pack tool
-    debugCompile project(':packtools')
 }

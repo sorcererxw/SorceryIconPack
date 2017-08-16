@@ -38,7 +38,7 @@ import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.network.spiders.AppSearchResultGetter;
 import com.sorcerer.sorcery.iconpack.ui.activities.base.BaseActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.anim.FadeInTransition;
 import com.sorcerer.sorcery.iconpack.ui.anim.FadeOutTransition;
 import com.sorcerer.sorcery.iconpack.ui.anim.SimpleTransitionListener;
@@ -378,7 +378,7 @@ public class SearchActivity extends BaseActivity {
             } else {
                 mActivity.startActivityForResult(
                         intent,
-                        MainActivity.Companion.getREQUEST_ICON_DIALOG(),
+                        MainActivity.REQUEST_ICON_DIALOG,
                         ActivityOptions.makeSceneTransitionAnimation(
                                 mActivity,
                                 icon,

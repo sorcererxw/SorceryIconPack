@@ -16,8 +16,6 @@ import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.data.db.Db;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 
-import javax.inject.Inject;
-
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
@@ -27,9 +25,7 @@ import timber.log.Timber;
  * @date: 2016/5/28 0028
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    @Inject
     protected SorceryPrefs mPrefs;
-    @Inject
     protected Db mDb;
 
     protected Context mContext = this;
@@ -37,7 +33,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        App.getInstance().getAppComponent().inject(this);
+        mDb = App.getInstance().db();
+        mPrefs = App.getInstance().prefs();
         if (mPrefs.nightMode()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {

@@ -1,19 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.2-4'
-    ext.support_library_version = '26.0.0-beta2'
     ext.rxjava2_version = '2.1.0'
     ext.retrofit_version = '2.3.0'
 
     repositories {
         jcenter()
-        mavenCentral()
-        maven { url "https://maven.google.com" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-alpha7'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:3.0.0-beta2'
         classpath 'com.chenenyu:img-optimizer:1.1.1'
     }
 
@@ -24,29 +19,10 @@ allprojects {
         jcenter()
         mavenCentral()
         maven { url "https://jitpack.io" }
-        maven {
-            url "https://oss.sonatype.org/content/repositories/snapshots"
-        }
-        maven {
-            url "http://mvn.leancloud.cn/nexus/content/repositories/releases"
-        }
-        maven {
-            url 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2'
-        }
-        maven {
-            url "https://maven.google.com"
-        }
-    }
-    apply plugin: 'checkstyle'
-    task checkstyle(type: Checkstyle) {
-        source 'src'
-        include '**/*.java'
-        exclude '**/gen/**'
-        exclude '**/R.java'
-        exclude '**/BuildConfig.java'
-        configFile new File(rootDir, "checkstyle.xml")
-        // empty classpath
-        classpath = files()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "http://mvn.leancloud.cn/nexus/content/repositories/releases" }
+        maven { url 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2' }
+        maven { url "https://maven.google.com" }
     }
 }
 

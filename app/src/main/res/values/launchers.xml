@@ -39,6 +39,7 @@
         <item>Action|com.actionlauncher.playstore</item>
         <item>Apex|com.anddoes.launcher</item>
         <item>Aviate|com.tul.aviate</item>
+        <!--<item>Evie|is.shortcut</item>-->
         <item>Nova|com.teslacoilsw.launcher</item>
         <item>Google Now|com.google.android.googlequicksearchbox|com.google.android.launcher</item>
         <item>Pixel|com.google.android.apps.nexuslauncher</item>

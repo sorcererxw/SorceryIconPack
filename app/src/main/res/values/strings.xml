@@ -308,6 +308,8 @@
     <string name="apply_by_xposed_success_dialog_content">The icons will be effected after
         rebooting.
     </string>
+    <string name="apply_by_xposed_not_support_nougat">Not support xposed of Android 7.0+</string>
+
     <string name="apply_by_xposed_success_dialog_negative">Later</string>
     <string name="apply_by_xposed_success_dialog_positive">Reboot</string>
     <string name="apply_by_xposed_no_xposed">Need Xposed framework.</string>

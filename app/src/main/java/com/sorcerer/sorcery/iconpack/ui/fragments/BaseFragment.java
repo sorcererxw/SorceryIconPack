@@ -7,8 +7,6 @@ import android.support.v4.app.Fragment;
 import com.sorcerer.sorcery.iconpack.App;
 import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 
-import javax.inject.Inject;
-
 /**
  * @description:
  * @author: Sorcerer
@@ -16,12 +14,11 @@ import javax.inject.Inject;
  */
 
 public abstract class BaseFragment extends Fragment {
-    @Inject
     protected SorceryPrefs mPrefs;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        App.getInstance().getAppComponent().inject(this);
+        mPrefs = App.getInstance().prefs();
     }
 }

@@ -119,12 +119,12 @@ public class IconDialogActivity extends ToolbarActivity {
         }
 
         mTitleTextView.setText(mLabel);
-        TextWeightUtil.INSTANCE.medium(mTitleTextView);
+        TextWeightUtil.medium(mTitleTextView);
 
         mIconImageView.setImageResource(mRes);
 
         mBackground.setOnTouchListener((v, event) -> {
-            if (!ViewUtil.INSTANCE.isPointInsideView(event.getX(),
+            if (!ViewUtil.isPointInsideView(event.getX(),
                     event.getY(),
                     findViewById(R.id.cardView_icon_dialog_card))) {
                 onBackPressed();
@@ -176,11 +176,11 @@ public class IconDialogActivity extends ToolbarActivity {
                 .filter(s -> !TextUtils.isEmpty(s))
                 .flatMap(component -> {
                     mComponent = component;
-                    mPackageName = StringUtil.INSTANCE.componentInfoToPackageName(mComponent);
+                    mPackageName = StringUtil.componentInfoToPackageName(mComponent);
                     Timber.d(mPackageName);
                     return AppDisplayInfoGetter
                             .getAppDisplayInfo(mPackageName, IconDialogActivity.this,
-                                    LocaleUtil.INSTANCE.isChinese(IconDialogActivity.this));
+                                    LocaleUtil.isChinese(IconDialogActivity.this));
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(info -> {
@@ -275,7 +275,7 @@ public class IconDialogActivity extends ToolbarActivity {
                     public void onAnimationStart(Animator animation) {
 
                         TextView textView = new TextView(mContext);
-                        TextWeightUtil.INSTANCE.medium(textView);
+                        TextWeightUtil.medium(textView);
                         textView.setTextColor(ResourceUtil.getAttrColor(mContext,
                                 android.R.attr.textColorPrimary));
                         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
@@ -362,7 +362,7 @@ public class IconDialogActivity extends ToolbarActivity {
         int id = item.getItemId();
         if (id == R.id.action_show_in_store) {
             final String appPackageName =
-                    StringUtil.INSTANCE.componentInfoToPackageName(mComponent);
+                    StringUtil.componentInfoToPackageName(mComponent);
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("market://details?id=" + appPackageName))

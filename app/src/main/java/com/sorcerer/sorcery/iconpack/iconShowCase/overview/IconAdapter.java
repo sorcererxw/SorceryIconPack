@@ -29,8 +29,8 @@ import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.IconBean;
 import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
-import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewAdapter;
-import com.sorcerer.sorcery.iconpack.ui.adapters.base.BaseRecyclerViewHolder;
+import com.sorcerer.sorcery.iconpack.ui.adapters.BaseRecyclerViewAdapter;
+import com.sorcerer.sorcery.iconpack.ui.adapters.BaseRecyclerViewHolder;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 import com.turingtechnologies.materialscrollbar.ICustomAdapter;
 import com.turingtechnologies.materialscrollbar.INameableAdapter;
@@ -389,7 +389,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         } else {
             mActivity.startActivityForResult(
                     intent,
-                    MainActivity.Companion.getREQUEST_ICON_DIALOG(),
+                    MainActivity.REQUEST_ICON_DIALOG,
                     ActivityOptions.makeSceneTransitionAnimation(
                             mActivity,
                             holder.mIcon,

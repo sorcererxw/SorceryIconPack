@@ -2,41 +2,31 @@
 <resources>
     <string-array name="icon_pack_new" translatable="false">
         <item>@string/icon_label_added</item>
-        <item>rar</item>
-        <item>game_tencent_cf</item>
-        <item>gifmaker</item>
-        <item>essay_joke</item>
-        <item>netease_uu</item>
-        <item>sina_news</item>
-        <item>sina_finance</item>
-        <item>green</item>
-        <item>bluegogo</item>
-        <item>huanleshuke</item>
-        <item>sony_xperia_transfer</item>
-        <item>cyanogenmod_browser_gello</item>
-        <item>type_machine</item>
-        <item>dedao</item>
-        <item>busuu_en</item>
-        <item>busuu</item>
-        <item>dehelper</item>
-        <item>oneplus_camera</item>
-        <item>fooview_alpha</item>
-        <item>x_browser</item>
-        <item>bmap</item>
-        <item>game_fatego</item>
-        <item>magisk_manager</item>
-        <item>medium_alt</item>
-        <item>mix</item>
-        <item>qpay</item>
-        <item>flamingo</item>
-        <item>zeronet</item>
-        <item>netease_snailread</item>
-        <item>blizzard_authenticator</item>
+        <item>google_chrome_canary</item>
+        <item>ibook_star_pro</item>
+        <item>ibook_star</item>
+        <item>trip_advisor</item>
+        <item>luoo</item>
+        <item>daydaycook</item>
+        <item>colorful_clouds</item>
+        <item>jixianglianmeng</item>
+        <item>make_image_qin</item>
+        <item>originalwish_icon</item>
+        <item>flower_care</item>
+        <item>gms_installer</item>
+        <item>flyme_log_report</item>
+        <item>flyme_pedometer</item>
+        <item>anydesk</item>
+        <item>coinbase</item>
+        <item>flyme_mall</item>
+        <item>game_topsoil</item>
+        <item>bbm</item>
         <item>@string/icon_label_updated</item>
-        <item>gallery</item>
-        <item>tencent_video</item>
-        <item>it_home</item>
-        <item>oneplus_community</item>
+        <item>baidu_maps</item>
+        <item>bmap</item>
+        <item>sony_whats_new</item>
+        <item>amap</item>
+        <item>pomotodo</item>
     </string-array>
     <string-array name="icon_pack" translatable="false">
         <item>*****</item>
@@ -174,6 +164,7 @@
         <item>ankidroid</item>
         <item>antutu_3d</item>
         <item>antutu_benchmark</item>
+        <item>anydesk</item>
         <item>anydo</item>
         <item>anydo_calendar</item>
         <item>anyview</item>
@@ -238,6 +229,7 @@
         <item>battlefield_companion</item>
         <item>battlefield_companion_alt</item>
         <item>battlenet_authenticator</item>
+        <item>bbm</item>
         <item>behance</item>
         <item>behance_display</item>
         <item>beiyue</item>
@@ -273,6 +265,7 @@
         <item>breadtrip</item>
         <item>brevent</item>
         <item>bridge</item>
+        <item>brown_pic</item>
         <item>browser</item>
         <item>bu_bei_lang_easy_lexis</item>
         <item>budingdonghua</item>
@@ -321,6 +314,8 @@
         <item>cmcc_wifi</item>
         <item>cnn_news</item>
         <item>cntv</item>
+        <item>coinbase</item>
+        <item>colorful_clouds</item>
         <item>contacts</item>
         <item>contacts_alt</item>
         <item>convertbee</item>
@@ -338,6 +333,7 @@
         <item>ctrip_alt_2</item>
         <item>current_activity</item>
         <item>custom_share</item>
+        <item>cuto_wallpaper</item>
         <item>cyanogenmod_audiofx</item>
         <item>cyanogenmod_browser_gello</item>
         <item>cyanogenmod_camera</item>
@@ -351,6 +347,7 @@
         <item>dangdang</item>
         <item>dangle</item>
         <item>daxianggonghui</item>
+        <item>daydaycook</item>
         <item>dayima</item>
         <item>days_matter</item>
         <item>ddcat</item>
@@ -450,6 +447,7 @@
         <item>flipboard_lite</item>
         <item>floatify</item>
         <item>flow_bank</item>
+        <item>flower_care</item>
         <item>flux</item>
         <item>flyme</item>
         <item>flyme_account</item>
@@ -505,12 +503,15 @@
         <item>flyme_life</item>
         <item>flyme_lifekit</item>
         <item>flyme_lifekit_alt</item>
+        <item>flyme_log_report</item>
+        <item>flyme_mall</item>
         <item>flyme_map</item>
         <item>flyme_map_alt</item>
         <item>flyme_music</item>
         <item>flyme_notepaper</item>
         <item>flyme_painter</item>
         <item>flyme_painter_alt</item>
+        <item>flyme_pedometer</item>
         <item>flyme_read</item>
         <item>flyme_read_alt</item>
         <item>flyme_safe</item>
@@ -575,6 +576,7 @@
         <item>game_tencent_hlddz</item>
         <item>game_tencent_xiangqi</item>
         <item>game_the_last_banacat</item>
+        <item>game_topsoil</item>
         <item>game_vainglory</item>
         <item>game_wangzherongyao</item>
         <item>gamecores</item>
@@ -587,6 +589,7 @@
         <item>gitskarios</item>
         <item>glasswire</item>
         <item>globalcash</item>
+        <item>gms_installer</item>
         <item>go_google_installer</item>
         <item>go_host</item>
         <item>golden_dict</item>
@@ -631,8 +634,10 @@
         <item>google_camera</item>
         <item>google_chrome</item>
         <item>google_chrome_beta</item>
+        <item>google_chrome_canary</item>
         <item>google_chrome_dev</item>
         <item>google_chromium</item>
+        <item>google_cloud_console</item>
         <item>google_device_policy</item>
         <item>google_docs</item>
         <item>google_docs_alt</item>
@@ -755,6 +760,8 @@
         <item>hydrogen_wallpager</item>
         <item>**I**</item>
         <item>ia_writer</item>
+        <item>ibook_star</item>
+        <item>ibook_star_pro</item>
         <item>icbc_bank</item>
         <item>icbc_bank_im</item>
         <item>icebox</item>
@@ -769,7 +776,9 @@
         <item>ifttt_alt</item>
         <item>ikea</item>
         <item>ilike_cartoon</item>
+        <item>imgur</item>
         <item>imooc</item>
+        <item>in</item>
         <item>ingress</item>
         <item>ingress_alt</item>
         <item>inoreader</item>
@@ -781,6 +790,7 @@
         <item>island</item>
         <item>issuu</item>
         <item>it_home</item>
+        <item>ixigua</item>
         <item>**J**</item>
         <item>jandan</item>
         <item>jd</item>
@@ -793,9 +803,11 @@
         <item>jiemian_news</item>
         <item>jike</item>
         <item>jike_alt</item>
+        <item>jikexueyuan</item>
         <item>jingdong_reader</item>
         <item>jinritoutiao</item>
         <item>jinsanciba</item>
+        <item>jixianglianmeng</item>
         <item>jotterpad</item>
         <item>jotterpad_alt</item>
         <item>journey</item>
@@ -839,6 +851,7 @@
         <item>lbe_parallel_space</item>
         <item>ledongli</item>
         <item>ledongli_run</item>
+        <item>left_below_icon</item>
         <item>lenovo_calendar</item>
         <item>lenovo_calendar_1</item>
         <item>lenovo_calendar_10</item>
@@ -888,6 +901,7 @@
         <item>lingxi</item>
         <item>linkedin</item>
         <item>little_sleep</item>
+        <item>liulishuo_eng</item>
         <item>lizhi_fm</item>
         <item>lol</item>
         <item>longshot</item>
@@ -896,11 +910,13 @@
         <item>lucky_patcher</item>
         <item>luckymoney</item>
         <item>luobo_shuzhai</item>
+        <item>luoo</item>
         <item>lvmamalvyou</item>
         <item>**M**</item>
         <item>magisk_manager</item>
         <item>maidanba</item>
         <item>maimai</item>
+        <item>make_image_qin</item>
         <item>mangguo_tv</item>
         <item>maoyan</item>
         <item>mark</item>
@@ -981,6 +997,7 @@
         <item>myandroidtools_xposed</item>
         <item>myersplash</item>
         <item>myscript_calculator</item>
+        <item>mysplash</item>
         <item>**N**</item>
         <item>netease_cartoon_reader</item>
         <item>netease_cloudclass</item>
@@ -1095,6 +1112,7 @@
         <item>oneplus_weather_alt_sunny</item>
         <item>open_gapps</item>
         <item>open_vpn</item>
+        <item>originalwish_icon</item>
         <item>**P**</item>
         <item>package_tracker</item>
         <item>packet_capture</item>
@@ -1110,6 +1128,7 @@
         <item>period_tracker</item>
         <item>periscope</item>
         <item>phhhoto</item>
+        <item>philm</item>
         <item>phonograph</item>
         <item>photo_editor</item>
         <item>photomath</item>
@@ -1144,6 +1163,7 @@
         <item>ppsspp</item>
         <item>pptv</item>
         <item>press</item>
+        <item>prevent</item>
         <item>prisma</item>
         <item>psiphon</item>
         <item>pure_weather</item>
@@ -1156,6 +1176,7 @@
         <item>quanminkge</item>
         <item>quanneng_toolbox</item>
         <item>quark_browser</item>
+        <item>quark_browser_alt</item>
         <item>qufenqi</item>
         <item>quickpic</item>
         <item>quik</item>
@@ -1246,6 +1267,7 @@
         <item>search_lite</item>
         <item>secoo</item>
         <item>seed</item>
+        <item>send_anywhere</item>
         <item>settings</item>
         <item>settings_alt_pixel_blue</item>
         <item>settings_editor</item>
@@ -1275,6 +1297,7 @@
         <item>sleep_as_android</item>
         <item>smart_launcher</item>
         <item>smart_launcher_pro</item>
+        <item>smartisan_bbs</item>
         <item>smartisan_calendar</item>
         <item>smartisan_calendar_1</item>
         <item>smartisan_calendar_10</item>
@@ -1337,6 +1360,7 @@
         <item>sony_live_on_youtube</item>
         <item>sony_mail</item>
         <item>sony_messaging</item>
+        <item>sony_messaging_alt</item>
         <item>sony_motionshot</item>
         <item>sony_movie_maker</item>
         <item>sony_music</item>
@@ -1492,6 +1516,7 @@
         <item>toughwo</item>
         <item>tp_link</item>
         <item>trello</item>
+        <item>trip_advisor</item>
         <item>trip_suitcase</item>
         <item>ttbook</item>
         <item>ttpod</item>
@@ -1724,6 +1749,7 @@
         <item>**Z**</item>
         <item>zaker</item>
         <item>zank</item>
+        <item>zaozuo</item>
         <item>zarchiver</item>
         <item>zcamera</item>
         <item>zealer</item>

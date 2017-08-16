@@ -194,7 +194,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
         mAboutAppPreference = findPreference("preference_about_app");
         mAboutAppPreference.setOnPreferenceClickListener(preference -> {
             if (!mPrefs.devOptionsOpened().getValue()) {
-                AboutDialog.INSTANCE.show(getActivity(), new OnMultiTouchListener(5, () -> {
+                AboutDialog.show(getActivity(), new OnMultiTouchListener(5, () -> {
                     Toast.makeText(getContext(), "Dev-options is opened", Toast.LENGTH_SHORT)
                             .show();
                     mPreferenceScreen.addPreference(mDevPreferenceGroup);
@@ -202,7 +202,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                     mPrefs.devOptionsOpened().setValue(true);
                 }));
             } else {
-                AboutDialog.INSTANCE.show(getActivity());
+                AboutDialog.show(getActivity(), null);
             }
             return true;
         });

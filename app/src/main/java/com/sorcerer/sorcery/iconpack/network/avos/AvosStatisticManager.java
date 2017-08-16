@@ -9,8 +9,6 @@ import com.sorcerer.sorcery.iconpack.SorceryPrefs;
 import com.sorcerer.sorcery.iconpack.network.avos.models.AvosStatisticData;
 import com.sorcerer.sorcery.iconpack.utils.PackageUtil;
 
-import javax.inject.Inject;
-
 import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
@@ -21,7 +19,6 @@ import timber.log.Timber;
  */
 
 public class AvosStatisticManager {
-    @Inject
     protected SorceryPrefs mPrefs;
 
     private AvosClient mAvosClient;
@@ -29,7 +26,7 @@ public class AvosStatisticManager {
     private Context mContext;
 
     public AvosStatisticManager(Context context) {
-        App.getInstance().getAppComponent().inject(this);
+        mPrefs = App.getInstance().prefs();
 
         mAvosClient = AvosClient.getInstance();
 
