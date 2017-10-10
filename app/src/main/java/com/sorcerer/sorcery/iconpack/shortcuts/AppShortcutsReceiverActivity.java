@@ -21,10 +21,12 @@ public class AppShortcutsReceiverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         String action = intent.getAction();
-        switch (action) {
-            case ACTION_APPLY_PIXEL:
-                PixelApplySingleInstanceProgressActivity.apply(this, true);
-                break;
+        if (action != null) {
+            switch (action) {
+                case ACTION_APPLY_PIXEL:
+                    PixelApplySingleInstanceProgressActivity.apply(this, true);
+                    break;
+            }
         }
         finish();
     }

@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.iconShowCase.overview;
+package com.sorcerer.sorcery.iconpack.showcase.overview;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -28,7 +28,7 @@ import com.mikepenz.materialize.util.UIUtils;
 import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.data.models.IconBean;
-import com.sorcerer.sorcery.iconpack.iconShowCase.detail.IconDialogActivity;
+import com.sorcerer.sorcery.iconpack.showcase.detail.IconDialogActivity;
 import com.sorcerer.sorcery.iconpack.ui.adapters.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.ui.adapters.BaseRecyclerViewHolder;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
@@ -184,7 +184,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         }
         if (viewType == TYPE_HEADER) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.layout_icon_header_new, parent, false);
+                    .inflate(R.layout.item_icon_header, parent, false);
             return new HeaderViewHolder(view);
         }
         int layout;
@@ -240,6 +240,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
         } else if (type == TYPE_HEADER) {
             HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
             headerHolder.mHeader.setText(getLabel(iconBean.getName()));
+//            TextWeightUtil.medium(headerHolder.mHeader);
         } else {
             IconViewHolder iconHolder = (IconViewHolder) holder;
             if (iconBean != null) {
@@ -449,7 +450,7 @@ public class IconAdapter extends BaseRecyclerViewAdapter<IconAdapter.IconItemVie
     }
 
     static class HeaderViewHolder extends IconItemViewHolder {
-        @BindView(R.id.textView_icon_header_new)
+        @BindView(R.id.textView_icon_header)
         TextView mHeader;
 
         HeaderViewHolder(final View itemView) {

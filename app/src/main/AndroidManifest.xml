@@ -45,10 +45,6 @@
         android:theme="@style/AppTheme"
         tools:replace="android:supportsRtl"
         tools:targetApi="n">
-        <meta-data
-            android:name="com.google.android.apps.nexuslauncher.icons"
-            android:resource="@xml/icons"/>
-
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -212,7 +208,7 @@
             android:theme="@style/SubActivity">
         </activity>
         <activity
-            android:name=".iconShowCase.detail.IconDialogActivity"
+            android:name=".showcase.detail.IconDialogActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.Dialog"/>
 

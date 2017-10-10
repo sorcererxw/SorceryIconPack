@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.iconShowCase.detail;
+package com.sorcerer.sorcery.iconpack.showcase.detail;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

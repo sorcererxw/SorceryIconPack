@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.iconShowCase.detail;
+package com.sorcerer.sorcery.iconpack.showcase.detail;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -36,6 +36,8 @@ import com.sorcerer.sorcery.iconpack.utils.StringUtil;
 import com.sorcerer.sorcery.iconpack.utils.TextWeightUtil;
 import com.sorcerer.sorcery.iconpack.utils.ViewUtil;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
@@ -115,7 +117,7 @@ public class IconDialogActivity extends ToolbarActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("");
             getSupportActionBar().setBackgroundDrawable(
-                    new ColorDrawable(ResourceUtil.getColor(this, R.color.palette_transparent)));
+                    new ColorDrawable(ResourceUtil.getColor(this, R.color.transparent)));
         }
 
         mTitleTextView.setText(mLabel);
@@ -164,18 +166,32 @@ public class IconDialogActivity extends ToolbarActivity {
         });
     }
 
-//    @Override
-//    protected ViewGroup rootView() {
-//        return null;
-//    }
-
     private void showDetail() {
         Observable.just(mName)
+                .filter(name -> !name.matches(".*_alt(_\\d+)?$"))
                 .observeOn(Schedulers.newThread())
-                .map(name -> PackageUtil.getComponentByName(mContext, name))
-                .filter(s -> !TextUtils.isEmpty(s))
-                .flatMap(component -> {
-                    mComponent = component;
+                .map(name -> PackageUtil.getComponentsByName(mContext, name))
+                .filter(components -> !components.isEmpty())
+                .flatMap(components -> {
+                    Collections.sort(components, new Comparator<String>() {
+                        @Override
+                        public int compare(String c1, String c2) {
+                            String p1 = StringUtil.componentInfoToPackageName(c1);
+                            String p2 = StringUtil.componentInfoToPackageName(c2);
+
+                            if (p1.length() > p2.length()) {
+                                return 1;
+                            } else if (p1.length() < p2.length()) {
+                                return -1;
+                            } else {
+                                int s1 = p1.split("\\.").length;
+                                int s2 = p2.split("\\.").length;
+                                return s1 - s2;
+                            }
+                        }
+                    });
+                    Timber.d(components.toString());
+                    mComponent = components.get(0);
                     mPackageName = StringUtil.componentInfoToPackageName(mComponent);
                     Timber.d(mPackageName);
                     return AppDisplayInfoGetter
@@ -194,16 +210,11 @@ public class IconDialogActivity extends ToolbarActivity {
                 .map(info -> {
                     if (info.getIcon() == null && info.getIconUrl() != null) {
                         try {
-//                            Glide.with(IconDialogActivity.this)
-//                                    .load(info.getIconUrl()).into()
                             Timber.d(info.getIconUrl());
                             info.setIcon(Glide.with(IconDialogActivity.this)
                                     .load(info.getIconUrl())
                                     .submit()
                                     .get());
-//                            info.setIcon(Glide.with(IconDialogActivity.this)
-//                                    .load(info.getIconUrl())
-//                                    .get());
                         } catch (InterruptedException | ExecutionException e) {
                             Timber.e(e);
                         }

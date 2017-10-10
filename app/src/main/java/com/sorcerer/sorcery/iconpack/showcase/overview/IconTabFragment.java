@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.iconShowCase.overview;
+package com.sorcerer.sorcery.iconpack.showcase.overview;
 
 import android.graphics.Color;
 import android.os.Bundle;

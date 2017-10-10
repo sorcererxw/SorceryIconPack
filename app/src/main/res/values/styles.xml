@@ -8,7 +8,7 @@
         <item name="android:colorAccent">#6d4c41</item>
         <item name="android:colorControlActivated">#6d4c41</item>
         <item name="android:colorBackground">@color/colorBackground</item>
-        <item name="colorCard">@color/palette_white</item>
+        <item name="colorCard">@color/md_white_1000</item>
         <item name="android:textColorPrimary">@color/primary_text</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
 
@@ -50,7 +50,7 @@
     <style name="AppTheme.Dialog.NoScrim" parent="AppTheme">
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/palette_transparent</item>
+        <item name="android:windowBackground">@color/transparent</item>
     </style>
 
     <style name="AppTheme.PhotoView" parent="AppTheme">
@@ -60,7 +60,7 @@
 
     <style name="AppTheme.Dialog.About" parent="AppTheme.Dialog">
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/palette_transparent</item>
+        <item name="android:windowBackground">@color/transparent</item>
     </style>
 
     <style name="PreferenceTheme" parent="AppTheme">
@@ -68,7 +68,7 @@
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
 
-        <item name="android:windowBackground">@color/palette_transparent</item>
+        <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
@@ -79,7 +79,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
     <style name="RaisedButton">
-        <item name="android:textColor">@color/palette_white</item>
+        <item name="android:textColor">@color/md_white_1000</item>
         <item name="android:background">@drawable/material_button</item>
         <item name="android:padding">8dp</item>
         <item name="android:layout_margin">3dp</item>

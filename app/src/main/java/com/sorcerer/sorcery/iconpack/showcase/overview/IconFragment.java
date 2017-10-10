@@ -1,4 +1,4 @@
-package com.sorcerer.sorcery.iconpack.iconShowCase.overview;
+package com.sorcerer.sorcery.iconpack.showcase.overview;
 
 import android.content.Context;
 import android.content.pm.ResolveInfo;
@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
+import com.annimon.stream.function.Predicate;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.mikepenz.materialize.util.UIUtils;
@@ -191,6 +192,12 @@ public class IconFragment extends LazyFragment implements IViewPageFragment {
 
     private void getIconBeanList(IconFlag flag) {
         Observable.just(flag).map(fg -> Stream.of(getIconNames(getContext(), fg))
+                .filter(new Predicate<String>() {
+                    @Override
+                    public boolean test(String value) {
+                        return !value.matches(".*calendar_\\d+$");
+                    }
+                })
                 .map(name -> {
                     IconBean iconBean = new IconBean(name);
                     if (name.startsWith("**")) {

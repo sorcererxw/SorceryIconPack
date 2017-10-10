@@ -5,7 +5,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.PreferenceScreen;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconFlag;
+import com.sorcerer.sorcery.iconpack.showcase.overview.IconFlag;
 import com.sorcerer.sorcery.iconpack.ui.fragments.BasePreferenceFragmentCompat;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 

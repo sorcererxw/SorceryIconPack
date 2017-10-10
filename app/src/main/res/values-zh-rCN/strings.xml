@@ -256,4 +256,5 @@
     <string name="feedback_need_mailbox">请先安装邮箱应用</string>
     <string name="icon_request_requested">已申请</string>
     <string name="apply_by_xposed_not_support_nougat">暂不支持Android 7.0+的Xposed</string>
+    <string name="preference_general_language">语言</string>
 </resources>

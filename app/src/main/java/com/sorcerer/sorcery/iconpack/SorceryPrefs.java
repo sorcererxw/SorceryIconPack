@@ -117,4 +117,20 @@ public class SorceryPrefs extends Prefs {
     public void nightMode(Boolean enable) {
         getRxSharedPreferences().getBoolean("night_mode").set(enable);
     }
+
+    public void forceChinese(Boolean enable) {
+        if (enable) {
+            getRxSharedPreferences().getString("language").set("zh");
+        } else {
+            getRxSharedPreferences().getString("language").set("");
+        }
+    }
+
+    public void language(String locale) {
+        language().set(locale);
+    }
+
+    public Preference<String> language() {
+        return getRxSharedPreferences().getString("language", "");
+    }
 }

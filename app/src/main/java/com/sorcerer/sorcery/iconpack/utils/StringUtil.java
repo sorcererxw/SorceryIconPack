@@ -21,7 +21,7 @@ public class StringUtil {
         } catch (Exception e) {
             Timber.e(e);
         }
-        return null;
+        return "";
     }
 
 }

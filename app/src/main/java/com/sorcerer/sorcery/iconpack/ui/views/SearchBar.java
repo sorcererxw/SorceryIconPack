@@ -29,6 +29,14 @@ import butterknife.ButterKnife;
  */
 
 public class SearchBar extends Toolbar {
+    @BindView(R.id.editText)
+    EditText mEditText;
+    @BindView(R.id.imageView)
+    ImageView mActionIcon;
+    @BindView(R.id.indicatorView)
+    AVLoadingIndicatorView mIndicatorView;
+    private SearchListener mSearchListener;
+
     public SearchBar(Context context) {
         super(context);
         init();
@@ -46,15 +54,6 @@ public class SearchBar extends Toolbar {
         init();
     }
 
-    @BindView(R.id.editText)
-    EditText mEditText;
-
-    @BindView(R.id.imageView)
-    ImageView mActionIcon;
-
-    @BindView(R.id.indicatorView)
-    AVLoadingIndicatorView mIndicatorView;
-
     private void init() {
 
         View view = View.inflate(getContext(), R.layout.layout_search_bar, null);
@@ -69,9 +68,11 @@ public class SearchBar extends Toolbar {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 InputMethodManager imm = (InputMethodManager) getContext()
                         .getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
-                mEditText.requestFocus();
-                return true;
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
+                    mEditText.requestFocus();
+                    return true;
+                }
             }
             return false;
         });
@@ -121,7 +122,9 @@ public class SearchBar extends Toolbar {
     public void requestEditTextFocus() {
         InputMethodManager imm =
                 (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(mEditText, InputMethodManager.SHOW_IMPLICIT);
+        if (imm != null) {
+            imm.showSoftInput(mEditText, InputMethodManager.SHOW_IMPLICIT);
+        }
     }
 
     private void addTintedUpNavigation() {
@@ -132,12 +135,6 @@ public class SearchBar extends Toolbar {
         setNavigationIcon(drawable);
     }
 
-    public interface SearchListener {
-        void search(String text);
-    }
-
-    private SearchListener mSearchListener;
-
     public void setSearchListener(SearchListener searchListener) {
         mSearchListener = searchListener;
     }
@@ -146,12 +143,12 @@ public class SearchBar extends Toolbar {
         return mEditText.getText().toString();
     }
 
-    public void setInputType(int typeTextFlag) {
-        mEditText.setInputType(typeTextFlag);
-    }
-
     public void setText(String text) {
         mEditText.setText(text);
+    }
+
+    public void setInputType(int typeTextFlag) {
+        mEditText.setInputType(typeTextFlag);
     }
 
     public void clearText() {
@@ -164,5 +161,9 @@ public class SearchBar extends Toolbar {
 
     public void setHint(String hint) {
         mEditText.setHint(hint);
+    }
+
+    public interface SearchListener {
+        void search(String text);
     }
 }

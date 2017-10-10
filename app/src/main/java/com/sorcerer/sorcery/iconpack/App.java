@@ -1,6 +1,9 @@
 package com.sorcerer.sorcery.iconpack;
 
 import android.app.Application;
+import android.content.res.Resources;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
 
 import com.sorcerer.sorcery.iconpack.data.db.Db;
 import com.sorcerer.sorcery.iconpack.utils.NetUtil;
@@ -8,6 +11,7 @@ import com.sorcerer.sorcery.iconpack.utils.NetUtil;
 import java.lang.reflect.Method;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Locale;
 
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackManager;
 import rx_activity_result2.RxActivityResult;
@@ -68,6 +72,23 @@ public class App extends Application {
         BGASwipeBackManager.getInstance().init(this);
 
         showDebugDBAddressLogToast();
+
+        Locale systemLocale = getResources().getConfiguration().locale;
+        mPrefs.language().asObservable().subscribe(language -> {
+            Locale locale;
+            if (TextUtils.isEmpty(language)) {
+                locale = systemLocale;
+            } else {
+                locale = new Locale(language);
+            }
+            Resources res = getResources();
+            // Change locale settings in the app.
+            DisplayMetrics dm = res.getDisplayMetrics();
+            android.content.res.Configuration conf = res.getConfiguration();
+            conf.setLocale(locale); // API 17+ only.
+            // Use conf.locale = new Locale(...) if targeting lower versions
+            res.updateConfiguration(conf, dm);
+        }, Timber::e);
     }
 
     public SorceryPrefs prefs() {

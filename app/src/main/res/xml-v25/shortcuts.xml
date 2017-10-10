@@ -8,7 +8,7 @@
         android:shortcutShortLabel="@string/shortcuts_request_icon_short_label">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.sorcerer.sorcery.iconpack.AppSelectActivity"
+            android:targetClass="com.sorcerer.sorcery.iconpack.IconRequestActivity"
             android:targetPackage="com.sorcerer.sorcery.iconpack"/>
         <categories android:name="android.shortcut.conversation"/>
     </shortcut>

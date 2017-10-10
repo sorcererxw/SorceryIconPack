@@ -106,11 +106,11 @@ public class Navigator {
         Intent intent = new Intent(mActivity, cls);
         mActivity.startActivity(intent);
 
-//        val lessAnim = mPrefs!!.lessAnim().get()
-//        if (lessAnim != null && lessAnim) {
-//            mActivity.overridePendingTransition(0, 0)
-//        } else {
-        mActivity.overridePendingTransition(R.anim.slide_right_in, 0);
-//        }
+        Boolean lessAnim = App.getInstance().prefs().lessAnim().get();
+        if (lessAnim != null && lessAnim) {
+            mActivity.overridePendingTransition(0, 0);
+        } else {
+            mActivity.overridePendingTransition(R.anim.slide_right_in, 0);
+        }
     }
 }

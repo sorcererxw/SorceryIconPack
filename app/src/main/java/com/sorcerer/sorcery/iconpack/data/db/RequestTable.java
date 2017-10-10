@@ -23,8 +23,8 @@ public class RequestTable {
         db.execSQL(new TableBuilder(TABLE)
                 .addTextColumn(COMPONENT, TableBuilder.FLAG_NOT_NULL)
                 .addBooleanColumn(REQUESTED)
-                .addPrimaryKeyColumn(COMPONENT)
-                .addBooleanColumn(SELECTED)
+//                .addPrimaryKeyColumn(COMPONENT)
+//                .addBooleanColumn(SELECTED)
                 .build()
         );
     }

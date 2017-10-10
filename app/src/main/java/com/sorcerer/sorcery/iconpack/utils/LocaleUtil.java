@@ -21,11 +21,11 @@ public class LocaleUtil {
         return context.getResources().getString(R.string.language).equals("zh");
     }
 
-    public void forceChinese(Context context) {
+    public static void forceLanguage(Context context, String language) {
         Resources res = context.getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
-        conf.locale = new Locale("zh");
+        conf.locale = new Locale(language);
         res.updateConfiguration(conf, dm);
     }
 }

@@ -10,6 +10,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
 import com.annimon.stream.Collectors;
@@ -402,7 +403,39 @@ public class PackageUtil {
         } catch (Exception e) {
             Timber.e(e);
         }
-        return null;
+        return "";
+    }
+
+    public static List<String> getComponentsByName(Context context, String name) {
+        List<String> components = new ArrayList<>();
+        int i = context.getResources().getIdentifier("appfilter", "xml", context.getPackageName());
+        XmlResourceParser parser = context.getResources().getXml(i);
+        int eventType;
+        try {
+            eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        if (parser.getName().equals("item")) {
+                            if (parser.getAttributeValue(1).matches("^" + name + "$") &&
+                                    !parser.getAttributeValue(0).startsWith(":")) {
+                                if (!TextUtils.isEmpty(parser.getAttributeValue(0))) {
+                                    components.add(parser.getAttributeValue(0));
+                                }
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            Timber.e(e);
+        }
+        return components;
     }
 
     public static List<LauncherInfo> generateLauncherInfo(Context context, int id) {

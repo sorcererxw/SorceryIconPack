@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<icons>
-    <item component="com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity"
-          drawable="@drawable/google_play_games"/>
-</icons>

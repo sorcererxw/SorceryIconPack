@@ -33,7 +33,8 @@ public class RxSU {
                 Timber.d("run: " + Arrays.toString(commands));
                 return Shell.SU.run(commands);
             }
-            return null;
+            throw new Exception("Failed");
+//            return new ArrayList<>();
         });
     }
 

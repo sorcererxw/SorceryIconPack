@@ -12,8 +12,13 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.annimon.stream.Stream;
+import com.annimon.stream.function.Function;
 import com.sorcerer.sorcery.iconpack.MainActivity;
 import com.sorcerer.sorcery.iconpack.R;
 import com.sorcerer.sorcery.iconpack.SettingsActivity;
@@ -24,6 +29,8 @@ import com.sorcerer.sorcery.iconpack.ui.callbacks.OnMultiTouchListener;
 import com.sorcerer.sorcery.iconpack.ui.fragments.BasePreferenceFragmentCompat;
 import com.sorcerer.sorcery.iconpack.utils.FileUtil;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
+
+import java.util.Locale;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -47,6 +54,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     private PreferenceScreen mPreferenceScreen;
     private Preference mGeneralCustomizeTabs;
     private Preference mGeneralClearCachePreference;
+    private Preference mGeneralLanguagePreference;
     private SwitchPreference mUiNavBarPreference;
     private PreferenceGroup mDevPreferenceGroup;
     private Preference mAboutAppPreference;
@@ -81,6 +89,38 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
 
     private void initGeneral() {
         mGeneralClearCachePreference = findPreference("preference_general_clear_cache");
+
+        mGeneralLanguagePreference = findPreference("preference_general_language");
+        if (!TextUtils.isEmpty(mPrefs.language().get())) {
+            mGeneralLanguagePreference.setSummary(mPrefs.language().get());
+        }
+        mGeneralLanguagePreference.setOnPreferenceClickListener(
+                new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        Locale[] locales = new Locale[]{
+                                Locale.ENGLISH,
+                                Locale.CHINESE
+                        };
+                        new MaterialDialog.Builder(getContext())
+                                .items(Stream.of(locales).map(new Function<Locale, String>() {
+                                    @Override
+                                    public String apply(Locale locale) {
+                                        return locale.toString();
+                                    }
+                                }).toList())
+                                .itemsCallback(new MaterialDialog.ListCallback() {
+                                    @Override
+                                    public void onSelection(MaterialDialog dialog, View itemView,
+                                                            int position, CharSequence text) {
+                                        mPrefs.language(locales[position].getLanguage());
+                                        restartApp();
+                                    }
+                                })
+                                .build().show();
+                        return true;
+                    }
+                });
 
         mGeneralCustomizeTabs = findPreference("preference_general_customize_tabs");
         mGeneralCustomizeTabs.setOnPreferenceClickListener(
@@ -129,18 +169,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
                 }
                 mChangingTheme = true;
                 mPrefs.nightMode((Boolean) newValue);
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    getActivity().finish();
-                    final Intent intent = new Intent(getContext(), MainActivity.class);
-                    getActivity().startActivity(intent.addFlags(FLAG_ACTIVITY_NO_ANIMATION)
-                            .addFlags(FLAG_ACTIVITY_CLEAR_TOP)
-                    );
-                    getActivity().finish();
-                    getActivity().overridePendingTransition(
-                            android.R.anim.fade_in,
-                            android.R.anim.fade_out
-                    );
-                }, 100);
+                restartApp();
                 return true;
             }
         });
@@ -165,6 +194,22 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     }
 
     private void initDevOps() {
+        SwitchPreference forceChinesePreference =
+                (SwitchPreference) findPreference("preference_switch_force_chinese");
+        forceChinesePreference.setChecked(mPrefs.language().get().equals("zh"));
+        forceChinesePreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if ((Boolean) newValue) {
+                    mPrefs.forceChinese(true);
+                } else {
+                    mPrefs.forceChinese(false);
+                }
+                restartApp();
+                return true;
+            }
+        });
+
         SwitchPreference hideItselfPreference =
                 (SwitchPreference) findPreference("preference_switch_hide_itself");
         hideItselfPreference.setChecked(mPrefs.hideItself().getValue());
@@ -241,5 +286,20 @@ public class SettingsFragment extends BasePreferenceFragmentCompat {
     public void onResume() {
         super.onResume();
         getActivity().setTitle(ResourceUtil.getString(getContext(), R.string.nav_item_settings));
+    }
+
+    private void restartApp() {
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            getActivity().finish();
+            final Intent intent = new Intent(getContext(), MainActivity.class);
+            getActivity().startActivity(intent.addFlags(FLAG_ACTIVITY_NO_ANIMATION)
+                    .addFlags(FLAG_ACTIVITY_CLEAR_TOP)
+            );
+            getActivity().finish();
+            getActivity().overridePendingTransition(
+                    android.R.anim.fade_in,
+                    android.R.anim.fade_out
+            );
+        }, 100);
     }
 }

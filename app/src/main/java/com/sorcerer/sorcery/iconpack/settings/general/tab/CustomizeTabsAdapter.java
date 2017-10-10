@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.sorcerer.sorcery.iconpack.R;
-import com.sorcerer.sorcery.iconpack.iconShowCase.overview.IconFlag;
+import com.sorcerer.sorcery.iconpack.showcase.overview.IconFlag;
 import com.sorcerer.sorcery.iconpack.ui.adapters.BaseRecyclerViewAdapter;
 import com.sorcerer.sorcery.iconpack.utils.ResourceUtil;
 

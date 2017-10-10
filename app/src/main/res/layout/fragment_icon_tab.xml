@@ -15,7 +15,7 @@
         android:elevation="4dp"
         app:tabIndicatorColor="?android:attr/colorAccent"
         app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/palette_white"
+        app:tabSelectedTextColor="@color/md_white_1000"
         app:tabTextAppearance="@style/TabTextAppearance"
         app:tabTextColor="#C3E4C5"/>
 

@@ -69,7 +69,7 @@
 
     <string name="please_give_permission">please give it permission</string>
 
-    <string name="request">Request icon</string>
+    <string name="request">Icon Request</string>
     <string name="suggest">Talk with developer</string>
 
     <string name="choose_mail_app">please choose a mail app</string>
@@ -259,15 +259,16 @@
     <string name="about_dialog_slogan">Let material-design materialize your screen</string>
     <string name="about_dialog_icon_count">Includes %d icons</string>
 
-    <string name="shortcuts_request_icon_disable_message">Request Icon</string>
-    <string name="shortcuts_request_icon_long_label">Request Icon</string>
-    <string name="shortcuts_request_icon_short_label">Request Icon</string>
+    <string name="shortcuts_request_icon_disable_message">Icon Request</string>
+    <string name="shortcuts_request_icon_long_label">Icon Request</string>
+    <string name="shortcuts_request_icon_short_label">Icon Request</string>
 
     <string name="shortcuts_apply_pixel_long_label">Refresh Pixel Launcher Icons</string>
     <string name="shortcuts_apply_pixel_short_label">Refresh Pixel Icons</string>
 
     <string name="preference_group_general">General</string>
     <string name="preference_general_clear_cache">Clear cache</string>
+    <string name="preference_general_language">Language</string>
 
     <string name="preference_group_laboratory">Experimental</string>
     <string name="preference_laboratory_global_load">Global load</string>
