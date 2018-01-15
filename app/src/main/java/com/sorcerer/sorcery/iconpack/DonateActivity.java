@@ -46,7 +46,7 @@ public class DonateActivity extends BaseSubActivity {
     ImageView mCardImage;
     @BindView(R.id.coordinatorLayout_donate)
     CoordinatorLayout mCoordinatorLayout;
-//    private IInAppBillingService mService;
+    //    private IInAppBillingService mService;
 //    private ServiceConnection mServiceConnection;
 
     @Override
@@ -83,7 +83,9 @@ public class DonateActivity extends BaseSubActivity {
 
     @OnClick(R.id.button_donate_bitcoin)
     void onBitcoinClick() {
-
+        Navigator.toWebPage(this,
+                "https://htmlpreview.github.io/?https://github.com/sorcererXW/SorceryIconPack/blob/beta/app/src/main/assets/bitcoin_donate.html");
+        mPrefs.donated().setValue(true);
     }
 
     @OnClick(R.id.button_donate_play)
@@ -130,7 +132,6 @@ public class DonateActivity extends BaseSubActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setToolbarBackIndicator();
-
         if (PackageUtil.isAlipayInstalled(this)) {
             mAlipayButton.setVisibility(View.VISIBLE);
         }
