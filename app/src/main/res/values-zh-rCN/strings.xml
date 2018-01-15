@@ -257,4 +257,5 @@
     <string name="icon_request_requested">已申请</string>
     <string name="apply_by_xposed_not_support_nougat">暂不支持Android 7.0+的Xposed</string>
     <string name="preference_general_language">语言</string>
+    <string name="apply_by_xposed_refresh_success_toast_content">刷新成功, 重启以生效</string>
 </resources>

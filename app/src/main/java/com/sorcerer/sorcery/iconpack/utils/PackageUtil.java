@@ -347,8 +347,39 @@ public class PackageUtil {
         return map;
     }
 
+    public static boolean isAbleToDonate(Context context) {
+        return isAlipayInstalled(context) || isCryptoAppInstalled(context);
+    }
+
     public static boolean isLauncherInstalled(Context context, String packageName) {
         return isPackageInstalled(context, packageName);
+    }
+
+    public static boolean isCryptoAppInstalled(Context context) {
+        return Stream.of(
+                "com.coinbase.android",
+                "de.schildbach.wallet",
+                "piuk.blockchain.android",
+                "com.binance.dev",
+                "io.getdelta.android",
+                "com.huobi.cn",
+                "pro.huobi",
+                "com.huobi.wallet",
+                "com.bitfinex.bfxapp",
+                "com.arcbit.arcbit",
+                "com.breadwallet",
+                "com.coinspace.app",
+                "org.electrum.electrum",
+                "it.greenaddress.cordova",
+                "com.greenaddress.greenbits_android_wallet",
+                "com.mycelium.wallet",
+                "com.airbitz",
+                "com.airbitz.nettest",
+                "com.btcontract.wallet",
+                "net.bither",
+                "com.bitpie",
+                "com.bitpay.wallet"
+        ).anyMatch(pck -> isPackageInstalled(context, pck));
     }
 
     public static boolean isXposedInstalled(Context context) {

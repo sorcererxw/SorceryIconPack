@@ -34,7 +34,6 @@ public class RxSU {
                 return Shell.SU.run(commands);
             }
             throw new Exception("Failed");
-//            return new ArrayList<>();
         });
     }
 

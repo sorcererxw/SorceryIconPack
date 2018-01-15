@@ -1,5 +1,7 @@
 package com.sorcerer.sorcery.iconpack.utils;
 
+import android.annotation.SuppressLint;
+
 import com.annimon.stream.Stream;
 
 import java.io.File;
@@ -11,6 +13,12 @@ import java.io.File;
  */
 
 public class FileUtil {
+
+    @SuppressLint("SetWorldReadable")
+    public static void setWorldReadable(File file) {
+        file.setReadable(true, false);
+    }
+
     public static long calculateDirectorySize(File directory) {
         if (directory == null || directory.listFiles() == null) {
             return 0;

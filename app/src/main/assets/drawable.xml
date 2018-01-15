@@ -11,7 +11,6 @@
    <item drawable="a360_free_wifi"/>
    <item drawable="a360_geek"/>
    <item drawable="a360_liuliang"/>
-   <item drawable="a360_super_root"/>
    <item drawable="a365_calendar"/>
    <item drawable="a365_calendar_1"/>
    <item drawable="a365_calendar_10"/>
@@ -107,6 +106,7 @@
    <item drawable="ali_mybank"/>
    <item drawable="ali_newjob"/>
    <item drawable="ali_taobao"/>
+    <item drawable="ali_taobao_alliance"/>
    <item drawable="ali_taobao_dianying"/>
    <item drawable="ali_taobao_etao"/>
    <item drawable="ali_taobao_nongcun"/>
@@ -234,7 +234,6 @@
    <item drawable="boomerang"/>
    <item drawable="boost_plus"/>
    <item drawable="bootmanager"/>
-   <item drawable="bootmanager_alt"/>
    <item drawable="boss_zhipin"/>
    <item drawable="box"/>
    <item drawable="breadtrip"/>
@@ -244,7 +243,6 @@
    <item drawable="browser"/>
     <item drawable="bt_pro"/>
     <item drawable="bt_pro_alt"/>
-   <item drawable="budingdonghua"/>
    <item drawable="bughd"/>
    <item drawable="bukamanhua"/>
    <item drawable="burgerking"/>
@@ -275,6 +273,7 @@
    <item drawable="chaojishipin"/>
    <item drawable="charity_miles"/>
    <item drawable="chelaile"/>
+    <item drawable="chinatelecom_pay"/>
    <item drawable="chromer"/>
    <item drawable="chufaba"/>
    <item drawable="cib_bank"/>
@@ -292,6 +291,7 @@
    <item drawable="cnn_news"/>
    <item drawable="cntv"/>
     <item drawable="coinbase"/>
+    <item drawable="coincola"/>
     <item drawable="colorful_clouds"/>
    <item drawable="contacts"/>
    <item drawable="convertbee"/>
@@ -302,7 +302,6 @@
    <item drawable="coursera"/>
    <item drawable="cpuz"/>
    <item drawable="ctrip"/>
-   <item drawable="ctrip_alt"/>
    <item drawable="ct_client"/>
    <item drawable="current_activity"/>
    <item drawable="custom_share"/>
@@ -353,6 +352,7 @@
    <item drawable="douban_movie"/>
    <item drawable="douban_read"/>
    <item drawable="doutushenqi"/>
+    <item drawable="douyin"/>
    <item drawable="douyu"/>
    <item drawable="download"/>
    <item drawable="dreamdays"/>
@@ -372,8 +372,8 @@
    <item drawable="ehviewer"/>
     <item drawable="elder"/>
    <item drawable="eleme"/>
-   <item drawable="eleme_alt"/>
    <item drawable="email"/>
+    <item drawable="emore"/>
    <item drawable="english_tick"/>
    <item drawable="enjoy"/>
    <item drawable="esbook_read"/>
@@ -503,7 +503,6 @@
    <item drawable="flyme_voice_assistant_alt"/>
    <item drawable="flyme_wallet"/>
    <item drawable="flyme_weather"/>
-   <item drawable="flyme_weather_alt"/>
    <item drawable="fm_radio"/>
    <item drawable="foodie"/>
     <item drawable="fooview_alpha"/>
@@ -531,8 +530,6 @@
    <item drawable="game_heartstone"/>
    <item drawable="game_human_resource_machine"/>
     <item drawable="game_last_day_on_earth_survival"/>
-   <item drawable="game_maestria"/>
-   <item drawable="game_mekorama"/>
    <item drawable="game_mihoyo_bh_3"/>
    <item drawable="game_minecraft"/>
    <item drawable="game_mini_metro"/>
@@ -786,7 +783,6 @@
    <item drawable="jinsanciba"/>
     <item drawable="jixianglianmeng"/>
    <item drawable="jotterpad"/>
-   <item drawable="jotterpad_alt"/>
    <item drawable="journey"/>
    <item drawable="joyrun"/>
    <item drawable="juejin"/>
@@ -889,6 +885,7 @@
    <item drawable="luyinbao"/>
    <item drawable="lvmamalvyou"/>
    <category title="M"/>
+    <item drawable="magicmagnet"/>
     <item drawable="magisk_manager"/>
     <item drawable="magnets_toolbox"/>
    <item drawable="maidanba"/>
@@ -906,6 +903,7 @@
    <item drawable="medium"/>
     <item drawable="medium_alt"/>
     <item drawable="medium_alt_2"/>
+    <item drawable="meeye_iconpack"/>
    <item drawable="mega"/>
    <item drawable="meiriyiwen"/>
    <item drawable="meiriyujia"/>
@@ -913,6 +911,7 @@
    <item drawable="meituan_alt"/>
    <item drawable="meituan_waimai"/>
    <item drawable="meituxiuxiu"/>
+    <item drawable="meitu_meipai"/>
    <item drawable="meiyanxiangji"/>
    <item drawable="memory_cleaner"/>
    <item drawable="memrise"/>
@@ -920,6 +919,7 @@
    <item drawable="merriam_webster_dictionary"/>
    <item drawable="messaging"/>
    <item drawable="microsoft_account"/>
+    <item drawable="microsoft_authenticator"/>
    <item drawable="microsoft_bing_dict"/>
    <item drawable="microsoft_bing_keyboard"/>
    <item drawable="microsoft_bing_search"/>
@@ -1086,7 +1086,9 @@
    <item drawable="oneplus_filemanager"/>
    <item drawable="oneplus_gallery"/>
    <item drawable="oneplus_market"/>
+    <item drawable="oneplus_music"/>
    <item drawable="oneplus_note"/>
+    <item drawable="oneplus_pro"/>
    <item drawable="oneplus_settings"/>
    <item drawable="oneplus_sms"/>
    <item drawable="oneplus_soundrecorder"/>
@@ -1557,6 +1559,7 @@
    <item drawable="via_browser"/>
    <item drawable="vine"/>
    <item drawable="vine_alt"/>
+    <item drawable="viper_for_android_fx"/>
    <item drawable="viper_fx"/>
    <item drawable="vipshop"/>
    <item drawable="vlc"/>
@@ -1709,6 +1712,7 @@
    <item drawable="xinpinget"/>
    <item drawable="xinternalsd"/>
    <item drawable="xmvideoplayer"/>
+    <item drawable="xplore_file_manager"/>
    <item drawable="xposed"/>
    <item drawable="xqs_background"/>
    <item drawable="xqs_background_alt"/>

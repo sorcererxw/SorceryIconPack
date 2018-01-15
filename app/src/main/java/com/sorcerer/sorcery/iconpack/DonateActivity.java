@@ -30,6 +30,8 @@ import timber.log.Timber;
 
 public class DonateActivity extends BaseSubActivity {
 
+    @BindView(R.id.button_donate_bitcoin)
+    Button mBitcoinButton;
     @BindView(R.id.button_donate_alipay)
     Button mAlipayButton;
     @BindView(R.id.button_donate_play)
@@ -71,13 +73,17 @@ public class DonateActivity extends BaseSubActivity {
                         + "&qrcode=https%3A%2F%2Fqr.alipay.com%2Fapx04314ky3hnfqt9xuaze3"));
         intent.setPackage("com.eg.android.AlipayGphone");
         try {
-
             startActivity(intent);
             mPrefs.donated().setValue(true);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(mContext, "no alipay", Toast.LENGTH_SHORT).show();
             Timber.e(e);
         }
+    }
+
+    @OnClick(R.id.button_donate_bitcoin)
+    void onBitcoinClick() {
+
     }
 
     @OnClick(R.id.button_donate_play)
@@ -146,6 +152,9 @@ public class DonateActivity extends BaseSubActivity {
 //                    new Intent("com.android.vending.billing.InAppBillingService.BIND");
 //            serviceIntent.setPackage("com.android.vending");
 //            bindService(serviceIntent, mServiceConnection, BIND_AUTO_CREATE);
+        }
+        if (PackageUtil.isCryptoAppInstalled(this)) {
+            mBitcoinButton.setVisibility(View.VISIBLE);
         }
     }
 

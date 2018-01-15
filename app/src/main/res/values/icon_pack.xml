@@ -80,8 +80,22 @@
         <item>the_day</item>
         <item>picacomic</item>
         <item>mybus</item>
+        <item>day_one</item>
+        <item>chinatelecom_pay</item>
+        <item>oneplus_music</item>
+        <item>magicmagnet</item>
+        <item>microsoft_authenticator</item>
+        <item>xplore_file_manager</item>
         <item>designer_tools</item>
+        <item>viper_for_android_fx</item>
+        <item>ali_taobao_alliance</item>
+        <item>meitu_meipai</item>
         <item>samsung_calculator</item>
+        <item>coincola</item>
+        <item>emore</item>
+        <item>meeye_iconpack</item>
+        <item>oneplus_pro</item>
+        <item>douyin</item>
         <item>google_japanese_input</item>
         <item>google_androidify</item>
         <item>elder</item>
@@ -98,7 +112,10 @@
         <item>txvpn</item>
         <item>oneplus_deskclock</item>
         <item>baidu_maps</item>
+        <item>ampere</item>
+        <item>himail</item>
         <item>bmap</item>
+        <item>google_photo_scan</item>
         <item>suishouji</item>
         <item>twitter</item>
         <item>hiwifi</item>
@@ -139,11 +156,17 @@
         <item>pocket_casts</item>
         <item>tencent_qq_music</item>
         <item>wps</item>
+        <item>shadowsocksr</item>
+        <item>shadowsocks</item>
+        <item>adobe_lightroom</item>
+        <item>adobe_photoshop</item>
+        <item>ali_trip</item>
         <item>a10086</item>
         <item>flyme_video</item>
         <item>flyme_browser</item>
         <item>game_clash_royale</item>
         <item>flyme_account</item>
+        <item>booking</item>
     </string-array>
     <string-array name="icon_pack" translatable="false">
         <item>*****</item>
@@ -156,7 +179,6 @@
         <item>a360_free_wifi</item>
         <item>a360_geek</item>
         <item>a360_liuliang</item>
-        <item>a360_super_root</item>
         <item>a365_calendar</item>
         <item>a365_calendar_1</item>
         <item>a365_calendar_10</item>
@@ -248,6 +270,7 @@
         <item>ali_mybank</item>
         <item>ali_newjob</item>
         <item>ali_taobao</item>
+        <item>ali_taobao_alliance</item>
         <item>ali_taobao_dianying</item>
         <item>ali_taobao_etao</item>
         <item>ali_taobao_nongcun</item>
@@ -379,7 +402,6 @@
         <item>boomerang</item>
         <item>boost_plus</item>
         <item>bootmanager</item>
-        <item>bootmanager_alt</item>
         <item>boss_zhipin</item>
         <item>box</item>
         <item>breadtrip</item>
@@ -390,7 +412,6 @@
         <item>bt_pro</item>
         <item>bt_pro_alt</item>
         <item>bu_bei_lang_easy_lexis</item>
-        <item>budingdonghua</item>
         <item>bughd</item>
         <item>bukamanhua</item>
         <item>burgerking</item>
@@ -419,6 +440,7 @@
         <item>chaojishipin</item>
         <item>charity_miles</item>
         <item>chelaile</item>
+        <item>chinatelecom_pay</item>
         <item>chromer</item>
         <item>chufaba</item>
         <item>cib_bank</item>
@@ -436,6 +458,7 @@
         <item>cnn_news</item>
         <item>cntv</item>
         <item>coinbase</item>
+        <item>coincola</item>
         <item>colorful_clouds</item>
         <item>contacts</item>
         <item>convertbee</item>
@@ -447,7 +470,6 @@
         <item>cpuz</item>
         <item>ct_client</item>
         <item>ctrip</item>
-        <item>ctrip_alt</item>
         <item>current_activity</item>
         <item>custom_share</item>
         <item>cuto_wallpaper</item>
@@ -496,6 +518,7 @@
         <item>douban_movie</item>
         <item>douban_read</item>
         <item>doutushenqi</item>
+        <item>douyin</item>
         <item>douyu</item>
         <item>download</item>
         <item>dreamdays</item>
@@ -515,8 +538,8 @@
         <item>ehviewer</item>
         <item>elder</item>
         <item>eleme</item>
-        <item>eleme_alt</item>
         <item>email</item>
+        <item>emore</item>
         <item>english_tick</item>
         <item>enjoy</item>
         <item>es_explorer</item>
@@ -646,7 +669,6 @@
         <item>flyme_voice_assistant_alt</item>
         <item>flyme_wallet</item>
         <item>flyme_weather</item>
-        <item>flyme_weather_alt</item>
         <item>fm_radio</item>
         <item>foodie</item>
         <item>fooview_alpha</item>
@@ -672,8 +694,6 @@
         <item>game_heartstone</item>
         <item>game_human_resource_machine</item>
         <item>game_last_day_on_earth_survival</item>
-        <item>game_maestria</item>
-        <item>game_mekorama</item>
         <item>game_mihoyo_bh_3</item>
         <item>game_minecraft</item>
         <item>game_mini_metro</item>
@@ -925,7 +945,6 @@
         <item>jinsanciba</item>
         <item>jixianglianmeng</item>
         <item>jotterpad</item>
-        <item>jotterpad_alt</item>
         <item>journey</item>
         <item>joyrun</item>
         <item>juejin</item>
@@ -1027,6 +1046,7 @@
         <item>luoo</item>
         <item>lvmamalvyou</item>
         <item>**M**</item>
+        <item>magicmagnet</item>
         <item>magisk_manager</item>
         <item>magnets_toolbox</item>
         <item>maidanba</item>
@@ -1044,9 +1064,11 @@
         <item>medium</item>
         <item>medium_alt</item>
         <item>medium_alt_2</item>
+        <item>meeye_iconpack</item>
         <item>mega</item>
         <item>meiriyiwen</item>
         <item>meiriyujia</item>
+        <item>meitu_meipai</item>
         <item>meituan</item>
         <item>meituan_alt</item>
         <item>meituan_waimai</item>
@@ -1059,6 +1081,7 @@
         <item>messaging</item>
         <item>mi_remote</item>
         <item>microsoft_account</item>
+        <item>microsoft_authenticator</item>
         <item>microsoft_bing_dict</item>
         <item>microsoft_bing_search</item>
         <item>microsoft_cortana</item>
@@ -1225,7 +1248,9 @@
         <item>oneplus_filemanager</item>
         <item>oneplus_gallery</item>
         <item>oneplus_market</item>
+        <item>oneplus_music</item>
         <item>oneplus_note</item>
+        <item>oneplus_pro</item>
         <item>oneplus_settings</item>
         <item>oneplus_sms</item>
         <item>oneplus_soundrecorder</item>
@@ -1688,6 +1713,7 @@
         <item>via_browser</item>
         <item>vine</item>
         <item>vine_alt</item>
+        <item>viper_for_android_fx</item>
         <item>viper_fx</item>
         <item>vipshop</item>
         <item>vlc</item>
@@ -1840,6 +1866,7 @@
         <item>xinpinget</item>
         <item>xinternalsd</item>
         <item>xmvideoplayer</item>
+        <item>xplore_file_manager</item>
         <item>xposed</item>
         <item>xqs_background</item>
         <item>xqs_background_alt</item>

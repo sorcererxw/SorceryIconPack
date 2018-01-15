@@ -153,8 +153,9 @@
     <string name="donate_success">donate success</string>
     <string name="donate_fail">donate fail</string>
 
-    <string name="alipay">alipay</string>
-    <string name="wechat">wechat</string>
+    <string name="alipay">Alipay</string>
+    <string name="wechat">Wechat</string>
+    <string name="bitcoin">Bitcoin</string>
 
     <string name="select_all">select all</string>
     <string name="just_show_without_custom">just show without custom icon</string>
@@ -186,10 +187,6 @@
     <string name="open_source_lib">Open Source Libs</string>
 
     <string name="changelog">changelog</string>
-    <string name="changelog_content"
-            translatable="false">1. 50个新图标|2. 修复开启优先申请失败问题|3. 加入Persistent搜索条|4.
-        修复部分launcher不支持问题|5. 界面细节调整
-    </string>
     <string name="about_main">let 「material」\n
         colorful your phone
     </string>
@@ -309,17 +306,20 @@
     <string name="apply_by_xposed_success_dialog_content">The icons will be effected after
         rebooting.
     </string>
-    <string name="apply_by_xposed_not_support_nougat">Not support xposed of Android 7.0+</string>
+    <string name="apply_by_xposed_refresh_success_toast_content">Refreshed, reboot to take effect
+    </string>
 
     <string name="apply_by_xposed_success_dialog_negative">Later</string>
     <string name="apply_by_xposed_success_dialog_positive">Reboot</string>
     <string name="apply_by_xposed_no_xposed">Need Xposed framework.</string>
 
+    <string name="preference_apply_xposed_clear_cahce">Clear cache</string>
+
     <string name="preference_apply_xposed_options">Options</string>
     <string name="preference_apply_xposed_refresh_icons">Refresh icons</string>
     <string name="preference_apply_xposed_clear_nova_cache">Clear Nova launcher icon cache</string>
-    <string name="preference_apply_xposed_clear_nova_cache_summary">If it is not work for your Nova
-        launcher, try it
+    <string name="preference_apply_xposed_clear_nova_cache_summary">If it is not working for your
+        Nova launcher, try it
     </string>
     <string name="preference_apply_xposed_reboot">Reboot</string>
     <string name="preference_apply_xposed_reboot_summary">Reboot to take effect</string>

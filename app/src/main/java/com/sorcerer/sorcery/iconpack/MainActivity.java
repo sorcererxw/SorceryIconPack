@@ -182,7 +182,7 @@ public class MainActivity extends BaseActivity {
                         .withDescriptionTextColor(subTextColor)
         );
 
-        if (PackageUtil.isAlipayInstalled(this)) {
+        if (PackageUtil.isAbleToDonate(this)) {
             mDrawer.addItem(new PrimaryDrawerItem()
                     .withSetSelected(false)
                     .withSelectable(false)
