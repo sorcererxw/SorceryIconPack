@@ -1460,6 +1460,8 @@
    <item drawable="team_viewer_remote_control"/>
    <item drawable="ted"/>
    <item drawable="telegram"/>
+    <item drawable="telegram_beta"/>
+    <item drawable="telegram_x"/>
    <item drawable="tencent_anime_comic"/>
    <item drawable="tencent_app_market"/>
    <item drawable="tencent_cf_sns"/>

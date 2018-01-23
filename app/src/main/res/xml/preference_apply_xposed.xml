@@ -20,6 +20,12 @@
             android:title="@string/preference_apply_xposed_clear_nova_cache"/>
 
         <Preference
+            android:key="preference_clear_pixel_cache"
+            android:layout="@layout/layout_preference_card"
+            android:summary="@string/preference_apply_xposed_clear_pixel_cache_summary"
+            android:title="@string/preference_apply_xposed_clear_pixel_cache"/>
+
+        <Preference
             android:key="preference_selinux"
             android:layout="@layout/layout_preference_card"
             android:summary="@string/preference_apply_xposed_selinux_summary"
@@ -33,17 +39,17 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:enabled="true"
-        android:key="preference_category_clear_cache"
-        android:layout="@layout/layout_preference_category_card"
-        android:title="@string/preference_apply_xposed_clear_cahce">
+    <!--<PreferenceCategory-->
+    <!--android:enabled="true"-->
+    <!--android:key="preference_category_clear_cache"-->
+    <!--android:layout="@layout/layout_preference_category_card"-->
+    <!--android:title="@string/preference_apply_xposed_clear_cahce">-->
 
-        <Preference
-            android:key="preference_clear_nova_cache"
-            android:layout="@layout/layout_preference_card_last"
-            android:summary="@string/preference_apply_xposed_clear_nova_cache_summary"
-            android:title="@string/preference_apply_xposed_clear_nova_cache"/>
+    <!--<Preference-->
+    <!--android:key="preference_clear_nova_cache"-->
+    <!--android:layout="@layout/layout_preference_card_last"-->
+    <!--android:summary="@string/preference_apply_xposed_clear_nova_cache_summary"-->
+    <!--android:title="@string/preference_apply_xposed_clear_nova_cache"/>-->
 
-    </PreferenceCategory>
+    <!--</PreferenceCategory>-->
 </PreferenceScreen>

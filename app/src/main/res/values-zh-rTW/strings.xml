@@ -222,6 +222,9 @@
     <string name="preference_apply_xposed_options">選項</string>
     <string name="preference_apply_xposed_clear_nova_cache_summary">如果全局載入無法在Nova啟動器上生效, 請嘗試清除緩存
     </string>
+    <string name="preference_apply_xposed_clear_pixel_cache">清除Pixel啟動器的表徵圖緩存</string>
+    <string name="preference_apply_xposed_clear_pixel_cache_summary">如果全局載入無法在Pixel啟動器上生效, 請嘗試清除緩存
+    </string>
     <string name="preference_apply_xposed_reboot_summary">重啟以生效</string>
     <string name="preference_apply_xposed_reboot">重啟設備</string>
     <string name="apply_by_xposed_success_dialog_title">成功</string>

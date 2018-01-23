@@ -111,6 +111,7 @@ public class OverviewFragment extends PreferenceFragmentCompat {
                 preference.setLayoutResource(R.layout.layout_preference_card);
             }
             preference.setTitle(info.getLabel());
+
             if (info.isInstalled()) {
                 preference.setIcon(info.getIcon());
                 preference.setEnabled(true);

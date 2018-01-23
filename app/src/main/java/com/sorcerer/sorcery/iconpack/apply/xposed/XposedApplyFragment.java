@@ -54,6 +54,8 @@ public class XposedApplyFragment extends PreferenceFragmentCompat {
     private android.support.v7.preference.Preference mRefreshPreference;
     //preference_clear_nova_cache
     private android.support.v7.preference.Preference mClearNovaCachePreference;
+    //preference_clear_nova_cache
+    private android.support.v7.preference.Preference mClearPixelCachePreference;
     // preference_reboot
     private android.support.v7.preference.Preference mRebootPreference;
     // preference_selinux
@@ -71,6 +73,7 @@ public class XposedApplyFragment extends PreferenceFragmentCompat {
                 (PreferenceCategory) findPreference("preference_category_options");
         mRefreshPreference = findPreference("preference_refresh");
         mClearNovaCachePreference = findPreference("preference_clear_nova_cache");
+        mClearPixelCachePreference = findPreference("preference_clear_pixel_cache");
         mRebootPreference = findPreference("preference_reboot");
         mSELinuxPreference = findPreference("preference_selinux");
     }
@@ -209,6 +212,72 @@ public class XposedApplyFragment extends PreferenceFragmentCompat {
             if (mOptionPreferenceCategory.findPreference("preference_clear_nova_cache")
                     != null) {
                 mOptionPreferenceCategory.removePreference(mClearNovaCachePreference);
+            }
+        }
+
+        mClearPixelCachePreference.setOnPreferenceClickListener(preference -> {
+            RxSU.getInstance().su()
+                    .filter(grant -> grant)
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .flatMap(new Function<Boolean, ObservableSource<Boolean>>() {
+                        @Override
+                        public ObservableSource<Boolean> apply(Boolean aBoolean)
+                                throws Exception {
+                            return new RxPermissions(getActivity())
+                                    .request(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        }
+                    })
+                    .filter(grant -> grant)
+                    .observeOn(Schedulers.newThread())
+                    .flatMap(new Function<Boolean, ObservableSource<List<String>>>() {
+                        @Override
+                        public ObservableSource<List<String>> apply(Boolean aBoolean)
+                                throws Exception {
+                            return Utils.clearPixelLauncherCache();
+                        }
+                    })
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Observer<List<String>>() {
+                        private Dialog mProgressDialog;
+
+                        @Override
+                        public void onSubscribe(Disposable d) {
+                            mProgressDialog =
+                                    Dialogs.indeterminateProgressDialog(getActivity(), "waiting");
+                            mProgressDialog.show();
+                        }
+
+                        @Override
+                        public void onNext(List<String> list) {
+
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            Timber.e(e);
+                            Toast.makeText(getContext(), "fail: " + e.getMessage(),
+                                    Toast.LENGTH_SHORT).show();
+                            mProgressDialog.dismiss();
+                        }
+
+                        @Override
+                        public void onComplete() {
+                            mProgressDialog.dismiss();
+                        }
+                    });
+            return true;
+        });
+
+        if (PackageUtil.isPackageInstalled(getContext(), "com.google.android.apps.nexuslauncher")) {
+            if (mOptionPreferenceCategory.findPreference("preference_clear_pixel_cache")
+                    == null) {
+                mOptionPreferenceCategory.addPreference(mClearPixelCachePreference);
+            }
+        } else {
+            if (mOptionPreferenceCategory.findPreference("preference_clear_pixel_cache")
+                    != null) {
+                mOptionPreferenceCategory.removePreference(mClearPixelCachePreference);
             }
         }
 

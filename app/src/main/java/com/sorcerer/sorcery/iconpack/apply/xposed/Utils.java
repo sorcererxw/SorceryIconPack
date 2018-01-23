@@ -51,7 +51,8 @@ class Utils {
 
     static Observable<List<String>> clearPixelLauncherCache() {
         return RxSU.getInstance().runAll(
-                "rm /data/data/com.google.android.apps.nexuslauncher/databases/launcher.db",
+//                "rm /data/data/com.google.android.apps.nexuslauncher/databases/launcher.db",
+                "rm /data/data/com.google.android.apps.nexuslauncher/databases/app_icons.db",
                 "am force-stop com.google.android.apps.nexuslauncher"
         );
     }

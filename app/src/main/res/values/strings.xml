@@ -321,6 +321,11 @@
     <string name="preference_apply_xposed_clear_nova_cache_summary">If it is not working for your
         Nova launcher, try it
     </string>
+    <string name="preference_apply_xposed_clear_pixel_cache">Clear Pixel launcher icon cache
+    </string>
+    <string name="preference_apply_xposed_clear_pixel_cache_summary">If it is not working for your
+        Pixel launcher, try it
+    </string>
     <string name="preference_apply_xposed_reboot">Reboot</string>
     <string name="preference_apply_xposed_reboot_summary">Reboot to take effect</string>
 

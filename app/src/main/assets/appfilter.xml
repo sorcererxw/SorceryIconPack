@@ -909,6 +909,8 @@
 <item component="ComponentInfo{com.smzdm.client.android/com.smzdm.client.android.activity.WelComeActivity}" drawable="smzdm"/>
 <item component="ComponentInfo{com.sogou.wallpaper/com.sogou.wallpaper.LaunchActivity}" drawable="sougou_wallpaper"/>
 <item component="ComponentInfo{com.mymoney/com.mymoney.ui.splash.SplashScreenActivity}" drawable="suishouji"/>
+    <item component="ComponentInfo{com.mymoney/com.mymoney.biz.splash.SplashScreenActivity}"
+          drawable="suishouji"/>
 <item component="ComponentInfo{com.skype.raider/com.skype.raider.Main}" drawable="skype"/>
 <item component="ComponentInfo{com.skype.raider/com.skype.raider.ui.SplashScreenActivity}" drawable="skype"/>
     <item component="ComponentInfo{com.skype.raider/com.skype4life.MainActivity}" drawable="skype"/>
@@ -1404,36 +1406,19 @@
 <item component="ComponentInfo{com.android.settings/com.android.settings.mokee.helper.activities.TipsHelp}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.oppo.settings.SettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.TabbedSettings}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiSettingsActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$GLFingerPrintManagerActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.OriginSettings}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.GnSettingsTabActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$SuperSnapSettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.GridSettings}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.sudamod.LocationLookup}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsTabActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiDisplaySettingsActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$EdgeSettingsActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiP2pSettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.dual.DualManagerAppActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$WifiApSettingsActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$HotspotActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$TetherSettingsActivity2}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.mokee.helper.activities.MoKeeForum}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$SprdManageTasksActivity}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$PrivacyGuardManagerActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.LewaSettings}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$TetherSettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.OntimSettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.SugarKeyStart}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsTab}" drawable="settings"/>
-<item component="ComponentInfo{com.android.settings/com.android.settings.Settings$BlacklistSettingsActivity}" drawable="settings"/>
 <item component="ComponentInfo{com.android.settings/com.meizu.settings.ContainerActivity}" drawable="settings"/>
     <item component="ComponentInfo{com.android.settings/com.android.settings.MainSettingsActivity}"
-          drawable="settings"/>
-    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings$SprdManageApplicationsActivity}"
-          drawable="settings"/>
-    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings$DataUsageSummaryActivity}"
           drawable="settings"/>
     <item component="ComponentInfo{com.android.settings/com.android.settings.wfd.WifiDisplaySettingsActivity}"
           drawable="settings"/>
@@ -2736,6 +2721,8 @@
           drawable="suishouji"/>
     <item component="ComponentInfo{com.mymoney.pro.huawei/com.mymoney.ui.splash.SplashScreenActivity}"
           drawable="suishouji"/>
+    <item component="ComponentInfo{com.mymoney.pro.huawei/com.mymoney.biz.splash.SplashScreenActivity}"
+          drawable="suishouji"/>
     <item component="ComponentInfo{com.imgur.mobile/com.imgur.mobile.Launcher}" drawable="imgur"/>
     <item component="ComponentInfo{com.myzaker.zaker_phone_smartbar/com.myzaker.ZAKER_Phone.view.LogoActivity}"
           drawable="zaker"/>
@@ -2984,4 +2971,8 @@
           drawable="douban"/>
     <item component="ComponentInfo{com.android.mifileexplorer/com.android.mifileexplorer.activities.BrowseActivity}"
           drawable="xiaomi_file_explorer"/>
+    <item component="ComponentInfo{org.thunderdog.challegram/org.thunderdog.challegram.MainActivity}"
+          drawable="telegram_x"/>
+    <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.ui.LaunchActivity}"
+          drawable="telegram_beta"/>
 </resources>

@@ -403,6 +403,4 @@ public class MainActivity extends BaseActivity {
     public boolean isCustomPicker() {
         return getIntent().hasCategory("com.novalauncher.category.CUSTOM_ICON_PICKER");
     }
-
-
 }

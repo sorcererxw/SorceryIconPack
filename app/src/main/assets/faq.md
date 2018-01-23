@@ -36,7 +36,7 @@ Sorcery 图标已上架MIUI和FLYME主题商店, 可下载对应版本以得到�
 
 - [Google Now Launcher](https://play.google.com/store/apps/details?id=com.google.android.launcher)
 - [Pixel Launcher](https://play.google.com/store/apps/details?id=com.google.android.apps.nexuslauncher)
-- [锤子桌面](http://www.smartisan.com/apps/launcher)
+- [锤子桌面(商店下载版本)](http://www.smartisan.com/apps/launcher)
 
 *由于是替换缓存, 所以暂时无法实时替换新增应用的图标, 所以在应用安装或者更新之后需要手动重新替换图标, 为了更好的图标体验, 请优先考虑使用支持图标包的第三方桌面*
 
@@ -44,7 +44,7 @@ Sorcery 图标已上架MIUI和FLYME主题商店, 可下载对应版本以得到�
 
 如果你的设备已经刷入XPOSED, 可以使用通过XPOSED框架进行替换,点击进入Sorcery 图标应用抽屉内的"应用图标"来使用 ,具体详见下方
 
-## 如何单独定义某个应用的图标
+## 如何单独定义某个应用的图标?
 
 部分桌面支持单独定义某个应用的图标, 现在就以Nova Launcher为例, 来介绍一下如何单独定义某个应用的图标, 其他的启动器都是异曲同工的
 
